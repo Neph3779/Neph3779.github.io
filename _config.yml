@@ -112,6 +112,7 @@ exclude:
 
 #### start of SEO variable ####
 author: Neph
+lang: ko_KR
 social:
 name: Neph
 links:
@@ -121,3 +122,11 @@ gems:
     - jekyll-sitemap
     - jekyll-feed
     - jekyll-seo-tag
+
+# Exclude these files from your production _site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
