@@ -5,22 +5,22 @@ permalink: /categories/
 ---
 
 {% if site.posts.size == 0 %}
-<h2>No post found</h2>
+  <h2>No post found</h2>
 {% endif %}
 <div>
-    {% for eachCategory in site.categories %}
+  {% for eachCategory in site.categories %}
     <ul class="categories">
-        {% for categoryName in eachCategory[0] %}
+      {% for categoryName in eachCategory[0] %}
         {% if categoryName != null %}
-        <li>
-            <span><a href="/categories/{{ categoryName }}">
-                    {{ categoryName }}
-                </a></span>
-            <span class="count">{{ eachCategory[1].size }}</span>
-
-        </li>
+          <li>
+              <span><a href="/categories/{{ categoryName }}">
+                {{ categoryName }}
+              </a></span>
+              <span class="count">{{ eachCategory[1].size }}</span>
+              
+          </li>
         {% endif %}
-        {% endfor %}
+      {% endfor %}
     </ul>
-    {% endfor %}
+  {% endfor %}
 </div>

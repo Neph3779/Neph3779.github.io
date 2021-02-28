@@ -7,13 +7,14 @@ layout: default
 {% endif %}
 
 <div class="posts">
-  {% for post in paginator.posts %}
+  {% assign sortedPosts = paginator.posts | sort: 'date' | reverse %}
+  {% for post in sortedPosts %}
     <article class="post">
       <h1>
         <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
       </h1>
 
-      <div>
+      <div class="meta">
         <span class="date">
           {{ post.date | date: "%Y-%m-%d" }}
         </span>
