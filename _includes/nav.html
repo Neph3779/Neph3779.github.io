@@ -24,7 +24,7 @@ section_items
     <!-- page.url (no underscore) is the url of the current page-->{%- endcomment -%}
     {%- if _page.url == page.url -%}
     <li><a href="#" id="{{- _slug -}}" class="active">
-        <span class="{{ _class }} {{ _icon }}" style="color: aquamarine; background-color: aquamarine;">{{- _title
+        <span class="{{ _class }} {{ _icon }}" style="color: aquamarine;">{{- _title
           -}}</span>
       </a></li>
     {%- elsif _page.url -%}
