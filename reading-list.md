@@ -1,5 +1,5 @@
 ---
-title: Reading List
+title: Swift UIKit Projects
 subtitle: a list of books I read
 layout: "page"
 icon: fa-book
