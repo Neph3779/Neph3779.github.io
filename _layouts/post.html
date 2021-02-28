@@ -3,9 +3,14 @@ layout: default
 ---
 
 <article class="post">
-  <h1>{{ page.title }}</h1>
+  <span>
+    <h1>{{ page.title }}</h1>
+  </span>
+  <span align="right">
+    <h6>{{ page.categories[0] }}</h6>
+  </span>
 
-  <div>
+  <div class="meta">
     <span class="date">
       {{ page.date | date: "%Y-%m-%d" }}
     </span>
@@ -21,24 +26,23 @@ layout: default
     </ul>
   </div>
 
-  <div class="entry">
-    {{ content }}
+  <div id="entry" class="entry">
+    {{ content | newline_to_br }}
   </div>
-
   <div class="pagination">
     {% if page.previous.url %}
-      <span class="prev" >
-          <a href="{{ site.url }}{{ site.baseurl }}{{ page.previous.url }}">
-            &#xE000; {{ page.previous.title }}
-          </a>
-      </span>
+    <span class="prev">
+      <a href="{{ site.url }}{{ site.baseurl }}{{ page.previous.url }}">
+        &#xE000; {{ page.previous.title }}
+      </a>
+    </span>
     {% endif %}
     {% if page.next.url %}
-      <span class="next" >
-          <a href="{{ site.url }}{{ site.baseurl }}{{ page.next.url }}">
-            {{ page.next.title }} &#xE001;
-          </a>
-      </span>
+    <span class="next">
+      <a href="{{ site.url }}{{ site.baseurl }}{{ page.next.url }}">
+        {{ page.next.title }} &#xE001;
+      </a>
+    </span>
     {% endif %}
   </div>
 
