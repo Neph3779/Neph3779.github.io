@@ -3,6 +3,7 @@
 @import 'libs/mixins';
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600");
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 
 /*
 	Prologue by HTML5 UP
@@ -61,11 +62,11 @@
 
 	body {
 		background: #fff;
-		font-family: 'Source Sans Pro', sans-serif;
-		font-size: 19pt;
+		font-family: 'Nanum Gothic Coding', serif;
+		font-size: 15pt;
 		font-weight: 300;
 		line-height: 1.75em;
-		color: #888;
+		color: rgb(0, 0, 0);
 
 		&.is-loading * {
 			@include vendor('transition', 'none !important');
@@ -74,16 +75,16 @@
 	}
 
 	input, textarea, select {
-		font-family: 'Source Sans Pro', sans-serif;
-		font-size: 19pt;
+		font-family: 'Nanum Gothic Coding', serif;
+		font-size: 15pt;
 		font-weight: 300;
 		line-height: 1.75em;
-		color: #888;
+		color: rgb(0, 0, 0);
 	}
 
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 300;
-		color: #666;
+		color: rgb(0, 0, 0);
 		line-height: 1.5em;
 	}
 
