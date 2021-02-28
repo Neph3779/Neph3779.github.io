@@ -115,11 +115,4 @@ social:
 name: ChunSooHyun
 links:
     - https://neph3779.github.io
-#### default front matter ###
-defaults:
-    - scope:
-    path: ""
-    values:
-    image: /assets/images/global_og_image.jpg
-    hight: 400
-    width: 400
+
