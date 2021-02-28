@@ -1,14 +1,21 @@
-<!DOCTYPE HTML>
-<!--
-Prologue by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-Jekyll integration by Chris Bobbe | chrisbobbe.github.io
--->
+<!DOCTYPE html>
 <html>
-	{%- include head.html -%}
-	<body>
-		{{- content -}}
-		{%- include footer.html -%}
-	</body>
+  {% include head.html %}
+  <body>
+    {% include nav.html %}
+
+    <div id="main" role="main" class="container">
+      {{ content }}
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          {% include footer.html %}
+        </footer>
+      </div>
+    </div>
+
+    {% include analytics.html %}
+  </body>
 </html>

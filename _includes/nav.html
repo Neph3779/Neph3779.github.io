@@ -1,59 +1,24 @@
-{%- comment -%}
-Include vars:
-section_items
-{%- endcomment -%}
+<div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      {% if site.avatar %}
+        <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+      {% endif %}
 
-<!-- Nav -->
-<nav id="nav">
-  <ul>
-    {%- assign _pages = site.html_pages | where_exp: "page", "page.hide != true" -%}
-    {%- unless _pages == null -%}
-    {%- assign _pages = _pages | sort: 'order' -%}
-    {%- for _page in _pages -%}
-    {%- assign _title = _page.title | default: _page.layout -%}
-    {%- assign _slug = _title | slugify -%}
-    {%- assign _icon = _page.icon | default: 'fa-link' -%}
-    {%- if _page.icon-style == 'regular' -%}
-    {%- assign _class = 'icon-r' -%}
-    {%- elsif _page.icon-style == 'brands' -%}
-    {%- assign _class = 'icon-b' -%}
-    {%- else -%}
-    {%- assign _class = 'icon' -%}
-    {%- endif -%}
-    {%- comment -%}
-    <!-- page.url (no underscore) is the url of the current page-->{%- endcomment -%}
-    {%- if _page.url == page.url -%}
-    <li><a href="#" id="{{- _slug -}}" class="active">
-        <span class="{{ _class }} {{ _icon }}" style="color: aquamarine;">{{- _title
-          -}}</span>
-      </a></li>
-    {%- elsif _page.url -%}
-    <li><a href="{{- _page.url | absolute_url -}}" id="{{- _slug -}}-link">
-        <span class="{{ _class }} {{ _icon }}">{{- _title -}}</span>
-      </a></li>
-    {%- else -%}
-    <li><a href="{{- '/' | absolute_url -}}" id="broken-link"><span class="icon fa-unlink">[broken link]</span></a></li>
-    {%- endif -%}
-    {%- endfor -%}
-    {%- endunless -%}
-    {%- assign _sections = include.section_items | where_exp: "section", "section.hide != true" -%}
-    {%- if _pages[0] and _sections[0] -%}
-    <hr>{%- endif -%}
-    {%- unless _sections == null -%}
-    {%- for _sect in _sections -%}
-    {%- assign _title = _sect.title | default: _sect.layout | default: 'Untitled' -%}
-    {%- assign _slug = _title | slugify -%}
-    {%- assign _icon = _sect.icon | default: 'fa-file' -%}
-    {%- if _sect.icon-style == 'regular' -%}
-    {%- assign _class = 'icon-r' -%}
-    {%- elsif _sect.icon-style == 'brands' -%}
-    {%- assign _class = 'icon-b' -%}
-    {%- else -%}
-    {%- assign _class = 'icon' -%}
-    {%- endif -%}
-    <li><a href="#{{- _slug -}}" id="{{- _slug -}}-link" class="scrolly"><span class="{{ _class }} {{ _icon }}">{{-
-          _title -}}</span></a></li>
-    {%- endfor -%}
-    {%- endunless -%}
-  </ul>
-</nav>
+      <div class="site-info">
+        <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+        <p class="site-description">{{ site.description }}</p>
+      </div>
+
+      <nav>
+        {% for nav in site.navigation %}
+        {% if nav.url contains 'http://' or nav.url contains 'https://' %}
+        <a href="{{ nav.url }}">{{ nav.name }}</a>
+        {% else %}
+        <a href="{{ site.baseurl }}{{ nav.url }}">{{ nav.name }}</a>
+        {% endif %}
+        {% endfor %}
+      </nav>
+    </header>
+  </div>
+</div>
