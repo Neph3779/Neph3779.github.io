@@ -116,3 +116,5 @@ name: ChunSooHyun
 links:
     - https://neph3779.github.io
 
+gems:
+    -jekyll-sitemap
