@@ -2,7 +2,7 @@
 layout: post
 title: "Terminal Overview"
 image:
-categories: Bash_Shell_Script
+categories: Swift
 tags:
   - Bash Shell Script
   - Udemy
