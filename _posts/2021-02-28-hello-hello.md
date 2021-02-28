@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 로컬 작업
+categories: [testCategory]
 tags:
   - 테스트임
   - 태그도 달아봤음

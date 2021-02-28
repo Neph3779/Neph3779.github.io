@@ -1,24 +1,18 @@
 ---
-layout: page
+layout: default
 ---
-{% for post in site.categories[page.title] %}
-<ul class="category">
-    {% if post.title != null %}
+<ul class="posts-list">
+
+    {% assign category = page.category | default: page.title %}
+    {% for post in site.categories[category] %}
     <li>
-        {% if post.link %}
-        <a href="{{ post.link }}">
-            {% else %}
+        <h3>
             <a href="{{ site.baseurl }}{{ post.url }}">
-                {% endif %}
-                {{post.title}}
+                {{ post.title }}
             </a>
-            <time> {{ post.date | date: "%Y-%m-%d" }}</time>
-            {% for tag in post.tags %}
-            <a id="categoryPostTag" class="tag" href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
-                {{ tag }}
-            </a>
-            {{% endfor %}}
+            <small>{{ post.date | date_to_string }}</small>
+        </h3>
     </li>
-    {% endif %}
+    {% endfor %}
+
 </ul>
-{% endfor %}
