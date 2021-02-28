@@ -2,6 +2,7 @@
 layout: post
 title: "Terminal Overview"
 image:
+categories: Bash_Shell_Script
 tags:
   - Bash Shell Script
   - Udemy
@@ -11,11 +12,3 @@ tags:
 
 Terminal Overview
 
-Command
-![](/assets/images/posts/Linux Bash Shell/Section1/Terminal Overview/Pasted%20Graphic.png)
-
-![](/assets/images/posts/Linux Bash Shell/Section1/Terminal Overview/Pasted%20Graphic%201.png)
-
-![](/assets/images/posts/Linux Bash Shell/Section1/Terminal Overview/Pasted%20Graphic%202.png)
-
-![](/assets/images/posts/Linux Bash Shell/Section1/Terminal Overview/Pasted%20Graphic%203.png)
