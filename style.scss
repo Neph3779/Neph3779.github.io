@@ -26,7 +26,8 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 740px;
+  max-width: 1024px;
+  // max-width: 740px;
   padding: 0 10px;
   width: 100%;
 }
@@ -398,6 +399,12 @@ nav {
   }
 }
 
+#entry{
+
+    br {display: none;}
+ p br {display: inline;}
+}
+
 // Posts
 .posts > .post {
   padding-bottom: 2em;
@@ -409,9 +416,13 @@ nav {
   border-bottom: none;
 }
 
-.post {
+.category, .post {
   h1 {
     margin-bottom: .1em;
+  }
+
+  .meta {
+    text-align: right;
   }
 
   .date {
@@ -434,7 +445,7 @@ nav {
       display: inline;
       margin: 0;
 
-      > a {
+      > #categoryPostTag, a {
         margin: 3px 3px 3px 0;
         padding: .5px 4px;
         color: $tag-index-label-color;
@@ -499,8 +510,21 @@ nav {
     margin-left: 3px;
   }
 }
+//Categories
+.categories {
+  span {
 
-// Tags
+    padding: .5px 5px;
+
+    &.count {
+      background-color: $tag-index-count-background-color;
+      border-radius: 3px 3px 3px 3px;
+    }
+  }
+}
+
+
+// Category, Tags
 .tags > .label {
   > li:before {
     content: "";
@@ -532,7 +556,7 @@ nav {
   }
 }
 
-.tags > .tag {
+.category, .tags > .tag {
   a {
     color: $base-color;
   }
@@ -542,6 +566,13 @@ nav {
     font-weight: 300;
     margin-left: 3px;
   }
+}
+#categoryPostTag {
+  margin: 3px 3px 3px 0;
+  padding: .5px 4px;
+  color: $tag-index-label-color;
+  background-color: $tag-index-label-background-color;
+  border-radius: 3px;
 }
 
 // Footer
