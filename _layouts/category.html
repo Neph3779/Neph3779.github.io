@@ -3,23 +3,23 @@ layout: page
 ---
 {% assign posts = (site.categories[page.title] | sort) %}
 {% for post in posts %}
-    <ul class="category">
-          {% if post.title != null %}
-            <li>
-              {% if post.link %}
-                <a href="{{ post.link }}">
-              {% else %}
-                <a href="{{ site.baseurl }}{{ post.url }}">
-              {% endif %}
-                  {{ post.title }}
-                </a>
-                <time>{{ post.date | date: "%Y-%m-%d" }}</time>
-                  {% for tag in post.tags %}
-                <a id="categoryPostTag" class="tag" href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
-                  {{ tag }}
-                </a>
-                  {% endfor %}
-            </li>
-          {% endif %}
-    </ul>
+<ul class="category">
+  {% if post.title != null %}
+  <li>
+    {% if post.link %}
+    <a href="{{ post.link }}">
+      {% else %}
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {% endif %}
+        {{ post.title }}
+      </a>
+      <time>{{ post.date | date: "%Y-%m-%d" }}</time>
+      {% for tag in post.tags %}
+      <a id="categoryPostTag" class="tag" href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
+        {{ tag }}
+      </a>
+      {% endfor %}
+  </li>
+  {% endif %}
+</ul>
 {% endfor %}
