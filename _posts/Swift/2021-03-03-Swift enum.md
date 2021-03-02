@@ -63,11 +63,11 @@ enum은 연관된 항목을 묶어서 표현할 수 있는 타입입니다!
 자 그럼 이런 경우에 enum을 사용하면 어떨까요?
 
 ```swift
-enum memberOfNephCorporation {
+enum memberOfNephCorp: String {
 	case boss //Neph
-  case teamLeader //Elizabeth
-  case departmentLeader //Eric
-  case intern //Kanye
+	case AteamLeader //Elizabeth
+	case departmentLeader //Eric
+	case intern //Kanye
 }
 ```
 
@@ -96,7 +96,7 @@ enum memberOfNephCorp: String {
 
   
 
-이렇게 case마다 고유의 값(원시 값)들을 배정해줄 수 있습니다!  (Neph 주식회사의 임원 자리는 아직 공석이라  `AteamLeader` 에는 아무 값도 배정해주지 않았어요! )
+이렇게 case마다 고유의 값(원시 값)들을 배정해줄 수 있습니다!  (Neph 주식회사의 임원 자리는 아직 공석이라  `AteamLeader` 에는 아무 값도 배정해주지 않았어요! )
 
 그러면 이제 원시 값을 출력해볼까요?
 
@@ -143,7 +143,7 @@ let BteamLeader = memberOfNephCorp(rawValue: "Anna")
 
 ##### 
 
-#### 만약 각각의 case가 독특한 점들이 있다면 이를 어떻게 저장해줄 수 있을까요?  
+#### 만약 각각의 case가 독특한 점들이 있다면 이를 어떻게 저장해줄 수 있을까요?  
 
 바로 **연관값**을 통해 저장해줄 수 있습니다
 
@@ -163,7 +163,7 @@ enum ItalianFood {
 
 ---
 
-  
+  
 
 ##### 오늘 배운 내용만으로도 충분히 강력한 enum type이지만 이보다 더 다양한 기능들을 구현할 수 있습니다
 
@@ -173,7 +173,7 @@ enum ItalianFood {
 
 
 
-> ## 피드백은 언제나 환영합니다!
+> ## 피드백은 언제나 환영합니다!
 
 
 
