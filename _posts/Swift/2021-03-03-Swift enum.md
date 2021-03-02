@@ -54,11 +54,11 @@ enum은 연관된 항목을 묶어서 표현할 수 있는 타입입니다!
 
 ##### 계절은 4계절이 있으니 enum type을 통해 Season type을 만들어주면 편리하겠죠? 😆  
 
-<br/><br/>
+<br/>
 
 ---
 
-<br/><br/>
+<br/>
 
 자 그럼 이런 경우에 enum을 사용하면 어떨까요?
 
@@ -105,7 +105,7 @@ enum memberOfNephCorp: String {
 ```swift
 let bossOfNephCorp: memeberOfNephCorp = .boss
 // var boss = memberOfNephCorporation.boss 와 동일하게 작동합니다.
-<br/>
+
 print("네프 주식회사의 사장은 \(bossOfNephCorp.rawValue)입니다.")
 // 출력 : 네프 주식회사의 사장은 Neph입니다.
 print("네프 주식회사의 사장은 \(bossOfNephCorp)입니다.")
@@ -143,7 +143,7 @@ let leaderOfTeamB = memberOfNephCorp(rawValue: "Anna")
 
 <br/>
 
-#### 만약 각각의 case가 독특한 점들이 있다면 이를 어떻게 저장해줄 수 있을까요?  
+> #### 만약 각각의 case가 독특한 점들이 있다면 이를 어떻게 저장해줄 수 있을까요?  
 
 바로 **연관값**을 통해 저장해줄 수 있습니다
 
