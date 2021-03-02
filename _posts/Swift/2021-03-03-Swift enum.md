@@ -32,7 +32,7 @@ enum Season {
 } // 위의 코드와 동일하게 동작합니다.
 ```
 <br/><br/>
-  
+
 
 enum은 연관된 항목을 묶어서 표현할 수 있는 타입입니다!
 
@@ -88,7 +88,7 @@ Swift에서는 이런 점을 해결하기 위해 case마다 원시 값(Raw Value
 ```swift
 enum memberOfNephCorp: String {
 	case boss = "Neph"
-	case AteamLeader = "Elizabeth"
+	case leaderOfTeamA = "Elizabeth"
 	case departmentLeader = "Eric"
 	case intern = "Kanye"
 }
@@ -129,7 +129,7 @@ print("네프 주식회사의 사장은 \(bossOfNephCorp)입니다.")
 ```swift
 let bossOfNephCorp = memberOfNephCorp(rawValue: "Neph")
 // "Neph"라는 rawValue가 존재하므로 boss가 할당됨
-let BteamLeader = memberOfNephCorp(rawValue: "Anna")
+let leaderOfTeamB = memberOfNephCorp(rawValue: "Anna")
 // "Anna"라는 rawValue가 없으므로 nil이 할당됨
 ```
 
