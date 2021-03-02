@@ -1,7 +1,8 @@
 ---
 layout: page
 ---
-{% assign posts = (site.categories[page.title] | sort | reverse) %} #여기에 reverse 써주면 최신글부터 나오네
+{% assign posts = (site.categories[page.title] | sort | reverse) %}
+<!-- 여기에 reverse를 써줘야 최신글이 젤 위로 감-->
 {% for post in posts %}
 <ul class="category">
   {% if post.title != null %}
