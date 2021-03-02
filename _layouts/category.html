@@ -1,7 +1,7 @@
 ---
 layout: page
 ---
-{% assign posts = (site.categories[page.title] | sort) %}
+{% assign posts = (site.categories[page.title] | sort | reverse) %}
 {% for post in posts %}
 <ul class="category">
   {% if post.title != null %}
