@@ -65,7 +65,7 @@ enum은 연관된 항목을 묶어서 표현할 수 있는 타입입니다!
 ```swift
 enum memberOfNephCorp: String {
 	case boss //Neph
-	case AteamLeader //Elizabeth
+	case leaderOfTeamA //Elizabeth
 	case departmentLeader //Eric
 	case intern //Kanye
 }
