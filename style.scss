@@ -460,7 +460,7 @@ nav {
       display: inline;
       margin: 0;
 
-      > #categoryPostTag, a {
+      > #categoryPostTag, a { //Tag 블록
         margin: 3px 3px 3px 0;
         padding: .5px 4px;
         color: $tag-index-label-color;
@@ -517,6 +517,13 @@ nav {
 .archive {
   a {
     color: $base-color;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover, &:active {
+    color: #2AC1BC;
+    //text-decoration: underline; //이거 있으면 링크에 밑줄 생김 hover는 올려놨을때, active는 누를 때 (누르는 동안)
+    //font-weight: bold;
+  }
   }
   time {
     color: $base-lighten-color;
@@ -574,6 +581,13 @@ nav {
 .category, .tags > .tag { //여기가 태그 들어가면 나오는 곳
   a {
     color: $base-color;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover, &:active {
+    color: #2AC1BC;
+    //text-decoration: underline; //이거 있으면 링크에 밑줄 생김 hover는 올려놨을때, active는 누를 때 (누르는 동안)
+    //font-weight: bold;
+  }
   }
   time {
     color: $base-lighten-color;
