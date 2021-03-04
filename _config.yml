@@ -36,7 +36,7 @@ navigation:
 #  url: https://github.com/AWEEKJ/kiko-now
 
 # Pagination
-paginate: 6
+paginate: 10
 sort_reverse: true
 
 # Includes an icon in the footer for each username you enter

@@ -55,6 +55,9 @@ h1 {
 
 h2 {
   font-size: 24px;
+  a {
+    color: inherit;
+  }
 }
 
 h3 {
@@ -84,6 +87,18 @@ a {
     color: #2AC1BC;
     //text-decoration: underline; //이거 있으면 링크에 밑줄 생김 hover는 올려놨을때, active는 누를 때 (누르는 동안)
     //font-weight: bold;
+  }
+}
+.categories{
+  a {
+    color: $base-color;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover, &:active {
+      color: #2AC1BC;
+      //text-decoration: underline; //이거 있으면 링크에 밑줄 생김 hover는 올려놨을때, active는 누를 때 (누르는 동안)
+      //font-weight: bold;
+    }
   }
 }
 
@@ -331,7 +346,7 @@ img {
   margin-bottom: 50px;
 }
 
-.masthead {
+.masthead { //상단 바 수정할때
   padding: 20px 0;
   border-bottom: 1px solid $lightGray;
 
@@ -649,6 +664,9 @@ footer {
       left: 0;
     }
   }
+}
+.notbold {
+  font-weight:normal
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
