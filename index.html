@@ -10,12 +10,11 @@ layout: default
   {% assign sortedPosts = paginator.posts | sort: 'date' | reverse %}
   {% for post in sortedPosts %}
   <article class="post">
-    <h2>
-      <span class:'notbold'>
+    <h1>
+      <span class='notbold'>
         <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
       </span>
-
-    </h2>
+    </h1>
 
     <div align="right" class="category">
       <a href="/categories/{{ categoryName }}">
