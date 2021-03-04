@@ -6,42 +6,49 @@ layout: default
   <span>
     <h1>{{ page.title }}</h1>
   </span>
-  <span align="right">
-    <h6>{{ page.categories[0] }}</h6>
-  </span>
-
-  <div class="meta">
-    <span class="date">
+  <div align="right" class="date">
+    <h4 style="display: inline-block;"> {{ page.categories[0] }} &nbsp; </h4>
+    <!-- &nbsp;는 공백 삽입  -->
+    <h6 style="display: inline-block;"> {{ page.date | date: "%Y-%m-%d" }} </h6>
+  </div>
+  <!-- <div class="meta">
+    <span class="date" align="right">
       {{ page.date | date: "%Y-%m-%d" }}
     </span>
-
-    <ul class="tag">
-      {% for tag in page.tags %}
-      <li>
-        <a href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
-          {{ tag }}
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
+  </div> -->
+  <hr>
 
   <div id="entry" class="entry">
     {{ content | newline_to_br }}
   </div>
+  <br>
+  <ul class="tag">
+    tag:
+    {% for tag in page.tags %}
+    <li>
+      <a href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
+        {{ tag }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
   <div class="pagination">
     {% if page.previous.url %}
     <span class="prev">
+      &#xE000;
       <a href="{{ site.url }}{{ site.baseurl }}{{ page.previous.url }}">
-        &#xE000; {{ page.previous.title }}
+        {{ page.previous.title }}
       </a>
     </span>
     {% endif %}
+
     {% if page.next.url %}
     <span class="next">
       <a href="{{ site.url }}{{ site.baseurl }}{{ page.next.url }}">
-        {{ page.next.title }} &#xE001;
+        {{ page.next.title }}
+
       </a>
+      &#xE001;
     </span>
     {% endif %}
   </div>
