@@ -37,20 +37,19 @@ layout: default
   <div class="pagination">
     {% if page.previous.url %}
     <span class="prev">
-      &#xE000;
       <a href="{{ site.url }}{{ site.baseurl }}{{ page.previous.url }}">
-        {{ page.previous.title }}
-      </a>
+        < {{ page.previous.title }} </a>
     </span>
     {% endif %}
 
     {% if page.next.url %}
     <span class="next">
+
       <a href="{{ site.url }}{{ site.baseurl }}{{ page.next.url }}">
         {{ page.next.title }}
-
+        >
       </a>
-      &#xE001;
+
     </span>
     {% endif %}
   </div>
