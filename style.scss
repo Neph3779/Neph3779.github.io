@@ -89,6 +89,7 @@ a {
     //font-weight: bold;
   }
 }
+
 .categories{
   a {
     color: $base-color;
@@ -102,17 +103,34 @@ a {
   }
 }
 
-// a :not(h1) :not(Header) { // 제목 링크는 밑줄 싫어
-//   color: #2AC1BC;
-//   text-decoration: none;
-//   cursor: pointer;
-//   &:hover, &:active {
-//     color: #2AC1BC;
-//     text-decoration: underline; //이거 있으면 링크에 밑줄 생김 hover는 올려놨을때, active는 누를 때 (누르는 동안)
-//     font-weight: bold;
-//   }
-// }
 
+
+.post {
+  a {
+    color: #2AC1BC;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover, &:active {
+      color: #2AC1BC;
+      //text-decoration: underline; //이거 있으면 링크에 밑줄 생김 hover는 올려놨을때, active는 누를 때 (누르는 동안)
+      font-weight: bold;
+    }
+  }
+}
+
+.notbold {
+  font-weight: 300;
+  a {
+    color: $base-color;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover, &:active {
+      color: #2AC1BC;
+      //text-decoration: underline; //이거 있으면 링크에 밑줄 생김 hover는 올려놨을때, active는 누를 때 (누르는 동안)
+      font-weight: normal;
+    }
+  }
+}
 
 em, i {
   font-style: italic;
@@ -665,9 +683,7 @@ footer {
     }
   }
 }
-.notbold {
-  font-weight: 300;
-}
+
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start

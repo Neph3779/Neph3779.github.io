@@ -23,7 +23,7 @@ layout: default
   </div>
   <br>
   <ul class="tag">
-    tag:
+    <h5 style="display: inline-block;">tag: </h5>
     {% for tag in page.tags %}
     <li>
       <a href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
@@ -53,6 +53,8 @@ layout: default
     </span>
     {% endif %}
   </div>
-
-  {% include disqus.html %}
+  <script src="https://utteranc.es/client.js" repo="Neph3779/blog-comments" issue-term="[ENTER TERM HERE]" label="댓글"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+  <!-- {% include disqus.html %} -->
 </article>
