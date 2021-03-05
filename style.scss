@@ -8,11 +8,6 @@
 @import "reset";
 @import "open-color";
 @import "variables";
-@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
-
-.jejugothic * { 
- font-family: 'Jeju Gothic', sans-serif;
-}
 
 // Syntax highlighting @import is at the bottom of this file
 
@@ -160,7 +155,7 @@ sup {
 
 hr {
   border: 0;
-  border-top: 1px solid $divider-color;
+  border-top: 3px solid $divider-color;
   margin: 1.5em auto;
 }
 
