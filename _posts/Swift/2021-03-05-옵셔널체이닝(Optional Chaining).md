@@ -77,7 +77,7 @@ Optional Chaining을 이용하면 여러개의 Optional 변수의 값을 연쇄�
 ```swift
 func checkedUserInput(_ optionalStringUserInput: String?) throws -> Int {
 	guard let stringUserInput = optionalStringUserInput,
-  	let integerUserInput = Int(stringUserInput)
+  	  let integerUserInput = Int(stringUserInput)
 	else {
 		throw GameError.invalidInput
 	}
