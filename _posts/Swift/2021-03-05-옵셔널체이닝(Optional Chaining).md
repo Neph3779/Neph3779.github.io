@@ -95,7 +95,7 @@ func checkedUserInput(_ optionalStringUserInput: String?) throws -> Int {
 
 아직 로직이 이해가 잘 가지 않으실 분들을 위해 Flow chart를 준비했습니다!
 
-<img src="/assets/images/posts/OptionalChainingFlowChart.png" alt="OptionalChainingFlowChart" style="zoom:50%;" />
+<p align="center"><img src="/assets/images/posts/OptionalChainingFlowChart.png" alt="OptionalChainingFlowChart" style="zoom:50%;" /></p>
 
 함수가 시작하며 받아온`optionalStringUserInput`이 nil이라면 throw GameError.invalidInput과 함께 함수가 종료됩니다.
 
