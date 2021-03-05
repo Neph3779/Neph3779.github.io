@@ -33,11 +33,11 @@ tags:
 func checkedUserInput(_ optionalStringUserInput: String?) throws -> Int{
   
 	guard let stringUserInput = optionalStringUserInput else {
-			throw GameError.invalidInput
+		throw GameError.invalidInput
 	}
   
 	guard let integerUserInput = Int(stringUserInput) else {
-			throw GameError.invalidInput
+		throw GameError.invalidInput
 	}
   
 	return integerUserInput
@@ -77,7 +77,7 @@ Optional Chaining을 이용하면 여러개의 Optional 변수의 값을 연쇄�
 ```swift
 func checkedUserInput(_ optionalStringUserInput: String?) throws -> Int {
 	guard let stringUserInput = optionalStringUserInput,
-  			let integerUserInput = Int(stringUserInput)
+  	let integerUserInput = Int(stringUserInput)
 	else {
 		throw GameError.invalidInput
 	}
@@ -97,11 +97,11 @@ func checkedUserInput(_ optionalStringUserInput: String?) throws -> Int {
 
 <p align="center"><img src="/assets/images/posts/OptionalChainingFlowChart.png" alt="OptionalChainingFlowChart" style="zoom:50%;" /></p>
 
-함수가 시작하며 받아온`optionalStringUserInput`이 nil이라면 throw GameError.invalidInput과 함께 함수가 종료됩니다.
+함수가 시작하며 받아온 `optionalStringUserInput`이 nil이라면 throw GameError.invalidInput과 함께 함수가 종료됩니다.
 
 만약 nil이 아니라면 stringUserInput에 `optionalStringUserInput`을 할당해주고(값을 저장해주고) `Int`로 변환가능한지에 대해서 체크합니다.
 
-이 과정에서` Int`로 변환할 수 없다면 해당 `Int(stringUserInput)`은 nil이 되며 위에서와 마찬가지로 throw GameError.invalidInput과 함께 함수는 종료됩니다.
+이 과정에서 `Int`로 변환할 수 없다면 해당 `Int(stringUserInput)`은 nil이 되며 위에서와 마찬가지로 throw GameError.invalidInput과 함께 함수는 종료됩니다.
 
 <br/>
 
