@@ -8,6 +8,12 @@
 @import "reset";
 @import "open-color";
 @import "variables";
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+.jejugothic * { 
+ font-family: 'Jeju Gothic', sans-serif;
+}
+
 // Syntax highlighting @import is at the bottom of this file
 
 /**************/
