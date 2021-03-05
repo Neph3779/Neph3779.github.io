@@ -23,7 +23,8 @@ layout: default
   </div>
   <br>
   <ul class="tag">
-    <h5 style="display: inline-block;">tag: </h5>
+    <strong><i class="fa fa-tag" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].tags_label | default:
+      "Tags:" }} </strong>
     {% for tag in page.tags %}
     <li>
       <a href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
