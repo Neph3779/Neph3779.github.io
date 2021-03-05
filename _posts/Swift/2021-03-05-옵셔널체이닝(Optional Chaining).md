@@ -32,15 +32,15 @@ tags:
 
 func checkedUserInput(_ optionalStringUserInput: String?) throws -> Int{
   
-		guard let stringUserInput = optionalStringUserInput else {
-				throw GameError.invalidInput
-		}
+	guard let stringUserInput = optionalStringUserInput else {
+			throw GameError.invalidInput
+	}
   
-		guard let integerUserInput = Int(stringUserInput) else {
-				throw GameError.invalidInput
-		}
+	guard let integerUserInput = Int(stringUserInput) else {
+			throw GameError.invalidInput
+	}
   
-		return integerUserInput
+	return integerUserInput
 }
 ```
 
@@ -76,12 +76,12 @@ Optional Chaining을 이용하면 여러개의 Optional 변수의 값을 연쇄�
 
 ```swift
 func checkedUserInput(_ optionalStringUserInput: String?) throws -> Int {
-		guard let stringUserInput = optionalStringUserInput,
-  				let integerUserInput = Int(stringUserInput)
-		else {
-			throw GameError.invalidInput
-		}
-		return integerUserInput
+	guard let stringUserInput = optionalStringUserInput,
+  			let integerUserInput = Int(stringUserInput)
+	else {
+		throw GameError.invalidInput
+	}
+	return integerUserInput
 }
 ```
 
@@ -89,7 +89,7 @@ func checkedUserInput(_ optionalStringUserInput: String?) throws -> Int {
 
 두개로 분리되어있던 guard let 구문을 하나로 합쳤습니다!
 
-두개의 변수는 `,`를 통해 구분해주었네요! (`&&`을 사용해줘도 동일하게 동작합니다)
+두개의 변수는 `,`를 통해 구분해주었네요! (`&&`을 사용해줘도 동일하게 동작합니다)
 
 어떤가요? 이렇게 여러개의 Optional 값을 한번에 처리해주니 편리하지 않나요?
 
