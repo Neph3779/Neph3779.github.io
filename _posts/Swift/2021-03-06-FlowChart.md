@@ -169,6 +169,7 @@ func merge(_ start:Int, _ end: Int) {
         unsorted[i] = sorted[i]
     }
 }
+```
 </div>
 </details>
 
