@@ -160,7 +160,7 @@ let weirdMonth = memberOfNephCorp(rawValue: 13)
 
 <br/>
 
-> #### 만약 각각의 case가 독특한 점들이 있다면 이를 어떻게 저장해줄 수 있을까요?  
+> #### 만약 각각의 case마다 독특한 특징들이 있다면 이를 어떻게 저장해줄 수 있을까요?  
 
 바로 **연관값**을 통해 저장해줄 수 있습니다
 
@@ -197,7 +197,7 @@ enum ItalianFood {
 
 #### 수정 이력
 
-- 2021/03/06: rawValue의 활용사례가 적절하지 않은 것 같다는 yagom의 피드백을 수용하여 [이 글](https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/Chapter-3/enums.html)을 참고하여 활용사례를 수정함.
+- 2021/03/06: rawValue의 활용사례가 적절하지 않은 것 같다는 yagom의 피드백을 수용하여 [이 글](https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/Chapter-3/enums.html)을 참고하여 활용사례를 수정함.
 
 
 
