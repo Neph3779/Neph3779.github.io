@@ -266,12 +266,14 @@ tbody tr:nth-child(odd) th {
 // Blockquote
 blockquote {
   font-weight: 300;
-  padding: 0 0 0 1.4rem;
-  margin: 0 2rem 1rem 0;
-  border-left: .2em solid $blockquote-border-color;
-
+  padding: 4px 16px 4px 32px;
+  margin: 16px 0 16px 0;
+  border-left: 4px solid #929FDC;
+  background-color: #F8F9FA;
+  font-weight: bold;
   p {
-    color: $blockquote-color;
+    color: #777B7F;
+    
   }
 
   p:last-child {
