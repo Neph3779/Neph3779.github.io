@@ -66,21 +66,27 @@ enum은 연관된 항목을 묶어서 표현할 수 있는 타입입니다!
 자 그럼 이런 경우에 enum을 사용하면 어떨까요?
 
 ```swift
-enum memberOfNephCorp: String {
-	case boss //Neph
-	case leaderOfTeamA //Elizabeth
-	case departmentLeader //Eric
-	case intern //Kanye
+enum Month {
+	case january // 1
+  case february // 2
+  case march // 3
+  case april // 4
+  case may // 5
+  case june // 6
+  case july // 7
+  case august // 8
+  case september // 9
+  case october // 10
+  case november // 11
+  case december // 12
 }
 ```
 
 <br/><br/>
 
-##### NephCorporation의 직원 총 4명의 직책을 각각의 case로 적어주었고   
+12개의 달을 각각의 case로 만들어줬고 주석에는 해당하는 달의 숫자를 적어줬어요!
 
-##### 옆에 주석에는 해당 직책을 맡고있는 사람이 누구인지 적어줬어요
-
-음.. 각각의 case가 직책을 맡고있는 사람도 알려주면 좋을텐데.. 해결할 방법이 없을까요?  
+음.. 각각의 case에 맞는 값(주석으로 처리해준 값)을 case에 저장해줄수는 없을까요?
 
 <br/>
 
@@ -89,11 +95,19 @@ Swift에서는 이런 점을 해결하기 위해 case마다 원시 값(Raw Value
 코드부터 보시죠
 
 ```swift
-enum memberOfNephCorp: String {
-	case boss = "Neph"
-	case leaderOfTeamA = "Elizabeth"
-	case departmentLeader = "Eric"
-	case intern = "Kanye"
+enum Month: Int {
+	case january = 1
+  case february = 2
+  case march = 3
+  case april = 4
+  case may = 5
+  case june = 6
+  case july = 7
+  case august = 8
+  case september = 9
+  case october = 10
+  case november = 11
+  case december = 12
 }
 ```
 
@@ -106,13 +120,13 @@ enum memberOfNephCorp: String {
 <br/><br/>
 
 ```swift
-let bossOfNephCorp: memeberOfNephCorp = .boss
-// var boss = memberOfNephCorporation.boss 와 동일하게 작동합니다.
+let familyMonth: Month = .may
+// var familyMonth = Month.may 와 동일하게 작동합니다.
 
-print("네프 주식회사의 사장은 \(bossOfNephCorp.rawValue)입니다.")
-// 출력 : 네프 주식회사의 사장은 Neph입니다.
-print("네프 주식회사의 사장은 \(bossOfNephCorp)입니다.")
-// 출력 : 네프 주식회사의 사장은 boss입니다.
+print("가정의 달은 \(familyMonth.rawValue)월 입니다.")
+// 출력 : 가정의 달은 5월 입니다.
+print("가정의 달은 \(familyMonth)월 입니다.")
+// 출력 : 가정의 달은 may월 입니다.
 ```
 <br/><br/>
 
@@ -121,7 +135,7 @@ print("네프 주식회사의 사장은 \(bossOfNephCorp)입니다.")
 
 첫번째 print문장과 같이 `.rawValue` 를 통해 접근해줘야 원시 값을 출력할 수 있어요!
 
-두번째 print문장처럼 적는다면 case의 이름인 `boss` 가  출력되니 주의해주세요 😫😫
+두번째 print문장처럼 적는다면 case의 이름인 `may` 가  출력되니 주의해주세요 😫😫
 
 <br/>
 
@@ -130,10 +144,10 @@ print("네프 주식회사의 사장은 \(bossOfNephCorp)입니다.")
 가능합니다! 아래의 코드를 보시죠
 
 ```swift
-let bossOfNephCorp = memberOfNephCorp(rawValue: "Neph")
-// "Neph"라는 rawValue가 존재하므로 boss가 할당됨
-let leaderOfTeamB = memberOfNephCorp(rawValue: "Anna")
-// "Anna"라는 rawValue가 없으므로 nil이 할당됨
+let scienceMonth = Month(rawValue: 4)
+// 4라는 rawValue가 존재하므로 april이 할당됨
+let weirdMonth = memberOfNephCorp(rawValue: 13)
+// 13이라는 rawValue가 없으므로 nil이 할당됨
 ```
 
 <br/>
@@ -179,7 +193,11 @@ enum ItalianFood {
 
 
 
+---
 
+#### 수정 이력
+
+- 2021/03/06: rawValue의 활용사례가 적절하지 않은 것 같다는 yagom의 피드백을 수용하여 [이 글](https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/Chapter-3/enums.html)을 참고하여 활용사례를 수정함.
 
 
 
