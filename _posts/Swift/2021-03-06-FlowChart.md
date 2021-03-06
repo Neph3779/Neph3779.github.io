@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "플로우차트(Flow Chart)그리기"
+title: "플로우차트(Flow Chart) 그리는법"
 image:
 categories: Swift
 tags: 
