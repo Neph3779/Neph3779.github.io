@@ -21,7 +21,7 @@ html {
 
 body {
   background-color: #f9fafa;
-  font-family: $base-font;
+  font-family: Nanum Gothic;
   color: $base-color;
   line-height: 1.6;
 }
@@ -430,7 +430,7 @@ nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
   font-family: $helveticaNeue;
-  font-size: 18px;
+  font-size: 22px;
 
   @include mobile {
     float: none;
