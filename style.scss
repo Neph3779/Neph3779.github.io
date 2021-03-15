@@ -43,31 +43,32 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-h1, h2, h3, h5 {
-  font-weight: bold;
-}
+// h1, h2, h3, h5 {
+//   font-weight: bold;
+// }
 
 h1 {
-  font-size: 30px;
+  font-size: 36px;
   a {
     color: inherit;
   }
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 30px;
   a {
     color: inherit;
   }
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 24px;
+  color: #24527c;
 }
 
 h4 {
   font-size: 20px;
-  color: $base-lighten-color; 
+  //color: $base-lighten-color; 
   // 이거때문에 연하게 나옴
 }
 
@@ -81,11 +82,11 @@ p {
 }
 
 a {
-  color: #2AC1BC;
+  color: #5AB6DB;
   text-decoration: none;
   cursor: pointer;
   &:hover, &:active {
-    color: #2AC1BC;
+    color: #5AB6DB;
     //text-decoration: underline; //이거 있으면 링크에 밑줄 생김 hover는 올려놨을때, active는 누를 때 (누르는 동안)
     //font-weight: bold;
   }
@@ -97,7 +98,7 @@ a {
     text-decoration: none;
     cursor: pointer;
     &:hover, &:active {
-      color: #2AC1BC;
+      color: #5AB6DB;
       //text-decoration: underline; //이거 있으면 링크에 밑줄 생김 hover는 올려놨을때, active는 누를 때 (누르는 동안)
       //font-weight: bold;
     }
@@ -110,11 +111,11 @@ a {
 
 .post {
   a {
-    color: #2AC1BC;
+    color: #5AB6DB;
     text-decoration: none;
     cursor: pointer;
     &:hover, &:active {
-      color: #2AC1BC;
+      color: #5AB6DB;
       //text-decoration: underline; //이거 있으면 링크에 밑줄 생김 hover는 올려놨을때, active는 누를 때 (누르는 동안)
       font-weight: bold;
     }
@@ -128,7 +129,7 @@ a {
     text-decoration: none;
     cursor: pointer;
     &:hover, &:active {
-      color: #2AC1BC;
+      color: #5AB6DB;
       //text-decoration: underline; //이거 있으면 링크에 밑줄 생김 hover는 올려놨을때, active는 누를 때 (누르는 동안)
       font-weight: normal;
     }
