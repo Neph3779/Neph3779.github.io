@@ -177,6 +177,7 @@ ol, ul {
 }
 
 ul {
+  
   > li:before {
     content: "\2022";
     padding-right: $ul-bullets-right-space;
@@ -220,6 +221,36 @@ li {
     }
   }
 }
+
+// cory
+// li,
+//   dl {
+//     font-size: 0.85em;
+//   }
+
+//   /* paragraph indents */
+//   p {
+//     margin: 0 0 $indent-var;
+
+//     /* sibling indentation*/
+//     @if $paragraph-indent == true {
+//       & + p {
+//         text-indent: $indent-var;
+//         margin-top: -($indent-var);
+//       }
+//     }
+//   }
+  
+// ol > ol,
+//   ul > ol,
+//   ol > ul {
+//     font-size: 0.85em;
+//   }
+
+//   ul > ul {
+//     font-size: 0.95em;
+//   }
+// 
 
 // Definition list
 dt {
