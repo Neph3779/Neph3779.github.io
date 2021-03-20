@@ -2,7 +2,7 @@
 layout: post
 title: "Swift View 형성과정"
 image:
-categories: Swift Memo
+categories: [Swift Memo]
 tags: 
   - View 형성
   - RootViewController

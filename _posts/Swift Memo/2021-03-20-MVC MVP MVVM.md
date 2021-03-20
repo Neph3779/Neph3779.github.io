@@ -2,7 +2,7 @@
 layout: post
 title: "MVC, MVP, MVVM 차이"
 image:
-categories: Swift Memo
+categories: [Swift Memo]
 tags: 
   - 디자인패턴
   - MVC
