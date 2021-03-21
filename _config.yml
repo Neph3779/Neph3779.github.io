@@ -62,7 +62,7 @@ footer-text: © 2021 Neph, Powered by Kiko Now, jekyll, Github pages
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # You can find your shortname on the Settings page of your Disqus account
-disqus: https-neph3779-github-io
+# disqus: https-neph3779-github-io
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics: UA-190717919-1
@@ -106,12 +106,16 @@ paginate_path: /page:num/
 version: v1.2.0
 
 # Jekyll 3 now only supports Kramdown for Markdown
+markdwon: kramdown
 kramdown:
+  input: GFM
+  hard_wrap: true
   syntax_highlighter_opts:
     # span:
     #   line_numbers: false
     block:
       line_numbers: false
+  toc_levels: "1,2"
   
 
 # Set the Sass partials directory, as we're using @imports
@@ -124,6 +128,7 @@ plugins:
 #  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
   - jekyll-paginate
   - jekyll-seo-tag #seo tag
+  # - jekyll-toc
 
 
 # Exclude these files from your production _site
