@@ -7,8 +7,9 @@ layout: default
 {% endif %}
 
 <div class="posts">
-  {% assign sortedPosts = paginator.posts | sort: 'date' | reverse %}
+  {% assign sortedPosts = paginator.posts | sort: 'date' | sort | reverse %}
   {% for post in sortedPosts %}
+  <!-- 먼저 날짜순 정렬하고 그 다음에 이름순 정렬 후 reverse -->
   <article class="post">
     <h2>
       <span class='notbold'>
@@ -52,14 +53,13 @@ layout: default
   {% if paginator.previous_page %}
   <span class="prev">
     <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="prev">
-      &#xE000; Previous
-    </a>
+      < Previous </a>
   </span>
   {% endif %}
   {% if paginator.next_page %}
   <span class="next">
     <a href="{{ site.baseurl}}{{ paginator.next_page_path }}" class="next">
-      Next &#xE001;
+      Next >
     </a>
   </span>
   {% endif %}
