@@ -63,14 +63,6 @@ disabled_rules:
 
 
 
-추가
-
-대체 이 빨간 파일들은 왜 이렇게 나오는지 알 수가 없다.. ㅠㅠ
-
-<img src="../../assets/TIL/RedFile.png" alt="RedFile" style="zoom:50%;" />
-
-
-
 ### 참고한 링크
 
 [Swift Lint 공식 깃허브](https://github.com/realm/SwiftLint)
