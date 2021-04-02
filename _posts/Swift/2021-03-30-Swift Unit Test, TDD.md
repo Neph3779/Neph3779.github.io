@@ -13,6 +13,8 @@ sitemap:
 
 
 
+
+
 이번 글에는 지난 3월 29일 활동학습 시간에 배운 Unit Test와 Result 자료형에 대해 정리해보겠습니다.
 
 
@@ -105,5 +107,14 @@ Refactor: Improve the Design of Existing Code
 
 ### 글 작성을 위해 참고한 링크
 
+[TDD 10가지 팁](https://medium.com/@rinae/tdd-test-driven-development-%EB%A5%BC-%EC%97%B0%EC%8A%B5%ED%95%98%EB%A9%B4%EC%84%9C-%EC%B0%B8%EA%B3%A0%ED%95%98%EA%B8%B0-%EC%A2%8B%EC%9D%80-%ED%8C%81-10%EA%B0%80%EC%A7%80-d8cf46ae1806)
+
 [선택이 아닌 필수 TDD](https://ahea.wordpress.com/2018/09/10/%EC%84%A0%ED%83%9D%EC%9D%B4-%EC%95%84%EB%8B%8C-%ED%95%84%EC%88%98-tdd/)
 
+[카카오헤어샵의 TDD](https://brunch.co.kr/@cg4jins/9)
+
+[Test 관련 용어 정리](https://johngrib.github.io/wiki/test-terms/#fnref:devops-handbook-180:2)
+
+[Error를 Throw하는 테스트 케이스 다루는 법1](https://www.appsdeveloperblog.com/unit-testing-code-that-throws-error-in-swift/)
+
+[Error를 Throw하는 테스트 케이스 다루는 법1](https://jayeshkawli.ghost.io/try-catch-blocks-and-unit-tests-in-swift-3-0/)
