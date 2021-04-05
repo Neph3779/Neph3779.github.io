@@ -23,7 +23,9 @@ body {
   background-color: #f9fafa;
   font-family: Nanum Gothic;
   color: $base-color;
-  line-height: 1.6;
+  line-height: 2.1;
+  letter-spacing: 2;
+  word-spacing: 4px;
 }
 
 .container {
@@ -49,21 +51,22 @@ h1, h2, h3, h4, h5, h6 {
 // }
 
 h1 {
-  font-size: 36px;
+  font-size: 38px;
   a {
     color: inherit;
   }
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 34px;
   color: #3B6272;
   font-weight: 550;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 28px;
   color: #24527c;
+  font-weight: 400;
 }
 
 h4 {
