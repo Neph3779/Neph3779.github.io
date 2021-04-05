@@ -4,10 +4,12 @@
 //
 // IMPORTS
 //
+$sans-serif: 'Noto Sans KR';
 
 @import "reset";
 @import "open-color";
 @import "variables";
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans+KR|Ubuntu+Mono);
 // @import "_sass/notices";
 // Syntax highlighting @import is at the bottom of this file
 
@@ -20,8 +22,8 @@ html {
 }
 
 body {
-  background-color: #f9fafa;
-  font-family: Nanum Gothic;
+  //background-color: #f9fafa;
+  font-family: $sans-serif;
   color: $base-color;
   line-height: 2.1;
   letter-spacing: 2;
