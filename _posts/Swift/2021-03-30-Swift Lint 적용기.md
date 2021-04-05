@@ -29,7 +29,9 @@ sitemap:
 
 pod init이 정상적으로 됐다면 Podfile이 생성되었을텐데 에디터를 통해 오픈 (`vim Podfile`)
 
-Podfile의 target do 밑줄에 '원하는 라이브러리 이름' 을 적어주고 저장 (`SwiftLint` 추가)
+Podfile의 target do 밑줄에 pod '원하는 라이브러리 이름' 을 적어주고 저장 (`pod 'SwiftLint'` 추가)
+
+터미널에서 `pod install` 진행
 
 <br/> 
 
@@ -46,6 +48,14 @@ ${PODS_ROOT}/SwiftLint/swiftlint
 
 
 <br/> 
+
+`.swiftlint.yml`이라는 파일을 만들어서 불필요한 규칙들을 disable 시켜줄 수 있습니다. (Xcode내에서 empty 파일로 추가할수도 있지만 오류가 잦아 터미널에서 추가하는 것이 좋아보입니다.)
+
+규칙들은 아래의 링크를 통해 확인할 수 있습니다.
+
+[Swift Lint 공식 깃허브](https://github.com/realm/SwiftLint)
+
+[Swift Lint 공식문서](https://realm.github.io/SwiftLint/rule-directory.html)
 
 이번 계산기 프로젝트에서 불필요하다 생각되는 규칙들은 다음과 같이 disable 시켜줬습니다.
 
@@ -71,7 +81,7 @@ disabled_rules:
 
 [왕초보를 위한 코코아팟 사용법 (Zedd)](https://zeddios.tistory.com/25)
 
-[Swift Lint 사용법 (Zedd)](https://zeddios.tistory.com/25)
+[Swift Lint 사용법 (Zedd)](https://zeddios.tistory.com/447)
 
 [Swift Lint 써보기 (야곰닷넷)](https://yagom.net/forums/topic/swift-lint-%EC%8D%A8%EB%B3%B4%EA%B8%B0/)
 
