@@ -1,8 +1,8 @@
 ---
 title: Category
 layout: default
-description: "「지금까지 써온 글들의 목록」"
-header-img: "assets/bakcground.jpg"
+description: "「카테고리들」"
+header-img: "assets/background.jpg"
 ---
 
 <!-- 
@@ -54,7 +54,7 @@ https://github.com/kitian616/jekyll-TeXt-theme
         {%- endfor -%}
 
         {% comment %} group by year {% endcomment %}
-        {%- assign _currentdate = _article.date | date: '%Y' -%}
+        {%- assign _currentdate = _article.date | date: '%Y년 %m월' -%}
         {%- if _currentdate != _date -%}
         {%- unless forloop.first -%}</section>{%- endunless -%}
         <section>
