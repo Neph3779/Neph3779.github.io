@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Write code with my soul.">
+    <meta name="keywords" content="iOS 공부일지">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="2021년 02월 25일 공부일지 - Neph's iOS blog">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="Neph’s TIL (2021.02.25)
+">
+    
+    <meta property="article:published_time" content=" 2021-02-25T00:00:00Z">
+    
+    
+    
+    <meta property="article:tag" content="TIL">
+    
+    <meta property="article:tag" content="iOS">
+    
+    <meta property="article:tag" content="Swift">
+    
+    <meta property="article:tag" content="Yagom-Academy">
+    
+    
+    <meta property="og:image" content="https://neph3779.github.io/assets/logo.ico/apple-icon.png">
+    <meta property="og:url" content="https://neph3779.github.io/til/2021.02.25-TIL/">
+    <meta property="og:site_name" content="Neph's iOS blog">
+
+    <title>2021년 02월 25일 공부일지 - Neph's iOS blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://neph3779.github.io/til/2021.02.25-TIL/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href=" /css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href=" /css/hux-blog.min.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<!-- hack iOS CSS :active style -->
+
+<body ontouchstart="">
+
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Neph's Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="huxblog_navbar">
+                <div class="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="/archive/">Archive</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="/category/">Category</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li class="search-icon">
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <script>
+        // Drop Bootstarp low-performance Navbar
+        // Use customize navbar with high-quality material design animation
+        // in high-perf jank-free CSS3 implementation
+        var $body = document.body;
+        var $toggle = document.querySelector('.navbar-toggle');
+        var $navbar = document.querySelector('#huxblog_navbar');
+        var $collapse = document.querySelector('.navbar-collapse');
+
+        var __HuxNav__ = {
+            close: function () {
+                $navbar.className = " ";
+                // wait until animation end.
+                setTimeout(function () {
+                    // prevent frequently toggle
+                    if ($navbar.className.indexOf('in') < 0) {
+                        $collapse.style.height = "0px"
+                    }
+                }, 400)
+            },
+            open: function () {
+                $collapse.style.height = "auto"
+                $navbar.className += " in";
+            }
+        }
+
+        // Bind Event
+        $toggle.addEventListener('click', function (e) {
+            if ($navbar.className.indexOf('in') > 0) {
+                __HuxNav__.close()
+            } else {
+                __HuxNav__.open()
+            }
+        })
+
+        /**
+         * Since Fastclick is used to delegate 'touchstart' globally
+         * to hack 300ms delay in iOS by performing a fake 'click',
+         * Using 'e.stopPropagation' to stop 'touchstart' event from 
+         * $toggle/$collapse will break global delegation.
+         * 
+         * Instead, we use a 'e.target' filter to prevent handler
+         * added to document close HuxNav.  
+         *
+         * Also, we use 'click' instead of 'touchstart' as compromise
+         */
+        document.addEventListener('click', function (e) {
+            if (e.target == $toggle) return;
+            if (e.target.className == 'icon-bar') return;
+            __HuxNav__.close();
+        })
+    </script>
+    <!-- Search -->
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/assets/logo.ico/ms-icon-310x310.png" width="0" height="0"> -->
+<!-- <img src="/assets/background.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+
+
+
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/assets/background.jpg');
+        background: ;
+    }
+
+    
+</style>
+
+<header class="intro-header" >
+
+    <div class="header-mask"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/archive/?tag=TIL" title="TIL">TIL</a>
+                        
+                        <a class="tag" href="/archive/?tag=iOS" title="iOS">iOS</a>
+                        
+                        <a class="tag" href="/archive/?tag=Swift" title="Swift">Swift</a>
+                        
+                        <a class="tag" href="/archive/?tag=Yagom-Academy" title="Yagom-Academy">Yagom-Academy</a>
+                        
+                    </div>
+                    <h1>2021년 02월 25일 공부일지</h1>
+                    
+                    <h2 class="subheading"></h2>
+                    <span class="meta">Posted by Neph's Blog on February 25, 2021</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!-- Multi-Lingual -->
+                
+
+                <h1 id="nephs-til-20210225">Neph’s TIL (2021.02.25)</h1>
+
+<h3 id="습득한--내용">습득한  내용</h3>
+
+<ul>
+  <li>
+    <p>Git의 Reset과 hard, mixed, soft의 차이
+https://opentutorials.org/module/4032/24533
+(오늘도 어김없이 보게되는 짱활코딩의 영상)
+git reset – (soft / mixed / hard) 를 했을때 바뀌는 것들을 아래 표로 정리해봤다.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th> </th>
+          <th>Working directory</th>
+          <th>Staging Area</th>
+          <th>repository</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td>soft</td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td>mixed</td>
+          <td>mixed</td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>hard</td>
+          <td>hard</td>
+          <td>hard</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>이젠 슬슬 Head, master, repository, stage area, working directory에 대해 감이 잡히는 것 같다.</p>
+
+    <p>나중에 내가 풀어볼 퀴즈</p>
+
+    <p>Quiz 1) 순서대로 A, B, C commit이 이루어진 상황에서 git reset –mixed A를 해주면 내가 작업하던 파일의 내용이 A로 바뀔까? 이 상태에서 바로 git commit 명령어를 실행하면 무슨 일이 벌어질까?</p>
+
+    <p>Quiz 2)  순서대로 A, B, C commit이 이루어진 상황에서 git reset –soft A를 해준 뒤, git commit을 해주면 나의 working directory에는 어떤 파일이 남게될까? + 나의 git log는 어떻게 변할까?</p>
+  </li>
+  <li>
+    <p>새로운 Branch 생성시 이전 Commit들이 딸려오는데 중간에 쌓인 커밋 히스토리만 제거하긴 어렵다!
+https://okky.kr/article/374790
+(현직자들의 경험담)</p>
+  </li>
+  <li>
+    <p>다른 캠퍼들 피드백 내용 관찰
+cozy의 피드백에서 얻은 유용한 링크 : https://awesomeopensource.com/project/StyleShare/swift-style-guide#%EC%A4%84%EB%B0%94%EA%BF%88
+Lina의 피드백에서 알게된 단어: LGTM (Looks Good To Me 라는 단어, git comment에서 자주 쓴다고 함..)</p>
+  </li>
+  <li>
+    <p>오늘 알게된 git 관련 유용한 명령어들</p>
+
+    <ul>
+      <li>git log –graph : graph로 보여준다!</li>
+      <li>git –no-pager log –oneline : 화면 전환 없이 깔끔하게 로그들이 앞 7자리만 commit message와 함께 나온다.</li>
+      <li>git commit -am “$$$” : commit과 add를 한번에! (단, 한번이라도 커밋한 적 있는 파일을 다시 커밋하는 경우여야 함. 즉, 새로 만든 파일 있으면 안됨 but 그 파일이 이미 존재했었고 그걸 수정한 경우엔 이렇게 commit 가능)</li>
+      <li>git reset . : add한거 취소</li>
+    </ul>
+  </li>
+  <li>
+    <p>Bam이 남겨준 피드백에서 나온 단어인 Subscript를 공부하기 위해 연산 프로퍼티를 공부했다.
+get set에 대해 알게되었고 한 class / struct 연산 프로퍼티에서 다른 class/ struct의 프로퍼티를 활용하는 것이 가능하단 것까지 Kane과 함께한 실험을 통해 알게되었다.</p>
+
+    <p>처음에 Kane한테 내가 했던 질문이 “Subscript랑 연산자 프로퍼티 이거 왜 쓰는거에요? 그냥 .찍어서 프로퍼티에 접근하거나 연산자 구현하면 안되는걸까요?” 였다. 근데 설명을 더 읽다보니 Subscript의 파라미터, 반환값을 통해 오버로딩 해서 사용할수도 있고 타입 Subscript가 있다는 것도 알게되었다.</p>
+
+    <p>❗️Subscript의 오버로딩에 대해 공부하면서 API 디자인 가이드라인에 따르면 반환타입에 의존한 (반환타입만 다른) 오버로딩은 지양하라고 배웠던 것이 상기됐다.</p>
+  </li>
+  <li>
+    <p>고차함수인 Map과 Filter에 대해서도 공부했다. map을 이용해 input을 아래처럼 이쁘게 처리할 수 있었다.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre>let userInput: [Int] = try inputArray.map{
+        guard let input = Int($0) else {
+            throw GameError.invalidInput
+        }
+        if input &gt; 9 || input &lt; 0{
+            throw GameError.invalidInput
+        }
+        return input
+    }
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>enumerate 함수에 대해서도 공부했는데 배열의 인덱스를 가져올 수 있는 Array 클래스의 메서드이다.
+사용자 입력이 3개가 아니면 error를 쏴줬는데 이 과정에서 map 구문 안에 이 error 조건을 넣고자 시도하는 과정에서 map의 인덱스에 접근하는 함수를 검색했고 찾게된 함수가 enumerate이다. 하지만 이번엔 조건에 맞지 않아 쓸 수 없었다. 다음엔 꼭 써봐야지 ㅋㅋ</li>
+  <li></li>
+</ul>
+
+<h3 id="고민한-점">고민한 점</h3>
+
+<ul>
+  <li>숫자야구 Step2에서 남은 기회 횟수, 정답 배열을 초기화 하는 함수의 이름을 고민했다.
+init은 예약어니까 쓰기 싫고.. initialize() vs initializer()에서 고민했는데 그냥 initialize()로 가기로 했다.</li>
+  <li>배열을 통째로 강제 형변환해주려면 어떻게 해야할까? 이건 진짜 모르겠다 ㅋㅋ 검색을 좀 해봤는데도 얻은 정보가 마땅히 없다..</li>
+</ul>
+
+
+
+                <hr style="visibility: hidden;">
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/til/2021.02.23-TIL/"
+                            data-toggle="tooltip" data-placement="top" title="2021년 02월 23일 공부일지">
+                            Previous<br>
+                            <span>2021년 02월 23일 공부일지</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/til/2021.02.26-TIL/" data-toggle="tooltip"
+                            data-placement="top" title="2021년 02월 26일 공부일지">
+                            Next<br>
+                            <span>2021년 02월 26일 공부일지</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <hr style="visibility: hidden;">
+
+
+            </div>
+
+            <!-- Side Catalog Container -->
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+
+<section>
+    
+    <hr class="hidden-sm hidden-xs">
+    
+    <h5><a href="/archive/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
+            
+        
+            
+            <a data-sort="0034"
+                href="/archive/?tag=TIL" title="TIL"
+                rel="25">TIL</a>
+            
+            
+            
+            <a data-sort="0052"
+                href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
+                rel="7">운영체제</a>
+            
+            <a data-sort="0052"
+                href="/archive/?tag=Swift" title="Swift"
+                rel="7">Swift</a>
+            
+            <a data-sort="0052"
+                href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
+                rel="7">Yagom-Academy</a>
+            
+            <a data-sort="0053"
+                href="/archive/?tag=OS" title="OS"
+                rel="6">OS</a>
+            
+            <a data-sort="0055"
+                href="/archive/?tag=iOS" title="iOS"
+                rel="4">iOS</a>
+            
+            <a data-sort="0056"
+                href="/archive/?tag=enum" title="enum"
+                rel="3">enum</a>
+            
+            <a data-sort="0057"
+                href="/archive/?tag=Flow+chart" title="Flow chart"
+                rel="2">Flow chart</a>
+            
+            <a data-sort="0057"
+                href="/archive/?tag=Protocol" title="Protocol"
+                rel="2">Protocol</a>
+            
+            <a data-sort="0057"
+                href="/archive/?tag=UML" title="UML"
+                rel="2">UML</a>
+            
+            <a data-sort="0057"
+                href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
+                rel="2">Yagom Academy</a>
+    </div>
+</section>
+
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- add support for mathjax by voleking-->
+
+
+<script src="https://utteranc.es/client.js" repo="Neph3779/blog-comments" issue-term="pathname" theme="github-light"
+    crossorigin="anonymous" async>
+    </script>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js", function () {
+        anchors.options = {
+            visible: 'hover',
+            placement: 'right',
+            // icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link {
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top: -0.1em;
+        }
+    }
+</style>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- SNS Link -->
+                
+
+
+<ul class="list-inline text-center">
+
+
+  
+  
+  
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://github.com/neph3779">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+                <p class="copyright text-muted">
+                    Copyright &copy; Neph's Blog 2021
+                    <br>
+                    Powered by <a href="http://huangxuan.me">Hux Blog</a> |
+                    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px"
+                        height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src=" /js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src=" /js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src=" /js/hux-blog.min.js "></script>
+
+<!-- Simple Jekyll Search -->
+<script src=" /js/simple-jekyll-search.min.js"></script>
+
+<!-- Service Worker -->
+
+<script src=" /js/snackbar.js "></script>
+<script src=" /js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+
+
+
+
+
+
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function () {
+        var $nav = document.querySelector("nav");
+        if ($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-190717919-1';
+    var _gaDomain = '';
+
+    // Originial
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        // interop with multilangual 
+        if ('' == 'true') {
+            _containerSelector = 'div.post-container.active'
+        } else {
+            _containerSelector = 'div.post-container'
+        }
+
+        // init
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2');
+        // a = P.find('h1,h2,h3,h4,h5,h6');
+
+        // clean
+        $(selector).html('')
+
+        // appending
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+<!-- Multi-Lingual -->
+
+
+<!-- Simple Jekyll Search -->
+<script>
+    // https://stackoverflow.com/questions/1912501/unescape-html-entities-in-javascript
+    function htmlDecode(input) {
+        var e = document.createElement('textarea');
+        e.innerHTML = input;
+        // handle case of empty input
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    }
+
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '/search.json',
+        searchResultTemplate: '<div class="post-preview item"><a href="{url}"><h2 class="post-title">{title}</h2><h3 class="post-subtitle">{subtitle}</h3><hr></a></div>',
+        noResultsText: 'No results',
+        limit: 50,
+        fuzzy: false,
+        // a hack to get escaped subtitle unescaped. for some reason, 
+        // post.subtitle w/o escape filter nuke entire search.
+        templateMiddleware: function (prop, value, template) {
+            if (prop === 'subtitle' || prop === 'title') {
+                if (value.indexOf("code")) {
+                    return htmlDecode(value);
+                } else {
+                    return value;
+                }
+            }
+        }
+    });
+
+    $(document).ready(function () {
+        var $searchPage = $('.search-page');
+        var $searchOpen = $('.search-icon');
+        var $searchClose = $('.search-icon-close');
+        var $searchInput = $('#search-input');
+        var $body = $('body');
+
+        $searchOpen.on('click', function (e) {
+            e.preventDefault();
+            $searchPage.toggleClass('search-active');
+            var prevClasses = $body.attr('class') || '';
+            setTimeout(function () {
+                $body.addClass('no-scroll');
+            }, 400)
+
+            if ($searchPage.hasClass('search-active')) {
+                $searchClose.on('click', function (e) {
+                    e.preventDefault();
+                    $searchPage.removeClass('search-active');
+                    $body.attr('class', prevClasses);  // from closure 
+                });
+                $searchInput.focus();
+            }
+        });
+    });
+</script>
+
+
+    <!-- Image to hack wechat -->
+    <img src="/assets/logo.ico/ms-icon-310x310.png" width="0" height="0" />
+    <!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

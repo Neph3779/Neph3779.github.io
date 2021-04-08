@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Write code with my soul.">
+    <meta name="keywords" content="iOS 공부일지">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="Neph's iOS blog">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:description"
+        content="「Neph의 iOS 공부일지」">
+    
+    <meta property="og:image" content="https://neph3779.github.io/assets/logo.ico/apple-icon.png">
+    <meta property="og:url" content="https://neph3779.github.io/page5/">
+    <meta property="og:site_name" content="Neph's iOS blog">
+
+    <title>Neph's iOS blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://neph3779.github.io/page5/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href=" /css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href=" /css/hux-blog.min.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<!-- hack iOS CSS :active style -->
+
+<body ontouchstart="">
+
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Neph's Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="huxblog_navbar">
+                <div class="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="/archive/">Archive</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="/category/">Category</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li class="search-icon">
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <script>
+        // Drop Bootstarp low-performance Navbar
+        // Use customize navbar with high-quality material design animation
+        // in high-perf jank-free CSS3 implementation
+        var $body = document.body;
+        var $toggle = document.querySelector('.navbar-toggle');
+        var $navbar = document.querySelector('#huxblog_navbar');
+        var $collapse = document.querySelector('.navbar-collapse');
+
+        var __HuxNav__ = {
+            close: function () {
+                $navbar.className = " ";
+                // wait until animation end.
+                setTimeout(function () {
+                    // prevent frequently toggle
+                    if ($navbar.className.indexOf('in') < 0) {
+                        $collapse.style.height = "0px"
+                    }
+                }, 400)
+            },
+            open: function () {
+                $collapse.style.height = "auto"
+                $navbar.className += " in";
+            }
+        }
+
+        // Bind Event
+        $toggle.addEventListener('click', function (e) {
+            if ($navbar.className.indexOf('in') > 0) {
+                __HuxNav__.close()
+            } else {
+                __HuxNav__.open()
+            }
+        })
+
+        /**
+         * Since Fastclick is used to delegate 'touchstart' globally
+         * to hack 300ms delay in iOS by performing a fake 'click',
+         * Using 'e.stopPropagation' to stop 'touchstart' event from 
+         * $toggle/$collapse will break global delegation.
+         * 
+         * Instead, we use a 'e.target' filter to prevent handler
+         * added to document close HuxNav.  
+         *
+         * Also, we use 'click' instead of 'touchstart' as compromise
+         */
+        document.addEventListener('click', function (e) {
+            if (e.target == $toggle) return;
+            if (e.target.className == 'icon-bar') return;
+            __HuxNav__.close();
+        })
+    </script>
+    <!-- Search -->
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Page Header -->
+
+
+
+
+
+
+
+<header class="intro-header" style="background-image: url('/assets/background.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="site-heading">
+        
+          <h1>Neph's Blog</h1>
+          <span class="subheading">「Neph의 iOS 공부일지」</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+        
+
+<!-- USE SIDEBAR -->
+    <!-- PostList Container -->
+    		<div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                postlist-container
+            ">
+    			
+<div class="post-preview">
+    <a href="/til/2021.03.11-TIL/">
+        <h2 class="post-title">
+            2021년 03월 11일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            공부한 내용
+
+
+  UILabel과 UIButton에 custom type의 속성값을 extension을 통해 주려는 시도를 했습니다.
+    
+      extension을 활용하려 했지만 extension으로 저장프로퍼티를 추가할 수 없다는 사실을 알게되었습니다.
+      메모리 공간을 stored property의 공간만큼 할당하기에 exten...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        11, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.03.10-TIL/">
+        <h2 class="post-title">
+            2021년 03월 10일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  
+    “쥬스메이커 프로젝트”의 Step2 진행을 위해 Yagom의 Auto Layout 정복하기 강좌를 들었습니다.
+
+    기본적인 기능만 요구하고 있기에 꼭 Auto Layout을 빠삭하게 알고 있어야 진행할 수 있는 프로젝트는 아니지만 기왕이면 제대로 공부한 뒤에 프로젝트를 진행해도 좋다는 판단하에 오토 레이아웃을 제...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        10, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.03.09-TIL/">
+        <h2 class="post-title">
+            2021년 03월 09일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            공부한 내용 &amp; 고민해본 내용
+
+
+  
+    static의 활용에 대해 공부하고 이를 활용해 보았습니다.
+  
+  
+    class의 instance를 var로 선언한 경우와 let으로 선언한 경우의 차이에 대해 공부했습니다.
+
+    1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        9, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/project%20review/%E1%84%80%E1%85%A1%E1%84%8B%E1%85%B1%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B1%E1%84%87%E1%85%A9-%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3-%E1%84%85%E1%85%B5%E1%84%87%E1%85%B2/">
+        <h2 class="post-title">
+            가위바위보 게임 프로젝트 리뷰
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            이번 프로젝트에서 집중해서 공부한 내용
+
+
+  Optional Chaining
+  변수와 함수의 naming
+  열거형의  사용
+  자연스러운 코드의 작성법 (모든 것을 장황하게 설명하지 않기)
+
+
+
+
+
+
+Step 1. 가위바위보 클래스 설계
+
+PR #26 Step1 가위바위보 클래스 설계
+
+
+  
+    가위바위보 클래스 설계
+
+    
+      ...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        9, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.03.08-TIL/">
+        <h2 class="post-title">
+            2021년 03월 08일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  “쥬스 메이커” 프로젝트의 기능 요구서를 읽고 1차적으로 구현해보았습니다.
+  접근제어 지정자에 대해 복습했습니다.
+  읽기전용 프로퍼티에 대해 여러가지 생각을 해보았습니다
+    
+      private(set) 키워드를 통해 읽기전용 프로퍼티의 구현이 가능한 것을 알게 되었습니다. 기존에 알고 있던 방식은 연산 프로퍼티를...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        8, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.03.06-TIL/">
+        <h2 class="post-title">
+            2021년 03월 06일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  타입 프로퍼티와 연산자 프로퍼티에 대해 공부했습니다.
+    
+      get과 set의 역할에 대해 알아봤습니다.
+      willSet과 didSet은 어떨 때 쓰는 것인지에 대해 궁금해서 알아본 결과 이 링크에서 적합한 답을 찾을 수 있었습니다.
+    
+  
+  플로우차트 그리는 법에 대해 공부하고 이를 포스팅 했습...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        6, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/swift/FlowChart/">
+        <h2 class="post-title">
+            플로우차트(Flow Chart) 그리는법
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            안녕하세요! Neph🌱입니다!! 😆😆
+
+오늘은 Flow Chart를 그리는 방법에 대해 알아볼거에요~
+
+
+
+혼자서 작업하는 경우나 단기간동안만 사용할 프로그램을 만들 때는 플로우차트가 굳이 필요하지 않을지도 모릅니다.
+
+하지만 플로우차트로 프로그램 동작과정의 큰 틀을 잡아놓는다면 후에 자신의 코드를 타인이 보게 되는 경우, 혹은 자신이 짠 코드를 다시...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        6, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.03.05-TIL/">
+        <h2 class="post-title">
+            2021년 03월 05일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  
+    Optional Chaining에 대해 자세히 공부했습니다.
+  
+  
+    “묵찌빠 게임 프로젝트”의 2차 피드백을 반영했습니다
+
+    
+      
+        접근제어 지정자에 대해 공부했습니다
+
+        
+          private
+          fileprivate
+          int...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        5, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/swift/Optional-Chaining(with-flow-chart)/">
+        <h2 class="post-title">
+            옵셔널체이닝(Optional Chaining) 알아보기 (feat. Flow chart)
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            안녕하세요! Neph🌱입니다!! 😆😆
+
+오늘은 Swift의 옵셔널체이닝에 대해 알아볼거에요
+
+Optional과 Optional Binding에 대해 모르시는 분들은 먼저 해당 개념을 익히신 뒤 글을 읽어주시면 감사하겠습니다 🥲
+
+
+
+자 그럼 Optional Chaining! 뭔가 이름만 들어도 Chain, 연쇄적으로 어떤 것을 처리할 것이라는 느낌이 ...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        5, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.03.04-TIL/">
+        <h2 class="post-title">
+            2021년 03월 04일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  
+    H.I.G. 를 읽어보았습니다. 아래는 읽으면서 얻은 지식들입니다.
+
+    
+      
+        Tab bar와 Tool bar의 차이에 대해 간략히 이해하게 되었습니다.
+      
+      
+        Safe Area와  Margin에 대해 복습했습니다.
+      
+      
+        Se...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        4, 2021
+    </p>
+</div>
+<hr>
+
+
+<!-- Pager -->
+
+<ul class="pager">
+    
+    <li class="previous">
+        <a href="/page4">&larr; Newer Posts</a>
+    </li>
+    
+    
+    <li class="next">
+        <a href="/page6">Older Posts &rarr;</a>
+    </li>
+    
+</ul>
+
+
+<header class="site-category">
+    <ul>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </ul>
+</header>
+    		</div>
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
+                <!-- Featured Tags -->
+                
+
+
+<section>
+    
+    <h5><a href="/archive/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
+            
+        
+            
+            <a data-sort="0034"
+                href="/archive/?tag=TIL" title="TIL"
+                rel="25">TIL</a>
+            
+            
+            
+            <a data-sort="0052"
+                href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
+                rel="7">운영체제</a>
+            
+            <a data-sort="0052"
+                href="/archive/?tag=Swift" title="Swift"
+                rel="7">Swift</a>
+            
+            <a data-sort="0052"
+                href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
+                rel="7">Yagom-Academy</a>
+            
+            <a data-sort="0053"
+                href="/archive/?tag=OS" title="OS"
+                rel="6">OS</a>
+            
+            <a data-sort="0055"
+                href="/archive/?tag=iOS" title="iOS"
+                rel="4">iOS</a>
+            
+            <a data-sort="0056"
+                href="/archive/?tag=enum" title="enum"
+                rel="3">enum</a>
+            
+            <a data-sort="0057"
+                href="/archive/?tag=Flow+chart" title="Flow chart"
+                rel="2">Flow chart</a>
+            
+            <a data-sort="0057"
+                href="/archive/?tag=Protocol" title="Protocol"
+                rel="2">Protocol</a>
+            
+            <a data-sort="0057"
+                href="/archive/?tag=UML" title="UML"
+                rel="2">UML</a>
+            
+            <a data-sort="0057"
+                href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
+                rel="2">Yagom Academy</a>
+    </div>
+</section>
+
+
+                <!-- Short About -->
+                <section class="visible-md visible-lg">
+  <hr>
+  <h5><a href="/about/">ABOUT ME</a></h5>
+  <div class="short-about">
+    
+    <img src="/assets/logo.ico/apple-icon.png" />
+    
+    
+    <p>사이드바 내용</p>
+    
+    <!-- SNS Link -->
+    
+
+
+<ul class="list-inline">
+
+
+  
+  
+  
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://github.com/neph3779">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+</ul>
+  </div>
+</section>
+
+                <!-- Friends Blog -->
+                
+    		</div>
+        
+	</div>
+</div>
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- SNS Link -->
+                
+
+
+<ul class="list-inline text-center">
+
+
+  
+  
+  
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://github.com/neph3779">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+                <p class="copyright text-muted">
+                    Copyright &copy; Neph's Blog 2021
+                    <br>
+                    Powered by <a href="http://huangxuan.me">Hux Blog</a> |
+                    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px"
+                        height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src=" /js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src=" /js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src=" /js/hux-blog.min.js "></script>
+
+<!-- Simple Jekyll Search -->
+<script src=" /js/simple-jekyll-search.min.js"></script>
+
+<!-- Service Worker -->
+
+<script src=" /js/snackbar.js "></script>
+<script src=" /js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+
+
+
+
+
+
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function () {
+        var $nav = document.querySelector("nav");
+        if ($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-190717919-1';
+    var _gaDomain = '';
+
+    // Originial
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        // interop with multilangual 
+        if ('' == 'true') {
+            _containerSelector = 'div.post-container.active'
+        } else {
+            _containerSelector = 'div.post-container'
+        }
+
+        // init
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2');
+        // a = P.find('h1,h2,h3,h4,h5,h6');
+
+        // clean
+        $(selector).html('')
+
+        // appending
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+<!-- Multi-Lingual -->
+
+
+<!-- Simple Jekyll Search -->
+<script>
+    // https://stackoverflow.com/questions/1912501/unescape-html-entities-in-javascript
+    function htmlDecode(input) {
+        var e = document.createElement('textarea');
+        e.innerHTML = input;
+        // handle case of empty input
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    }
+
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '/search.json',
+        searchResultTemplate: '<div class="post-preview item"><a href="{url}"><h2 class="post-title">{title}</h2><h3 class="post-subtitle">{subtitle}</h3><hr></a></div>',
+        noResultsText: 'No results',
+        limit: 50,
+        fuzzy: false,
+        // a hack to get escaped subtitle unescaped. for some reason, 
+        // post.subtitle w/o escape filter nuke entire search.
+        templateMiddleware: function (prop, value, template) {
+            if (prop === 'subtitle' || prop === 'title') {
+                if (value.indexOf("code")) {
+                    return htmlDecode(value);
+                } else {
+                    return value;
+                }
+            }
+        }
+    });
+
+    $(document).ready(function () {
+        var $searchPage = $('.search-page');
+        var $searchOpen = $('.search-icon');
+        var $searchClose = $('.search-icon-close');
+        var $searchInput = $('#search-input');
+        var $body = $('body');
+
+        $searchOpen.on('click', function (e) {
+            e.preventDefault();
+            $searchPage.toggleClass('search-active');
+            var prevClasses = $body.attr('class') || '';
+            setTimeout(function () {
+                $body.addClass('no-scroll');
+            }, 400)
+
+            if ($searchPage.hasClass('search-active')) {
+                $searchClose.on('click', function (e) {
+                    e.preventDefault();
+                    $searchPage.removeClass('search-active');
+                    $body.attr('class', prevClasses);  // from closure 
+                });
+                $searchInput.focus();
+            }
+        });
+    });
+</script>
+
+
+    <!-- Image to hack wechat -->
+    <img src="/assets/logo.ico/ms-icon-310x310.png" width="0" height="0" />
+    <!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

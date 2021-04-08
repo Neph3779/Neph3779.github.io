@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Write code with my soul.">
+    <meta name="keywords" content="iOS 공부일지">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="[#5] 프로세스 관리 - 2 - Neph's iOS blog">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="목차
+
+  목차
+
+">
+    
+    <meta property="article:published_time" content=" 2021-04-05T00:00:00Z">
+    
+    
+    
+    <meta property="article:tag" content="운영체제">
+    
+    <meta property="article:tag" content="OS">
+    
+    
+    <meta property="og:image" content="https://neph3779.github.io/assets/logo.ico/apple-icon.png">
+    <meta property="og:url" content="https://neph3779.github.io/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/5-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5-2/">
+    <meta property="og:site_name" content="Neph's iOS blog">
+
+    <title>[#5] 프로세스 관리 - 2 - Neph's iOS blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://neph3779.github.io/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/5-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5-2/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href=" /css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href=" /css/hux-blog.min.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<!-- hack iOS CSS :active style -->
+
+<body ontouchstart="">
+
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Neph's Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="huxblog_navbar">
+                <div class="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="/archive/">Archive</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="/category/">Category</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li class="search-icon">
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <script>
+        // Drop Bootstarp low-performance Navbar
+        // Use customize navbar with high-quality material design animation
+        // in high-perf jank-free CSS3 implementation
+        var $body = document.body;
+        var $toggle = document.querySelector('.navbar-toggle');
+        var $navbar = document.querySelector('#huxblog_navbar');
+        var $collapse = document.querySelector('.navbar-collapse');
+
+        var __HuxNav__ = {
+            close: function () {
+                $navbar.className = " ";
+                // wait until animation end.
+                setTimeout(function () {
+                    // prevent frequently toggle
+                    if ($navbar.className.indexOf('in') < 0) {
+                        $collapse.style.height = "0px"
+                    }
+                }, 400)
+            },
+            open: function () {
+                $collapse.style.height = "auto"
+                $navbar.className += " in";
+            }
+        }
+
+        // Bind Event
+        $toggle.addEventListener('click', function (e) {
+            if ($navbar.className.indexOf('in') > 0) {
+                __HuxNav__.close()
+            } else {
+                __HuxNav__.open()
+            }
+        })
+
+        /**
+         * Since Fastclick is used to delegate 'touchstart' globally
+         * to hack 300ms delay in iOS by performing a fake 'click',
+         * Using 'e.stopPropagation' to stop 'touchstart' event from 
+         * $toggle/$collapse will break global delegation.
+         * 
+         * Instead, we use a 'e.target' filter to prevent handler
+         * added to document close HuxNav.  
+         *
+         * Also, we use 'click' instead of 'touchstart' as compromise
+         */
+        document.addEventListener('click', function (e) {
+            if (e.target == $toggle) return;
+            if (e.target.className == 'icon-bar') return;
+            __HuxNav__.close();
+        })
+    </script>
+    <!-- Search -->
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/assets/logo.ico/ms-icon-310x310.png" width="0" height="0"> -->
+<!-- <img src="/assets/background.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+
+
+
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/assets/background.jpg');
+        background: ;
+    }
+
+    
+</style>
+
+<header class="intro-header" >
+
+    <div class="header-mask"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제">운영체제</a>
+                        
+                        <a class="tag" href="/archive/?tag=OS" title="OS">OS</a>
+                        
+                    </div>
+                    <h1>[#5] 프로세스 관리 - 2</h1>
+                    
+                    <h2 class="subheading"></h2>
+                    <span class="meta">Posted by Neph's Blog on April 5, 2021</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!-- Multi-Lingual -->
+                
+
+                <h3 id="목차">목차</h3>
+<ol id="markdown-toc">
+  <li><a href="#목차" id="markdown-toc-목차">목차</a></li>
+  <li><a href="#프로세스의-생성" id="markdown-toc-프로세스의-생성">프로세스의 생성</a>    <ol>
+      <li><a href="#부모-프로세스와-자식-프로세스" id="markdown-toc-부모-프로세스와-자식-프로세스">부모 프로세스와 자식 프로세스</a></li>
+      <li><a href="#자원의-획득과-프로세스의-수행모델" id="markdown-toc-자원의-획득과-프로세스의-수행모델">자원의 획득과 프로세스의 수행모델</a></li>
+      <li><a href="#주소-공간" id="markdown-toc-주소-공간">주소 공간</a></li>
+      <li><a href="#프로세스의-생성-절차" id="markdown-toc-프로세스의-생성-절차">프로세스의 생성 절차</a></li>
+      <li><a href="#프로세스의-종료-절차" id="markdown-toc-프로세스의-종료-절차">프로세스의 종료 절차</a></li>
+      <li><a href="#프로세스의-강제-종료가-이루어지는-경우" id="markdown-toc-프로세스의-강제-종료가-이루어지는-경우">프로세스의 강제 종료가 이루어지는 경우</a></li>
+      <li><a href="#자식-프로세스를-생성하는-과정" id="markdown-toc-자식-프로세스를-생성하는-과정">자식 프로세스를 생성하는 과정</a></li>
+    </ol>
+  </li>
+  <li><a href="#프로세스-간의-협력" id="markdown-toc-프로세스-간의-협력">프로세스 간의 협력</a>    <ol>
+      <li><a href="#독립적-프로세스" id="markdown-toc-독립적-프로세스">독립적 프로세스</a></li>
+      <li><a href="#협력-프로세스와-협력-메커니즘" id="markdown-toc-협력-프로세스와-협력-메커니즘">협력 프로세스와 협력 메커니즘</a></li>
+    </ol>
+  </li>
+  <li><a href="#ipc--메시지-전달-방식" id="markdown-toc-ipc--메시지-전달-방식">IPC :: 메시지 전달 방식</a>    <ol>
+      <li><a href="#메시지-전달-방식" id="markdown-toc-메시지-전달-방식">메시지 전달 방식</a></li>
+      <li><a href="#직접통신과-간접통신" id="markdown-toc-직접통신과-간접통신">직접통신과 간접통신</a></li>
+    </ol>
+  </li>
+  <li><a href="#ipc--공유메모리-방식" id="markdown-toc-ipc--공유메모리-방식">IPC :: 공유메모리 방식</a>    <ol>
+      <li><a href="#주소공간의-공유" id="markdown-toc-주소공간의-공유">주소공간의 공유</a></li>
+      <li><a href="#일관성-문제" id="markdown-toc-일관성-문제">일관성 문제</a></li>
+    </ol>
+  </li>
+</ol>
+
+<h2 id="프로세스의-생성">프로세스의 생성</h2>
+
+<hr />
+
+<h3 id="부모-프로세스와-자식-프로세스">부모 프로세스와 자식 프로세스</h3>
+
+<p>시스템이 부팅된 후 최초의 프로세스는 운영체제가 직접 생성하지만 그다음부터는 이미 존재하던 프로세스가 다른 프로세스를 복제 생성한다. 프로세스는 항상 자식 프로세스가 먼저 종료되고나서 부모 프로세스가 종료된다. 후손이 여러개인 (자식의 자식으로 이어지는 계층도가 긴) 프로세스의 경우에는 연쇄적으로 모든 후손 프로세스들을 종료시킨 뒤에 종료된다.</p>
+
+<p><br /></p>
+
+<h3 id="자원의-획득과-프로세스의-수행모델">자원의 획득과 프로세스의 수행모델</h3>
+
+<p>생성된 프로세스가 작업을 수행하기 위해서는 자원이 필요하다. 운영체제로부터 <strong>직접 자원을 할당받는 경우</strong>도 있고 <strong>부모 프로세스와 자식 프로세스가 자원을 공유하는 경우</strong>(일부만 공유하는 경우, 전부를 공유하는 경우로 나뉨)도 있다. 프로세스가 수행되는 모델도 <strong>부모와 자식이 공존하며 수행되는 모델</strong>이 있고, <strong>부모가 자식이 종료될때까지 기다리는 모델</strong>도 있다. 전자의 경우에는 CPU 획득을 위해 서로 경쟁하는 관계가 된다. 반면 후자의 경우에는 자식 프로세스가 종료되기 전까지 부모 프로세스는 봉쇄 상태에 머물러 있다가 자식 프로세스가 종료되면 준비 상태가 되어 CPU를 얻을 권한이 생기게 된다.</p>
+
+<p><br /></p>
+
+<h3 id="주소-공간">주소 공간</h3>
+
+<p>프로세스가 생성되면 독자적인 주소 공간을 갖게 된다. 부모 프로세스와 자식 프로세스는 별도의 주소 공간을 가지게 되는데 자식 프로세스는 부모 프로세스의 주소 공간 내용을 그대로 복사하여 생성된다.</p>
+
+<p><br /></p>
+
+<h3 id="프로세스의-생성-절차">프로세스의 생성 절차</h3>
+
+<p>유닉스에서는 <code class="language-plaintext highlighter-rouge">fork()</code> 시스템 콜을 통해 새로운 프로세스를 생성할 수 있는데 프로세스 ID를 제외한 모든 정보 즉, 운영체제 커널 내의 정보(PCB, 자원 등)와 주소 공간의 정보를 그대로 복사한다. 복제가 완료되면 그 위에 새로운 프로그램을 덮어씌울 수도 있는데 이 작업은 <code class="language-plaintext highlighter-rouge">exec()</code> 시스템 콜을 통해 이루어진다. (exec 작업은 필수가 아님)</p>
+
+<p>자식 프로세스가 부모 프로세스와 달라지지 않는다면 굳이 복사를 진행할 필요가 없다. 따라서 자식 프로세스에서 변경이 진행될 때 복사를 진행하는 방식을 Copy-On-Write(a.k.a. COW)라고 한다.</p>
+
+<p><br /></p>
+
+<h3 id="프로세스의-종료-절차">프로세스의 종료 절차</h3>
+
+<p>프로세스의 종료는 크게 자발적 종료와 비자발적 종료로 구분된다. 자발적 종료가 이루어지는 경우, 프로세스는 명령을 모두 수행한 후 <code class="language-plaintext highlighter-rouge">exit()</code>이라는 시스템 콜을 진행한다(<code class="language-plaintext highlighter-rouge">exit()</code>은 프로그래머가 명시적으로 호출하지 않아도 프로그램 종료 지점에 컴파일러가 자동으로 삽입). 운영체제에게 <code class="language-plaintext highlighter-rouge">exit()</code>을 통해 자신이 종료될 수 있음을 알리면 운영체제는 자원을 회수하고 시스템 내에서 프로세스를 정리한다. 반면 비자발적 종료의 경우에는 부모 프로세스가 자식 프로세스의 수행을 강제로 종료하는데 이는 <code class="language-plaintext highlighter-rouge">abort()</code>라는 함수를 통해 이루어진다.</p>
+
+<p><br /></p>
+
+<h3 id="프로세스의-강제-종료가-이루어지는-경우">프로세스의 강제 종료가 이루어지는 경우</h3>
+
+<p>프로세스가 강제 종료되는 경우는 다음과 같다.</p>
+
+<ol>
+  <li>자식 프로세스가 한계치를 넘는 자원을 요구할 때</li>
+  <li>자식 프로세스에게 할당된 작업이 더 이상 필요하지 않을 때</li>
+  <li>부모 프로세스가 종료되는 경우</li>
+</ol>
+
+<p>위와 다르게 부모 프로세스가 종료된 이후에도 실행되어야 할 프로세스가 있다면 해당 프로세스를 다른 프로세스의 자식으로 이양하는 작업이 필요하다.</p>
+
+<p><br /></p>
+
+<h3 id="자식-프로세스를-생성하는-과정">자식 프로세스를 생성하는 과정</h3>
+
+<p>운영체제는 자식 프로세스의 생성을 위해 <code class="language-plaintext highlighter-rouge">fork()</code> 시스템 콜을 제공한다. <code class="language-plaintext highlighter-rouge">fork()</code> 시스템 콜을 하게 되면 <code class="language-plaintext highlighter-rouge">fork()</code> 함수를 호출한 프로세스와 똑같은 프로세스가 생성된다. 이렇게 생성된 자식 프로세스는 부모 프로세스의 모든 문맥을 동일하게 가지고 있으며 부모 프로세스의 주소 공간을 비롯해 프로그램 카운터 등 레지스터 상태, PCB 및 커널 스택 등 모든 문맥을 그대로 복제해 자식 프로세스의 문맥을 형성한다. 즉, 자식 프로세스는 부모 프로세스의 처음부터 수행하는 것이 아니라 현재 수행한 시점(PC 지점)부터 수행하게 된다. 이 둘을 구분하기 위해 부모 프로세스 식별자(pid)는 양수이며 자식 프로세스의 식별자는 0이라는 차이가 존재한다.</p>
+
+<p>자식 프로세스가 부모와 다른 독자적 프로그램을 수행하도록 만들기 위해선 <code class="language-plaintext highlighter-rouge">exec()</code> 시스템 콜이 필요하다. <code class="language-plaintext highlighter-rouge">exec()</code> 시스템 콜은 지금까지 수행했던 상태를 잊어버리고 그 주소 공간을 완전히 새로운 프로그램으로 덮어씌운 후 처음부터 시작하도록 만들어준다. 즉, <code class="language-plaintext highlighter-rouge">exec()</code> 이전 시점까지 프로그램을 실행하다 <code class="language-plaintext highlighter-rouge">exec()</code>을 만나면 새로운 프로그램으로 넘어가서 그 프로그램을 실행하는 것이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">wait()</code> 시스템 콜을 통해 부모 프로세스와 자식 프로세스 간의 동기화가 가능하다. <code class="language-plaintext highlighter-rouge">wait()</code> 시스템 콜이 이루어지면 부모 프로세스는 자식 프로세스가 종료될 때까지 봉쇄상태에 들어가는데 일반적인 봉쇄 상태에서와는 다르게 자원을 기다리며 줄 서 있지 않고 자식 프로세스가 종료될 때까지 수면 상태에 머무른다. 자식 프로세스가 종료되는 순간 준비 큐에 재진입하여 CPU를 얻을 권한을 획득한다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="프로세스-간의-협력">프로세스 간의 협력</h2>
+
+<hr />
+
+<h3 id="독립적-프로세스">독립적 프로세스</h3>
+
+<p>프로세스는 자신만의 주소 공간을 가지고 수행되며 다른 프로세스의 주소공간을 참조하는 것은 허용되지 않는다. 프로세스 복제 과정에서 부모 프로세스의 주소 공간을 자식 프로세스가 복제하지만 생성 이후에는 독자적인 주소 공간만을 참조해 코드를 수행하므로 독립적인 관계가 된다.</p>
+
+<h3 id="협력-프로세스와-협력-메커니즘">협력 프로세스와 협력 메커니즘</h3>
+
+<p>경우에 따라서는 프로세스들이 협력할 때 업무의 효율성이 증진될 수 있다. 이런 프로세스 간 협력 메커니즘은 대표적으로 운영체제가 제공하는 IPC(Inter-Process Communication)가 있다. IPC는 하나의 컴퓨터 안에서 실행 중인 서로 다른 프로세스 간의 통신을 의미하며 이러한 통신은 의사소통 기능과 동기화를 보장한다. 공유 데이터를 서로 다른 두 프로세스가 사용할 때 데이터 불일치의 문제를 예방하기 위해 하나의 프로세스가 공유 데이터의 값을 변경하는 동안 다른 프로세스는 그 데이터에 접근할 수 없도록 해야한다. IPC의 대표적인 방법으로는 메시지 전달 방식과 공유메모리 방식이 있다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="ipc--메시지-전달-방식">IPC :: 메시지 전달 방식</h2>
+
+<hr />
+
+<h3 id="메시지-전달-방식">메시지 전달 방식</h3>
+
+<p>메시지 전달 방식은 공유 데이터를 사용하지 않고 커널이 메시지를 간접적으로 전달하는 방식이다. 메시지 통신을 하는 시스템은 커널에 의해 send(message)와 receive(message)를 제공받는데 이 두 연산을 통해 시스템 콜 방식으로 정보를 주고받는다.</p>
+
+<p>통신이 필요한 두 프로세스는 커뮤니케이션 링크를 생성한 후 send()와 receive()를 통해 메시지를 주고받는다. 커뮤니케이션 링크는 물리적으로 구현될수도 있고 논리적으로 구현될수도 있다.</p>
+
+<h3 id="직접통신과-간접통신">직접통신과 간접통신</h3>
+
+<p>메시지 전달을 통해 통신하는 방식에는 직접통신(direct communication)과 간접통신(indirect communication)이 있다. 이 둘의 차이는 연산의 인터페이스의 차이일 뿐 실제 메시지 전송이 이루어지는 내부 구현은 커널의 중재에 의해 사실상 동일하게 이루어진다.</p>
+
+<p>직접통신에서는 통신하려는 프로세스의 이름을 명시적으로 표시한다. 커뮤니케이션 링크는 자동적으로 생성되고, 하나의 링크는 오직 한 쌍의 프로세스에게만 할당된다. 또한 각 쌍의 프로세스에는 오직 하나의 링크만이 존재하고 링크는 단방향성인 경우와 양방향성인 경우가 있지만 대부분 양방향성이다.</p>
+
+<p>간접통신에는 메시지를 메일박스(mail box) 또는 포트(port)로부터 전달받는다. 각 메일박스에는 고유의 ID가 있으며 메일박스를 공유하는 프로세스들만 서로 통신할 수 있다. 간접통신의 경우 커뮤니케이션 링크는 프로세스 간에 메일 박스를 공유하는 경우에만 생성되는데 하나의 링크가 여러 프로세스들에게 할당될 수 있으며 각 프로세스의 쌍은 여러 링크를 공유할 수 있다. 링크는 단방향성과 양방향성 모두 존재하며 send/receive연산, 메일박스 삭제 연산 등이 지원된다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="ipc--공유메모리-방식">IPC :: 공유메모리 방식</h2>
+
+<hr />
+
+<h3 id="주소공간의-공유">주소공간의 공유</h3>
+
+<p>공유메모리 방식에서는 프로세스들이 주소 공간의 일부를 공유한다. 원칙적으로는 각자 독립적인 주소 공간을 가지지만 운영체제가 시스템 콜을 통해 프로세스들이 주소 공간 중 일부를 공유할 수 있도록 해준다. 실제 구현은 두 프로세스가 서로 독자적인 주소 공간을 가지고 있지만 이 주소 공간이 물리적 메모리에 매핑될 때 공유메모리 주소 영역에 대해서는 동일한 물리적 메모리 주소로 매핑된다.</p>
+
+<p><br /></p>
+
+<h3 id="일관성-문제">일관성 문제</h3>
+
+<p>공유메모리 방식은 프로세스간의 통신을 수월하게 해주지만 서로의 데이터에 일관성 문제가 발생할 수 있다. 이에 대해서는 커널이 책임을 지지 않으므로 프로세스들끼리 직접 공유메모리 접근에 대한 동기화 문제를 해결해야한다.</p>
+
+
+                <hr style="visibility: hidden;">
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/til/2021.04.05-TIL/"
+                            data-toggle="tooltip" data-placement="top" title="2021년 04월 05일 공부일지">
+                            Previous<br>
+                            <span>2021년 04월 05일 공부일지</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/6-CPU-%E1%84%89%E1%85%B3%E1%84%8F%E1%85%A6%E1%84%8C%E1%85%B2%E1%86%AF%E1%84%85%E1%85%B5%E1%86%BC-1/" data-toggle="tooltip"
+                            data-placement="top" title="[작성중] [#6] CPU 스케쥴링 - 1">
+                            Next<br>
+                            <span>[작성중] [#6] CPU 스케쥴링 - 1</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <hr style="visibility: hidden;">
+
+
+            </div>
+
+            <!-- Side Catalog Container -->
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+
+<section>
+    
+    <hr class="hidden-sm hidden-xs">
+    
+    <h5><a href="/archive/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
+            
+        
+            
+            <a data-sort="0034"
+                href="/archive/?tag=TIL" title="TIL"
+                rel="25">TIL</a>
+            
+            
+            
+            <a data-sort="0052"
+                href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
+                rel="7">운영체제</a>
+            
+            <a data-sort="0052"
+                href="/archive/?tag=Swift" title="Swift"
+                rel="7">Swift</a>
+            
+            <a data-sort="0052"
+                href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
+                rel="7">Yagom-Academy</a>
+            
+            <a data-sort="0053"
+                href="/archive/?tag=OS" title="OS"
+                rel="6">OS</a>
+            
+            <a data-sort="0055"
+                href="/archive/?tag=iOS" title="iOS"
+                rel="4">iOS</a>
+            
+            <a data-sort="0056"
+                href="/archive/?tag=enum" title="enum"
+                rel="3">enum</a>
+            
+            <a data-sort="0057"
+                href="/archive/?tag=Flow+chart" title="Flow chart"
+                rel="2">Flow chart</a>
+            
+            <a data-sort="0057"
+                href="/archive/?tag=Protocol" title="Protocol"
+                rel="2">Protocol</a>
+            
+            <a data-sort="0057"
+                href="/archive/?tag=UML" title="UML"
+                rel="2">UML</a>
+            
+            <a data-sort="0057"
+                href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
+                rel="2">Yagom Academy</a>
+    </div>
+</section>
+
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- add support for mathjax by voleking-->
+
+
+<script src="https://utteranc.es/client.js" repo="Neph3779/blog-comments" issue-term="pathname" theme="github-light"
+    crossorigin="anonymous" async>
+    </script>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js", function () {
+        anchors.options = {
+            visible: 'hover',
+            placement: 'right',
+            // icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link {
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top: -0.1em;
+        }
+    }
+</style>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- SNS Link -->
+                
+
+
+<ul class="list-inline text-center">
+
+
+  
+  
+  
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://github.com/neph3779">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+                <p class="copyright text-muted">
+                    Copyright &copy; Neph's Blog 2021
+                    <br>
+                    Powered by <a href="http://huangxuan.me">Hux Blog</a> |
+                    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px"
+                        height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src=" /js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src=" /js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src=" /js/hux-blog.min.js "></script>
+
+<!-- Simple Jekyll Search -->
+<script src=" /js/simple-jekyll-search.min.js"></script>
+
+<!-- Service Worker -->
+
+<script src=" /js/snackbar.js "></script>
+<script src=" /js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+
+
+
+
+
+
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function () {
+        var $nav = document.querySelector("nav");
+        if ($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-190717919-1';
+    var _gaDomain = '';
+
+    // Originial
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        // interop with multilangual 
+        if ('' == 'true') {
+            _containerSelector = 'div.post-container.active'
+        } else {
+            _containerSelector = 'div.post-container'
+        }
+
+        // init
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2');
+        // a = P.find('h1,h2,h3,h4,h5,h6');
+
+        // clean
+        $(selector).html('')
+
+        // appending
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+<!-- Multi-Lingual -->
+
+
+<!-- Simple Jekyll Search -->
+<script>
+    // https://stackoverflow.com/questions/1912501/unescape-html-entities-in-javascript
+    function htmlDecode(input) {
+        var e = document.createElement('textarea');
+        e.innerHTML = input;
+        // handle case of empty input
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    }
+
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '/search.json',
+        searchResultTemplate: '<div class="post-preview item"><a href="{url}"><h2 class="post-title">{title}</h2><h3 class="post-subtitle">{subtitle}</h3><hr></a></div>',
+        noResultsText: 'No results',
+        limit: 50,
+        fuzzy: false,
+        // a hack to get escaped subtitle unescaped. for some reason, 
+        // post.subtitle w/o escape filter nuke entire search.
+        templateMiddleware: function (prop, value, template) {
+            if (prop === 'subtitle' || prop === 'title') {
+                if (value.indexOf("code")) {
+                    return htmlDecode(value);
+                } else {
+                    return value;
+                }
+            }
+        }
+    });
+
+    $(document).ready(function () {
+        var $searchPage = $('.search-page');
+        var $searchOpen = $('.search-icon');
+        var $searchClose = $('.search-icon-close');
+        var $searchInput = $('#search-input');
+        var $body = $('body');
+
+        $searchOpen.on('click', function (e) {
+            e.preventDefault();
+            $searchPage.toggleClass('search-active');
+            var prevClasses = $body.attr('class') || '';
+            setTimeout(function () {
+                $body.addClass('no-scroll');
+            }, 400)
+
+            if ($searchPage.hasClass('search-active')) {
+                $searchClose.on('click', function (e) {
+                    e.preventDefault();
+                    $searchPage.removeClass('search-active');
+                    $body.attr('class', prevClasses);  // from closure 
+                });
+                $searchInput.focus();
+            }
+        });
+    });
+</script>
+
+
+    <!-- Image to hack wechat -->
+    <img src="/assets/logo.ico/ms-icon-310x310.png" width="0" height="0" />
+    <!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

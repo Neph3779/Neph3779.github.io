@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Write code with my soul.">
+    <meta name="keywords" content="iOS 공부일지">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="새로운 지식을 나의 것으로 만드는 방법(Zedd) - Neph's iOS blog">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="
+  이 글은 야곰 스타터캠프에서 비공개로 진행된 “Zedd”님의 강의를 바탕으로 제작되었습니다.
+
+">
+    
+    <meta property="article:published_time" content=" 2021-03-23T00:00:00Z">
+    
+    
+    
+    <meta property="article:tag" content="Zedd">
+    
+    
+    <meta property="og:image" content="https://neph3779.github.io/assets/logo.ico/apple-icon.png">
+    <meta property="og:url" content="https://neph3779.github.io/%EC%9D%BC%EC%83%81/%E1%84%89%E1%85%A2%E1%84%85%E1%85%A9%E1%84%8B%E1%85%AE%E1%86%AB-%E1%84%8C%E1%85%B5%E1%84%89%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%B3%E1%86%AF-%E1%84%82%E1%85%A1%E1%84%8B%E1%85%B4-%E1%84%80%E1%85%A5%E1%86%BA%E1%84%8B%E1%85%B3%E1%84%85%E1%85%A9-%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%84%82%E1%85%B3%E1%86%AB-%E1%84%87%E1%85%A1%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8/">
+    <meta property="og:site_name" content="Neph's iOS blog">
+
+    <title>새로운 지식을 나의 것으로 만드는 방법(Zedd) - Neph's iOS blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://neph3779.github.io/%EC%9D%BC%EC%83%81/%E1%84%89%E1%85%A2%E1%84%85%E1%85%A9%E1%84%8B%E1%85%AE%E1%86%AB-%E1%84%8C%E1%85%B5%E1%84%89%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%B3%E1%86%AF-%E1%84%82%E1%85%A1%E1%84%8B%E1%85%B4-%E1%84%80%E1%85%A5%E1%86%BA%E1%84%8B%E1%85%B3%E1%84%85%E1%85%A9-%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%84%82%E1%85%B3%E1%86%AB-%E1%84%87%E1%85%A1%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href=" /css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href=" /css/hux-blog.min.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<!-- hack iOS CSS :active style -->
+
+<body ontouchstart="">
+
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Neph's Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="huxblog_navbar">
+                <div class="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="/archive/">Archive</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="/category/">Category</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li class="search-icon">
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <script>
+        // Drop Bootstarp low-performance Navbar
+        // Use customize navbar with high-quality material design animation
+        // in high-perf jank-free CSS3 implementation
+        var $body = document.body;
+        var $toggle = document.querySelector('.navbar-toggle');
+        var $navbar = document.querySelector('#huxblog_navbar');
+        var $collapse = document.querySelector('.navbar-collapse');
+
+        var __HuxNav__ = {
+            close: function () {
+                $navbar.className = " ";
+                // wait until animation end.
+                setTimeout(function () {
+                    // prevent frequently toggle
+                    if ($navbar.className.indexOf('in') < 0) {
+                        $collapse.style.height = "0px"
+                    }
+                }, 400)
+            },
+            open: function () {
+                $collapse.style.height = "auto"
+                $navbar.className += " in";
+            }
+        }
+
+        // Bind Event
+        $toggle.addEventListener('click', function (e) {
+            if ($navbar.className.indexOf('in') > 0) {
+                __HuxNav__.close()
+            } else {
+                __HuxNav__.open()
+            }
+        })
+
+        /**
+         * Since Fastclick is used to delegate 'touchstart' globally
+         * to hack 300ms delay in iOS by performing a fake 'click',
+         * Using 'e.stopPropagation' to stop 'touchstart' event from 
+         * $toggle/$collapse will break global delegation.
+         * 
+         * Instead, we use a 'e.target' filter to prevent handler
+         * added to document close HuxNav.  
+         *
+         * Also, we use 'click' instead of 'touchstart' as compromise
+         */
+        document.addEventListener('click', function (e) {
+            if (e.target == $toggle) return;
+            if (e.target.className == 'icon-bar') return;
+            __HuxNav__.close();
+        })
+    </script>
+    <!-- Search -->
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/assets/logo.ico/ms-icon-310x310.png" width="0" height="0"> -->
+<!-- <img src="/assets/background.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+
+
+
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/assets/background.jpg');
+        background: ;
+    }
+
+    
+</style>
+
+<header class="intro-header" >
+
+    <div class="header-mask"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/archive/?tag=Zedd" title="Zedd">Zedd</a>
+                        
+                    </div>
+                    <h1>새로운 지식을 나의 것으로 만드는 방법(Zedd)</h1>
+                    
+                    <h2 class="subheading"></h2>
+                    <span class="meta">Posted by Neph's Blog on March 23, 2021</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!-- Multi-Lingual -->
+                
+
+                <blockquote>
+  <p>이 글은 야곰 스타터캠프에서 비공개로 진행된 “Zedd”님의 강의를 바탕으로 제작되었습니다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h4 id="q-무언가를-공부하고-싶은데-어떻게-공부해야-더-잘-공부할-수-있을까요">Q. 무언가를 공부하고 싶은데 어떻게 공부해야 더 잘 공부할 수 있을까요?</h4>
+
+<h4 id="a-공부의-순서를-정해보세요">A. 공부의 순서를 정해보세요!</h4>
+
+<p><br /></p>
+
+<h4 id="제드가-제안한-공부의-순서는-다음과-같습니다">제드가 제안한 공부의 순서는 다음과 같습니다.</h4>
+
+<ol>
+  <li>공부의 동기/목표 정하기</li>
+  <li>공부할 것에 대한 사전조사하기</li>
+  <li>공부한 것 기록하기</li>
+  <li>기록한 것 피드백받기</li>
+</ol>
+
+<p><br /></p>
+
+<h2 id="1-공부의-동기목표-정하기">1. 공부의 동기/목표 정하기</h2>
+
+<p>동기가 생기는 과정은 다음과 같습니다.</p>
+
+<ol>
+  <li>특정 문제를 해결하고 싶다!</li>
+  <li>그냥 이 분야에 흥미가 있다!</li>
+</ol>
+
+<p><br /></p>
+
+<p>개발자가 성장을 해야하는건 맞지만 이를 도와주려면 목표/동기가 필요합니다.</p>
+
+<p>단순히 개발자 = 성장 이라는 말 때문에 성장이 목표(동기)가 되면 안됩니다.</p>
+
+<p><br /></p>
+
+<p>성장하는 과정에서 내가 성장을 했는지 안했는지 알지 못하기 때문에 학습은 언제나 인내심을 요구로 합니다.</p>
+
+<p>따라서 성장이라는 목표 보다는 더 작은 동기/목표가 필요하게 됩니다.</p>
+
+<p><br /></p>
+
+<p>ex) 성장하기 위해 SwiftUI를 공부하겠어!</p>
+
+<p>-&gt; 재미, 흥미를 느끼지 못하면 쉽게 지침 ㅠㅠ</p>
+
+<p><br /></p>
+
+<h4 id="발생할-수-있는-문제">[발생할 수 있는 문제]</h4>
+
+<p>우리는 모두 운동, 토이프로젝트 등등의 목표를 세우지만</p>
+
+<p>지키기가 힘들어서 동기와 목표가 흐지부지되기 마련입니다.</p>
+
+<p><br /></p>
+
+<h4 id="이에-대한-해결방안">[이에 대한 해결방안]</h4>
+
+<p>작은 목표를 세우기 &amp;&amp; 빨리 해버리기!</p>
+
+<p>오늘, 이번주 등에 뭐 할지를 정해놓고 해버리기!</p>
+
+<p>진행속도를 본인의 컨디션에 맞게 조절하기!</p>
+
+<p>등의 방법을 통해</p>
+
+<p><br /></p>
+
+<p>어떤 iOS 개발자가 되고 싶은지</p>
+
+<p>뭘 이루고 싶은지</p>
+
+<p>등을 명확히 정해놓으면 나아가는 것이 수월함</p>
+
+<p><br /></p>
+
+<p>이 기술이 필요한 이유를 느껴봐야 학습 효과가 좋음</p>
+
+<p>단순히 기술을 공부하기 전에 기술을 배워서 얻을 수 있는 가치</p>
+
+<p>를 알아야 함!!!</p>
+
+<p><br /></p>
+
+<p>이거 해야된대 ㅠㅠ</p>
+
+<p>왜?..</p>
+
+<p>하면 공부가 잘 안됨</p>
+
+<p>그에 반해 필요해서 공부하면 뭐부터 해야되는지 등등이 나옴</p>
+
+<p><br /></p>
+
+<p>목표가 명확하면 뭘 공부해야될까?를 알게 됨</p>
+
+<p>정보는 글이나 영상에 있음</p>
+
+<p>이걸 풀어서 내 머리속으로 집어넣어야 함</p>
+
+<p><br /></p>
+
+<h2 id="2-공부할-것에-대한-사전조사하기">2. 공부할 것에 대한 사전조사하기</h2>
+
+<h3 id="애플-공식문서를-참조하자">애플 공식문서를 참조하자</h3>
+
+<p>어떤 개념에 대해 공부하기로 시작했다면 가장 먼저 해야할 것은 애플 공식문서를 보는 것입니다.</p>
+
+<p>공식문서를 통해 내가 어떤 계층의 개념을 공부하고 있고 (공식문서 상단의 목차를 통해 알 수 있습니다)</p>
+
+<p>이 개념을 공부하기 위해 필요한 하위개념이 있는지를 파악해야합니다.</p>
+
+<p>이러한 과정을 통해 공부의 순서나 계획이 변경되기 마련입니다.</p>
+
+<p><br /></p>
+
+<p>공식문서와 더불어 도움이 될만한 것은 WWDC입니다</p>
+
+<p>공식문서를 검색할 때 <code class="language-plaintext highlighter-rouge">Videos</code>탭에 가보면 여러 영상이 있는 것을 알 수 있는데</p>
+
+<p>이는 보통 WWDC 영상이고 발표영상을 통해 더 탄탄하게 개념을 확립할 수 있습니다.</p>
+
+<p><br /></p>
+
+<p>엉킨 지식 실타래의 시작과 끝은 언제나 공식문서로 해결하자!</p>
+
+<p><br /></p>
+
+<h3 id="키워드를-구하자">키워드를 구하자</h3>
+
+<p>공부하다보면 키워드를 몰라서 헤매는 경우가 많습니다.</p>
+
+<p>구글링을 통해 먼저 키워드를 구해놓으면 이후에 검색과 지식습득이 훨씬 용이합니다.</p>
+
+<p>위에서도 말한 공식문서 가장 상단의 목차(계층도)를 확인하면 키워드 획득이 한결 편해집니다.</p>
+
+<p>(ex: SwiftUI &gt; EnvironmenValues &gt; ScencePhase)</p>
+
+<p>Topic만 보고도 메서드, 프로퍼티의 용도를 대략적으로 이해할 수 있기 마련입니다.</p>
+
+<p><br /></p>
+
+<p>또, 문서를 읽기 시작하면 중요하게 사용되는 새로운 단어를 보게 될텐데</p>
+
+<p>이럴 땐 그 단어를 먼저 공부하는 것이 좋습니다</p>
+
+<p>용어의 애매모호한 이해상태 속에서 계속 공부하면 해당 지식은 반쪽짜리 지식이 되어버립니다.</p>
+
+<p>용어에 집착하는 자세는 언제나 중요한 것 같습니다.</p>
+
+<p><br /></p>
+
+<h2 id="3-공부한-것-기록하기">3. 공부한 것 기록하기</h2>
+
+<p>제드는 공부와 기록을 동일선상에 두고 있습니다.</p>
+
+<p>어떤 개념을 공부하기 위해서 먼저 글쓰기 버튼을 누른 뒤 시작한다고 합니다.</p>
+
+<p><br /></p>
+
+<p>이미 다른 훌륭한 글들이 차고 넘치는데 내가 왜 글을 써야하는지에 대한 의문이 있을 수 있지만</p>
+
+<p>다른 사람의 정제된 지식(글)은 그 사람의 관점으로만 보게 됩니다.</p>
+
+<p>어떤 개념을 내가 직접 정제해서 나의 지식으로 만드는 것과</p>
+
+<p>타인의 정제된 글을 읽음으로써만 정리하는 것은 큰 차이가 있습니다.</p>
+
+<p><br /></p>
+
+<p>제드가 중요하다고 생각하는건 기술블로그 운영이 아닌 기록이라는 행위 그 자체입니다.</p>
+
+<p>기록의 장점은 필사와 비슷합니다.</p>
+
+<p>그냥 읽을 때와 직접 쓸때의 내 머리에 들어가는 정도가 다른 것을 알고 계실겁니다.</p>
+
+<p><br /></p>
+
+<p>기록의 방식에는 정답이 없습니다.</p>
+
+<p>그럼에도 불구하고 글의 “가독성”은 중요합니다!</p>
+
+<p>누군가 혹은 미래의 나 자신에게 가르친다는 생각으로 글을 써야</p>
+
+<p>추후에 보더라도 편하게 해당 지식을 머리속에서 상기시킬 수 있습니다.</p>
+
+<p><br /></p>
+
+<p>가르침의 최대 장점은 내가 뭘 모르는지에 대해 알 수 있다는 것입니다.</p>
+
+<p>누군가에게 어떤 문제 혹은 개념을 설명할 때 내가 그 문제나 개념에 대해 빠삭하지 않으면 설명해줄 수 없죠</p>
+
+<p>공부도 마찬가지입니다. 누군가에게 설명해줄 수 있을만큼 공부하고, 이것을 기록해야 합니다. (인간은 망각의 동물이기 때문이죠)</p>
+
+<p><br /></p>
+
+<h2 id="4-기록한-것-피드백받기">4. 기록한 것 피드백받기</h2>
+
+<p>마지막으로 해야할 것은 피드백입니다.</p>
+
+<p>퇴고를 무한 반복하여 답습하는 과정이 필요하며</p>
+
+<p>잘못된 정보는 빠르게 고쳐서 미래의 나(혹은 독자)로 하여금 잘못된 정보로 인해 혼란을 겪는 일이 없도록 해야합니다.</p>
+
+<p>또, 공부했던 링크를 글에 추가해놓으면 후에 다시 공부할 때 큰 도움이 됩니다.</p>
+
+<p>글을 모두 작성했다면 머리를 비우고 초심자의 마음으로 다시 읽어보는 습관이 중요합니다.</p>
+
+<p><br /></p>
+
+<h2 id="마지막-당부">마지막 당부</h2>
+
+<p>지식의 저주라는 말을 들어보셨나요?</p>
+
+<p>지금 배운 지식은 나중에 가서 잊어버리기 마련입니다.</p>
+
+<p>그럼에도 불구하고 나중에 가서 그 지식을 진짜 “알고있다”라고 착각할 수 있습니다.</p>
+
+<p>바로 해당 지식을 정리했던 이 오늘의 기억 때문이죠.</p>
+
+<p>이렇게 오만해지는 순간 지식은 여러분에게 저주를 내립니다.</p>
+
+<p>항상 겸손하시고 지식의 저주를 조심하세요</p>
+
+<p>추가 질문 정리:</p>
+
+<p>Q. 혹시 대외활동(동아리, 스터디)에 참여하신 적 있으신가요?</p>
+
+<p>A. Nextered 를 조금 했었고 그 안에서 만난 사람들이랑 RX 스터디 한 번 한적 있습니다.</p>
+
+<p>그거 말고는 딱히 없네요.. 지금은 지인들끼리 서비스 만드는 스터디(?) 협업(?) 하고 있습니다.</p>
+
+<p>Q. 영어 문서 번역을 상당히 많이 하셨는데 영어를 따로 공부하셨나요?</p>
+
+<p>A. 아니요 번역기도 돌리고 천천히 읽기도 하며 해결중입니다.</p>
+
+<h2 id="회고">회고</h2>
+
+<p>글을 쓴다는 것, 공부를 한다는 것, 열심히 산다는 것</p>
+
+<p>모두 누구에게 보여주기 위함이 아니다.</p>
+
+<p>“왜 열심히 살아? 어떻게 그렇게 계속 열심히 해? 안지쳐?” 와 같은 질문에 대한 대답은 항상</p>
+
+<p>“그냥 원래 그래서..” 였던 것 같다.</p>
+
+<p>열심히 하는거에 비해 결과가 미비할 때도, 열심히 산다는 것 자체로 칭찬을 받을 때도 같은 질문을 받았었고 같은 대답을 던졌었다.</p>
+
+<p>물론 모든 일에 죄다 열심히인 것은 아니다.</p>
+
+<p>일례로 학교에서 가르치는 인문교양들은 나에게 열심히 공부할 충분한 동기를 주지 못한다.</p>
+
+<p>그 이유는 밑에서 설명할 나의 인생의 목표와도 연관이 있다.</p>
+
+<p><br /></p>
+
+<p>더 정확히 말하면 나에게는 확실한 동기와 인생의 목표가 있다</p>
+
+<p>인생의 목표 두가지는 내 자식에게 자랑스러운 아빠가 되는 것이 첫째이고</p>
+
+<p>내 분야에서 탑으로 인정받는 것이 둘째이다.</p>
+
+<p>분야에서 탑으로 인정받는다는 것은 단순히 높은 직급에 올라가는 것을 말하는 것이 아니라</p>
+
+<p>이 분야에서 영향력있는 사람이 되고 싶다는 말이며</p>
+
+<p>이러한 열망이 나로 하여금 열심히 사는 원동력을 제공해주는 것 같다.</p>
+
+
+
+                <hr style="visibility: hidden;">
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/til/2021.03.23-TIL/"
+                            data-toggle="tooltip" data-placement="top" title="2021년 03월 23일 공부일지">
+                            Previous<br>
+                            <span>2021년 03월 23일 공부일지</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/til/2021.03.25-TIL/" data-toggle="tooltip"
+                            data-placement="top" title="2021년 03월 25일 공부일지">
+                            Next<br>
+                            <span>2021년 03월 25일 공부일지</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <hr style="visibility: hidden;">
+
+
+            </div>
+
+            <!-- Side Catalog Container -->
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+
+<section>
+    
+    <hr class="hidden-sm hidden-xs">
+    
+    <h5><a href="/archive/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
+            
+        
+            
+            <a data-sort="0034"
+                href="/archive/?tag=TIL" title="TIL"
+                rel="25">TIL</a>
+            
+            
+            
+            <a data-sort="0052"
+                href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
+                rel="7">운영체제</a>
+            
+            <a data-sort="0052"
+                href="/archive/?tag=Swift" title="Swift"
+                rel="7">Swift</a>
+            
+            <a data-sort="0052"
+                href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
+                rel="7">Yagom-Academy</a>
+            
+            <a data-sort="0053"
+                href="/archive/?tag=OS" title="OS"
+                rel="6">OS</a>
+            
+            <a data-sort="0055"
+                href="/archive/?tag=iOS" title="iOS"
+                rel="4">iOS</a>
+            
+            <a data-sort="0056"
+                href="/archive/?tag=enum" title="enum"
+                rel="3">enum</a>
+            
+            <a data-sort="0057"
+                href="/archive/?tag=Flow+chart" title="Flow chart"
+                rel="2">Flow chart</a>
+            
+            <a data-sort="0057"
+                href="/archive/?tag=Protocol" title="Protocol"
+                rel="2">Protocol</a>
+            
+            <a data-sort="0057"
+                href="/archive/?tag=UML" title="UML"
+                rel="2">UML</a>
+            
+            <a data-sort="0057"
+                href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
+                rel="2">Yagom Academy</a>
+    </div>
+</section>
+
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- add support for mathjax by voleking-->
+
+
+<script src="https://utteranc.es/client.js" repo="Neph3779/blog-comments" issue-term="pathname" theme="github-light"
+    crossorigin="anonymous" async>
+    </script>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js", function () {
+        anchors.options = {
+            visible: 'hover',
+            placement: 'right',
+            // icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link {
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top: -0.1em;
+        }
+    }
+</style>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- SNS Link -->
+                
+
+
+<ul class="list-inline text-center">
+
+
+  
+  
+  
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://github.com/neph3779">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+                <p class="copyright text-muted">
+                    Copyright &copy; Neph's Blog 2021
+                    <br>
+                    Powered by <a href="http://huangxuan.me">Hux Blog</a> |
+                    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px"
+                        height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src=" /js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src=" /js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src=" /js/hux-blog.min.js "></script>
+
+<!-- Simple Jekyll Search -->
+<script src=" /js/simple-jekyll-search.min.js"></script>
+
+<!-- Service Worker -->
+
+<script src=" /js/snackbar.js "></script>
+<script src=" /js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+
+
+
+
+
+
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function () {
+        var $nav = document.querySelector("nav");
+        if ($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-190717919-1';
+    var _gaDomain = '';
+
+    // Originial
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        // interop with multilangual 
+        if ('' == 'true') {
+            _containerSelector = 'div.post-container.active'
+        } else {
+            _containerSelector = 'div.post-container'
+        }
+
+        // init
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2');
+        // a = P.find('h1,h2,h3,h4,h5,h6');
+
+        // clean
+        $(selector).html('')
+
+        // appending
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+<!-- Multi-Lingual -->
+
+
+<!-- Simple Jekyll Search -->
+<script>
+    // https://stackoverflow.com/questions/1912501/unescape-html-entities-in-javascript
+    function htmlDecode(input) {
+        var e = document.createElement('textarea');
+        e.innerHTML = input;
+        // handle case of empty input
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    }
+
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '/search.json',
+        searchResultTemplate: '<div class="post-preview item"><a href="{url}"><h2 class="post-title">{title}</h2><h3 class="post-subtitle">{subtitle}</h3><hr></a></div>',
+        noResultsText: 'No results',
+        limit: 50,
+        fuzzy: false,
+        // a hack to get escaped subtitle unescaped. for some reason, 
+        // post.subtitle w/o escape filter nuke entire search.
+        templateMiddleware: function (prop, value, template) {
+            if (prop === 'subtitle' || prop === 'title') {
+                if (value.indexOf("code")) {
+                    return htmlDecode(value);
+                } else {
+                    return value;
+                }
+            }
+        }
+    });
+
+    $(document).ready(function () {
+        var $searchPage = $('.search-page');
+        var $searchOpen = $('.search-icon');
+        var $searchClose = $('.search-icon-close');
+        var $searchInput = $('#search-input');
+        var $body = $('body');
+
+        $searchOpen.on('click', function (e) {
+            e.preventDefault();
+            $searchPage.toggleClass('search-active');
+            var prevClasses = $body.attr('class') || '';
+            setTimeout(function () {
+                $body.addClass('no-scroll');
+            }, 400)
+
+            if ($searchPage.hasClass('search-active')) {
+                $searchClose.on('click', function (e) {
+                    e.preventDefault();
+                    $searchPage.removeClass('search-active');
+                    $body.attr('class', prevClasses);  // from closure 
+                });
+                $searchInput.focus();
+            }
+        });
+    });
+</script>
+
+
+    <!-- Image to hack wechat -->
+    <img src="/assets/logo.ico/ms-icon-310x310.png" width="0" height="0" />
+    <!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
