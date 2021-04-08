@@ -1,0 +1,12 @@
+---
+layout: page
+title: "About"
+description: "iOS 공부일지"
+header-img: "assets/bakcground.jpg"
+---
+
+<!-- Korean Version -->
+<div class="kr post-container">
+    {% capture about_kr %}{% include about/kr.md %}{% endcapture %}
+    {{ about_kr | markdownify }}
+</div>

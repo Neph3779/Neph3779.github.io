@@ -1,27 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 {% include head.html %}
 
-<head>
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-</head>
+<!-- hack iOS CSS :active style -->
 
-<body>
-  {% include nav.html %}
+<body ontouchstart="">
 
-  <div id="main" role="main" class="container">
+    {% include nav.html %}
+    {% include search.html %}
+
     {{ content }}
-  </div>
 
-  <div class="wrapper-footer">
-    <div class="container">
-      <footer class="footer">
-        {% include footer.html %}
-      </footer>
-    </div>
-  </div>
+    {% include footer.html %}
 
-  {% include analytics.html %}
+
+    <!-- Image to hack wechat -->
+    <img src="/assets/logo.ico/ms-icon-310x310.png" width="0" height="0" />
+    <!-- Migrate from head to bottom, no longer block render and still work -->
+
 </body>
 
 </html>

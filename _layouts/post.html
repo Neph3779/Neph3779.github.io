@@ -2,66 +2,143 @@
 layout: default
 ---
 
-<article class="post">
-  <span>
-    <h1>{{ page.title }}</h1>
-  </span>
-  <div align="right" class="date">
-    <h4 style="display: inline-block;"> {{ page.categories[0] }} &nbsp; </h4>
-    <!-- &nbsp;는 공백 삽입  -->
-    <h6 style="display: inline-block;"> {{ page.date | date: "%Y-%m-%d" }} </h6>
-  </div>
+<!-- Image to hack wechat -->
+<!-- <img src="/assets/logo.ico/ms-icon-310x310.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
-  <!-- <div class="meta">
-    <span class="date" align="right">
-      {{ page.date | date: "%Y-%m-%d" }}
-    </span>
-  </div> -->
+<!-- Post Header -->
+{% include intro-header.html type='post' %}
 
-  <hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-  <div id="entry" class="entry">
-    {{ content | newline_to_br }}
-  </div>
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
 
-  <br>
-  <ul class="tag">
-    <strong><i class="fa fa-tag" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].tags_label | default:
-      "Tags:" }} </strong>
-    {% for tag in page.tags %}
-    <li>
-      <a href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
-        {{ tag }}
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
+                <!-- Multi-Lingual -->
+                {% if page.multilingual %}
+                {% include multilingual-sel.html %}
+                {% endif %}
 
-  <div class="pagination">
-    {% if page.previous.url %}
-    <span class="prev">
-      <a href="{{ site.url }}{{ site.baseurl }}{{ page.previous.url }}">
-        < {{ page.previous.title }} </a>
-    </span>
-    {% endif %}
+                {{ content }}
 
-    {% if page.next.url %}
-    <span class="next">
+                <hr style="visibility: hidden;">
+                <ul class="pager">
+                    {% if page.previous.url %}
+                    <li class="previous">
+                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"
+                            data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
+                            Previous<br>
+                            <span>{{page.previous.title}}</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if page.next.url %}
+                    <li class="next">
+                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip"
+                            data-placement="top" title="{{page.next.title}}">
+                            Next<br>
+                            <span>{{page.next.title}}</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <hr style="visibility: hidden;">
 
-      <a href="{{ site.url }}{{ site.baseurl }}{{ page.next.url }}">
-        {{ page.next.title }}
-        >
-      </a>
 
-    </span>
-    {% endif %}
-  </div>
+            </div>
 
-  <div>
-    <script src="https://utteranc.es/client.js" repo="Neph3779/blog-comments" issue-term="og:title" label="댓글"
-      theme="github-light" crossorigin="anonymous" async>
-      </script>
-  </div>
+            <!-- Side Catalog Container -->
+            {% unless page.no-catalog %}
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            {% endunless %}
 
-  <!-- {% include disqus.html %} -->
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                {% include featured-tags.html bottom=true %}
+
+                <!-- Friends Blog -->
+                {% include friends.html %}
+            </div>
+        </div>
+    </div>
 </article>
+
+<!-- add support for mathjax by voleking-->
+{% if page.mathjax %}
+{% include mathjax_support.html %}
+{% endif %}
+
+{% if site.netease_comment %}
+<!-- 网易云跟帖JS代码 start -->
+<script src="https://assets1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+<script>
+    var cloudTieConfig = {
+        url: document.location.href,
+        sourceId: "",
+        productKey: "de25fc98a6fe48b3bc8a7ae765da99a0",
+        target: "cloud-tie-wrapper"
+    };
+    var yunManualLoad = true;
+    Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+</script>
+<!-- 网易云跟帖JS代码 end -->
+{% endif %}
+
+{% if site.anchorjs %}
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js", function () {
+        anchors.options = {
+            visible: 'hover',
+            placement: 'right',
+            // icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link {
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top: -0.1em;
+        }
+    }
+</style>
+{% endif %}
