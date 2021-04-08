@@ -79,7 +79,7 @@ ga_track_id: 'UA-190717919-1'            # Format: UA-xxxxxx-xx
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "사이드바 내용"
+sidebar-about-description: "iOS를 공부하고 있는 Neph입니다 제 블로그가 여러분께 도움이 되었으면 좋겠습니다."
 sidebar-avatar: /assets/logo.ico/apple-icon.png    # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
