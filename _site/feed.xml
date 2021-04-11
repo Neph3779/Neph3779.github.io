@@ -5,8 +5,8 @@
     <description>Write code with my soul.</description>
     <link>https://neph3779.github.io/</link>
     <atom:link href="https://neph3779.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 11 Apr 2021 15:57:02 +0900</pubDate>
-    <lastBuildDate>Sun, 11 Apr 2021 15:57:02 +0900</lastBuildDate>
+    <pubDate>Sun, 11 Apr 2021 16:32:30 +0900</pubDate>
+    <lastBuildDate>Sun, 11 Apr 2021 16:32:30 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -241,29 +241,7 @@
     
       <item>
         <title>[작성중] [#6] CPU 스케쥴링 - 1</title>
-        <description>&lt;h3 id=&quot;목차&quot;&gt;목차&lt;/h3&gt;
-&lt;ol id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#목차&quot; id=&quot;markdown-toc-목차&quot;&gt;목차&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#cpu-스케쥴링&quot; id=&quot;markdown-toc-cpu-스케쥴링&quot;&gt;CPU 스케쥴링&lt;/a&gt;    &lt;ol&gt;
-      &lt;li&gt;&lt;a href=&quot;#add-load-store-명령&quot; id=&quot;markdown-toc-add-load-store-명령&quot;&gt;Add, Load, Store 명령&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#cpu-버스트와-io-버스트&quot; id=&quot;markdown-toc-cpu-버스트와-io-버스트&quot;&gt;CPU 버스트와 I/O 버스트&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#cpu-스케쥴링의-필요성&quot; id=&quot;markdown-toc-cpu-스케쥴링의-필요성&quot;&gt;CPU 스케쥴링의 필요성&lt;/a&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#cpu-스케쥴러&quot; id=&quot;markdown-toc-cpu-스케쥴러&quot;&gt;CPU 스케쥴러&lt;/a&gt;    &lt;ol&gt;
-      &lt;li&gt;&lt;a href=&quot;#cpu-스케쥴러의-동작과정&quot; id=&quot;markdown-toc-cpu-스케쥴러의-동작과정&quot;&gt;CPU 스케쥴러의 동작과정&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#cpu-스케쥴링이-필요한-몇-가지-경우들&quot; id=&quot;markdown-toc-cpu-스케쥴링이-필요한-몇-가지-경우들&quot;&gt;CPU 스케쥴링이 필요한 몇 가지 경우들&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#선점형-방식과-비선점형-방식&quot; id=&quot;markdown-toc-선점형-방식과-비선점형-방식&quot;&gt;선점형 방식과 비선점형 방식&lt;/a&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#디스패처&quot; id=&quot;markdown-toc-디스패처&quot;&gt;디스패처&lt;/a&gt;    &lt;ol&gt;
-      &lt;li&gt;&lt;a href=&quot;#cpu의-이양-작업&quot; id=&quot;markdown-toc-cpu의-이양-작업&quot;&gt;CPU의 이양 작업&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#디스패처-1&quot; id=&quot;markdown-toc-디스패처-1&quot;&gt;디스패처&lt;/a&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;cpu-스케쥴링&quot;&gt;CPU 스케쥴링&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;cpu-스케쥴링&quot;&gt;CPU 스케쥴링&lt;/h2&gt;
 
 &lt;hr /&gt;
 

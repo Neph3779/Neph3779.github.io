@@ -809,6 +809,9 @@ samp {
   margin-top: 44px;
   margin-bottom: 30px;
 }
+.post-container h2::after {
+  border-bottom: 1px solid #ececec;
+}
 .post-container h4 {
   font-size: 22px;
   font-weight: 600;
