@@ -5,9 +5,164 @@
     <description>Write code with my soul.</description>
     <link>https://neph3779.github.io/</link>
     <atom:link href="https://neph3779.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 09 Apr 2021 01:41:34 +0900</pubDate>
-    <lastBuildDate>Fri, 09 Apr 2021 01:41:34 +0900</lastBuildDate>
+    <pubDate>Sun, 11 Apr 2021 15:53:20 +0900</pubDate>
+    <lastBuildDate>Sun, 11 Apr 2021 15:53:20 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>2021년 04월 08일 공부일지</title>
+        <description>&lt;h2 id=&quot;오늘-공부한-내용&quot;&gt;오늘 공부한 내용&lt;/h2&gt;
+
+&lt;h3 id=&quot;accessibility에-대해-공부했습니다&quot;&gt;Accessibility에 대해 공부했습니다&lt;/h3&gt;
+
+&lt;p&gt;어떻게하면 시각 장애인들도 앱을 사용할 수 있을까? 와 같은 의문에 대답하는 것이 접근성입니다. 화면에 있는 item들을 순서대로 읽어주는 기능을 자체적으로 가지고 있지만 프로그래머가 accessibility 관련 설정을 해주지 않으면 사용하기 어렵습니다. 지난 쥬스 메이커 프로젝트의 accessibilityLabel과 accessibilityValue를 설정해주어봤습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;StockLabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UILabel&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;fruit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Fruit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;FruitType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strawberry&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;accessibilityLabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newValue&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;accessibilityValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;개&quot;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newValue&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;dynamic-types&quot;&gt;Dynamic types&lt;/h3&gt;
+
+&lt;p&gt;시스템 설정에서 글자 크기를 조절했을 때 나의 앱에서 글자 크기가 변경되도록 해주려면 dynamic type에 대해 알고 있어야합니다. 글자를 담고 있는 layer가 글자의 크기를 견디지 못할수도 있으며, 글자의 크기가 너무 커져서 중요한 그림 혹은 버튼이 화면에서 사라질수도 있습니다. 이것을 priority를 통해 적절히 해결해야합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;strawBananaButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;titleLabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;adjustsFontSizeToFitWidth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;strawBananaButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;titleLabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;minimumScaleFactor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;custom font를 사용하는 경우에는 설정해줘야하는 부분들이 매우 많아 잘 사용하지 않습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;adjustsFontSizeToFitWidth&lt;/code&gt;를 통해 layer의 크기에 맞게 font 사이즈를 조절해줄수 있으며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minimumScaleFactor&lt;/code&gt;를 통해 원본의 몇 %까지만 글자가 작아지도록 설정할수도 있습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;autolayout-강의를-수강하고-정리해봤습니다&quot;&gt;AutoLayout 강의를 수강하고 정리해봤습니다&lt;/h3&gt;
+
+&lt;p&gt;코드로 UI를 작성하는 방법에 대해 알아보고 실습을 진행해봤습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Button&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setTitleColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;systemGreen&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;addSubview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        
+        &lt;span class=&quot;c1&quot;&gt;//AutoresizingMask란걸 constraint로 자동으로 전환해줄거야? 물어보는 프로퍼티&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//나중에 공부해보자!&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;translatesAutoresizingMaskIntoConstraints&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;safeArea&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;safeAreaLayoutGuide&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// safe Area의 영역을 나타내는 가이드&lt;/span&gt;
+        
+        &lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;leadingAnchor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;constraint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;safeArea&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;leadingAnchor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;constant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isActive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// NSLayoutConstraint의 객체를 만들어주고 바로 활성화&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//constraint는 활성화 상태와 비활성화 상태가 있음&lt;/span&gt;
+        
+        &lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;trailingAnchor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;constraint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;safeArea&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;trailingAnchor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;constant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isActive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;safebottomAnchor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bottomAnchor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;constraint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;safeArea&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bottomAnchor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        
+        &lt;span class=&quot;n&quot;&gt;safebottomAnchor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isActive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;safebottomAnchor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;priority&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;defaultHigh&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//init으로 바꿔줄수도 있음&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;viewBottomAnchor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bottomAnchor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;constraint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;lessThanOrEqualTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bottomAnchor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;constant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        
+        &lt;span class=&quot;n&quot;&gt;viewBottomAnchor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isActive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;NSLayout의 이니셜라이저를 사용하는 방법과 constraint 속성을 사용하는 방법이 있다는걸 알게 되었습니다.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 08 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/til/2021.04.08-TIL/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/til/2021.04.08-TIL/</guid>
+        
+        <category>Scroll View</category>
+        
+        <category>Table View</category>
+        
+        <category>Accessibility</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
     
       <item>
         <title>2021년 04월 06일 공부일지</title>
@@ -826,338 +981,6 @@
         
         
         <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[#4] 프로세스 관리 - 1</title>
-        <description>&lt;h3 id=&quot;목차&quot;&gt;목차&lt;/h3&gt;
-&lt;ol id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#목차&quot; id=&quot;markdown-toc-목차&quot;&gt;목차&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#프로세스의-개념&quot; id=&quot;markdown-toc-프로세스의-개념&quot;&gt;프로세스의 개념&lt;/a&gt;    &lt;ol&gt;
-      &lt;li&gt;&lt;a href=&quot;#프로세스란&quot; id=&quot;markdown-toc-프로세스란&quot;&gt;프로세스란?&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#프로세스의-문맥process-context의-필요성&quot; id=&quot;markdown-toc-프로세스의-문맥process-context의-필요성&quot;&gt;프로세스의 문맥(process context)의 필요성&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#프로세스-문맥의-세가지-분류&quot; id=&quot;markdown-toc-프로세스-문맥의-세가지-분류&quot;&gt;프로세스 문맥의 세가지 분류&lt;/a&gt;        &lt;ol&gt;
-          &lt;li&gt;&lt;a href=&quot;#하드웨어-문맥&quot; id=&quot;markdown-toc-하드웨어-문맥&quot;&gt;하드웨어 문맥&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#프로세스의-주소-공간&quot; id=&quot;markdown-toc-프로세스의-주소-공간&quot;&gt;프로세스의 주소 공간&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#커널상의-문맥&quot; id=&quot;markdown-toc-커널상의-문맥&quot;&gt;커널상의 문맥&lt;/a&gt;&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#프로세스의-상태&quot; id=&quot;markdown-toc-프로세스의-상태&quot;&gt;프로세스의 상태&lt;/a&gt;    &lt;ol&gt;
-      &lt;li&gt;&lt;a href=&quot;#프로세스의-세가지-상태---실행-준비-봉쇄&quot; id=&quot;markdown-toc-프로세스의-세가지-상태---실행-준비-봉쇄&quot;&gt;프로세스의 세가지 상태 - 실행, 준비, 봉쇄&lt;/a&gt;        &lt;ol&gt;
-          &lt;li&gt;&lt;a href=&quot;#실행-상태&quot; id=&quot;markdown-toc-실행-상태&quot;&gt;실행 상태&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#준비-상태&quot; id=&quot;markdown-toc-준비-상태&quot;&gt;준비 상태&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#봉쇄-상태&quot; id=&quot;markdown-toc-봉쇄-상태&quot;&gt;봉쇄 상태&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#중지-상태&quot; id=&quot;markdown-toc-중지-상태&quot;&gt;중지 상태&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#그-외의-상태&quot; id=&quot;markdown-toc-그-외의-상태&quot;&gt;그 외의 상태&lt;/a&gt;&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#프로세스-제어블록&quot; id=&quot;markdown-toc-프로세스-제어블록&quot;&gt;프로세스 제어블록&lt;/a&gt;    &lt;ol&gt;
-      &lt;li&gt;&lt;a href=&quot;#프로세스-제어블록pcb의-구성요소&quot; id=&quot;markdown-toc-프로세스-제어블록pcb의-구성요소&quot;&gt;프로세스 제어블록(PCB)의 구성요소&lt;/a&gt;        &lt;ol&gt;
-          &lt;li&gt;&lt;a href=&quot;#프로세스의-상태process-state&quot; id=&quot;markdown-toc-프로세스의-상태process-state&quot;&gt;프로세스의 상태(process state)&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#프로그램-카운터program-counter의-값&quot; id=&quot;markdown-toc-프로그램-카운터program-counter의-값&quot;&gt;프로그램 카운터(program counter)의 값&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#cpu-레지스터cpu-register의-값&quot; id=&quot;markdown-toc-cpu-레지스터cpu-register의-값&quot;&gt;CPU 레지스터(CPU register)의 값&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#cpu-스케쥴링-정보cpu-scheduling-information&quot; id=&quot;markdown-toc-cpu-스케쥴링-정보cpu-scheduling-information&quot;&gt;CPU 스케쥴링 정보(CPU scheduling information)&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#메모리-관리-정보memory-management-information&quot; id=&quot;markdown-toc-메모리-관리-정보memory-management-information&quot;&gt;메모리 관리 정보(memory management information)&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#자원-사용-정보accounting-information&quot; id=&quot;markdown-toc-자원-사용-정보accounting-information&quot;&gt;자원 사용 정보(accounting information)&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#입출력-상태-정보io-status-information&quot; id=&quot;markdown-toc-입출력-상태-정보io-status-information&quot;&gt;입출력 상태 정보(I/O status information)&lt;/a&gt;&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#문맥교환&quot; id=&quot;markdown-toc-문맥교환&quot;&gt;문맥교환&lt;/a&gt;    &lt;ol&gt;
-      &lt;li&gt;&lt;a href=&quot;#문맥교환content-switch의-의미&quot; id=&quot;markdown-toc-문맥교환content-switch의-의미&quot;&gt;문맥교환(content switch)의 의미&lt;/a&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#프로세스-스케쥴링을-위한-큐&quot; id=&quot;markdown-toc-프로세스-스케쥴링을-위한-큐&quot;&gt;프로세스 스케쥴링을 위한 큐&lt;/a&gt;    &lt;ol&gt;
-      &lt;li&gt;&lt;a href=&quot;#준비-큐ready-queue&quot; id=&quot;markdown-toc-준비-큐ready-queue&quot;&gt;준비 큐(ready queue)&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#장치-큐device-queue&quot; id=&quot;markdown-toc-장치-큐device-queue&quot;&gt;장치 큐(device queue)&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#소프트웨어-자원을-기다리는-큐&quot; id=&quot;markdown-toc-소프트웨어-자원을-기다리는-큐&quot;&gt;소프트웨어 자원을 기다리는 큐&lt;/a&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#스케쥴러&quot; id=&quot;markdown-toc-스케쥴러&quot;&gt;스케쥴러&lt;/a&gt;    &lt;ol&gt;
-      &lt;li&gt;&lt;a href=&quot;#스케쥴러의-뜻&quot; id=&quot;markdown-toc-스케쥴러의-뜻&quot;&gt;스케쥴러의 뜻&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#스케쥴러의-종류&quot; id=&quot;markdown-toc-스케쥴러의-종류&quot;&gt;스케쥴러의 종류&lt;/a&gt;        &lt;ol&gt;
-          &lt;li&gt;&lt;a href=&quot;#장기-스케쥴러작업-스케쥴러&quot; id=&quot;markdown-toc-장기-스케쥴러작업-스케쥴러&quot;&gt;장기 스케쥴러(작업 스케쥴러)&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#특성&quot; id=&quot;markdown-toc-특성&quot;&gt;특성&lt;/a&gt;&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#중기-스케쥴러&quot; id=&quot;markdown-toc-중기-스케쥴러&quot;&gt;중기 스케쥴러&lt;/a&gt;        &lt;ol&gt;
-          &lt;li&gt;&lt;a href=&quot;#단기-스케쥴러cpu-스케쥴러&quot; id=&quot;markdown-toc-단기-스케쥴러cpu-스케쥴러&quot;&gt;단기 스케쥴러(CPU 스케쥴러)&lt;/a&gt;&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;프로세스의-개념&quot;&gt;프로세스의 개념&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;프로세스란&quot;&gt;프로세스란?&lt;/h3&gt;
-
-&lt;p&gt;프로세스란 실행 중인 프로그램을 뜻함&lt;/p&gt;
-
-&lt;p&gt;디스크에 실행파일의 형태로 존재하던 프로그램이 메모리에 올라가서 실행되기 시작하면 프로세스가 됨&lt;/p&gt;
-
-&lt;p&gt;프로세스는 CPU를 획득하여 자신의 코드를 수행,&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;프로세스의-문맥process-context의-필요성&quot;&gt;프로세스의 문맥(process context)의 필요성&lt;/h3&gt;
-
-&lt;p&gt;프로세스의 문맥이란 프로세스가 현재 어떤 상태에서 수행되고 있는지 정확히 규명하기 위해 필요한 정보&lt;/p&gt;
-
-&lt;p&gt;여러 프로세스가 실행되면 프로세스마다 CPU를 번갈아가며 사용&lt;/p&gt;
-
-&lt;p&gt;따라서 CPU 재보유하여 명령의 수행을 재개할 때 직전 수행 시점의 정확한 상태를 재현해야 함&lt;/p&gt;
-
-&lt;p&gt;이때 정확한 재현을 위해 필요한 것이 프로세스의 문맥&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;프로세스-문맥의-세가지-분류&quot;&gt;프로세스 문맥의 세가지 분류&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/OS/4/1.png&quot; alt=&quot;1&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;하드웨어-문맥&quot;&gt;하드웨어 문맥&lt;/h4&gt;
-
-&lt;p&gt;CPU의 수행 상태를 나타내는 PC값과 각종 레지스터들&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;프로세스의-주소-공간&quot;&gt;프로세스의 주소 공간&lt;/h4&gt;
-
-&lt;p&gt;프로세스가 보유한 독자적 주소공간인 코드, 데이터, 스택&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;커널상의-문맥&quot;&gt;커널상의 문맥&lt;/h4&gt;
-
-&lt;p&gt;프로세스를 관리하기 위한 자료구조인 PCB와 커널스택&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;프로세스의-상태&quot;&gt;프로세스의 상태&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;프로세스의-세가지-상태---실행-준비-봉쇄&quot;&gt;프로세스의 세가지 상태 - 실행, 준비, 봉쇄&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;실행-상태&quot;&gt;실행 상태&lt;/h4&gt;
-
-&lt;p&gt;프로세스가 CPU를 보유하고 기계어 명령을 처리하고 있는 상태&lt;/p&gt;
-
-&lt;p&gt;매 시점마다 실행 상태에 있는 프로세스는 오직 하나 뿐&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;준비-상태&quot;&gt;준비 상태&lt;/h4&gt;
-
-&lt;p&gt;CPU만 보유하면 당장 명령을 실행할 수 있지만 CPU를 할당받지 못한 상태&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;봉쇄-상태&quot;&gt;봉쇄 상태&lt;/h4&gt;
-
-&lt;p&gt;당장 명령을 실행할 수 없는 상태&lt;/p&gt;
-
-&lt;p&gt;주로 요청한 입출력 작업이 처리중일 때 프로세스는 봉쇄 상태에 머무름&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;중지-상태&quot;&gt;중지 상태&lt;/h4&gt;
-
-&lt;p&gt;외부적인 이유로 프로세스의 수행이 정지된 상태&lt;/p&gt;
-
-&lt;p&gt;외부에서 재개시키지 않는 이상 다시 활성화 될 수 없음&lt;/p&gt;
-
-&lt;p&gt;중지 상태의 프로세스는 메모리를 통째로 빼앗기고 디스크로 스왑 아웃 됨 (중기 스케쥴러에 의해 되는 경우가 대표적)&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;중지준비&lt;/li&gt;
-  &lt;li&gt;중지봉쇄&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;그-외의-상태&quot;&gt;그 외의 상태&lt;/h4&gt;
-
-&lt;p&gt;프로세스가 생성중일 때 - 시작(new) 상태&lt;/p&gt;
-
-&lt;p&gt;프로세스가 종료중인 상태 - 완료(terminated) 상태&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;프로세스-제어블록&quot;&gt;프로세스 제어블록&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;프로세스-제어블록pcb의-구성요소&quot;&gt;프로세스 제어블록(PCB)의 구성요소&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;프로세스의-상태process-state&quot;&gt;프로세스의 상태(process state)&lt;/h4&gt;
-
-&lt;p&gt;CPU를 할당해도 되는지의 여부를 결정하기 위해 필요&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;프로그램-카운터program-counter의-값&quot;&gt;프로그램 카운터(program counter)의 값&lt;/h4&gt;
-
-&lt;p&gt;다음에 수행할 명령의 위치를 가리킴&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;cpu-레지스터cpu-register의-값&quot;&gt;CPU 레지스터(CPU register)의 값&lt;/h4&gt;
-
-&lt;p&gt;CPU 연산을 위해 현 시점에 레지스터에 어떤 값을 저장하고 있는지를 나타냄&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;cpu-스케쥴링-정보cpu-scheduling-information&quot;&gt;CPU 스케쥴링 정보(CPU scheduling information)&lt;/h4&gt;
-
-&lt;p&gt;CPU 스케쥴링을 위해 필요&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;메모리-관리-정보memory-management-information&quot;&gt;메모리 관리 정보(memory management information)&lt;/h4&gt;
-
-&lt;p&gt;메모리 할당을 위해 필요&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;자원-사용-정보accounting-information&quot;&gt;자원 사용 정보(accounting information)&lt;/h4&gt;
-
-&lt;p&gt;사용자에게 자원 사용 요금을 계산하여 청구하는 등의 용도에 의해 필요&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;입출력-상태-정보io-status-information&quot;&gt;입출력 상태 정보(I/O status information)&lt;/h4&gt;
-
-&lt;p&gt;프로세스가 오픈한 파일 정보 등 프로세스 입출력 관련 상태 정보를 나타냄&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;문맥교환&quot;&gt;문맥교환&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;문맥교환content-switch의-의미&quot;&gt;문맥교환(content switch)의 의미&lt;/h3&gt;
-
-&lt;p&gt;문맥교환이란 하나의 사용자 프로세스로부터 다른 사용자 프로세스로 CPU의 제어권이 이양되는 과정을 뜻함&lt;/p&gt;
-
-&lt;p&gt;문맥교환은 타이머 인터럽트, 프로세스의 입출력 요청, 다른 조건을 충족하지 못해 CPU를 회수당하고 봉쇄 상태가 되는 경우에 발생&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/OS/4/2.png&quot; alt=&quot;2&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;프로세스-스케쥴링을-위한-큐&quot;&gt;프로세스 스케쥴링을 위한 큐&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;준비-큐ready-queue&quot;&gt;준비 큐(ready queue)&lt;/h3&gt;
-
-&lt;p&gt;CPU를 기다리는 프로세스들을 줄 세우기 위한 큐&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;장치-큐device-queue&quot;&gt;장치 큐(device queue)&lt;/h3&gt;
-
-&lt;p&gt;특정 자원을 기다리는 프로세스들을 줄 세우기 위한 큐&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;소프트웨어-자원을-기다리는-큐&quot;&gt;소프트웨어 자원을 기다리는 큐&lt;/h3&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;스케쥴러&quot;&gt;스케쥴러&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;스케쥴러의-뜻&quot;&gt;스케쥴러의 뜻&lt;/h3&gt;
-
-&lt;p&gt;어떤 프로세스에게 자원을 할당할지를 결정하는 운영체제 커널의  코드&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;스케쥴러의-종류&quot;&gt;스케쥴러의 종류&lt;/h3&gt;
-
-&lt;h4 id=&quot;장기-스케쥴러작업-스케쥴러&quot;&gt;장기 스케쥴러(작업 스케쥴러)&lt;/h4&gt;
-
-&lt;p&gt;어떤 프로세스를 준비 큐에 진입시킬지 결정하는 역할&lt;/p&gt;
-
-&lt;p&gt;프로세스에게 메모리를 할당시키는 역할&lt;/p&gt;
-
-&lt;p&gt;처음 프로세스가 생성되면 시작 상태를 거쳐 준비 상태에 이르게 되는데 장기 스케쥴러는 이때 어떤 큐에 삽입할지 결정&lt;/p&gt;
-
-&lt;h4 id=&quot;특성&quot;&gt;특성&lt;/h4&gt;
-
-&lt;p&gt;수십 초 내지 수 분 단위로 가끔 호출되므로 속도가 빠르지 않아도 됨&lt;/p&gt;
-
-&lt;p&gt;메모리에 동시에 올라가 있는 프로세스의 수를 조절하는 역할(시작 상태의 프로세스에게 메모리 할당을 승인할지 여부를 장기 스케쥴러가 결정하기 때문&lt;/p&gt;
-
-&lt;p&gt;현대의 시분할 시스템에서는 거의 사용되지 않음 (자원이 매우 빈약하던 과거에 쓰였었음)&lt;/p&gt;
-
-&lt;p&gt;현대에는 시작 상태가 되면 곧바로 그 프로세스에 메모리를 할당해서 준비 큐에 넣어줌&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;중기-스케쥴러&quot;&gt;중기 스케쥴러&lt;/h3&gt;
-
-&lt;p&gt;너무 많은 프로세스에게 메모리를 할당해 시스템의 성능이 저하되는 경우에 이를 동적으로 조절하기 위해 추가된 스케쥴러&lt;/p&gt;
-
-&lt;p&gt;스왑 아웃 : 너무 많은 프로세스가 메모리에 적재되어 프로세스당 보유 메모리양이 극도로 적어지면 메모리에 올라와 있는 프로세스 중 일부를 선정해 이들로부터 메모리를 통째로 빼앗아 그 내용을 디스크 스왑 영역에 저장하는 것&lt;/p&gt;
-
-&lt;p&gt;스왑 아웃 우선순위가 가장 높은 것은 봉쇄 상태의 프로세스들&lt;/p&gt;
-
-&lt;p&gt;이 외에도 타이머 인터럽트가 발생해 준비 큐로 이동하는 프로세스도 스왑 아웃 시킴&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;단기-스케쥴러cpu-스케쥴러&quot;&gt;단기 스케쥴러(CPU 스케쥴러)&lt;/h4&gt;
-
-&lt;p&gt;준비 상태의 프로세스 중 어떤 프로세스를 다음번에 실행 상태로 만들 것인지 결정&lt;/p&gt;
-
-&lt;p&gt;여러 프로세스 중 어떤 프로세스에 CPU를 할당할 것인가를 결정&lt;/p&gt;
-
-&lt;p&gt;타이머 인터럽트 발생 시 단기 스케쥴러가 호출됨&lt;/p&gt;
-
-&lt;p&gt;특성&lt;/p&gt;
-
-&lt;p&gt;밀리초 단위로 매우 빈번히 호출되므로 속도가 빨라야 함&lt;/p&gt;
-
-&lt;hr /&gt;
-
-</description>
-        <pubDate>Sun, 28 Mar 2021 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/4-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/4-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5/</guid>
-        
-        <category>운영체제</category>
-        
-        <category>OS</category>
-        
-        
-        <category>운영체제</category>
         
       </item>
     
