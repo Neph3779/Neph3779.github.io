@@ -12,7 +12,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title"
-        content="[작성중] [#6] CPU 스케쥴링 - 1 - Neph's iOS blog">
+        content="[#6] CPU 스케쥴링-1 - Neph's iOS blog">
     
     <meta property="og:type" content="article">
     <meta property="og:description" content="CPU 스케쥴링
@@ -31,7 +31,7 @@
     <meta property="og:url" content="https://neph3779.github.io/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/6-CPU-%E1%84%89%E1%85%B3%E1%84%8F%E1%85%A6%E1%84%8C%E1%85%B2%E1%86%AF%E1%84%85%E1%85%B5%E1%86%BC-1/">
     <meta property="og:site_name" content="Neph's iOS blog">
 
-    <title>[작성중] [#6] CPU 스케쥴링 - 1 - Neph's iOS blog</title>
+    <title>[#6] CPU 스케쥴링-1 - Neph's iOS blog</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -112,6 +112,8 @@
                         <li>
                             <a href="/category/">Category</a>
                         </li>
+                        
+                        
                         
                         
                         
@@ -251,7 +253,7 @@
                         <a class="tag" href="/archive/?tag=OS" title="OS">OS</a>
                         
                     </div>
-                    <h1>[작성중] [#6] CPU 스케쥴링 - 1</h1>
+                    <h1>[#6] CPU 스케쥴링-1</h1>
                     
                     <h2 class="subheading"></h2>
                     <span class="meta">Posted by Neph's Blog on April 5, 2021</span>
@@ -323,31 +325,6 @@
 
 <p>디스패처는 현재 수행 중이던 프로세스의 문맥을 그 프로세스의 PCB에 저장하고 이번에 CPU를 할당할 프로세스의 PCB로부터 문맥을 복원한 뒤 CPU를 넘겨준다. 프로세스 문맥 복원 뒤에 시스템의 상태를 사용자모드로 전환해 사용자 프로그램에게 CPU 제어권을 넘기게 된다. 디스패처가 하나의 프로세스를 정지시키고 다음 프로세스에게 CPU를 넘기는 과정에서 걸리는 시간을 디스패치 지연시간(dispatch latency)라고 하며 대부분 문맥교환 오버헤드가 디스패치 지연시간을 이루고 있다.</p>
 
-<h2 id="스케쥴링의-성능-평가">스케쥴링의 성능 평가</h2>
-
-<h3 id="cpu-이용률">CPU 이용률</h3>
-
-<p>CPU 이용률은 전체 시간 중에서 CPU가 일을 한 시간의 비율이다. CPU가 일을 하지 않고 휴면(idle) 상태에 머무르는 시간을 최소화하는 것이 스케쥴링의 중요한 목표이다.</p>
-
-<h3 id="처리량throughput">처리량(throughput)</h3>
-
-<p>처리량은 주어진 시간 동안 CPU 버스트를 완료한 프로세스의 개수를 나타낸다. 즉, CPU를 원하는 프로세스들 중 몇 개가 원하는 만큼의 CPU를 사용하고 CPU 버스트를 끝내서 준비 큐로부터 나갔는지를 측정하는 것이다. 보다 많은 프로세스가 CPU 작업을 완료하기 위해서는 CPU 버스트가 짧은 프로세스에게 우선적으로 CPU를 할당하는 것이 유리하다.</p>
-
-<h3 id="소요시간turnaround-time">소요시간(turnaround time)</h3>
-
-<p>소요시간은 프로세스가 CPU를 요청한 시점부터 자신이 원하는 만큼 CPU를 다 쓰고 CPU 버스트가 끝날 때까지 걸린 시간을 말한다. 즉, 준비 큐에서 기다린 시간과 실제로 CPU를 사용한 시간의 합을 뜻한다. 소요시간은 CPU 버스트마다 별도로 측정된다.</p>
-
-<h3 id="대기시간waiting-time">대기시간(waiting time)</h3>
-
-<p>대기시간은 CPU 버스트 기간 중 어떤 프로세스가 준비 큐에서 CPU를 얻기 위해 기다린 시간의 합을 뜻한다. 시분할 방식으로 CPU를 사용하기 때문에 한 번의 CPU 버스트 중에도 준비 큐에서 CPU를 얻기 위해 기다리는 일이 여러번 일어나게 된다. 이 시간들을 전부 합한 것이 대기시간이다.</p>
-
-<h3 id="응답시간response-time">응답시간(response time)</h3>
-
-<p>응답시간은 프로세스가 준비 큐에 들어온 후 처음으로 CPU를 획득하기까지 기다린 시간을 뜻한다. 대기시간과 다르게 준비큐에 들어온 직후부터 처음으로 CPU를 얻을때까지의 시간만을 측정한다. 타이머 인터럽트가 빈번히 발생할수록 각 프로세스가 CPU를 점유하고 있는 시간이 짧고 처음으로 CPU를 얻기까지 기다리는 시간이 짧아지므로 응답시간이 향상된다. 이를 통해 알 수 있듯 응답시간은 대화형 시스템에 적합한 척도이다.</p>
-
-<h2 id="스케쥴링-알고리즘">스케쥴링 알고리즘</h2>
-
-
 
                 <hr style="visibility: hidden;">
                 <ul class="pager">
@@ -412,49 +389,53 @@
             
         
             
-            <a data-sort="0035"
+            <a data-sort="0039"
                 href="/archive/?tag=TIL" title="TIL"
-                rel="25">TIL</a>
+                rel="26">TIL</a>
             
             
             
-            <a data-sort="0053"
+            <a data-sort="0055"
                 href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
-                rel="7">운영체제</a>
+                rel="10">운영체제</a>
             
-            <a data-sort="0053"
+            <a data-sort="0056"
+                href="/archive/?tag=OS" title="OS"
+                rel="9">OS</a>
+            
+            <a data-sort="0058"
                 href="/archive/?tag=Swift" title="Swift"
                 rel="7">Swift</a>
             
-            <a data-sort="0053"
+            <a data-sort="0058"
                 href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
                 rel="7">Yagom-Academy</a>
             
-            <a data-sort="0054"
-                href="/archive/?tag=OS" title="OS"
-                rel="6">OS</a>
-            
-            <a data-sort="0056"
+            <a data-sort="0061"
                 href="/archive/?tag=iOS" title="iOS"
                 rel="4">iOS</a>
             
-            <a data-sort="0057"
+            <a data-sort="0062"
                 href="/archive/?tag=enum" title="enum"
                 rel="3">enum</a>
             
-            <a data-sort="0058"
+            <a data-sort="0063"
                 href="/archive/?tag=Flow+chart" title="Flow chart"
                 rel="2">Flow chart</a>
             
-            <a data-sort="0058"
+            <a data-sort="0063"
                 href="/archive/?tag=Protocol" title="Protocol"
                 rel="2">Protocol</a>
             
-            <a data-sort="0058"
+            <a data-sort="0063"
+                href="/archive/?tag=Scroll+View" title="Scroll View"
+                rel="2">Scroll View</a>
+            
+            <a data-sort="0063"
                 href="/archive/?tag=UML" title="UML"
                 rel="2">UML</a>
             
-            <a data-sort="0058"
+            <a data-sort="0063"
                 href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
                 rel="2">Yagom Academy</a>
     </div>
