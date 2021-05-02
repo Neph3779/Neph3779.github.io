@@ -93,17 +93,23 @@ Repo를 만들어 주시고 토큰을 받아와주세요
 
 
 
-Custom에 불이 들어오도록 버튼을 눌러주세요
+Custom에 불이 들어오도록 버튼을 눌러주세요!
 
+<br/> 
 
+<img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210502225855.png" alt="20210502225608" style="zoom:50%;" />
 
-<img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502224107.png" alt="image-20210502224105971" style="zoom:50%;" />
+왼쪽 ScrollView에 있는 GitHub뭐시기 버튼을 눌러 이 화면에 와주신 뒤 TextField를 채워주시면 됩니다!
 
-왼쪽처럼 GitHub뭐시기 버튼을 눌러 이 화면에 와주신 뒤
+<br/> 
 
-첫 칸에는 본인의 깃허브 닉네임/레포이름 을 적어주시면 되고
+첫 칸에는 본인의 깃허브 닉네임/레포이름 을 적어주세요!
 
-두번째 칸에는 저장할 브랜치! 설정해주시면 됩니다 (여기서 master branch가 아닌 다른 브랜치로 설정해주셔야 무분별한 commit들이 쌓이지 않아요~)
+두번째 칸에는 저장할 레포의 어떤 브랜치에 이미지를 업로드할지 설정해주는 작업인데, 여기서 master branch가 아닌 다른 브랜치로 설정해주셔야 무분별한 commit들이 쌓이지 않습니다! 
+
+사용하기로 한 깃헙 레포에 추가적인 브랜치를 만들어주세요! 저의 경우에는 master branch가 아닌 forUpload라는 이름의 브랜치에 이미지가 업로드 되도록 한 상황입니다!
+
+<br/> 
 
 세번째 칸에는 아까 받아온 토큰을 넣어주시면 됩니다.
 
@@ -137,7 +143,7 @@ Custom에 불이 들어오도록 버튼을 눌러주세요
 
 
 
-![image-20210502224818354](/Users/chunsoohyun/Library/Application Support/typora-user-images/image-20210502224818354.png)
+![image-20210502224818354](https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210502225842.png)
 
 짜잔 보이는것처럼 나의 깃헙 레포와 연동된 링크를 통해 이미지가 들어가는 것을 볼 수 있어요!
 
