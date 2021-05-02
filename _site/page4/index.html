@@ -127,6 +127,8 @@
                         
                         
                         
+                        
+                        
                         <li class="search-icon">
                             <a href="javascript:void(0)">
                                 <i class="fa fa-search"></i>
@@ -251,9 +253,260 @@
             ">
     			
 <div class="post-preview">
-    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/2-%E1%84%8F%E1%85%A5%E1%86%B7%E1%84%91%E1%85%B2%E1%84%90%E1%85%A5-%E1%84%89%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%B7%E1%84%8B%E1%85%B4-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%8C%E1%85%A1%E1%86%A8-%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%85%E1%85%B5/">
+    <a href="/swift/Swift-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF/">
         <h2 class="post-title">
-            [#2] 컴퓨터 시스템의 동작 원리
+            [작성중] Swift 프로토콜(Protocol) 정리
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            프로토콜이란
+
+스위프트의 프로토콜은 자바의 인터페이스와 유사한 개념입니다.
+
+구조체, 클래스, 열거형은 프로토콜을 “채택”하여 프로토콜의 요구사항을 구현합니다
+
+쉽게 말하자면 코드의 청사진 혹은 outline을 강제하는 기능입니다.
+
+어떤 프로젝트의 일부를 외주를 맡길 때 이런 프로토콜로 메서드, 프로퍼티의 이름, 반환타입 등을 강제할 수 있습니다.
+...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        23, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/swift%20memo/Swift-%E1%84%86%E1%85%A6%E1%84%89%E1%85%A5%E1%84%83%E1%85%B3/">
+        <h2 class="post-title">
+            Swift의 메서드 종류
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            인스턴스 메서드
+
+static 메서드
+
+class 메서드
+
+설명글
+
+
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        23, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/swift%20memo/Swift-%E1%84%80%E1%85%A1%E1%84%87%E1%85%A7%E1%86%AB-%E1%84%86%E1%85%A2%E1%84%80%E1%85%A2%E1%84%87%E1%85%A7%E1%86%AB%E1%84%89%E1%85%AE/">
+        <h2 class="post-title">
+            Swift 가변(Variadic) 매개변수
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            매개변수로 값이 몇개나 들어올지 알기 어려울 때 가변 매개변수를 활용할 수 있습니다.
+
+1
+2
+3
+4
+5
+func sayHelloToFriends(me: String, friends name: String...) -&gt; String {
+  //...
+}
+
+print(sayHelloToFriends(me: Neph, friends: "A", "B",...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        23, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/swift%20memo/Swift-Timer,-Toast/">
+        <h2 class="post-title">
+            iOS Toast Alert과 Timer
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            Timer
+
+https://developer.apple.com/documentation/foundation/timer
+
+toast alert
+
+https://github.com/devxoul/Toaster
+
+
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        23, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/swift%20memo/Swift-Property/">
+        <h2 class="post-title">
+            Swift 프로퍼티의 종류
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            Swift 프로퍼티는 크게 3가지로 분류할 수 있다
+
+저장 프로퍼티
+
+연산 프로퍼티
+
+타입 프로퍼티
+
+여기서 타입 프로퍼티는 다시
+
+class 타입 프로퍼티 (상속 가능)
+
+static 타입 프로퍼티 (상속 불가능)
+
+으로 나뉜다.
+
+https://zeddios.tistory.com/251
+
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        23, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.03.22-TIL/">
+        <h2 class="post-title">
+            2021년 03월 22일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+응집도와 결합도
+
+“응집도를 높이고 결합도를 낮춰라”
+
+라는 말의 의미에 대해 생각해봤습니다.
+
+
+  각 클래스 메서드는 클래스 인스턴스 변수를 하나 이상 사용해야 한다. 일반적으로 메소드가 변수를 더 많이 사용 할 수록 메서드와 클래스의 응집도가 더 높다. . . . (중략) . . . 응집도가 높다는 말은 클래스에 속한 메소드와...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        22, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/swift%20memo/UML/">
+        <h2 class="post-title">
+            UML 다이어그램
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            UML이란
+
+흰의 PPT
+
+
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        22, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/swift%20memo/Swift-%E1%84%8B%E1%85%B5%E1%84%82%E1%85%B5%E1%84%89%E1%85%A7%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%A5/">
+        <h2 class="post-title">
+            이니셜라이저 종류
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            
+  기본 이니셜라이저
+  멤버와이즈 이니셜라이저
+  required
+  convinience
+  지정 이니셜라이저
+
+
+
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        22, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/swift%20memo/Swift-is-%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%86%AB%E1%84%8C%E1%85%A1-as-%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%86%AB%E1%84%8C%E1%85%A1/">
+        <h2 class="post-title">
+            Swift is as? as!
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            is : 해당 타입 맞는지 확인 (프로토콜에 쓰면 해당 프로토콜 준수하는지 확인)
+
+as? : 다운캐스팅 시도 (성공시 optional 반환, 실패시 nil 반환)
+
+as! : 강제 다운캐스팅 (성공하면 non-optional, 실패하면 에러)
+
+
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        22, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/3-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B7%E1%84%8B%E1%85%B4-%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9%E1%84%8B%E1%85%AA-%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC/">
+        <h2 class="post-title">
+            [#3] 프로그램의 구조와 실행
         </h2>
         
         <div class="post-content-preview">
@@ -261,323 +514,25 @@
             목차
 
   목차
-  컴퓨터 시스템의 구조    
-      컴퓨터 시스템의 구조
-      입력과 출력
-      컨트롤러
-      커널의 의미
+  프로그램의 구조와 인터럽트    
+      프로그램의 주소 영역
+      함수의 호출과 인터럽트
     
   
-  CPU 연산과 I/O 연산    
-      입출력 연산과 메인 CPU 연산의 동시 작업
-      로컬버퍼(local buffer)와 인터럽트(interrupt)
-      CPU의 인터...
+  컴퓨터 시스템의 작동 개요    
+      CPU의 명령 (일반명령, 특권명령)
+    
+  
+  프로그램의 실행    
+      Program execution의 의미
+      실행 파일의 메모리 적재 방식
+...
             
         </div>
     </a>
     <p class="post-meta">
         Posted by Neph's Blog on March
         21, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.03.21-TIL/">
-        <h2 class="post-title">
-            2021년 03월 21일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-운영체제 2강 정리 및 OS 스터디 참여
-
-포스팅 한 2강 정리글 링크
-
-스터디 깃헙 레포 링크
-
-
-
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        21, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/swift%20memo/Swift-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5-%E1%84%87%E1%85%B5%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5/">
-        <h2 class="post-title">
-            Swift 동기, 비동기, Dispatch Queue
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            동기: 다음 작업은 이전것 끝난 뒤에
-
-비동기: 안끝났어도 그냥
-
-Dispatch 공식문서
-
-Dispatch Group 써보기
-
-Dispatch Queue 간단 설명(제드)
-
-Dispatch Queue 알아보기 (devmjun)
-
-GCD 기초 정리
-
-멀티스레딩 관련 스탠포드 강의
-
-Operation Queue
-
-멀티스레드에서 Array가 안전하지 않다...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        20, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/swift%20memo/Swift-View-%E1%84%89%E1%85%A2%E1%86%BC%E1%84%86%E1%85%A7%E1%86%BC%E1%84%8C%E1%85%AE%E1%84%80%E1%85%B5/">
-        <h2 class="post-title">
-            Swift View 형성과정
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            View의 형성과정(영철)
-
-최상위 ViewController 얻기
-
-ViewController 생명주기(제드)
-
-View Life Cycle (이동건)
-
-
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        20, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/swift%20memo/MVC-MVP-MVVM/">
-        <h2 class="post-title">
-            MVC, MVP, MVVM 차이
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            MVC MVP MVVM 차이 제대로 알아보기
-
-
-  
-    MVC
-
-    Model이 하는 일
-
-    
-      data를 가지고 있음
-    
-
-    View가 하는 일 (UIView)
-
-    
-      Controller에게 명령받아 View를 띄워줌
-    
-
-    Controller가 하는 일
-
-    
-      Model의 d...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        20, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.03.19-TIL/">
-        <h2 class="post-title">
-            2021년 03월 19일
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  
-    Dispatch Queue와 하루종일 씨름..
-
-    나의 계획
-
-    
-      
-        Save 버튼 터치
-      
-      
-        이대로 수정을 마치시겠습니까? 라는 타이틀과예/아니오라는 액션으로 구성된 Alert을 present
-      
-      
-        예를 눌렀으면재고...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        19, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/swift%20memo/Swift-%E1%84%89%E1%85%A5%E1%86%BC%E1%84%82%E1%85%B3%E1%86%BC/">
-        <h2 class="post-title">
-            Swift heap stack class struct
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            WWDC 2016 Understanding Swift performance
-
-Understanding Swift Performance (제드)
-
-스위프트 성능 이해하기 - struct vs class (코리)
-
-Stack Heap Data 영역 정리
-
-Apple이 공식적으로 제시한 Swift 관련 최적화 방법
-
-참조 타입이 앱 기동시간에 안좋은 점
-
-
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        19, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/project%20review/%E1%84%8C%E1%85%B2%E1%84%89%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8F%E1%85%A5-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3-%E1%84%85%E1%85%B5%E1%84%87%E1%85%B2/">
-        <h2 class="post-title">
-            쥬스메이커 프로젝트 리뷰
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            Juice Maker project
-
-진행기간(2021/03/08 ~ 2021/03/19)
-
-
-
-Step 1
-
-이번 Step에서 공부한 내용 📚
-
-
-
-
-  
-    enum + static property의 활용
-
-    싱글톤 방식으로 쥬스의 종류를 모으기 위해 Class나 Struct를 사용할 경우 instance 생성을 막기가 어려움
-
-    이...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        19, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/1-%E1%84%82%E1%85%A6%E1%84%90%E1%85%B3%E1%84%8B%E1%85%AF%E1%84%8F%E1%85%B3%E1%84%8B%E1%85%B4-%E1%84%80%E1%85%A2%E1%84%82%E1%85%A7%E1%86%B7%E1%84%80%E1%85%AA-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF/">
-        <h2 class="post-title">
-            [#1] 네트워크의 개념과 프로토콜
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            Communication &amp; Network
-
-
-
-
-  
-    
-      Communication is exchange of information between users(stations, nodes) at a distance
-    
-    
-      Network
-
-      A system consists of devices (ofte...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        18, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.03.18-TIL/">
-        <h2 class="post-title">
-            2021년 03월 18일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  
-    운영체제 2강 수강 및 정리글 작성(정리글 작성중)
-
-    블로그에 올린 글
-  
-  
-    네트워크 1강 수강 및 정리글 작성(정리글 초안 작성 완료)
-
-    블로그에 올린 글
-  
-
-
-
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        18, 2021
     </p>
 </div>
 <hr>
@@ -643,6 +598,8 @@ Step 1
         
         
         
+        
+        
     </ul>
 </header>
     		</div>
@@ -666,53 +623,53 @@ Step 1
             
         
             
-            <a data-sort="0039"
+            <a data-sort="0043"
                 href="/archive/?tag=TIL" title="TIL"
-                rel="26">TIL</a>
+                rel="32">TIL</a>
             
             
             
-            <a data-sort="0055"
+            <a data-sort="0063"
                 href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
-                rel="10">운영체제</a>
+                rel="12">운영체제</a>
             
-            <a data-sort="0056"
+            <a data-sort="0064"
                 href="/archive/?tag=OS" title="OS"
-                rel="9">OS</a>
+                rel="11">OS</a>
             
-            <a data-sort="0058"
+            <a data-sort="0068"
                 href="/archive/?tag=Swift" title="Swift"
                 rel="7">Swift</a>
             
-            <a data-sort="0058"
+            <a data-sort="0068"
                 href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
                 rel="7">Yagom-Academy</a>
             
-            <a data-sort="0061"
+            <a data-sort="0071"
                 href="/archive/?tag=iOS" title="iOS"
                 rel="4">iOS</a>
             
-            <a data-sort="0062"
+            <a data-sort="0072"
                 href="/archive/?tag=enum" title="enum"
                 rel="3">enum</a>
             
-            <a data-sort="0063"
+            <a data-sort="0073"
                 href="/archive/?tag=Flow+chart" title="Flow chart"
                 rel="2">Flow chart</a>
             
-            <a data-sort="0063"
+            <a data-sort="0073"
                 href="/archive/?tag=Protocol" title="Protocol"
                 rel="2">Protocol</a>
             
-            <a data-sort="0063"
+            <a data-sort="0073"
                 href="/archive/?tag=Scroll+View" title="Scroll View"
                 rel="2">Scroll View</a>
             
-            <a data-sort="0063"
+            <a data-sort="0073"
                 href="/archive/?tag=UML" title="UML"
                 rel="2">UML</a>
             
-            <a data-sort="0063"
+            <a data-sort="0073"
                 href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
                 rel="2">Yagom Academy</a>
     </div>

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Write code with my soul.">
+    <meta name="keywords" content="iOS 공부일지">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="Typora 이미지 쉽게 업로드 하기 for mac - Neph's iOS blog">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="사건의 발단
+">
+    
+    <meta property="article:published_time" content=" 2021-05-02T00:00:00Z">
+    
+    
+    
+    <meta property="article:tag" content="Typora">
+    
+    <meta property="article:tag" content="Picgo">
+    
+    
+    <meta property="og:image" content="https://neph3779.github.io/assets/logo.ico/apple-icon.png">
+    <meta property="og:url" content="https://neph3779.github.io/%EC%9D%BC%EC%83%81/TyporaEasyImageUpload/">
+    <meta property="og:site_name" content="Neph's iOS blog">
+
+    <title>Typora 이미지 쉽게 업로드 하기 for mac - Neph's iOS blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://neph3779.github.io/%EC%9D%BC%EC%83%81/TyporaEasyImageUpload/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href=" /css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href=" /css/hux-blog.min.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<!-- hack iOS CSS :active style -->
+
+<body ontouchstart="">
+
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Neph's Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="huxblog_navbar">
+                <div class="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="/archive/">Archive</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="/category/">Category</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li class="search-icon">
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <script>
+        // Drop Bootstarp low-performance Navbar
+        // Use customize navbar with high-quality material design animation
+        // in high-perf jank-free CSS3 implementation
+        var $body = document.body;
+        var $toggle = document.querySelector('.navbar-toggle');
+        var $navbar = document.querySelector('#huxblog_navbar');
+        var $collapse = document.querySelector('.navbar-collapse');
+
+        var __HuxNav__ = {
+            close: function () {
+                $navbar.className = " ";
+                // wait until animation end.
+                setTimeout(function () {
+                    // prevent frequently toggle
+                    if ($navbar.className.indexOf('in') < 0) {
+                        $collapse.style.height = "0px"
+                    }
+                }, 400)
+            },
+            open: function () {
+                $collapse.style.height = "auto"
+                $navbar.className += " in";
+            }
+        }
+
+        // Bind Event
+        $toggle.addEventListener('click', function (e) {
+            if ($navbar.className.indexOf('in') > 0) {
+                __HuxNav__.close()
+            } else {
+                __HuxNav__.open()
+            }
+        })
+
+        /**
+         * Since Fastclick is used to delegate 'touchstart' globally
+         * to hack 300ms delay in iOS by performing a fake 'click',
+         * Using 'e.stopPropagation' to stop 'touchstart' event from 
+         * $toggle/$collapse will break global delegation.
+         * 
+         * Instead, we use a 'e.target' filter to prevent handler
+         * added to document close HuxNav.  
+         *
+         * Also, we use 'click' instead of 'touchstart' as compromise
+         */
+        document.addEventListener('click', function (e) {
+            if (e.target == $toggle) return;
+            if (e.target.className == 'icon-bar') return;
+            __HuxNav__.close();
+        })
+    </script>
+    <!-- Search -->
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/assets/logo.ico/ms-icon-310x310.png" width="0" height="0"> -->
+<!-- <img src="/assets/background.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+
+
+
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/assets/background.jpg');
+        background: ;
+    }
+
+    
+</style>
+
+<header class="intro-header" >
+
+    <div class="header-mask"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/archive/?tag=Typora" title="Typora">Typora</a>
+                        
+                        <a class="tag" href="/archive/?tag=Picgo" title="Picgo">Picgo</a>
+                        
+                    </div>
+                    <h1>Typora 이미지 쉽게 업로드 하기 for mac</h1>
+                    
+                    <h2 class="subheading"></h2>
+                    <span class="meta">Posted by Neph's Blog on May 2, 2021</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!-- Multi-Lingual -->
+                
+
+                <h2 id="사건의-발단">사건의 발단</h2>
+
+<p>Typora를 통해 깃허브 블로그 글을 쓰다보면 이미지 첨부하는 작업이 매우 귀찮다고 느끼시는 분들이 많으실겁니다.</p>
+
+<p>이미지의 상대경로를 지정해주고 깃헙 블로그 레포의 어떤 폴더에 캡쳐한 스크린샷을 담는 과정은 상당히 귀찮은 작업이죠..</p>
+
+<p><br /></p>
+
+<p>이러한 문제를 해결할 수 있는 방안(이미지를 링크로 변환하여 업로드)을 오늘 알려드리겠습니다.</p>
+
+<p>우선 Typora의 언어를 중국어로 바꾸는 것부터 시작합니다</p>
+
+<p>???:   🧐 웬 뜬금없이 중국어?</p>
+
+<p><br /></p>
+
+<p>이번 포스트의 핵심이 될 Picgo가 중국어만을 지원하기 때문에 진행해야하는 작업입니다</p>
+
+<p>과정이 끝난 뒤에는 다시 한국어로 설정해도 전혀 문제가 없으니 걱정하지 마세요 😆</p>
+
+<p><br /></p>
+
+<h4 id="내가-찍은-스크린샷이-weibo에-익명으로-올라가는-것을-참을-수-있어">내가 찍은 스크린샷이 weibo에 익명으로 올라가는 것을 참을 수 있어!</h4>
+
+<p>하시는 분들은 밑의 내용을 읽으실 필요 없이</p>
+
+<p>Typora의 이미지 설정 부분에 가셔서 Image Uploader을 upic으로 설정해주신 뒤</p>
+
+<p><code class="language-plaintext highlighter-rouge">brew install upic</code> 커맨드를 통해 upic을 다운받아주시기만 하면 간단하게 해결할 수 있습니다</p>
+
+<h2 id="그래서-어떻게-하면-되는데">그래서 어떻게 하면 되는데?</h2>
+
+<h3 id="typora의-언어-중국어로-변경하기">Typora의 언어 중국어로 변경하기</h3>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502223128.png" alt="image-20210502223124947" style="zoom:50%;" /></p>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502223414.png" alt="image-20210502223410704" style="zoom:50%;" /></p>
+
+<p>중국어로 설정해주신 뒤 command + q를 이용해 typora를 완전 종료해줬다가 다시 켜주세요!</p>
+
+<p><br /></p>
+
+<h3 id="picgoapp-다운로드-하기">PicGo.app 다운로드 하기</h3>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502223553.png" alt="image-20210502223551901" style="zoom:50%;" /></p>
+
+<p>중국어로 바꿔주셨다면 이미지 업로더의 종류에 <code class="language-plaintext highlighter-rouge">PicGo.app</code>이 추가된 것을 보실 수 있으실거에요</p>
+
+<p>PicGo.app은 중국어만 지원하는 앱이기 때문에 언어를 중국어로 설정했을 경우에만 노출되도록 Typora가 지정해놨습니다.</p>
+
+<p>이제 PicGo.app 다운로드하기 버튼을 누르셔서 (아래 하 + 어려운 한자 버튼이 다운로드 버튼입니다.)</p>
+
+<p>다운로드를 진행해주세요 (꼭 저 버튼을 통해 하실 필요는 없고 PicGo 깃헙으로 가셔서 dmg 파일을 받으셔도 됩니다.)</p>
+
+<p><br /></p>
+
+<h3 id="github에-이미지가-저장될-repository-만들기-토큰-받아오기">Github에 이미지가 저장될 Repository 만들기, 토큰 받아오기</h3>
+
+<p>이 부분의 스크린샷은 생략하도록 하겠습니다!</p>
+
+<p>Repo를 만들어 주시고 토큰을 받아와주세요</p>
+
+<p>토큰을 받아오는 과정은 <a href="[https://taeuk-gang.github.io/wiki/Typora%20%EC%8B%A0%EA%B8%B0%EB%8A%A5%20-%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%9E%90%EB%8F%99%20%EC%97%85%EB%A1%9C%EB%93%9C/](https://taeuk-gang.github.io/wiki/Typora 신기능 - 이미지 자동 업로드/)">이 블로그 글</a>에 잘 설명되어있으니 참고하시면 좋을 것 같습니다!</p>
+
+<p><br /></p>
+
+<h3 id="picgoapp-설정하기">PicGo.app 설정하기</h3>
+
+<p>이제부터는 제가 보여드리는 스크린샷을 그대로 따라해주시면 됩니다.</p>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502223852.png" alt="image-20210502223850730" style="zoom:50%;" /></p>
+
+<p>Custom에 불이 들어오도록 버튼을 눌러주세요</p>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502224107.png" alt="image-20210502224105971" style="zoom:50%;" /></p>
+
+<p>왼쪽처럼 GitHub뭐시기 버튼을 눌러 이 화면에 와주신 뒤</p>
+
+<p>첫 칸에는 본인의 깃허브 닉네임/레포이름 을 적어주시면 되고</p>
+
+<p>두번째 칸에는 저장할 브랜치! 설정해주시면 됩니다 (여기서 master branch가 아닌 다른 브랜치로 설정해주셔야 무분별한 commit들이 쌓이지 않아요~)</p>
+
+<p>세번째 칸에는 아까 받아온 토큰을 넣어주시면 됩니다.</p>
+
+<p>네번째 칸에는 이미지의 경로를 적어주시면 되는데 repo내의 폴더라고 보시면 될 것 같아요</p>
+
+<p>(제가 설정한 것은 Neph3779라는 유저의 Blog-Image라는 레포의 img 폴더에 내가 찍은 스크린샷을 저장해! 가 되겠네요)</p>
+
+<p><br /></p>
+
+<p>이 작업이 끝나셨다면 밑의 파란색 버튼과 초록색 버튼을 눌러주시면 됩니다 (초록 버튼은 눌러지지 않을 수 있는데 문제 없어요!)</p>
+
+<p><br /></p>
+
+<p>그럼 이제 드디어 타이포라에 와서 이미지를 업로드 해볼까요?</p>
+
+<p>(타이포라의 언어 설정은 한국어로 다시 바꿔주셔도 됩니다!)</p>
+
+<p><br /></p>
+
+<h3 id="이미지-업로드-하기">이미지 업로드 하기</h3>
+
+<p>찍은 스크린샷을 단순히 command + v로 타이포라에 붙여넣기 하면 아래의 사진처럼 내 맥북에 저장된 경로를 통해 이미지가 업로드 됩니다</p>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502224745.png" alt="image-20210502224715666" /></p>
+
+<p>상태에서 사진을 우클릭 하신 뒤 Upload Image라는 버튼을 누르시면</p>
+
+<p><img src="/Users/chunsoohyun/Library/Application Support/typora-user-images/image-20210502224818354.png" alt="image-20210502224818354" /></p>
+
+<p>짜잔 보이는것처럼 나의 깃헙 레포와 연동된 링크를 통해 이미지가 들어가는 것을 볼 수 있어요!</p>
+
+<p>개인적으로 이 작업을 해놓고 나니 사진을 업로드 하는게 너무나도 편해졌어요!</p>
+
+<p>게다가 upic은 weibo에 나의 소중한 스크린샷들이 익명으로 올라가는게 마음에 걸렸었는데</p>
+
+<p>이 방법을 쓰면 내 깃허브 레포에만 저장되고 이미지가 유출되지 않으니 좋은 것 같습니다</p>
+
+<p>Mac 사용자를 위한 튜토리얼이 없길래 글을 써봤는데 도움이 되셨으면 좋겠어요!</p>
+
+
+                <hr style="visibility: hidden;">
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/11-Deadlock/"
+                            data-toggle="tooltip" data-placement="top" title="[#11] Deadlock(데드락)">
+                            Previous<br>
+                            <span>[#11] Deadlock(데드락)</span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+                <hr style="visibility: hidden;">
+
+
+            </div>
+
+            <!-- Side Catalog Container -->
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+
+<section>
+    
+    <hr class="hidden-sm hidden-xs">
+    
+    <h5><a href="/archive/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
+            
+        
+            
+            <a data-sort="0043"
+                href="/archive/?tag=TIL" title="TIL"
+                rel="32">TIL</a>
+            
+            
+            
+            <a data-sort="0063"
+                href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
+                rel="12">운영체제</a>
+            
+            <a data-sort="0064"
+                href="/archive/?tag=OS" title="OS"
+                rel="11">OS</a>
+            
+            <a data-sort="0068"
+                href="/archive/?tag=Swift" title="Swift"
+                rel="7">Swift</a>
+            
+            <a data-sort="0068"
+                href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
+                rel="7">Yagom-Academy</a>
+            
+            <a data-sort="0071"
+                href="/archive/?tag=iOS" title="iOS"
+                rel="4">iOS</a>
+            
+            <a data-sort="0072"
+                href="/archive/?tag=enum" title="enum"
+                rel="3">enum</a>
+            
+            <a data-sort="0073"
+                href="/archive/?tag=Flow+chart" title="Flow chart"
+                rel="2">Flow chart</a>
+            
+            <a data-sort="0073"
+                href="/archive/?tag=Protocol" title="Protocol"
+                rel="2">Protocol</a>
+            
+            <a data-sort="0073"
+                href="/archive/?tag=Scroll+View" title="Scroll View"
+                rel="2">Scroll View</a>
+            
+            <a data-sort="0073"
+                href="/archive/?tag=UML" title="UML"
+                rel="2">UML</a>
+            
+            <a data-sort="0073"
+                href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
+                rel="2">Yagom Academy</a>
+    </div>
+</section>
+
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- add support for mathjax by voleking-->
+
+
+<script src="https://utteranc.es/client.js" repo="Neph3779/blog-comments" issue-term="pathname" theme="github-light"
+    crossorigin="anonymous" async>
+    </script>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js", function () {
+        anchors.options = {
+            visible: 'hover',
+            placement: 'right',
+            // icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link {
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top: -0.1em;
+        }
+    }
+</style>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- SNS Link -->
+                
+
+
+<ul class="list-inline text-center">
+
+
+  
+  
+  
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://github.com/neph3779">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+                <p class="copyright text-muted">
+                    Copyright &copy; Neph's Blog 2021
+                    <br>
+                    Powered by <a href="http://huangxuan.me">Hux Blog</a> |
+                    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px"
+                        height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src=" /js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src=" /js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src=" /js/hux-blog.min.js "></script>
+
+<!-- Simple Jekyll Search -->
+<script src=" /js/simple-jekyll-search.min.js"></script>
+
+<!-- Service Worker -->
+
+<script src=" /js/snackbar.js "></script>
+<script src=" /js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+
+
+
+
+
+
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function () {
+        var $nav = document.querySelector("nav");
+        if ($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-190717919-1';
+    var _gaDomain = '';
+
+    // Originial
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        // interop with multilangual 
+        if ('' == 'true') {
+            _containerSelector = 'div.post-container.active'
+        } else {
+            _containerSelector = 'div.post-container'
+        }
+
+        // init
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        // a = P.find('h1,h2');
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        // clean
+        $(selector).html('')
+
+        // appending
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+<!-- Multi-Lingual -->
+
+
+<!-- Simple Jekyll Search -->
+<script>
+    // https://stackoverflow.com/questions/1912501/unescape-html-entities-in-javascript
+    function htmlDecode(input) {
+        var e = document.createElement('textarea');
+        e.innerHTML = input;
+        // handle case of empty input
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    }
+
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '/search.json',
+        searchResultTemplate: '<div class="post-preview item"><a href="{url}"><h2 class="post-title">{title}</h2><h3 class="post-subtitle">{subtitle}</h3><hr></a></div>',
+        noResultsText: 'No results',
+        limit: 50,
+        fuzzy: false,
+        // a hack to get escaped subtitle unescaped. for some reason, 
+        // post.subtitle w/o escape filter nuke entire search.
+        templateMiddleware: function (prop, value, template) {
+            if (prop === 'subtitle' || prop === 'title') {
+                if (value.indexOf("code")) {
+                    return htmlDecode(value);
+                } else {
+                    return value;
+                }
+            }
+        }
+    });
+
+    $(document).ready(function () {
+        var $searchPage = $('.search-page');
+        var $searchOpen = $('.search-icon');
+        var $searchClose = $('.search-icon-close');
+        var $searchInput = $('#search-input');
+        var $body = $('body');
+
+        $searchOpen.on('click', function (e) {
+            e.preventDefault();
+            $searchPage.toggleClass('search-active');
+            var prevClasses = $body.attr('class') || '';
+            setTimeout(function () {
+                $body.addClass('no-scroll');
+            }, 400)
+
+            if ($searchPage.hasClass('search-active')) {
+                $searchClose.on('click', function (e) {
+                    e.preventDefault();
+                    $searchPage.removeClass('search-active');
+                    $body.attr('class', prevClasses);  // from closure 
+                });
+                $searchInput.focus();
+            }
+        });
+    });
+</script>
+
+
+    <!-- Image to hack wechat -->
+    <img src="/assets/logo.ico/ms-icon-310x310.png" width="0" height="0" />
+    <!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Write code with my soul.">
+    <meta name="keywords" content="iOS 공부일지">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="[#11] Deadlock(데드락) - Neph's iOS blog">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="교착상태(deadlock)
+">
+    
+    <meta property="article:published_time" content=" 2021-05-02T00:00:00Z">
+    
+    
+    
+    <meta property="article:tag" content="운영체제">
+    
+    <meta property="article:tag" content="OS">
+    
+    
+    <meta property="og:image" content="https://neph3779.github.io/assets/logo.ico/apple-icon.png">
+    <meta property="og:url" content="https://neph3779.github.io/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/11-Deadlock/">
+    <meta property="og:site_name" content="Neph's iOS blog">
+
+    <title>[#11] Deadlock(데드락) - Neph's iOS blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://neph3779.github.io/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/11-Deadlock/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href=" /css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href=" /css/hux-blog.min.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<!-- hack iOS CSS :active style -->
+
+<body ontouchstart="">
+
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Neph's Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="huxblog_navbar">
+                <div class="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="/archive/">Archive</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="/category/">Category</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li class="search-icon">
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <script>
+        // Drop Bootstarp low-performance Navbar
+        // Use customize navbar with high-quality material design animation
+        // in high-perf jank-free CSS3 implementation
+        var $body = document.body;
+        var $toggle = document.querySelector('.navbar-toggle');
+        var $navbar = document.querySelector('#huxblog_navbar');
+        var $collapse = document.querySelector('.navbar-collapse');
+
+        var __HuxNav__ = {
+            close: function () {
+                $navbar.className = " ";
+                // wait until animation end.
+                setTimeout(function () {
+                    // prevent frequently toggle
+                    if ($navbar.className.indexOf('in') < 0) {
+                        $collapse.style.height = "0px"
+                    }
+                }, 400)
+            },
+            open: function () {
+                $collapse.style.height = "auto"
+                $navbar.className += " in";
+            }
+        }
+
+        // Bind Event
+        $toggle.addEventListener('click', function (e) {
+            if ($navbar.className.indexOf('in') > 0) {
+                __HuxNav__.close()
+            } else {
+                __HuxNav__.open()
+            }
+        })
+
+        /**
+         * Since Fastclick is used to delegate 'touchstart' globally
+         * to hack 300ms delay in iOS by performing a fake 'click',
+         * Using 'e.stopPropagation' to stop 'touchstart' event from 
+         * $toggle/$collapse will break global delegation.
+         * 
+         * Instead, we use a 'e.target' filter to prevent handler
+         * added to document close HuxNav.  
+         *
+         * Also, we use 'click' instead of 'touchstart' as compromise
+         */
+        document.addEventListener('click', function (e) {
+            if (e.target == $toggle) return;
+            if (e.target.className == 'icon-bar') return;
+            __HuxNav__.close();
+        })
+    </script>
+    <!-- Search -->
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/assets/logo.ico/ms-icon-310x310.png" width="0" height="0"> -->
+<!-- <img src="/assets/background.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+
+
+
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/assets/background.jpg');
+        background: ;
+    }
+
+    
+</style>
+
+<header class="intro-header" >
+
+    <div class="header-mask"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제">운영체제</a>
+                        
+                        <a class="tag" href="/archive/?tag=OS" title="OS">OS</a>
+                        
+                    </div>
+                    <h1>[#11] Deadlock(데드락)</h1>
+                    
+                    <h2 class="subheading"></h2>
+                    <span class="meta">Posted by Neph's Blog on May 2, 2021</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!-- Multi-Lingual -->
+                
+
+                <h2 id="교착상태deadlock">교착상태(deadlock)</h2>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502181946.png" alt="2" style="zoom:50%;" /></p>
+
+<p>어느 누구도 양보를 하지 않으면 더이상 진행되지 않는 상태를 deadlock(교착상태)라고 한다.</p>
+
+<p>Resource는 하드웨어 자원과 소프트웨어 자원을 모두 칭하는 개념으로 자신의 자원을 내놓지 않고 상대방의 자원을 서로 차지하려는 시도에 의해 deadlock 상태가 발생할 수 있다.</p>
+
+<p>프로세스가 자원을 사용하는 절차는 다음과 같이 이루어진다.</p>
+
+<ol>
+  <li>요청 (Request)</li>
+  <li>획득 (Allocate)</li>
+  <li>사용 (Use)</li>
+  <li>반납 (Release)</li>
+</ol>
+
+<h2 id="deadlock-발생의-4가지-조건">Deadlock 발생의 4가지 조건</h2>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502182005.png" alt="3" style="zoom:50%;" /></p>
+
+<p>데드락은 다음 4가지 조건에 의해 발생한다.</p>
+
+<ul>
+  <li>
+    <p>Mutual Exclusion (상호 배제)</p>
+
+    <p>어떤 자원을 가지고 있는 동안에 그 자원을 독점적으로 쓴다.</p>
+  </li>
+  <li>
+    <p>No preemption (비선점)</p>
+
+    <p>자원을 강제로 빼앗을 수 없다.</p>
+  </li>
+  <li>
+    <p>Hold and wait (보유 대기)</p>
+
+    <p>자원을 가지고 있는 프로세스가 다른 자원을 기다릴 때 자신의 자원을 내놓지 않는다.</p>
+  </li>
+  <li>
+    <p>Circular wait (순환 대기)</p>
+
+    <p>자원을 기다리는 프로세스간의 cycle이 형성된다.</p>
+  </li>
+</ul>
+
+<h2 id="자원-할당-그래프">자원 할당 그래프</h2>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502182013.png" alt="4" style="zoom:50%;" /></p>
+
+<p>Process에서 나가는 화살표는 Resource를 요청하고 있는 상태를 나타낸다.</p>
+
+<p>Resource에서 나가는 화살표는 해당 Resource를 Process가 보유하고 있음을 나타낸다.</p>
+
+<p>Resource는 하나의 Block에 여러개가 있을 수 있다.</p>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502182019.png" alt="5" style="zoom:50%;" /></p>
+
+<p>자원 할당 그래프(Resource Allocation Graph)를 통해 deadlock 상태인지 아닌지를 판가름할 수 있다.</p>
+
+<p>그래프에 cycle이 없다면 모든 경우에 deadlock이 아니다.</p>
+
+<p>그래프에 cycle이 있고 모든 Resouce Block에 자원이 하나씩만 있다면 반드시 deadlock 상태이다.</p>
+
+<p>그래프에 cycle이 있지만 모든 Resoucr Block의 자원이 하나씩만 있는 것이 아니라면 (여러개가 있는 Block이 존재한다면) deadlock일 수도 있고 아닐수도 있다. (추가적 검증 필요)</p>
+
+<p>참고)</p>
+
+<p>ppt의 왼쪽 그림은 deadlock 상태이다.</p>
+
+<p>ppt의 오른쪽 그림은 cycle이 형성되어있지만 deadlock 상태가 아니다.</p>
+
+<h2 id="deadlock의-처리-방법">Deadlock의 처리 방법</h2>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502182024.png" alt="6" style="zoom:50%;" /></p>
+
+<p>Deadlock을 해결하는 방법에는 크게 4가지가 있다. 가장 강한 처리 방법부터 약한 처리방법을 순차적으로 나열하였다.</p>
+
+<ol>
+  <li>
+    <p>Deadlock Prevention</p>
+
+    <p>Deadlock의 4가지 조건 중 만족하지 않는 조건이 있도록 만드는 방법</p>
+  </li>
+  <li>
+    <p>Deadlock Avoidance</p>
+
+    <p>Deadlock 발생 조건을 따져본 뒤 발생 가능성이 없는 경우에만 자원을 할당</p>
+  </li>
+  <li>
+    <p>Deadlock Detection and recovery</p>
+
+    <p>Deadlock이 발생하면 해당 지점을 파악하여 recover하는 방식</p>
+  </li>
+  <li>
+    <p>Deadlock Ignorance</p>
+
+    <p>OS는 deadlock에 대해 관여하지 않음. deadlock은 빈번히 발생하는 현상이 아니기 때문에 deadlock 처리 방법의 overhead를 처리하는 cost가 더 높다 판단하여 현대의 OS들은 대부분 Deadlock Ignorance를 채택하고 있다.</p>
+  </li>
+</ol>
+
+<h2 id="deadlock-prevention">Deadlock Prevention</h2>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502182036.png" alt="7" style="zoom:50%;" /></p>
+
+<p>위의 4가지 조건 중 하나를 차단하면 deadlock 발생을 막을 수 있다.</p>
+
+<p>Mutual Exclusion은 사실상 직접 차단하는 것이 어렵다.</p>
+
+<p>Hold and Wait은 두 가지 방법으로 차단할 수 있는데 방법 1의 경우에는 자원의 비효율성이 높아지므로 잘 사용하지 않는다.</p>
+
+<p>반면 방법2는 보유 자원을 모두 내려놓은 상태에서만 자원 요청을 할 수 있게 만드는 방법이므로 자원 비효율성이 높지 않다.</p>
+
+<p>No Preemption의 경우 자원을 뺏었을 때 문제가 없는 구조여야만 차단할 수 있다. CPU 스케쥴링과 다르게 자원을 빼았긴 후 다시 되찾았을 때 이전 작업을 이어서 하기가 어렵기 때문이다.</p>
+
+<p>Circular Wait는 자원마다 번호를 매겨서 정해진 순서대로만 자원을 획득할 수 있도록 처리하면 쌍방향으로의 자원 요구가 이루어질 수 없으므로 Cycle이 생길 우려가 사라진다.</p>
+
+<p>하지만 위의 방법들은 자원 이용률 저하, starvation 현상 등이 발생한다.</p>
+
+<h2 id="deadlock-avoidance">Deadlock Avoidance</h2>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502183735.png" alt="image-20210502183734195" style="zoom:50%;" /></p>
+
+<p>Process가 시작되어 종료될 때까지 써야하는 최대의 자원량을 알고 있다고 가정한다.</p>
+
+<p>모든 경우의 수를 따져보고 자원 할당으로부터 안전한 경우에만 자원을 할당해준다. (자원의 여분이 있음에도)</p>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502184158.png" alt="image-20210502184152926" style="zoom:50%;" /></p>
+
+<p>자원당 하나의 instance를 가지고 있다면 자원 할당 그래프 알고리즘(deadlock 발생 여부를 찾아줌)을 이용해 막아줄 수 있고</p>
+
+<p>자원당 여러개의 instance를 가지고 있는 경우에는 Banker’s 알고리즘을 통해 deadlock을 막아줄 수 있다.</p>
+
+<h2 id="resource-allocation-graph-algorithm">Resource Allocation Graph algorithm</h2>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502190017.png" alt="image-20210502190015537" style="zoom:50%;" /></p>
+
+<p>자원당 instance가 하나만 있는 상황에서 deadlock을 피하는 방법</p>
+
+<p>자원에서 프로세스로 뻗어있는 화살표는 프로세스가 해당 자원을 보유하고 있다는 의미</p>
+
+<p>프로세스에서 자원으로 뻗어있는 화살표는 프로세스가 해당 자원을 요청했다는 의미</p>
+
+<p>점선으로 이루어진 화살표는 프로세스가 평생에 거쳐 해당 자원을 요청할 가능성이 있음을 나타냄</p>
+
+<p>deadlock의 위험성이 있으면 자원을 주지 않고 막는다.</p>
+
+<h2 id="bankers-algorithm">Banker’s Algorithm</h2>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502191103.png" alt="image-20210502191101848" style="zoom:50%;" /></p>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502191140.png" alt="image-20210502191138729" style="zoom:50%;" /></p>
+
+<p>자원당 instance가 여러개 있는 경우 Banker’s Algorithm을 적용할 수 있다.</p>
+
+<p>ppt의 예시는 Process가 5개 있고</p>
+
+<p>Resource A,B,C는 instance를 각각 10개, 5개, 7개 가지고 있다.</p>
+
+<p>Allocation은 현재 할당된 instance를 나타내는 것이고</p>
+
+<p>Max는 최대로 요청할 수 있는 (프로세스 평생에 걸쳐) instance의 수를 나타낸 것이다.</p>
+
+<p>현재 남아있는 자원은 Available section에 보이는 것처럼 A 3개, B 3개, C 2개인 상황에서</p>
+
+<p>프로세스들이 자원을 요청했을 때 처리하는 방식에 대해 알아보자</p>
+
+<p>현재 가용자원만 가지고도(Available) 어떤 프로세스의 Max를 충족할 수 있다면 자원을 할당해준다</p>
+
+<p>하지만 이것이 불가능한 경우에는 deadlock을 피하기 위해 자원을 할당해주지 않는다.</p>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502193527.png" alt="image-20210502193525439" style="zoom:50%;" /></p>
+
+<p>프로세스의 Need (현재 상태에서 최대로 요청할 수 있는 resource instance의 양)보다 Available한 자원이 더 많은 경우에만 자원을 할당해주면 deadlock을 막을 수 있다.</p>
+
+<p>이 때 요청한 자원의 양과 Need는 서로 다른 개념임을 기억하자.</p>
+
+<p>적어도 Need 이상의 양을 요청하지 않는다는 전제 때문에 가능한 상황이다.</p>
+
+<h2 id="deadlock-detection">Deadlock Detection</h2>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502194954.png" alt="image-20210502194952896" style="zoom:50%;" /></p>
+
+<p>Deadlock Detection은 Deadlock Avoidance와 마찬가지로 모든 Resource의 instance가 하나인 경우에는 자원 할당 그래프를 사용해 deadlock을 탐지할 수 있다.</p>
+
+<p>instance가 여러개인 경우에는 Banker’s algorithm과 유사한 방법으로 처리할 수 있다.</p>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502195232.png" alt="image-20210502195223354" style="zoom:50%;" /></p>
+
+<p>프로세스에서 프로세스로 뻗어나간 화살표는 자원 할당 그래프를 더 간편하게 그리기 위한 방안으로 화살표의 목적지에 해당하는 프로세스가 가진 자원을 화살표의 시작지에 해당하는 프로세스가 요청하고 있음을 나타낸다.</p>
+
+<p>process가 n개일 때 wait for graph에서 cycle을 찾는 overhead는 O(n^2)에 해당한다.</p>
+
+<p>node가 n개일 때 edge의 maximum은 n(n-1)개이므로 이 edge들을 모두 다 따라가보면 O(n^2)의 시간복잡도가 걸림을 알 수 있다.</p>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502200422.png" alt="image-20210502200419205" style="zoom:50%;" /></p>
+
+<p>위의 상황은 자원당 instance가 여러개인 경우를 나타낸 것이다.</p>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502200728.png" alt="image-20210502200726350" style="zoom:50%;" /></p>
+
+<h2 id="deadlock-recovery">Deadlock Recovery</h2>
+
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502200920.png" alt="image-20210502200918555" style="zoom:50%;" /></p>
+
+<p>Deadlock을 recover하는 방법에는 크게 두가지가 있다.</p>
+
+<ol>
+  <li>Deadlock에 연루된 process들을 없애기 (한꺼번에 kill)</li>
+  <li>Deadlock에 연루된 process들을 하나씩 없애보기 (Deadlock이 없어질때까지)</li>
+</ol>
+
+<p>위와 같은 방식으로 safe state가 되면 다시 process를 시작하면 된다.</p>
+
+<p>동일한 프로세스가 계속해서 victim(process가 deadlock에 연루되어서 죽는 경우)이 되는 경우</p>
+
+<p>starvation 문제를 야기할 수 있으므로 이 부분도 같이 고려를 해야한다.</p>
+
+
+                <hr style="visibility: hidden;">
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/til/2021.04.29-TIL/"
+                            data-toggle="tooltip" data-placement="top" title="2021년 04월 29일 공부일지">
+                            Previous<br>
+                            <span>2021년 04월 29일 공부일지</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/%EC%9D%BC%EC%83%81/TyporaEasyImageUpload/" data-toggle="tooltip"
+                            data-placement="top" title="Typora 이미지 쉽게 업로드 하기 for mac">
+                            Next<br>
+                            <span>Typora 이미지 쉽게 업로드 하기 for mac</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <hr style="visibility: hidden;">
+
+
+            </div>
+
+            <!-- Side Catalog Container -->
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+
+<section>
+    
+    <hr class="hidden-sm hidden-xs">
+    
+    <h5><a href="/archive/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
+            
+        
+            
+            <a data-sort="0043"
+                href="/archive/?tag=TIL" title="TIL"
+                rel="32">TIL</a>
+            
+            
+            
+            <a data-sort="0063"
+                href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
+                rel="12">운영체제</a>
+            
+            <a data-sort="0064"
+                href="/archive/?tag=OS" title="OS"
+                rel="11">OS</a>
+            
+            <a data-sort="0068"
+                href="/archive/?tag=Swift" title="Swift"
+                rel="7">Swift</a>
+            
+            <a data-sort="0068"
+                href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
+                rel="7">Yagom-Academy</a>
+            
+            <a data-sort="0071"
+                href="/archive/?tag=iOS" title="iOS"
+                rel="4">iOS</a>
+            
+            <a data-sort="0072"
+                href="/archive/?tag=enum" title="enum"
+                rel="3">enum</a>
+            
+            <a data-sort="0073"
+                href="/archive/?tag=Flow+chart" title="Flow chart"
+                rel="2">Flow chart</a>
+            
+            <a data-sort="0073"
+                href="/archive/?tag=Protocol" title="Protocol"
+                rel="2">Protocol</a>
+            
+            <a data-sort="0073"
+                href="/archive/?tag=Scroll+View" title="Scroll View"
+                rel="2">Scroll View</a>
+            
+            <a data-sort="0073"
+                href="/archive/?tag=UML" title="UML"
+                rel="2">UML</a>
+            
+            <a data-sort="0073"
+                href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
+                rel="2">Yagom Academy</a>
+    </div>
+</section>
+
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- add support for mathjax by voleking-->
+
+
+<script src="https://utteranc.es/client.js" repo="Neph3779/blog-comments" issue-term="pathname" theme="github-light"
+    crossorigin="anonymous" async>
+    </script>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js", function () {
+        anchors.options = {
+            visible: 'hover',
+            placement: 'right',
+            // icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link {
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top: -0.1em;
+        }
+    }
+</style>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- SNS Link -->
+                
+
+
+<ul class="list-inline text-center">
+
+
+  
+  
+  
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://github.com/neph3779">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+                <p class="copyright text-muted">
+                    Copyright &copy; Neph's Blog 2021
+                    <br>
+                    Powered by <a href="http://huangxuan.me">Hux Blog</a> |
+                    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px"
+                        height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src=" /js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src=" /js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src=" /js/hux-blog.min.js "></script>
+
+<!-- Simple Jekyll Search -->
+<script src=" /js/simple-jekyll-search.min.js"></script>
+
+<!-- Service Worker -->
+
+<script src=" /js/snackbar.js "></script>
+<script src=" /js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+
+
+
+
+
+
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function () {
+        var $nav = document.querySelector("nav");
+        if ($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-190717919-1';
+    var _gaDomain = '';
+
+    // Originial
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        // interop with multilangual 
+        if ('' == 'true') {
+            _containerSelector = 'div.post-container.active'
+        } else {
+            _containerSelector = 'div.post-container'
+        }
+
+        // init
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        // a = P.find('h1,h2');
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        // clean
+        $(selector).html('')
+
+        // appending
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+<!-- Multi-Lingual -->
+
+
+<!-- Simple Jekyll Search -->
+<script>
+    // https://stackoverflow.com/questions/1912501/unescape-html-entities-in-javascript
+    function htmlDecode(input) {
+        var e = document.createElement('textarea');
+        e.innerHTML = input;
+        // handle case of empty input
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    }
+
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '/search.json',
+        searchResultTemplate: '<div class="post-preview item"><a href="{url}"><h2 class="post-title">{title}</h2><h3 class="post-subtitle">{subtitle}</h3><hr></a></div>',
+        noResultsText: 'No results',
+        limit: 50,
+        fuzzy: false,
+        // a hack to get escaped subtitle unescaped. for some reason, 
+        // post.subtitle w/o escape filter nuke entire search.
+        templateMiddleware: function (prop, value, template) {
+            if (prop === 'subtitle' || prop === 'title') {
+                if (value.indexOf("code")) {
+                    return htmlDecode(value);
+                } else {
+                    return value;
+                }
+            }
+        }
+    });
+
+    $(document).ready(function () {
+        var $searchPage = $('.search-page');
+        var $searchOpen = $('.search-icon');
+        var $searchClose = $('.search-icon-close');
+        var $searchInput = $('#search-input');
+        var $body = $('body');
+
+        $searchOpen.on('click', function (e) {
+            e.preventDefault();
+            $searchPage.toggleClass('search-active');
+            var prevClasses = $body.attr('class') || '';
+            setTimeout(function () {
+                $body.addClass('no-scroll');
+            }, 400)
+
+            if ($searchPage.hasClass('search-active')) {
+                $searchClose.on('click', function (e) {
+                    e.preventDefault();
+                    $searchPage.removeClass('search-active');
+                    $body.attr('class', prevClasses);  // from closure 
+                });
+                $searchInput.focus();
+            }
+        });
+    });
+</script>
+
+
+    <!-- Image to hack wechat -->
+    <img src="/assets/logo.ico/ms-icon-310x310.png" width="0" height="0" />
+    <!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
