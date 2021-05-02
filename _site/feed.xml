@@ -5,33 +5,17 @@
     <description>Write code with my soul.</description>
     <link>https://neph3779.github.io/</link>
     <atom:link href="https://neph3779.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 02 May 2021 22:54:40 +0900</pubDate>
-    <lastBuildDate>Sun, 02 May 2021 22:54:40 +0900</lastBuildDate>
+    <pubDate>Sun, 02 May 2021 23:05:28 +0900</pubDate>
+    <lastBuildDate>Sun, 02 May 2021 23:05:28 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
         <title>Typora 이미지 쉽게 업로드 하기 for mac</title>
         <description>&lt;h2 id=&quot;사건의-발단&quot;&gt;사건의 발단&lt;/h2&gt;
 
-&lt;p&gt;Typora를 통해 깃허브 블로그 글을 쓰다보면 이미지 첨부하는 작업이 매우 귀찮다고 느끼시는 분들이 많으실겁니다.&lt;/p&gt;
-
-&lt;p&gt;이미지의 상대경로를 지정해주고 깃헙 블로그 레포의 어떤 폴더에 캡쳐한 스크린샷을 담는 과정은 상당히 귀찮은 작업이죠..&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;Typora를 통해 깃허브 블로그 글을 쓰다보면 이미지 첨부하는 작업이 매우 귀찮다고 느끼시는 분들이 많으실 것 같아요. 이미지의 상대경로를 지정해주고 깃헙 블로그 레포의 어떤 폴더에 캡쳐한 스크린샷을 담는 과정은 상당히 귀찮은 작업이죠..&lt;/p&gt;
 
 &lt;p&gt;이러한 문제를 해결할 수 있는 방안(이미지를 링크로 변환하여 업로드)을 오늘 알려드리겠습니다.&lt;/p&gt;
-
-&lt;p&gt;우선 Typora의 언어를 중국어로 바꾸는 것부터 시작합니다&lt;/p&gt;
-
-&lt;p&gt;???:   🧐 웬 뜬금없이 중국어?&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;이번 포스트의 핵심이 될 Picgo가 중국어만을 지원하기 때문에 진행해야하는 작업입니다&lt;/p&gt;
-
-&lt;p&gt;과정이 끝난 뒤에는 다시 한국어로 설정해도 전혀 문제가 없으니 걱정하지 마세요 😆&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;내가-찍은-스크린샷이-weibo에-익명으로-올라가는-것을-참을-수-있어&quot;&gt;내가 찍은 스크린샷이 weibo에 익명으로 올라가는 것을 참을 수 있어!&lt;/h4&gt;
 
@@ -43,17 +27,25 @@
 
 &lt;h2 id=&quot;그래서-어떻게-하면-되는데&quot;&gt;그래서 어떻게 하면 되는데?&lt;/h2&gt;
 
-&lt;h3 id=&quot;typora의-언어-중국어로-변경하기&quot;&gt;Typora의 언어 중국어로 변경하기&lt;/h3&gt;
+&lt;h3 id=&quot;1-typora의-언어-중국어로-변경하기&quot;&gt;1. Typora의 언어 중국어로 변경하기&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502223128.png&quot; alt=&quot;image-20210502223124947&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502223414.png&quot; alt=&quot;image-20210502223410704&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;중국어로 설정해주신 뒤 command + q를 이용해 typora를 완전 종료해줬다가 다시 켜주세요!&lt;/p&gt;
+&lt;p&gt;우선 Typora의 언어를 중국어로 바꾸는 것부터 시작합니다&lt;/p&gt;
+
+&lt;p&gt;???:   🧐 웬 뜬금없이 중국어?&lt;/p&gt;
+
+&lt;p&gt;하시는 분들이 많으실텐데 이번 포스트의 핵심이 될 Picgo가 중국어만을 지원하기 때문에 진행해야하는 작업입니다!&lt;/p&gt;
+
+&lt;p&gt;과정이 끝난 뒤에는 다시 한국어로 설정해도 전혀 문제가 없으니 걱정하지 마세요! 😆&lt;/p&gt;
+
+&lt;p&gt;중국어로 설정해주신 뒤 command + q를 이용해 typora를 완전 종료해줬다가 다시 켜주세요.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;picgoapp-다운로드-하기&quot;&gt;PicGo.app 다운로드 하기&lt;/h3&gt;
+&lt;h3 id=&quot;2-picgoapp-다운로드-하기&quot;&gt;2. PicGo.app 다운로드 하기&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502223553.png&quot; alt=&quot;image-20210502223551901&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
@@ -67,7 +59,7 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;github에-이미지가-저장될-repository-만들기-토큰-받아오기&quot;&gt;Github에 이미지가 저장될 Repository 만들기, 토큰 받아오기&lt;/h3&gt;
+&lt;h3 id=&quot;3-github에-이미지가-저장될-repository-만들기-토큰-받아오기&quot;&gt;3. Github에 이미지가 저장될 Repository 만들기, 토큰 받아오기&lt;/h3&gt;
 
 &lt;p&gt;이 부분의 스크린샷은 생략하도록 하겠습니다!&lt;/p&gt;
 
@@ -77,29 +69,33 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;picgoapp-설정하기&quot;&gt;PicGo.app 설정하기&lt;/h3&gt;
+&lt;h3 id=&quot;4-picgoapp-설정하기&quot;&gt;4. PicGo.app 설정하기&lt;/h3&gt;
 
 &lt;p&gt;이제부터는 제가 보여드리는 스크린샷을 그대로 따라해주시면 됩니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502223852.png&quot; alt=&quot;image-20210502223850730&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Custom에 불이 들어오도록 버튼을 눌러주세요&lt;/p&gt;
+&lt;p&gt;Custom에 불이 들어오도록 버튼을 눌러주세요!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502224107.png&quot; alt=&quot;image-20210502224105971&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;왼쪽처럼 GitHub뭐시기 버튼을 눌러 이 화면에 와주신 뒤&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210502225855.png&quot; alt=&quot;20210502225608&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;첫 칸에는 본인의 깃허브 닉네임/레포이름 을 적어주시면 되고&lt;/p&gt;
+&lt;p&gt;왼쪽 ScrollView에 있는 GitHub뭐시기 버튼을 눌러 이 화면에 와주신 뒤 TextField를 채워주시면 됩니다!&lt;/p&gt;
 
-&lt;p&gt;두번째 칸에는 저장할 브랜치! 설정해주시면 됩니다 (여기서 master branch가 아닌 다른 브랜치로 설정해주셔야 무분별한 commit들이 쌓이지 않아요~)&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;첫 칸에는 본인의 깃허브 닉네임/레포이름 을 적어주세요!&lt;/p&gt;
+
+&lt;p&gt;두번째 칸에는 저장할 레포의 어떤 브랜치에 이미지를 업로드할지 설정해주는 작업인데, 여기서 master branch가 아닌 다른 브랜치로 설정해주셔야 무분별한 commit들이 쌓이지 않습니다!&lt;/p&gt;
+
+&lt;p&gt;사용하기로 한 깃헙 레포에 추가적인 브랜치를 만들어주세요! 저의 경우에는 master branch가 아닌 forUpload라는 이름의 브랜치에 이미지가 업로드 되도록 한 상황입니다!&lt;/p&gt;
 
 &lt;p&gt;세번째 칸에는 아까 받아온 토큰을 넣어주시면 됩니다.&lt;/p&gt;
 
 &lt;p&gt;네번째 칸에는 이미지의 경로를 적어주시면 되는데 repo내의 폴더라고 보시면 될 것 같아요&lt;/p&gt;
 
 &lt;p&gt;(제가 설정한 것은 Neph3779라는 유저의 Blog-Image라는 레포의 img 폴더에 내가 찍은 스크린샷을 저장해! 가 되겠네요)&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;이 작업이 끝나셨다면 밑의 파란색 버튼과 초록색 버튼을 눌러주시면 됩니다 (초록 버튼은 눌러지지 않을 수 있는데 문제 없어요!)&lt;/p&gt;
 
@@ -111,15 +107,15 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;이미지-업로드-하기&quot;&gt;이미지 업로드 하기&lt;/h3&gt;
+&lt;h3 id=&quot;5-typora를-통해-이미지-업로드-하기&quot;&gt;5. Typora를 통해 이미지 업로드 하기&lt;/h3&gt;
 
 &lt;p&gt;찍은 스크린샷을 단순히 command + v로 타이포라에 붙여넣기 하면 아래의 사진처럼 내 맥북에 저장된 경로를 통해 이미지가 업로드 됩니다&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502224745.png&quot; alt=&quot;image-20210502224715666&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;상태에서 사진을 우클릭 하신 뒤 Upload Image라는 버튼을 누르시면&lt;/p&gt;
+&lt;p&gt;이 상태에서 사진을 우클릭 하신 뒤 Upload Image라는 버튼을 누르시면&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/Users/chunsoohyun/Library/Application Support/typora-user-images/image-20210502224818354.png&quot; alt=&quot;image-20210502224818354&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210502225842.png&quot; alt=&quot;image-20210502224818354&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;짜잔 보이는것처럼 나의 깃헙 레포와 연동된 링크를 통해 이미지가 들어가는 것을 볼 수 있어요!&lt;/p&gt;
 
