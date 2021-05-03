@@ -71,7 +71,7 @@ PicGo.app은 중국어만 지원하는 앱이기 때문에 언어를 중국어�
 
 Repo를 만들어 주시고 토큰을 받아와주세요
 
-토큰을 받아오는 과정은 [이 블로그 글]([https://taeuk-gang.github.io/wiki/Typora%20%EC%8B%A0%EA%B8%B0%EB%8A%A5%20-%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%9E%90%EB%8F%99%20%EC%97%85%EB%A1%9C%EB%93%9C/](https://taeuk-gang.github.io/wiki/Typora 신기능 - 이미지 자동 업로드/))에 잘 설명되어있으니 참고하시면 좋을 것 같습니다!
+토큰을 받아오는 과정은 [이 블로그 글](https://taeuk-gang.github.io/wiki/Typora%20%EC%8B%A0%EA%B8%B0%EB%8A%A5%20-%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%9E%90%EB%8F%99%20%EC%97%85%EB%A1%9C%EB%93%9C/)에 잘 설명되어있으니 참고하시면 좋을 것 같습니다!
 
 <br/> 
 
@@ -88,6 +88,16 @@ Repo를 만들어 주시고 토큰을 받아와주세요
 
 
 Custom에 불이 들어오도록 버튼을 눌러주세요!
+
+
+
+<img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210503101050.png" alt="image-20210503101048818" style="zoom:50%;" />
+
+톱니바퀴 모양 cell을 눌러서 이 화면에 들어와 주신 뒤
+
+제 설정대로 stepper을 On/Off 해주세요
+
+다만! 위에서 4번째에 있는 stepper을 On 해주면 이미지를 업로드 할때 매번 업로드될 이름을 정해줄 수 있어요!
 
 <br/> 
 
