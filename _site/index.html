@@ -253,6 +253,98 @@
             ">
     			
 <div class="post-preview">
+    <a href="/ios/frame-bounds-difference/">
+        <h2 class="post-title">
+            Frame과 Bounds의 차이
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            Frame
+
+Frame은 SuperView의 좌표시스템 안에서의 View의 위치와 크기이다.
+
+frame은 SuperView의 origin을 기준으로 움직이며 여기서 origin은 SuperView의 좌상단 꼭짓점이다.
+
+일반적인 좌표계와 달리 원점이 좌상단 꼭짓점이며 x에 대한 양의 방향은 오른쪽, y에 대한 양의 방향은 아래쪽이다.
+
+Bounds
+...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on May
+        7, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.05.04-TIL/">
+        <h2 class="post-title">
+            2021년 05월 04일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  TDD
+    
+      TDD의 용어에 대해 알아보고 실제 Unit Test 코드에 적용시켜보는 과정 진행
+      읽어본 글 : Mock, Stub, Spy, Fake가 뭔지에 대해 Swift 코드 예제로 설명해주는 글
+    
+  
+  CS
+    
+      읽어본 글 : 프로세스와 스레드의 차이에 대해 설명해놓은 ...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on May
+        4, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.05.03-TIL/">
+        <h2 class="post-title">
+            2021년 05월 03일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  
+    ARC와 Memory Structure
+
+    
+      ARC는 자동으로 Reference count를 관리하는 기능
+      Memory Structure에는 Code, Data, Stack, Heap 영역이 있다
+    
+  
+  
+    Retain Cycle과 Dead Lock
+
+    
+      Re...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on May
+        3, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
     <a href="/%EC%9D%BC%EC%83%81/TyporaEasyImageUpload/">
         <h2 class="post-title">
             Typora 이미지 쉽게 업로드 하기 for mac
@@ -451,95 +543,6 @@ guard let input = userInput,
 </div>
 <hr>
 
-<div class="post-preview">
-    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/9-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5%E1%84%92%E1%85%AA-2/">
-        <h2 class="post-title">
-            [#9] 프로세스 동기화-2
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            Critical Section 관리 알고리즘의 발전
-
-Critical Section을 사용하기 위해 만족해야 하는 몇가지 조건들
-
-
-  Mutual Exclusion(상호 배제)
-    
-      프로세스 P_i가 critical section 부분을 수행중이면 다른 모든 프로세스들은 그들의 critical section에 들어가면 안된다.
-    ...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        18, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2021.04.15-TIL/">
-        <h2 class="post-title">
-            2021년 04월 15일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  os_log에 대해 간략히 알아봤습니다.
-  만국 박람회 프로젝트의 refactoring이 계속되었습니다.
-
-
-
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        15, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.04.13-TIL/">
-        <h2 class="post-title">
-            2021년 04월 13일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  시청한 영상: WWDC20 Modern cell configuration
-
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
-        guard let c...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        13, 2021
-    </p>
-</div>
-<hr>
-
 
 <!-- Pager -->
 
@@ -622,53 +625,53 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt
             
         
             
-            <a data-sort="0043"
+            <a data-sort="0044"
                 href="/archive/?tag=TIL" title="TIL"
-                rel="32">TIL</a>
+                rel="34">TIL</a>
             
             
             
-            <a data-sort="0063"
+            <a data-sort="0066"
                 href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
                 rel="12">운영체제</a>
             
-            <a data-sort="0064"
+            <a data-sort="0067"
                 href="/archive/?tag=OS" title="OS"
                 rel="11">OS</a>
             
-            <a data-sort="0068"
+            <a data-sort="0071"
                 href="/archive/?tag=Swift" title="Swift"
                 rel="7">Swift</a>
             
-            <a data-sort="0068"
+            <a data-sort="0071"
                 href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
                 rel="7">Yagom-Academy</a>
             
-            <a data-sort="0071"
+            <a data-sort="0074"
                 href="/archive/?tag=iOS" title="iOS"
                 rel="4">iOS</a>
             
-            <a data-sort="0072"
+            <a data-sort="0075"
                 href="/archive/?tag=enum" title="enum"
                 rel="3">enum</a>
             
-            <a data-sort="0073"
+            <a data-sort="0076"
                 href="/archive/?tag=Flow+chart" title="Flow chart"
                 rel="2">Flow chart</a>
             
-            <a data-sort="0073"
+            <a data-sort="0076"
                 href="/archive/?tag=Protocol" title="Protocol"
                 rel="2">Protocol</a>
             
-            <a data-sort="0073"
+            <a data-sort="0076"
                 href="/archive/?tag=Scroll+View" title="Scroll View"
                 rel="2">Scroll View</a>
             
-            <a data-sort="0073"
+            <a data-sort="0076"
                 href="/archive/?tag=UML" title="UML"
                 rel="2">UML</a>
             
-            <a data-sort="0073"
+            <a data-sort="0076"
                 href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
                 rel="2">Yagom Academy</a>
     </div>

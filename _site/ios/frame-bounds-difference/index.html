@@ -12,24 +12,28 @@
 
     <!-- Open Graph -->
     <meta property="og:title"
-        content="[#1] 네트워크의 개념과 프로토콜 - Neph's iOS blog">
+        content="Frame과 Bounds의 차이 - Neph's iOS blog">
     
     <meta property="og:type" content="article">
-    <meta property="og:description" content="Communication &amp; Network
+    <meta property="og:description" content="Frame
 ">
     
-    <meta property="article:published_time" content=" 2021-03-18T00:00:00Z">
+    <meta property="article:published_time" content=" 2021-05-07T00:00:00Z">
     
     
     
-    <meta property="article:tag" content="network">
+    <meta property="article:tag" content="frame">
+    
+    <meta property="article:tag" content="bound">
+    
+    <meta property="article:tag" content="origin">
     
     
     <meta property="og:image" content="https://neph3779.github.io/assets/logo.ico/apple-icon.png">
-    <meta property="og:url" content="https://neph3779.github.io/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/1-%E1%84%82%E1%85%A6%E1%84%90%E1%85%B3%E1%84%8B%E1%85%AF%E1%84%8F%E1%85%B3%E1%84%8B%E1%85%B4-%E1%84%80%E1%85%A2%E1%84%82%E1%85%A7%E1%86%B7%E1%84%80%E1%85%AA-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF/">
+    <meta property="og:url" content="https://neph3779.github.io/ios/frame-bounds-difference/">
     <meta property="og:site_name" content="Neph's iOS blog">
 
-    <title>[#1] 네트워크의 개념과 프로토콜 - Neph's iOS blog</title>
+    <title>Frame과 Bounds의 차이 - Neph's iOS blog</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -38,7 +42,7 @@
     <link rel="shortcut icon" href="/assets/favicon.ico">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://neph3779.github.io/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/1-%E1%84%82%E1%85%A6%E1%84%90%E1%85%B3%E1%84%8B%E1%85%AF%E1%84%8F%E1%85%B3%E1%84%8B%E1%85%B4-%E1%84%80%E1%85%A2%E1%84%82%E1%85%A7%E1%86%B7%E1%84%80%E1%85%AA-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF/">
+    <link rel="canonical" href="https://neph3779.github.io/ios/frame-bounds-difference/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href=" /css/bootstrap.min.css">
@@ -248,13 +252,17 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/archive/?tag=network" title="network">network</a>
+                        <a class="tag" href="/archive/?tag=frame" title="frame">frame</a>
+                        
+                        <a class="tag" href="/archive/?tag=bound" title="bound">bound</a>
+                        
+                        <a class="tag" href="/archive/?tag=origin" title="origin">origin</a>
                         
                     </div>
-                    <h1>[#1] 네트워크의 개념과 프로토콜</h1>
+                    <h1>Frame과 Bounds의 차이</h1>
                     
                     <h2 class="subheading"></h2>
-                    <span class="meta">Posted by Neph's Blog on March 18, 2021</span>
+                    <span class="meta">Posted by Neph's Blog on May 7, 2021</span>
                 </div>
             </div>
         </div>
@@ -280,704 +288,75 @@
                 <!-- Multi-Lingual -->
                 
 
-                <h2 id="communication--network">Communication &amp; Network</h2>
+                <h2 id="frame">Frame</h2>
 
-<hr />
+<p>Frame은 SuperView의 좌표시스템 안에서의 View의 위치와 크기이다.</p>
 
-<blockquote>
-  <ul>
-    <li>
-      <p>Communication is exchange of information between users(stations, nodes) at a distance</p>
-    </li>
-    <li>
-      <p>Network</p>
+<p>frame은 <code class="language-plaintext highlighter-rouge">SuperView의 origin</code>을 기준으로 움직이며 여기서 origin은 SuperView의 좌상단 꼭짓점이다.</p>
 
-      <p>A system consists of devices (often referred to as nodes) and links for transportation of entities</p>
+<p>일반적인 좌표계와 달리 원점이 좌상단 꼭짓점이며 x에 대한 양의 방향은 오른쪽, y에 대한 양의 방향은 아래쪽이다.</p>
 
-      <p>Examples: roads, railroads, water</p>
-    </li>
-    <li>
-      <p>Two Types of communication networks</p>
+<h2 id="bounds">Bounds</h2>
 
-      <p>Voice</p>
+<p>Bounds는 어떤 View가 지닌 origin의 위치이다.</p>
 
-      <p>Computer networks</p>
-    </li>
-  </ul>
+<p>기본값은 (0,0)이며 Bounds를 조절하면 <code class="language-plaintext highlighter-rouge">SubView의 위치</code>가 변하게 된다.</p>
 
-</blockquote>
+<p>이는 SubView의 위치가 SuperView의 origin을 기준으로 결정되기 때문이다.</p>
 
-<p><br /></p>
+<p>다시 말해 Bounds를 바꿔주면 SuperView의 위치는 그대로 둔 채로 SubView의 위치만 변경된다.</p>
 
-<p>통신(communication) : 멀리 떨어진 사용자(사람, 서버, 스마트폰, 컴퓨터 등등) 사이의 정보 교환</p>
+<p>이는 ScrollView의 핵심이 되는데 ScrollView의 Bounds의 y좌표나 x좌표를 양수로 주게 되면 어떤 일이 일어날지 상상해보자.</p>
 
-<p>네트워크: entity()를 운반하기 위한 시스템 -&gt; node와 링크로 구성된 시스템</p>
+<p>ScrollView의 origin을 기준으로 Content가 표시되고 있는 상황에서 origin의 좌표가 바뀌었다면 SubView의 상대적인 위치가 변경되어야 할 것임을 쉽게 유추해볼 수 있다.</p>
 
-<p>ex) 도로, 수도망 등등</p>
+<h2 id="그림을-통한-이해">그림을 통한 이해</h2>
 
-<p>컴퓨터 네트워크: 정보를 운반하는 네트워크</p>
+<p>그림을 통해 이해를 해보자</p>
 
-<p>네트워크의 두 종류</p>
+<p>그림의 출처는 항상 좋은 글들로 도움을 주시는 <code class="language-plaintext highlighter-rouge">zedd</code>님 <a href="https://zeddios.tistory.com/203">원문 글 링크</a></p>
 
-<p>voice: 전화망, 음성신호를 움직이는 망</p>
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210507122232.png" alt="image-20210507122231343" style="zoom:50%;" /></p>
 
-<p>1980년대까지는 주력이 되었던 시스템이지만 점점 사라져가는중</p>
+<p>Content View는 저 광활한 그림 전체다.</p>
 
-<p>스마트폰으로 하는 전화는 더이상 Voice(전화망)이 아닌 컴퓨터 네트워크로 바뀜</p>
+<p>현재 Content View의 frame은 (0,0)이며</p>
 
-<p>computer networks: digitize된 정보를 움직이는 네트워크</p>
+<p>Scroll View의 bounds도 (0,0)이다. (지금 이 문장이 이해가 가지 않는다면 위에 써놓은 설명을 찬찬히 다시 읽어보자)</p>
 
-<hr />
+<p>만약 여기서 Scroll View의 bounds를 (300, 500)으로 바꿔주면 어떤 상황이 될까?</p>
 
-<p><br /></p>
+<p>Scroll View의 origin이 (0, 0)에서 (300, 500)으로 변경될 것이고</p>
 
-<h2 id="connectivity">Connectivity</h2>
+<p>이로 인해 SuperView의 origin을 기준으로 표시되던 Content View의 위치도 변경될 것이다.</p>
 
-<hr />
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210507122714.png" alt="image-20210507122713275" style="zoom:50%;" /></p>
 
-<blockquote>
-  <ul>
-    <li>
-      <p>Impossibale to connect (large) number of users directly</p>
+<p>바로 이렇게 말이다.</p>
 
-      <p>(If link directly)</p>
-
-      <p>Requires</p>
-
-      <p>O(N^2) links</p>
-
-      <p>O(N) accsess link / user</p>
-    </li>
-    <li>
-      <p>Share resources(links)</p>
-
-      <p>Network is a mechanism to make the connectivity easy by sharing resources</p>
-    </li>
-    <li>
-      <p>Sharing mechanisms</p>
-
-      <p>Multiplexing</p>
-
-      <p>Access control</p>
-    </li>
-  </ul>
-
-</blockquote>
-
-<p><br /></p>
-
-<p>모든 사용자를 direct하게 연결할 수 없음</p>
-
-<p>따라서 리소스를 sharing 해서 효율적으로 연결을 만들어줌</p>
-
-<p>리소스 sharing의 두 가지 방법에는 멀티플렉싱과 엑세스 컨트롤이 있음</p>
-
-<p>복잡도를 낮추고 효율성을 높일 수 있음</p>
-
-<hr />
-<p><br /></p>
-
-<h2 id="simplexduplex">Simplex/Duplex</h2>
-
-<hr />
-
-<p><img src="../../assets/images/Network/0.png" alt="0" style="zoom:67%;" />통신 시스템은 Simplex/ Half duplex/ Full duplex가 있음</p>
-
-<p>Simplex 시스템은 단방향으로만 가는 시스템</p>
-
-<p>Half duplex는 한 시점에 한 방향으로만 data를 보낼 수 있는 시스템 (wireless같은 경우에 발생할 수 있음)</p>
-
-<p>Full duplex는 두 station이 동시에 data를 주고받고 할 수 있는 시스템</p>
-
-<hr />
-<p><br /></p>
-
-<h2 id="link-types">Link Types</h2>
-
-<hr />
-
-<p><img src="../../assets/images/Network/2-1.png" alt="2-1" style="zoom:67%;" /></p>
-
-<p>point-to-point 링크는 링크 양쪽에 station이 하나씩 있음</p>
-
-<p>link를 직접 쓸 수 있는 node는 끝에 달린 station</p>
-
-<p>(Multiplexing 기법을 이용해서 운용, 여러 station이 한 링크를 공유)</p>
-
-<p><br /></p>
-
-<p>Multipoint는 한 링크에 station이 여러개 달려있음</p>
-
-<p>station이 보내는 정보가 broadcast됨</p>
-
-<p>링크에 붙어있는 모든 station이 정보를 받을 수 있음</p>
-
-<p>information이 다 퍼지기 때문에 broadcast link 라고도 함</p>
-
-<p><br /></p>
-
-<p>문제점: 두개 이상의 station이 신호를 보내면</p>
-
-<p>electric magnetic인 link에서 충돌이 일어남</p>
-
-<p>따라서 한 시점에 한 station만 전송을 할 수 있음</p>
-
-<p>Access Control: 위와 같은 상황 방지를 위해 동시에 여러 station이 전송하지 못하도록 막는 것</p>
-
-<p><br /></p>
-
-<p>Link는 connectivity를 제공</p>
-
-<p>이 자원을 어떻게 활용할 것인가?</p>
-
-<ol>
-  <li>p-p는 멀티플렉싱</li>
-  <li>멀티포인트는 엑세스 컨트롤을 사용</li>
-</ol>
-
-<p><br /></p>
-
-<p>Station들의 로직이 있는데</p>
-
-<p>p-p 방식은 station에서 multiplexing/demultiplexing 진행됨</p>
-
-<p>multipoint 방식은 station에서 access control 진행됨</p>
-
-<hr />
-<p><br /></p>
-<h2 id="architecture">Architecture</h2>
-
-<hr />
-
-<blockquote>
-  <ul>
-    <li>
-      <p>Divide&amp;Conquer</p>
-
-      <p>To solve a large &amp; complex problem, first partition the problem into small pieces</p>
-
-      <p>Solve each partial problem</p>
-
-      <p>Combine sub-solutions into a whole solution</p>
-    </li>
-    <li>
-      <p>Architecture</p>
-
-      <p>A set of sub-functions that comprise a larger function</p>
-    </li>
-    <li>
-      <p>Abstaction</p>
-
-      <p>Shield internal implementation details and show only interfaces</p>
-    </li>
-    <li>
-      <p>Example</p>
-
-      <p>Program modules</p>
-    </li>
-  </ul>
-
-</blockquote>
-
-<p>아키텍쳐는 컴퓨터의 instruction set이 어떻게 되어있는가 등을 나타냄</p>
-
-<p>분할정복 방법은 크고 복잡한 문제를 풀기 위해 해결가능할 정도로 잘게 쪼갬</p>
-
-<p>그 뒤에 각각의 작은 문제들의 해답을 합쳐서 전체 문제의 솔루션으로 만드는 일을 함</p>
-
-<p>partition, solve, combine</p>
-
-<p>작은 문제들이 서로 협력하여 큰 문제를 풀어냄</p>
-
-<p>아키텍쳐: 큰 기능을 수행하기 위한 작은 function들의 set</p>
-
-<p><br /></p>
-
-<p>작은 기능들이 상호작용을 통해 큰 기능을 수행하게 되는데</p>
-
-<p>상호작용을 쉽게 하기 위해 추상화를 사용</p>
-
-<p>procedure한 일을 각각 하게 되는데 이 구현의 세세한 부분을 보여주지 않음</p>
-
-<p>이것들이 모여 큰 기능을 하게 되는게 아키텍쳐</p>
-
-<hr />
-
-<p><br /></p>
-
-<h2 id="layered-architecture-계층구조">Layered Architecture (계층구조)</h2>
-
-<hr />
-
-<blockquote>
-  <ul>
-    <li>
-      <p>Layered architecture</p>
-    </li>
-    <li>
-      <p>Keep the interaction simple</p>
-    </li>
-  </ul>
-</blockquote>
-
-<p>통신을 여러개의 모듈로 나누는데</p>
-
-<p>통신은 사람이 쓰는(어플리케이션이 쓰는)</p>
-
-<p>electro magnetic signal(가장 하부)에서</p>
-
-<p>사람이 쓰는 level까지 올라가기 위해서는 해결해야 할 문제가 많음</p>
-
-<p>그 문제들이 점점 더 고급화되는식으로 자연적으로 modeling이 될 수 있음</p>
-
-<p><br /></p>
-
-<p>Layer N - 가장 abstract가 많이 된 계층 (바로 사람이 쓸 수 있는 프로토콜)</p>
-
-<p>Layer n+1</p>
-
-<p>Layer n</p>
-
-<p>Layer n-1</p>
-
-<p>가장 낮은 Layer - magnetic signal을 다루는 쪽</p>
-
-<p><br /></p>
-
-<p>layer위로 갈수록 abstraction이 진행되고</p>
-
-<p>각각의 layer는 각자의 일도 수행함</p>
-
-<hr />
-
-<p><br /></p>
-
-<h2 id="protocol">Protocol</h2>
-
-<hr />
-
-<blockquote>
-  <ul>
-    <li>
-      <p>Communications involve two or more devices</p>
-    </li>
-    <li>
-      <p>Suppose A and B communicate each other</p>
-
-      <p>Should A and B use the same program?</p>
-
-      <p>If A and B use Windows and Linux OS respectively, how they communicate?</p>
-    </li>
-    <li>
-      <p>Protocol</p>
-
-      <p>Rules that communicating entiites should abide to understand and properly process messages received</p>
-    </li>
-    <li>
-      <p>Not that communication is exchanges of messages</p>
-
-      <p>Protocol specifies the meaning (semantics and syntax of message)</p>
-
-      <p>And timing of messages</p>
-    </li>
-  </ul>
-
-</blockquote>
-
-<p>통신은 2개 이상의 유저/station이 정보를 교환하는 것</p>
-
-<p>A와 B가 통신을 할 때</p>
-
-<p>A와 B가 똑같은 프로그램을 써야하는가?</p>
-
-<p>어떻게 통신할 것인가?</p>
-
-<p><br /></p>
-
-<p>그래서 프로토콜이 필요함</p>
-
-<p>프로토콜: 통신하기 위해 메세지를 주고받을텐데</p>
-
-<p>symbolize된 추가적인 정보를 보내줘야 함</p>
-
-<p>추가적인 정보가 network 기능을 하기 위해 필요함</p>
-
-<p>공통의 규칙과 메세지를 이해하는 rule이 필요함</p>
-
-<p>이것이 바로 프로토콜</p>
-
-<p><br /></p>
-
-<p>프로토콜을 semantics/syntax/timing으로 구성되어있음</p>
-
-<p>메세지를 주고받을 때</p>
-
-<p>프로토콜에 따라 메세지 보내면</p>
-
-<p>상대편은 프로토콜에 따라 해석함</p>
-
-<hr />
-<p><br /></p>
-
-<h2 id="protocol---example1">Protocol - Example1</h2>
-
-<hr />
-
-<blockquote>
-  <ul>
-    <li>
-      <p>Error detection</p>
-
-      <p>Communication links are not 100% reliable</p>
-
-      <p>Errors may change, add, delete bits in the original message</p>
-
-      <p>An Internet bank user C requests to transfer $100 from account A1 to A2</p>
-
-      <p>If the first bits is changed to 1, then you transfer $228</p>
-
-      <p><img src="../../assets/images/Network/1.png" alt="1" style="zoom:67%;" /></p>
-    </li>
-    <li>
-      <p>How do you detect errors?</p>
-
-      <p>There ar many solutions</p>
-
-      <ul>
-        <li>Parity bit</li>
-        <li>One’s complement addition</li>
-        <li>CRC</li>
-      </ul>
-    </li>
-  </ul>
-
-</blockquote>
-
-<p>프로토콜의 개념이 추상적이기 때문에</p>
-
-<p>에러 탐지라는 기능 중 하나임</p>
-
-<p>커뮤니케이션 링크의 신뢰도는 100%가 아님</p>
-
-<p>모든 정보는 비트로 되어있는데 비트가 바뀌는 경우도 있고</p>
-
-<p>비트가 추가되거나 빠지거나 하는 경우가 있음</p>
-
-<p>보통 전화망에서는 에러가 일어나면 사람이 스스로 보정할 수 있지만</p>
-
-<p>컴퓨터는 flexible하지 않기 때기 때문에 스스로 처리 불가능</p>
-
-<p><br /></p>
-
-<p>오류탐지 방법</p>
-
-<ol>
-  <li>페리티 비트</li>
-  <li>One’s Complement addition</li>
-  <li>CRC: 물리계층에서 frame에 에러가 있는지 없는지 검사</li>
-</ol>
-
-<hr />
-
-<p><br /></p>
-
-<h2 id="protocol---example-2">Protocol - Example 2</h2>
-
-<hr />
-
-<blockquote>
-  <ul>
-    <li>
-      <p>We need to agree</p>
-
-      <p>Use the same method</p>
-
-      <p>How to apply the method</p>
-
-      <p>How to represent additional data</p>
-    </li>
-    <li>
-      <p>Assume we agreed to</p>
-
-      <ol>
-        <li>Even parity bit</li>
-        <li>Apply parity to every bytes</li>
-        <li>Attach parity bits to the end of the original message as a byte stream</li>
-      </ol>
-    </li>
-  </ul>
-
-</blockquote>
-
-<p>오류 탐지를 하기 위해서는 서로 결정/동의해야하는 사항들</p>
-
-<ol>
-  <li>같은 오류탐지 방법을 쓰는 것에 대한 동의 (표준화 과정)</li>
-  <li>어떻게 쓸지에 대한 결정 (어떤식으로 표현할 것인가)</li>
-</ol>
-
-<p>​	<br /></p>
-
-<p>보통 새로운 오류탐지 방법에 대해 공부함</p>
-
-<p>어떻게 쓸지에 대한 것은 크게 어렵지 않음</p>
-
-<hr />
-
-<h2 id="protocol---example-3">Protocol - Example 3</h2>
-
-<hr />
-
-<blockquote>
-  <ul>
-    <li>Suppose layer n performs error detection</li>
-  </ul>
-
-</blockquote>
-
-<p><img src="../../assets/images/Network/3.png" alt="3" style="zoom:67%;" /></p>
-
-<p>Sender가 원래 메세지에 Parity bit을 하단 Layer에 계속 붙여줌</p>
-
-<p>Receiver 쪽에서 이것을 판단함</p>
-
-<p>의문의 에러를 탐지할 가능성이 낮을수록 안좋은 프로토콜</p>
-
-<p>따라서 Parity bit은 그닥 좋은 프로토콜이 아님</p>
-
-<p>하지만 CRC나 다른 프로토콜은 오류를 놓칠 확률이 매우 낮음 -&gt; 좋은 프로토콜</p>
-
-<p><br /></p>
-
-<p>Sender와 Receiver가 같은 프로토콜을 사용해야 통신할 수 있다</p>
-
-<p>Syntax, Semantics, Timing이 모두 일치해야함</p>
-
-<hr />
-
-<p><br /></p>
-
-<h2 id="protocol-principle---1">Protocol Principle - 1</h2>
-
-<hr />
-
-<h4 id="protocol-principle">Protocol Principle</h4>
-
-<blockquote>
-  <p>Message that layer n generates at the sender</p>
-
-  <p>​	=</p>
-
-  <p>Message that layer n receives at the receiver</p>
-</blockquote>
+<h2 id="추가적으로-생각해볼-것들">추가적으로 생각해볼 것들</h2>
 
 <ul>
-  <li>Good protocols abide the protocol principle</li>
-  <li>Why is the <em>protocol principle</em> important in designing protocols?</li>
+  <li>ScrollView의 frame 값을 바꾸면 어떤 일이 일어날까?
+    <ul>
+      <li>ScrollView의 SuperView는 누구일까?</li>
+    </ul>
+  </li>
+  <li>Content View의 frame 값을 바꾸면 어떤 일이 일어날까?</li>
 </ul>
-
-<p><br /></p>
-
-<p>Protocol principle: 프로토콜을 디자인 할 때 가장 중요한 것</p>
-
-<p>Layer n에서 보내는 메세지와 Layer n에서 받는 메세지가 똑같아야 한다</p>
-
-<p>Protocol principle을 반드시 따르도록 하는것이 중요</p>
-
-<p>Protocol principle이 protocol design하는데 중요한 이유:</p>
-
-<p>보내는 쪽의 data와 받는 쪽의 data가 다르다면 바뀐 부분에 대해 신경을 많이 써야함</p>
-
-<p>(해석하기 어렵게 바뀐 부분들 난감)</p>
-
-<hr />
-
-<p><br /></p>
-
-<h2 id="protocol-principle---2">Protocol Principle - 2</h2>
-
-<hr />
-
-<p><img src="../../assets/images/Network/5.png" alt="5" style="zoom:67%;" /></p>
-
-<p>Layer n이 error detection 한다고 가정</p>
-
-<p>layer 내려갈수록 정보를 붙여줌</p>
-
-<p>하지만 같은 layer 입장에서는 같은 정보를 주고받는 형식이 됨</p>
-
-<p>sender와 receiver는 마치 직접통신한 것과 같은 효과가 나타남</p>
-
-<hr />
-
-<p><br /></p>
-
-<h2 id="virtual-communication">Virtual communication</h2>
-
-<hr />
-
-<p><img src="../../assets/images/Network/6.png" alt="6" style="zoom:67%;" /></p>
-
-<blockquote>
-  <ul>
-    <li>Two layer entities at the same level think they communicate directly</li>
-    <li>In fact, a message goes down and up lower layers at the sendr and the receiver</li>
-  </ul>
-
-</blockquote>
-
-<p>Message 옆에 붙어있는 Control: 보통 Header/PCI(Protocol Controll Information)라고 불리며 이를 Message에 붙이는 방식으로 해당 Layer의 고유한 기능을 수행함</p>
-
-<hr />
-
-<p><br /></p>
-
-<h2 id="standard-protocols">Standard Protocols</h2>
-
-<hr />
-
-<blockquote>
-  <ul>
-    <li>
-      <p>To communicate, should use the same protocol</p>
-    </li>
-    <li>
-      <p>Proprietary protocols</p>
-
-      <p>Created (usually) by one or more companies</p>
-
-      <p>Colsed protocol</p>
-
-      <p>​	- Protocol is hidden or the owner may clain IPR</p>
-    </li>
-    <li>
-      <p>Open protocol</p>
-
-      <p>Specifications are open to the public and everyone can use free</p>
-    </li>
-    <li>
-      <p>Standard protocol</p>
-
-      <p>Open protocol that many agree to use</p>
-    </li>
-    <li>
-      <p>Examples of standard protocols</p>
-
-      <p>ISO, OSI</p>
-
-      <p>IEEE LAN, WLAN, …</p>
-
-      <p>TCP/IP</p>
-
-      <p>…</p>
-    </li>
-  </ul>
-
-</blockquote>
-
-<p><br /></p>
-
-<p>통신은 혼자 하는 것이 아님</p>
-
-<p>같은 프로토콜을 써야 통신이 가능함 상호운용, 이해 가능</p>
-
-<p>회사 고유의 작업을 위해 프로토콜을 만들기도 함</p>
-
-<p>하지만 전세계적으로 쓰려면 모두가 약속한 프로토콜이 필요함</p>
-
-<p>스펙이 공개된 프로토콜 -&gt; 누구든 implementation하면 다같이 이용가능</p>
-
-<hr />
-
-<p><br /></p>
-
-<h2 id="tcpip">TCP/IP</h2>
-
-<hr />
-
-<p><img src="../../assets/images/Network/7.png" alt="7" style="zoom:67%;" /></p>
-
-<p>Physical layer나 Data link layer는 TCP/IP에 포함되지 않음</p>
-
-<p>IEEE layer나 point-to-point로 구성됨</p>
-
-<p>그 위에 존재하는 것이 TCP/IP</p>
-
-<p>Physical network를 연결하는 일을 하는 것이 IP</p>
-
-<p><br /></p>
-
-<p>IP는 forwarding/routing을 해줌</p>
-
-<p>ARP(Address resolution protocol)</p>
-
-<p>ICMP와 같은 중요한 일을 해줌</p>
-
-<p>멀티캐스팅을 위한 IGMP등도 진행함 (RARP는 최근엔 거의 사용 X)</p>
-
-<p><br /></p>
-
-<p>IP계층을 지나게 되면 end에서부터 다른 세계의 end까지 datagram이 지나가게 됨</p>
-
-<p><br /></p>
-
-<p>그 위에서 Transport layer가 동작함</p>
-
-<p>SCTP는 요즘 잘 안씀</p>
-
-<p>TCP/UDP라는 두개의 동등한 계층의 프로토콜을 주로 사용하게 되는데</p>
-
-<p>TCP는 복잡한 일, UDP는 간단한 일을 보통 하게 됨</p>
-
-<p><br /></p>
-
-<p>TCP: error control, congestion control</p>
-
-<p>UDP: data 전송</p>
-
-<p><br /></p>
-
-<p>위 3개의 계층은 압축시켜 Application 계층이라고 부름</p>
-
-<p>복잡한 layer로 나누지 않고 Application계층 안에서 해결하라고 주장하는 것</p>
-
-<p><br /></p>
-
-<p>Application에는 엄청나게 많은 프로토콜이 존재함</p>
-
-<p>SMTP(이메일)</p>
-
-<p>FTP(파일)</p>
-
-<p>HTTP(웹)</p>
-
-<p>DNS(도메인)</p>
-
-<p>등 여러가지가 있음</p>
-
-<hr />
-
 
 
                 <hr style="visibility: hidden;">
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/til/2021.03.18-TIL/"
-                            data-toggle="tooltip" data-placement="top" title="2021년 03월 18일 공부일지">
+                        <a href="/til/2021.05.04-TIL/"
+                            data-toggle="tooltip" data-placement="top" title="2021년 05월 04일 공부일지">
                             Previous<br>
-                            <span>2021년 03월 18일 공부일지</span>
+                            <span>2021년 05월 04일 공부일지</span>
                         </a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/project%20review/%E1%84%8C%E1%85%B2%E1%84%89%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8F%E1%85%A5-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3-%E1%84%85%E1%85%B5%E1%84%87%E1%85%B2/" data-toggle="tooltip"
-                            data-placement="top" title="쥬스메이커 프로젝트 리뷰">
-                            Next<br>
-                            <span>쥬스메이커 프로젝트 리뷰</span>
-                        </a>
-                    </li>
                     
                 </ul>
                 <hr style="visibility: hidden;">

@@ -1,79 +1,79 @@
 ---
 layout: post
-title: "Frame과 Bounds의 차이"
+title: "frame, bounds 그리고 center"
 image:
 categories: iOS
 tags: 
   - frame
   - bound
   - origin
+  - center
 sitemap:
   changefreq: daily
   priority: 1.0
 ---
 
-## Frame
+## frame
 
-Frame은 SuperView의 좌표시스템 안에서의 View의 위치와 크기이다.
+frame은 Superview 좌표계의 (0, 0)으로부터 얼마만큼 떨어져 있는지(위치) + view의 크기를 나타내는 값이다.
 
-frame은 `SuperView의 origin`을 기준으로 움직이며 여기서 origin은 SuperView의 좌상단 꼭짓점이다.
+**Superview 좌표계의 (0, 0)은 Superview의 좌상단 꼭짓점이 아닐 수도 있다.** (Superview의 bounds가 변경된 경우)
 
-일반적인 좌표계와 달리 원점이 좌상단 꼭짓점이며 x에 대한 양의 방향은 오른쪽, y에 대한 양의 방향은 아래쪽이다.
-
-
-
-## Bounds
-
-Bounds는 어떤 View가 지닌 origin의 위치이다.
-
-기본값은 (0,0)이며 Bounds를 조절하면 `SubView의 위치`가 변하게 된다.
-
-이는 SubView의 위치가 SuperView의 origin을 기준으로 결정되기 때문이다.
-
-다시 말해 Bounds를 바꿔주면 SuperView의 위치는 그대로 둔 채로 SubView의 위치만 변경된다.
+이 문장이 frame과 bounds를 이해하는데 핵심이 된다.
 
 
 
-이는 ScrollView의 핵심이 되는데 ScrollView의 Bounds의 y좌표나 x좌표를 양수로 주게 되면 어떤 일이 일어날지 상상해보자.
+## bounds: CGRect
 
-ScrollView의 origin을 기준으로 Content가 표시되고 있는 상황에서 origin의 좌표가 바뀌었다면 SubView의 상대적인 위치가 변경되어야 할 것임을 쉽게 유추해볼 수 있다.
-
-
-
-## 그림을 통한 이해
-
-그림을 통해 이해를 해보자
-
-그림의 출처는 항상 좋은 글들로 도움을 주시는 `zedd`님 [원문 글 링크](https://zeddios.tistory.com/203)
-
-<img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210507122232.png" alt="image-20210507122231343" style="zoom:50%;" />
-
-Content View는 저 광활한 그림 전체다.
-
-현재 Content View의 frame은 (0,0)이며
-
-Scroll View의 bounds도 (0,0)이다. (지금 이 문장이 이해가 가지 않는다면 위에 써놓은 설명을 찬찬히 다시 읽어보자)
+bounds는 view 자기 자신의 좌표계에서 원점(좌상단 꼭짓점)의 좌표값(origin의 좌표값) + view의 크기를 나타내는 값이다.
 
 
 
-만약 여기서 Scroll View의 bounds를 (300, 500)으로 바꿔주면 어떤 상황이 될까?
+## frame과 bounds의 차이 - 그림을 통한 이해
 
-Scroll View의 origin이 (0, 0)에서 (300, 500)으로 변경될 것이고
+다음 코드를 이해해보자
 
-이로 인해 SuperView의 origin을 기준으로 표시되던 Content View의 위치도 변경될 것이다.
-
-
-
-<img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210507122714.png" alt="image-20210507122713275" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210509013223.png" alt="image-20210509013221679" style="zoom: 50%;" />
 
 
 
-바로 이렇게 말이다.
+superview는 빨간색, subview는 파란색이다.
+
+주목할 점은 superview의 bouns.origin 값을 설정하는 부분이다.
+
+(-50, -50)으로 설정해준 것을 볼 수 있는데 이 말은 즉슨 빨간색 네모의 좌상단 꼭짓점의 좌표값이 (-50, -50)이라는 것이다.
 
 
 
-## 추가적으로 생각해볼 것들
+이제 subview가 어디에 그려질지 상상해보자면
 
-- ScrollView의 frame 값을 바꾸면 어떤 일이 일어날까? 
-  - ScrollView의 SuperView는 누구일까?
-- Content View의 frame 값을 바꾸면 어떤 일이 일어날까?
+subview의 frame의 x값과 y값이 각각 0이므로 superview의 (0, 0)으로부터 (0, 0) 떨어진 위치에서부터 그려질 것이다.
+
+<img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210509013515.png" alt="simulator_screenshot_A7734F26-C68D-4995-9DCB-BE29FC951127" style="zoom: 25%;" />
+
+
+
+superview의 관점에서 보았을 때 빨간색 네모의 좌상단 꼭짓점의 좌표는 (-50, -50)이며
+
+파란색 네모의 좌상단 꼭짓점의 좌표가 (0, 0)에 해당하는 위치인 것이다. 
+
+
+
+## ScrollView의 이해
+
+위의 내용을 이해하면 한걸음 나아가서 scroll view의 동작원리에 대해 이해할 수 있다.
+
+위의 빨간색, 파란색 네모 예제에서 `superview.bounds.origin`의 y값을 증가시키면 파란색 네모는 위쪽으로 올라간다.
+
+아래의 그림은 `superview.bounds.origin`의 y값을 -50에서 -10으로 증가시켰을 때의 결과이다.
+
+
+
+<img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210509014113.png" alt="simulator_screenshot_8A7C995E-1E78-43E8-A7DD-F4CEB0F30B0D" style="zoom:25%;" />
+
+빨간색 네모의 좌상단 꼭짓점의 좌표값은 (-50, -10)이 된 것이고
+
+파란색 네모의 좌상단 꼭짓점은 superview의 (0, 0)이므로 위와 같은 결과가 나온 것이다.
+
+이를 통해 ScrollView는 superview의 bounds.origin의 x값이나 y값을 스크롤하는 만큼 증가/감소시킨다는 것을 알 수 있다.
+

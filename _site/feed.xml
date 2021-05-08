@@ -5,9 +5,238 @@
     <description>Write code with my soul.</description>
     <link>https://neph3779.github.io/</link>
     <atom:link href="https://neph3779.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 02 May 2021 23:05:28 +0900</pubDate>
-    <lastBuildDate>Sun, 02 May 2021 23:05:28 +0900</lastBuildDate>
+    <pubDate>Fri, 07 May 2021 16:27:57 +0900</pubDate>
+    <lastBuildDate>Fri, 07 May 2021 16:27:57 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>Frame과 Bounds의 차이</title>
+        <description>&lt;h2 id=&quot;frame&quot;&gt;Frame&lt;/h2&gt;
+
+&lt;p&gt;Frame은 SuperView의 좌표시스템 안에서의 View의 위치와 크기이다.&lt;/p&gt;
+
+&lt;p&gt;frame은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SuperView의 origin&lt;/code&gt;을 기준으로 움직이며 여기서 origin은 SuperView의 좌상단 꼭짓점이다.&lt;/p&gt;
+
+&lt;p&gt;일반적인 좌표계와 달리 원점이 좌상단 꼭짓점이며 x에 대한 양의 방향은 오른쪽, y에 대한 양의 방향은 아래쪽이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;bounds&quot;&gt;Bounds&lt;/h2&gt;
+
+&lt;p&gt;Bounds는 어떤 View가 지닌 origin의 위치이다.&lt;/p&gt;
+
+&lt;p&gt;기본값은 (0,0)이며 Bounds를 조절하면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SubView의 위치&lt;/code&gt;가 변하게 된다.&lt;/p&gt;
+
+&lt;p&gt;이는 SubView의 위치가 SuperView의 origin을 기준으로 결정되기 때문이다.&lt;/p&gt;
+
+&lt;p&gt;다시 말해 Bounds를 바꿔주면 SuperView의 위치는 그대로 둔 채로 SubView의 위치만 변경된다.&lt;/p&gt;
+
+&lt;p&gt;이는 ScrollView의 핵심이 되는데 ScrollView의 Bounds의 y좌표나 x좌표를 양수로 주게 되면 어떤 일이 일어날지 상상해보자.&lt;/p&gt;
+
+&lt;p&gt;ScrollView의 origin을 기준으로 Content가 표시되고 있는 상황에서 origin의 좌표가 바뀌었다면 SubView의 상대적인 위치가 변경되어야 할 것임을 쉽게 유추해볼 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;그림을-통한-이해&quot;&gt;그림을 통한 이해&lt;/h2&gt;
+
+&lt;p&gt;그림을 통해 이해를 해보자&lt;/p&gt;
+
+&lt;p&gt;그림의 출처는 항상 좋은 글들로 도움을 주시는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;zedd&lt;/code&gt;님 &lt;a href=&quot;https://zeddios.tistory.com/203&quot;&gt;원문 글 링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210507122232.png&quot; alt=&quot;image-20210507122231343&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Content View는 저 광활한 그림 전체다.&lt;/p&gt;
+
+&lt;p&gt;현재 Content View의 frame은 (0,0)이며&lt;/p&gt;
+
+&lt;p&gt;Scroll View의 bounds도 (0,0)이다. (지금 이 문장이 이해가 가지 않는다면 위에 써놓은 설명을 찬찬히 다시 읽어보자)&lt;/p&gt;
+
+&lt;p&gt;만약 여기서 Scroll View의 bounds를 (300, 500)으로 바꿔주면 어떤 상황이 될까?&lt;/p&gt;
+
+&lt;p&gt;Scroll View의 origin이 (0, 0)에서 (300, 500)으로 변경될 것이고&lt;/p&gt;
+
+&lt;p&gt;이로 인해 SuperView의 origin을 기준으로 표시되던 Content View의 위치도 변경될 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210507122714.png&quot; alt=&quot;image-20210507122713275&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;바로 이렇게 말이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;추가적으로-생각해볼-것들&quot;&gt;추가적으로 생각해볼 것들&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ScrollView의 frame 값을 바꾸면 어떤 일이 일어날까?
+    &lt;ul&gt;
+      &lt;li&gt;ScrollView의 SuperView는 누구일까?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Content View의 frame 값을 바꾸면 어떤 일이 일어날까?&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 07 May 2021 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/ios/frame-bounds-difference/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/ios/frame-bounds-difference/</guid>
+        
+        <category>frame</category>
+        
+        <category>bound</category>
+        
+        <category>origin</category>
+        
+        
+        <category>iOS</category>
+        
+      </item>
+    
+      <item>
+        <title>2021년 05월 04일 공부일지</title>
+        <description>&lt;h2 id=&quot;오늘-공부한-내용&quot;&gt;오늘 공부한 내용&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;TDD
+    &lt;ul&gt;
+      &lt;li&gt;TDD의 용어에 대해 알아보고 실제 Unit Test 코드에 적용시켜보는 과정 진행&lt;/li&gt;
+      &lt;li&gt;읽어본 글 : &lt;a href=&quot;https://saad-eloulladi.medium.com/unit-tests-swift-mocking-the-right-way-65488848a3fc&quot;&gt;Mock, Stub, Spy, Fake가 뭔지에 대해 Swift 코드 예제로 설명해주는 글&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;CS
+    &lt;ul&gt;
+      &lt;li&gt;읽어본 글 : &lt;a href=&quot;https://kingofbackend.tistory.com/119?fbclid=IwAR3LZY-KEbPyL_IqWy7s1rGGf01Bkd7h2jF5RyQiPJmLH06vF8eaGKidlZg&quot;&gt;프로세스와 스레드의 차이에 대해 설명해놓은 글&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;은행창구 프로젝트
+    &lt;ul&gt;
+      &lt;li&gt;protocol을 사용하여 책임을 분리하는 작업 진행&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Tue, 04 May 2021 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/til/2021.05.04-TIL/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/til/2021.05.04-TIL/</guid>
+        
+        <category>TIL</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>2021년 05월 03일 공부일지</title>
+        <description>&lt;h2 id=&quot;오늘-공부한-내용&quot;&gt;오늘 공부한 내용&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;ARC와 Memory Structure&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;ARC는 자동으로 Reference count를 관리하는 기능&lt;/li&gt;
+      &lt;li&gt;Memory Structure에는 Code, Data, Stack, Heap 영역이 있다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Retain Cycle과 Dead Lock&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Retain Cycle의 예시를 볼 수 있는 App (godrm님의 프로젝트) &lt;a href=&quot;https://github.com/godrm/RetainCycleApp&quot;&gt;링크&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;ARC 공식문서의 Strong retain cycle에 대해&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;참조타입이랑 값타입이랑 뭐가 다르지?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;retain count는 누가 관리해주지?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;retain count를 관리해주는 애들은 모두 heap에 간다!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;값타입이 선호되는 이유 (성능에 왜 유리할까)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;catch문에 error를 변수로 선언해서 쓰는 방법&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;https://nshipster.com/swift-foundation-error-protocols/&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;extension 에다가만 protocol 채택해서 쓰는것 그냥 처음부터 채택하는거랑 뭐가 다르지?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;이미 구현되어있는 애에다가 프로토콜을 주입할 수 있음 (의존성 주입)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이게 왜 되는거지?&lt;/p&gt;
+
+    &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;mutating&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;closeBank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;totalCustomerNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;closeTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CFAbsoluteTimeGetCurrent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;spentTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getSpentTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+          
+        &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;numberOfCustomers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;totalCustomerNumber&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;BankManagerError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;failToGetTotalCustomerNumber&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+          
+        &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;업무가 마감되었습니다. 오늘 업무를 처리한 고객은 총 &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numberOfCustomers&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;명이며, 총 업무시간은 &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spentTime&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;초입니다.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getSpentTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;open&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;openTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+              &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;close&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;closeTime&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;BankManagerError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;failToCaclulateSpentTime&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+          
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;spentTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;formatTimeDuration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;open&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spentTime&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;왜 try에 do - catch가 없는데도 정상 동작할까? -&amp;gt; Error Description을 자동으로 String으로 바꿔주는건가? 흠…&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;setUp, tearDown을 쓰는 이유&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;메모리를 위해서&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;병렬성은 같은 작업을 여러개의 CPU가 동시에 하는 것&lt;/p&gt;
+
+&lt;p&gt;우리가 하는 것은 여러개의 ‘다른’ 작업이기 때문에 동시성 프로그래밍이다 (병렬성 아님)&lt;/p&gt;
+
+&lt;p&gt;코어가 여러개 일때만 병렬 프로그래밍이 가능하다.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 03 May 2021 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/til/2021.05.03-TIL/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/til/2021.05.03-TIL/</guid>
+        
+        <category>TIL</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
     
       <item>
         <title>Typora 이미지 쉽게 업로드 하기 for mac</title>
@@ -65,7 +294,7 @@
 
 &lt;p&gt;Repo를 만들어 주시고 토큰을 받아와주세요&lt;/p&gt;
 
-&lt;p&gt;토큰을 받아오는 과정은 &lt;a href=&quot;[https://taeuk-gang.github.io/wiki/Typora%20%EC%8B%A0%EA%B8%B0%EB%8A%A5%20-%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%9E%90%EB%8F%99%20%EC%97%85%EB%A1%9C%EB%93%9C/](https://taeuk-gang.github.io/wiki/Typora 신기능 - 이미지 자동 업로드/)&quot;&gt;이 블로그 글&lt;/a&gt;에 잘 설명되어있으니 참고하시면 좋을 것 같습니다!&lt;/p&gt;
+&lt;p&gt;토큰을 받아오는 과정은 &lt;a href=&quot;https://taeuk-gang.github.io/wiki/Typora%20%EC%8B%A0%EA%B8%B0%EB%8A%A5%20-%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%9E%90%EB%8F%99%20%EC%97%85%EB%A1%9C%EB%93%9C/&quot;&gt;이 블로그 글&lt;/a&gt;에 잘 설명되어있으니 참고하시면 좋을 것 같습니다!&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -76,6 +305,14 @@
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502223852.png&quot; alt=&quot;image-20210502223850730&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Custom에 불이 들어오도록 버튼을 눌러주세요!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210503101050.png&quot; alt=&quot;image-20210503101048818&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;톱니바퀴 모양 cell을 눌러서 이 화면에 들어와 주신 뒤&lt;/p&gt;
+
+&lt;p&gt;제 설정대로 stepper을 On/Off 해주세요&lt;/p&gt;
+
+&lt;p&gt;다만! 위에서 4번째에 있는 stepper을 On 해주면 이미지를 업로드 할때 매번 업로드될 이름을 정해줄 수 있어요!&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -679,443 +916,6 @@
         <pubDate>Thu, 22 Apr 2021 00:00:00 +0900</pubDate>
         <link>https://neph3779.github.io/til/2021.04.22-TIL/</link>
         <guid isPermaLink="true">https://neph3779.github.io/til/2021.04.22-TIL/</guid>
-        
-        <category>TIL</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[#9] 프로세스 동기화-2</title>
-        <description>&lt;h2 id=&quot;critical-section-관리-알고리즘의-발전&quot;&gt;Critical Section 관리 알고리즘의 발전&lt;/h2&gt;
-
-&lt;h3 id=&quot;critical-section을-사용하기-위해-만족해야-하는-몇가지-조건들&quot;&gt;Critical Section을 사용하기 위해 만족해야 하는 몇가지 조건들&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Mutual Exclusion(상호 배제)
-    &lt;ul&gt;
-      &lt;li&gt;프로세스 P_i가 critical section 부분을 수행중이면 다른 모든 프로세스들은 그들의 critical section에 들어가면 안된다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Progress(진행)
-    &lt;ul&gt;
-      &lt;li&gt;아무도 critical section에 있지 않은 상태에서 critical section에 들어가고자 하는 프로세스가 있으면 critical section에 들어가게 해주어야 한다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Bounded Waiting(유한 대기)
-    &lt;ul&gt;
-      &lt;li&gt;프로세스가 critical section에 들어가려고 요청한 후부터 그 요청이 허용될 때까지 다른 프로세스들이 critical section에 들어가는 횟수에 한계가 있어야 한다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;가정&quot;&gt;가정&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;모든 프로세스의 수행 속도는 0보다 크다.&lt;/li&gt;
-  &lt;li&gt;프로세스들 간의 상대적인 수행 속도는 가정하지 않는다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;알고리즘-1&quot;&gt;알고리즘 1&lt;/h3&gt;
-
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;// code for P_0&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;turn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;	&lt;span class=&quot;cm&quot;&gt;/* My turn? */&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;// ... critical section ...&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;turn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;	&lt;span class=&quot;cm&quot;&gt;/* Now it's P_1's turn */&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;// ... remainder section ...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;critical section에 들어가기 위해 본인의 차례인지 확인 (turn이라는 변수를 통해)&lt;/li&gt;
-  &lt;li&gt;만약 자신의 차례가 아니라면 기다림&lt;/li&gt;
-  &lt;li&gt;자신의 차례가 오면 들어가서 작업 수행, 나올 때 turn을 상대편 차례에 맞게 바꿔줌&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;문제점&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;critical section에 반드시 교대로 들어가야함. (나 혼자 계속 못들어감, 상대편이 안들어가주면 영원히 내 차례 안옴)&lt;/li&gt;
-  &lt;li&gt;critical section에 들어가고자 하는 빈도의 차이가 있을 때 한계점이 분명함.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;만족하는 조건 : Mutual Exclusion&lt;/p&gt;
-
-&lt;p&gt;만족하지 못하는 조건: Progress, Bounded Waiting&lt;/p&gt;
-
-&lt;h3 id=&quot;알고리즘-2&quot;&gt;알고리즘 2&lt;/h3&gt;
-
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;// ... critical section ...&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;// ...remainder section&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;flag 배열로 입장 가능 여부 관리&lt;/li&gt;
-  &lt;li&gt;critical section에 입장하고 싶을 때 flag[i]를 true로 바꾸고 시작함&lt;/li&gt;
-  &lt;li&gt;자신의 차례가 와서 작업이 끝났다면 flag[i]를 꺼주고(false로 만들고) 나감&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;문제점&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;flag를 여러개 들어 놓으면 계속 기다리는 상태가 됨 (critical section에 들어가기 전에 flag를 켜고 시작하므로)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;만족하는 조건 : Mutual Exclusion&lt;/p&gt;
-
-&lt;p&gt;만족하지 못하는 조건: Progress, Bounded Waiting&lt;/p&gt;
-
-&lt;h3 id=&quot;피터슨-알고리즘&quot;&gt;피터슨 알고리즘&lt;/h3&gt;
-
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;turn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;turn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;// ... critical section ...&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;// ... remainder section ...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;flag는 입장 희망 여부 배열&lt;/li&gt;
-  &lt;li&gt;turn은 현재 사용중인 프로세스를 나타냄&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;만족하는 조건 : Mutual Exclusion, Progress, Bounded Waiting&lt;/p&gt;
-
-&lt;p&gt;한계 : Busy Waiting 방식이기 때문에 계속 CPU와 memory를 쓰면서 wait&lt;/p&gt;
-
-&lt;h2 id=&quot;하드웨어적-해결&quot;&gt;하드웨어적 해결&lt;/h2&gt;
-
-&lt;h3 id=&quot;하드웨어를-사용한-critical-section-문제해결&quot;&gt;하드웨어를 사용한 critical section 문제해결&lt;/h3&gt;
-
-&lt;p&gt;critical section 관련 문제 발생의 이유 : 메모리에 읽는 작업 + 쓰는 작업을 하나의 instruction으로 쓸 수 없기 때문에&lt;/p&gt;
-
-&lt;p&gt;만약 instruction 하나로 실행할 수 있다면? 문제는 쉽게 해결할 수 있음&lt;/p&gt;
-
-&lt;h3 id=&quot;test_and_set&quot;&gt;Test_and_set&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/OS/9/1.png&quot; alt=&quot;1&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Test_and_set은 읽어오는 작업과 동시에 쓰는 작업을 실행할 수 있음 (하드웨어적 해결)&lt;/p&gt;
-
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lock&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Test_and_Set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;// ... critical section ...&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;lock&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;// ... remainder section ...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;semaphores를-통한-추상화&quot;&gt;Semaphores를 통한 추상화&lt;/h2&gt;
-
-&lt;h3 id=&quot;추상-자료형-semaphore&quot;&gt;추상 자료형 Semaphore&lt;/h3&gt;
-
-&lt;p&gt;Semaphore는 정수 변수를 가질 수 있으며 아래의 두 가지 atomic 연산에 의해서만 접근 가능&lt;/p&gt;
-
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;Semaphore&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// If positive, decrement &amp;amp; enter&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// Othrewise, wait until positive (busy-wait)&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Semaphore&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;S&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
-
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Semaphore&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;P: 공유 데이터를 획득하는 과정&lt;/p&gt;
-
-&lt;p&gt;S: 공유 데이터를 반납하는 과정&lt;/p&gt;
-
-&lt;h3 id=&quot;semaphore를-사용하는-이유&quot;&gt;Semaphore를 사용하는 이유&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;lock을 걸고 lock을 푸는 것을 간단하게 만들어줌&lt;/li&gt;
-  &lt;li&gt;공유자원을 획득, 반납하는 과정을 내부적으로 처리해줌&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;semaphore를-통한-critical-section-문제-해결&quot;&gt;Semaphore를 통한 Critical Section 문제 해결&lt;/h3&gt;
-
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;Semaphore&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mutex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mutex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;// ... critical section ...&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mutex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;// ... remainer section ...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;프로그래머가 일일이 코딩하지 않고 Semaphore를 이용하여 쉽게 해결할 수 있음&lt;/p&gt;
-
-&lt;p&gt;개선 방안&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;효율적이지 못한 busy-wait(spin lock) 방식 대신 Block &amp;amp; Wakeup 방식으로 개선&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;block--wakeup-방식의-semaphore-구현&quot;&gt;Block &amp;amp; Wakeup 방식의 Semaphore 구현&lt;/h2&gt;
-
-&lt;h3 id=&quot;semaphore-자료형의-정의&quot;&gt;Semaphore 자료형의 정의&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/OS/9/2.png&quot; alt=&quot;1&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;process&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//Semaphore 때문에 잠들어있는 프로세스들을 연결시키는 큐가 생김&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;semaphore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;block()&lt;/strong&gt; 연산&lt;/p&gt;
-
-&lt;p&gt;커널은 block을 호출한 프로세스를 suspend 시킴&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;wakeup(P)&lt;/strong&gt; 연산&lt;/p&gt;
-
-&lt;p&gt;block 된 프로세스 P를 wakeup 시킴&lt;/p&gt;
-
-&lt;p&gt;이 프로세스의 PCB를 ready queue로 옮김&lt;/p&gt;
-
-&lt;h3 id=&quot;p-연산과-v-연산의-정의&quot;&gt;P 연산과 V 연산의 정의&lt;/h3&gt;
-
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Semaphore&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;process&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
-
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Semaphore&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;remove&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;process&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;P&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;wakeup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;busy-wait-vs-blockwakeup&quot;&gt;Busy-wait v.s. Block/wakeup&lt;/h2&gt;
-
-&lt;h3 id=&quot;blockwakeup-방식의-단점&quot;&gt;Block/wakeup 방식의 단점&lt;/h3&gt;
-
-&lt;p&gt;block하고 깨우는 과정에서 오버헤드가 발생함&lt;/p&gt;
-
-&lt;h3 id=&quot;busy-wait의-단점&quot;&gt;Busy-wait의 단점&lt;/h3&gt;
-
-&lt;p&gt;critical section의 길이가 길어지면 starvation 현상이 발생함&lt;/p&gt;
-
-&lt;h3 id=&quot;해결방안-섞어쓰기&quot;&gt;해결방안 (섞어쓰기)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Critical section의 길이가 긴 경우에는 Block/wakeup이 적합&lt;/li&gt;
-  &lt;li&gt;Critical section의 길이가 매우 짧은 경우에는 Busy-wait 방식이 적합&lt;/li&gt;
-  &lt;li&gt;일반적으로는 Block/wakeup을 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;두-가지-종류의-semaphores&quot;&gt;두 가지 종류의 Semaphores&lt;/h2&gt;
-
-&lt;h3 id=&quot;counting-semaphore&quot;&gt;Counting semaphore&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;도메인이 0 이상인 임의의 정수값&lt;/li&gt;
-  &lt;li&gt;주로 resource counting에 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;binary-semaphore--mutex&quot;&gt;Binary semaphore (= mutex)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;0 또는 1 값만 가질 수 있는 semaphore&lt;/li&gt;
-  &lt;li&gt;주로 mutual exclusion (lock/unlock)에 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;deadlock-and-starvation&quot;&gt;Deadlock and Starvation&lt;/h2&gt;
-
-&lt;h3 id=&quot;deadlock-현상&quot;&gt;Deadlock 현상&lt;/h3&gt;
-
-&lt;p&gt;둘 이상의 프로세스가 서로 상대방에 의해 충족될 수 있는 event를 무한히 기다리는 현상을 Deadlock 현상이라 한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/OS/9/3.png&quot; alt=&quot;1&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;위 처럼 P연산이 연달아 일어나지만 실행되지 못하고 기다리는 경우&lt;/p&gt;
-
-&lt;p&gt;V연산이 실행되지 못하기 때문에 영원히 기다리는 Deadlock 현상이 발생&lt;/p&gt;
-
-&lt;h3 id=&quot;starvation-현상&quot;&gt;Starvation 현상&lt;/h3&gt;
-
-&lt;p&gt;프로세스가  semaphore 큐에서 빠져나갈 수 없어서 무기한 blocking이 일어나는 경우를 Starvation 현상이라 말한다.&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 18 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/9-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5%E1%84%92%E1%85%AA-2/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/9-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5%E1%84%92%E1%85%AA-2/</guid>
-        
-        <category>OS</category>
-        
-        <category>운영체제</category>
-        
-        
-        <category>운영체제</category>
-        
-      </item>
-    
-      <item>
-        <title>2021년 04월 15일 공부일지</title>
-        <description>&lt;h2 id=&quot;오늘-공부한-내용&quot;&gt;오늘 공부한 내용&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;os_log에 대해 간략히 알아봤습니다.&lt;/li&gt;
-  &lt;li&gt;만국 박람회 프로젝트의 refactoring이 계속되었습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Thu, 15 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/2021.04.15-TIL/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/2021.04.15-TIL/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>2021년 04월 13일 공부일지</title>
-        <description>&lt;h2 id=&quot;오늘-공부한-내용&quot;&gt;오늘 공부한 내용&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;시청한 영상: &lt;a href=&quot;https://developer.apple.com/videos/play/wwdc2020/10027/&quot;&gt;WWDC20 Modern cell configuration&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;tableView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;tableView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UITableView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cellForRowAt&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;IndexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UITableViewCell&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;cell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tableView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dequeueReusableCell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;withIdentifier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;KoreanItemCell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;identifier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as?&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;KoreanItemCell&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UITableViewCell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;koreanItemData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;koreanItemsData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;itemImageView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;named&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;koreanItemData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imageName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;titleLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;koreanItemData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shortDescriptionLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;koreanItemData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shortDescription&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;vs&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;tableView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;tableView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UITableView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cellForRowAt&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;IndexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UITableViewCell&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;cell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UITableViewCell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defaultContentConfiguration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;koreanItemData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;koreanItemsData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;named&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;koreanItemData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imageName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;koreanItemData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secondaryText&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;koreanItemData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shortDescription&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contentConfiguration&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;content&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Tue, 13 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/til/2021.04.13-TIL/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/til/2021.04.13-TIL/</guid>
         
         <category>TIL</category>
         
