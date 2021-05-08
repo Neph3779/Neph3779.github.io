@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "frame, bounds 그리고 center"
+title: "frame & bounds"
 image:
 categories: iOS
 tags: 
@@ -23,7 +23,7 @@ frame은 Superview 좌표계의 (0, 0)으로부터 얼마만큼 떨어져 있는
 
 
 
-## bounds: CGRect
+## bounds
 
 bounds는 view 자기 자신의 좌표계에서 원점(좌상단 꼭짓점)의 좌표값(origin의 좌표값) + view의 크기를 나타내는 값이다.
 
