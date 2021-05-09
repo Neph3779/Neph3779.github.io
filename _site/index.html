@@ -255,20 +255,18 @@
 <div class="post-preview">
     <a href="/ios/frame-bounds-difference/">
         <h2 class="post-title">
-            Frame과 Bounds의 차이
+            frame & bounds
         </h2>
         
         <div class="post-content-preview">
             
-            Frame
+            frame
 
-Frame은 SuperView의 좌표시스템 안에서의 View의 위치와 크기이다.
+frame은 Superview 좌표계의 (0, 0)으로부터 얼마만큼 떨어져 있는지(위치) + view의 크기를 나타내는 값이다.
 
-frame은 SuperView의 origin을 기준으로 움직이며 여기서 origin은 SuperView의 좌상단 꼭짓점이다.
+Superview 좌표계의 (0, 0)은 Superview의 좌상단 꼭짓점이 아닐 수도 있다. (Superview의 bounds가 변경된 경우)
 
-일반적인 좌표계와 달리 원점이 좌상단 꼭짓점이며 x에 대한 양의 방향은 오른쪽, y에 대한 양의 방향은 아래쪽이다.
-
-Bounds
+이 문장이 frame과 bounds를 이해하는데 핵심이 된다.
 ...
             
         </div>
@@ -358,6 +356,31 @@ Typora를 통해 깃허브 블로그 글을 쓰다보면 이미지 첨부하는 
 
 이러한 문제를 해결할 수 있는 방안(이미지를 링크로 변환하여 업로드)을 오늘 알려드리겠습니다.
 ...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on May
+        2, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/12-Memory-Management/">
+        <h2 class="post-title">
+            [#12] 메모리 관리-1
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            Logical Address vs Physical Address
+
+
+
+Logical address는 프로세스마다 독립적으로 가지는 주소공간이다. 어떤 프로세스가 메모리상에서 어느 지점에 위치하는지와 무관하게 논리적으로 각 프로세스가 0번지부터 가지고 있는 주소값을 Logical address(virtual address)라고 부른다.
+
+반면 Physi...
             
         </div>
     </a>
@@ -514,35 +537,6 @@ guard let input = userInput,
 </div>
 <hr>
 
-<div class="post-preview">
-    <a href="/til/2021.04.22-TIL/">
-        <h2 class="post-title">
-            2021년 04월 22일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  UIViewController 관련 문서들 정독
-    
-      UIViewController
-      View Controller Programming Guide for iOS
-      Positioning Content Relative to the Safe Area
-    
-  
-  Delegate 관련 문서들 정독...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        22, 2021
-    </p>
-</div>
-<hr>
-
 
 <!-- Pager -->
 
@@ -625,7 +619,7 @@ guard let input = userInput,
             
         
             
-            <a data-sort="0044"
+            <a data-sort="0045"
                 href="/archive/?tag=TIL" title="TIL"
                 rel="34">TIL</a>
             
@@ -633,45 +627,45 @@ guard let input = userInput,
             
             <a data-sort="0066"
                 href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
-                rel="12">운영체제</a>
+                rel="13">운영체제</a>
             
             <a data-sort="0067"
                 href="/archive/?tag=OS" title="OS"
-                rel="11">OS</a>
+                rel="12">OS</a>
             
-            <a data-sort="0071"
+            <a data-sort="0072"
                 href="/archive/?tag=Swift" title="Swift"
                 rel="7">Swift</a>
             
-            <a data-sort="0071"
+            <a data-sort="0072"
                 href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
                 rel="7">Yagom-Academy</a>
             
-            <a data-sort="0074"
+            <a data-sort="0075"
                 href="/archive/?tag=iOS" title="iOS"
                 rel="4">iOS</a>
             
-            <a data-sort="0075"
+            <a data-sort="0076"
                 href="/archive/?tag=enum" title="enum"
                 rel="3">enum</a>
             
-            <a data-sort="0076"
+            <a data-sort="0077"
                 href="/archive/?tag=Flow+chart" title="Flow chart"
                 rel="2">Flow chart</a>
             
-            <a data-sort="0076"
+            <a data-sort="0077"
                 href="/archive/?tag=Protocol" title="Protocol"
                 rel="2">Protocol</a>
             
-            <a data-sort="0076"
+            <a data-sort="0077"
                 href="/archive/?tag=Scroll+View" title="Scroll View"
                 rel="2">Scroll View</a>
             
-            <a data-sort="0076"
+            <a data-sort="0077"
                 href="/archive/?tag=UML" title="UML"
                 rel="2">UML</a>
             
-            <a data-sort="0076"
+            <a data-sort="0077"
                 href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
                 rel="2">Yagom Academy</a>
     </div>
