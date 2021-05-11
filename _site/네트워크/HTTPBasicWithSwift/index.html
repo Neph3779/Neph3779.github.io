@@ -12,24 +12,26 @@
 
     <!-- Open Graph -->
     <meta property="og:title"
-        content="플로우차트(Flow Chart) 그리는법 - Neph's iOS blog">
+        content="HTTP 기본 개념 정리 with swift - Neph's iOS blog">
     
     <meta property="og:type" content="article">
-    <meta property="og:description" content="안녕하세요! Neph🌱입니다!! 😆😆
+    <meta property="og:description" content="HTTP란?
 ">
     
-    <meta property="article:published_time" content=" 2021-03-06T00:00:00Z">
+    <meta property="article:published_time" content=" 2021-05-12T00:00:00Z">
     
     
     
-    <meta property="article:tag" content="Flow Chart">
+    <meta property="article:tag" content="HTTP">
+    
+    <meta property="article:tag" content="multipart/form-data">
     
     
     <meta property="og:image" content="https://neph3779.github.io/assets/logo.ico/apple-icon.png">
-    <meta property="og:url" content="https://neph3779.github.io/swift/FlowChart/">
+    <meta property="og:url" content="https://neph3779.github.io/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTPBasicWithSwift/">
     <meta property="og:site_name" content="Neph's iOS blog">
 
-    <title>플로우차트(Flow Chart) 그리는법 - Neph's iOS blog</title>
+    <title>HTTP 기본 개념 정리 with swift - Neph's iOS blog</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -38,7 +40,7 @@
     <link rel="shortcut icon" href="/assets/favicon.ico">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://neph3779.github.io/swift/FlowChart/">
+    <link rel="canonical" href="https://neph3779.github.io/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTPBasicWithSwift/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href=" /css/bootstrap.min.css">
@@ -248,13 +250,15 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/archive/?tag=Flow+Chart" title="Flow Chart">Flow Chart</a>
+                        <a class="tag" href="/archive/?tag=HTTP" title="HTTP">HTTP</a>
+                        
+                        <a class="tag" href="/archive/?tag=multipart%2Fform-data" title="multipart/form-data">multipart/form-data</a>
                         
                     </div>
-                    <h1>플로우차트(Flow Chart) 그리는법</h1>
+                    <h1>HTTP 기본 개념 정리 with swift</h1>
                     
                     <h2 class="subheading"></h2>
-                    <span class="meta">Posted by Neph's Blog on March 6, 2021</span>
+                    <span class="meta">Posted by Neph's Blog on May 12, 2021</span>
                 </div>
             </div>
         </div>
@@ -280,167 +284,62 @@
                 <!-- Multi-Lingual -->
                 
 
-                <h2 id="안녕하세요-neph입니다-">안녕하세요! Neph🌱입니다!! 😆😆</h2>
+                <h2 id="http란">HTTP란?</h2>
 
-<p>오늘은 Flow Chart를 그리는 방법에 대해 알아볼거에요~</p>
+<p>CSS, HTML, 이미지 등이 <code class="language-plaintext highlighter-rouge">Server와</code> <code class="language-plaintext highlighter-rouge">Client가</code> 서로 주고받는 Content라면</p>
 
-<p><br /></p>
+<p>Content를 주고받기 위해 서로가 알아들을 수 있는 공통의 약속(<code class="language-plaintext highlighter-rouge">Protocol</code>)이 필요하다.</p>
 
-<p>혼자서 작업하는 경우나 단기간동안만 사용할 프로그램을 만들 때는 플로우차트가 굳이 필요하지 않을지도 모릅니다.</p>
+<p>이 약속이 바로 <code class="language-plaintext highlighter-rouge">HTTP</code>(Hyper Text Tranfer Protocol)이다.</p>
 
-<p>하지만 플로우차트로 프로그램 동작과정의 큰 틀을 잡아놓는다면 후에 자신의 코드를 타인이 보게 되는 경우, 혹은 자신이 짠 코드를 다시 보게 될 때 이해하는 속도가 훨씬 빨라질거에요~</p>
+<h2 id="request와-response">Request와 Response</h2>
 
-<p><br /></p>
+<p>HTTP는 크게 Request와 Response로 구분된다.</p>
 
-<p>모든 디테일한 과정을 플로우차트로 표현하겠다는 생각보다는</p>
-<h4 id="플로우차트를-통해-전체적인-코드의-진행과정을-파악하기-쉽게-만드는-것">“플로우차트를 통해 전체적인 코드의 진행과정을 파악하기 쉽게 만드는 것”</h4>
+<p>Client가 Request 메세지를 작성해서 Server에 보내면 Server는 Response를 보내준다.</p>
 
-<p>이 핵심이지 않을까 생각합니다</p>
+<p>Request와 Response Message는 각각 Header와 Body로 구분된다.</p>
 
-<p><br /></p>
+<h2 id="http-message-구조">HTTP Message 구조</h2>
 
-<p>그럼 이제 실제로 코드를 플로우차트로 바꿔보며 플로우차트 그리는 법을 익혀봅시다!</p>
+<p>Request의 Message는 다음과 같은 구조로 이루어져 있다.</p>
 
-<p>우선 플로우차트를 그리기 위해 필요한 <strong>도형</strong>들과 그 도형들의 역할에 대해 알아볼게요</p>
+<p><img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210511230558.png" alt="img" /></p>
 
-<p><br /></p>
+<p>Header와 Body로 구분되며 그 사이에는 반드시 blank line이 들어가야한다.</p>
 
-<p align="center"><img src="/assets/images/posts/BasicShapes.png" alt="BasicShapes" style="zoom:50%;" /></p>
+<h3 id="header의-구조">Header의 구조</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">도형</th>
-      <th style="text-align: center">역할</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">둥근 모서리 사각형</td>
-      <td style="text-align: center">프로세스의 시작과 끝을 알려줍니다.</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">직사각형</td>
-      <td style="text-align: center">기본적인 동작들을 적습니다.</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">화살표</td>
-      <td style="text-align: center">프로세스의 진행방향을 알려줍니다.</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">마름모</td>
-      <td style="text-align: center">조건문을 표시합니다.</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">평행사변형</td>
-      <td style="text-align: center">input과 output을 표시합니다</td>
-    </tr>
-  </tbody>
-</table>
+<p>가장 첫 줄은 Request Line으로 <code class="language-plaintext highlighter-rouge">HTTP Method Name</code> + <code class="language-plaintext highlighter-rouge">요청할 파일의 형식/요청할 파일의 이름</code> + <code class="language-plaintext highlighter-rouge">사용할 HTTP 버전</code>으로 이루어져있다.</p>
 
-<p><br /></p>
+<p>Request Line을 제외한 나머지 부분을 Request Header라고 부르는데 필수로 적어야하는 Host Header를 제외하면 다른 Header는 꼭 있어야 하는건 아니다.</p>
 
-<hr />
+<p>이번 프로젝트에서 중요하게 이용되는 HTTP Header인  Conten-type에는  Body에 들어갈 Message의 MIME(Multipurpose Internet Mail Extensions) type을 적어줄 수 있다.</p>
 
-<p>그럼 이제 이것을 활용해 플로우차트를 그려보도록 하겠습니다!</p>
+<h3 id="body의-구조">Body의 구조</h3>
 
-<p><br /></p>
+<p>MIME type은 여러가지 종류가 있는데 가장 대표적인 것은 HTML 코드이며,  이번 프로젝트에서는 <code class="language-plaintext highlighter-rouge">multipart/form-data</code>과 <code class="language-plaintext highlighter-rouge">JSON</code>을 사용한다. JSON에 비해 상대적으로 익숙하지 않은 multipart/form-data를 아래에 정리해보았다.</p>
 
-<p>아래의 코드는 흔히들 알고계시는 머지소트(merge sort)를 Swift로 구현한 코드입니다.</p>
+<ul>
+  <li>MIME Type에 대해 설명하고 있는 mozilla 문서: <a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/MIME_types">MIME 타입</a></li>
+  <li>더 많은 MIME Type은 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types">이 링크</a>에서 볼 수 있다.</li>
+</ul>
 
-<p><br /></p>
+<h3 id="multipartform-data">multipart/form-data</h3>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">mergeSort</span><span class="p">(</span><span class="n">_</span> <span class="nv">left</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">right</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">left</span> <span class="o">+</span> <span class="n">right</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
-    <span class="k">if</span> <span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span> <span class="p">{</span>
-        <span class="nf">mergeSort</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">mid</span><span class="p">)</span>
-        <span class="nf">mergeSort</span><span class="p">(</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
-        <span class="nf">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
+<p>multipart/form-data는 HTML Form의 내용을 전송할 때 사용할 수 있는 문서 형식이다.</p>
 
-<p><br /></p>
+<p><code class="language-plaintext highlighter-rouge">--</code>로 시작되는 문자열인 boundary로 구분되는 서로 다른 파트들로 구성되며, 각각의 파트는 그 자체로서 개체이며 자신만의 HTTP 헤더를 가진다. 파일 업로드 필드를 위한 헤더로는 <code class="language-plaintext highlighter-rouge">Content-Disposition</code>과 <code class="language-plaintext highlighter-rouge">Content-Type</code>이 있다.</p>
 
-<p>여기서 등장하는 <code class="language-plaintext highlighter-rouge">merge</code>함수는 나누어진 두개의 리스트를 오름차순이 되도록 합쳐주는 역할을 합니다.</p>
+<p>Content-type Header에 boundary parameter를 포함해야하며 이 boundary parameter는 메세지 파트의 구분(multipart를 서로 구분해주는 역할)과 메세지의 시작과 끝을 나타내는 역할을 한다.</p>
 
-<p>(이번 포스팅에서는 <code class="language-plaintext highlighter-rouge">mergeSort</code>함수만 가지고 <code class="language-plaintext highlighter-rouge">Flow Chart</code>를 그릴 예정입니다. <code class="language-plaintext highlighter-rouge">merge 함수</code>는 다루지 않지만 필요하신 분들을 위해 글 제일 밑 부분에 따로 첨부할게요 😁)
-<br /></p>
+<p>첫번째 Boundary 이전의 Body는 MIME을 지원하지 않는 클라이언트를 위해 제공되는 영역이다.</p>
 
-<details>
-<summary style="cursor: pointer; color: #2AC1BC">Merge과정이 이해가 안가신다면 클릭!</summary>
-<div>
-    <p>[3,2,8,5,1,4,7,6] 이라는 리스트를 머지소트 시키기 위해선</p>
+<p>boundary parameter에 들어갈 문자열을 프로그래머가 무작위 문자를 선택해서 작성한다. 이 때 보통 앞부분에는 WebkitFormBoundary… 등과 같이 프로그래머가 인식할 수 있는 문자를 삽입하며 뒷부분에 무작위 문자열을 붙여서 Boundary가  unique하도록 만들어 본문과의 충돌을 피한다.</p>
 
-    <p>[3] [2] [8] [5] [1] [4] [7] [6] 과 같이 리스트의 원소 개수의 리스트로 쪼갠 뒤</p>
+<h2 id="http-코드를-보며-이해해보자">HTTP 코드를 보며 이해해보자</h2>
 
-    <p>이를 두 리스트씩 오름차순이 되도록 합쳐주는 작업(Merge)을 해줍니다</p>
-
-    <p>[2, 3] [5, 8] [1, 4] [6, 7]</p>
-
-    <p>[2, 3, 5, 8]  [1, 4, 6, 7]</p>
-
-    <p>[1, 2, 3, 4, 5, 6, 7, 8]</p>
-
-    <p>이렇게 말이죠!</p>
-  </div>
-</details>
-<p><br />
-자 그럼 이제 <code class="language-plaintext highlighter-rouge">mergeSort</code> 함수를 가지고 <code class="language-plaintext highlighter-rouge">FlowChart</code>를 그려보겠습니다.</p>
-
-<p align="center"><img src="/assets/images/posts/MergeSortFlowChart.png" alt="MergeSortFlowChart" style="zoom:50%;" /></p>
-
-<p>코드의 진행과정을 적어보자면</p>
-
-<ol>
-  <li>
-    <p>함수가 시작하는 단계를 둥근 모서리 사각형 안에 <code class="language-plaintext highlighter-rouge">mergeSort()</code>를 넣는 것으로 시작합니다.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">parameter</code>로 <code class="language-plaintext highlighter-rouge">left</code>, <code class="language-plaintext highlighter-rouge">right</code>를 받아오므로 (input 값) 평행사변형에 넣어 표시해줍니다.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">mid</code>라는 변수에 (left + right) / 2 를 담아주는 과정은 일반적인 코드의 실행이므로 직사각형에 담아 표시해줍니다.</p>
-  </li>
-  <li>
-    <p>left &lt; right 가 <code class="language-plaintext highlighter-rouge">false</code>라면 이대로 함수가 종료되고</p>
-
-    <p><code class="language-plaintext highlighter-rouge">true</code>라면</p>
-
-    <ul>
-      <li>mergeSort(left, mid)</li>
-      <li>mergeSort(mid + 1, right)</li>
-      <li>merge(left, right)</li>
-    </ul>
-
-    <p>가 차례로 실행된 뒤 함수가 종료됩니다!</p>
-  </li>
-</ol>
-
-<p><br /></p>
-
-<p>오늘은 이렇게 간단하게 플로우차트 그리는 법에 대해 알아보았는데요</p>
-
-<p>현업에서 모든 프로세스를 플로우차트를 통해 해결하는것은 아니지만 특정 부분 혹은 전체적인 틀을 플로우차트를 활용해 만들어놓는다면 유지보수하기가 훨씬 수월해질거에요!</p>
-
-<p><br /></p>
-
-<p>더 자세한 도형들의 활용에 대해 알고 싶으시다면 <a href="https://www.gliffy.com/blog/guide-to-flowchart-symbols">이 링크</a>를 통해 공부해보시면 좋을 것 같습니다!</p>
-
-<p>플로우차트 그리는법은 여기서 마치도록 하겠습니다~ 😆
-<br /></p>
-<details>
-<summary style="cursor: pointer; color: #2AC1BC">Merge 함수</summary>
-<div>
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -473,42 +372,216 @@
 31
 32
 33
-</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">merge</span><span class="p">(</span><span class="n">_</span> <span class="nv">start</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">end</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+34
+</pre></td><td class="rouge-code"><pre><span class="nf">POST</span> <span class="nn">/item</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">camp-open-market-2.herokuapp.com</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW</span>
 
-    <span class="k">var</span> <span class="nv">lIndex</span> <span class="o">=</span> <span class="n">start</span>
-    <span class="k">let</span> <span class="nv">lEnd</span> <span class="o">=</span> <span class="n">mid</span>
-    
-    <span class="k">var</span> <span class="nv">rIndex</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">let</span> <span class="nv">rEnd</span> <span class="o">=</span> <span class="n">end</span>
-    
-    <span class="k">var</span> <span class="nv">sIndex</span> <span class="o">=</span> <span class="n">start</span>
-    
-    <span class="k">while</span> <span class="p">(</span><span class="n">lIndex</span> <span class="o">&lt;=</span> <span class="n">lEnd</span> <span class="o">&amp;&amp;</span> <span class="n">rIndex</span> <span class="o">&lt;=</span> <span class="n">rEnd</span><span class="p">)</span> <span class="p">{</span>
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="title"
+
+귀여운 딸기
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="descriptions"
+
+귀여운 딸기입니다.
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="price"
+
+1000
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="currency"
+
+KRW
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="stock"
+
+10
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="images[]"; filename="Strawberry-removebg-preview.png"
+Content-Type: image/png
+
+(data)
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="password"
+
+neph1234
+----WebKitFormBoundary7MA4YWxkTrZu0gW--
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="request-line">Request Line</h3>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nf">POST</span> <span class="nn">/item</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>가장 첫 줄에는 Request Line이 적혀있는 것을 볼 수 있다.</p>
+
+<p>POST는 HTTP Method 중 하나이며 더 많은 메서드에 대한 정보는 <a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Methods">이 링크</a>에서 확인할 수 있다.</p>
+
+<h3 id="request-headers">Request Headers</h3>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="err">Host: camp-open-market-2.herokuapp.com
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Request Header에는 여러가지 Header가 선택적으로 들어갈 수 있으며 이 코드에서는 Host와 Content-Type Header가 들어가 있다.</p>
+
+<p>Content-Type의 내용으로는 multipart/form-data와 boundary parameter가 전달된다.</p>
+
+<p>boundary parameter로는 임의의 문자열이 전달되면 된다 (보통 swift에서는 UUID를 활용)</p>
+
+<h3 id="request-body">Request Body</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre></td><td class="rouge-code"><pre>----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="title"
+
+귀여운 딸기
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="descriptions"
+
+귀여운 딸기입니다.
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="price"
+
+1000
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="currency"
+
+KRW
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="stock"
+
+10
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="images[]"; filename="Strawberry-removebg-preview.png"
+Content-Type: image/png
+
+(data)
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="password"
+
+neph1234
+----WebKitFormBoundary7MA4YWxkTrZu0gW--
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Request Body내의 하나의 단락의 시작은 boundary로 시작한다.</p>
+
+<p>밑줄에는 Content-Disposition을 적어주고</p>
+
+<p>blank line을 하나 삽입한 뒤</p>
+
+<p><code class="language-plaintext highlighter-rouge">name</code>에 명시된 공간에 들어갈 내용을 적어준다</p>
+
+<p>즉, 아래의 코드가 하나의 단락이다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="title"
+
+귀여운 딸기
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>주의할 점은 (data)라고 적힌 공간에는 문자열로 변환된 data가 들어있다.</p>
+
+<p>이미지의 문자열로의 변환은 <code class="language-plaintext highlighter-rouge">UIImageJPEGRepresentation</code>메서드를 통해 진행해줄 수 있다.</p>
+
+<p>Body의 마지막에는 boudary를 적어주며, 꼭 따라야하는 것은 아니지만 관례적으로 boudary 뒤에 <code class="language-plaintext highlighter-rouge">--</code>를 붙여줌으로써 구분이 쉽도록 한다.</p>
+
+<h2 id="swift-코드를-통해-multipartform-data-코드-만들기">Swift 코드를 통해 multipart/form-data 코드 만들기</h2>
+
+<p>처음 multipart/form-data 코드를 만드려하면 참 난감하다.</p>
+
+<p>그래서 위에 작성한 multipart/form-data를 swift 코드로 변환해주는 함수를 작성하여 아래에 남겨두었다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">convertTextField</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">fieldString</span> <span class="o">=</span> <span class="s">"--</span><span class="se">\(</span><span class="n">boundary</span><span class="se">)\r\n</span><span class="s">"</span>
+        <span class="n">fieldString</span> <span class="o">+=</span> <span class="s">"Content-Disposition: form-data; name=</span><span class="se">\"\(</span><span class="n">key</span><span class="se">)\"\r\n</span><span class="s">"</span>
+        <span class="n">fieldString</span> <span class="o">+=</span> <span class="s">"</span><span class="se">\r\n</span><span class="s">"</span>
+        <span class="n">fieldString</span> <span class="o">+=</span> <span class="s">"</span><span class="se">\(</span><span class="n">value</span><span class="se">)\r\n</span><span class="s">"</span>
         
-        <span class="k">if</span> <span class="n">unsorted</span><span class="p">[</span><span class="n">lIndex</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">unsorted</span><span class="p">[</span><span class="n">rIndex</span><span class="p">]</span> <span class="p">{</span>
-            <span class="n">sorted</span><span class="p">[</span><span class="n">sIndex</span><span class="p">]</span> <span class="o">=</span> <span class="n">unsorted</span><span class="p">[</span><span class="n">lIndex</span><span class="p">]</span>
-            <span class="n">lIndex</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="n">sorted</span><span class="p">[</span><span class="n">sIndex</span><span class="p">]</span> <span class="o">=</span> <span class="n">unsorted</span><span class="p">[</span><span class="n">rIndex</span><span class="p">]</span>
-            <span class="n">rIndex</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="p">}</span>
-        <span class="n">sIndex</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">fieldString</span>
     <span class="p">}</span>
-    
-    <span class="k">while</span> <span class="p">(</span><span class="n">lIndex</span> <span class="o">&lt;=</span> <span class="n">lEnd</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">sorted</span><span class="p">[</span><span class="n">sIndex</span><span class="p">]</span> <span class="o">=</span> <span class="n">unsorted</span><span class="p">[</span><span class="n">lIndex</span><span class="p">]</span>
-        <span class="n">sIndex</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="n">lIndex</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="p">}</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">start</span><span class="o">..&lt;</span><span class="n">sIndex</span> <span class="p">{</span>
-        <span class="n">unsorted</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sorted</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div>    </div>
-  </div>
-</details>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위 코드를 아래의 multipart/form-data 예제 단락을 통해 이해해보자</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="title"
+
+귀여운 딸기
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>우선 parameter로 받아오는 key는 아래의 예시에서 <code class="language-plaintext highlighter-rouge">title</code>에 해당한다.</p>
+
+<p>그리고 value로 넣어줄 값은 “귀여운 딸기”라는 String이다.</p>
+
+<p>첫 줄에는 “–(boundary)\r\n”라는 값을 넣어 단락의 시작을 알린다.</p>
+
+<p>그 뒤로는 Content-Disposition과 value 값을 각각 fieldString이라는 문자열에 넣어 마무리한다.</p>
+
+<blockquote>
+  <p>\n은 newline인 것을 알겠다지만 \r은 대체 왜 필요한지 의문이 들었다.</p>
+
+  <p>나와 같은 의문을 품을 독자를 위해 해당 의문에 대해 어느정도 답이 된 <a href="https://m.blog.naver.com/taeil34/221325864981">글</a>을 첨부한다.</p>
+</blockquote>
+
+<h3 id="참고한-링크">참고한 링크</h3>
+
+<ul>
+  <li>HTTP 헤더의 종류들에 대해 잘 설명해놓은 글: <a href="http://go-colly.org/articles/scraping_related_http_headers/">The most important HTTP headers for scraping</a></li>
+  <li>swift를 통한 URLSession Tutorial: <a href="https://www.donnywals.com/uploading-images-and-forms-to-a-server-using-urlsession/">Uploading images and forms to a server using URLSession</a></li>
+  <li>mozilla의 Content-Type Document: <a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/Content-Type">Content-Type</a></li>
+  <li>mozilla의 HTTP Methods Document: <a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Methods">HTTP 요청 메서드</a></li>
+  <li><code class="language-plaintext highlighter-rouge">\r</code>은 왜써야할까? : <a href="https://m.blog.naver.com/taeil34/221325864981">CR(\r), LF(\n)이란 무엇인가?</a></li>
+</ul>
 
 
 
@@ -516,21 +589,13 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/til/2021.03.05-TIL/"
-                            data-toggle="tooltip" data-placement="top" title="2021년 03월 05일 공부일지">
+                        <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/12-Memory-Management/"
+                            data-toggle="tooltip" data-placement="top" title="[#12] 메모리 관리-1">
                             Previous<br>
-                            <span>2021년 03월 05일 공부일지</span>
+                            <span>[#12] 메모리 관리-1</span>
                         </a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/til/2021.03.06-TIL/" data-toggle="tooltip"
-                            data-placement="top" title="2021년 03월 06일 공부일지">
-                            Next<br>
-                            <span>2021년 03월 06일 공부일지</span>
-                        </a>
-                    </li>
                     
                 </ul>
                 <hr style="visibility: hidden;">
