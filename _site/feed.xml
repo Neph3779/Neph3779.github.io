@@ -5,9 +5,209 @@
     <description>Write code with my soul.</description>
     <link>https://neph3779.github.io/</link>
     <atom:link href="https://neph3779.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 12 May 2021 13:29:08 +0900</pubDate>
-    <lastBuildDate>Wed, 12 May 2021 13:29:08 +0900</lastBuildDate>
+    <pubDate>Mon, 17 May 2021 01:22:09 +0900</pubDate>
+    <lastBuildDate>Mon, 17 May 2021 01:22:09 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[#13] 메모리 관리-2</title>
+        <description>&lt;h2 id=&quot;multilevel-paging-and-performance&quot;&gt;MultiLevel Paging and Performance&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210516123827.png&quot; alt=&quot;image-20210516123811067&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;페이지 테이블은 2단계로만 쓸 수 있는게 아닌 여러 단계의 페이지 테이블을 쓰는게 가능하다.&lt;/p&gt;
+
+&lt;p&gt;다단계 페이지 테이블은 페이지 테이블이 사용하는 공간을 더 많이 줄일 수 있지만 변환작업을 여러번 거쳐야 하고, 주소 변환을 위해 메모리에 여러번 접근해야하기 때문에 오버헤드를 커진다.&lt;/p&gt;
+
+&lt;p&gt;하지만 TLB라는 주소변환을 전담하는 일종의 cash 메모리 덕분에 대부분의 주소변환은 TLB를 통해 이루어지기 때문에 다단계 페이지 테이블을 사용하더라도 오버헤드가 크지 않다.&lt;/p&gt;
+
+&lt;h2 id=&quot;valid-v--invalid-i-bit-in-a-page-table&quot;&gt;Valid (v) / Invalid (i) Bit in a Page Table&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210516124142.png&quot; alt=&quot;image-20210516124138507&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;논리주소의 페이지 개수만큼 페이지 테이블의 엔트리가 존재하고 페이지가 물리적 메모리의 어떤 페이지 frame에 올라가 있는지 주소변환 정보가 들어있다고 배웠었다.&lt;/p&gt;
+
+&lt;p&gt;하지만 페이지 테이블에는 이 외에도 부가적인 비트가 엔트리마다 저장되고 있는데 이 중 하나가 valid-invalid bit이다.&lt;/p&gt;
+
+&lt;p&gt;메모리에 의미있는 값을 집어넣든 않든간에 6,7 등의 0은 의미있는 값으로 해석될 것이다. 프로그램이 가질 수 있는 maximum size 만큼 페이지 테이블의 엔트리가 생겨야하는데 (페이지 테이블의 특성상 위에서부터 순서대로 적어야하기 때문에 필요) 여기서  사용하지 않는 영역을 invalid로 표시한다. (32bit 운영체제라면 최대 1Mb짜리 페이지 테이블이 필요하다. )&lt;/p&gt;
+
+&lt;h2 id=&quot;memory-protection&quot;&gt;Memory Protection&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210516124543.png&quot; alt=&quot;image-20210516124540476&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;protection-bit&quot;&gt;Protection Bit&lt;/h3&gt;
+
+&lt;p&gt;여기서는 접근해서 안될 페이지를 막아주는 protection의 의미가 아니다.&lt;/p&gt;
+
+&lt;p&gt;페이지 테이블을 통해 이동한 것이므로 자기 자신의 페이지에만 접근할 수 있으므로 애초에 다른 프로그램의 공간에는 접근할 수 없다.&lt;/p&gt;
+
+&lt;p&gt;여기서의 protection의 의미는 어떤 연산에 대한 접근 권한이다. 프로세스의 영역에는 code만 담고 있는 부분도 있을 것이고 (read only로 있어야 하는 부분) data 영역이나 stack 영역 같은 곳은 read&amp;amp;write 권리를 모두 가지고 있어야 하므로 이를 지정해주는 bit가 필요하다.&lt;/p&gt;
+
+&lt;h3 id=&quot;valid-invalid-bit&quot;&gt;Valid-Invalid Bit&lt;/h3&gt;
+
+&lt;p&gt;프로세스가 아예 주소를 사용하지 않거나 해당 페이지가 backing store에 가있는 경우 invalid로 표시된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;inverted-page-table&quot;&gt;Inverted Page Table&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210516125524.png&quot; alt=&quot;image-20210516125520349&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210516125629.png&quot; alt=&quot;image-20210516125626602&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Page table은 너무 많은 메모리 공간을 차지한다는 문제가 있다. 프로세스마다 각각 주소변환이 이루어져야 하기 때문에 공간 오버헤드가 큰데 이를 해결하기 위해 존재하는 것이 inverted page table이다.&lt;/p&gt;
+
+&lt;p&gt;원래 페이지 테이블을 통한 주소의 변환을 거꾸로 뒤집어 놓은 inverted page table은 기존의 프로세스마다 필요했던 page table이 아닌 시스템 안에 page table이 딱 하나만 존재하며 page table의 엔트리가 프로세스의 page 개수만큼이 아닌 물리적인 메모리의 page 개수만큼 존재한다. page table의 첫 엔트리는 physical memory의 첫 엔트리를 나타내고 마지막 엔트리는 physical memory의 마지막 엔트리를 담당하는 식이다.&lt;/p&gt;
+
+&lt;p&gt;기존의 page table은 주소변환을 위해 page 번호를 보고 위에서부터 page 번호만큼 떨어진 엔트리에 가서 주소변환을 하는 방법을 썼었는데 inverted의 경우 그것이 불가능하다. 원래는 논리적인 page 번호가 있으면 해당하는 엔트리에 가서 페이지 테이블에 가면 페이지 frame 번호가 몇번이지 나왔는데 역방향의 경우에는 page frame 개수만큼 엔트리가 존재하며 첫번째 entry에는 첫번째 page frame에 들어가는 논리적 page 번호가 들어있고 두번재 entry에는 두번째 page entry에 들어가는 논리적 번호가 들어있다. page frame의 f번째 entry에 가면 논리적인 page table의 번호가 나오게 되어있는게 inverted page table architecture의 구조이다.&lt;/p&gt;
+
+&lt;p&gt;pid : 어떤 프로세스의 page인지를 저장하는 공간 (논리적 주소는 프로그램마다 별도로 존재하므로 f번째에 올라가있는 page가 어떤 프로그램의 p번째 page인지를 나타내야 함)&lt;/p&gt;
+
+&lt;h2 id=&quot;shared-page&quot;&gt;Shared Page&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210516131502.png&quot; alt=&quot;image-20210516131459581&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210516131521.png&quot; alt=&quot;image-20210516131518876&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;서로 다른 프로세스가 같은 코드를 가지고 프로그램을 돌린다 하면 프로그램의 코드 부분은 같은 내용이니 shared code를 이용할 수 있다. 이런 경우에는 각각의 코드를 모두 메모리에 올리는 것이 하나만 read only state로 올려서 이를 공유할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;shared code는 모든 프로세스에서 동일한 logical address상에 있어야 한다.&lt;/p&gt;
+
+&lt;p&gt;shared code는 re-entrant code, pure code라고도 부른다.&lt;/p&gt;
+
+&lt;p&gt;:exclamation:shared code는 공유 데이터와는 다른 개념이다. (공유 데이터와 다르게 shared code는 Read-Only이기 때문)&lt;/p&gt;
+
+&lt;h2 id=&quot;segmentation&quot;&gt;Segmentation&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210516134426.png&quot; alt=&quot;image-20210516134423619&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;segment는 프로그램을 의미가 있는 단위로 자른 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210516134506.png&quot; alt=&quot;image-20210516134504076&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;세그먼트별로 주소변환이 이루어져야하기 때문에 segmentation table이 있으며, segment table의 길이가 limit register에 들어가게 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210516134558.png&quot; alt=&quot;image-20210516134555965&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;s는 세그먼트의 번호, d는 떨어진 위치에 해당하는 offset이다.&lt;/p&gt;
+
+&lt;p&gt;paging과 다르게 물리적인 메모리상의 시작위치 외에도 limit이라는 segment의 길이를 가지고 있는데 page와 다르게 segment마다의 길이가 다를 수 있기 때문에 필요한 내용이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;프로그램이 가지고 있는 segment 개수보다 큰 segment를 요청하면 trap&lt;/li&gt;
+  &lt;li&gt;segment의 길이보다 segment에서 떨어진 offset값이 크면 trap&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210516135020.png&quot; alt=&quot;image-20210516135016652&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;segmentation 기법은 page 기법과 다르게 크기가 균일하지 않기 때문에 생기는 문제점들을 가지고 있음&lt;/p&gt;
+
+&lt;p&gt;하지만 의미 단위의 일을 하기 위해서는 매우 효과적 (실행권리 권한부여의 구역을 나누기 쉽기 때문)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210516134940.png&quot; alt=&quot;image-20210516134937476&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210516135044.png&quot; alt=&quot;image-20210516135041217&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;segment와 page를 비교했을 때 table에 의한 공간 낭비가 큰 쪽은 paging 기법쪽이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;segmentation-with-paging&quot;&gt;Segmentation with Paging&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210516202942.png&quot; alt=&quot;image-20210516202939549&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;[정리]&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;물리적인 메모리를 나누는 방법으로 크게 연속 할당과 불연속 할당 기법이 있었다. 이 중 불연속 할당 기법에 이용할 수 있는 방법으로는 paging, segmentation, paged segmentation이 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Paged Segmentation 기법을 사용하면 segment가 page로 쪼개져서 올라가기 때문에 segmentation의 조각 문제가 발생하지 않는다.&lt;/p&gt;
+
+&lt;p&gt;자세한 작동방식은 글로 풀어쓰기보다는 위의 순서도를 이해해보는게 나을 것 같다.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 16 May 2021 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/13-Memory-Management-2/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/13-Memory-Management-2/</guid>
+        
+        <category>운영체제</category>
+        
+        <category>OS</category>
+        
+        
+        <category>운영체제</category>
+        
+      </item>
+    
+      <item>
+        <title>2021년 05월 13일 공부일지</title>
+        <description>&lt;h2 id=&quot;오늘-공부한-내용&quot;&gt;오늘 공부한 내용&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;TalbeView Cell의 재활용에 대해 공부&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;prepare for reuse&lt;/li&gt;
+      &lt;li&gt;data prefetch&lt;/li&gt;
+      &lt;li&gt;나중에 받아온 data 어떻게 원하는 위치에 꽂아줄까? (feat: closure capture)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;modern cell configuration에 대해 공부&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;cell의 기본 imageView 같은 경우에는 사이즈를 임의로 조절할 수 없다 (구려!)&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/videos/play/wwdc2020/10027/&quot;&gt;modern cell configuration WWDC&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;escaping closure에 대해 공부&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;함수가 종료된 후에 completionHandler가 호출될 때 escaping이 필요!
+        &lt;ul&gt;
+          &lt;li&gt;이게 어떻게 가능할까? -&amp;gt; 오래걸리는 작업을 다른 스레드로 보내서 비동기 작업을 할 때 벌어질 수 있음&lt;/li&gt;
+          &lt;li&gt;동기작업[…] -&amp;gt; 비동기[completionHandler] -&amp;gt; 함수 종료 -&amp;gt; 이후에 비동기 작업 실행 or 완료&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;flatmapError에 대해 공부&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;예제코드&lt;/p&gt;
+
+        &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;flatMapError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;ResponsedPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SessionManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dataIsNotJSON&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;failure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dataIsNotJSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;kt&quot;&gt;XCTFail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;failure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;invalidURL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Error인 경우만 뽑아서 후처리를 해준 뒤 return을 통해 Result type으로 넘겨줄 수 있다(success로 넘겨줄 수도 있다는 말)&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Thu, 13 May 2021 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/2021.05.13-TIL/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/2021.05.13-TIL/</guid>
+        
+        
+      </item>
     
       <item>
         <title>HTTP 기본 개념 정리 with swift</title>
@@ -377,8 +577,114 @@ Content-Disposition: form-data; name=&quot;title&quot;
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210512013205.png&quot; alt=&quot;OpenMarket-model&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 11 May 2021 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/til/2021.05.10,11-TIL/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/til/2021.05.10,11-TIL/</guid>
+        <link>https://neph3779.github.io/til/2021.05.11-TIL/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/til/2021.05.11-TIL/</guid>
+        
+        <category>TIL</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>2021년 05월 10일 공부일지</title>
+        <description>&lt;h2 id=&quot;오늘-공부한-내용&quot;&gt;오늘 공부한 내용&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;HTTP Method, HTTP Request Code, HTTP Request, Response Header, Body 구조 공부&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://opentutorials.org/course/3385/21673&quot;&gt;HTTP강의&lt;/a&gt; by 생활코딩&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=8GH0yMPvQFU&amp;amp;ab_channel=KiloLoco&quot;&gt;Multipart/form-data 구성 by swift 유튜브 강의&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git flow, git branch 생성 전략에 대해 공부함&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html&quot;&gt;git flow 전략&lt;/a&gt; by 우아한 형제들&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://junshock5.tistory.com/82&quot;&gt;issue기반 branch 생성&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;github의 issue, project, milestone, label등에 대해 알게 됨&lt;/li&gt;
+      &lt;li&gt;https://developer.apple.com/videos/play/wwdc2017/405/&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;URLSession과 그 사용법에 대해 공부함 (dataTask, request)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/foundation/urlsession/&quot;&gt;URLSession 공식문서&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/foundation/urlsessiondelegate&quot;&gt;URLSession Delegate 공식문서&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/foundation/urlsessiontaskdelegate&quot;&gt;URLSessionTask Delegate 공식문서&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/foundation/urlrequest/&quot;&gt;URLRequest 공식문서&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;header에 내용을 추가하기 위해 사용되는 request type의 instance method &lt;a href=&quot;https://developer.apple.com/documentation/foundation/urlrequest/2011522-addvalue&quot;&gt;addValue(_:forHTTPHeaderField:) 공식문서&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/foundation/url_loading_system&quot;&gt;URL Loading System&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/foundation/url_loading_system/fetching_website_data_into_memory&quot;&gt;Fetching Website Data into Memory&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=toU4o5Z0cVM&amp;amp;list=PLAHa1zfLtLiM7hxIjjWaXbB5-pxs25EFR&amp;amp;index=8&amp;amp;ab_channel=%EB%93%9C%EB%A6%BC%EC%BD%94%EB%94%A9by%EC%97%98%EB%A6%AC&quot;&gt;코드스쿼드의 iOS 네트워크 프로그래밍 공개영상&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;JSONSerialization을 통해 type 구현 없이 간단한 data를 꺼낼 수 있는 방법 공부&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;a href=&quot;https://www.hackingwithswift.com/example-code/system/how-to-parse-json-using-jsonserialization&quot;&gt;참고한 링크&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;예제코드&lt;/p&gt;
+
+        &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;errorData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;JSONSerialization&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;jsonObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                                        &lt;span class=&quot;nv&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nf&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;failure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dataIsNotJSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/foundation/jsonserialization/1418059-jsonobject&quot;&gt;jsonObject 공식문서&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;잡다한-정보들&quot;&gt;잡다한 정보들&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;ARC를 통한 인스턴스의 생명주기는 컴파일 타임에 결정된다!&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;deinit하는 코드를 원래는 프로그래머가 직접 작성했다면 ARC를 통해 그 코드가 컴파일 타임에 삽입되므로 프로그래머의 수고가 줄어듦&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;app delegate의 … with laucnOption에서의 laucnOption은 앱이 어떤 루트로 실행되었는지를 알려주는 것!&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;push 알림을 눌러서 진입&lt;/li&gt;
+      &lt;li&gt;다른 앱을 통해서 열려서 진입&lt;/li&gt;
+      &lt;li&gt;그냥 앱을 눌러서 진입&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;HTTP의 상태코드는 status코드! state와 헷갈리지 말자!&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://blog.naver.com/PostView.nhn?blogId=tommy6753&amp;amp;logNo=220830550597&quot;&gt;staus vs state&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Mon, 10 May 2021 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/til/2021.05.10-TIL/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/til/2021.05.10-TIL/</guid>
         
         <category>TIL</category>
         
@@ -1043,337 +1349,6 @@ Content-Disposition: form-data; name=&quot;title&quot;
         
         
         <category>일상</category>
-        
-      </item>
-    
-      <item>
-        <title>[#11] Deadlock(데드락)</title>
-        <description>&lt;h2 id=&quot;교착상태deadlock&quot;&gt;교착상태(deadlock)&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502181946.png&quot; alt=&quot;2&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;어느 누구도 양보를 하지 않으면 더이상 진행되지 않는 상태를 deadlock(교착상태)라고 한다.&lt;/p&gt;
-
-&lt;p&gt;Resource는 하드웨어 자원과 소프트웨어 자원을 모두 칭하는 개념으로 자신의 자원을 내놓지 않고 상대방의 자원을 서로 차지하려는 시도에 의해 deadlock 상태가 발생할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;프로세스가 자원을 사용하는 절차는 다음과 같이 이루어진다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;요청 (Request)&lt;/li&gt;
-  &lt;li&gt;획득 (Allocate)&lt;/li&gt;
-  &lt;li&gt;사용 (Use)&lt;/li&gt;
-  &lt;li&gt;반납 (Release)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;deadlock-발생의-4가지-조건&quot;&gt;Deadlock 발생의 4가지 조건&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502182005.png&quot; alt=&quot;3&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;데드락은 다음 4가지 조건에 의해 발생한다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Mutual Exclusion (상호 배제)&lt;/p&gt;
-
-    &lt;p&gt;어떤 자원을 가지고 있는 동안에 그 자원을 독점적으로 쓴다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;No preemption (비선점)&lt;/p&gt;
-
-    &lt;p&gt;자원을 강제로 빼앗을 수 없다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Hold and wait (보유 대기)&lt;/p&gt;
-
-    &lt;p&gt;자원을 가지고 있는 프로세스가 다른 자원을 기다릴 때 자신의 자원을 내놓지 않는다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Circular wait (순환 대기)&lt;/p&gt;
-
-    &lt;p&gt;자원을 기다리는 프로세스간의 cycle이 형성된다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;자원-할당-그래프&quot;&gt;자원 할당 그래프&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502182013.png&quot; alt=&quot;4&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Process에서 나가는 화살표는 Resource를 요청하고 있는 상태를 나타낸다.&lt;/p&gt;
-
-&lt;p&gt;Resource에서 나가는 화살표는 해당 Resource를 Process가 보유하고 있음을 나타낸다.&lt;/p&gt;
-
-&lt;p&gt;Resource는 하나의 Block에 여러개가 있을 수 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502182019.png&quot; alt=&quot;5&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;자원 할당 그래프(Resource Allocation Graph)를 통해 deadlock 상태인지 아닌지를 판가름할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;그래프에 cycle이 없다면 모든 경우에 deadlock이 아니다.&lt;/p&gt;
-
-&lt;p&gt;그래프에 cycle이 있고 모든 Resouce Block에 자원이 하나씩만 있다면 반드시 deadlock 상태이다.&lt;/p&gt;
-
-&lt;p&gt;그래프에 cycle이 있지만 모든 Resoucr Block의 자원이 하나씩만 있는 것이 아니라면 (여러개가 있는 Block이 존재한다면) deadlock일 수도 있고 아닐수도 있다. (추가적 검증 필요)&lt;/p&gt;
-
-&lt;p&gt;참고)&lt;/p&gt;
-
-&lt;p&gt;ppt의 왼쪽 그림은 deadlock 상태이다.&lt;/p&gt;
-
-&lt;p&gt;ppt의 오른쪽 그림은 cycle이 형성되어있지만 deadlock 상태가 아니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;deadlock의-처리-방법&quot;&gt;Deadlock의 처리 방법&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502182024.png&quot; alt=&quot;6&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Deadlock을 해결하는 방법에는 크게 4가지가 있다. 가장 강한 처리 방법부터 약한 처리방법을 순차적으로 나열하였다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Deadlock Prevention&lt;/p&gt;
-
-    &lt;p&gt;Deadlock의 4가지 조건 중 만족하지 않는 조건이 있도록 만드는 방법&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Deadlock Avoidance&lt;/p&gt;
-
-    &lt;p&gt;Deadlock 발생 조건을 따져본 뒤 발생 가능성이 없는 경우에만 자원을 할당&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Deadlock Detection and recovery&lt;/p&gt;
-
-    &lt;p&gt;Deadlock이 발생하면 해당 지점을 파악하여 recover하는 방식&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Deadlock Ignorance&lt;/p&gt;
-
-    &lt;p&gt;OS는 deadlock에 대해 관여하지 않음. deadlock은 빈번히 발생하는 현상이 아니기 때문에 deadlock 처리 방법의 overhead를 처리하는 cost가 더 높다 판단하여 현대의 OS들은 대부분 Deadlock Ignorance를 채택하고 있다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;deadlock-prevention&quot;&gt;Deadlock Prevention&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502182036.png&quot; alt=&quot;7&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;위의 4가지 조건 중 하나를 차단하면 deadlock 발생을 막을 수 있다.&lt;/p&gt;
-
-&lt;p&gt;Mutual Exclusion은 사실상 직접 차단하는 것이 어렵다.&lt;/p&gt;
-
-&lt;p&gt;Hold and Wait은 두 가지 방법으로 차단할 수 있는데 방법 1의 경우에는 자원의 비효율성이 높아지므로 잘 사용하지 않는다.&lt;/p&gt;
-
-&lt;p&gt;반면 방법2는 보유 자원을 모두 내려놓은 상태에서만 자원 요청을 할 수 있게 만드는 방법이므로 자원 비효율성이 높지 않다.&lt;/p&gt;
-
-&lt;p&gt;No Preemption의 경우 자원을 뺏었을 때 문제가 없는 구조여야만 차단할 수 있다. CPU 스케쥴링과 다르게 자원을 빼았긴 후 다시 되찾았을 때 이전 작업을 이어서 하기가 어렵기 때문이다.&lt;/p&gt;
-
-&lt;p&gt;Circular Wait는 자원마다 번호를 매겨서 정해진 순서대로만 자원을 획득할 수 있도록 처리하면 쌍방향으로의 자원 요구가 이루어질 수 없으므로 Cycle이 생길 우려가 사라진다.&lt;/p&gt;
-
-&lt;p&gt;하지만 위의 방법들은 자원 이용률 저하, starvation 현상 등이 발생한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;deadlock-avoidance&quot;&gt;Deadlock Avoidance&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502183735.png&quot; alt=&quot;image-20210502183734195&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Process가 시작되어 종료될 때까지 써야하는 최대의 자원량을 알고 있다고 가정한다.&lt;/p&gt;
-
-&lt;p&gt;모든 경우의 수를 따져보고 자원 할당으로부터 안전한 경우에만 자원을 할당해준다. (자원의 여분이 있음에도)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502184158.png&quot; alt=&quot;image-20210502184152926&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;자원당 하나의 instance를 가지고 있다면 자원 할당 그래프 알고리즘(deadlock 발생 여부를 찾아줌)을 이용해 막아줄 수 있고&lt;/p&gt;
-
-&lt;p&gt;자원당 여러개의 instance를 가지고 있는 경우에는 Banker’s 알고리즘을 통해 deadlock을 막아줄 수 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;resource-allocation-graph-algorithm&quot;&gt;Resource Allocation Graph algorithm&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502190017.png&quot; alt=&quot;image-20210502190015537&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;자원당 instance가 하나만 있는 상황에서 deadlock을 피하는 방법&lt;/p&gt;
-
-&lt;p&gt;자원에서 프로세스로 뻗어있는 화살표는 프로세스가 해당 자원을 보유하고 있다는 의미&lt;/p&gt;
-
-&lt;p&gt;프로세스에서 자원으로 뻗어있는 화살표는 프로세스가 해당 자원을 요청했다는 의미&lt;/p&gt;
-
-&lt;p&gt;점선으로 이루어진 화살표는 프로세스가 평생에 거쳐 해당 자원을 요청할 가능성이 있음을 나타냄&lt;/p&gt;
-
-&lt;p&gt;deadlock의 위험성이 있으면 자원을 주지 않고 막는다.&lt;/p&gt;
-
-&lt;h2 id=&quot;bankers-algorithm&quot;&gt;Banker’s Algorithm&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502191103.png&quot; alt=&quot;image-20210502191101848&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502191140.png&quot; alt=&quot;image-20210502191138729&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;자원당 instance가 여러개 있는 경우 Banker’s Algorithm을 적용할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;ppt의 예시는 Process가 5개 있고&lt;/p&gt;
-
-&lt;p&gt;Resource A,B,C는 instance를 각각 10개, 5개, 7개 가지고 있다.&lt;/p&gt;
-
-&lt;p&gt;Allocation은 현재 할당된 instance를 나타내는 것이고&lt;/p&gt;
-
-&lt;p&gt;Max는 최대로 요청할 수 있는 (프로세스 평생에 걸쳐) instance의 수를 나타낸 것이다.&lt;/p&gt;
-
-&lt;p&gt;현재 남아있는 자원은 Available section에 보이는 것처럼 A 3개, B 3개, C 2개인 상황에서&lt;/p&gt;
-
-&lt;p&gt;프로세스들이 자원을 요청했을 때 처리하는 방식에 대해 알아보자&lt;/p&gt;
-
-&lt;p&gt;현재 가용자원만 가지고도(Available) 어떤 프로세스의 Max를 충족할 수 있다면 자원을 할당해준다&lt;/p&gt;
-
-&lt;p&gt;하지만 이것이 불가능한 경우에는 deadlock을 피하기 위해 자원을 할당해주지 않는다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502193527.png&quot; alt=&quot;image-20210502193525439&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;프로세스의 Need (현재 상태에서 최대로 요청할 수 있는 resource instance의 양)보다 Available한 자원이 더 많은 경우에만 자원을 할당해주면 deadlock을 막을 수 있다.&lt;/p&gt;
-
-&lt;p&gt;이 때 요청한 자원의 양과 Need는 서로 다른 개념임을 기억하자.&lt;/p&gt;
-
-&lt;p&gt;적어도 Need 이상의 양을 요청하지 않는다는 전제 때문에 가능한 상황이다.&lt;/p&gt;
-
-&lt;h2 id=&quot;deadlock-detection&quot;&gt;Deadlock Detection&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502194954.png&quot; alt=&quot;image-20210502194952896&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Deadlock Detection은 Deadlock Avoidance와 마찬가지로 모든 Resource의 instance가 하나인 경우에는 자원 할당 그래프를 사용해 deadlock을 탐지할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;instance가 여러개인 경우에는 Banker’s algorithm과 유사한 방법으로 처리할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502195232.png&quot; alt=&quot;image-20210502195223354&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;프로세스에서 프로세스로 뻗어나간 화살표는 자원 할당 그래프를 더 간편하게 그리기 위한 방안으로 화살표의 목적지에 해당하는 프로세스가 가진 자원을 화살표의 시작지에 해당하는 프로세스가 요청하고 있음을 나타낸다.&lt;/p&gt;
-
-&lt;p&gt;process가 n개일 때 wait for graph에서 cycle을 찾는 overhead는 O(n^2)에 해당한다.&lt;/p&gt;
-
-&lt;p&gt;node가 n개일 때 edge의 maximum은 n(n-1)개이므로 이 edge들을 모두 다 따라가보면 O(n^2)의 시간복잡도가 걸림을 알 수 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502200422.png&quot; alt=&quot;image-20210502200419205&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;위의 상황은 자원당 instance가 여러개인 경우를 나타낸 것이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502200728.png&quot; alt=&quot;image-20210502200726350&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;deadlock-recovery&quot;&gt;Deadlock Recovery&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502200920.png&quot; alt=&quot;image-20210502200918555&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Deadlock을 recover하는 방법에는 크게 두가지가 있다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Deadlock에 연루된 process들을 없애기 (한꺼번에 kill)&lt;/li&gt;
-  &lt;li&gt;Deadlock에 연루된 process들을 하나씩 없애보기 (Deadlock이 없어질때까지)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;위와 같은 방식으로 safe state가 되면 다시 process를 시작하면 된다.&lt;/p&gt;
-
-&lt;p&gt;동일한 프로세스가 계속해서 victim(process가 deadlock에 연루되어서 죽는 경우)이 되는 경우&lt;/p&gt;
-
-&lt;p&gt;starvation 문제를 야기할 수 있으므로 이 부분도 같이 고려를 해야한다.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 02 May 2021 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/11-Deadlock/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/11-Deadlock/</guid>
-        
-        <category>운영체제</category>
-        
-        <category>OS</category>
-        
-        
-        <category>운영체제</category>
-        
-      </item>
-    
-      <item>
-        <title>2021년 04월 29일 공부일지</title>
-        <description>&lt;h2 id=&quot;오늘-공부한-내용&quot;&gt;오늘 공부한 내용&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Allen의 동시성 프로그래밍 특강을 들었습니다. 동기/비동기에 관해서 많은 것을 알 수 있었습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;위의 특강을 토대로 Step1의 수정이 이루어졌습니다. protocol에 집착하던 것을 버린 것과 Operation을 Subclassing하여 OperationQueue에 단순한 BlockOperation을 넣지 않은 점이 이전과 가장 많이 달라진 부분입니다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://github.com/yagom-academy/ios-bank-manager/pull/33&quot;&gt;PR 링크&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;오늘의-고민내일-공부할-내용들&quot;&gt;오늘의 고민(내일 공부할 내용들)&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Completion Handler v.s. return 값 있는 함수
-    &lt;ul&gt;
-      &lt;li&gt;왜 비동기 작업에서는 return형 함수를 쓰면 안되는가? URL Session이 비동기처리라는 것을 유념하며 생각해보자!&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;클로저 - 캡처리스트 이게 뭐지?&lt;/li&gt;
-  &lt;li&gt;콜백 함수의 개념에 대해서&lt;/li&gt;
-  &lt;li&gt;고차함수의 정의가 뭐지?&lt;/li&gt;
-  &lt;li&gt;enum + CaseIterable + random enum에 random함수를 깔끔하게 넣어서 이용하는 방법이 있던 것 같은데..&lt;/li&gt;
-  &lt;li&gt;struct와 mutating 등에 대해 알아봐야 할 것 같다. (class로 했을때는 문제가 없던 것이 struct로 바꾸니 결과가 원하는대로 나오질 않네..)&lt;/li&gt;
-  &lt;li&gt;XCTest의 setUp, tearDown 메서드에 대해 알아보자! instance의 생명주기가 어떻게 되는거지?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;내일-알아볼-링크들&quot;&gt;내일 알아볼 링크들&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;https://agostini.tech/2017/07/30/understanding-operation-and-operationqueue-in-swift/&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;https://effectivecode.tistory.com/932&lt;/li&gt;
-  &lt;li&gt;https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%89%EC%8A%A4_%EC%8B%A0%ED%98%B8&lt;/li&gt;
-  &lt;li&gt;https://jcsoohwancho.github.io/2019-11-02-Message-Dispatch/&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 29 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/til/2021.04.29-TIL/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/til/2021.04.29-TIL/</guid>
-        
-        <category>TIL</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>2021년 04월 27일 공부일지</title>
-        <description>&lt;h2 id=&quot;오늘-공부한-내용&quot;&gt;오늘 공부한 내용&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;은행 창구 프로젝트&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;as를 통한 type casting과 initializer를 통한 타입 변환이 서로 다르단 것을 다시 한 번 인지했습니다.&lt;/p&gt;
-
-        &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userInput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;inputNumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* input as? Int와는 전혀 다른 문법 */&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;은행창구 프로젝트에 POP를 적용하기 위해 팀원과 노력했습니다.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;해당 과정은 PR메세지와 README에 기록될 것 같습니다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Tue, 27 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/til/2021.04.27-TIL/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/til/2021.04.27-TIL/</guid>
-        
-        <category>TIL</category>
-        
-        
-        <category>TIL</category>
         
       </item>
     

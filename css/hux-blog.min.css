@@ -280,6 +280,9 @@ button.paper-button {
   margin: 16px;
   border-radius: 2px;
 }
+pre {
+  overflow: visible;
+}
 .highlight,
 pre.highlight {
   background: #282c34;

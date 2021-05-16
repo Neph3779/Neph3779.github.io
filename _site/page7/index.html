@@ -255,7 +255,88 @@
             ">
     			
 <div class="post-preview">
-    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/1-%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6%E1%84%85%E1%85%A1%E1%86%AB-%E1%84%86%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%BA%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%80%E1%85%A1/">
+    <a href="/til/2021.03.16-TIL/">
+        <h2 class="post-title">
+            2021년 03월 16일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+Weak 과 strong 무슨 차이이며 왜 @IBOutlet의 디폴트는 weak 일까?
+
+Swift에선 Reference Count (이하 RC)가 0이 되면 메모리를 해제 시켜줍니다. Automatic reference counting(ARC)이라는 훌륭한 자동 메모리 관리를 통해 메모리 관련 문제를 대부분 해결해줍니다.
+
+하지만...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        16, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/swift%20memo/Swift-Weak/">
+        <h2 class="post-title">
+            Swift Weak
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            강한참조 vs 약한참조
+
+ARC는 컴파일 시점에 retain release와 같은 메모리 관리 메소드를 자동으로 삽입해줌. 가비지 컬렉터와 달리 참조사이클을 자동으로 처리하지 않기 때문에 객체에 강한 참조가 남아있다면 해당 객체는 메모리 해제가 되지 않음
+
+따라서 서로 다른 객체가 서로를 강하게 참조하면 순환참조가 발생해 메모리 누수(Leak)가 발생...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        16, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.03.15-TIL/">
+        <h2 class="post-title">
+            2021년 03월 15일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            공부한 내용
+
+
+  
+    클로저
+  
+  
+    앱이 시작되면 어떤 일이 벌어지는걸까? UIApplication, @main 함수, entry point에 관해서
+
+    
+      https://swiftrocks.com/entry-points-swift-uiapplicationmain-main
+    
+  
+  
+    extension의 ...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        15, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/1-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/">
         <h2 class="post-title">
             [#1] 운영체제란 무엇인가
         </h2>
@@ -423,7 +504,7 @@
 <hr>
 
 <div class="post-preview">
-    <a href="/project%20review/%E1%84%80%E1%85%A1%E1%84%8B%E1%85%B1%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B1%E1%84%87%E1%85%A9-%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3-%E1%84%85%E1%85%B5%E1%84%87%E1%85%B2/">
+    <a href="/project%20review/%EA%B0%80%EC%9C%84%EB%B0%94%EC%9C%84%EB%B3%B4-%EA%B2%8C%EC%9E%84-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A6%AC%EB%B7%B0/">
         <h2 class="post-title">
             가위바위보 게임 프로젝트 리뷰
         </h2>
@@ -485,96 +566,6 @@ PR #26 Step1 가위바위보 클래스 설계
     <p class="post-meta">
         Posted by Neph's Blog on March
         8, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.03.06-TIL/">
-        <h2 class="post-title">
-            2021년 03월 06일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  타입 프로퍼티와 연산자 프로퍼티에 대해 공부했습니다.
-    
-      get과 set의 역할에 대해 알아봤습니다.
-      willSet과 didSet은 어떨 때 쓰는 것인지에 대해 궁금해서 알아본 결과 이 링크에서 적합한 답을 찾을 수 있었습니다.
-    
-  
-  플로우차트 그리는 법에 대해 공부하고 이를 포스팅 했습...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        6, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/swift/FlowChart/">
-        <h2 class="post-title">
-            플로우차트(Flow Chart) 그리는법
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            안녕하세요! Neph🌱입니다!! 😆😆
-
-오늘은 Flow Chart를 그리는 방법에 대해 알아볼거에요~
-
-
-
-혼자서 작업하는 경우나 단기간동안만 사용할 프로그램을 만들 때는 플로우차트가 굳이 필요하지 않을지도 모릅니다.
-
-하지만 플로우차트로 프로그램 동작과정의 큰 틀을 잡아놓는다면 후에 자신의 코드를 타인이 보게 되는 경우, 혹은 자신이 짠 코드를 다시...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        6, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.03.05-TIL/">
-        <h2 class="post-title">
-            2021년 03월 05일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  
-    Optional Chaining에 대해 자세히 공부했습니다.
-  
-  
-    “묵찌빠 게임 프로젝트”의 2차 피드백을 반영했습니다
-
-    
-      
-        접근제어 지정자에 대해 공부했습니다
-
-        
-          private
-          fileprivate
-          int...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        5, 2021
     </p>
 </div>
 <hr>
@@ -667,53 +658,53 @@ PR #26 Step1 가위바위보 클래스 설계
             
         
             
-            <a data-sort="0046"
+            <a data-sort="0048"
                 href="/archive/?tag=TIL" title="TIL"
-                rel="35">TIL</a>
+                rel="36">TIL</a>
             
             
             
-            <a data-sort="0068"
+            <a data-sort="0070"
                 href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
-                rel="13">운영체제</a>
+                rel="14">운영체제</a>
             
-            <a data-sort="0069"
+            <a data-sort="0071"
                 href="/archive/?tag=OS" title="OS"
-                rel="12">OS</a>
+                rel="13">OS</a>
             
-            <a data-sort="0074"
+            <a data-sort="0077"
                 href="/archive/?tag=Swift" title="Swift"
                 rel="7">Swift</a>
             
-            <a data-sort="0074"
+            <a data-sort="0077"
                 href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
                 rel="7">Yagom-Academy</a>
             
-            <a data-sort="0077"
+            <a data-sort="0080"
                 href="/archive/?tag=iOS" title="iOS"
                 rel="4">iOS</a>
             
-            <a data-sort="0078"
+            <a data-sort="0081"
                 href="/archive/?tag=enum" title="enum"
                 rel="3">enum</a>
             
-            <a data-sort="0079"
+            <a data-sort="0082"
                 href="/archive/?tag=Flow+chart" title="Flow chart"
                 rel="2">Flow chart</a>
             
-            <a data-sort="0079"
+            <a data-sort="0082"
                 href="/archive/?tag=Protocol" title="Protocol"
                 rel="2">Protocol</a>
             
-            <a data-sort="0079"
+            <a data-sort="0082"
                 href="/archive/?tag=Scroll+View" title="Scroll View"
                 rel="2">Scroll View</a>
             
-            <a data-sort="0079"
+            <a data-sort="0082"
                 href="/archive/?tag=UML" title="UML"
                 rel="2">UML</a>
             
-            <a data-sort="0079"
+            <a data-sort="0082"
                 href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
                 rel="2">Yagom Academy</a>
     </div>

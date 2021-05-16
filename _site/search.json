@@ -1,6 +1,22 @@
 [
   
     {
+      "title"    : "[#13] 메모리 관리-2",
+      "subtitle" : "",
+      "tags"     : "운영체제, OS",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/13-Memory-Management-2/",
+      "date"     : "2021-05-16 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "2021년 05월 13일 공부일지",
+      "subtitle" : "",
+      "tags"     : "",
+      "url"      : "/2021.05.13-TIL/",
+      "date"     : "2021-05-13 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "HTTP 기본 개념 정리 with swift",
       "subtitle" : "",
       "tags"     : "HTTP, multipart/form-data",
@@ -12,8 +28,16 @@
       "title"    : "2021년 05월 10, 11일 공부일지",
       "subtitle" : "",
       "tags"     : "TIL",
-      "url"      : "/til/2021.05.10,11-TIL/",
+      "url"      : "/til/2021.05.11-TIL/",
       "date"     : "2021-05-11 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "2021년 05월 10일 공부일지",
+      "subtitle" : "",
+      "tags"     : "TIL",
+      "url"      : "/til/2021.05.10-TIL/",
+      "date"     : "2021-05-10 00:00:00 +0900"
     } ,
   
     {
@@ -92,7 +116,7 @@
       "title"    : "[#10] 프로세스 동기화-3",
       "subtitle" : "",
       "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/10-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5%E1%84%92%E1%85%AA-3/",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/10-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EB%8F%99%EA%B8%B0%ED%99%94-3/",
       "date"     : "2021-04-25 00:00:00 +0900"
     } ,
   
@@ -108,7 +132,7 @@
       "title"    : "[#9] 프로세스 동기화-2",
       "subtitle" : "",
       "tags"     : "OS, 운영체제",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/9-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5%E1%84%92%E1%85%AA-2/",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/9-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EB%8F%99%EA%B8%B0%ED%99%94-2/",
       "date"     : "2021-04-18 00:00:00 +0900"
     } ,
   
@@ -140,7 +164,7 @@
       "title"    : "[#8] 프로세스 동기화-1",
       "subtitle" : "",
       "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/8-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5%E1%84%92%E1%85%AA-1/",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/8-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EB%8F%99%EA%B8%B0%ED%99%94-1/",
       "date"     : "2021-04-11 00:00:00 +0900"
     } ,
   
@@ -148,7 +172,7 @@
       "title"    : "[#7] CPU 스케쥴링-2",
       "subtitle" : "",
       "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/7-CPU-%E1%84%89%E1%85%B3%E1%84%8F%E1%85%A6%E1%84%8C%E1%85%B2%E1%86%AF%E1%84%85%E1%85%B5%E1%86%BC-2/",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/7-CPU-%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%A7%81-2/",
       "date"     : "2021-04-11 00:00:00 +0900"
     } ,
   
@@ -188,7 +212,7 @@
       "title"    : "[#6] CPU 스케쥴링-1",
       "subtitle" : "",
       "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/6-CPU-%E1%84%89%E1%85%B3%E1%84%8F%E1%85%A6%E1%84%8C%E1%85%B2%E1%86%AF%E1%84%85%E1%85%B5%E1%86%BC-1/",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/6-CPU-%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%A7%81-1/",
       "date"     : "2021-04-05 00:00:00 +0900"
     } ,
   
@@ -196,7 +220,7 @@
       "title"    : "[#5] 프로세스 관리 - 2",
       "subtitle" : "",
       "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/5-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5-2/",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/5-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EA%B4%80%EB%A6%AC-2/",
       "date"     : "2021-04-05 00:00:00 +0900"
     } ,
   
@@ -236,7 +260,7 @@
       "title"    : "Swift Lint 적용기",
       "subtitle" : "",
       "tags"     : "SwiftLint, CocoaPods",
-      "url"      : "/swift/Swift-Lint-%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%80%E1%85%B5/",
+      "url"      : "/swift/Swift-Lint-%EC%A0%81%EC%9A%A9%EA%B8%B0/",
       "date"     : "2021-03-30 00:00:00 +0900"
     } ,
   
@@ -252,7 +276,7 @@
       "title"    : "[#4] 프로세스 관리 - 1",
       "subtitle" : "",
       "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/4-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5/",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/4-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EA%B4%80%EB%A6%AC/",
       "date"     : "2021-03-28 00:00:00 +0900"
     } ,
   
@@ -276,7 +300,7 @@
       "title"    : "새로운 지식을 나의 것으로 만드는 방법(Zedd)",
       "subtitle" : "",
       "tags"     : "Zedd",
-      "url"      : "/%EC%9D%BC%EC%83%81/%E1%84%89%E1%85%A2%E1%84%85%E1%85%A9%E1%84%8B%E1%85%AE%E1%86%AB-%E1%84%8C%E1%85%B5%E1%84%89%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%B3%E1%86%AF-%E1%84%82%E1%85%A1%E1%84%8B%E1%85%B4-%E1%84%80%E1%85%A5%E1%86%BA%E1%84%8B%E1%85%B3%E1%84%85%E1%85%A9-%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%84%82%E1%85%B3%E1%86%AB-%E1%84%87%E1%85%A1%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8/",
+      "url"      : "/%EC%9D%BC%EC%83%81/%EC%83%88%EB%A1%9C%EC%9A%B4-%EC%A7%80%EC%8B%9D%EC%9D%84-%EB%82%98%EC%9D%98-%EA%B2%83%EC%9C%BC%EB%A1%9C-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B0%A9%EB%B2%95/",
       "date"     : "2021-03-23 00:00:00 +0900"
     } ,
   
@@ -292,7 +316,7 @@
       "title"    : "[작성중] Swift 프로토콜(Protocol) 정리",
       "subtitle" : "",
       "tags"     : "Protocol, Delegation pattern",
-      "url"      : "/swift/Swift-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF/",
+      "url"      : "/swift/Swift-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C/",
       "date"     : "2021-03-23 00:00:00 +0900"
     } ,
   
@@ -300,7 +324,7 @@
       "title"    : "Swift의 메서드 종류",
       "subtitle" : "",
       "tags"     : "메서드",
-      "url"      : "/swift%20memo/Swift-%E1%84%86%E1%85%A6%E1%84%89%E1%85%A5%E1%84%83%E1%85%B3/",
+      "url"      : "/swift%20memo/Swift-%EB%A9%94%EC%84%9C%EB%93%9C/",
       "date"     : "2021-03-23 00:00:00 +0900"
     } ,
   
@@ -308,7 +332,7 @@
       "title"    : "Swift 가변(Variadic) 매개변수",
       "subtitle" : "",
       "tags"     : "Variadic, 가변 매개변수",
-      "url"      : "/swift%20memo/Swift-%E1%84%80%E1%85%A1%E1%84%87%E1%85%A7%E1%86%AB-%E1%84%86%E1%85%A2%E1%84%80%E1%85%A2%E1%84%87%E1%85%A7%E1%86%AB%E1%84%89%E1%85%AE/",
+      "url"      : "/swift%20memo/Swift-%EA%B0%80%EB%B3%80-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98/",
       "date"     : "2021-03-23 00:00:00 +0900"
     } ,
   
@@ -348,7 +372,7 @@
       "title"    : "이니셜라이저 종류",
       "subtitle" : "",
       "tags"     : "initializer",
-      "url"      : "/swift%20memo/Swift-%E1%84%8B%E1%85%B5%E1%84%82%E1%85%B5%E1%84%89%E1%85%A7%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%A5/",
+      "url"      : "/swift%20memo/Swift-%EC%9D%B4%EB%8B%88%EC%85%9C%EB%9D%BC%EC%9D%B4%EC%A0%80/",
       "date"     : "2021-03-22 00:00:00 +0900"
     } ,
   
@@ -356,7 +380,7 @@
       "title"    : "Swift is as? as!",
       "subtitle" : "",
       "tags"     : "is, as",
-      "url"      : "/swift%20memo/Swift-is-%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%86%AB%E1%84%8C%E1%85%A1-as-%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%86%AB%E1%84%8C%E1%85%A1/",
+      "url"      : "/swift%20memo/Swift-is-%EC%97%B0%EC%82%B0%EC%9E%90-as-%EC%97%B0%EC%82%B0%EC%9E%90/",
       "date"     : "2021-03-22 00:00:00 +0900"
     } ,
   
@@ -364,7 +388,7 @@
       "title"    : "[#3] 프로그램의 구조와 실행",
       "subtitle" : "",
       "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/3-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B7%E1%84%8B%E1%85%B4-%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9%E1%84%8B%E1%85%AA-%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC/",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/3-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EC%9D%98-%EA%B5%AC%EC%A1%B0%EC%99%80-%EC%8B%A4%ED%96%89/",
       "date"     : "2021-03-21 00:00:00 +0900"
     } ,
   
@@ -372,7 +396,7 @@
       "title"    : "[#2] 컴퓨터 시스템의 동작 원리",
       "subtitle" : "",
       "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/2-%E1%84%8F%E1%85%A5%E1%86%B7%E1%84%91%E1%85%B2%E1%84%90%E1%85%A5-%E1%84%89%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%B7%E1%84%8B%E1%85%B4-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%8C%E1%85%A1%E1%86%A8-%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%85%E1%85%B5/",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/2-%EC%BB%B4%ED%93%A8%ED%84%B0-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98-%EB%8F%99%EC%9E%91-%EC%9B%90%EB%A6%AC/",
       "date"     : "2021-03-21 00:00:00 +0900"
     } ,
   
@@ -388,7 +412,7 @@
       "title"    : "Swift 동기, 비동기, Dispatch Queue",
       "subtitle" : "",
       "tags"     : "Dispatch, 동기, 비동기",
-      "url"      : "/swift%20memo/Swift-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5-%E1%84%87%E1%85%B5%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5/",
+      "url"      : "/swift%20memo/Swift-%EB%8F%99%EA%B8%B0-%EB%B9%84%EB%8F%99%EA%B8%B0/",
       "date"     : "2021-03-20 00:00:00 +0900"
     } ,
   
@@ -396,7 +420,7 @@
       "title"    : "Swift View 형성과정",
       "subtitle" : "",
       "tags"     : "View 형성, RootViewController",
-      "url"      : "/swift%20memo/Swift-View-%E1%84%89%E1%85%A2%E1%86%BC%E1%84%86%E1%85%A7%E1%86%BC%E1%84%8C%E1%85%AE%E1%84%80%E1%85%B5/",
+      "url"      : "/swift%20memo/Swift-View-%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0/",
       "date"     : "2021-03-20 00:00:00 +0900"
     } ,
   
@@ -420,7 +444,7 @@
       "title"    : "Swift heap stack class struct",
       "subtitle" : "",
       "tags"     : "heap, stack, class, struct",
-      "url"      : "/swift%20memo/Swift-%E1%84%89%E1%85%A5%E1%86%BC%E1%84%82%E1%85%B3%E1%86%BC/",
+      "url"      : "/swift%20memo/Swift-%EC%84%B1%EB%8A%A5/",
       "date"     : "2021-03-19 00:00:00 +0900"
     } ,
   
@@ -428,7 +452,7 @@
       "title"    : "쥬스메이커 프로젝트 리뷰",
       "subtitle" : "",
       "tags"     : "Yagom Academy",
-      "url"      : "/project%20review/%E1%84%8C%E1%85%B2%E1%84%89%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8F%E1%85%A5-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3-%E1%84%85%E1%85%B5%E1%84%87%E1%85%B2/",
+      "url"      : "/project%20review/%EC%A5%AC%EC%8A%A4%EB%A9%94%EC%9D%B4%EC%BB%A4-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A6%AC%EB%B7%B0/",
       "date"     : "2021-03-19 00:00:00 +0900"
     } ,
   
@@ -436,7 +460,7 @@
       "title"    : "[#1] 네트워크의 개념과 프로토콜",
       "subtitle" : "",
       "tags"     : "network",
-      "url"      : "/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/1-%E1%84%82%E1%85%A6%E1%84%90%E1%85%B3%E1%84%8B%E1%85%AF%E1%84%8F%E1%85%B3%E1%84%8B%E1%85%B4-%E1%84%80%E1%85%A2%E1%84%82%E1%85%A7%E1%86%B7%E1%84%80%E1%85%AA-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF/",
+      "url"      : "/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C/",
       "date"     : "2021-03-18 00:00:00 +0900"
     } ,
   
@@ -484,7 +508,7 @@
       "title"    : "[#1] 운영체제란 무엇인가",
       "subtitle" : "",
       "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/1-%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6%E1%84%85%E1%85%A1%E1%86%AB-%E1%84%86%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%BA%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%80%E1%85%A1/",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/1-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/",
       "date"     : "2021-03-14 00:00:00 +0900"
     } ,
   
@@ -524,7 +548,7 @@
       "title"    : "가위바위보 게임 프로젝트 리뷰",
       "subtitle" : "",
       "tags"     : "Yagom Academy, Projects",
-      "url"      : "/project%20review/%E1%84%80%E1%85%A1%E1%84%8B%E1%85%B1%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B1%E1%84%87%E1%85%A9-%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3-%E1%84%85%E1%85%B5%E1%84%87%E1%85%B2/",
+      "url"      : "/project%20review/%EA%B0%80%EC%9C%84%EB%B0%94%EC%9C%84%EB%B3%B4-%EA%B2%8C%EC%9E%84-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A6%AC%EB%B7%B0/",
       "date"     : "2021-03-09 00:00:00 +0900"
     } ,
   
