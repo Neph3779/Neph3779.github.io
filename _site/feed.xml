@@ -5,9 +5,347 @@
     <description>Write code with my soul.</description>
     <link>https://neph3779.github.io/</link>
     <atom:link href="https://neph3779.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 17 May 2021 01:22:09 +0900</pubDate>
-    <lastBuildDate>Mon, 17 May 2021 01:22:09 +0900</lastBuildDate>
+    <pubDate>Sun, 23 May 2021 21:24:50 +0900</pubDate>
+    <lastBuildDate>Sun, 23 May 2021 21:24:50 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[#14] 가상 메모리</title>
+        <description>&lt;h2 id=&quot;demand-paging&quot;&gt;Demand Paging&lt;/h2&gt;
+
+&lt;h3 id=&quot;요구-페이징의-원리&quot;&gt;요구 페이징의 원리&lt;/h3&gt;
+
+&lt;p&gt;요구 페이징: 모든 페이지를 한꺼번에 메모리에 올리는게 아닌 당장 사용될 페이지만 올리는 방식&lt;/p&gt;
+
+&lt;p&gt;CPU가 특정 페이지를 요청하면 그 때 해당 페이지를 메모리에 적재&lt;/p&gt;
+
+&lt;p&gt;요구페이징의 이점: 메모리 사용량 감소, 메모리에 올리는데 소요되는 오버헤드 감소&lt;/p&gt;
+
+&lt;p&gt;어떤 페이지가 메모리에 존재하고 어떤 페이지가 스왑 영역에 존재하는지 알기 위해 페이지 테이블의 유효-무효 비트를 둠&lt;/p&gt;
+
+&lt;h3 id=&quot;page-fault--처리&quot;&gt;Page Fault  처리&lt;/h3&gt;
+
+&lt;p&gt;Page Fault: 참조를 시도했는데 페이지 테이블의 유효-무효 비트가 “무효”인 경우에 발생하는 오류&lt;/p&gt;
+
+&lt;p&gt;Page Fault가 발생하면 페이지 부재 트랩이 발생하며 디스크에서 부재 페이지를 빈 프레임으로 적재하고 페이지 테이블을 업데이트 함, 이 작업은 오래걸리기 때문에 CPU 빼앗기고 봉쇄상태에 진입&lt;/p&gt;
+
+&lt;h3 id=&quot;요구-페이징의-성능&quot;&gt;요구 페이징의 성능&lt;/h3&gt;
+
+&lt;p&gt;Page Fault가 적을수록 좋은 알고리즘&lt;/p&gt;
+
+&lt;p&gt;요구 페이징의 성능척도: 유효 접근시간&lt;/p&gt;
+
+&lt;p&gt;유효 접근시간 = (1-P) * 메모리 접근시간 + P * (페이지 부재 발생 처리 오버헤드 + 메모리에 빈 프레임이 없는 경우 스왑 아웃 오버헤드 + 요청된 페이지의 스왑 인 오버헤드 + 프로세스의 재시작 오버헤드)&lt;/p&gt;
+
+&lt;p&gt;여기서 P는 Page Fault 발생비율&lt;/p&gt;
+
+&lt;h2 id=&quot;page-replacement&quot;&gt;Page Replacement&lt;/h2&gt;
+
+&lt;p&gt;페이지 부재가 발생했을 때 부재하는 페이지를 디스크로부터 읽어와서 메모리(프레임)에 적재해야 함&lt;/p&gt;
+
+&lt;p&gt;근데 이 때 물리적 메모리에 빈 프레임이 없을 수도 있음&lt;/p&gt;
+
+&lt;p&gt;이럴 때 페이지 중 하나를 디스크로 쫓아낸 뒤에 읽어와야 됨&lt;/p&gt;
+
+&lt;p&gt;이걸 페이지 교체라고 함&lt;/p&gt;
+
+&lt;p&gt;어떤 페이지를 쫓아낼건지를 결정하는 알고리즘을 교체 알고리즘이라 함&lt;/p&gt;
+
+&lt;h3 id=&quot;최적-페이지-교체&quot;&gt;최적 페이지 교체&lt;/h3&gt;
+
+&lt;p&gt;빌레디의 최적 알고리즘은 알고리즘의 성능에 대한 상한선을 제공함&lt;/p&gt;
+
+&lt;p&gt;빌레디의 최적 알고리즘은 미래에 어떤 페이지가 어떠한 순서로 참조될지 미리 알고 있다는 전제하에 알고리즘을 운영함&lt;/p&gt;
+
+&lt;p&gt;따라서 오프라인에 최적화된 알고리즘이며 온라인에는 부적합함&lt;/p&gt;
+
+&lt;p&gt;알고리즘의 동작 방식은 가장 먼 미래에 참조될 페이지를 내쫓는 것&lt;/p&gt;
+
+&lt;h3 id=&quot;fifo&quot;&gt;FIFO&lt;/h3&gt;
+
+&lt;p&gt;가장 먼저 올라온 페이지를 내쫓는 알고리즘&lt;/p&gt;
+
+&lt;h3 id=&quot;lru&quot;&gt;LRU&lt;/h3&gt;
+
+&lt;p&gt;시간지역성: 최근에 참조된 페이지가 가까운 미래에 다시 참조될 가능성이 높은 성질&lt;/p&gt;
+
+&lt;p&gt;LRU 알고리즘에서는 가장 오래전에 참조된 페이지를 쫓아냄&lt;/p&gt;
+
+&lt;h3 id=&quot;lfu&quot;&gt;LFU&lt;/h3&gt;
+
+&lt;p&gt;페이지의 참조 횟수로 교체시킬 페이지를 결정함&lt;/p&gt;
+
+&lt;p&gt;물리적 메모리 내에 존재하는 페이지 중 과거에 참조된 횟수가 가장 적은 것을 내쫓음&lt;/p&gt;
+
+&lt;p&gt;같은 횟수를 가진 것들이 있다면 상대적으로 오래 전에 참조된 것을 내쫓는 것이 효율적&lt;/p&gt;
+
+&lt;p&gt;LFU는 Incache-LFU와 Perfect-LFU로 나뉨&lt;/p&gt;
+
+&lt;p&gt;Incache-LFU는 물리적 메모리에 올라온 시점을 기준으로 1부터 count함 (내쫓기기 이전 기록 없음)&lt;/p&gt;
+
+&lt;p&gt;Perfect-LFU는 메모리에 올라와있는지에 관계없이 과거 이력만 가지고 내쫓을 것 선정함 (기록보관으로 인한 오버헤드 큼)&lt;/p&gt;
+
+&lt;p&gt;LFU는 LRU보다 오랜 시간 동안의 참조 기록을 반영할 수 있다는 장점 있음&lt;/p&gt;
+
+&lt;p&gt;하지만 시간에 따른 페이지 참조의 변화를 반영할 수 없고 LRU에 비해 구현이 복잡함&lt;/p&gt;
+
+&lt;h3 id=&quot;clock&quot;&gt;Clock&lt;/h3&gt;
+
+&lt;p&gt;LRU와 LFU는 참조 시각, 참조 횟수를 유지하고 비교해야 하므로 알고리즘의 운영에 시간적 오버헤드 발생함&lt;/p&gt;
+
+&lt;p&gt;클럭 알고리즘은 하드웨어의 도움을 받아 이것을 줄임&lt;/p&gt;
+
+&lt;p&gt;클럭 알고리즘은 LRU를 근사시킨 알고리즘으로 NotUsedRecently, NotRecentlyUsed 알고리즘이라고도 불림&lt;/p&gt;
+
+&lt;p&gt;최근에 참조되지 않은 페이지를 교체 대상으로 선정하는 것은 LRU와 유사하지만 교체되는 페이지의 참조 시점이 가장 오래되었다는 것을 보장하지는 못함&lt;/p&gt;
+
+&lt;p&gt;하지만 대신 하드웨어의 도움을 받으므로 빠르고 효율적, 이러한 이유로 대부분의 클럭 알고리즘을 사용함&lt;/p&gt;
+
+&lt;p&gt;클럭 알고리즘은 교체 페이지 선정을 위해 페이지 프레임들의 참조비트를 순차적으로 조사함&lt;/p&gt;
+
+&lt;p&gt;참조 비트는 각 프레임마다 하나씩 존재하며 참조될 때 1로 세팅됨&lt;/p&gt;
+
+&lt;p&gt;클럭이 돌 때 1인건 0으로 바꾸고 지나가고 0인거 발견하면 그것을 교체함&lt;/p&gt;
+
+&lt;p&gt;간단히 말해서 시계바늘 한바퀴 돌아가는 동안 참조 안된 페이지 있으면 그걸 교체하는 방식&lt;/p&gt;
+
+&lt;h2 id=&quot;page-frame-allocation&quot;&gt;Page Frame Allocation&lt;/h2&gt;
+
+&lt;p&gt;멀티 프로세스 환경에서는 각 프로세스에 얼마만큼의 메모리 공간을 할당할 것인지 결정해야함&lt;/p&gt;
+
+&lt;h3 id=&quot;균등할당&quot;&gt;균등할당&lt;/h3&gt;
+
+&lt;p&gt;모든 프로세스에게 페이지 프레임을 균등하게 할당하는 방식&lt;/p&gt;
+
+&lt;h3 id=&quot;비례할당&quot;&gt;비례할당&lt;/h3&gt;
+
+&lt;p&gt;프로세스의 크기에 비례해 할당하는 방식&lt;/p&gt;
+
+&lt;h3 id=&quot;우선순위-할당&quot;&gt;우선순위 할당&lt;/h3&gt;
+
+&lt;p&gt;당장 CPU에서 실행될 프로세스에 더 많은 프레임을 할당하는 방식&lt;/p&gt;
+
+&lt;p&gt;이런 알고리즘만 가지고는 페이지의 참조 특성을 제대로 반영하지 못할 수 있음&lt;/p&gt;
+
+&lt;p&gt;반복문 구성시에는 모든 페이지를 한꺼번에 올리는게 좋은데, 반복문을 구성하는 수보다 적은 양의 프레임을 할당한다면 매 반복마다 적어도 한 번 이상의 페이지 부재가 발생하기 때문&lt;/p&gt;
+
+&lt;p&gt;최소한으로 필요한 메모리 양은 시간에 따라 달라질 수 있으므로 이를 고려하여 각 프로세스에 할당되는 페이지 프레임의 수를 결정할 필요가 있음&lt;/p&gt;
+
+&lt;h2 id=&quot;global-replacement--local-replacement&quot;&gt;Global Replacement &amp;amp; Local Replacement&lt;/h2&gt;
+
+&lt;p&gt;전역교체는 모든 페이지의 프레임이 교체대상이 될 수 있는 방법&lt;/p&gt;
+
+&lt;p&gt;지역교체는 현재 수행중인 프로세스에게 할당된 프레임 내에서만 교체될 수 있는 방법&lt;/p&gt;
+
+&lt;p&gt;지역교체 방법은 프로세스마다 페이지 프레임을 미리 할당하는 것을 전제로 함&lt;/p&gt;
+
+&lt;p&gt;전역교체 방법은 프로세스마다 메모리를 할당하는 것이 아니라 전체 메모리를 각 프로세스가 공유해서 사용하고 교체 알고리즘에 근거해서 할당되는 메모리 양이 가변적으로 변하는 방식&lt;/p&gt;
+
+&lt;p&gt;LRU, LFU를 프로세스별로 운영하면 지역교체 방법을 사용하게 되는 것, 그냥 이용하면 전역교체 방법을 사용하게 되는 것&lt;/p&gt;
+
+&lt;h2 id=&quot;thrasing&quot;&gt;Thrasing&lt;/h2&gt;
+
+&lt;p&gt;스레싱: 참조되는 페이지들의 집합을 메모리에 한꺼번에 적재하지 못해 CPU 이용률이 떨어지는 현상&lt;/p&gt;
+
+&lt;p&gt;CPU 이용률이 낮다는 것은 준비 큐가 비는 경우가 발생한다는 것&lt;/p&gt;
+
+&lt;p&gt;MPD: 메모리에 동시에 올라가 있는 프로세스의 수 (= 다중 프로그래밍의 정도)&lt;/p&gt;
+
+&lt;p&gt;CPU 이용률이 낮다? MPD를 높이면 됨&lt;/p&gt;
+
+&lt;p&gt;하지만 MPD가 과도하게 높아지면 각 프로세스에게 할당되는 메모리 지나치게 감소함&lt;/p&gt;
+
+&lt;p&gt;MPD를 적절히 조절해서 CPU이용률을 높이는 알고리즘에는 워킹셋, 페이지 부재 빈도 알고리즘이 있음&lt;/p&gt;
+
+&lt;h3 id=&quot;워킹셋-알고리즘&quot;&gt;워킹셋 알고리즘&lt;/h3&gt;
+
+&lt;p&gt;참조되는 페이지들의 집합을 지역성 집합이라 함&lt;/p&gt;
+
+&lt;p&gt;이러한 지역성 집합(워킹셋)을 동시에 올리도록 하는 알고리즘이 워킹셋 알고리즘&lt;/p&gt;
+
+&lt;p&gt;워킹셋 윈도우내의 모든 페이지를 메모리에 올려놓음&lt;/p&gt;
+
+&lt;p&gt;윈도우가 너무 크면 MPD가 감소하여 CPU 이용률이 낮아짐&lt;/p&gt;
+
+&lt;p&gt;윈도우가 너무 작으면 지역성 집합을 모두 수용하지 못할 수 있음&lt;/p&gt;
+
+&lt;h3 id=&quot;페이지-부재-빈도-알고리즘&quot;&gt;페이지 부재 빈도 알고리즘&lt;/h3&gt;
+
+&lt;p&gt;페이지 부재율을 주기적으로 조사하고 이 값에 근거해서 프로세스에 할당할 메모리 양을 동적으로 결정하는 알고리즘&lt;/p&gt;
+
+&lt;p&gt;미리 정해놓은 부재 상한선을 넘으면 더 많은 프레임을 추가로 할당해줌&lt;/p&gt;
+
+&lt;p&gt;미리 정해놓은 하한값보다 내려가면 올라가 있는 프레임을 스왑아웃 시킴&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 23 May 2021 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/14-Virtual-Memory-2/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/14-Virtual-Memory-2/</guid>
+        
+        <category>운영체제</category>
+        
+        <category>OS</category>
+        
+        
+        <category>운영체제</category>
+        
+      </item>
+    
+      <item>
+        <title>2021년 05월 17일, 18일 공부일지</title>
+        <description>&lt;h2 id=&quot;공부한-내용&quot;&gt;공부한 내용&lt;/h2&gt;
+
+&lt;h3 id=&quot;collection-view에-대해-공부&quot;&gt;Collection View에 대해 공부&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CollectionView의 Cell vs TableView의 Cell
+    &lt;ul&gt;
+      &lt;li&gt;테이블뷰 셀의 구조는 콘텐츠 영역과 액세서리뷰 영역으로 나뉘었지만, 컬렉션뷰 셀은 배경뷰와 실제 콘텐츠를 나타내는 콘텐츠뷰로 나뉘어 있음&lt;/li&gt;
+      &lt;li&gt;테이블뷰 셀은 목록형태로만 레이아웃 되지만, 컬렉션뷰 셀은 다양한 레이아웃을 지원&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;protocol을-통한-커플링-제거-및-네트워크-테스트&quot;&gt;Protocol을 통한 커플링 제거 및 네트워크 테스트&lt;/h3&gt;
+
+&lt;p&gt;지난 Bank Manager 프로젝트에서 처음으로 시도해봤던 Protocol을 통한 객체간의 책임분리를 이번 Open Market 프로젝트에서도 시도해봤다. 방식은 지난번과 동일하게 객체의 책임을 분리한 뒤 빈 껍데기에 가까운 protocol을 채택하여 test해야하는 메서드를 요구사항으로 가지고 있으면 protocol을 채택하는 Mock객체를 만들어서 독립적인 테스트를 진행해줄 수 있었다.&lt;/p&gt;
+
+&lt;p&gt;다만 이번에는 기존에 있던 type (URLSession)의 dataTask에 의존하지 않고 독립적으로 테스트하기 위해 extension을 통해 URLSessionProtocol이라는 protocol을 URLSession이 채택하도록 하였다. 활용 양상은 다음과 같다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;protocol&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URLSessionProtocol&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;dataTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URLRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                  &lt;span class=&quot;nv&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;@escaping&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URLResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URLSessionDataTask&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URLSession&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URLSessionProtocol&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;URLSessionProtocol은 request를 통해 dataTask를 반환하던 dataTask 메서드를 요구사항으로 가지게 하여 dataTask가 빈 껍데기처럼 쓰일 수 있도록 (독립적인 테스트를 위해) 하였다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;이번 프로젝트에서는 &lt;a href=&quot;https://github.com/Alamofire/Alamofire/tree/master/Source&quot;&gt;Alamofire의 소스코드&lt;/a&gt;도 많이 참고했다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;싱글톤-패턴의-장단점&quot;&gt;싱글톤 패턴의 장단점&lt;/h3&gt;
+
+&lt;h4 id=&quot;장점&quot;&gt;장점&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;메모리 낭비를 방지할 수 있다.&lt;/li&gt;
+  &lt;li&gt;서로 다른 객체들이 데이터를 공유하기 쉽다.&lt;/li&gt;
+  &lt;li&gt;객체 로딩 시간이 줄어든다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;단점&quot;&gt;단점&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;thread unsafe하다.&lt;/li&gt;
+  &lt;li&gt;개방 폐쇄 원칙, 단일 책임 원칙 등을 위배하여 Test하기가 까다로워진다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;any가-nil인지-체크하는-방법&quot;&gt;Any가 nil인지 체크하는 방법&lt;/h3&gt;
+
+&lt;p&gt;Any와 Optional&amp;lt;Any&amp;gt;가 구분되어 있음에도 불구하고 Any에는 nil이 들어갈 수 있다.&lt;/p&gt;
+
+&lt;p&gt;그렇다면 Any에 들어있는 값이 nil인지는 어떻게 체크해야할까?&lt;/p&gt;
+
+&lt;p&gt;if case 라는 구문을 통해 실마리를 잡을 수 있었다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Optional&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;none&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;b is nil!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;if case 구문은 enum type에서 하나의 case만 검사하는 구문이다&lt;/p&gt;
+
+&lt;p&gt;쓸 일이 많지는 않겠지만 알아둬서 나쁠건 없으니.. 정리..&lt;/p&gt;
+
+&lt;h3 id=&quot;클로저-캡쳐에-대해서&quot;&gt;클로저 캡쳐에 대해서&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://alisoftware.github.io/swift/closures/2016/07/25/closure-capture-1/&quot;&gt;글1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://velog.io/@kimdo2297/%ED%81%B4%EB%A1%9C%EC%A0%B8-%EC%BA%A1%EC%B3%90%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-about-closure-capture&quot;&gt;글2&lt;/a&gt; (댓글에 반가운 얼굴들이..)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.swift.org/swift-book/LanguageGuide/Closures.html#ID103&quot;&gt;공식문서(swift.org)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;잡다하게-알게된-내용들&quot;&gt;잡다하게 알게된 내용들&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;HIG에서 switch는 table row에서만 사용할 것을 요구하고 있다. (wow) (&lt;a href=&quot;https://developer.apple.com/design/human-interface-guidelines/ios/controls/switches/&quot;&gt;해당문서 링크&lt;/a&gt;)&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;Use switches in table rows only. Switches are intended for use in tables, such as in a list of settings that can be toggled on and off. If you need similar functionality in a toolbar or navigation bar, use a button instead, and provide two distinct icons that communicate the states.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;URLSessionDataTask의 completionHandler를 통해 전달되는 error는 서버에서 client쪽에서 발생한 error이다. 만약 서버의 error가 발생했다면 HTTP Response StatusCode를 통해 알려준다. (400번대, 500번대)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;하나의 Label안에서도 text에 여러개의 attribute를 줄 수 있다. &lt;a href=&quot;https://zeddios.tistory.com/300&quot;&gt;zedd님의 정리글&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;FlowLayout이 뭘까? &lt;a href=&quot;https://seoyoung612.tistory.com/entry/swift-%EC%8A%A4%EC%9C%84%ED%94%84%ED%8A%B8-UICollectionViewFlowLayout?category=790470&quot;&gt;글1&lt;/a&gt;, &lt;a href=&quot;https://k-elon.tistory.com/26&quot;&gt;글2&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;지금은 collection view가 많이 발전해서 조금 이야기가 달라졌을 &lt;a href=&quot;https://medium.com/@nitpaxy/swift-3-uicollectionview-vs-uitableview-9909bbc0ec66&quot;&gt;collectionView vs TableView 글&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;tableview + scrollview, collectionview, stackview + scrollview 수많은 선택지 중에 적절한 하나를 선택해서 써야한다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;야곰닷넷에 올라온 질문글과 답변 &lt;a href=&quot;https://yagom.net/forums/topic/%EC%97%AC%EB%9F%AC%EA%B0%9C%EC%9D%98-listviewuitableview-uicollectionview%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4%EC%95%BC%ED%95%A0-%EA%B2%BD%EC%9A%B0-%EA%B5%AC%ED%98%84%EB%B0%A9%EB%B2%95%EC%97%90/&quot;&gt;링크&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;그냥 vivi가 여기 강의로 스터디하시길래 일단 저장해놓는 &lt;a href=&quot;https://www.pointfree.co/collections&quot;&gt;링크&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;드디어 조금 이해하기 쉬워진 &lt;a href=&quot;https://www.raywenderlich.com/3244963-urlsession-tutorial-getting-started&quot;&gt;URLSessionTutorial&lt;/a&gt; by 레이웬더리치&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;조건을 이어붙이는 문법인 ,와 &amp;amp;&amp;amp;의 차이에 대한 &lt;a href=&quot;https://soojin.ro/blog/swift-comma-vs-and-operator&quot;&gt;글1&lt;/a&gt;, &lt;a href=&quot;https://stackoverflow.com/questions/43366994/are-and-the-same-in-swift&quot;&gt;글2&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;UICollectionView Tutorial by 레이웬더리치 &lt;a href=&quot;https://velog.io/@hanseop95/%EB%B2%88%EC%97%AD-UICollectionView-Tutorial-Prefetching-APIs&quot;&gt;번역글&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;type(of: )를 통해 쉽게 type 확인 가능!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;accessory view를 직접 다룰 수 있다 (accessory type을 사용했을 경우 accessory view 프로퍼티는 자동으로 nil이었다)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Opaque return type.. 신기하다.. 나중에 공부해봐야지 &lt;a href=&quot;https://unnnyong.me/2020/05/11/swift-%EB%B6%88%ED%88%AC%EB%AA%85-%EB%B0%98%ED%99%98-%ED%83%80%EC%9E%85-opaque-return-type/&quot;&gt;글&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Tue, 18 May 2021 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/til/2021.05.1718-TIL/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/til/2021.05.1718-TIL/</guid>
+        
+        <category>TIL</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
     
       <item>
         <title>[#13] 메모리 관리-2</title>
@@ -1090,265 +1428,6 @@ Content-Disposition: form-data; name=&quot;title&quot;
         
         
         <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>2021년 05월 03일 공부일지</title>
-        <description>&lt;h2 id=&quot;오늘-공부한-내용&quot;&gt;오늘 공부한 내용&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;ARC와 Memory Structure&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;ARC는 자동으로 Reference count를 관리하는 기능&lt;/li&gt;
-      &lt;li&gt;Memory Structure에는 Code, Data, Stack, Heap 영역이 있다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Retain Cycle과 Dead Lock&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Retain Cycle의 예시를 볼 수 있는 App (godrm님의 프로젝트) &lt;a href=&quot;https://github.com/godrm/RetainCycleApp&quot;&gt;링크&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;ARC 공식문서의 Strong retain cycle에 대해&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;참조타입이랑 값타입이랑 뭐가 다르지?&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;retain count는 누가 관리해주지?&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;retain count를 관리해주는 애들은 모두 heap에 간다!&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;값타입이 선호되는 이유 (성능에 왜 유리할까)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;catch문에 error를 변수로 선언해서 쓰는 방법&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;https://nshipster.com/swift-foundation-error-protocols/&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;extension 에다가만 protocol 채택해서 쓰는것 그냥 처음부터 채택하는거랑 뭐가 다르지?&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;이미 구현되어있는 애에다가 프로토콜을 주입할 수 있음 (의존성 주입)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;이게 왜 되는거지?&lt;/p&gt;
-
-    &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;mutating&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;closeBank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;totalCustomerNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;closeTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CFAbsoluteTimeGetCurrent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;spentTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getSpentTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-          
-        &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;numberOfCustomers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;totalCustomerNumber&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;BankManagerError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;failToGetTotalCustomerNumber&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-          
-        &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;업무가 마감되었습니다. 오늘 업무를 처리한 고객은 총 &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numberOfCustomers&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;명이며, 총 업무시간은 &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spentTime&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;초입니다.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-      
-    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getSpentTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;open&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;openTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-              &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;close&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;closeTime&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;BankManagerError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;failToCaclulateSpentTime&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-          
-        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;spentTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;formatTimeDuration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;open&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spentTime&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;p&gt;왜 try에 do - catch가 없는데도 정상 동작할까? -&amp;gt; Error Description을 자동으로 String으로 바꿔주는건가? 흠…&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;setUp, tearDown을 쓰는 이유&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;메모리를 위해서&lt;/li&gt;
-      &lt;li&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;병렬성은 같은 작업을 여러개의 CPU가 동시에 하는 것&lt;/p&gt;
-
-&lt;p&gt;우리가 하는 것은 여러개의 ‘다른’ 작업이기 때문에 동시성 프로그래밍이다 (병렬성 아님)&lt;/p&gt;
-
-&lt;p&gt;코어가 여러개 일때만 병렬 프로그래밍이 가능하다.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 03 May 2021 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/til/2021.05.03-TIL/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/til/2021.05.03-TIL/</guid>
-        
-        <category>TIL</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>Typora 이미지 쉽게 업로드 하기 for mac</title>
-        <description>&lt;h2 id=&quot;사건의-발단&quot;&gt;사건의 발단&lt;/h2&gt;
-
-&lt;p&gt;Typora를 통해 깃허브 블로그 글을 쓰다보면 이미지 첨부하는 작업이 매우 귀찮다고 느끼시는 분들이 많으실 것 같아요. 이미지의 상대경로를 지정해주고 깃헙 블로그 레포의 어떤 폴더에 캡쳐한 스크린샷을 담는 과정은 상당히 귀찮은 작업이죠..&lt;/p&gt;
-
-&lt;p&gt;이러한 문제를 해결할 수 있는 방안(이미지를 링크로 변환하여 업로드)을 오늘 알려드리겠습니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;내가-찍은-스크린샷이-weibo에-익명으로-올라가는-것을-참을-수-있어&quot;&gt;내가 찍은 스크린샷이 weibo에 익명으로 올라가는 것을 참을 수 있어!&lt;/h4&gt;
-
-&lt;p&gt;하시는 분들은 밑의 내용을 읽으실 필요 없이&lt;/p&gt;
-
-&lt;p&gt;Typora의 이미지 설정 부분에 가셔서 Image Uploader을 upic으로 설정해주신 뒤&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;brew install upic&lt;/code&gt; 커맨드를 통해 upic을 다운받아주시기만 하면 간단하게 해결할 수 있습니다&lt;/p&gt;
-
-&lt;h2 id=&quot;그래서-어떻게-하면-되는데&quot;&gt;그래서 어떻게 하면 되는데?&lt;/h2&gt;
-
-&lt;h3 id=&quot;1-typora의-언어-중국어로-변경하기&quot;&gt;1. Typora의 언어 중국어로 변경하기&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502223128.png&quot; alt=&quot;image-20210502223124947&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502223414.png&quot; alt=&quot;image-20210502223410704&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;우선 Typora의 언어를 중국어로 바꾸는 것부터 시작합니다&lt;/p&gt;
-
-&lt;p&gt;???:   🧐 웬 뜬금없이 중국어?&lt;/p&gt;
-
-&lt;p&gt;하시는 분들이 많으실텐데 이번 포스트의 핵심이 될 Picgo가 중국어만을 지원하기 때문에 진행해야하는 작업입니다!&lt;/p&gt;
-
-&lt;p&gt;과정이 끝난 뒤에는 다시 한국어로 설정해도 전혀 문제가 없으니 걱정하지 마세요! 😆&lt;/p&gt;
-
-&lt;p&gt;중국어로 설정해주신 뒤 command + q를 이용해 typora를 완전 종료해줬다가 다시 켜주세요.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2-picgoapp-다운로드-하기&quot;&gt;2. PicGo.app 다운로드 하기&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502223553.png&quot; alt=&quot;image-20210502223551901&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;중국어로 바꿔주셨다면 이미지 업로더의 종류에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PicGo.app&lt;/code&gt;이 추가된 것을 보실 수 있으실거에요&lt;/p&gt;
-
-&lt;p&gt;PicGo.app은 중국어만 지원하는 앱이기 때문에 언어를 중국어로 설정했을 경우에만 노출되도록 Typora가 지정해놨습니다.&lt;/p&gt;
-
-&lt;p&gt;이제 PicGo.app 다운로드하기 버튼을 누르셔서 (아래 하 + 어려운 한자 버튼이 다운로드 버튼입니다.)&lt;/p&gt;
-
-&lt;p&gt;다운로드를 진행해주세요 (꼭 저 버튼을 통해 하실 필요는 없고 PicGo 깃헙으로 가셔서 dmg 파일을 받으셔도 됩니다.)&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;3-github에-이미지가-저장될-repository-만들기-토큰-받아오기&quot;&gt;3. Github에 이미지가 저장될 Repository 만들기, 토큰 받아오기&lt;/h3&gt;
-
-&lt;p&gt;이 부분의 스크린샷은 생략하도록 하겠습니다!&lt;/p&gt;
-
-&lt;p&gt;Repo를 만들어 주시고 토큰을 받아와주세요&lt;/p&gt;
-
-&lt;p&gt;토큰을 받아오는 과정은 &lt;a href=&quot;https://taeuk-gang.github.io/wiki/Typora%20%EC%8B%A0%EA%B8%B0%EB%8A%A5%20-%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%9E%90%EB%8F%99%20%EC%97%85%EB%A1%9C%EB%93%9C/&quot;&gt;이 블로그 글&lt;/a&gt;에 잘 설명되어있으니 참고하시면 좋을 것 같습니다!&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;4-picgoapp-설정하기&quot;&gt;4. PicGo.app 설정하기&lt;/h3&gt;
-
-&lt;p&gt;이제부터는 제가 보여드리는 스크린샷을 그대로 따라해주시면 됩니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502223852.png&quot; alt=&quot;image-20210502223850730&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Custom에 불이 들어오도록 버튼을 눌러주세요!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210503101050.png&quot; alt=&quot;image-20210503101048818&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;톱니바퀴 모양 cell을 눌러서 이 화면에 들어와 주신 뒤&lt;/p&gt;
-
-&lt;p&gt;제 설정대로 stepper을 On/Off 해주세요&lt;/p&gt;
-
-&lt;p&gt;다만! 위에서 4번째에 있는 stepper을 On 해주면 이미지를 업로드 할때 매번 업로드될 이름을 정해줄 수 있어요!&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210502225855.png&quot; alt=&quot;20210502225608&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;왼쪽 ScrollView에 있는 GitHub뭐시기 버튼을 눌러 이 화면에 와주신 뒤 TextField를 채워주시면 됩니다!&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;첫 칸에는 본인의 깃허브 닉네임/레포이름 을 적어주세요!&lt;/p&gt;
-
-&lt;p&gt;두번째 칸에는 저장할 레포의 어떤 브랜치에 이미지를 업로드할지 설정해주는 작업인데, 여기서 master branch가 아닌 다른 브랜치로 설정해주셔야 무분별한 commit들이 쌓이지 않습니다!&lt;/p&gt;
-
-&lt;p&gt;사용하기로 한 깃헙 레포에 추가적인 브랜치를 만들어주세요! 저의 경우에는 master branch가 아닌 forUpload라는 이름의 브랜치에 이미지가 업로드 되도록 한 상황입니다!&lt;/p&gt;
-
-&lt;p&gt;세번째 칸에는 아까 받아온 토큰을 넣어주시면 됩니다.&lt;/p&gt;
-
-&lt;p&gt;네번째 칸에는 이미지의 경로를 적어주시면 되는데 repo내의 폴더라고 보시면 될 것 같아요&lt;/p&gt;
-
-&lt;p&gt;(제가 설정한 것은 Neph3779라는 유저의 Blog-Image라는 레포의 img 폴더에 내가 찍은 스크린샷을 저장해! 가 되겠네요)&lt;/p&gt;
-
-&lt;p&gt;이 작업이 끝나셨다면 밑의 파란색 버튼과 초록색 버튼을 눌러주시면 됩니다 (초록 버튼은 눌러지지 않을 수 있는데 문제 없어요!)&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;그럼 이제 드디어 타이포라에 와서 이미지를 업로드 해볼까요?&lt;/p&gt;
-
-&lt;p&gt;(타이포라의 언어 설정은 한국어로 다시 바꿔주셔도 됩니다!)&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;5-typora를-통해-이미지-업로드-하기&quot;&gt;5. Typora를 통해 이미지 업로드 하기&lt;/h3&gt;
-
-&lt;p&gt;찍은 스크린샷을 단순히 command + v로 타이포라에 붙여넣기 하면 아래의 사진처럼 내 맥북에 저장된 경로를 통해 이미지가 업로드 됩니다&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/master/img/20210502224745.png&quot; alt=&quot;image-20210502224715666&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이 상태에서 사진을 우클릭 하신 뒤 Upload Image라는 버튼을 누르시면&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210502225842.png&quot; alt=&quot;image-20210502224818354&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;짜잔 보이는것처럼 나의 깃헙 레포와 연동된 링크를 통해 이미지가 들어가는 것을 볼 수 있어요!&lt;/p&gt;
-
-&lt;p&gt;개인적으로 이 작업을 해놓고 나니 사진을 업로드 하는게 너무나도 편해졌어요!&lt;/p&gt;
-
-&lt;p&gt;게다가 upic은 weibo에 나의 소중한 스크린샷들이 익명으로 올라가는게 마음에 걸렸었는데&lt;/p&gt;
-
-&lt;p&gt;이 방법을 쓰면 내 깃허브 레포에만 저장되고 이미지가 유출되지 않으니 좋은 것 같습니다&lt;/p&gt;
-
-&lt;p&gt;Mac 사용자를 위한 튜토리얼이 없길래 글을 써봤는데 도움이 되셨으면 좋겠어요!&lt;/p&gt;
-</description>
-        <pubDate>Sun, 02 May 2021 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/%EC%9D%BC%EC%83%81/TyporaEasyImageUpload/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/%EC%9D%BC%EC%83%81/TyporaEasyImageUpload/</guid>
-        
-        <category>Typora</category>
-        
-        <category>Picgo</category>
-        
-        
-        <category>일상</category>
         
       </item>
     
