@@ -65,7 +65,8 @@
 <!-- hack iOS CSS :active style -->
 
 <body ontouchstart="">
-
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v11.0" nonce="xHE870RI"></script>
     <!-- Navigation -->
 
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -268,7 +269,6 @@
 <article>
     <div class="container">
         <div class="row">
-
             <!-- Post Container -->
             <div class="
                 col-lg-9 col-lg-offset-1
@@ -330,8 +330,6 @@
                     
                 </ul>
                 <hr style="visibility: hidden;">
-
-
             </div>
 
             <!-- Side Catalog Container -->
@@ -353,7 +351,7 @@
 
             <!-- Sidebar Container -->
             <div class="
-                col-lg-8 col-lg-offset-2
+                col-lg-9 col-lg-offset-1
                 col-md-10 col-md-offset-1
                 sidebar-container">
 
@@ -423,20 +421,22 @@
     </div>
 </section>
 
-
+                <div class="fb-comments" 
+                data-href="https://developers.facebook.com/docs/plugins/comments#configurator" 
+                data-width="100%" 
+                data-numposts="5">
+                </div>
                 <!-- Friends Blog -->
                 
             </div>
+
+            
         </div>
     </div>
 </article>
 
 <!-- add support for mathjax by voleking-->
 
-
-<script src="https://utteranc.es/client.js" repo="Neph3779/blog-comments" issue-term="pathname" theme="github-light"
-    crossorigin="anonymous" async>
-    </script>
 
 
 

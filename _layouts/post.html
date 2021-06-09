@@ -13,7 +13,6 @@ layout: default
 <article>
     <div class="container">
         <div class="row">
-
             <!-- Post Container -->
             <div class="
                 col-lg-9 col-lg-offset-1
@@ -49,8 +48,6 @@ layout: default
                     {% endif %}
                 </ul>
                 <hr style="visibility: hidden;">
-
-
             </div>
 
             <!-- Side Catalog Container -->
@@ -72,16 +69,22 @@ layout: default
 
             <!-- Sidebar Container -->
             <div class="
-                col-lg-8 col-lg-offset-2
+                col-lg-9 col-lg-offset-1
                 col-md-10 col-md-offset-1
                 sidebar-container">
 
                 <!-- Featured Tags -->
                 {% include featured-tags.html bottom=true %}
-
+                <div class="fb-comments" 
+                data-href="https://developers.facebook.com/docs/plugins/comments#configurator" 
+                data-width="100%" 
+                data-numposts="5">
+                </div>
                 <!-- Friends Blog -->
                 {% include friends.html %}
             </div>
+
+            
         </div>
     </div>
 </article>
@@ -90,10 +93,6 @@ layout: default
 {% if page.mathjax %}
 {% include mathjax_support.html %}
 {% endif %}
-
-<script src="https://utteranc.es/client.js" repo="Neph3779/blog-comments" issue-term="pathname" theme="github-light"
-    crossorigin="anonymous" async>
-    </script>
 
 {% if site.netease_comment %}
 <!-- 网易云跟帖JS代码 start -->
