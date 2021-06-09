@@ -5,6 +5,9 @@
   .sidebar-container {
     padding-right: 5%;
   }
+  .row {
+    width: 1300px;
+  }
 }
 @media (min-width: 900px) {
   .post-container {
