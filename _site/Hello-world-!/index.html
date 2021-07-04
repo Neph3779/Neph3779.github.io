@@ -62,28 +62,6 @@
 <!-- hack iOS CSS :active style -->
 
 <body ontouchstart="">
-
-<script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '{305055294598369}',
-        cookie     : true,
-        xfbml      : true,
-        version    : '{v11.0}'
-      });
-        
-      FB.AppEvents.logPageView();   
-        
-    };
-  
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "https://connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-  </script>
     <!-- Navigation -->
 
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -239,7 +217,6 @@
     </div>
   </div>
 </div>
-
     <h3 id="안녕하세요">안녕하세요!</h3>
 
 <p>iOS를 공부하고 있는 Neph🌱의 블로그입니다.</p>
@@ -262,7 +239,6 @@
 <p><br /></p>
 
 <p>그럼 행복한 하루 되시길 바랍니다 ⭐️</p>
-
 
 
     <!-- Channel Plugin Scripts -->
@@ -567,12 +543,8 @@
         });
     });
 </script>
-
-
     <!-- Image to hack wechat -->
     <img src="/assets/logo.ico/ms-icon-310x310.png" width="0" height="0" />
     <!-- Migrate from head to bottom, no longer block render and still work -->
-
 </body>
-
 </html>

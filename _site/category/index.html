@@ -62,28 +62,6 @@
 <!-- hack iOS CSS :active style -->
 
 <body ontouchstart="">
-
-<script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '{305055294598369}',
-        cookie     : true,
-        xfbml      : true,
-        version    : '{v11.0}'
-      });
-        
-      FB.AppEvents.logPageView();   
-        
-    };
-  
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "https://connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-  </script>
     <!-- Navigation -->
 
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -239,7 +217,6 @@
     </div>
   </div>
 </div>
-
     <!-- 
 Credits: this page shamelessly borrowed a lot from:
 https://github.com/kitian616/jekyll-TeXt-theme
@@ -1160,7 +1137,6 @@ https://github.com/kitian616/jekyll-TeXt-theme
     </div>
   </div>
 </div>
-
     <!-- Channel Plugin Scripts -->
 <script>
   (function() {
@@ -1475,12 +1451,8 @@ https://github.com/kitian616/jekyll-TeXt-theme
         });
     });
 </script>
-
-
     <!-- Image to hack wechat -->
     <img src="/assets/logo.ico/ms-icon-310x310.png" width="0" height="0" />
     <!-- Migrate from head to bottom, no longer block render and still work -->
-
 </body>
-
 </html>
