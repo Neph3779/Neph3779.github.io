@@ -9,6 +9,8 @@
     <meta name="description" content="Write code with my soul.">
     <meta name="keywords" content="iOS 공부일지">
     <meta name="theme-color" content="#000000">
+    <meta  property="fb:app_id"  content="466840033890778"/>
+<meta property="fb:admins"  content="466840033890778"/>
 
     <!-- Open Graph -->
     <meta property="og:title"
@@ -60,8 +62,28 @@
 <!-- hack iOS CSS :active style -->
 
 <body ontouchstart="">
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v11.0" nonce="xHE870RI"></script>
+
+<script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '{305055294598369}',
+        cookie     : true,
+        xfbml      : true,
+        version    : '{v11.0}'
+      });
+        
+      FB.AppEvents.logPageView();   
+        
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
     <!-- Navigation -->
 
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -104,6 +126,8 @@
                         <li>
                             <a href="/category/">Category</a>
                         </li>
+                        
+                        
                         
                         
                         
@@ -256,6 +280,290 @@
             ">
     			
 <div class="post-preview">
+    <a href="/til/2021.03.11-TIL/">
+        <h2 class="post-title">
+            2021년 03월 11일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            공부한 내용
+
+
+  UILabel과 UIButton에 custom type의 속성값을 extension을 통해 주려는 시도를 했습니다.
+    
+      extension을 활용하려 했지만 extension으로 저장프로퍼티를 추가할 수 없다는 사실을 알게되었습니다.
+      메모리 공간을 stored property의 공간만큼 할당하기에 exten...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        11, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.03.10-TIL/">
+        <h2 class="post-title">
+            2021년 03월 10일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  
+    “쥬스메이커 프로젝트”의 Step2 진행을 위해 Yagom의 Auto Layout 정복하기 강좌를 들었습니다.
+
+    기본적인 기능만 요구하고 있기에 꼭 Auto Layout을 빠삭하게 알고 있어야 진행할 수 있는 프로젝트는 아니지만 기왕이면 제대로 공부한 뒤에 프로젝트를 진행해도 좋다는 판단하에 오토 레이아웃을 제...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        10, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.03.09-TIL/">
+        <h2 class="post-title">
+            2021년 03월 09일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            공부한 내용 &amp; 고민해본 내용
+
+
+  
+    static의 활용에 대해 공부하고 이를 활용해 보았습니다.
+  
+  
+    class의 instance를 var로 선언한 경우와 let으로 선언한 경우의 차이에 대해 공부했습니다.
+
+    1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        9, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/project%20review/%EA%B0%80%EC%9C%84%EB%B0%94%EC%9C%84%EB%B3%B4-%EA%B2%8C%EC%9E%84-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A6%AC%EB%B7%B0/">
+        <h2 class="post-title">
+            가위바위보 게임 프로젝트 리뷰
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            이번 프로젝트에서 집중해서 공부한 내용
+
+
+  Optional Chaining
+  변수와 함수의 naming
+  열거형의  사용
+  자연스러운 코드의 작성법 (모든 것을 장황하게 설명하지 않기)
+
+
+
+
+
+
+Step 1. 가위바위보 클래스 설계
+
+PR #26 Step1 가위바위보 클래스 설계
+
+
+  
+    가위바위보 클래스 설계
+
+    
+      ...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        9, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.03.08-TIL/">
+        <h2 class="post-title">
+            2021년 03월 08일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  “쥬스 메이커” 프로젝트의 기능 요구서를 읽고 1차적으로 구현해보았습니다.
+  접근제어 지정자에 대해 복습했습니다.
+  읽기전용 프로퍼티에 대해 여러가지 생각을 해보았습니다
+    
+      private(set) 키워드를 통해 읽기전용 프로퍼티의 구현이 가능한 것을 알게 되었습니다. 기존에 알고 있던 방식은 연산 프로퍼티를...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        8, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.03.06-TIL/">
+        <h2 class="post-title">
+            2021년 03월 06일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  타입 프로퍼티와 연산자 프로퍼티에 대해 공부했습니다.
+    
+      get과 set의 역할에 대해 알아봤습니다.
+      willSet과 didSet은 어떨 때 쓰는 것인지에 대해 궁금해서 알아본 결과 이 링크에서 적합한 답을 찾을 수 있었습니다.
+    
+  
+  플로우차트 그리는 법에 대해 공부하고 이를 포스팅 했습...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        6, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/swift/FlowChart/">
+        <h2 class="post-title">
+            플로우차트(Flow Chart) 그리는법
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            안녕하세요! Neph🌱입니다!! 😆😆
+
+오늘은 Flow Chart를 그리는 방법에 대해 알아볼거에요~
+
+
+
+혼자서 작업하는 경우나 단기간동안만 사용할 프로그램을 만들 때는 플로우차트가 굳이 필요하지 않을지도 모릅니다.
+
+하지만 플로우차트로 프로그램 동작과정의 큰 틀을 잡아놓는다면 후에 자신의 코드를 타인이 보게 되는 경우, 혹은 자신이 짠 코드를 다시...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        6, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.03.05-TIL/">
+        <h2 class="post-title">
+            2021년 03월 05일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  
+    Optional Chaining에 대해 자세히 공부했습니다.
+  
+  
+    “묵찌빠 게임 프로젝트”의 2차 피드백을 반영했습니다
+
+    
+      
+        접근제어 지정자에 대해 공부했습니다
+
+        
+          private
+          fileprivate
+          int...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        5, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/swift/Optional-Chaining(with-flow-chart)/">
+        <h2 class="post-title">
+            옵셔널체이닝(Optional Chaining) 알아보기 (feat. Flow chart)
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            안녕하세요! Neph🌱입니다!! 😆😆
+
+오늘은 Swift의 옵셔널체이닝에 대해 알아볼거에요
+
+Optional과 Optional Binding에 대해 모르시는 분들은 먼저 해당 개념을 익히신 뒤 글을 읽어주시면 감사하겠습니다 🥲
+
+
+
+자 그럼 Optional Chaining! 뭔가 이름만 들어도 Chain, 연쇄적으로 어떤 것을 처리할 것이라는 느낌이 ...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        5, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
     <a href="/til/2021.03.04-TIL/">
         <h2 class="post-title">
             2021년 03월 04일 공부일지
@@ -288,302 +596,6 @@
 </div>
 <hr>
 
-<div class="post-preview">
-    <a href="/%EC%9D%BC%EC%83%81/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B4%80%EB%A0%A8-%EC%9E%A1%EB%8B%A4%ED%95%9C-%EB%82%B4%EC%9A%A9%EB%93%A4/">
-        <h2 class="post-title">
-            깃헙 블로그 관련 이것저것
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            안녕하세요 Neph🌱입니다! 😆😆
-
-오늘은 제 블로그 관련하여 정한 몇가지 규칙과
-
-새롭게 알게된 블로그 관련 유용정보 몇가지에 대해 이야기 해보려합니다
-
-
-우선 제 블로그 관련 규칙들을 스스로 만들고 정리해보았습니다!
-
-
-
-  업로드 규칙
-
-
-
-  Swift 포스팅은 특별한 사정이 없다면 매주 월, 화, 목, 금 업로드됩니다.
-  TIL 포스팅은 주...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        3, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.03.03-TIL/">
-        <h2 class="post-title">
-            2021년 03월 03일 공부일지 
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  
-    함수의 네이밍에 관해 고민해보고 공부했습니다.
-
-    명사형 함수 네이밍에 익숙하지 않아서 모든 함수를 동사로 네이밍했는데
-
-    오늘은 명사형 함수 네이밍에 대해 알아보고 사용해보았습니다.
-  
-  
-    상속받은 클래스에서 부모 클래스의 메서드를 오버라이드 하는 것에 대해 공부했습니다.
-
-    아직은 “내가...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        3, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/swift/Swift-enum(basic)/">
-        <h2 class="post-title">
-            Swift enum에 대해 알아보자! (기본편)
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            안녕하세요 Neph🌱입니다!! 😆😆
-
-오늘은 Swift의 자료형 중 하나인 enum(열거형)에 대해 알아볼게요
-
-
-
-
-  오늘도 어김없이 야곰의 스위프트 프로그래밍 3판과 함께합니다 🙂
-
-
-
-
-백문이 불여일견! 우선 enum을 사용한 코드를 보시죠
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-enum Season {
-	case spring
-	case sum...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        2, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/swift/Abstraction-and-generalization/">
-        <h2 class="post-title">
-            프로그래밍에서의 추상화와 일반화
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            안녕하세요 Neph🌱 입니다! 😆😆
-
-이번 포스팅에서는 프로그래밍에서의 추상화와 일반화에 대해 이야기 해보려합니다.
-
-
-
-추상화란 무엇일까요?
-
-추상화에 대해 알아보기 위해 먼저 “추상”의 사전적 의미에 대해 알아봅시다.
-
-국립 국어원에서는 추상를 다음과 같이 정의하고 있습니다.
-
-
-
-
-  추상 : 여러 가지 사물이나 개념에서 공통되는 특성이나 속성 ...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        1, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.02.26-TIL/">
-        <h2 class="post-title">
-            2021년 02월 26일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            Neph’s TIL (2021.02.25)
-
-학습내용
-
-
-  Kane과 함께 클로저에 대해 공부했다
-    
-      클로저의 3가지 형태
-        
-          이름이 있고 어떤 값도 획득하지 않는 전역함수의 형태
-(이 과정에서 값의 획득에 대해 공부함)
-          이름이 있으면서 다른 함수 내부의 값을 획득할 수 있는 중첩 함수...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on February
-        26, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.02.25-TIL/">
-        <h2 class="post-title">
-            2021년 02월 25일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            Neph’s TIL (2021.02.25)
-
-습득한  내용
-
-
-  
-    Git의 Reset과 hard, mixed, soft의 차이
-https://opentutorials.org/module/4032/24533
-(오늘도 어김없이 보게되는 짱활코딩의 영상)
-git reset – (soft / mixed / hard) 를 했을때 바뀌는 것들을 아래 표...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on February
-        25, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.02.23-TIL/">
-        <h2 class="post-title">
-            2021년 02월 23일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            Neph’s TIL (2021.02.23)
-
-습득한 지식
-
-
-  Git의 작동원리에 대한 더 구체적인 이해
-기존에 Git에 대해 얄팍하게 알고 있었지만 Github를 사용하여 공동작업을 한적도 없었고 이전에 일하던 곳에서 문서이력관리 시스템 구축을 요청받았을때도 Source Tree 를 이용한 가이드라인만 제시해줬지 빠삭하게 알고있지 않았다. 이러한 ...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on February
-        23, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.02.22-TIL/">
-        <h2 class="post-title">
-            2021년 02월 22일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            Neph’s TIL (2021.02.22)
-
-학습내용
-
-
-  enum Error 프로토콜의 사용
-  남이 알아보기 좋게 코드 짜기 연습
-
-
-문제점
-
-
-  기존에 사전과제로 제출했던 코드는 정상 입력이 들어올때마다 구구단을 출력하는 함수를 재귀적으로 호출하는 방식이었기에 적절하지 않았다.
-  Error 처리를 단순 if else문으로 구현하였는데 코드 ...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on February
-        22, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/Hello-world-!/">
-        <h2 class="post-title">
-            Hello world !
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            안녕하세요!
-
-iOS를 공부하고 있는 Neph🌱의 블로그입니다.
-
-제 블로그를 방문해주셔서 감사합니다.
-
-이 블로그에는 제가 Swift를 공부한 흔적을 남깁니다.
-
-제 글이 여러분께 도움이 되었으면 좋겠습니다.
-
-
-
-업로드 규칙
-
-
-  일반 포스팅은 특별한 사정이 없다면 매주 월, 화, 목, 금 업로드됩니다.
-  TIL은 주말을 제외하고 특별한 사정이...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on July
-        22, 1999
-    </p>
-</div>
-<hr>
-
 
 <!-- Pager -->
 
@@ -594,11 +606,17 @@ iOS를 공부하고 있는 Neph🌱의 블로그입니다.
     </li>
     
     
+    <li class="next">
+        <a href="/page10">Older Posts &rarr;</a>
+    </li>
+    
 </ul>
 
 
 <header class="site-category">
     <ul>
+        
+        
         
         
         
@@ -668,55 +686,63 @@ iOS를 공부하고 있는 Neph🌱의 블로그입니다.
             
         
             
-            <a data-sort="0051"
+            <a data-sort="0060"
                 href="/archive/?tag=TIL" title="TIL"
                 rel="39">TIL</a>
             
             
             
-            <a data-sort="0073"
+            <a data-sort="0082"
                 href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
                 rel="17">운영체제</a>
             
-            <a data-sort="0074"
+            <a data-sort="0083"
                 href="/archive/?tag=OS" title="OS"
                 rel="16">OS</a>
             
-            <a data-sort="0083"
+            <a data-sort="0092"
                 href="/archive/?tag=Swift" title="Swift"
                 rel="7">Swift</a>
             
-            <a data-sort="0083"
+            <a data-sort="0092"
                 href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
                 rel="7">Yagom-Academy</a>
             
-            <a data-sort="0086"
+            <a data-sort="0095"
                 href="/archive/?tag=iOS" title="iOS"
                 rel="4">iOS</a>
             
-            <a data-sort="0087"
+            <a data-sort="0096"
                 href="/archive/?tag=enum" title="enum"
                 rel="3">enum</a>
             
-            <a data-sort="0088"
+            <a data-sort="0097"
                 href="/archive/?tag=Flow+chart" title="Flow chart"
                 rel="2">Flow chart</a>
             
-            <a data-sort="0088"
+            <a data-sort="0097"
                 href="/archive/?tag=Protocol" title="Protocol"
                 rel="2">Protocol</a>
             
-            <a data-sort="0088"
+            <a data-sort="0097"
                 href="/archive/?tag=Scroll+View" title="Scroll View"
                 rel="2">Scroll View</a>
             
-            <a data-sort="0088"
+            <a data-sort="0097"
                 href="/archive/?tag=UML" title="UML"
                 rel="2">UML</a>
             
-            <a data-sort="0088"
+            <a data-sort="0097"
                 href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
                 rel="2">Yagom Academy</a>
+            
+            <a data-sort="0097"
+                href="/archive/?tag=strong" title="strong"
+                rel="2">strong</a>
+            
+            <a data-sort="0097"
+                href="/archive/?tag=weak" title="weak"
+                rel="2">weak</a>
     </div>
 </section>
 
@@ -767,6 +793,49 @@ iOS를 공부하고 있는 Neph🌱의 블로그입니다.
 </div>
 
 
+
+    <!-- Channel Plugin Scripts -->
+<script>
+  (function() {
+    var w = window;
+    if (w.ChannelIO) {
+      return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
+    }
+    var ch = function() {
+      ch.c(arguments);
+    };
+    ch.q = [];
+    ch.c = function(args) {
+      ch.q.push(args);
+    };
+    w.ChannelIO = ch;
+    function l() {
+      if (w.ChannelIOInitialized) {
+        return;
+      }
+      w.ChannelIOInitialized = true;
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+      s.charset = 'UTF-8';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    }
+    if (document.readyState === 'complete') {
+      l();
+    } else if (window.attachEvent) {
+      window.attachEvent('onload', l);
+    } else {
+      window.addEventListener('DOMContentLoaded', l, false);
+      window.addEventListener('load', l, false);
+    }
+  })();
+  ChannelIO('boot', {
+    "pluginKey": "6998650a-1c89-4fc4-abd0-9fd355279055"
+  });
+</script>
+<!-- End Channel Plugin -->
 
     <!-- Footer -->
 <footer>

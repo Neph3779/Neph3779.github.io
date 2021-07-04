@@ -9,6 +9,8 @@
     <meta name="description" content="Write code with my soul.">
     <meta name="keywords" content="iOS 공부일지">
     <meta name="theme-color" content="#000000">
+    <meta  property="fb:app_id"  content="466840033890778"/>
+<meta property="fb:admins"  content="466840033890778"/>
 
     <!-- Open Graph -->
     <meta property="og:title"
@@ -65,8 +67,28 @@
 <!-- hack iOS CSS :active style -->
 
 <body ontouchstart="">
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v11.0" nonce="xHE870RI"></script>
+
+<script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '{305055294598369}',
+        cookie     : true,
+        xfbml      : true,
+        version    : '{v11.0}'
+      });
+        
+      FB.AppEvents.logPageView();   
+        
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
     <!-- Navigation -->
 
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -109,6 +131,8 @@
                         <li>
                             <a href="/category/">Category</a>
                         </li>
+                        
+                        
                         
                         
                         
@@ -352,55 +376,63 @@
             
         
             
-            <a data-sort="0051"
+            <a data-sort="0060"
                 href="/archive/?tag=TIL" title="TIL"
                 rel="39">TIL</a>
             
             
             
-            <a data-sort="0073"
+            <a data-sort="0082"
                 href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
                 rel="17">운영체제</a>
             
-            <a data-sort="0074"
+            <a data-sort="0083"
                 href="/archive/?tag=OS" title="OS"
                 rel="16">OS</a>
             
-            <a data-sort="0083"
+            <a data-sort="0092"
                 href="/archive/?tag=Swift" title="Swift"
                 rel="7">Swift</a>
             
-            <a data-sort="0083"
+            <a data-sort="0092"
                 href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
                 rel="7">Yagom-Academy</a>
             
-            <a data-sort="0086"
+            <a data-sort="0095"
                 href="/archive/?tag=iOS" title="iOS"
                 rel="4">iOS</a>
             
-            <a data-sort="0087"
+            <a data-sort="0096"
                 href="/archive/?tag=enum" title="enum"
                 rel="3">enum</a>
             
-            <a data-sort="0088"
+            <a data-sort="0097"
                 href="/archive/?tag=Flow+chart" title="Flow chart"
                 rel="2">Flow chart</a>
             
-            <a data-sort="0088"
+            <a data-sort="0097"
                 href="/archive/?tag=Protocol" title="Protocol"
                 rel="2">Protocol</a>
             
-            <a data-sort="0088"
+            <a data-sort="0097"
                 href="/archive/?tag=Scroll+View" title="Scroll View"
                 rel="2">Scroll View</a>
             
-            <a data-sort="0088"
+            <a data-sort="0097"
                 href="/archive/?tag=UML" title="UML"
                 rel="2">UML</a>
             
-            <a data-sort="0088"
+            <a data-sort="0097"
                 href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
                 rel="2">Yagom Academy</a>
+            
+            <a data-sort="0097"
+                href="/archive/?tag=strong" title="strong"
+                rel="2">strong</a>
+            
+            <a data-sort="0097"
+                href="/archive/?tag=weak" title="weak"
+                rel="2">weak</a>
     </div>
 </section>
 
@@ -457,6 +489,49 @@
     }
 </style>
 
+
+    <!-- Channel Plugin Scripts -->
+<script>
+  (function() {
+    var w = window;
+    if (w.ChannelIO) {
+      return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
+    }
+    var ch = function() {
+      ch.c(arguments);
+    };
+    ch.q = [];
+    ch.c = function(args) {
+      ch.q.push(args);
+    };
+    w.ChannelIO = ch;
+    function l() {
+      if (w.ChannelIOInitialized) {
+        return;
+      }
+      w.ChannelIOInitialized = true;
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+      s.charset = 'UTF-8';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    }
+    if (document.readyState === 'complete') {
+      l();
+    } else if (window.attachEvent) {
+      window.attachEvent('onload', l);
+    } else {
+      window.addEventListener('DOMContentLoaded', l, false);
+      window.addEventListener('load', l, false);
+    }
+  })();
+  ChannelIO('boot', {
+    "pluginKey": "6998650a-1c89-4fc4-abd0-9fd355279055"
+  });
+</script>
+<!-- End Channel Plugin -->
 
     <!-- Footer -->
 <footer>

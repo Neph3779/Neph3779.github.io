@@ -9,6 +9,8 @@
     <meta name="description" content="Write code with my soul.">
     <meta name="keywords" content="iOS 공부일지">
     <meta name="theme-color" content="#000000">
+    <meta  property="fb:app_id"  content="466840033890778"/>
+<meta property="fb:admins"  content="466840033890778"/>
 
     <!-- Open Graph -->
     <meta property="og:title"
@@ -60,8 +62,28 @@
 <!-- hack iOS CSS :active style -->
 
 <body ontouchstart="">
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v11.0" nonce="xHE870RI"></script>
+
+<script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '{305055294598369}',
+        cookie     : true,
+        xfbml      : true,
+        version    : '{v11.0}'
+      });
+        
+      FB.AppEvents.logPageView();   
+        
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
     <!-- Navigation -->
 
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -104,6 +126,8 @@
                         <li>
                             <a href="/category/">Category</a>
                         </li>
+                        
+                        
                         
                         
                         
@@ -256,6 +280,294 @@
             ">
     			
 <div class="post-preview">
+    <a href="/til/2021.03.26-TIL/">
+        <h2 class="post-title">
+            2021년 03월 26일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  
+    JuiceMaker README 작성
+
+    미루어두었던 JuiceMaker README를 작성했습니다
+
+    JuiceMaker Project Repository링크
+  
+  
+    OS 3강 수강 및 공부
+
+    프로세스의 진행과정에 대해 공부했습니다
+
+    일요일 오후 쯤 정리글이 업로드 될 것 같습니다...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        26, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.03.25-TIL/">
+        <h2 class="post-title">
+            2021년 03월 25일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+붱이의 SOLID 원칙 강의를 들었습니다
+
+SOLID관련 개념에 대해서는 추후 포스팅 예정입니다.
+
+
+
+계산기 프로젝트 Step1 PR을 보냈습니다
+
+
+  
+    2진수의 음수 표현을 위해 2의 보수로 변환하는 과정에 대해 고민했습니다
+  
+  
+    Double로 출력시 의미없는 소수점 뒷자리 (10.0 과 같이 0이 붙음) ...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        25, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/%EC%9D%BC%EC%83%81/%EC%83%88%EB%A1%9C%EC%9A%B4-%EC%A7%80%EC%8B%9D%EC%9D%84-%EB%82%98%EC%9D%98-%EA%B2%83%EC%9C%BC%EB%A1%9C-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B0%A9%EB%B2%95/">
+        <h2 class="post-title">
+            새로운 지식을 나의 것으로 만드는 방법(Zedd)
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            
+  이 글은 야곰 스타터캠프에서 비공개로 진행된 “Zedd”님의 강의를 바탕으로 제작되었습니다.
+
+
+
+
+Q. 무언가를 공부하고 싶은데 어떻게 공부해야 더 잘 공부할 수 있을까요?
+
+A. 공부의 순서를 정해보세요!
+
+
+
+제드가 제안한 공부의 순서는 다음과 같습니다.
+
+
+  공부의 동기/목표 정하기
+  공부할 것에 대한 사전조사하기
+  공부한 것 기록하...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        23, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.03.23-TIL/">
+        <h2 class="post-title">
+            2021년 03월 23일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  
+    Zedd의 “새로운 지식의 나의 것으로 만드는 방법” 강연을 듣고 이를 정리해보았습니다.
+
+    정리글 링크
+  
+  
+    프로토콜과 관련한 문서를 정독했습니다. 블로그에 포스팅하기 위해 정리하고 있습니다.
+  
+
+
+고민한 내용
+
+
+  
+    계산기 프로젝트를 시작하며 중복코드를 없애는 것에 관해 고민이 많아졌...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        23, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/swift/Swift-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C/">
+        <h2 class="post-title">
+            [작성중] Swift 프로토콜(Protocol) 정리
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            프로토콜이란
+
+스위프트의 프로토콜은 자바의 인터페이스와 유사한 개념입니다.
+
+구조체, 클래스, 열거형은 프로토콜을 “채택”하여 프로토콜의 요구사항을 구현합니다
+
+쉽게 말하자면 코드의 청사진 혹은 outline을 강제하는 기능입니다.
+
+어떤 프로젝트의 일부를 외주를 맡길 때 이런 프로토콜로 메서드, 프로퍼티의 이름, 반환타입 등을 강제할 수 있습니다.
+...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        23, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/swift%20memo/Swift-%EB%A9%94%EC%84%9C%EB%93%9C/">
+        <h2 class="post-title">
+            Swift의 메서드 종류
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            인스턴스 메서드
+
+static 메서드
+
+class 메서드
+
+설명글
+
+
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        23, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/swift%20memo/Swift-%EA%B0%80%EB%B3%80-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98/">
+        <h2 class="post-title">
+            Swift 가변(Variadic) 매개변수
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            매개변수로 값이 몇개나 들어올지 알기 어려울 때 가변 매개변수를 활용할 수 있습니다.
+
+1
+2
+3
+4
+5
+func sayHelloToFriends(me: String, friends name: String...) -&gt; String {
+  //...
+}
+
+print(sayHelloToFriends(me: Neph, friends: "A", "B",...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        23, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/swift%20memo/Swift-Timer,-Toast/">
+        <h2 class="post-title">
+            iOS Toast Alert과 Timer
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            Timer
+
+https://developer.apple.com/documentation/foundation/timer
+
+toast alert
+
+https://github.com/devxoul/Toaster
+
+
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        23, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/swift%20memo/Swift-Property/">
+        <h2 class="post-title">
+            Swift 프로퍼티의 종류
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            Swift 프로퍼티는 크게 3가지로 분류할 수 있다
+
+저장 프로퍼티
+
+연산 프로퍼티
+
+타입 프로퍼티
+
+여기서 타입 프로퍼티는 다시
+
+class 타입 프로퍼티 (상속 가능)
+
+static 타입 프로퍼티 (상속 불가능)
+
+으로 나뉜다.
+
+https://zeddios.tistory.com/251
+
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on March
+        23, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
     <a href="/til/2021.03.22-TIL/">
         <h2 class="post-title">
             2021년 03월 22일 공부일지
@@ -279,279 +591,6 @@
     <p class="post-meta">
         Posted by Neph's Blog on March
         22, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/swift%20memo/UML/">
-        <h2 class="post-title">
-            UML 다이어그램
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            UML이란
-
-흰의 PPT
-
-
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        22, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/swift%20memo/Swift-%EC%9D%B4%EB%8B%88%EC%85%9C%EB%9D%BC%EC%9D%B4%EC%A0%80/">
-        <h2 class="post-title">
-            이니셜라이저 종류
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            
-  기본 이니셜라이저
-  멤버와이즈 이니셜라이저
-  required
-  convinience
-  지정 이니셜라이저
-
-
-
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        22, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/swift%20memo/Swift-is-%EC%97%B0%EC%82%B0%EC%9E%90-as-%EC%97%B0%EC%82%B0%EC%9E%90/">
-        <h2 class="post-title">
-            Swift is as? as!
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            is : 해당 타입 맞는지 확인 (프로토콜에 쓰면 해당 프로토콜 준수하는지 확인)
-
-as? : 다운캐스팅 시도 (성공시 optional 반환, 실패시 nil 반환)
-
-as! : 강제 다운캐스팅 (성공하면 non-optional, 실패하면 에러)
-
-
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        22, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/3-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EC%9D%98-%EA%B5%AC%EC%A1%B0%EC%99%80-%EC%8B%A4%ED%96%89/">
-        <h2 class="post-title">
-            [#3] 프로그램의 구조와 실행
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            목차
-
-  목차
-  프로그램의 구조와 인터럽트    
-      프로그램의 주소 영역
-      함수의 호출과 인터럽트
-    
-  
-  컴퓨터 시스템의 작동 개요    
-      CPU의 명령 (일반명령, 특권명령)
-    
-  
-  프로그램의 실행    
-      Program execution의 의미
-      실행 파일의 메모리 적재 방식
-...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        21, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/2-%EC%BB%B4%ED%93%A8%ED%84%B0-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98-%EB%8F%99%EC%9E%91-%EC%9B%90%EB%A6%AC/">
-        <h2 class="post-title">
-            [#2] 컴퓨터 시스템의 동작 원리
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            목차
-
-  목차
-  컴퓨터 시스템의 구조    
-      컴퓨터 시스템의 구조
-      입력과 출력
-      컨트롤러
-      커널의 의미
-    
-  
-  CPU 연산과 I/O 연산    
-      입출력 연산과 메인 CPU 연산의 동시 작업
-      로컬버퍼(local buffer)와 인터럽트(interrupt)
-      CPU의 인터...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        21, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.03.21-TIL/">
-        <h2 class="post-title">
-            2021년 03월 21일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-운영체제 2강 정리 및 OS 스터디 참여
-
-포스팅 한 2강 정리글 링크
-
-스터디 깃헙 레포 링크
-
-
-
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        21, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/swift%20memo/Swift-%EB%8F%99%EA%B8%B0-%EB%B9%84%EB%8F%99%EA%B8%B0/">
-        <h2 class="post-title">
-            Swift 동기, 비동기, Dispatch Queue
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            동기: 다음 작업은 이전것 끝난 뒤에
-
-비동기: 안끝났어도 그냥
-
-Dispatch 공식문서
-
-Dispatch Group 써보기
-
-Dispatch Queue 간단 설명(제드)
-
-Dispatch Queue 알아보기 (devmjun)
-
-GCD 기초 정리
-
-멀티스레딩 관련 스탠포드 강의
-
-Operation Queue
-
-멀티스레드에서 Array가 안전하지 않다...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        20, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/swift%20memo/Swift-View-%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0/">
-        <h2 class="post-title">
-            Swift View 형성과정
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            View의 형성과정(영철)
-
-최상위 ViewController 얻기
-
-ViewController 생명주기(제드)
-
-View Life Cycle (이동건)
-
-
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        20, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/swift%20memo/MVC-MVP-MVVM/">
-        <h2 class="post-title">
-            MVC, MVP, MVVM 차이
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            MVC MVP MVVM 차이 제대로 알아보기
-
-
-  
-    MVC
-
-    Model이 하는 일
-
-    
-      data를 가지고 있음
-    
-
-    View가 하는 일 (UIView)
-
-    
-      Controller에게 명령받아 View를 띄워줌
-    
-
-    Controller가 하는 일
-
-    
-      Model의 d...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on March
-        20, 2021
     </p>
 </div>
 <hr>
@@ -621,6 +660,8 @@ View Life Cycle (이동건)
         
         
         
+        
+        
     </ul>
 </header>
     		</div>
@@ -644,55 +685,63 @@ View Life Cycle (이동건)
             
         
             
-            <a data-sort="0051"
+            <a data-sort="0060"
                 href="/archive/?tag=TIL" title="TIL"
                 rel="39">TIL</a>
             
             
             
-            <a data-sort="0073"
+            <a data-sort="0082"
                 href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
                 rel="17">운영체제</a>
             
-            <a data-sort="0074"
+            <a data-sort="0083"
                 href="/archive/?tag=OS" title="OS"
                 rel="16">OS</a>
             
-            <a data-sort="0083"
+            <a data-sort="0092"
                 href="/archive/?tag=Swift" title="Swift"
                 rel="7">Swift</a>
             
-            <a data-sort="0083"
+            <a data-sort="0092"
                 href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
                 rel="7">Yagom-Academy</a>
             
-            <a data-sort="0086"
+            <a data-sort="0095"
                 href="/archive/?tag=iOS" title="iOS"
                 rel="4">iOS</a>
             
-            <a data-sort="0087"
+            <a data-sort="0096"
                 href="/archive/?tag=enum" title="enum"
                 rel="3">enum</a>
             
-            <a data-sort="0088"
+            <a data-sort="0097"
                 href="/archive/?tag=Flow+chart" title="Flow chart"
                 rel="2">Flow chart</a>
             
-            <a data-sort="0088"
+            <a data-sort="0097"
                 href="/archive/?tag=Protocol" title="Protocol"
                 rel="2">Protocol</a>
             
-            <a data-sort="0088"
+            <a data-sort="0097"
                 href="/archive/?tag=Scroll+View" title="Scroll View"
                 rel="2">Scroll View</a>
             
-            <a data-sort="0088"
+            <a data-sort="0097"
                 href="/archive/?tag=UML" title="UML"
                 rel="2">UML</a>
             
-            <a data-sort="0088"
+            <a data-sort="0097"
                 href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
                 rel="2">Yagom Academy</a>
+            
+            <a data-sort="0097"
+                href="/archive/?tag=strong" title="strong"
+                rel="2">strong</a>
+            
+            <a data-sort="0097"
+                href="/archive/?tag=weak" title="weak"
+                rel="2">weak</a>
     </div>
 </section>
 
@@ -743,6 +792,49 @@ View Life Cycle (이동건)
 </div>
 
 
+
+    <!-- Channel Plugin Scripts -->
+<script>
+  (function() {
+    var w = window;
+    if (w.ChannelIO) {
+      return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
+    }
+    var ch = function() {
+      ch.c(arguments);
+    };
+    ch.q = [];
+    ch.c = function(args) {
+      ch.q.push(args);
+    };
+    w.ChannelIO = ch;
+    function l() {
+      if (w.ChannelIOInitialized) {
+        return;
+      }
+      w.ChannelIOInitialized = true;
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+      s.charset = 'UTF-8';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    }
+    if (document.readyState === 'complete') {
+      l();
+    } else if (window.attachEvent) {
+      window.attachEvent('onload', l);
+    } else {
+      window.addEventListener('DOMContentLoaded', l, false);
+      window.addEventListener('load', l, false);
+    }
+  })();
+  ChannelIO('boot', {
+    "pluginKey": "6998650a-1c89-4fc4-abd0-9fd355279055"
+  });
+</script>
+<!-- End Channel Plugin -->
 
     <!-- Footer -->
 <footer>

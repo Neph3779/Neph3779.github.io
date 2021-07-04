@@ -9,6 +9,8 @@
     <meta name="description" content="Write code with my soul.">
     <meta name="keywords" content="iOS 공부일지">
     <meta name="theme-color" content="#000000">
+    <meta  property="fb:app_id"  content="466840033890778"/>
+<meta property="fb:admins"  content="466840033890778"/>
 
     <!-- Open Graph -->
     <meta property="og:title"
@@ -60,8 +62,28 @@
 <!-- hack iOS CSS :active style -->
 
 <body ontouchstart="">
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v11.0" nonce="xHE870RI"></script>
+
+<script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '{305055294598369}',
+        cookie     : true,
+        xfbml      : true,
+        version    : '{v11.0}'
+      });
+        
+      FB.AppEvents.logPageView();   
+        
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
     <!-- Navigation -->
 
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -104,6 +126,8 @@
                         <li>
                             <a href="/category/">Category</a>
                         </li>
+                        
+                        
                         
                         
                         
@@ -256,6 +280,266 @@
             ">
     			
 <div class="post-preview">
+    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/12-Memory-Management/">
+        <h2 class="post-title">
+            [#12] 메모리 관리-1
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            Logical Address vs Physical Address
+
+
+
+Logical address는 프로세스마다 독립적으로 가지는 주소공간이다. 어떤 프로세스가 메모리상에서 어느 지점에 위치하는지와 무관하게 논리적으로 각 프로세스가 0번지부터 가지고 있는 주소값을 Logical address(virtual address)라고 부른다.
+
+반면 Physi...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on May
+        9, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/ios/frame-bounds-difference/">
+        <h2 class="post-title">
+            frame & bounds
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            frame
+
+frame은 Superview 좌표계의 (0, 0)으로부터 얼마만큼 떨어져 있는지(위치) + view의 크기를 나타내는 값이다.
+
+Superview 좌표계의 (0, 0)은 Superview의 좌상단 꼭짓점이 아닐 수도 있다. (Superview의 bounds가 변경된 경우)
+
+이 문장이 frame과 bounds를 이해하는데 핵심이 된다.
+...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on May
+        7, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.05.04-TIL/">
+        <h2 class="post-title">
+            2021년 05월 04일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  TDD
+    
+      TDD의 용어에 대해 알아보고 실제 Unit Test 코드에 적용시켜보는 과정 진행
+      읽어본 글 : Mock, Stub, Spy, Fake가 뭔지에 대해 Swift 코드 예제로 설명해주는 글
+    
+  
+  CS
+    
+      읽어본 글 : 프로세스와 스레드의 차이에 대해 설명해놓은 ...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on May
+        4, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.05.03-TIL/">
+        <h2 class="post-title">
+            2021년 05월 03일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  
+    ARC와 Memory Structure
+
+    
+      ARC는 자동으로 Reference count를 관리하는 기능
+      Memory Structure에는 Code, Data, Stack, Heap 영역이 있다
+    
+  
+  
+    Retain Cycle과 Dead Lock
+
+    
+      Re...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on May
+        3, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/%EC%9D%BC%EC%83%81/TyporaEasyImageUpload/">
+        <h2 class="post-title">
+            Typora 이미지 쉽게 업로드 하기 for mac
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            사건의 발단
+
+Typora를 통해 깃허브 블로그 글을 쓰다보면 이미지 첨부하는 작업이 매우 귀찮다고 느끼시는 분들이 많으실 것 같아요. 이미지의 상대경로를 지정해주고 깃헙 블로그 레포의 어떤 폴더에 캡쳐한 스크린샷을 담는 과정은 상당히 귀찮은 작업이죠..
+
+이러한 문제를 해결할 수 있는 방안(이미지를 링크로 변환하여 업로드)을 오늘 알려드리겠습니다.
+...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on May
+        2, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/11-Deadlock/">
+        <h2 class="post-title">
+            [#11] Deadlock(데드락)
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            교착상태(deadlock)
+
+
+
+어느 누구도 양보를 하지 않으면 더이상 진행되지 않는 상태를 deadlock(교착상태)라고 한다.
+
+Resource는 하드웨어 자원과 소프트웨어 자원을 모두 칭하는 개념으로 자신의 자원을 내놓지 않고 상대방의 자원을 서로 차지하려는 시도에 의해 deadlock 상태가 발생할 수 있다.
+
+프로세스가 자원을 사용하는 절차는...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on May
+        2, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.04.29-TIL/">
+        <h2 class="post-title">
+            2021년 04월 29일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  
+    Allen의 동시성 프로그래밍 특강을 들었습니다. 동기/비동기에 관해서 많은 것을 알 수 있었습니다.
+  
+  
+    위의 특강을 토대로 Step1의 수정이 이루어졌습니다. protocol에 집착하던 것을 버린 것과 Operation을 Subclassing하여 OperationQueue에 단순한 BlockOperat...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on April
+        29, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.04.27-TIL/">
+        <h2 class="post-title">
+            2021년 04월 27일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  
+    은행 창구 프로젝트
+
+    
+      
+        as를 통한 type casting과 initializer를 통한 타입 변환이 서로 다르단 것을 다시 한 번 인지했습니다.
+
+        1
+2
+3
+4
+guard let input = userInput,
+	let inputNumber = Int(input) e...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on April
+        27, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.04.26-TIL/">
+        <h2 class="post-title">
+            2021년 04월 26일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  
+    새로운 프로젝트 (은행 창구 매니저 프로젝트) 시작
+
+    
+      
+        팀 그라운드 룰 작성 및 진행방향에 대해 이야기했습니다.
+
+        
+          Jay가 알려준 github의 issue기능을 활용하여 커밋들을 관리하기로 했습니다.
+        
+      
+      
+     ...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on April
+        26, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
     <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/10-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EB%8F%99%EA%B8%B0%ED%99%94-3/">
         <h2 class="post-title">
             [#10] 프로세스 동기화-3
@@ -276,269 +560,6 @@
     <p class="post-meta">
         Posted by Neph's Blog on April
         25, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.04.22-TIL/">
-        <h2 class="post-title">
-            2021년 04월 22일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  UIViewController 관련 문서들 정독
-    
-      UIViewController
-      View Controller Programming Guide for iOS
-      Positioning Content Relative to the Safe Area
-    
-  
-  Delegate 관련 문서들 정독...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        22, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/9-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EB%8F%99%EA%B8%B0%ED%99%94-2/">
-        <h2 class="post-title">
-            [#9] 프로세스 동기화-2
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            Critical Section 관리 알고리즘의 발전
-
-Critical Section을 사용하기 위해 만족해야 하는 몇가지 조건들
-
-
-  Mutual Exclusion(상호 배제)
-    
-      프로세스 P_i가 critical section 부분을 수행중이면 다른 모든 프로세스들은 그들의 critical section에 들어가면 안된다.
-    ...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        18, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2021.04.15-TIL/">
-        <h2 class="post-title">
-            2021년 04월 15일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  os_log에 대해 간략히 알아봤습니다.
-  만국 박람회 프로젝트의 refactoring이 계속되었습니다.
-
-
-
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        15, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.04.13-TIL/">
-        <h2 class="post-title">
-            2021년 04월 13일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  시청한 영상: WWDC20 Modern cell configuration
-
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
-        guard let c...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        13, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.04.12-TIL/">
-        <h2 class="post-title">
-            2021년 04월 12일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  Table View에 대해 알아보았습니다.
-    
-      Configure Table View Cell with code
-    
-  
-  Navigation View를 코드로 작성하는 방법에 대해 알아보았습니다.
-
-
-
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        12, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/8-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EB%8F%99%EA%B8%B0%ED%99%94-1/">
-        <h2 class="post-title">
-            [#8] 프로세스 동기화-1
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            프로세스 동기화 문제
-
-
-  공유 데이터의 동시 접근은 데이터의 불일치 문제를 발생시킬 수 있다
-  일관성 유지를 위해서는 협력 프로세스 간의 실행 순서를 정해주는 메커니즘이 필요하다
-
-
-Race Condition
-
-Race Condition이 생기는 경우
-
-
-  커널 작업 중 인터럽트 발생 시
-  프로세스가 시스템 콜을 하여 커널 모드로 수행중인데 ...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        11, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/7-CPU-%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%A7%81-2/">
-        <h2 class="post-title">
-            [#7] CPU 스케쥴링-2
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            스케쥴링의 성능 평가
-
-CPU 이용률
-
-CPU 이용률은 전체 시간 중에서 CPU가 일을 한 시간의 비율이다. CPU가 일을 하지 않고 휴면(idle) 상태에 머무르는 시간을 최소화하는 것이 스케쥴링의 중요한 목표이다.
-
-처리량(throughput)
-
-처리량은 주어진 시간 동안 CPU 버스트를 완료한 프로세스의 개수를 나타낸다. 즉, CPU를 원하는 프...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        11, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.04.09/.16-TIL/">
-        <h2 class="post-title">
-            2021년 04월 09일 ~ 16일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            공부한 내용
-
-온전히 코드만을 통한 UI 구성
-
-처음으로 코드로 UI를 구성하다보니 여러가지 시행착오들이 있었습니다. 글로 자세히 정리를 해보겠지만 이 포스트에 간략하게 몇가지 중요했던 내용들을 적어보겠습니다.
-
-
-  Scroll View
-    
-      꼭 Scroll View 위에 빈 Content View를 올릴 필요는 없습니다.
-      ...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        9, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.04.09-TIL/">
-        <h2 class="post-title">
-            2021년 04월 09일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-Scroll View를 코드로 구현하는 법에 대해 공부했습니다.
-
-스토리보드로 구성하는 방법과 (애플 공식 가이드) 코드로 짜는 방법이 상당히 달라서 고전했습니다.
-
-코드로 스크롤뷰를 구성하는 경우 Content View를 Scroll View 위에 별도로 올릴 필요가 없습니다.
-
-Scroll View 위에 view들을 추가시켜주되...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        9, 2021
     </p>
 </div>
 <hr>
@@ -608,6 +629,8 @@ Scroll View 위에 view들을 추가시켜주되...
         
         
         
+        
+        
     </ul>
 </header>
     		</div>
@@ -631,55 +654,63 @@ Scroll View 위에 view들을 추가시켜주되...
             
         
             
-            <a data-sort="0051"
+            <a data-sort="0060"
                 href="/archive/?tag=TIL" title="TIL"
                 rel="39">TIL</a>
             
             
             
-            <a data-sort="0073"
+            <a data-sort="0082"
                 href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
                 rel="17">운영체제</a>
             
-            <a data-sort="0074"
+            <a data-sort="0083"
                 href="/archive/?tag=OS" title="OS"
                 rel="16">OS</a>
             
-            <a data-sort="0083"
+            <a data-sort="0092"
                 href="/archive/?tag=Swift" title="Swift"
                 rel="7">Swift</a>
             
-            <a data-sort="0083"
+            <a data-sort="0092"
                 href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
                 rel="7">Yagom-Academy</a>
             
-            <a data-sort="0086"
+            <a data-sort="0095"
                 href="/archive/?tag=iOS" title="iOS"
                 rel="4">iOS</a>
             
-            <a data-sort="0087"
+            <a data-sort="0096"
                 href="/archive/?tag=enum" title="enum"
                 rel="3">enum</a>
             
-            <a data-sort="0088"
+            <a data-sort="0097"
                 href="/archive/?tag=Flow+chart" title="Flow chart"
                 rel="2">Flow chart</a>
             
-            <a data-sort="0088"
+            <a data-sort="0097"
                 href="/archive/?tag=Protocol" title="Protocol"
                 rel="2">Protocol</a>
             
-            <a data-sort="0088"
+            <a data-sort="0097"
                 href="/archive/?tag=Scroll+View" title="Scroll View"
                 rel="2">Scroll View</a>
             
-            <a data-sort="0088"
+            <a data-sort="0097"
                 href="/archive/?tag=UML" title="UML"
                 rel="2">UML</a>
             
-            <a data-sort="0088"
+            <a data-sort="0097"
                 href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
                 rel="2">Yagom Academy</a>
+            
+            <a data-sort="0097"
+                href="/archive/?tag=strong" title="strong"
+                rel="2">strong</a>
+            
+            <a data-sort="0097"
+                href="/archive/?tag=weak" title="weak"
+                rel="2">weak</a>
     </div>
 </section>
 
@@ -730,6 +761,49 @@ Scroll View 위에 view들을 추가시켜주되...
 </div>
 
 
+
+    <!-- Channel Plugin Scripts -->
+<script>
+  (function() {
+    var w = window;
+    if (w.ChannelIO) {
+      return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
+    }
+    var ch = function() {
+      ch.c(arguments);
+    };
+    ch.q = [];
+    ch.c = function(args) {
+      ch.q.push(args);
+    };
+    w.ChannelIO = ch;
+    function l() {
+      if (w.ChannelIOInitialized) {
+        return;
+      }
+      w.ChannelIOInitialized = true;
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+      s.charset = 'UTF-8';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    }
+    if (document.readyState === 'complete') {
+      l();
+    } else if (window.attachEvent) {
+      window.attachEvent('onload', l);
+    } else {
+      window.addEventListener('DOMContentLoaded', l, false);
+      window.addEventListener('load', l, false);
+    }
+  })();
+  ChannelIO('boot', {
+    "pluginKey": "6998650a-1c89-4fc4-abd0-9fd355279055"
+  });
+</script>
+<!-- End Channel Plugin -->
 
     <!-- Footer -->
 <footer>

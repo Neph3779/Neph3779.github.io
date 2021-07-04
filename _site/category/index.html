@@ -9,6 +9,8 @@
     <meta name="description" content="Write code with my soul.">
     <meta name="keywords" content="iOS 공부일지">
     <meta name="theme-color" content="#000000">
+    <meta  property="fb:app_id"  content="466840033890778"/>
+<meta property="fb:admins"  content="466840033890778"/>
 
     <!-- Open Graph -->
     <meta property="og:title"
@@ -60,8 +62,28 @@
 <!-- hack iOS CSS :active style -->
 
 <body ontouchstart="">
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v11.0" nonce="xHE870RI"></script>
+
+<script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '{305055294598369}',
+        cookie     : true,
+        xfbml      : true,
+        version    : '{v11.0}'
+      });
+        
+      FB.AppEvents.logPageView();   
+        
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
     <!-- Navigation -->
 
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -104,6 +126,8 @@
                         <li>
                             <a href="/category/">Category</a>
                         </li>
+                        
+                        
                         
                         
                         
@@ -252,7 +276,7 @@ https://github.com/kitian616/jekyll-TeXt-theme
       <div id='tag_cloud' class="tags tags-sup js-tags">
         <a class="tag-button--all" data-encode="">
           Show All
-          <sup>90</sup>
+          <sup>99</sup>
         </a>
 
         
@@ -260,68 +284,143 @@ https://github.com/kitian616/jekyll-TeXt-theme
         
         
         
-        <a data-sort="0046"
+        <a data-sort="0055"
           data-encode="TIL" class="tag-button" title="TIL"
           rel="44">
           TIL
           <sup>44</sup>
         </a>
         
-        <a data-sort="0074"
+        <a data-sort="0083"
           data-encode="%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" class="tag-button" title="운영체제"
           rel="16">
           운영체제
           <sup>16</sup>
         </a>
         
-        <a data-sort="0078"
+        <a data-sort="0087"
           data-encode="Swift+Memo" class="tag-button" title="Swift Memo"
           rel="12">
           Swift Memo
           <sup>12</sup>
         </a>
         
-        <a data-sort="0083"
+        <a data-sort="0092"
           data-encode="Swift" class="tag-button" title="Swift"
           rel="7">
           Swift
           <sup>7</sup>
         </a>
         
-        <a data-sort="0087"
+        <a data-sort="0092"
+          data-encode="iOS" class="tag-button" title="iOS"
+          rel="7">
+          iOS
+          <sup>7</sup>
+        </a>
+        
+        <a data-sort="0096"
           data-encode="%EC%9D%BC%EC%83%81" class="tag-button" title="일상"
           rel="3">
           일상
           <sup>3</sup>
         </a>
         
-        <a data-sort="0088"
+        <a data-sort="0097"
           data-encode="%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC" class="tag-button" title="네트워크"
           rel="2">
           네트워크
           <sup>2</sup>
         </a>
         
-        <a data-sort="0088"
+        <a data-sort="0097"
           data-encode="Project+Review" class="tag-button" title="Project Review"
           rel="2">
           Project Review
           <sup>2</sup>
-        </a>
-        
-        <a data-sort="0089"
-          data-encode="iOS" class="tag-button" title="iOS"
-          rel="1">
-          iOS
-          <sup>1</sup>
         </a>
       </div>
 
       <!-- Article List -->
       <div class="mini-post-list js-result d-none"><section>
           <span class="fa listing-seperator">
+            <span class="tag-text">2021년 07월</span>
+          </span><div class="post-preview item" data-tags="">
+            <a href="/UseMultipleTableViewInOneViewController/">
+              <h2 class="post-title">
+                하나의 ViewController에 여러개의 TableView 쓰기
+              </h2>
+              
+            </a>
+            <hr>
+          </div><div class="post-preview item" data-tags="iOS">
+            <a href="/ios/StoryboardProsAndCons/">
+              <h2 class="post-title">
+                스토리보드의 장단점
+              </h2>
+              
+            </a>
+            <hr>
+          </div><div class="post-preview item" data-tags="iOS">
+            <a href="/ios/CocoaFramework/">
+              <h2 class="post-title">
+                Cocoa Framework
+              </h2>
+              
+            </a>
+            <hr>
+          </div><div class="post-preview item" data-tags="iOS">
+            <a href="/ios/AboutWeakAndStrong/">
+              <h2 class="post-title">
+                Strong, Weak에 대해 알아보자
+              </h2>
+              
+            </a>
+            <hr>
+          </div><div class="post-preview item" data-tags="">
+            <a href="/WhatIsUIWindow/">
+              <h2 class="post-title">
+                UIWindow의 역할
+              </h2>
+              
+            </a>
+            <hr>
+          </div></section><section>
+          <span class="fa listing-seperator">
             <span class="tag-text">2021년 06월</span>
-          </span><div class="post-preview item" data-tags="%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C">
+          </span><div class="post-preview item" data-tags="iOS">
+            <a href="/ios/WhatIsInActive/">
+              <h2 class="post-title">
+                inActive 상태란 무엇일까?
+              </h2>
+              
+            </a>
+            <hr>
+          </div><div class="post-preview item" data-tags="iOS">
+            <a href="/ios/WhatIsARC/">
+              <h2 class="post-title">
+                ARC는 무엇일까?
+              </h2>
+              
+            </a>
+            <hr>
+          </div><div class="post-preview item" data-tags="">
+            <a href="/HuggingVsResistance/">
+              <h2 class="post-title">
+                [Auto Layout] Hugging vs Resistance
+              </h2>
+              
+            </a>
+            <hr>
+          </div><div class="post-preview item" data-tags="iOS">
+            <a href="/ios/DelegateVsNotification/">
+              <h2 class="post-title">
+                Delegates와 Notification 방식의 차이
+              </h2>
+              
+            </a>
+            <hr>
+          </div><div class="post-preview item" data-tags="%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C">
             <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/16-File-System-2/">
               <h2 class="post-title">
                 [#16] File System-2
@@ -444,18 +543,18 @@ https://github.com/kitian616/jekyll-TeXt-theme
               
             </a>
             <hr>
-          </div><div class="post-preview item" data-tags="%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C">
-            <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/11-Deadlock/">
-              <h2 class="post-title">
-                [#11] Deadlock(데드락)
-              </h2>
-              
-            </a>
-            <hr>
           </div><div class="post-preview item" data-tags="%EC%9D%BC%EC%83%81">
             <a href="/%EC%9D%BC%EC%83%81/TyporaEasyImageUpload/">
               <h2 class="post-title">
                 Typora 이미지 쉽게 업로드 하기 for mac
+              </h2>
+              
+            </a>
+            <hr>
+          </div><div class="post-preview item" data-tags="%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C">
+            <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/11-Deadlock/">
+              <h2 class="post-title">
+                [#11] Deadlock(데드락)
               </h2>
               
             </a>
@@ -536,14 +635,6 @@ https://github.com/kitian616/jekyll-TeXt-theme
             </a>
             <hr>
           </div><div class="post-preview item" data-tags="%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C">
-            <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/7-CPU-%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%A7%81-2/">
-              <h2 class="post-title">
-                [#7] CPU 스케쥴링-2
-              </h2>
-              
-            </a>
-            <hr>
-          </div><div class="post-preview item" data-tags="%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C">
             <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/8-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EB%8F%99%EA%B8%B0%ED%99%94-1/">
               <h2 class="post-title">
                 [#8] 프로세스 동기화-1
@@ -551,10 +642,10 @@ https://github.com/kitian616/jekyll-TeXt-theme
               
             </a>
             <hr>
-          </div><div class="post-preview item" data-tags="TIL">
-            <a href="/til/2021.04.09/.16-TIL/">
+          </div><div class="post-preview item" data-tags="%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C">
+            <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/7-CPU-%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%A7%81-2/">
               <h2 class="post-title">
-                2021년 04월 09일 ~ 16일 공부일지
+                [#7] CPU 스케쥴링-2
               </h2>
               
             </a>
@@ -563,6 +654,14 @@ https://github.com/kitian616/jekyll-TeXt-theme
             <a href="/til/2021.04.09-TIL/">
               <h2 class="post-title">
                 2021년 04월 09일 공부일지
+              </h2>
+              
+            </a>
+            <hr>
+          </div><div class="post-preview item" data-tags="TIL">
+            <a href="/til/2021.04.09/.16-TIL/">
+              <h2 class="post-title">
+                2021년 04월 09일 ~ 16일 공부일지
               </h2>
               
             </a>
@@ -584,14 +683,6 @@ https://github.com/kitian616/jekyll-TeXt-theme
             </a>
             <hr>
           </div><div class="post-preview item" data-tags="%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C">
-            <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/6-CPU-%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%A7%81-1/">
-              <h2 class="post-title">
-                [#6] CPU 스케쥴링-1
-              </h2>
-              
-            </a>
-            <hr>
-          </div><div class="post-preview item" data-tags="%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C">
             <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/5-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EA%B4%80%EB%A6%AC-2/">
               <h2 class="post-title">
                 [#5] 프로세스 관리 - 2
@@ -603,6 +694,14 @@ https://github.com/kitian616/jekyll-TeXt-theme
             <a href="/til/2021.04.05-TIL/">
               <h2 class="post-title">
                 2021년 04월 05일 공부일지
+              </h2>
+              
+            </a>
+            <hr>
+          </div><div class="post-preview item" data-tags="%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C">
+            <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/6-CPU-%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%A7%81-1/">
+              <h2 class="post-title">
+                [#6] CPU 스케쥴링-1
               </h2>
               
             </a>
@@ -675,9 +774,9 @@ https://github.com/kitian616/jekyll-TeXt-theme
             </a>
             <hr>
           </div><div class="post-preview item" data-tags="Swift+Memo">
-            <a href="/swift%20memo/Swift-Property/">
+            <a href="/swift%20memo/Swift-%EA%B0%80%EB%B3%80-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98/">
               <h2 class="post-title">
-                Swift 프로퍼티의 종류
+                Swift 가변(Variadic) 매개변수
               </h2>
               
             </a>
@@ -691,25 +790,9 @@ https://github.com/kitian616/jekyll-TeXt-theme
             </a>
             <hr>
           </div><div class="post-preview item" data-tags="Swift+Memo">
-            <a href="/swift%20memo/Swift-%EA%B0%80%EB%B3%80-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98/">
+            <a href="/swift%20memo/Swift-Property/">
               <h2 class="post-title">
-                Swift 가변(Variadic) 매개변수
-              </h2>
-              
-            </a>
-            <hr>
-          </div><div class="post-preview item" data-tags="Swift+Memo">
-            <a href="/swift%20memo/Swift-%EB%A9%94%EC%84%9C%EB%93%9C/">
-              <h2 class="post-title">
-                Swift의 메서드 종류
-              </h2>
-              
-            </a>
-            <hr>
-          </div><div class="post-preview item" data-tags="TIL">
-            <a href="/til/2021.03.23-TIL/">
-              <h2 class="post-title">
-                2021년 03월 23일 공부일지
+                Swift 프로퍼티의 종류
               </h2>
               
             </a>
@@ -722,6 +805,14 @@ https://github.com/kitian616/jekyll-TeXt-theme
               
             </a>
             <hr>
+          </div><div class="post-preview item" data-tags="TIL">
+            <a href="/til/2021.03.23-TIL/">
+              <h2 class="post-title">
+                2021년 03월 23일 공부일지
+              </h2>
+              
+            </a>
+            <hr>
           </div><div class="post-preview item" data-tags="Swift">
             <a href="/swift/Swift-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C/">
               <h2 class="post-title">
@@ -730,10 +821,10 @@ https://github.com/kitian616/jekyll-TeXt-theme
               
             </a>
             <hr>
-          </div><div class="post-preview item" data-tags="TIL">
-            <a href="/til/2021.03.22-TIL/">
+          </div><div class="post-preview item" data-tags="Swift+Memo">
+            <a href="/swift%20memo/Swift-%EB%A9%94%EC%84%9C%EB%93%9C/">
               <h2 class="post-title">
-                2021년 03월 22일 공부일지
+                Swift의 메서드 종류
               </h2>
               
             </a>
@@ -750,6 +841,14 @@ https://github.com/kitian616/jekyll-TeXt-theme
             <a href="/swift%20memo/Swift-is-%EC%97%B0%EC%82%B0%EC%9E%90-as-%EC%97%B0%EC%82%B0%EC%9E%90/">
               <h2 class="post-title">
                 Swift is as? as!
+              </h2>
+              
+            </a>
+            <hr>
+          </div><div class="post-preview item" data-tags="TIL">
+            <a href="/til/2021.03.22-TIL/">
+              <h2 class="post-title">
+                2021년 03월 22일 공부일지
               </h2>
               
             </a>
@@ -795,17 +894,17 @@ https://github.com/kitian616/jekyll-TeXt-theme
             </a>
             <hr>
           </div><div class="post-preview item" data-tags="Swift+Memo">
-            <a href="/swift%20memo/MVC-MVP-MVVM/">
+            <a href="/swift%20memo/Swift-View-%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0/">
               <h2 class="post-title">
-                MVC, MVP, MVVM 차이
+                Swift View 형성과정
               </h2>
               
             </a>
             <hr>
           </div><div class="post-preview item" data-tags="Swift+Memo">
-            <a href="/swift%20memo/Swift-View-%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0/">
+            <a href="/swift%20memo/MVC-MVP-MVVM/">
               <h2 class="post-title">
-                Swift View 형성과정
+                MVC, MVP, MVVM 차이
               </h2>
               
             </a>
@@ -1061,6 +1160,49 @@ https://github.com/kitian616/jekyll-TeXt-theme
     </div>
   </div>
 </div>
+
+    <!-- Channel Plugin Scripts -->
+<script>
+  (function() {
+    var w = window;
+    if (w.ChannelIO) {
+      return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
+    }
+    var ch = function() {
+      ch.c(arguments);
+    };
+    ch.q = [];
+    ch.c = function(args) {
+      ch.q.push(args);
+    };
+    w.ChannelIO = ch;
+    function l() {
+      if (w.ChannelIOInitialized) {
+        return;
+      }
+      w.ChannelIOInitialized = true;
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+      s.charset = 'UTF-8';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    }
+    if (document.readyState === 'complete') {
+      l();
+    } else if (window.attachEvent) {
+      window.attachEvent('onload', l);
+    } else {
+      window.addEventListener('DOMContentLoaded', l, false);
+      window.addEventListener('load', l, false);
+    }
+  })();
+  ChannelIO('boot', {
+    "pluginKey": "6998650a-1c89-4fc4-abd0-9fd355279055"
+  });
+</script>
+<!-- End Channel Plugin -->
 
     <!-- Footer -->
 <footer>
