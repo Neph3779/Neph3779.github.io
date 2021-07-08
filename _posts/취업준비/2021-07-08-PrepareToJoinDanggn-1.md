@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[#1]당근마켓 iOS인턴 준비"
+title: "[#1] 당근마켓 iOS인턴 준비"
 image:
 categories: 취업준비
 tags: 

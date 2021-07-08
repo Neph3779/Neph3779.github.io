@@ -76,13 +76,17 @@ sitemap:
 
 | 1    | ![image-20210708221803474](https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210708221822.png) |
 | ---- | ------------------------------------------------------------ |
-| 2    | ![image-20210708221909760](/Users/chunsoohyun/Library/Application Support/typora-user-images/image-20210708221909760.png) |
+| 2    | ![image-20210708221909760](https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210709001155.png) |
+
+
 
 1의 화면은 첫 화면에서의 navigation bar이다. 
 
 2의 화면은 collection view의 두번째 section이 표시되는 순간부터 돋보기 모양의 검색 버튼이 생기고
 
-| <img src="/Users/chunsoohyun/Library/Application Support/typora-user-images/image-20210708222019028.png" alt="image-20210708222019028" style="zoom:50%;" /> |
+
+
+| <img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210709001210.png" alt="image-20210708222019028" style="zoom:50%;" /> |
 | :----------------------------------------------------------: |
 |                          검색 화면                           |
 
