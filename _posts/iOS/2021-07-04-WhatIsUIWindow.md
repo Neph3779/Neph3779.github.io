@@ -58,3 +58,10 @@ AppDelegate나 SceneDelegate에서 UIWindow의 instance(window)를 프로퍼티�
 - https://wnstkdyu.github.io/2017/12/29/uiwindow/
 - https://zeddios.tistory.com/283
 - https://developer.apple.com/documentation/uikit/uiwindow
+
+
+
+### 왜 UIWindow는 UIView의 subclass일까?
+
+https://stackoverflow.com/questions/830785/why-is-uiwindow-a-child-and-also-a-parent-of-uview
+
