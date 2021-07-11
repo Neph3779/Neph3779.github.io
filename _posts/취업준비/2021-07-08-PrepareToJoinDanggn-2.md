@@ -80,15 +80,12 @@ sitemap:
 
 
 
-1의 화면은 첫 화면에서의 navigation bar이다. 
+`그림 1`은 기본 navigation bar의 모습이다.
 
-2의 화면은 collection view의 두번째 section이 표시되는 순간부터 돋보기 모양의 검색 버튼이 생기고
-
-
+collection view의 두번째 section이 표시되는 순간부터 `그림 2`에서 보이는 것처럼 돋보기 모양 아이콘이 추가된다.
 
 | <img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210709001210.png" alt="image-20210708222019028" style="zoom:50%;" /> |
 | :----------------------------------------------------------: |
 |                          검색 화면                           |
 
 검색 화면은 다음과 같이 구성되어있다. 최근 검색한 내용이 캐시데이터로 저장되는 모양이고, 추천 검색어는 더이상 좌우 스크롤을 통해 확인하는 형태가 아닌 하나의 section에 스크롤 없이 담겨있는 모습이다.
-
