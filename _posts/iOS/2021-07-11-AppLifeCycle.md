@@ -36,6 +36,7 @@ iOS는 C언어 기반을 토대로 작동하기 때문에 앱이 시작되면 �
 
 | <img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210711160214.PNG" alt="img" style="zoom:50%;" /> | <img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210711160423.png" alt="123540849-04b7c100-d77c-11eb-9b13-a08e8daf0ed9" style="zoom:50%;" /> |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
+|                                                              |                                                              |
 
 
 

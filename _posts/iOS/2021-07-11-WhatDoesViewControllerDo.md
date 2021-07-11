@@ -46,6 +46,9 @@ View Controller는 두 가지 종류로 구분되는데 하나는 content view c
 
 | <img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210711192638.png" alt="image: ../Art/VCPG_ControllerHierarchy_fig_1-1_2x.png" style="zoom:50%;" /> | <img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210711192908.png" alt="image: ../Art/VCPG_ContainerViewController_fig_1-2_2x.png" style="zoom:50%;" /> |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
+|                                                              |                                                              |
+
+
 
 뷰 컨트롤러의 가장 중요한 역할을 뷰 계층을 관리하는 것이다. 뷰컨트롤러는 모든 컨텐트를 감싸는 루트뷰를 갖고 있으며 디스플레이하고 싶은 다른 뷰를 추가할 수 있다. 뷰컨트롤러는 언제나 루트뷰의 레퍼런스를 소유하고 각 뷰는 서브뷰들의 스트롱 레퍼런스(strong references) 를 소유한다.
 
