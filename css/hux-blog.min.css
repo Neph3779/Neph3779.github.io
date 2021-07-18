@@ -632,8 +632,8 @@ pre.highlight {
 }
 body {
   font-family: "Noto Sans KR";
-  line-height: 1.7;
-  font-size: 16px;
+  line-height: 2;
+  font-size: 18px;
   color: #404040;
   overflow-x: hidden;
   text-rendering: auto;
@@ -641,7 +641,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 p {
-  margin: 30px 0;
+  margin: 15px 0;
 }
 @media screen and (max-width: 768px) {
   p {

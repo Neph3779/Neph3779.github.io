@@ -1,6 +1,62 @@
 [
   
     {
+      "title"    : "escaping 클로저",
+      "subtitle" : "",
+      "tags"     : "closure, escaping closure",
+      "url"      : "/ios/WhatIsEscapingClosure/",
+      "date"     : "2021-07-15 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "App Bundle의 구조와 역할",
+      "subtitle" : "",
+      "tags"     : "iOS",
+      "url"      : "/ios/WhatIsAppBundle/",
+      "date"     : "2021-07-11 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "UIViewController",
+      "subtitle" : "",
+      "tags"     : "UIResponder",
+      "url"      : "/ios/WhatDoesViewControllerDo/",
+      "date"     : "2021-07-11 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "App Life Cycle",
+      "subtitle" : "",
+      "tags"     : "app life cycle",
+      "url"      : "/ios/AppLifeCycle/",
+      "date"     : "2021-07-11 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "접근 제어자의 종류",
+      "subtitle" : "",
+      "tags"     : "접근 제어 지정자",
+      "url"      : "/ios/AccessControlmd/",
+      "date"     : "2021-07-11 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "[#2] 당근마켓 화면 분석-1",
+      "subtitle" : "",
+      "tags"     : "취업준비, 당근마켓 인턴",
+      "url"      : "/%EC%B7%A8%EC%97%85%EC%A4%80%EB%B9%84/PrepareToJoinDanggn-2/",
+      "date"     : "2021-07-08 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "[#1] 당근마켓 iOS인턴 준비",
+      "subtitle" : "",
+      "tags"     : "취업준비, 당근마켓 인턴",
+      "url"      : "/%EC%B7%A8%EC%97%85%EC%A4%80%EB%B9%84/PrepareToJoinDanggn-1/",
+      "date"     : "2021-07-08 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "UIWindow의 역할",
       "subtitle" : "",
       "tags"     : "",
@@ -97,7 +153,7 @@
     } ,
   
     {
-      "title"    : "[#16] File System-1",
+      "title"    : "[#15] File System-1",
       "subtitle" : "",
       "tags"     : "운영체제, OS",
       "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/15-File-System-1/",
@@ -166,14 +222,6 @@
       "tags"     : "운영체제, OS",
       "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/12-Memory-Management/",
       "date"     : "2021-05-09 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "frame &amp; bounds",
-      "subtitle" : "",
-      "tags"     : "frame, bound, origin, center",
-      "url"      : "/ios/frame-bounds-difference/",
-      "date"     : "2021-05-07 00:00:00 +0900"
     } ,
   
     {
@@ -377,14 +425,6 @@
     } ,
   
     {
-      "title"    : "Swift Lint 적용기",
-      "subtitle" : "",
-      "tags"     : "SwiftLint, CocoaPods",
-      "url"      : "/swift/Swift-Lint-%EC%A0%81%EC%9A%A9%EA%B8%B0/",
-      "date"     : "2021-03-30 00:00:00 +0900"
-    } ,
-  
-    {
       "title"    : "2021년 03월 29일 공부일지",
       "subtitle" : "",
       "tags"     : "TIL",
@@ -433,74 +473,10 @@
     } ,
   
     {
-      "title"    : "[작성중] Swift 프로토콜(Protocol) 정리",
-      "subtitle" : "",
-      "tags"     : "Protocol, Delegation pattern",
-      "url"      : "/swift/Swift-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C/",
-      "date"     : "2021-03-23 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "Swift의 메서드 종류",
-      "subtitle" : "",
-      "tags"     : "메서드",
-      "url"      : "/swift%20memo/Swift-%EB%A9%94%EC%84%9C%EB%93%9C/",
-      "date"     : "2021-03-23 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "Swift 가변(Variadic) 매개변수",
-      "subtitle" : "",
-      "tags"     : "Variadic, 가변 매개변수",
-      "url"      : "/swift%20memo/Swift-%EA%B0%80%EB%B3%80-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98/",
-      "date"     : "2021-03-23 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "iOS Toast Alert과 Timer",
-      "subtitle" : "",
-      "tags"     : "",
-      "url"      : "/swift%20memo/Swift-Timer,-Toast/",
-      "date"     : "2021-03-23 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "Swift 프로퍼티의 종류",
-      "subtitle" : "",
-      "tags"     : "Property",
-      "url"      : "/swift%20memo/Swift-Property/",
-      "date"     : "2021-03-23 00:00:00 +0900"
-    } ,
-  
-    {
       "title"    : "2021년 03월 22일 공부일지",
       "subtitle" : "",
       "tags"     : "TIL, UML, 응집도, 결합도",
       "url"      : "/til/2021.03.22-TIL/",
-      "date"     : "2021-03-22 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "UML 다이어그램",
-      "subtitle" : "",
-      "tags"     : "UML",
-      "url"      : "/swift%20memo/UML/",
-      "date"     : "2021-03-22 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "이니셜라이저 종류",
-      "subtitle" : "",
-      "tags"     : "initializer",
-      "url"      : "/swift%20memo/Swift-%EC%9D%B4%EB%8B%88%EC%85%9C%EB%9D%BC%EC%9D%B4%EC%A0%80/",
-      "date"     : "2021-03-22 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "Swift is as? as!",
-      "subtitle" : "",
-      "tags"     : "is, as",
-      "url"      : "/swift%20memo/Swift-is-%EC%97%B0%EC%82%B0%EC%9E%90-as-%EC%97%B0%EC%82%B0%EC%9E%90/",
       "date"     : "2021-03-22 00:00:00 +0900"
     } ,
   
@@ -529,42 +505,10 @@
     } ,
   
     {
-      "title"    : "Swift 동기, 비동기, Dispatch Queue",
-      "subtitle" : "",
-      "tags"     : "Dispatch, 동기, 비동기",
-      "url"      : "/swift%20memo/Swift-%EB%8F%99%EA%B8%B0-%EB%B9%84%EB%8F%99%EA%B8%B0/",
-      "date"     : "2021-03-20 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "Swift View 형성과정",
-      "subtitle" : "",
-      "tags"     : "View 형성, RootViewController",
-      "url"      : "/swift%20memo/Swift-View-%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0/",
-      "date"     : "2021-03-20 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "MVC, MVP, MVVM 차이",
-      "subtitle" : "",
-      "tags"     : "디자인패턴, MVC, MVP, MVVM",
-      "url"      : "/swift%20memo/MVC-MVP-MVVM/",
-      "date"     : "2021-03-20 00:00:00 +0900"
-    } ,
-  
-    {
       "title"    : "2021년 03월 19일",
       "subtitle" : "",
       "tags"     : "TIL",
       "url"      : "/til/2021.03.19-TIL/",
-      "date"     : "2021-03-19 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "Swift heap stack class struct",
-      "subtitle" : "",
-      "tags"     : "heap, stack, class, struct",
-      "url"      : "/swift%20memo/Swift-%EC%84%B1%EB%8A%A5/",
       "date"     : "2021-03-19 00:00:00 +0900"
     } ,
   
@@ -605,14 +549,6 @@
       "subtitle" : "",
       "tags"     : "TIL",
       "url"      : "/til/2021.03.16-TIL/",
-      "date"     : "2021-03-16 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "Swift Weak",
-      "subtitle" : "",
-      "tags"     : "weak, strong, unowned",
-      "url"      : "/swift%20memo/Swift-Weak/",
       "date"     : "2021-03-16 00:00:00 +0900"
     } ,
   
@@ -689,26 +625,10 @@
     } ,
   
     {
-      "title"    : "플로우차트(Flow Chart) 그리는법",
-      "subtitle" : "",
-      "tags"     : "Flow Chart",
-      "url"      : "/swift/FlowChart/",
-      "date"     : "2021-03-06 00:00:00 +0900"
-    } ,
-  
-    {
       "title"    : "2021년 03월 05일 공부일지",
       "subtitle" : "",
       "tags"     : "TIL, Optional Chaining, Flow chart",
       "url"      : "/til/2021.03.05-TIL/",
-      "date"     : "2021-03-05 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "옵셔널체이닝(Optional Chaining) 알아보기 (feat. Flow chart)",
-      "subtitle" : "",
-      "tags"     : "Swift, Flow chart",
-      "url"      : "/swift/Optional-Chaining(with-flow-chart)/",
       "date"     : "2021-03-05 00:00:00 +0900"
     } ,
   
@@ -721,35 +641,11 @@
     } ,
   
     {
-      "title"    : "깃헙 블로그 관련 이것저것",
-      "subtitle" : "",
-      "tags"     : "TIL, jekyll, 블로그, 페이스북 댓글, disqus",
-      "url"      : "/%EC%9D%BC%EC%83%81/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B4%80%EB%A0%A8-%EC%9E%A1%EB%8B%A4%ED%95%9C-%EB%82%B4%EC%9A%A9%EB%93%A4/",
-      "date"     : "2021-03-03 00:00:00 +0900"
-    } ,
-  
-    {
       "title"    : "2021년 03월 03일 공부일지 ",
       "subtitle" : "",
       "tags"     : "Yagom-Academy, enum, naming",
       "url"      : "/til/2021.03.03-TIL/",
       "date"     : "2021-03-03 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "Swift enum에 대해 알아보자! (기본편)",
-      "subtitle" : "",
-      "tags"     : "Swift, 열거형, enum",
-      "url"      : "/swift/Swift-enum(basic)/",
-      "date"     : "2021-03-02 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "프로그래밍에서의 추상화와 일반화",
-      "subtitle" : "",
-      "tags"     : "Swift, TIL, Yagom-Academy",
-      "url"      : "/swift/Abstraction-and-generalization/",
-      "date"     : "2021-03-01 00:00:00 +0900"
     } ,
   
     {
@@ -782,14 +678,6 @@
       "tags"     : "TIL, iOS, Swift, Yagom-Academy",
       "url"      : "/til/2021.02.22-TIL/",
       "date"     : "2021-02-22 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "Hello world !",
-      "subtitle" : "",
-      "tags"     : "helloWorld",
-      "url"      : "/Hello-world-!/",
-      "date"     : "1999-07-22 00:00:00 +0900"
     } 
   
 ]

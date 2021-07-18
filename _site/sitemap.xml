@@ -2,6 +2,118 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
+      <loc>https://neph3779.github.io/ios/WhatIsEscapingClosure/</loc>
+      
+        <lastmod>2021-07-15T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>daily</changefreq>
+      
+
+      
+        <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>https://neph3779.github.io/ios/WhatIsAppBundle/</loc>
+      
+        <lastmod>2021-07-11T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>daily</changefreq>
+      
+
+      
+        <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>https://neph3779.github.io/ios/WhatDoesViewControllerDo/</loc>
+      
+        <lastmod>2021-07-11T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>daily</changefreq>
+      
+
+      
+        <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>https://neph3779.github.io/ios/AppLifeCycle/</loc>
+      
+        <lastmod>2021-07-11T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>daily</changefreq>
+      
+
+      
+        <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>https://neph3779.github.io/ios/AccessControlmd/</loc>
+      
+        <lastmod>2021-07-11T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>daily</changefreq>
+      
+
+      
+        <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>https://neph3779.github.io/%EC%B7%A8%EC%97%85%EC%A4%80%EB%B9%84/PrepareToJoinDanggn-2/</loc>
+      
+        <lastmod>2021-07-08T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>daily</changefreq>
+      
+
+      
+        <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>https://neph3779.github.io/%EC%B7%A8%EC%97%85%EC%A4%80%EB%B9%84/PrepareToJoinDanggn-1/</loc>
+      
+        <lastmod>2021-07-08T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>daily</changefreq>
+      
+
+      
+        <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
       <loc>https://neph3779.github.io/WhatIsUIWindow/</loc>
       
         <lastmod>2021-07-04T00:00:00+09:00</lastmod>
@@ -325,22 +437,6 @@
       <loc>https://neph3779.github.io/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/12-Memory-Management/</loc>
       
         <lastmod>2021-05-09T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-        <priority>1.0</priority>
-      
-
-    </url>
-  
-    <url>
-      <loc>https://neph3779.github.io/ios/frame-bounds-difference/</loc>
-      
-        <lastmod>2021-05-07T00:00:00+09:00</lastmod>
       
 
       
@@ -754,22 +850,6 @@
     </url>
   
     <url>
-      <loc>https://neph3779.github.io/swift/Swift-Lint-%EC%A0%81%EC%9A%A9%EA%B8%B0/</loc>
-      
-        <lastmod>2021-03-30T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-        <priority>1.0</priority>
-      
-
-    </url>
-  
-    <url>
       <loc>https://neph3779.github.io/til/2021.03.29-TIL/</loc>
       
         <lastmod>2021-03-29T00:00:00+09:00</lastmod>
@@ -866,135 +946,7 @@
     </url>
   
     <url>
-      <loc>https://neph3779.github.io/swift/Swift-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C/</loc>
-      
-        <lastmod>2021-03-23T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-        <priority>1.0</priority>
-      
-
-    </url>
-  
-    <url>
-      <loc>https://neph3779.github.io/swift%20memo/Swift-%EB%A9%94%EC%84%9C%EB%93%9C/</loc>
-      
-        <lastmod>2021-03-23T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-        <priority>1.0</priority>
-      
-
-    </url>
-  
-    <url>
-      <loc>https://neph3779.github.io/swift%20memo/Swift-%EA%B0%80%EB%B3%80-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98/</loc>
-      
-        <lastmod>2021-03-23T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-        <priority>1.0</priority>
-      
-
-    </url>
-  
-    <url>
-      <loc>https://neph3779.github.io/swift%20memo/Swift-Timer,-Toast/</loc>
-      
-        <lastmod>2021-03-23T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-        <priority>1.0</priority>
-      
-
-    </url>
-  
-    <url>
-      <loc>https://neph3779.github.io/swift%20memo/Swift-Property/</loc>
-      
-        <lastmod>2021-03-23T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-        <priority>1.0</priority>
-      
-
-    </url>
-  
-    <url>
       <loc>https://neph3779.github.io/til/2021.03.22-TIL/</loc>
-      
-        <lastmod>2021-03-22T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-        <priority>1.0</priority>
-      
-
-    </url>
-  
-    <url>
-      <loc>https://neph3779.github.io/swift%20memo/UML/</loc>
-      
-        <lastmod>2021-03-22T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-        <priority>1.0</priority>
-      
-
-    </url>
-  
-    <url>
-      <loc>https://neph3779.github.io/swift%20memo/Swift-%EC%9D%B4%EB%8B%88%EC%85%9C%EB%9D%BC%EC%9D%B4%EC%A0%80/</loc>
-      
-        <lastmod>2021-03-22T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-        <priority>1.0</priority>
-      
-
-    </url>
-  
-    <url>
-      <loc>https://neph3779.github.io/swift%20memo/Swift-is-%EC%97%B0%EC%82%B0%EC%9E%90-as-%EC%97%B0%EC%82%B0%EC%9E%90/</loc>
       
         <lastmod>2021-03-22T00:00:00+09:00</lastmod>
       
@@ -1058,71 +1010,7 @@
     </url>
   
     <url>
-      <loc>https://neph3779.github.io/swift%20memo/Swift-%EB%8F%99%EA%B8%B0-%EB%B9%84%EB%8F%99%EA%B8%B0/</loc>
-      
-        <lastmod>2021-03-20T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-        <priority>1.0</priority>
-      
-
-    </url>
-  
-    <url>
-      <loc>https://neph3779.github.io/swift%20memo/Swift-View-%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0/</loc>
-      
-        <lastmod>2021-03-20T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-        <priority>1.0</priority>
-      
-
-    </url>
-  
-    <url>
-      <loc>https://neph3779.github.io/swift%20memo/MVC-MVP-MVVM/</loc>
-      
-        <lastmod>2021-03-20T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-        <priority>1.0</priority>
-      
-
-    </url>
-  
-    <url>
       <loc>https://neph3779.github.io/til/2021.03.19-TIL/</loc>
-      
-        <lastmod>2021-03-19T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-        <priority>1.0</priority>
-      
-
-    </url>
-  
-    <url>
-      <loc>https://neph3779.github.io/swift%20memo/Swift-%EC%84%B1%EB%8A%A5/</loc>
       
         <lastmod>2021-03-19T00:00:00+09:00</lastmod>
       
@@ -1203,22 +1091,6 @@
   
     <url>
       <loc>https://neph3779.github.io/til/2021.03.16-TIL/</loc>
-      
-        <lastmod>2021-03-16T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-        <priority>1.0</priority>
-      
-
-    </url>
-  
-    <url>
-      <loc>https://neph3779.github.io/swift%20memo/Swift-Weak/</loc>
       
         <lastmod>2021-03-16T00:00:00+09:00</lastmod>
       
@@ -1378,39 +1250,7 @@
     </url>
   
     <url>
-      <loc>https://neph3779.github.io/swift/FlowChart/</loc>
-      
-        <lastmod>2021-03-06T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-        <priority>1.0</priority>
-      
-
-    </url>
-  
-    <url>
       <loc>https://neph3779.github.io/til/2021.03.05-TIL/</loc>
-      
-        <lastmod>2021-03-05T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>weekly</changefreq>
-      
-
-      
-          <priority>0.5</priority>
-      
-
-    </url>
-  
-    <url>
-      <loc>https://neph3779.github.io/swift/Optional-Chaining(with-flow-chart)/</loc>
       
         <lastmod>2021-03-05T00:00:00+09:00</lastmod>
       
@@ -1442,22 +1282,6 @@
     </url>
   
     <url>
-      <loc>https://neph3779.github.io/%EC%9D%BC%EC%83%81/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B4%80%EB%A0%A8-%EC%9E%A1%EB%8B%A4%ED%95%9C-%EB%82%B4%EC%9A%A9%EB%93%A4/</loc>
-      
-        <lastmod>2021-03-03T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>weekly</changefreq>
-      
-
-      
-          <priority>0.5</priority>
-      
-
-    </url>
-  
-    <url>
       <loc>https://neph3779.github.io/til/2021.03.03-TIL/</loc>
       
         <lastmod>2021-03-03T00:00:00+09:00</lastmod>
@@ -1469,38 +1293,6 @@
 
       
           <priority>0.5</priority>
-      
-
-    </url>
-  
-    <url>
-      <loc>https://neph3779.github.io/swift/Swift-enum(basic)/</loc>
-      
-        <lastmod>2021-03-02T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>weekly</changefreq>
-      
-
-      
-          <priority>0.5</priority>
-      
-
-    </url>
-  
-    <url>
-      <loc>https://neph3779.github.io/swift/Abstraction-and-generalization/</loc>
-      
-        <lastmod>2021-03-01T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-        <priority>1.0</priority>
       
 
     </url>
@@ -1557,22 +1349,6 @@
       <loc>https://neph3779.github.io/til/2021.02.22-TIL/</loc>
       
         <lastmod>2021-02-22T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>weekly</changefreq>
-      
-
-      
-          <priority>0.5</priority>
-      
-
-    </url>
-  
-    <url>
-      <loc>https://neph3779.github.io/Hello-world-!/</loc>
-      
-        <lastmod>1999-07-22T00:00:00+09:00</lastmod>
       
 
       
