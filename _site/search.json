@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "UIApplicationDelegate 메서드",
+      "subtitle" : "",
+      "tags"     : "AppDelegate, UIApplicationDelegate",
+      "url"      : "/ios/AppDelegateMethods/",
+      "date"     : "2021-07-18 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "escaping 클로저",
       "subtitle" : "",
       "tags"     : "closure, escaping closure",

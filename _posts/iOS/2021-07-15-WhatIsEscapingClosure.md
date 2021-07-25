@@ -37,6 +37,44 @@ func getImages(completionHandler: @escaping (Result<UIImage, Error>) -> Void)
 
 
 
+### 비동기 작업으로 인해 클로저가 나중에 실행되는 경우 예시
+
+```swift
+func postItem(data: PostingItem, completionHandler: @escaping (Result<MarketItem, OpenMarketError>) -> Void) {
+        sessionManager.request(method: .post, path: .item(), data: data) { result in
+            switch result {
+            case .failure(let error):
+                completionHandler(.failure(error))
+            case .success(let data):
+                guard let decodedData = try? JSONDecoder().decode(MarketItem.self, from: data) else {
+                    return completionHandler(.failure(.invalidData))
+                }
+                completionHandler(.success(decodedData))
+            }
+        }
+    }
+```
+
+sessionManage.request는 비동기적으로 실행될 메서드이므로 completionHandler는 나중에 실행되게 된다. 이런 경우에 `@escaping` 키워드를 붙여주어야 한다.
+
+
+
+### return 값으로 클로저를 반환하는 경우 예시
+
+```swift
+func fetchImageDataTask(urlString: String?, completionHandler: @escaping (Data) -> Void) -> URLSessionDataTask? {
+        guard let urlString = urlString,
+              let url = URL(string: urlString) else { return nil }
+
+        return dataTask(request: URLRequest(url: url)) { result in
+            guard let data = try? result.get() else { return }
+            return completionHandler(data)
+        }
+    }
+```
+
+
+
 ## 주의할 점
 
 Escaping closure은 함수의 전달인자로 전달하게 되는데 이 말은 클로저의 구현부는 다른 곳에 존재한다는 것이다.
@@ -47,5 +85,4 @@ Escaping closure은 함수의 전달인자로 전달하게 되는데 이 말은 
 
 ## 참고한 링크
 
-- https://www.youtube.com/watch?v=xiS5gJOIQxI&ab_channel=SeanAllen
-- 
+- [https://www.youtube.com/watch?v=xiS5gJOIQxI&ab_channel=SeanAllen](https://www.youtube.com/watch?v=xiS5gJOIQxI&ab_channel=SeanAllen)
