@@ -132,6 +132,8 @@
                         
                         
                         
+                        
+                        
                         <li class="search-icon">
                             <a href="javascript:void(0)">
                                 <i class="fa fa-search"></i>
@@ -254,6 +256,142 @@
                 postlist-container
             ">
     			
+<div class="post-preview">
+    <a href="/alamofire/%EB%B6%84%EC%84%9D/HTTPHeaders/">
+        <h2 class="post-title">
+            [Core] HTTPHeaders.swift 분석
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            HTTPHeaders
+
+HTTPHeaders는 struct
+
+HTTPHeaders는 struct 타입이다. 내부에서 reference 타입을 다루지 않기 때문에 ARC로 인한 성능저하를 우려하지 않아도 된다.
+
+HTTP header를 담고 있는 배열이 있다.
+
+1
+private var headers: [HTTPHeader] = []
+
+
+headers라...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on July
+        29, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/alamofire/%EB%B6%84%EC%84%9D/AFError/">
+        <h2 class="post-title">
+            [Core] AFError.swift 분석
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            AFError
+
+Alamofire의 Error들은 AFError.swift라는 하나의 파일 내에서 관리된다.
+
+가장 큰 틀인 AFError(enum type) 안에 여러 enum, struct가 nested되어있다. AFError - Nested Enum - Case 구조로 이루어져있으며 Nested Enum에서 어떤 작업이 실패했는지를, Case에서...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on July
+        29, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/ios/WhyUIOnlyInMainThread/">
+        <h2 class="post-title">
+            왜 UI작업은 main thread에서 해야할까?
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            UIKit은 Nonatomic
+
+UIKit이 만약 atomic이었다면 thread safe를 보장해주는 block 메커니즘이 필요하다. 이는 성능의 저하를 야기하게 된다. 게다가 UIKit은 거대한 프레임워크이기 때문에 thread safe하게 디자인하는 것은 현실적으로 불가능하다.
+
+불가능함을 설명하는 몇가지 상황들
+
+
+  만약 뷰의 속성을 비동기적...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on July
+        25, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/WhatIsUIApplicationMain/">
+        <h2 class="post-title">
+            UIApplicationMain은 뭐하는 함수일까?
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            UIApplication
+
+UIApplication의 singleton instance는 앱의 시작시에 생성된다. 이 instance를 제작하는 함수가 바로 UIApplicationMain 함수이다. 이 외에도 App Delegate의 제작과 event cycle의 설정을 담당하는 역할을 가진다.
+
+UIApplicationMain
+
+1
+2
+3
+4
+fu...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on July
+        25, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/ios/WhatIsAppThinning/">
+        <h2 class="post-title">
+            App thining
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            App Thinning이란?
+
+앱을 특정 디바이스에 설치할 때 굳이 들어가지 않아도 되는 파일들을 생략하고 그 디바이스에 맞게 설치하는 최적화 기술을 App Thinning이라고 한다. 앞의 문장에서 알 수 있듯 하나의 앱은 아래와 같이 여러가지 파일들이 섞여있다.
+
+
+
+App Slicing
+
+꼭 필요한 것만을 다운 받는 과정을 App Slicing이...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on July
+        25, 2021
+    </p>
+</div>
+<hr>
+
 <div class="post-preview">
     <a href="/ios/AppDelegateMethods/">
         <h2 class="post-title">
@@ -388,154 +526,6 @@ Main Run Loop
 </div>
 <hr>
 
-<div class="post-preview">
-    <a href="/ios/AccessControlmd/">
-        <h2 class="post-title">
-            접근 제어자의 종류
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            Module이란?
-
-접근제어에 대해 이해하기 위해서는 모듈의 개념에 대해 알아야한다.
-
-모듈은 코드의 묶음 단위로 프레임워크, 라이브러리, 어플리케이션처럼 배포할 코드들의 묶음을 나타낸다. 즉, 하나의 프레임워크는 하나의 모듈이고 일반적으로 만드는 프로젝트도 역시 하나의 모듈이다. import를 통해 모듈을 사용할 수 있다. 프로젝트 하위에 위치한 t...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on July
-        11, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/%EC%B7%A8%EC%97%85%EC%A4%80%EB%B9%84/PrepareToJoinDanggn-2/">
-        <h2 class="post-title">
-            [#2] 당근마켓 화면 분석-1
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            당근마켓 클론코딩을 목표로 하는 화면
-
-“내 근처” 탭
-
-
-  
-    
-      
-      
-      
-    
-  
-  
-    
-      1
-      2
-      3
-    
-  
-
-
-화면의 구성 및 특징
-
-기본구성
-
-
-  
-    UITabBarController를 활용하여 5개의 탭을 사용하고 있다.
-  
-  UINavigation...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on July
-        8, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/%EC%B7%A8%EC%97%85%EC%A4%80%EB%B9%84/PrepareToJoinDanggn-1/">
-        <h2 class="post-title">
-            [#1] 당근마켓 iOS인턴 준비
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            당근마켓 인턴 지원 계획
-
-
-  클론코딩 + 포트폴리오 준비기간은 4주로 한다. (0708 ~ 0808)
-  프로젝트를 진행하며 지금까지 배웠던 기본들에 대해 다시 정리하며 진행한다.
-  외부 라이브러리는 사용하지 않되, 이러한 라이브러리를 왜 사용하는지, 사용했을 때의 장점은 무엇인지, 단점은 무엇인지, 당근마켓에서 단점을 극복한 사례나 후기가 있는...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on July
-        8, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/WhatIsUIWindow/">
-        <h2 class="post-title">
-            UIWindow의 역할
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            UIWindow란?
-
-UIWindow는 UIView의 하위 클래스로 앱의 배경과 이벤트를 View로 전달하는 객체이다.
-
-눈에 보이는 내용은 없지만 앱의 View에 기본 컨테이너를 제공하여 하며 rootViewController에서 관리하는 하나 이상의 View를 보여주는 역할을 한다.
-
-또한 터치 이벤트를 View와 다른 어플리케이션 객체들에게 전달...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on July
-        4, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/UseMultipleTableViewInOneViewController/">
-        <h2 class="post-title">
-            하나의 ViewController에 여러개의 TableView 쓰기
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            Table View
-
-우선 테이블뷰를 사용하기 위해서는 아래의 작업들이 필요하다.
-
-
-  cell 등록 (register)
-  datasource, delegate 지정
-
-
-cell register는 각각의 tableView 마다 register를 해주면 되기에 문제가 되지 않는다. (스토리보드를 사용한다면 cell을 자동으로 등록해주기 때문에 reg...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on July
-        4, 2021
-    </p>
-</div>
-<hr>
-
 
 <!-- Pager -->
 
@@ -551,6 +541,8 @@ cell register는 각각의 tableView 마다 register를 해주면 되기에 문�
 
 <header class="site-category">
     <ul>
+        
+        
         
         
         
@@ -620,53 +612,61 @@ cell register는 각각의 tableView 마다 register를 해주면 되기에 문�
             
         
             
-            <a data-sort="0049"
+            <a data-sort="0054"
                 href="/archive/?tag=TIL" title="TIL"
                 rel="37">TIL</a>
             
             
             
-            <a data-sort="0069"
+            <a data-sort="0074"
                 href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
                 rel="17">운영체제</a>
             
-            <a data-sort="0070"
+            <a data-sort="0075"
                 href="/archive/?tag=OS" title="OS"
                 rel="16">OS</a>
             
-            <a data-sort="0080"
+            <a data-sort="0085"
                 href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
                 rel="6">Yagom-Academy</a>
             
-            <a data-sort="0081"
+            <a data-sort="0086"
                 href="/archive/?tag=iOS" title="iOS"
                 rel="5">iOS</a>
             
-            <a data-sort="0082"
+            <a data-sort="0087"
                 href="/archive/?tag=Swift" title="Swift"
                 rel="4">Swift</a>
             
-            <a data-sort="0084"
+            <a data-sort="0089"
                 href="/archive/?tag=%EB%8B%B9%EA%B7%BC%EB%A7%88%EC%BC%93+%EC%9D%B8%ED%84%B4" title="당근마켓 인턴"
                 rel="2">당근마켓 인턴</a>
             
-            <a data-sort="0084"
+            <a data-sort="0089"
                 href="/archive/?tag=%EC%B7%A8%EC%97%85%EC%A4%80%EB%B9%84" title="취업준비"
                 rel="2">취업준비</a>
             
-            <a data-sort="0084"
+            <a data-sort="0089"
+                href="/archive/?tag=AFError" title="AFError"
+                rel="2">AFError</a>
+            
+            <a data-sort="0089"
+                href="/archive/?tag=Alamofire" title="Alamofire"
+                rel="2">Alamofire</a>
+            
+            <a data-sort="0089"
                 href="/archive/?tag=Scroll+View" title="Scroll View"
                 rel="2">Scroll View</a>
             
-            <a data-sort="0084"
+            <a data-sort="0089"
                 href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
                 rel="2">Yagom Academy</a>
             
-            <a data-sort="0084"
+            <a data-sort="0089"
                 href="/archive/?tag=app+life+cycle" title="app life cycle"
                 rel="2">app life cycle</a>
             
-            <a data-sort="0084"
+            <a data-sort="0089"
                 href="/archive/?tag=enum" title="enum"
                 rel="2">enum</a>
     </div>
