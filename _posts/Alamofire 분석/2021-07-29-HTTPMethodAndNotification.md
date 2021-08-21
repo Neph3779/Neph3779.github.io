@@ -71,3 +71,10 @@ Almofire에서 지원하는 Notification은 아래와 같다.
 
 
 Notification, EventMonitor 파트는 자세한 구현 내용을 알기보다는 어떤 상황에 어떤 Notification이 오는지만 알고 활용해도 충분할 것 같다.
+
+
+
+[https://github.com/Alamofire/Alamofire/blob/master/Source/HTTPMethod.swift](https://github.com/Alamofire/Alamofire/blob/master/Source/HTTPMethod.swift)
+
+[https://github.com/Alamofire/Alamofire/blob/master/Source/Notifications.swift](https://github.com/Alamofire/Alamofire/blob/master/Source/Notifications.swift)
+
