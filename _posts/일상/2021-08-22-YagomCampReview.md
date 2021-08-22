@@ -6,6 +6,8 @@ categories: 일상
 tags: 
   - Yagom
   - StarterCamp
+  - 부트캠프 후기
+  - 부트캠프
 sitemap:
   changefreq: daily
   priority: 1.0
