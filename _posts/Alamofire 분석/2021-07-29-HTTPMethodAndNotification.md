@@ -2,7 +2,7 @@
 layout: post
 title: "[Core] HTTPMethod.swift, Notification.swift 분석"
 image:
-categories: Alamofire 분석
+categories: [Alamofire 분석]
 tags: 
   - Alamofire
   - HTTPMethod
