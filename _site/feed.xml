@@ -5,9 +5,1570 @@
     <description>Write code with my soul.</description>
     <link>https://neph3779.github.io/</link>
     <atom:link href="https://neph3779.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 29 Jul 2021 18:22:32 +0900</pubDate>
-    <lastBuildDate>Thu, 29 Jul 2021 18:22:32 +0900</lastBuildDate>
+    <pubDate>Tue, 12 Oct 2021 03:13:36 +0900</pubDate>
+    <lastBuildDate>Tue, 12 Oct 2021 03:13:36 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[#5] 관계 데이터 모델</title>
+        <description>&lt;h2 id=&quot;관계-데이터-모델의-개념&quot;&gt;관계 데이터 모델의 개념&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;관계 데이터 모델의 기본 개념&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;개념적 구조를 논리적 구조로 표현하는 논리적 데이터 모델&lt;/li&gt;
+  &lt;li&gt;하나의 개체에 대한 데이터를 하나의 릴레이션에 저장&lt;/li&gt;
+  &lt;li&gt;Relataion은 “관계를 맺다”라는 의미가 아닌 Table의 이름을 Relation이라 말하는 것&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211011224352.png&quot; alt=&quot;image-20211011224352851&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;[고객 릴레이션]&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;관계 데이터 모델의 기본 용어&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;릴레이션(relation)
+    &lt;ul&gt;
+      &lt;li&gt;하나의 개체에 관한 데이터를 2차원 테이블의 구조로 저장한 것&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;속성(attribute)
+    &lt;ul&gt;
+      &lt;li&gt;릴레이션의 열&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;파일의 field&lt;/strong&gt;에 대응하는 개념&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;튜플(tuple)
+    &lt;ul&gt;
+      &lt;li&gt;릴레이션의 행&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;파일의 record&lt;/strong&gt;에 대응하는 개념&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;관계 데이터 모델의 기본 용어&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;도메인(domain)
+    &lt;ul&gt;
+      &lt;li&gt;하나의 속성이 가질 수 있는 모든 값의 집합&lt;/li&gt;
+      &lt;li&gt;일반적으로 속성의 데이터 타입으로 정의&lt;/li&gt;
+      &lt;li&gt;잘못된 연산 시도를 예방해줌&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;널(null)
+    &lt;ul&gt;
+      &lt;li&gt;속성 값을 아직 모르거나 해당되는 값이 없음을 표현&lt;/li&gt;
+      &lt;li&gt;일반적으로 표시하기 위해 공백을 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;차수(degree)
+    &lt;ul&gt;
+      &lt;li&gt;속성의 개수(열의 수)&lt;/li&gt;
+      &lt;li&gt;일반적으로 자주 변하지 않음 (정적인 특징)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;카디널리티(cardinality)
+    &lt;ul&gt;
+      &lt;li&gt;튜플의 개수(행의 수)&lt;/li&gt;
+      &lt;li&gt;일반적으로 자주 변함 (동적인 특징)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고객 릴레이션&lt;/code&gt;의 차수 : 6&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고객 릴레이션&lt;/code&gt;의 카디널리티: 4&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;릴레이션의 구성&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211011225919.png&quot; alt=&quot;image-20211011225919947&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;릴레이션 스키마 (relation schema)
+    &lt;ul&gt;
+      &lt;li&gt;릴레이션의 논리적 구조&lt;/li&gt;
+      &lt;li&gt;릴레이션의 이름과 릴레이션에 포함된 모든 속성 이름으로 정의
+        &lt;ul&gt;
+          &lt;li&gt;i.e., 고객(고객아이디, 고객이름, 나이, 등급, 직업, 적립금)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;릴레이션 인스턴스 (relation instance)
+    &lt;ul&gt;
+      &lt;li&gt;어느 한 시점에 릴레이션에 존재하는 튜플들의 집합&lt;/li&gt;
+      &lt;li&gt;실체화된 값&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;데이터베이스의 구성&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211011230044.png&quot; alt=&quot;image-20211011230044519&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터베이스 스키마 (database schema)
+    &lt;ul&gt;
+      &lt;li&gt;데이터베이스의 전체 구조&lt;/li&gt;
+      &lt;li&gt;데이터베이스를 구성하는 &lt;strong&gt;릴레이션 스키마의 모음&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;데이터베이스 인스턴스 (database instance)
+    &lt;ul&gt;
+      &lt;li&gt;데이터베이스를 구성하는 &lt;strong&gt;릴레이션 인스턴스의 모음&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;릴레이션의 특성&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;튜플의 유일성
+    &lt;ul&gt;
+      &lt;li&gt;하나의 릴레이션에는 동일한 튜플이 존재할 수 없다.&lt;/li&gt;
+      &lt;li&gt;튜플들을 유일하게 구별하기 위해 선정되는 속성을 키(key)라고 부른다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;튜플의 무순서성
+    &lt;ul&gt;
+      &lt;li&gt;하나의 릴레이션에서 튜플 사이의 순서는 무의미하다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;속성의 무순서성
+    &lt;ul&gt;
+      &lt;li&gt;하나의 릴레이션에서 속성 사이의 순서는 무의미하다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;속성의 원자성
+    &lt;ul&gt;
+      &lt;li&gt;속성 값으로 원자 값(의미의 분해가 되지 않는 하나의 값)만 사용할 수 있다.&lt;/li&gt;
+      &lt;li&gt;다중 값을 가질 수 없다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;키(key)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;릴레이션에서 튜플들을 유일하게 구별하는 속성 또는 속성들의 집합&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;키의 특성&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;유일성 (uniqueness)
+    &lt;ul&gt;
+      &lt;li&gt;하나의 릴레이션에서 모든 튜플은 서로 다른 키 값을 가져야 함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;최소성 (minimality)
+    &lt;ul&gt;
+      &lt;li&gt;꼭 필요한 최소한의 속성들로만 키를 구성함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;키의 종류&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;슈퍼키 (super key)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;유일성을 만족하는 속성 또는 속성들의 집합&lt;/li&gt;
+      &lt;li&gt;유일성; 하나의 릴레이션에서 키로 지정된 속성 값은 튜플마다 달라야 한다는 의미&lt;/li&gt;
+      &lt;li&gt;i.e., 고객 릴레이션의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고객아이디&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(고객아이디, 고객이름)&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(고객이름, 주소)&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;속성들의 집합또한 슈퍼키에 포함되는 개념이므로 불필요한 속성까지 확인하게 되어 비효율적인 경우가 존재
+        &lt;ul&gt;
+          &lt;li&gt;이를 해결하기 위해 후보키의 개념이 필요&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;후보키 (candidate key)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;유일성과 최소성을 만족하는 속성 또는 속성들의 집합&lt;/li&gt;
+      &lt;li&gt;최소성; 꼭 필요한 속성들로만 키를 구성한다는 의미&lt;/li&gt;
+      &lt;li&gt;i.e., 고객 릴레이션의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고객아이디&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(고객이름, 주소)&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;기본키 (primary key)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;후보키 중에서 기본적으로 사용하기 위해 선택한 키&lt;/li&gt;
+      &lt;li&gt;속성 이름에 밑줄을 그어 표현&lt;/li&gt;
+      &lt;li&gt;i.e., 고객 릴레이션의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고객아이디&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;대체키 (alternate key)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;기본키로 선택되지 못한 후보키&lt;/li&gt;
+      &lt;li&gt;i.e., 고객 릴레이션의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(고객이름, 주소)&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211011231708.png&quot; alt=&quot;image-20211011231708335&quot; style=&quot;zoom:33%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;외래키 (foreign key)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;다른 릴레이션의 기본키(대체키)를 참조하는 속성 또는 속성들의 집합&lt;/li&gt;
+      &lt;li&gt;릴레이션들 간의 관계를 표현 (관계 구현의 핵심으로 동작)&lt;/li&gt;
+      &lt;li&gt;하나의 릴레이션에 외래키가 여러 개 존재할 수 있다.&lt;/li&gt;
+      &lt;li&gt;외래키를 기본키로 사용할 수 있다.&lt;/li&gt;
+      &lt;li&gt;외래키 속성과 그것이 참조하는 기본키 속성의 이름은 달라도 되지만, 도메인은 같아야 한다.&lt;/li&gt;
+      &lt;li&gt;같은 릴레이션의 기본키를 참조하는 외래키도 정의할 수 있다.&lt;/li&gt;
+      &lt;li&gt;널 값을 가질 수 있다.&lt;/li&gt;
+      &lt;li&gt;외래키를 가진 릴레이션: 참조하는 릴레이션, 반대는 참조되는 릴레이션&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211011232248.png&quot; alt=&quot;image-20211011232248686&quot; style=&quot;zoom: 50%;&quot; /&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211011232327.png&quot; alt=&quot;image-20211011232327493&quot; style=&quot;zoom: 33%;&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211011232510.png&quot; alt=&quot;image-20211011232510254&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;기본키를 선택할 때 고려하면 도움이 되는 기준들&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;널 값을 가질 수 있는 속성이 포함된 후보키는 기본키로 부적합하다.
+    &lt;ul&gt;
+      &lt;li&gt;기본키가 널 값인 튜플은 다른 튜플들과 구별되지 않으므로 부적합&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;값이 자주 변경될 수 있는 속성이 포함된 후보키는 기본키로 부적합하다.
+    &lt;ul&gt;
+      &lt;li&gt;기본키의 값이 바뀔때마다 그 값이 기본키로 적합한지 검사해야하므로 부적합&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;단순한 후보키를 기본키로 선택한다.
+    &lt;ul&gt;
+      &lt;li&gt;자릿수가 적은 정수, 단순 문자열 속성, 키를 구성하는 속성의 개수가 적은 후보키&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;관계-데이터-모델의-제약&quot;&gt;관계 데이터 모델의 제약&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;무결성 제약조건&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터의 무결성을 보장하고 일관된 상태로 유지하기 위한 규칙&lt;/li&gt;
+  &lt;li&gt;무결성: 데이터를 결함이 없는 상태, 즉 정확하고 유효하게 유지하는 것&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;개체 무결성 제약조건&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기본키를 구성하는 모든 속성은 널 값을 가질 수 없는 규칙&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;참조 무결성 제약조건&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;외래키는 참조할 수 없는 값을 가질 수 없는 규칙&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211011234448.png&quot; alt=&quot;image-20211011234448721&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;참조 무결성 제약조건 위배 예시&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;주의할 점&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;외래키 속성이 널 값을 가진다고 해서 참조 무결성 제약조건을 위배한 것은 아님
+    &lt;ul&gt;
+      &lt;li&gt;i.e., 추천인이라는 외래키 속성이 존재할 때 추천인을 입력하지 않았으면 null이지만 이게 참조 무결성 제약조건 위배는 아니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Mon, 11 Oct 2021 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/5-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%80%E1%85%A8-%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5-%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/5-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%80%E1%85%A8-%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5-%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF/</guid>
+        
+        <category>데이터베이스</category>
+        
+        
+        <category>데이터베이스</category>
+        
+      </item>
+    
+      <item>
+        <title>[#4] 데이터 모델링</title>
+        <description>&lt;h2 id=&quot;데이터-모델링과-데이터-모델의-개념&quot;&gt;데이터 모델링과 데이터 모델의 개념&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;데이터 모델링&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;현실 세계에 존재하는 데이터를 컴퓨터 세계의 데이터베이스로 옮기는 변환과정 (가장 중요한 작업)&lt;/li&gt;
+  &lt;li&gt;데이터베이스 설계의 핵심과정&lt;/li&gt;
+  &lt;li&gt;추상화 수행
+    &lt;ul&gt;
+      &lt;li&gt;어떤 관점을 통해 추출한 것&lt;/li&gt;
+      &lt;li&gt;어떤 특정 상황에 필요한 부분만 빼내는 것&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;2단계 데이터 모델링&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;개념적 데이터 모델링
+    &lt;ul&gt;
+      &lt;li&gt;현실 세계의 중요 데이터를 추출하여 개념 세계로 옮기는 작업&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;논리적 데이터 모델링
+    &lt;ul&gt;
+      &lt;li&gt;개념 세계의 데이터를 데이터베이스에 저장하는 구조로 표현하는 작업&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;데이터 모델 (data model)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터 모델링의 결과물을 표현하는 도구&lt;/li&gt;
+  &lt;li&gt;개념적 데이터 모델
+    &lt;ul&gt;
+      &lt;li&gt;사람의 머리로 이해할 수 있도록 현실 세계를 개념적 모델링하여 데이터베이스의 개념적 구조로 표현하는 도구&lt;/li&gt;
+      &lt;li&gt;개체-관계 모델&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;논리적 데이터 모델
+    &lt;ul&gt;
+      &lt;li&gt;개념적 구조를 논리적 모델링하여 데이터베이스의 논리적 구조로 표현하는 도구&lt;/li&gt;
+      &lt;li&gt;관계 데이터 모델&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;데이터 모델의 구성요소&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;연산 (operation)
+    &lt;ul&gt;
+      &lt;li&gt;개체 인스턴스 처리 작업 명세&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;데이터 구조 (data structure)
+    &lt;ul&gt;
+      &lt;li&gt;개체 타입과 이들 간의 관계 명세&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;제약조건 (constraint)
+    &lt;ul&gt;
+      &lt;li&gt;데이터의 논리적 제약 명세&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;개체---관계-모델&quot;&gt;개체 - 관계 모델&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;개체 - 관계 모델&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;개체와 개체 간의 관계를 이용해 현실 세계를 개념적 구조로 표현&lt;/li&gt;
+  &lt;li&gt;핵심요소: 개체, 속성, 관계&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;개체 - 관계 다이어그램 (E-R diagram)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;개체 - 관계 모델을 이용해 현실 세계를 개념적으로 모델링한 결과물을 그림으로 표현한 것&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;개체 (entity)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;저장할 가치가 있는 중요 데이터를 가지고 있고 다른 것과 구별되는 사람, 사물, 개념, 사건 등
+    &lt;ul&gt;
+      &lt;li&gt;i.e., 서점에 필요한 개체: 고객, 책&lt;/li&gt;
+      &lt;li&gt;i.e., 학교에 필요한 개체: 학과, 과목, 학생&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;E-R 다이어그램에서 사각형으로 표현하고 사각형 안에 이름을 표기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211008093939.png&quot; alt=&quot;image-20211008093939217&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;속성 (attribute)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;개체나 관계&lt;/strong&gt;가 가지고 있는 고유의 특성&lt;/li&gt;
+  &lt;li&gt;E-R 다이어그램에서 타원으로 표현하고 타원 안에 이름을 표기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211008094924.png&quot; alt=&quot;image-20211008094924510&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;개체 타입&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;개체를 고유의 이름과 속성들로 정의한 것&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;개체 인스턴스&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;개체를 구성하고 있는 속성이 실제 값을 가짐으로써 실체화된 개체&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;개체 집합&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;특정 개체 타입에 대한 개체 인스턴스들을 모아놓은 것&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211008095151.png&quot; alt=&quot;image-20211008095151056&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;속성의 분류&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211008095354.png&quot; alt=&quot;image-20211008095354541&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;단일 값 속성과 다중 값 속성&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;단일 값 속성
+    &lt;ul&gt;
+      &lt;li&gt;값을 하나만 가질 수 있는 속성&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;다중 값 속성
+    &lt;ul&gt;
+      &lt;li&gt;값을 여러 개 가질 수 있는 속성&lt;/li&gt;
+      &lt;li&gt;E-R 다이어그램에서 이중타원으로 표현&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211008095808.png&quot; alt=&quot;image-20211008095808493&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;단순 속성과 복합 속성&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;단순 속성
+    &lt;ul&gt;
+      &lt;li&gt;의미를 더는 분해할 수 없는 속성&lt;/li&gt;
+      &lt;li&gt;i.e., 고객 개체의 아이디&lt;/li&gt;
+      &lt;li&gt;i.e., 책 개체의 이름 및 가격&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;복합 속성
+    &lt;ul&gt;
+      &lt;li&gt;의미를 분해할 수 있는 속성&lt;/li&gt;
+      &lt;li&gt;i.e., 고객 개체의 주소 속성
+        &lt;ul&gt;
+          &lt;li&gt;도, 시, 동, 우편번호 등으로 의미를 세분화할 수 있음&lt;/li&gt;
+          &lt;li&gt;특정 범위 제한 검색이 의미 있음 (어떤 시에 사는 사람 검색 등)&lt;/li&gt;
+          &lt;li&gt;상황에 따라서는 단순속성이 될수도 있음&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211008100103.png&quot; alt=&quot;image-20211008100103624&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;유도 속성&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기존의 다른 속성의 값에서 유도되어 결정되는 속성&lt;/li&gt;
+  &lt;li&gt;값이 별도로 저장되지 않음
+    &lt;ul&gt;
+      &lt;li&gt;i.e., 책 개체의 가격과 할인율 속성으로 계산되는 판매가격 속성&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;E-R 다이어그램에서 점선 타원으로 표현&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211008100413.png&quot; alt=&quot;image-20211008100413593&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;널 속성&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;널 값이 허용되는 속성&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;널(null) 값&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;속성 값이 그 개체에 “해당되지 않는” (N/A; not applicable) 경우
+    &lt;ul&gt;
+      &lt;li&gt;i.e., 학생 개체의 병역 기간 속성 (여학생의 경우 N/A)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;속성 값을 “알 수 없는” (unknown) 경우
+    &lt;ul&gt;
+      &lt;li&gt;그 값이 존재하지만 “누락” (missing)인 경우
+        &lt;ul&gt;
+          &lt;li&gt;i.e., 이름 속성&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;그 값이 존재하고 있는지 조차 알 수 없어 “모르는” (not known) 경우
+        &lt;ul&gt;
+          &lt;li&gt;i.e., 재직중인 회사&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;키 속성&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;각 개체 인스턴스를 식별하는데 사용되는 속성&lt;/li&gt;
+  &lt;li&gt;둘 이상의 속성들로 구성되기도 함&lt;/li&gt;
+  &lt;li&gt;E-R 다이어그램에서 밑줄로 표현&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211008100943.png&quot; alt=&quot;image-20211008100943357&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;관계&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;개체와 개체가 맺고 있는 의미 있는 연관성&lt;/li&gt;
+  &lt;li&gt;개체 집합들 사이의 대응 관계, 즉 매핑을 의미&lt;/li&gt;
+  &lt;li&gt;E-R 다이어그램에서 마름모로 표현&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211008101846.png&quot; alt=&quot;image-20211008101846886&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;관계의 유형 : 매핑 카디널리티 기준&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;일대일 (1:1) 관계&lt;/li&gt;
+  &lt;li&gt;일대다 (1:n) 관계&lt;/li&gt;
+  &lt;li&gt;다대다 (n:m) 관계&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;매핑 카디널리티&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;관계를 맺는 두 개체 집합에서, 각 개체 인스턴스가 연관성을 맺고 있는 상대 개체 집합의 인스턴스 개수&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;일대일 (1:1) 관계&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;개체 A의 각 개체 인스턴스가 개체 B의 개체 인스턴스 &lt;strong&gt;하나&lt;/strong&gt;와 관계를 맺을 수 있고, 개체 B의 각 개체 인스턴스도 개체 A의 개체 인스턴스 &lt;strong&gt;하나&lt;/strong&gt;와 관계를 맺을 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;일대다 (1:n) 관계&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;개체 A의 각 개체 인스턴스가 개체 B의 개체 인스턴스 &lt;strong&gt;여러 개&lt;/strong&gt;와 관계를 맺을 수 있지만, 개체 B의 각 개체 인스턴스는 개체 A의 개체 인스턴스 &lt;strong&gt;하나&lt;/strong&gt;와 관계를 맺을 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;다대다 (n:m) 관계&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;개체 A의 각 개체 인스턴스가 개체 B의 개체 인스턴스 &lt;strong&gt;여러 개&lt;/strong&gt;와 관계를 맺을 수 있고, 개체 B의 각 개체 인스턴스도 개체 A의 개체 인스턴스 &lt;strong&gt;여러개&lt;/strong&gt;와 관계를 맺을 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;관계의 참여 특성&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;필수적 참여 (전체 참여)
+    &lt;ul&gt;
+      &lt;li&gt;모든 개체 인스턴스가 관계에 반드시 참여해야 되는 것을 의미&lt;/li&gt;
+      &lt;li&gt;i.e., 고객 - 책 (모든 고객은 반드시 책을 구매해야 하도록 구성한 경우 고객은 책과 “구매” 관계를 가져야 함)&lt;/li&gt;
+      &lt;li&gt;i.e., 교수 - 단과대학 (교수는 반드시 특정 단과대학과 “소속” 관계를 가져야 함)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;선택적 참여 (부분 참여)
+    &lt;ul&gt;
+      &lt;li&gt;개체 인스턴스 중 일부만 관계에 참여해도 되는 것을 의미&lt;/li&gt;
+      &lt;li&gt;i.e., 학생 - 과목 (휴학 등의 사유로 “수강”의 관계가 없을 수 있음)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211008131514.png&quot; alt=&quot;image-20211008131514926&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;고객은 반드시 “구매” 관계를 맺어야 하지만 책은 그렇지 않아도 됨. 따라서 고객과 구매 사이에만 이중선을 그은 모습&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;관계의 종속성&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;약한 개체
+    &lt;ul&gt;
+      &lt;li&gt;다른 개체의 존재 여부에 의존적인 개체&lt;/li&gt;
+      &lt;li&gt;자기 자신의 속성으로만 키를 명세할 수 없는 개체 타입 (유니크한 키 없음)&lt;/li&gt;
+      &lt;li&gt;부분키(partial key) 를 통해 약한 개체집합 내에서 서로 구별할 수 있음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;강한 개체
+    &lt;ul&gt;
+      &lt;li&gt;다른 개체의 존재 여부를 결정하는 개체&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;특징
+    &lt;ul&gt;
+      &lt;li&gt;강한 개체와 약한 개체는 일반적으로 일대다의 관계가 성립됨&lt;/li&gt;
+      &lt;li&gt;약한 개체는 강한 개체와의 관계에 필수적으로 참여함&lt;/li&gt;
+      &lt;li&gt;약한 개체는 강한 개체의 키를 포함하여 키를 구성함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;E-R 다이어그램에서 약한 개체는 이중 사각형으로 표현하고, 약한 개체가 강한 개체와 맺는 관계는 이중 마름모로 표현&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;관계 인스턴스들이 유지해야 할 제약조건&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;개체 집합간 매핑 카디널리티&lt;/li&gt;
+  &lt;li&gt;전체 참여&lt;/li&gt;
+  &lt;li&gt;관계의 종속성&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;삽입/삭제/변경 연산 시 제약 조건을 반드시 검토해야함&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;논리적-데이터-모델&quot;&gt;논리적 데이터 모델&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;논리적 데이터 모델의 개념과 특성&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;E-R 다이어그램으로 표현된 개념적 구조를 데이터베이스에 저장할 때 표현하는 논리적 구조
+    &lt;ul&gt;
+      &lt;li&gt;데이터베이스의 논리적 구조 = 데이터베이스 스키마(schema)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;사용자가 생각하는 데이터베이스의 모습 또는 구조&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;관계 데이터 모델&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;일반적으로 많이 사용되는 데이터 모델&lt;/li&gt;
+  &lt;li&gt;데이터베이스의 논리적 구조가 2차원 테이블 형태&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sun, 10 Oct 2021 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/4-%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5-%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%E1%84%85%E1%85%B5%E1%86%BC/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/4-%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5-%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%E1%84%85%E1%85%B5%E1%86%BC/</guid>
+        
+        <category>데이터베이스</category>
+        
+        
+        <category>데이터베이스</category>
+        
+      </item>
+    
+      <item>
+        <title>[#3] 데이터베이스 시스템</title>
+        <description>&lt;h2 id=&quot;데이터베이스-시스템의-정의&quot;&gt;데이터베이스 시스템의 정의&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;데이터베이스 시스템&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터베이스에 데이터를 저장하고, 이를 관리하여 조직에 필요한 정보를 생성해주는 시스템&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;용어 정리&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터베이스
+    &lt;ul&gt;
+      &lt;li&gt;데이터를 저장해두는 곳&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;데이터베이스 관리 시스템(DBMS)
+    &lt;ul&gt;
+      &lt;li&gt;데이터가 일관되고 무결한 상태로 유지되도록 관리하는 역할을 하는 시스템&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;데이터베이스 시스템
+    &lt;ul&gt;
+      &lt;li&gt;데이터베이스와 데이터베이스 관리 시스템을 이용해 조직에 필요한 정보를 제공해주는 &lt;strong&gt;전체 시스템&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211007165402.png&quot; alt=&quot;image-20211007165402614&quot; style=&quot;zoom:33%;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;데이터베이스의-구조&quot;&gt;데이터베이스의 구조&lt;/h2&gt;
+
+&lt;h3 id=&quot;스키마와-인스턴스&quot;&gt;스키마와 인스턴스&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;스키마 (schema)
+    &lt;ul&gt;
+      &lt;li&gt;데이터베이스에 저장되는 데이터 구조와 제약조건을 정의한 것&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;인스턴스 (instance)
+    &lt;ul&gt;
+      &lt;li&gt;스키마에 따라 데이터베이스에 실제로 저장된 값&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211007170440.png&quot; alt=&quot;image-20211007170440740&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3단계-데이터베이스-구조&quot;&gt;3단계 데이터베이스 구조&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ANSI/SPARC에서 제안&lt;/li&gt;
+  &lt;li&gt;데이터베이스를 쉽게 이해하고 이용할 수 있도록 하나의 데이터베이스를 관점에 따라 세 단계로 나눈 것
+    &lt;ul&gt;
+      &lt;li&gt;외부 단계 : 개별 사용자 관점&lt;/li&gt;
+      &lt;li&gt;개념 단계 : 조직 전체의 관점&lt;/li&gt;
+      &lt;li&gt;내부 단계 : 물리적인 저장 장치의 관점&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;외부 단계&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터베이스를 개별 사용자 관점에서 이해하고 표현하는 단계&lt;/li&gt;
+  &lt;li&gt;데이터베이스 하나에 외부 스키마가 여러 개 존재할 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;외부 스키마 (external schema)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;외부 단계에서 사용자에게 필요한 데이터베이스를 정의한 것&lt;/li&gt;
+  &lt;li&gt;각 사용자가 생각하는 데이터베이스의 모습, 즉 논리적 구조로 사용자마다 다름&lt;/li&gt;
+  &lt;li&gt;서브 스키마 (sub schema)라고도 함&lt;/li&gt;
+  &lt;li&gt;i.e., Classnet DB
+    &lt;ul&gt;
+      &lt;li&gt;학교 DB(통합된 하나의 DB)를 사용하는 응용 프로그램은 여러개가 존재&lt;/li&gt;
+      &lt;li&gt;프로그램마다 각각의 스키마가 존재 (이것이 외부 스키마)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;개념 단계&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터베이스를 조직 전체의 관점에서 이해하고 표현하는 단계&lt;/li&gt;
+  &lt;li&gt;데이터베이스 하나에 개념 스키마는 하나만 존재&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;개념 스키마 (conceptual schema)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;개념 단계에서 데이터베이스 전체의 논리적 구조를 정의한 것&lt;/li&gt;
+  &lt;li&gt;조직 전체의 관점에서 생각하는 데이터베이스의 모습&lt;/li&gt;
+  &lt;li&gt;i.e., 학교 DB
+    &lt;ul&gt;
+      &lt;li&gt;학교 DB는 통합되어있음&lt;/li&gt;
+      &lt;li&gt;학교 DB 전체(개념 스키마)는 보안 등의 이유로 외부에 공개하지 않음&lt;/li&gt;
+      &lt;li&gt;사용자별 맞춤으로 외부에 일부를 공개하는 것 = 외부 스키마&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;내부 단계&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터베이스를 저장 장치의 관점에서 이해하고 표현하는 단계&lt;/li&gt;
+  &lt;li&gt;데이터베이스 하나에 내부 스키마는 하나만 존재&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;내부 스키마 (internal schema)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;전체 데이터베이스가 저장 장치(Hard Disk 등)에 실제로 저장되는 방법을 정의한 것&lt;/li&gt;
+  &lt;li&gt;레코드 구조, 필드 크기, 레코드 접근 경로 등 물리적 저장 구조를 정의&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;정리&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211007172113.png&quot; alt=&quot;image-20211007172113438&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3단계 데이터베이스 구조의 사상/매핑 (대응관계)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;스키마 사이의 대응관계
+    &lt;ul&gt;
+      &lt;li&gt;외부 - 개념 매핑
+        &lt;ul&gt;
+          &lt;li&gt;외부 스키마와 개념 스키마의 대응 관계&lt;/li&gt;
+          &lt;li&gt;응용 인터페이스 (application interface)라고도 함&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;개념 - 내부 매핑
+        &lt;ul&gt;
+          &lt;li&gt;개념  스키마와 내부 스키마의 대응 관계&lt;/li&gt;
+          &lt;li&gt;저장 인터페이스 (storage interface)라고도 함&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;미리 정의된 매핑 정보를 이용하여 사용자가 원하는 데이터에 접근&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;데이터베이스를 3단계 구조로 나누고, 단계별로 스키마를 유지하며, 스키마 사이의 대응관계를 정의하여 &lt;strong&gt;데이터 독립성&lt;/strong&gt;을 실현&lt;/p&gt;
+
+&lt;h3 id=&quot;데이터-독립성&quot;&gt;데이터 독립성&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;하위 스키마를 변경하더라도 상위 스키마가 영향을 받지 않는 특성&lt;/li&gt;
+  &lt;li&gt;논리적 데이터 독립성
+    &lt;ul&gt;
+      &lt;li&gt;개념 스키마가 변경되어도 외부 스키마는 영향을 받지 않음&lt;/li&gt;
+      &lt;li&gt;개념 스키마가 변경되면 관련된 외부/개념 매핑만 정확하게 수정해주면 됨&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;물리적 데이터 독립성
+    &lt;ul&gt;
+      &lt;li&gt;내부 스키마가 변경되어도 개념 스키마는 영향을 받지 않음&lt;/li&gt;
+      &lt;li&gt;내부 스키마가 변경되면 개념/내부 매핑만 정확하게 수정해주면 됨&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;데이터 사전 (data dictionary)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;시스템 카탈로그 (system catalog)라고도 함&lt;/li&gt;
+  &lt;li&gt;데이터베이스에 저장되는 데이터에 관한 정보, 즉 메타 데이터를 유지하는 데이터베이스
+    &lt;ul&gt;
+      &lt;li&gt;메타 데이터: 데이터에 대한 데이터&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;스키마, 매핑 정보, 다양한 제약조건 등을 저장&lt;/li&gt;
+  &lt;li&gt;데이터베이스 관리 시스템이 스스로 생성하고 유지함&lt;/li&gt;
+  &lt;li&gt;일반 사용자도 접근 가능하지만 저장 내용의 검색만 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;데이터 디렉토리 (data directory)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터 사전에 있는 데이터에 실제로 접근하는데 필요한 위치정보가 저장된 데이터베이스&lt;/li&gt;
+  &lt;li&gt;데이터 사전과 마찬가지로 시스템을 위한 데이터베이스지만 사용자가 접근할 수 없음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;사용자 데이터베이스 (user database)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사용자가 실제로 이용하는 데이터가 저장되어 있는 일반 데이터베이스&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;데이터베이스-사용자&quot;&gt;데이터베이스 사용자&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;데이터베이스 사용자&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터베이스를 이용하기 위해 접근하는 모든 사람&lt;/li&gt;
+  &lt;li&gt;이용 목적에 따라 데이터베이스 관리자, 최종 사용자(일반 사용자), 응용 프로그래머로 구분&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211007202349.png&quot; alt=&quot;image-20211007202349492&quot; style=&quot;zoom:33%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;데이터베이스 관리자(DBA: Database Administrator)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터베이스 시스템을 운영 및 관리하는 사람&lt;/li&gt;
+  &lt;li&gt;주로 데이터 정의어와 데이터 제어어를 이용&lt;/li&gt;
+  &lt;li&gt;주요 업무
+    &lt;ul&gt;
+      &lt;li&gt;데이터베이스 구성요소 선정
+        &lt;ul&gt;
+          &lt;li&gt;사용자의 요구사항을 분석하여 데이터베이스를 구성할 데이터 결정&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;데이터베이스 스키마 정의
+        &lt;ul&gt;
+          &lt;li&gt;선정된 데이터베이스의 구성 요소를 토대로 스키마를 설계, 이를 관리 시스템에 반영&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;물리적 저장 구조와 접근 방법 결정&lt;/li&gt;
+      &lt;li&gt;무결성 유지를 위한 제약조건 정의&lt;/li&gt;
+      &lt;li&gt;보안 및 접근 권한 결정&lt;/li&gt;
+      &lt;li&gt;백업 및 회복 기법 정의&lt;/li&gt;
+      &lt;li&gt;시스템 데이터베이스 관리&lt;/li&gt;
+      &lt;li&gt;시스템 성능 감시 및 성능 분석 (성능 개선: DB tuning)
+        &lt;ul&gt;
+          &lt;li&gt;병목현상이 발생하지 않는지 확인, 시스템 자원의 활용도 분석&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;데이터베이스 재구성
+        &lt;ul&gt;
+          &lt;li&gt;사용자의 요구 사항이나 사용 형태가 달라지면 그에 맞게 재구성이 필요&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;최종 사용자(end user)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터베이스에 접근하여 데이터를 조작 (삽입/삭제/수정/검색)하는 사람&lt;/li&gt;
+  &lt;li&gt;직접 DB에 접근하며 SQL 등 직접 접근이 가능한 API 사용&lt;/li&gt;
+  &lt;li&gt;주로 데이터 조작어(DML) 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;응용 프로그래머 (application programmer)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터 언어를 삽입하여 응용 프로그램을 작성하는 사람&lt;/li&gt;
+  &lt;li&gt;주로 데이터 조작어(DML)를 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;데이터-언어&quot;&gt;데이터 언어&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;데이터 언어&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사용자와 데이터베이스 관리 시스템 간의 통신 수단&lt;/li&gt;
+  &lt;li&gt;사용 목적에 따라 데이터 정의어, 데이터 조작어, 데이터 제어어로 구분&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211007205450.png&quot; alt=&quot;image-20211007205450109&quot; style=&quot;zoom: 33%;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;데이터-정의어-ddl-data-definition-language&quot;&gt;데이터 정의어 (DDL: Data Definition Language)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;스키마의 정의, 수정, 삭제를 위해 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;데이터-조작어-dml-data-manipulation-language&quot;&gt;데이터 조작어 (DML: Data Manipulation Language)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터의 삽입/삭제/수정/검색 등의 요청을 위해 사용&lt;/li&gt;
+  &lt;li&gt;사용자가 실제 데이터 값을 활용하기 위해 사용&lt;/li&gt;
+  &lt;li&gt;절차적 조작어와 비절차적 조작어로 구분됨
+    &lt;ul&gt;
+      &lt;li&gt;절차적 조작어: 사용자 본인이 얻고자 하는 데이터와 그 데이터의 얻으려면 어떻게 처리해야 하는지까지 작성한다&lt;/li&gt;
+      &lt;li&gt;비절차적 조작어: 사용자 본인이 얻고자 하는 데이터만 작성한다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;데이터-제어어-dcl-data-control-language&quot;&gt;데이터 제어어 (DCL: Data Control Language)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;내부적으로 필요한 규칙이나 기법을 정의하기 위해 사용&lt;/li&gt;
+  &lt;li&gt;사용 목적
+    &lt;ul&gt;
+      &lt;li&gt;무결성: 정확하고 유효한 데이터만 유지&lt;/li&gt;
+      &lt;li&gt;보안: 허가받지 않은 사용자의 데이터 접근 차단, 허가된 사용자에게 권한 부여&lt;/li&gt;
+      &lt;li&gt;회복: 장애가 발생해도 데이터 일관성 유지&lt;/li&gt;
+      &lt;li&gt;동시성 제어: 동시 공유 지원&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;데이터베이스-관리-시스템의-구성&quot;&gt;데이터베이스 관리 시스템의 구성&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;데이터베이스 관리 시스템&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터베이스 관리와 사용자의 데이터 처리 요구 수행&lt;/li&gt;
+  &lt;li&gt;주요 구성 요소
+    &lt;ul&gt;
+      &lt;li&gt;질의 처리기&lt;/li&gt;
+      &lt;li&gt;저장 데이터  관리자&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;질의-처리기&quot;&gt;질의 처리기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사용자의 데이터 처리 요구를 해석하여 처리하는 역할&lt;/li&gt;
+  &lt;li&gt;주요 구성 요소
+    &lt;ul&gt;
+      &lt;li&gt;DDL compiler
+        &lt;ul&gt;
+          &lt;li&gt;DDL로 작성된 스키마의 정의를 해석하고 저장 데이터 관리자의 도움을 받아 새로운 데이터베이스를 구축, 스키마의 정의를 데이터 사전에 저장&lt;/li&gt;
+          &lt;li&gt;데이터 정의어로 작성도니 기존 스키마의 삭제나 수정 요청 처리&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;DML precompiler
+        &lt;ul&gt;
+          &lt;li&gt;응용 프로그램 내의 DML을 추출하여 DML compiler에게 전달&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;DML compiler
+        &lt;ul&gt;
+          &lt;li&gt;DML로 작성된 데이터의 처리를 런타임 데이터베이스 처리기가 이해할 수 있도록 해석&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;런타임 데이터베이스 처리기 (run-time database processor)
+        &lt;ul&gt;
+          &lt;li&gt;전달받은 데이터 처리 요구를 데이터베이스에 실제로 반영&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;트랜잭션 관리자 (transaction manager)
+        &lt;ul&gt;
+          &lt;li&gt;데이터베이스에 접근하는 과정에서 사용자의 접근 권한 유효성, 무결성 유지를 위한 제약조건 위배 여부 확인&lt;/li&gt;
+          &lt;li&gt;회복, 병행 수행 관련 작업 진행&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211007210532.png&quot; alt=&quot;image-20211007210532898&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 09 Oct 2021 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/3-%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%87%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3-%E1%84%89%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%B7/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/3-%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%87%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3-%E1%84%89%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%B7/</guid>
+        
+        <category>데이터베이스</category>
+        
+        
+        <category>데이터베이스</category>
+        
+      </item>
+    
+      <item>
+        <title>[#2] 데이터베이스 관리 시스템</title>
+        <description>&lt;h2 id=&quot;데이터베이스-관리-시스템의-등장-배경&quot;&gt;데이터베이스 관리 시스템의 등장 배경&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;파일 시스템&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터를 파일로 관리하기 위해 파일을 생성/삭제/수정/검색하는 기능을 제공하는 소프트웨어&lt;/li&gt;
+  &lt;li&gt;응용 프로그램마다 필요한 데이터를 별도의 파일로 관리함&lt;/li&gt;
+  &lt;li&gt;여러 사용자/프로그램이 공유하지 않음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;파일 시스템의 문제점&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;같은 내용의 데이터가 여러 파일에 중복 저장된다 &lt;strong&gt;(데이터 중복성)&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;저장공간의 낭비 + 데이터 일관성(consistency)과 데이터 무결성(integrity) 유지 어려움&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;응용 프로그램이 데이터 파일에 종속적이다 &lt;strong&gt;(데이터 종속성)&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;사용하는 파일의 구조를 변경하면 응용프로그램도 함께 변경해야 함 (데이터 구조에 맞게 코드를 변경해야 함)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;데이터 파일에 대한 동시 공유, 보안, 회복 기능이 부족하다
+    &lt;ul&gt;
+      &lt;li&gt;공유, 보안 회복 기능을 가지고 있는 응용 프로그램을 개발하기 쉽지 않다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;데이터베이스-관리-시스템의-정의&quot;&gt;데이터베이스 관리 시스템의 정의&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;데이터베이스 관리 시스템 (DBMS: Database Management System)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;파일 시스템의 문제를 해결하기 위해 제시된 소프트웨어
+    &lt;ul&gt;
+      &lt;li&gt;조직에 필요한 데이터를 데이터베이스에 통합하여 저장하고 이에 대한 관리를 집중적으로 담당&lt;/li&gt;
+      &lt;li&gt;데이터베이스에 들어 있는 데이터를 삽입/삭제/수정/검색하고, 모든 응용 프로그램이 데이터베이스를 공유할 수 있도록 함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;조직에 필요한 데이터를 데이터베이스에 통합하여 저장하고 관리&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;데이터베이스 관리 시스템에서의 데이터 관리&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211007154931.png&quot; alt=&quot;image-20211007154931965&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터는 DB에 통합되어 저장된다.&lt;/li&gt;
+  &lt;li&gt;서로 다른 응용 프로그램들이 동시에 데이터베이스를 사용하더라도 문제가 발생하지 않도록 DBMS가 이를 처리해준다&lt;/li&gt;
+  &lt;li&gt;사용자는 File이 아닌 DBMS를 통해 데이터를 관리 조작한다&lt;/li&gt;
+  &lt;li&gt;데이터베이스의 구조나 접근 방법 등이 변경되어도 문제가 없는 &lt;strong&gt;데이터 독립성&lt;/strong&gt;이 확보된다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;DBMS의 주요 기능&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;정의 기능
+    &lt;ul&gt;
+      &lt;li&gt;데이터베이스 구조를 정의하거나 수정할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;조작 기능
+    &lt;ul&gt;
+      &lt;li&gt;데이터를 삽입/삭제/수정/검색하는 연산을 할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;제어 기능
+    &lt;ul&gt;
+      &lt;li&gt;데이터를 항상 정확하고 안전하게 유지할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;데이터베이스-관리-시스템의-장단점&quot;&gt;데이터베이스 관리 시스템의 장단점&lt;/h2&gt;
+
+&lt;h3 id=&quot;장점&quot;&gt;장점&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터 중복을 통제할 수 있다&lt;/li&gt;
+  &lt;li&gt;데이터 독립성이 확보된다&lt;/li&gt;
+  &lt;li&gt;데이터를 동시 공유할 수 있다&lt;/li&gt;
+  &lt;li&gt;데이터 보안이 향상된다&lt;/li&gt;
+  &lt;li&gt;데이터 무결성을 유지할 수 있다
+    &lt;ul&gt;
+      &lt;li&gt;데이터 무결성은 저장된 값의 정확성을 의미&lt;/li&gt;
+      &lt;li&gt;데이터에 대한 연산 수행시마다 유효성을 검사하여 무결성을 유지&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;표준화할 수 있다&lt;/li&gt;
+  &lt;li&gt;장애 발생 시 회복이 가능하다&lt;/li&gt;
+  &lt;li&gt;응용 프로그램 개발 비용이 줄어든다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;단점&quot;&gt;단점&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;시스템이 사용하는 비용(리소스 자원 등)이 많이 든다&lt;/li&gt;
+  &lt;li&gt;백업과 회복 방법이 복잡하다&lt;/li&gt;
+  &lt;li&gt;중앙 집중 관리로 인한 취약점이 존재한다 (Single Point Of Failure(SPF/SPOF))
+    &lt;ul&gt;
+      &lt;li&gt;해결법: DB를 여러개로 분산 시키기&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;데이터베이스-관리-시스템의-발전-과정&quot;&gt;데이터베이스 관리 시스템의 발전 과정&lt;/h2&gt;
+
+&lt;h3 id=&quot;1세대-네트워크-dbms-계층-dbms&quot;&gt;1세대: 네트워크 DBMS, 계층 DBMS&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211007161131.png&quot; alt=&quot;image-20211007161131756&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;네트워크 DBMS
+    &lt;ul&gt;
+      &lt;li&gt;데이터베이스를 그래프 형태로 구성&lt;/li&gt;
+      &lt;li&gt;간선을 이용해 데이터 간의 관계를 나타내기 때문에 데이터베이스의 구조가 복잡하고 변경하기 어려움&lt;/li&gt;
+      &lt;li&gt;i.e., Integrated Data Store&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;계층 DBMS
+    &lt;ul&gt;
+      &lt;li&gt;데이터베이스를 트리 형태로 구성&lt;/li&gt;
+      &lt;li&gt;현실 세계의 모습을 트리 형태로 표현하기 어렵고 구조 변경이 어려움&lt;/li&gt;
+      &lt;li&gt;i.e., Information MAnagement System&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2세대--관계-dbms&quot;&gt;2세대:  관계 DBMS&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;관계 DBMS
+    &lt;ul&gt;
+      &lt;li&gt;1980년 초부터 계속해서 사용되어 온 DBMS&lt;/li&gt;
+      &lt;li&gt;데이터베이스를 테이블 형태로 구성&lt;/li&gt;
+      &lt;li&gt;데이터베이스를 단순하고 이해하기 쉬운 구조로 구성한다는 장점이 존재하기에 현재도 주류&lt;/li&gt;
+      &lt;li&gt;i.e., MySQL, Oracle, MS SQL Server&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3세대-객체지향객체관계-dbms&quot;&gt;3세대: 객체지향/객체관계 DBMS&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;객체지향 DBMS
+    &lt;ul&gt;
+      &lt;li&gt;객체를 이용해 데이터베이스를 구성&lt;/li&gt;
+      &lt;li&gt;개념이 어렵고 복잡하여 제대로 사용하기 어렵다는 단점이 존재&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;객체관계 DBMS
+    &lt;ul&gt;
+      &lt;li&gt;객체지향 DBMS를 개선한 것&lt;/li&gt;
+      &lt;li&gt;그럼에도 불구하고 사용률이 낮음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4세대-이후-nosqlnewsql-dbms&quot;&gt;4세대 이후: NoSQL/NewSQL DBMS&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;NoSQL DBMS
+    &lt;ul&gt;
+      &lt;li&gt;Not Only SQL의 뜻&lt;/li&gt;
+      &lt;li&gt;데이터 구조를 미리 정해두지 않아 유연한 활용이 가능함 (비정형 데이터를 처리하는데 적합)&lt;/li&gt;
+      &lt;li&gt;확장성이 뛰어나 여러 대의 서버 컴퓨터에 데이터를 분산하여 저장하고 처리하는 환경에서 주로 사용&lt;/li&gt;
+      &lt;li&gt;기존의 장점이던 안정성과 일관성 유지를 위한 복잡한 기능을 포기한 DBMS&lt;/li&gt;
+      &lt;li&gt;장점이 분명하지만 관계 DBMS를 넘어 주류 DBMS가 되기에는 부족
+        &lt;ul&gt;
+          &lt;li&gt;아직 기업에서 처리하는 데이터 중 정형 데이터의 비율이 높음&lt;/li&gt;
+          &lt;li&gt;기존 데이터를 옮기는 비용 측면의 문제&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;i.e., MongoDB, Cassandra, HBase&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211007164838.png&quot; alt=&quot;image-20211007164838687&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;발전 과정&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+</description>
+        <pubDate>Fri, 08 Oct 2021 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/2-%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%87%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5-%E1%84%89%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%B7/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/2-%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%87%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5-%E1%84%89%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%B7/</guid>
+        
+        <category>데이터베이스</category>
+        
+        
+        <category>데이터베이스</category>
+        
+      </item>
+    
+      <item>
+        <title>[#1] 데이터베이스 기본 개념</title>
+        <description>&lt;h2 id=&quot;데이터베이스의-필요성&quot;&gt;데이터베이스의 필요성&lt;/h2&gt;
+
+&lt;h3 id=&quot;데이터와-정보&quot;&gt;데이터와 정보&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;데이터&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;현실 세계에서 단순히 관찰하거나 측정하여 수집한 사실이나 값&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;정보&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;의사 결정에 유용하게 활용될 수 있도록 데이터를 처리한 결과물&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211007122656.png&quot; alt=&quot;image-20211007122656910&quot; style=&quot;zoom: 50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;정보처리&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;데이터에서 정보를 추출하는 과정, 방법&lt;/p&gt;
+
+&lt;p&gt;주문 내역 데이터를 통해 제품별 총 판매액, 분기별 총 판매액과 같은 정보를 추출할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;이러한 정보는 판매 전략 수립 등에 활용될 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;정보시스템과-데이터베이스&quot;&gt;정보시스템과 데이터베이스&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;정보 시스템&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;조직 운영에 필요한 데이터를 수집하여 저장해두었다가 의사 결정이 필요할 때 처리하여 유용한 정보를 만들어주는 수단&lt;/p&gt;
+
+&lt;p&gt;데이터베이스는 정보 시스템의 핵심적인 요소로 동작한다.&lt;/p&gt;
+
+&lt;p&gt;데이터베이스는 현실세계의 데이터를 처리, 가공할 때 정보 시스템 내에서 데이터를 저장하고 있다가 필요할 때 제공한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;정보시스템의 예&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기업의 경영 관리에 필요한 의사 결정용 정보 시스템인 &lt;strong&gt;경영 정보 시스템 (Management Information System)&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;복합적이고 광범위한 의사 결정을 위해 사용되는 정보 시스템인 &lt;strong&gt;의사 결정 지원 시스템(Decision Support System)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;데이터베이스의-정의&quot;&gt;데이터베이스의 정의&lt;/h2&gt;
+
+&lt;h3 id=&quot;데이터베이스의-정의-1&quot;&gt;데이터베이스의 정의&lt;/h3&gt;
+
+&lt;p&gt;특정 조직의 여러 사용자가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;공유&lt;/code&gt;하여 사용할 수 있도록 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;통합&lt;/code&gt;해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;저장&lt;/code&gt;한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;운영&lt;/code&gt; 데이터의 집합&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;공유 데이터
+    &lt;ul&gt;
+      &lt;li&gt;특정 조직의 여러 사용자가 함께 소유하고 이용할 수 있는 공용 데이터&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;통합 데이터
+    &lt;ul&gt;
+      &lt;li&gt;최소의 중복과 통제 가능한 중복만 허용하는 데이터&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;저장 데이터
+    &lt;ul&gt;
+      &lt;li&gt;컴퓨터가 접근할 수 있는 매체에 저장된 데이터&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;운영 데이터
+    &lt;ul&gt;
+      &lt;li&gt;조직의 주요 기능을 수행하기 위해 지속적으로 꼭 필요한 데이터&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;데이터베이스의-특징&quot;&gt;데이터베이스의 특징&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;실시간 접근 (real-time accessibility)
+    &lt;ul&gt;
+      &lt;li&gt;사용자의 데이터 요구에 실시간으로 응답 (즉각성)&lt;/li&gt;
+      &lt;li&gt;반대되는 개념이 Batch&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;계속 변화(continuous evolution)
+    &lt;ul&gt;
+      &lt;li&gt;데이터의 계속적인 삽입, 삭제, 수정을 통해 정확한 데이터를 유지&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;동시 공유 (concurrent sharing)
+    &lt;ul&gt;
+      &lt;li&gt;서로 다른 데이터의 동시 사용뿐만 아니라 같은 데이터의 동시 사용도 지원&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;내용 기반 참조(content reference)
+    &lt;ul&gt;
+      &lt;li&gt;데이터가 저장된 주소, 위치가 아닌 내용으로 참조&lt;/li&gt;
+      &lt;li&gt;i.e., 재고량이 1000개 이상인 제품의 이름을 검색하시오&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;데이터와-데이터베이스&quot;&gt;데이터와 데이터베이스&lt;/h2&gt;
+
+&lt;h3 id=&quot;데이터의-분류&quot;&gt;데이터의 분류&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;정형 데이터
+    &lt;ul&gt;
+      &lt;li&gt;구조화된 데이터로, 미리 정해진 구조에 따라 저장된 데이터&lt;/li&gt;
+      &lt;li&gt;i.e., 엑셀의 스프레드시트, C의 구조체&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;반정형 데이터
+    &lt;ul&gt;
+      &lt;li&gt;구조에 따라 저장된 데이터지만 구조를 미리 알 수 없고 파싱과정을 통해서 구조를 파악할 수 있는 데이터&lt;/li&gt;
+      &lt;li&gt;i.e., HTML, XML, JSON&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;비정형 데이터
+    &lt;ul&gt;
+      &lt;li&gt;정해진 구조가 없이 저장된 데이터&lt;/li&gt;
+      &lt;li&gt;i.e., sns의 글&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Thu, 07 Oct 2021 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/1-%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%87%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3-%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB-%E1%84%80%E1%85%A2%E1%84%82%E1%85%A7%E1%86%B7/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/1-%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%87%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3-%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB-%E1%84%80%E1%85%A2%E1%84%82%E1%85%A7%E1%86%B7/</guid>
+        
+        <category>데이터베이스</category>
+        
+        
+        <category>데이터베이스</category>
+        
+      </item>
+    
+      <item>
+        <title>야곰 스타터 캠프 후기 (2기)</title>
+        <description>&lt;h1 id=&quot;야곰-ios-스타터캠프-후기&quot;&gt;야곰 iOS 스타터캠프 후기&lt;/h1&gt;
+
+&lt;h3 id=&quot;캠프의-전반적인-진행과정&quot;&gt;캠프의 전반적인 진행과정&lt;/h3&gt;
+
+&lt;p&gt;캠프는 첫 주(적응 기간, 교육 기간)를 제외하고는 모두 팀/개인 프로젝트를 진행합니다. 이 외에도 평소에 공부하기 어려운 주제들을 가지고 같이 토의해보고 야곰이 내주는 질문 목록들을 해결해보는 시간인 활동학습이 주 2회 진행됩니다.&lt;/p&gt;
+
+&lt;p&gt;프로젝트의 코드는 코드 리뷰를 받게됩니다. Github의 Pull Request로 코드 리뷰를 요청하면 리뷰어는 평균 1.5일의 시간을 거쳐 코드를 리뷰해줍니다. 제가 야곰 스타터캠프에 참여하게 된 결정적인 이유가 바로 이 코드리뷰입니다. 제가 받았던 리뷰 중 가장 인상깊었던 리뷰의 링크를 첨부해놓으니 코드리뷰가 어떤식으로 이루어지는지 궁금하신 분들이 보시면 좋을 것 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/yagom-academy/ios-exposition-universelle/pull/66&quot;&gt;코드리뷰 링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;다양한-강연들&quot;&gt;다양한 강연들&lt;/h3&gt;
+
+&lt;p&gt;스타터 캠프에서 단순히 활동학습, 프로젝트만 진행하는건 아닙니다. 다양한 주제들을 가지고 외부 인사들을 초청하여 이야기를 들을 수 있는 기회가 있습니다. 코딩테스트의 준비과정, 이력서를 쓰는 팁 등 실질적으로 도움이 되는 세션들을 마련해줍니다. iOS계에서 워낙 발이 넓은 야곰이라 만약 모시고 싶은 분이 있어 요청하면 모시고 와서 캠퍼들 대상으로 강연을 해주시는 경우도 있습니다. (최근에는 캠퍼의 요청으로 전수열님께서 오셔서 TDD 강의 + 기타 질의응답을 해주신 적이 있습니다.)&lt;/p&gt;
+
+&lt;p&gt;캠프에 대한 설명은 여기까지이고 이 밑은 QnA 형식으로 예상되는 질문과 그에 대한 답변을 남겨보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;(제 주관이 아주 많이 포함된 답변이니 참고용으로만 생각해주세요)&lt;/p&gt;
+
+&lt;h2 id=&quot;qna&quot;&gt;QnA&lt;/h2&gt;
+
+&lt;p&gt;Q1: 코딩을 처음하는데 캠프에 참여해도 될까요?&lt;/p&gt;
+
+&lt;p&gt;A1: 넵! 대신 공부를 많이 해오면 해올수록 따라가기 수월할겁니다. 캠프에서 진행되는 모든 내용을 100% 소화한다는 것은 누구에게나 절대 불가능한 일이지만 개인 능력에 따라 소화량이 정말 많이 달라집니다. 6개월동안 진행되는 캠프가 워낙 빡세서 조금 여유있게 마음의 준비를 하며 쉬는 것도 좋지만.. 캠프에 참여하기 전 1~2달 가량 집중해서 공부한 뒤 캠프에 참여한다면 더 좋을 것 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Q2: 전 코딩 꽤 해봤는데 (컴공 졸업, 재학생) 도움이 될까요?&lt;/p&gt;
+
+&lt;p&gt;A2: 전 컴공 2학년 수료 후 휴학한 뒤 캠프에 참여했습니다. 개인적으로 캠프에서 가장 많이 뽑아먹을 수 있는 타겟층이 바로 코딩은 좀 해봤는데 어떤 한 기술스택을 심도있게 공부해보지 않은 사람들이라 생각합니다. 코테 준비만 하면서 알고리즘 코드는 많이 짜봤지만 클린코드, 아키텍쳐 등에 대한 심도있는 이해를 가져볼 기회가 없던 사람들에게 정말 강추합니다! (제가 코딩이 적성에도 맞고 머리도 꽤 된다고 자부하는데도 캠프 정말 정말 빡셌습니다. 혹시라도 캠프가 너무 쉬울까봐의 걱정은 진짜 안해도 됩니다. 캠프에서 제한된 지식만을 얻어가길 강요하지도 않고 공부는 본인이 하기 나름이며, 코드의 완성도를 위한 투자도 본인이 결정할 몫이므로..)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Q3: 하루에 시간 얼마나 써야하나요?&lt;/p&gt;
+
+&lt;p&gt;A3: 본인 하기 나름이지만 하루종일 쓰는게 대부분입니다. 학교에 다니거나 직장에 다니면서 따라가는건 솔직히 불가능할 것 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Q4: 이거 하면 취업 잘 되나요?&lt;/p&gt;
+
+&lt;p&gt;A4: 개인 역량에 따라 다릅니다. 캠프 끝나자마자 바로 어딘가에 취업하는 경우도 있고 캠프 중간에 취업하는 경우도 있고 그렇습니다. 제 경우에는 캠프 종료 3주전에 한 스타트업의 iOS 단독작업을 제의받아 입사하기로 했었으나 차질이 생겨 중간에 그만두고  현재는 취업 준비중입니다. (산업기능요원 취업 준비중)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Q5: 캠프비가 비싼데 돈값 하나요?&lt;/p&gt;
+
+&lt;p&gt;A5: 네 전 한다고 봅니다. iOS를 이렇게 심도있게 공부할 수 있는 기회도 드물고, 혼자 공부하면서 코드리뷰를 받기란 더더욱 어렵습니다. 이외에도 캠퍼, 리뷰어들에게 모르는 내용을 언제든지 물어보면서 학습할 수 있다는 장점이 있고 기한이 있는 프로젝트라는 강제성(팀 프로젝트의 경우 이 강제성이 책임감으로 인해 더 높아짐) 또한 늘어지기 쉬운 공부 과정에서 엄청난 장점이라 생각합니다. 그냥 딱 봤을 때 캠프비가 비싸보이는건 맞지만 어차피 취업하면 금방 복구 가능한 금액이고, 혼자 공부하면서 겪을 수많은 시행착오를 줄여주는 점, 공부를 밀도있게 함으로써 취업 준비 기간을 확실하게 줄여주는 점, 캠프를 통해 많은 인맥을 쌓을 수 있다는 점(한 다리도 아니고 반 다리 건너면 다 안다는 iOS 직군).. 충분히 돈값 한다 생각합니다. 가장 민감한 주제이니만큼 제 주관이 많이 반영되어 있으니 참고 바랍니다. 그냥 솔직하게 느끼는 점을 써봤습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;마치며&quot;&gt;마치며&lt;/h3&gt;
+
+&lt;p&gt;캠프를 통해 정말 많은 것을 배웠습니다. 아직 저는 졸업이 2년 남은 상황이지만 캠프에 참여하는 대부분은 취업을 준비하는 졸업생, 4학년 막학기 재학생이 대부분입니다. 캠퍼들과 함께 스터디도 진행하며 다양한 공부도 해보았고 (&lt;a href=&quot;https://github.com/i-study-OS&quot;&gt;운영체제 스터디 링크&lt;/a&gt;, &lt;a href=&quot;https://github.com/iOS-Interview-Study&quot;&gt;면접 준비 스터디 링크&lt;/a&gt;) 캠퍼의 추천을 통해 단독으로 iOS 개발 일을 잠깐이지만 진행해보기도 했습니다. 스타터 캠프에 참여한 것이 인생에서 가장 잘한 선택 중 하나로 뽑힐만큼 좋은 경험이었습니다. 위에 적어놓은 QnA 이외에도 질문이 있다면 채팅을 걸어주세요 (우하단 채널톡 버튼)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.yagom-academy.kr/&quot;&gt;야곰 스타터캠프 지원 링크&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 22 Aug 2021 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/%EC%9D%BC%EC%83%81/YagomCampReview/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/%EC%9D%BC%EC%83%81/YagomCampReview/</guid>
+        
+        <category>Yagom</category>
+        
+        <category>StarterCamp</category>
+        
+        <category>부트캠프 후기</category>
+        
+        <category>부트캠프</category>
+        
+        
+        <category>일상</category>
+        
+      </item>
+    
+      <item>
+        <title>[Core] HTTPMethod.swift, Notification.swift 분석</title>
+        <description>&lt;h2 id=&quot;httpmethod&quot;&gt;HTTPMethod&lt;/h2&gt;
+
+&lt;p&gt;HTTPMethod는 구조체로 이루어져있다.&lt;/p&gt;
+
+&lt;p&gt;RawRepresentable, Equatable, Hashable을 채택하고 있으며 rawValue가 String 타입이기 때문에 HTTPMethod를 String 요구자리에 가져다 써도 문제가 없다.&lt;/p&gt;
+
+&lt;p&gt;Hashable의 경우 Set&amp;lt;HTTPMethod&amp;gt;를 사용하는 부분이 있으므로 채택해주어야 하며, Equatable은 사용자 편의를 위해 채택한 것으로 보인다.&lt;/p&gt;
+
+&lt;h3 id=&quot;enum이-아닌-struct인-이유&quot;&gt;enum이 아닌 struct인 이유&lt;/h3&gt;
+
+&lt;p&gt;RawRepresentable 프로토콜의 요구사항인 rawValue를 처리하기엔 enum에 비해 struct가 용이하기에 struct를 택한 것 같다.&lt;/p&gt;
+
+&lt;h3 id=&quot;지원-methods&quot;&gt;지원 Methods&lt;/h3&gt;
+
+&lt;p&gt;Alamofire에서 지원하는 HTTPMethod는 아래와 같다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CONNECT&lt;/li&gt;
+  &lt;li&gt;DELETE&lt;/li&gt;
+  &lt;li&gt;GET&lt;/li&gt;
+  &lt;li&gt;HEAD&lt;/li&gt;
+  &lt;li&gt;OPTIONS&lt;/li&gt;
+  &lt;li&gt;PATCH&lt;/li&gt;
+  &lt;li&gt;POST&lt;/li&gt;
+  &lt;li&gt;PUT&lt;/li&gt;
+  &lt;li&gt;TRACE&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;notifications&quot;&gt;Notifications&lt;/h2&gt;
+
+&lt;p&gt;Alamofire는 다양한 notification을 EventMonitor 객체를 통해 지원한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;지원-notifications&quot;&gt;지원 Notifications&lt;/h3&gt;
+
+&lt;p&gt;Almofire에서 지원하는 Notification은 아래와 같다.&lt;/p&gt;
+
+&lt;h4 id=&quot;request를-담고-있는-notification들&quot;&gt;Request를 담고 있는 Notification들&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;didResumeNotification&lt;/li&gt;
+  &lt;li&gt;didSuspendNotification&lt;/li&gt;
+  &lt;li&gt;didCancelNotification&lt;/li&gt;
+  &lt;li&gt;didFinishNotification&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;urlsessiontask를-담고-있는-notification들&quot;&gt;URLSessionTask를 담고 있는 Notification들&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;didResumeTaskNotification&lt;/li&gt;
+  &lt;li&gt;didSuspendTaskNotification&lt;/li&gt;
+  &lt;li&gt;didCancelTaskNotification&lt;/li&gt;
+  &lt;li&gt;didCompleteTaskNotification&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Notification, EventMonitor 파트는 자세한 구현 내용을 알기보다는 어떤 상황에 어떤 Notification이 오는지만 알고 활용해도 충분할 것 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Alamofire/Alamofire/blob/master/Source/HTTPMethod.swift&quot;&gt;https://github.com/Alamofire/Alamofire/blob/master/Source/HTTPMethod.swift&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Alamofire/Alamofire/blob/master/Source/Notifications.swift&quot;&gt;https://github.com/Alamofire/Alamofire/blob/master/Source/Notifications.swift&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 29 Jul 2021 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/alamofire/%EB%B6%84%EC%84%9D/HTTPMethodAndNotification/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/alamofire/%EB%B6%84%EC%84%9D/HTTPMethodAndNotification/</guid>
+        
+        <category>Alamofire</category>
+        
+        <category>HTTPMethod</category>
+        
+        <category>Notification</category>
+        
+        
+        <category>Alamofire</category>
+        
+        <category>분석</category>
+        
+      </item>
     
       <item>
         <title>[Core] HTTPHeaders.swift 분석</title>
@@ -24,6 +1585,8 @@
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;headers라는 private으로 선언된 HTTPHeader의 배열이 존재한다.&lt;/p&gt;
+
+&lt;p&gt;HTTPHeader는 Alamofire에서 제공하는 struct이다.&lt;/p&gt;
 
 &lt;h3 id=&quot;세-종류의-init&quot;&gt;세 종류의 init&lt;/h3&gt;
 
@@ -125,6 +1688,60 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;p&gt;add, update를 통해 기본적인 header의 추가가 가능하다. HTTPHeader 타입을 통해서 추가할수도 있고 key value String 쌍을 가지고도 가능하다. sort는 header를 알파벳 소문자순으로 정렬해주는 기능을 한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;header의-value-값&quot;&gt;header의 value 값&lt;/h3&gt;
+
+&lt;p&gt;headers에 담긴 원소는 두가지 방법을 통해 접근할 수 있다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;public func value(for name: String) -&amp;gt; String?&lt;/code&gt;을 이용해 key값을 String으로 넣어주면 value를 String?으로 받아볼 수 있다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;public subscript(_ name: String) -&amp;gt; String?&lt;/code&gt; subscript가 구현되어 있으므로 대괄호를 통해 딕셔너리에 접근하듯 접근할 수 있다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;추가로 dictionary라는 연산프로퍼티가 존재하며 headers를 통해 Dictionary 타입을 만들어 리턴한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;httpheaders가-추가로-conform하는-프로토콜들&quot;&gt;HTTPHeaders가 추가로 conform하는 프로토콜들&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;ExpressibleByDictionaryLiteral
+HTTPHeaders type의 instance는 그 자체로 dictionary로 취급될 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ExpressibleByArrayLiteral
+HTTPHeaders type의 instance는 그 자체로 arrary로 취급될 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sequence&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Collection
+Sequence, Collection 프로토콜을 conform하고 있다. Collection conform을 통해 subscript가 구현되어 있으므로 index를 통해 접근할 수 있으며 startIndex, endIndex, Index(after:)를 사용할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CustomStringConvertible
+설명보다 코드를 보는게 이해가 더 빠를 것 같아 코드를 첨부&lt;/p&gt;
+
+    &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;description&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;joined&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;separator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;추가-extension들&quot;&gt;추가 extension들&lt;/h3&gt;
+
+&lt;p&gt;파일의 하단에 보면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;URLRequest&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTTPURLResponse&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;URLSessionConfiguration&lt;/code&gt;의 extension을 통해 headers라는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTTPHeaders&lt;/code&gt; type의 변수를 연산 프로퍼티로 가지게 했음을 알 수 있다. 이를 통해 해당 타입의 프로퍼티로 headers를 사용할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;이 글에 설명된 것 외에도 HTTPHeader struct, type property인 default도 구현되어있다. 
+&lt;a href=&quot;https://github.com/Alamofire/Alamofire/blob/master/Source/HTTPHeaders.swift&quot;&gt;https://github.com/Alamofire/Alamofire/blob/master/Source/HTTPHeaders.swift&lt;/a&gt;&lt;/p&gt;
+
 </description>
         <pubDate>Thu, 29 Jul 2021 00:00:00 +0900</pubDate>
         <link>https://neph3779.github.io/alamofire/%EB%B6%84%EC%84%9D/HTTPHeaders/</link>
@@ -132,7 +1749,7 @@
         
         <category>Alamofire</category>
         
-        <category>AFError</category>
+        <category>HTTPHeaders</category>
         
         
         <category>Alamofire</category>
@@ -325,720 +1942,6 @@
         <category>main thread</category>
         
         <category>UI</category>
-        
-        
-        <category>iOS</category>
-        
-      </item>
-    
-      <item>
-        <title>UIApplicationMain은 뭐하는 함수일까?</title>
-        <description>&lt;h2 id=&quot;uiapplication&quot;&gt;UIApplication&lt;/h2&gt;
-
-&lt;p&gt;UIApplication의 singleton instance는 앱의 시작시에 생성된다. 이 instance를 제작하는 함수가 바로 UIApplicationMain 함수이다. 이 외에도 App Delegate의 제작과 event cycle의 설정을 담당하는 역할을 가진다.&lt;/p&gt;
-
-&lt;h2 id=&quot;uiapplicationmain&quot;&gt;UIApplicationMain&lt;/h2&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIApplicationMain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-                     &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UnsafeMutablePointer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UnsafeMutablePointer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;CChar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-                     &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;principalClassName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; 
-                     &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;delegateClassName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int32&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;함수는 다음과 같이 생겼다. Swift는 C언어 기반의 언어이기 때문에 C의 main함수와 유사한 모양을 띄고 있는 것을 볼 수 있다.&lt;/p&gt;
-
-&lt;p&gt;argc는 argument value의 수, argv는 argument value이다.&lt;/p&gt;
-
-&lt;p&gt;principalClassName은 UIApplication or 이를 상속받은 하위 클래스의 이름이다. singleton으로 생성될 클래스의 이름을 Stirng으로 받아서 사용한다.&lt;/p&gt;
-
-&lt;p&gt;delegateClassName은 App Delegate 클래스의 이름이다. pincipalClassName에서 UIApplication의 하위 클래스를 넘겨주었다면 여기서도 하위 클래스를 지정해줄 수 있다.&lt;/p&gt;
-
-&lt;p&gt;C의 main 함수처럼 반환값은 무의미하다.&lt;/p&gt;
-
-&lt;p&gt;주요 클래스의 인스턴스를 생성하거나 주어진 클래스나 app delegate을 통해 delegate 인스턴스를 생성한다. 또한 메인 이벤트 루프, 어플리케이션 실행 루프, 프로세스 이벤트의 시작점을 설정한다. info.plist 파일에 NSMainNibFile Key나 값이 유효한 nib 파일 이름이 포함된 로드하려는 특정 nib파일을 지정한다면 이 함수를 통해 nib 파일을 로드된다.&lt;/p&gt;
-
-&lt;h3 id=&quot;참고링크&quot;&gt;참고링크&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;https://developer.apple.com/documentation/uikit/1622933-uiapplicationmain/&lt;a href=&quot;https://developer.apple.com/documentation/uikit/1622933-uiapplicationmain/&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sun, 25 Jul 2021 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/WhatIsUIApplicationMain/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/WhatIsUIApplicationMain/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>App thining</title>
-        <description>&lt;h2 id=&quot;app-thinning이란&quot;&gt;App Thinning이란?&lt;/h2&gt;
-
-&lt;p&gt;앱을 특정 디바이스에 설치할 때 굳이 들어가지 않아도 되는 파일들을 생략하고 그 디바이스에 맞게 설치하는 최적화 기술을 App Thinning이라고 한다. 앞의 문장에서 알 수 있듯 하나의 앱은 아래와 같이 여러가지 파일들이 섞여있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210725190835.png&quot; alt=&quot;?scode=mtistory2&amp;amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FccHkki%2FbtqMNwMWH1E%2F9ECfXenzBbiitySkTphFJ0%2Fimg&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;app-slicing&quot;&gt;App Slicing&lt;/h3&gt;
-
-&lt;p&gt;꼭 필요한 것만을 다운 받는 과정을 App Slicing이라고 한다.&lt;/p&gt;
-
-&lt;p&gt;App Slicing을 통해 필요한 것만을 다운받으면 아래와 같은 모양새가 된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210725190924.png&quot; alt=&quot;?scode=mtistory2&amp;amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcyHPmL%2FbtqMTgvf1NB%2F8TDe7i1f9aNbIRTs57JsIk%2Fimg&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;즉, 개발자가 앱의 전체 버전을 App store에 업로드하면 앱 스토어는 각 디바이스의 특성에 맞는 다양한 버전의 조각들 (별도의 .ipa 파일들)을 생성한다. 사용자가 앱을 실제로 설치할 때는 앱의 전체 버전이 아닌 slicing된 조각들 중 사용자에게 가장 적합한 조각이 설치된다. 그리고 이 App Slicing은 앱스토어가 알아서 처리해준다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210725191103.png&quot; alt=&quot;?scode=mtistory2&amp;amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcr1BBh%2FbtqMOyQ0RXl%2FmnpwXDMpNO96k7wNCxOP0k%2Fimg&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;on-demand-resource-주문형-리소스&quot;&gt;On Demand Resource (주문형 리소스)&lt;/h3&gt;
-
-&lt;p&gt;유저가 요청할 때 앱스토어로부터 더 많은 리소스를 가져올 수 있는 개념이다. 보통 게임에서 많이 찾아볼 수 있는데 게임 내의 sound를 유저가 선택하여 다운받을 수 있도록 해주는 경우가 많다.&lt;/p&gt;
-
-&lt;p&gt;주문형 리소스는 앱스토어에 IPA파일과는 별도로 저장된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210725191517.png&quot; alt=&quot;?scode=mtistory2&amp;amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbOsCEz%2FbtqMX9I76tB%2FLuYzKxGDVccPRsInfkp3kk%2Fimg&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;앱의 전체 버전에는 위와 같이 전체 리소스가 올라간다.&lt;/p&gt;
-
-&lt;p&gt;이 중에서 일부만을 유저가 받게하고 나머지는 필요시에만 받도록 하는 것이 ODR이다.&lt;/p&gt;
-
-&lt;h4 id=&quot;odr의-생명주기&quot;&gt;ODR의 생명주기&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210725192612.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;비트코드&quot;&gt;비트코드&lt;/h3&gt;
-
-&lt;p&gt;기계언어로 번역되기 이전 단계의 중간표현(Intermediate Representation)을 비트코드라 한다. 프로젝트 옵션에서 사용여부를 선택할 수 있다(디폴트 on).&lt;/p&gt;
-
-&lt;p&gt;비트코드를 사용하여 앱을 업로드를 하면 애플리케이션을 재컴파일하여 앱 바이너리(app binary)를 생성한다. 즉, 최신 컴파일러용에 맞게 자동으로 앱을 컴파일하고, 특정 아키텍처에 맞게 최적화한다.&lt;/p&gt;
-
-&lt;p&gt;반면 비트코드를 사용하지 않으면,  모든것을 실행할 수 있음 + 모든 환경이라는 조건을 갖춘 바이너리(여러개)를 생성하여 이를 하나로 합친 fat binary가 업로드된다.&lt;/p&gt;
-
-&lt;p&gt;비트코드를 사용하면 필요 경우에 맞게 재컴파일하게 되므로 최적화가 가능한 것이다.&lt;/p&gt;
-
-&lt;p&gt;비트코드 사용시 개발자 입장에서 단점이 생기는데 디버깅할 때 필요한 dysm 파일을 따로 받아야 한다는 것이다.&lt;/p&gt;
-
-&lt;p&gt;비트코드를 통해 애플은 앱을 “재컴파일”하여 유저에게 새로운 바이너리를 제공하기 때문에, XCode에서 내가 올린 바이너리와 실제 사용자가 받는 바이너리가 다르다.&lt;/p&gt;
-
-&lt;p&gt;따라서 개발자가 크래쉬에대한 정보를 보려면, App Store Connect에서 개발자가 올린 앱의 dysm파일을 따로 다운로드하여 크래쉬 분석 툴에 올려줘야한다.&lt;/p&gt;
-
-&lt;h3 id=&quot;참고링크&quot;&gt;참고링크&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://help.apple.com/xcode/mac/current/#/devbbdc5ce4f&quot;&gt;https://help.apple.com/xcode/mac/current/#/devbbdc5ce4f&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://hyunndyblog.tistory.com/151&quot;&gt;https://hyunndyblog.tistory.com/151&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.naver.com/PostView.naver?isHttpsRedirect=true&amp;amp;blogId=horajjan&amp;amp;logNo=220585718693&quot;&gt;https://blog.naver.com/PostView.naver?isHttpsRedirect=true&amp;amp;blogId=horajjan&amp;amp;logNo=220585718693&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Sun, 25 Jul 2021 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/ios/WhatIsAppThinning/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/ios/WhatIsAppThinning/</guid>
-        
-        <category>App thining</category>
-        
-        
-        <category>iOS</category>
-        
-      </item>
-    
-      <item>
-        <title>UIApplicationDelegate 메서드</title>
-        <description>&lt;h2 id=&quot;appdelegate이란&quot;&gt;AppDelegate이란?&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UIApplicationDelegate&lt;/code&gt;의 subclass로 기본 생성되는 AppDelegate는 앱 전반적으로 공유하게 될 자원, 동작을 관리하는 역할을 수행한다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UIApplication&lt;/code&gt;의 Delegate이라는 이름에 맞게 앱의 기능들 중 일부를 대신하여 처리해준다.&lt;/p&gt;
-
-&lt;h3 id=&quot;app-delegate-객체가-담당하는-일들&quot;&gt;App Delegate 객체가 담당하는 일들&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;앱의 데이터 구조를 초기화한다.&lt;/li&gt;
-  &lt;li&gt;앱의 scene을 configure한다.&lt;/li&gt;
-  &lt;li&gt;앱 외부로부터 들어오는 notification(배터리 부족 notification 등..)들을 관리한다.&lt;/li&gt;
-  &lt;li&gt;앱 자신의 이벤트에 답한다. (scene의 이벤트뿐만 아닌 view, view controller를 포함)&lt;/li&gt;
-  &lt;li&gt;launch time에 실행, 등록되어야 할 업무를 처리한다. (Apple Push Notification 등)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;appdelegate의-메서드들&quot;&gt;AppDelegate의 메서드들&lt;/h2&gt;
-
-&lt;p&gt;자주 사용하는 App launching, Scene, App LifeCycle 메서드는 링크를 달아놓았고, 그 외의 메서드는 공식문서에서 직접 확인하는 것이 좋을 것 같아 설명만 적어놓았다.&lt;/p&gt;
-
-&lt;h3 id=&quot;app-시작시점과-연관된-메서드&quot;&gt;App 시작시점과 연관된 메서드&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623032-application&quot;&gt;application(_:willFinishLaunchingWithOptions:)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622921-application&quot;&gt;application(_:didFinishLaunchingWithOptions:)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplication/launchoptionskey&quot;&gt;UIApplication.LaunchOptionsKey&lt;/a&gt;를 이용하여 앱의 시작시점에 launching option을 확인하는 메서드들이다.&lt;/p&gt;
-
-&lt;p&gt;launch 종료시에 &lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplication/1622971-didfinishlaunchingnotification&quot;&gt;didFinishLaunchingNotification&lt;/a&gt;이 발송되며 이를 통해 launch 종료 여부를 확인할 수 있다.&lt;/p&gt;
-
-&lt;h3 id=&quot;scene관련-메서드&quot;&gt;Scene관련 메서드&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplicationdelegate/3197905-application&quot;&gt;application(_:configurationForConnecting:options:)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplicationdelegate/3197906-application&quot;&gt;application(_:didDiscardSceneSessions:)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;scene이 생성될 때, 사라질 때 불리는 메서드들이다. scene 생성 이전에, 소멸 이후에 해줘야하는 작업들을 처리해줄 수 있다.&lt;/p&gt;
-
-&lt;h3 id=&quot;환경변화에-따른-응답-메서드&quot;&gt;환경변화에 따른 응답 메서드&lt;/h3&gt;
-
-&lt;p&gt;파일의 사용가능 여부에 변화가 일어나는 경우, 메모리가 부족한 경우에 notification을 받게되고 특정 메서드가 실행된다. 위의 상황들에 대처할 수 있는 코드를 적을 수 있는 메서드들이다.&lt;/p&gt;
-
-&lt;h3 id=&quot;앱의-상태를-보전복구하는-메서드&quot;&gt;앱의 상태를 보전/복구하는 메서드&lt;/h3&gt;
-
-&lt;p&gt;앱의 상태를 보전해야할 때, 복구해야할 때 사용하는 메서드들이다.&lt;/p&gt;
-
-&lt;h3 id=&quot;background-data-download-관련-메서드&quot;&gt;Background Data Download 관련 메서드&lt;/h3&gt;
-
-&lt;p&gt;백그라운드 상태에서 다운로드를 진행할 때, 다운로드 진행중의 행동, 종료시 completionHandler 등을 정의할 수 있다.ㅏ&lt;/p&gt;
-
-&lt;h3 id=&quot;remote-notification-등록-관련-메서드&quot;&gt;Remote Notification 등록 관련 메서드&lt;/h3&gt;
-
-&lt;p&gt;외부에서 들어오는 Notification을 담당하는 메서드들이다. Notification을 받은 경우, 등록에 성공한 경우, 등록에 실패한 경우에 따라 다양한 처리를 해줄 수 있다.&lt;/p&gt;
-
-&lt;h3 id=&quot;사용자-액티비티-퀵-액션-관련-메서드&quot;&gt;사용자 액티비티, 퀵 액션 관련 메서드&lt;/h3&gt;
-
-&lt;p&gt;사용자의 액티비티, 퀵 액션과 관련하여 여러 처리를 해줄 수 있는 메서드이다. 사용자 액티비티는 &lt;a href=&quot;https://developer.apple.com/documentation/foundation/nsuseractivity&quot;&gt;https://developer.apple.com/documentation/foundation/nsuseractivity&lt;/a&gt; 에서 확인할 수 있다.&lt;/p&gt;
-
-&lt;h3 id=&quot;watch-health-siri-cloud-kit-관련-메서드&quot;&gt;Watch, Health, Siri, Cloud Kit 관련 메서드&lt;/h3&gt;
-
-&lt;p&gt;다양한 Kit들과 연관하여 앱을 사용할 수 있다.&lt;/p&gt;
-
-&lt;h3 id=&quot;url-resource-관련-메서드&quot;&gt;URL Resource 관련 메서드&lt;/h3&gt;
-
-&lt;p&gt;URL Resource를 열도록 지시하는 시점에 추가 작업을 해줄 수 있다.&lt;/p&gt;
-
-&lt;h3 id=&quot;geometry-관련-메서드&quot;&gt;Geometry 관련 메서드&lt;/h3&gt;
-
-&lt;p&gt;위치정보 등과 관련한 앱이 사용할 수 있는 메서드들이다.&lt;/p&gt;
-
-&lt;h3 id=&quot;entry-point-스토리보드용&quot;&gt;Entry Point (스토리보드용)&lt;/h3&gt;
-
-&lt;p&gt;storyboard를 통해 진입할 때 사용하는 main 함수이다.&lt;/p&gt;
-
-&lt;h2 id=&quot;app-life-cycle-관련-메서드&quot;&gt;App Life Cycle 관련 메서드&lt;/h2&gt;
-
-&lt;h3 id=&quot;not-running&quot;&gt;Not Running&lt;/h3&gt;
-
-&lt;p&gt;말 그대로 앱을 실행하지 않은 상태이다. 이 시점에 호출되는 메서드는 다음과 같다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623032-application&quot;&gt;application(_:willFinishLaunchingWithOptions:)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;앱 실행을 준비하는 메서드로 필요한 주요 객체들을 생성, 앱 실행 준비가 끝나기 직전에 호출된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622921-application&quot;&gt;application(_:didFinishLaunchingWithOptions:)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;앱 실행을 위한 모든 준비가 끝난 후 화면이 사용자에게 보여지기 직전에 호출되는 메서드로, 초기화 코드를 이곳에 작성한다.&lt;/p&gt;
-
-&lt;p&gt;이 메서드의 return value가 반환된 이후, 다른 app delegate의 메서드가 실행되어 forground state로 진입한다.&lt;/p&gt;
-
-&lt;p&gt;launch option을 사용할 수 있는 마지막 장소이다.&lt;/p&gt;
-
-&lt;p&gt;애플에서는 다음과 같은 당부를 전달한다. (didFinish.. 메서드 대신  willFinish.. 메서드를 이용할 것을 권장한다는 내용)&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Important&lt;/p&gt;
-
-  &lt;p&gt;For app initialization, it is highly recommended that you use this method and the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;application(_:willFinishLaunchingWithOptions:)&lt;/code&gt; method and do not use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;applicationDidFinishLaunching(_:)&lt;/code&gt; method, which is intended only for apps that run on older versions of iOS.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623111-applicationwillterminate&quot;&gt;applicationWillTerminate(_:)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;앱이 종료되기 직전에 호출되는 메서드로 app의 task를 clean-up하거나 공유 자원의 free, user data의 저장, timer의 초기화 등의 작업을 위한 코드를 이곳에 작성한다.&lt;/p&gt;
-
-&lt;p&gt;다만 메모리 확보를 위해 suspended 상태에 있는 앱이 종료되는 경우, background 상태에서 사용자에 의해 종료되는 경우, 오류로 인해 앱이 종료되는 경우에 이 메서드는 호출되지 않는다.&lt;/p&gt;
-
-&lt;h3 id=&quot;inactive&quot;&gt;InActive&lt;/h3&gt;
-
-&lt;p&gt;앱이 실행되면서 foreground에 진입하거나 foreground에서 background로 이동하는 시점. 어떠한 이벤트도 받지 않는 상태이며 다음과 같은 메서드들이 호출된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiscenedelegate/3197918-scenewillenterforeground&quot;&gt;sceneWillEnterForeground(_:)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;or&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623076-applicationwillenterforeground&quot;&gt;applicationWillEnterForeground(_:)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;앱이 실행되며 foreground에 진입하기 직전 호출되는 메서드이다.&lt;/p&gt;
-
-&lt;p&gt;전자의 메서드가 호출되는 경우는 UISceneDelegate이 구현되어있는 경우이다. 만약 전자의 메서드가 호출되었다면 후자는 호출되지 않는다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622950-applicationwillresignactive&quot;&gt;sceneWillResignActive(&lt;em&gt;:)](https://developer.apple.com/documentation/uikit/uiscenedelegate/3197919-scenewillresignactive)
-or
-[applicationWillResignActive(&lt;/em&gt;:)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;앱이 background로 진입하기 직전 호출되는 메서드이다. 위의 경우와 마찬가지로 UISceneDelegate의 구현여부에 따라 호출될 메서드가 결정된다.&lt;/p&gt;
-
-&lt;p&gt;홈화면으로 이동하는 경우, 화면이 앱 실행 도중 잠기는 경우, 다른 앱으로 이동한 경우 등의 상황에서 앱은 background로 진입하게 되며&lt;/p&gt;
-
-&lt;p&gt;멀티윈도우 상태, 알림센터나 제어센터를 보는 경우 등의 상황에서는 InActive 상태를 유지한채로 있는다.&lt;/p&gt;
-
-&lt;h3 id=&quot;active&quot;&gt;Active&lt;/h3&gt;
-
-&lt;p&gt;앱이 실행중이며 foreground에 있고 이벤트를 받고 있는 상태&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622956-applicationdidbecomeactive&quot;&gt;sceneDidBecomeActive(&lt;em&gt;:)](https://developer.apple.com/documentation/uikit/uiscenedelegate/3197915-scenedidbecomeactive)
-or
-[applicationDidBecomeActive(&lt;/em&gt;:)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;위의 메서드에서 content를 refresh하거나 frame rate를 올리는 등의 작업을 실행해줄 수 있다. (실행될 메서드는 UISceneDelegate 구현 여부에 따라 결정됨)&lt;/p&gt;
-
-&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
-
-&lt;p&gt;앱이 background에 있으며 다른 앱으로 전환되었거나 홈 버튼을 통해 밖으로 나갔을 때의 상태&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiscenedelegate/3197917-scenedidenterbackground?language=objc&quot;&gt;sceneDidEnterBackground(_:)&lt;/a&gt;
-or
-&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622997-applicationdidenterbackground?language=objc&quot;&gt;applicationDidEnterBackground:&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 18 Jul 2021 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/ios/AppDelegateMethods/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/ios/AppDelegateMethods/</guid>
-        
-        <category>AppDelegate</category>
-        
-        <category>UIApplicationDelegate</category>
-        
-        
-        <category>iOS</category>
-        
-      </item>
-    
-      <item>
-        <title>escaping 클로저</title>
-        <description>&lt;h2 id=&quot;escaping-closure를-사용하는-방법&quot;&gt;Escaping Closure를 사용하는 방법&lt;/h2&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getImages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;@escaping&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;클로저의 타입 앞에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@escaping&lt;/code&gt; 키워드를 붙여주면 해당 클로저는 escaping closure로 사용할 수 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;escaping-vs-non-escaping&quot;&gt;Escaping vs Non-Escaping&lt;/h2&gt;
-
-&lt;p&gt;클로저를 함수 내부에서 사용할 때, 함수가 종료되었더라도 클로저가 사용될 수 있도록 해주는 키워드가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@escaping&lt;/code&gt;이다.&lt;/p&gt;
-
-&lt;p&gt;함수가 종료되었는데 전달인자로 받은 클로저를 실행해야되는 경우로는 아래와 같은 예시들이 있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;비동기 작업으로 인해 클로저가 나중에 실행되는 경우&lt;/li&gt;
-  &lt;li&gt;return 값으로 다시 그 클로저를 반환하는 경우&lt;/li&gt;
-  &lt;li&gt;외부 변수에 클로저를 저장해야하는 경우&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@escaping&lt;/code&gt; 키워드를 사용했지만 클로저를 밖에서 쓰지 않았다고 warning이나 error가 발생하지는 않는다. 다만 성능 개선을 위해서 가능한 경우에는 life cycle 명확한 non-escaping closure를 사용하는 것이 바람직하다.&lt;/p&gt;
-
-&lt;h3 id=&quot;비동기-작업으로-인해-클로저가-나중에-실행되는-경우-예시&quot;&gt;비동기 작업으로 인해 클로저가 나중에 실행되는 경우 예시&lt;/h3&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;postItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PostingItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;@escaping&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;MarketItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;OpenMarketError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;sessionManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;failure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-                &lt;span class=&quot;nf&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;failure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;decodedData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;JSONDecoder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;MarketItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;failure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;invalidData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-                &lt;span class=&quot;nf&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;decodedData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;sessionManage.request는 비동기적으로 실행될 메서드이므로 completionHandler는 나중에 실행되게 된다. 이런 경우에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@escaping&lt;/code&gt; 키워드를 붙여주어야 한다.&lt;/p&gt;
-
-&lt;h3 id=&quot;return-값으로-클로저를-반환하는-경우-예시&quot;&gt;return 값으로 클로저를 반환하는 경우 예시&lt;/h3&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fetchImageDataTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;urlString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;@escaping&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URLSessionDataTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;urlString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urlString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-              &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urlString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;dataTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URLRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;주의할-점&quot;&gt;주의할 점&lt;/h2&gt;
-
-&lt;p&gt;Escaping closure은 함수의 전달인자로 전달하게 되는데 이 말은 클로저의 구현부는 다른 곳에 존재한다는 것이다.&lt;/p&gt;
-
-&lt;p&gt;클로저를 구현할 때 내부에서 사용할 reference는 항상 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;weak&lt;/code&gt;으로 참조하여 사용해야한다. 이는 retain cycle을 통한 memory leak을 막기 위함이다. 보통 self를 사용하는 경우가 많으므로 클로저의 앞 부분에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[weak self]&lt;/code&gt;를 붙여줌으로써 메모리 누수를 막는다.&lt;/p&gt;
-
-&lt;h2 id=&quot;참고한-링크&quot;&gt;참고한 링크&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=xiS5gJOIQxI&amp;amp;ab_channel=SeanAllen&quot;&gt;https://www.youtube.com/watch?v=xiS5gJOIQxI&amp;amp;ab_channel=SeanAllen&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 15 Jul 2021 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/ios/WhatIsEscapingClosure/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/ios/WhatIsEscapingClosure/</guid>
-        
-        <category>closure</category>
-        
-        <category>escaping closure</category>
-        
-        
-        <category>iOS</category>
-        
-      </item>
-    
-      <item>
-        <title>App Bundle의 구조와 역할</title>
-        <description>&lt;h2 id=&quot;bundle-vs-package&quot;&gt;Bundle vs Package&lt;/h2&gt;
-
-&lt;h3 id=&quot;번들&quot;&gt;번들&lt;/h3&gt;
-
-&lt;p&gt;알려진 것들로 이루어진 디렉토리, 실행 가능한 코드와 그 코드가 사용하는 자원들을 포함하고 있다.&lt;/p&gt;
-
-&lt;p&gt;코드와 자원을 모으는 구조를 제공하여 개발자 경험을 향상시키는 것을 가장 우선시 하는데, 이 구조는 코드나 자원의 예측 가능한 로딩뿐만 아니라 지역화 같은 시스템 차원의 기능도 허용한다.&lt;/p&gt;
-
-&lt;p&gt;번들은 크게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;앱 번들&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프레임워크 번들&lt;/code&gt;,  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Loadable 번들&lt;/code&gt;로 나눌 수 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;앱 번들&lt;/code&gt;은 실행될 수 있는 executable과 그 executable을 설명하는 Info.plist 파일 그리고 executable에서 사용되는 launch 이미지를 포함한 asset과 자원, 인터페이스 파일, string 파일, 데이터 파일로 이루어져 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프레임워크 번들&lt;/code&gt;은 dynamic shared library 라 불리는 동적 공유 라이브러리에서 사용되는 코드와 자원을 포함하고 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Loadable 번들&lt;/code&gt;은 앱의 기능성을 확장시켜주는 실행 가능한 코드와 자원을 포함하고 있고 플러그인이 대표적인 예시이다.&lt;/p&gt;
-
-&lt;p&gt;번들의 컨텐츠는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Bundle.main&lt;/code&gt;을 사용해서 접근할 수 있으며 대부분의 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;url(forResource:withExtension:)&lt;/code&gt;메서드를 사용하여 특정 자원의 위치를 알아낼 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kt&quot;&gt;Bundle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;forResource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Photo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;withExtension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;jpg&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;모든 앱 번들은 앱에 대한 정보가 담긴 Info.plist 파일을 가지며 bundleURL과 bundleIdentifier를 포함한 몇몇 메타 데이터는  아래와 같이도 접근할 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;bundle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bundle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;bundle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bundleURL&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;// 앱의 저장위치&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;bundle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bundleIdentifier&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// identifier&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;패키지&quot;&gt;패키지&lt;/h3&gt;
-
-&lt;p&gt;파인더를 통해 봤을 때 파일처럼 보이는 디렉토리이다. 패키지는 관련있는 자원들을 하나의 유닛으로 압축시키고 연결시키는 작업을 통해 사용자 경험을 향상하기 위해 만들어졌다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;디렉토리에 .app, .playground, .plugin과 같은 특별한 확장자를 가지고 있는 파일이 있는 경우&lt;/li&gt;
-  &lt;li&gt;디렉토리에 document 타입으로 등록된 앱의 확장자가 존재하는 경우&lt;/li&gt;
-  &lt;li&gt;디렉토리에 그 자체를 패키지로 보여지게 하는 확장된 attribute가 존재하는 경우&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;위 세 가지의 경우에 해당 디렉토리를 패키지라고 생각할 수 있다.&lt;/p&gt;
-
-&lt;h3 id=&quot;정리&quot;&gt;정리&lt;/h3&gt;
-
-&lt;p&gt;패키지는 누군가 봉인해둔 하나의 박스라면 번들은 백팩과 같은 느낌이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210711145044.svg&quot; alt=&quot;img&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;출처: https://nshipster.co.kr/bundles-and-packages/&lt;/p&gt;
-
-&lt;h2 id=&quot;app-bundle이란&quot;&gt;App Bundle이란?&lt;/h2&gt;
-
-&lt;p&gt;앱 번들은 개발자가 생성하는 가장 일반적인 유형의 번들로, 어플리케이션의 성공적인 작동에 필요한 모든 것들을 저장한다. 구조는 어플리케이션 플랫폼이 iOS냐 MacOS냐에 따라 다르지만, 사용하는 방법은 동일하다.&lt;/p&gt;
-
-&lt;h2 id=&quot;앱-번들의-구성요소&quot;&gt;앱 번들의 구성요소&lt;/h2&gt;
-
-&lt;p&gt;앱 번들에는 Info.plist, 실행파일, 리소스 파일, 기타 서포트 파일 등이 포함되어있는데 각각 아래와 같은 역할을 수행한다.&lt;/p&gt;
-
-&lt;h3 id=&quot;infoplist&quot;&gt;Info.plist&lt;/h3&gt;
-
-&lt;p&gt;어플리케이션에 대한 구성 정보가 들어있는 구조화된 파일로, 시스템은 이 파일에 의존하여 어플리케이션 및 파일에 대한 관련 정보를 식별한다.&lt;/p&gt;
-
-&lt;h3 id=&quot;실행파일&quot;&gt;실행파일&lt;/h3&gt;
-
-&lt;p&gt;모든 응용 프로그램에 존재하는 실행파일로 어플리케이션의 메인 entry point와 어플리케이션 타겟에 정적으로 연결된 모든 코드가 포함되어 있다.&lt;/p&gt;
-
-&lt;h3 id=&quot;리소스-파일&quot;&gt;리소스 파일&lt;/h3&gt;
-
-&lt;p&gt;리소스는 어플리케이션의 실행 파일 외부에 있는 데이터 파일이다. 리소스는 일반적으로 이미지, 아이콘, 소리, nib파일, 문자열 파일, 설정 파일 및 데이터 파일 등으로 구성된다. 대부분 localized될 수 있다.&lt;/p&gt;
-
-&lt;h3 id=&quot;기타-서포트-파일&quot;&gt;기타 서포트 파일&lt;/h3&gt;
-
-&lt;p&gt;커스텀 데이터 리소스 등이 포함 되어있다.&lt;/p&gt;
-
-&lt;p&gt;iOS의 번들 구조를 이해하면 사용자 지정 파일을 저장할 위치를 결정하는데 도움이 된다. iOS 어플의 번들 구조는 모바일 장치에 적합하게 이루어져 있다. 외부 디렉토리가 거의 없는 평평한 구조를 사용하여 디스크 공간을 절약하고 파일에 대한 접근과정을 간소화한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;참고한-링크&quot;&gt;참고한 링크&lt;/h2&gt;
-
-&lt;p&gt;https://nshipster.co.kr/bundles-and-packages/&lt;/p&gt;
-
-&lt;p&gt;https://melod-it.gitbook.io/sagwa/documentation-archive/bundle-programming-guide/bundle-structures&lt;/p&gt;
-
-&lt;p&gt;https://ios-development.tistory.com/339&lt;/p&gt;
-
-&lt;p&gt;https://hcn1519.github.io/articles/2018-12/bundle&lt;/p&gt;
-
-&lt;p&gt;https://developer.apple.com/library/archive/documentation/CoreFoundation/Conceptual/CFBundles/AboutBundles/AboutBundles.html#//apple_ref/doc/uid/10000123i-CH100-SW1&lt;/p&gt;
-
-&lt;p&gt;https://woongsios.tistory.com/92&lt;/p&gt;
-
-&lt;p&gt;https://developer.apple.com/documentation/foundation/bundle&lt;/p&gt;
-
-&lt;p&gt;https://www.notion.so/App-Bundle-650ff04e917c4ef4980237d4f68f09a3&lt;/p&gt;
-
-&lt;p&gt;https://github.com/jwonyLee/TIL/blob/master/iOS/Interview/AppBundle.md&lt;/p&gt;
-</description>
-        <pubDate>Sun, 11 Jul 2021 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/ios/WhatIsAppBundle/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/ios/WhatIsAppBundle/</guid>
-        
-        <category>iOS</category>
-        
-        
-        <category>iOS</category>
-        
-      </item>
-    
-      <item>
-        <title>UIViewController</title>
-        <description>&lt;h2 id=&quot;uiviewcontroller의-역할&quot;&gt;UIViewController의 역할&lt;/h2&gt;
-
-&lt;p&gt;View Controller는 앱 내부 구조의 기반으로 모든 앱은 최소 하나 이상의 뷰컨트롤러를 가진다. 뷰컨트롤러는 UI, 인터페이스, 데이터간의 상호작용을 맡으며 UI간의 전환에도 도움을 준다.&lt;/p&gt;
-
-&lt;h3 id=&quot;view의-계층-관리&quot;&gt;View의 계층 관리&lt;/h3&gt;
-
-&lt;p&gt;각각의 View Controller는 View의 계층을 관리한다. 이 계층의 가장 근원이 되는 것이 root view이며 모든 view controller는 한개의 root view를 가진다.&lt;/p&gt;
-
-&lt;h3 id=&quot;view와-관련된-notification-관리&quot;&gt;View와 관련된 Notification 관리&lt;/h3&gt;
-
-&lt;p&gt;ViewController 객체는 UIView 객체들의 생성, 소멸, 이벤트 발생 등을 관리한다. View는 나타나기 직전, 나타난 후, 사라지기 직전, 사라진 후 4단계에 걸쳐서 UIViewController에게 내용을 전달한다.&lt;/p&gt;
-
-&lt;h3 id=&quot;user-interaction-처리&quot;&gt;User Interaction 처리&lt;/h3&gt;
-
-&lt;p&gt;뷰컨트롤러는 &lt;a href=&quot;https://developer.apple.com/library/content/documentation/General/Conceptual/Devpedia-CocoaApp/Responder.html#//apple_ref/doc/uid/TP40009071-CH1&quot;&gt;responder objects&lt;/a&gt;로서 responder chain으로부터 내려오는 이벤트를 핸들링할 수 있지만 일반적으로 터치 이벤트를 직접 핸들링하지 않고 뷰가 대신 이벤트를 감지하여 델리게이트나 타겟 오브젝트(일반적으로 뷰컨트롤러)에 보고한다.&lt;/p&gt;
-
-&lt;p&gt;따라서 대부분의 뷰컨트롤러에 대한 이벤트는 델리게이트 메서드나 액션 메서드(&lt;a href=&quot;https://developer.apple.com/library/content/documentation/General/Conceptual/Devpedia-CocoaApp/TargetAction.html#//apple_ref/doc/uid/TP40009071-CH3&quot;&gt;action methods&lt;/a&gt;) 로 핸들링된다.&lt;/p&gt;
-
-&lt;h3 id=&quot;viewcontroller의-두-가지-종류&quot;&gt;ViewController의 두 가지 종류&lt;/h3&gt;
-
-&lt;p&gt;View Controller는 두 가지 종류로 구분되는데 하나는 content view controller로 앱의 컨텐츠를 관리하는 기본 타입, 다른 하나는 컨테이너 뷰컨트롤러로 다른 뷰컨트롤러를 관리하는 뷰컨트롤러이다.&lt;/p&gt;
-
-&lt;h3 id=&quot;view-management&quot;&gt;View Management&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210711192638.png&quot; alt=&quot;image: ../Art/VCPG_ControllerHierarchy_fig_1-1_2x.png&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210711192908.png&quot; alt=&quot;image: ../Art/VCPG_ContainerViewController_fig_1-2_2x.png&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;뷰 컨트롤러의 가장 중요한 역할을 뷰 계층을 관리하는 것이다. 뷰컨트롤러는 모든 컨텐트를 감싸는 루트뷰를 갖고 있으며 디스플레이하고 싶은 다른 뷰를 추가할 수 있다. 뷰컨트롤러는 언제나 루트뷰의 레퍼런스를 소유하고 각 뷰는 서브뷰들의 스트롱 레퍼런스(strong references) 를 소유한다.&lt;/p&gt;
-
-&lt;p&gt;뷰컨트롤러의 뷰계층에서 다른 뷰에 접근하려면 아웃렛(&lt;a href=&quot;https://developer.apple.com/library/content/documentation/General/Conceptual/Devpedia-CocoaApp/Outlet.html#//apple_ref/doc/uid/TP40009071-CH4&quot;&gt;outlets&lt;/a&gt;) 이 일반적인 방법이다. 뷰컨트롤러는 모든 뷰의 컨텐트를 관리하고 아웃렛은 뷰에 대한 레퍼런스를 저장한다. 아웃렛은 뷰가 스토리보드에 로드될 때 자동으로 실제 뷰 오브젝트에 연결된다.&lt;/p&gt;
-
-&lt;p&gt;컨텐트 뷰컨트롤러는 속한 모든 뷰를 직접 관리한다. 컨테이너 뷰컨트롤러는 직접 소유한 뷰와 차일드 뷰컨트롤러의 루트뷰를 관리한다. 컨테이너는 자식뷰의 컨텐트를 관리하지 않으며 오직 컨테이너의 디자인에 따라 루트뷰의 사이즈와 위치 등을 관리한다. 아래 스플릿 뷰컨트롤러(split view controller) 는 차일드뷰의 사이즈와 포지션을 관리하지만 차일드 뷰컨트롤러는 실제 컨텐츠를 관리한다.&lt;/p&gt;
-
-&lt;h3 id=&quot;data-marshing-데이터-중계&quot;&gt;Data Marshing (데이터 중계)&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210711194741.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;뷰컨트롤러는 관리하는 뷰와 데이터간의 중계자 역할을 수행한다. &lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiviewcontroller&quot;&gt;UIViewController&lt;/a&gt; 의 메서드와 프로프터로 앱의 비주얼을 관리할 수 있고 서브클래스의 데이터를 관리할 수 있는 변수를 추가할 수 있다. 커스텀 변수를 추가하는 것은 아래 그림과 같은 관계를 만들어 내는데, 뷰컨트롤러는 데이터와 그것을 나타내는 뷰의 레퍼런스를 소유한다.&lt;/p&gt;
-
-&lt;p&gt;개발자는 뷰컨트롤러와 데이터 오브젝트간의 책임을 명확하게 분리해야 한다. 뷰컨트롤러는 뷰로부터 얻는 인풋을 검증하고 데이터 오브젝트가 필요로 하는 포맷으로 패키징한다. 하지만 실제 데이터를 관리함에 있어서 뷰컨트롤러의 역할은 최소화되어야 한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uidocument&quot;&gt;UIDocument&lt;/a&gt; 오브젝트는 데이터를 뷰컨트롤러로부터 분리하여 관리하는 방법중 한가지이다. 그것은 컨트롤러 오브젝트로서 데이터를 영구 저장소로부터 읽고 쓰는 방법을 알고 있다. 서브클래싱하면 데이터를 추출하고 전달하는 로직이나 메서드를 추가할 수 있다. 뷰컨트롤러는 뷰의 업데이트가 용이하도록 데이터의 복사본을 저장하지만 도큐먼트를 원본데이터를 소유한다.&lt;/p&gt;
-
-&lt;h3 id=&quot;resource-관리&quot;&gt;Resource 관리&lt;/h3&gt;
-
-&lt;p&gt;뷰컨트롤러는 자신 위에 올라오는 모든 뷰들을 관리한다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;didReceiveMemoryWarning&lt;/code&gt; 메서드를 통해서 메모리 워닝이 발생했는지를 체크하고 뷰를 삭제함으로써 메모리 공간을 확보한다.&lt;/p&gt;
-
-&lt;p&gt;View Controller의&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;기본 데이터의 변경에 대한 응답으로 뷰의 콘텐츠를 업데이트&lt;/li&gt;
-  &lt;li&gt;뷰와 사용자 상호 작용에 응답&lt;/li&gt;
-  &lt;li&gt;뷰 크기 조정 및 전체 인터페이스의 레이아웃 관리&lt;/li&gt;
-  &lt;li&gt;앱에서 다른 뷰 컨트롤러를 포함한 다른 객체와 조정&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;adaptivity-관리&quot;&gt;Adaptivity 관리&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210711195332.png&quot; alt=&quot;image: ../Art/VCPG_SizeClassChanges_fig_1-4_2x.png&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;뷰컨트롤러는 속한 뷰의 환경에 따라 적응을 한다. iOS앱은 아이패드나 여러가지 아이폰에서 실행이 가능하다. 여러개의 뷰컨트롤러로 개별 기기를 지원하기보다는 하나의 뷰컨트롤러만 가지고 뷰의 사이즈를 조절한다. 뷰컨트롤러의 traits, size class(compact, regular)가 바뀌면 그에 맞게 컨텐츠를 배치해준다.&lt;/p&gt;
-
-&lt;h2 id=&quot;참고한-링크&quot;&gt;참고한 링크&lt;/h2&gt;
-
-&lt;p&gt;https://ahyeonlog.tistory.com/17&lt;/p&gt;
-
-&lt;p&gt;https://sibalja.tistory.com/25&lt;/p&gt;
-
-&lt;p&gt;http://www.appleofeyes.com/role-view-controllers-xcode-%EC%97%91%EC%8A%A4%EC%BD%94%EB%93%9C%EC%97%90%EC%84%9C-%EB%B7%B0%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC%EC%9D%98-%EC%97%AD%ED%95%A0/&lt;/p&gt;
-</description>
-        <pubDate>Sun, 11 Jul 2021 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/ios/WhatDoesViewControllerDo/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/ios/WhatDoesViewControllerDo/</guid>
-        
-        <category>UIResponder</category>
-        
-        
-        <category>iOS</category>
-        
-      </item>
-    
-      <item>
-        <title>App Life Cycle</title>
-        <description>&lt;h2 id=&quot;app-life-cycle&quot;&gt;App Life Cycle&lt;/h2&gt;
-
-&lt;h3 id=&quot;앱의-시작&quot;&gt;앱의 시작&lt;/h3&gt;
-
-&lt;p&gt;iOS는 C언어 기반을 토대로 작동하기 때문에 앱이 시작되면 가장 처음으로 main 함수가 불린다. main 함수는 UIKit framework이 관리하며 UIApplication 객체를 생성한다. 이를 통해 개발자는 앱의 실행에 부분적으로 관여할 수 있다.&lt;/p&gt;
-
-&lt;h3 id=&quot;main-run-loop&quot;&gt;Main Run Loop&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210711155954.PNG&quot; alt=&quot;img&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이벤트의 처리 과정은 다음과 같이 정리할 수 있다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;유저가 이벤트를 발생시킨다.&lt;/li&gt;
-  &lt;li&gt;시스템을 통해 이벤트가 생성된다.&lt;/li&gt;
-  &lt;li&gt;UIKit에 의해 생성된 Port가 이벤트를 이벤트 큐에 삽입한다.&lt;/li&gt;
-  &lt;li&gt;이벤트 큐의 이벤트가 하나씩 Main Run Loop에 매핑된다.&lt;/li&gt;
-  &lt;li&gt;UIApplication instance는 이벤트를 전달받을 객체를 선정한다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;앱의-상태-변화&quot;&gt;앱의 상태 변화&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210711160214.PNG&quot; alt=&quot;img&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20210711160423.png&quot; alt=&quot;123540849-04b7c100-d77c-11eb-9b13-a08e8daf0ed9&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;not-running&quot;&gt;Not Running&lt;/h3&gt;
-
-&lt;p&gt;말 그대로 앱을 실행하지 않은 상태이다. 이 시점에 호출되는 메서드는 다음과 같다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623032-application&quot;&gt;application(_:willFinishLaunchingWithOptions:)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;앱 실행을 준비하는 메서드로 필요한 주요 객체들을 생성, 앱 실행 준비가 끝나기 직전에 호출된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622921-application&quot;&gt;application(_:didFinishLaunchingWithOptions:)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;앱 실행을 위한 모든 준비가 끝난 후 화면이 사용자에게 보여지기 직전에 호출되는 메서드로, 초기화 코드를 이곳에 작성한다.&lt;/p&gt;
-
-&lt;p&gt;이 메서드의 return value가 반환된 이후, 다른 app delegate의 메서드가 실행되어 forground state로 진입한다.&lt;/p&gt;
-
-&lt;p&gt;launch option을 사용할 수 있는 마지막 장소이다.&lt;/p&gt;
-
-&lt;p&gt;애플에서는 다음과 같은 당부를 전달한다. (didFinish.. 메서드 대신  willFinish.. 메서드를 이용할 것을 권장한다는 내용)&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Important&lt;/p&gt;
-
-  &lt;p&gt;For app initialization, it is highly recommended that you use this method and the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;application(_:willFinishLaunchingWithOptions:)&lt;/code&gt; method and do not use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;applicationDidFinishLaunching(_:)&lt;/code&gt; method, which is intended only for apps that run on older versions of iOS.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623111-applicationwillterminate&quot;&gt;applicationWillTerminate(_:)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;앱이 종료되기 직전에 호출되는 메서드로 app의 task를 clean-up하거나 공유 자원의 free, user data의 저장, timer의 초기화 등의 작업을 위한 코드를 이곳에 작성한다.&lt;/p&gt;
-
-&lt;p&gt;다만 메모리 확보를 위해 suspended 상태에 있는 앱이 종료되는 경우, background 상태에서 사용자에 의해 종료되는 경우, 오류로 인해 앱이 종료되는 경우에 이 메서드는 호출되지 않는다.&lt;/p&gt;
-
-&lt;h3 id=&quot;inactive&quot;&gt;InActive&lt;/h3&gt;
-
-&lt;p&gt;앱이 실행되면서 foreground에 진입하거나 foreground에서 background로 이동하는 시점. 어떠한 이벤트도 받지 않는 상태이며 다음과 같은 메서드들이 호출된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623076-applicationwillenterforeground&quot;&gt;sceneWillEnterForeground(&lt;em&gt;:)](https://developer.apple.com/documentation/uikit/uiscenedelegate/3197918-scenewillenterforeground) or  [applicationWillEnterForeground(&lt;/em&gt;:)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;앱이 실행되며 foreground에 진입하기 직전 호출되는 메서드이다.&lt;/p&gt;
-
-&lt;p&gt;전자의 메서드가 호출되는 경우는 UISceneDelegate이 구현되어있는 경우이다. 만약 전자의 메서드가 호출되었다면 후자는 호출되지 않는다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622950-applicationwillresignactive&quot;&gt;sceneWillResignActive(&lt;em&gt;:)](https://developer.apple.com/documentation/uikit/uiscenedelegate/3197919-scenewillresignactive) or  [applicationWillResignActive(&lt;/em&gt;:)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;앱이 background로 진입하기 직전 호출되는 메서드이다. 위의 경우와 마찬가지로 UISceneDelegate의 구현여부에 따라 호출될 메서드가 결정된다.&lt;/p&gt;
-
-&lt;p&gt;홈화면으로 이동하는 경우, 화면이 앱 실행 도중 잠기는 경우, 다른 앱으로 이동한 경우 등의 상황에서 앱은 background로 진입하게 되며&lt;/p&gt;
-
-&lt;p&gt;멀티윈도우 상태, 알림센터나 제어센터를 보는 경우 등의 상황에서는 InActive 상태를 유지한채로 있는다.&lt;/p&gt;
-
-&lt;h3 id=&quot;active&quot;&gt;Active&lt;/h3&gt;
-
-&lt;p&gt;앱이 실행중이며 foreground에 있고 이벤트를 받고 있는 상태&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622956-applicationdidbecomeactive&quot;&gt;sceneDidBecomeActive(&lt;em&gt;:)](https://developer.apple.com/documentation/uikit/uiscenedelegate/3197915-scenedidbecomeactive) or [applicationDidBecomeActive(&lt;/em&gt;:)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;위의 메서드에서 content를 refresh하거나 frame rate를 올리는 등의 작업을 실행해줄 수 있다. (실행될 메서드는 UISceneDelegate 구현 여부에 따라 결정됨)&lt;/p&gt;
-
-&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
-
-&lt;p&gt;앱이 background에 있으며 다른 앱으로 전환되었거나 홈 버튼을 통해 밖으로 나갔을 때의 상태&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiscenedelegate/3197917-scenedidenterbackground?language=objc&quot;&gt;sceneDidEnterBackground(_:)&lt;/a&gt; or &lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622997-applicationdidenterbackground?language=objc&quot;&gt;applicationDidEnterBackground:&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;suspended&quot;&gt;Suspended&lt;/h3&gt;
-
-&lt;p&gt;background에서 특별한 작업이 없을 경우 전환되는 상태&lt;/p&gt;
-
-&lt;h2 id=&quot;참고한-링크&quot;&gt;참고한 링크&lt;/h2&gt;
-
-&lt;p&gt;https://hcn1519.github.io/articles/2017-09/ios_app_lifeCycle&lt;/p&gt;
-
-&lt;p&gt;https://fomaios.tistory.com/entry/%EC%95%B1-%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0App-LifeCycle-1&lt;/p&gt;
-
-&lt;p&gt;https://nsios.tistory.com/60&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 11 Jul 2021 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/ios/AppLifeCycle/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/ios/AppLifeCycle/</guid>
-        
-        <category>app life cycle</category>
         
         
         <category>iOS</category>
