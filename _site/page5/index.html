@@ -265,119 +265,6 @@
 </head>
 
 <div class="post-preview">
-    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/12-Memory-Management/">
-        <h2 class="post-title">
-            [#12] 메모리 관리-1
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            Logical Address vs Physical Address
-
-
-
-Logical address는 프로세스마다 독립적으로 가지는 주소공간이다. 어떤 프로세스가 메모리상에서 어느 지점에 위치하는지와 무관하게 논리적으로 각 프로세스가 0번지부터 가지고 있는 주소값을 Logical address(virtual address)라고 부른다.
-
-반면 Physi...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on May
-        9, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.05.04-TIL/">
-        <h2 class="post-title">
-            2021년 05월 04일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  TDD
-    
-      TDD의 용어에 대해 알아보고 실제 Unit Test 코드에 적용시켜보는 과정 진행
-      읽어본 글 : Mock, Stub, Spy, Fake가 뭔지에 대해 Swift 코드 예제로 설명해주는 글
-    
-  
-  CS
-    
-      읽어본 글 : 프로세스와 스레드의 차이에 대해 설명해놓은 ...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on May
-        4, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.05.03-TIL/">
-        <h2 class="post-title">
-            2021년 05월 03일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  
-    ARC와 Memory Structure
-
-    
-      ARC는 자동으로 Reference count를 관리하는 기능
-      Memory Structure에는 Code, Data, Stack, Heap 영역이 있다
-    
-  
-  
-    Retain Cycle과 Dead Lock
-
-    
-      Re...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on May
-        3, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/%EC%9D%BC%EC%83%81/TyporaEasyImageUpload/">
-        <h2 class="post-title">
-            Typora 이미지 쉽게 업로드 하기 for mac
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            사건의 발단
-
-Typora를 통해 깃허브 블로그 글을 쓰다보면 이미지 첨부하는 작업이 매우 귀찮다고 느끼시는 분들이 많으실 것 같아요. 이미지의 상대경로를 지정해주고 깃헙 블로그 레포의 어떤 폴더에 캡쳐한 스크린샷을 담는 과정은 상당히 귀찮은 작업이죠..
-
-이러한 문제를 해결할 수 있는 방안(이미지를 링크로 변환하여 업로드)을 오늘 알려드리겠습니다.
-...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on May
-        2, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
     <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/11-Deadlock/">
         <h2 class="post-title">
             [#11] Deadlock(데드락)
@@ -499,7 +386,7 @@ guard let input = userInput,
 <hr>
 
 <div class="post-preview">
-    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/10-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EB%8F%99%EA%B8%B0%ED%99%94-3/">
+    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/10-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5%E1%84%92%E1%85%AA-3/">
         <h2 class="post-title">
             [#10] 프로세스 동기화-3
         </h2>
@@ -548,6 +435,125 @@ guard let input = userInput,
     <p class="post-meta">
         Posted by Neph's Blog on April
         22, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/9-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5%E1%84%92%E1%85%AA-2/">
+        <h2 class="post-title">
+            [#9] 프로세스 동기화-2
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            Critical Section 관리 알고리즘의 발전
+
+Critical Section을 사용하기 위해 만족해야 하는 몇가지 조건들
+
+
+  Mutual Exclusion(상호 배제)
+    
+      프로세스 P_i가 critical section 부분을 수행중이면 다른 모든 프로세스들은 그들의 critical section에 들어가면 안된다.
+    ...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on April
+        18, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2021.04.15-TIL/">
+        <h2 class="post-title">
+            2021년 04월 15일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  os_log에 대해 간략히 알아봤습니다.
+  만국 박람회 프로젝트의 refactoring이 계속되었습니다.
+
+
+
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on April
+        15, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.04.13-TIL/">
+        <h2 class="post-title">
+            2021년 04월 13일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  시청한 영상: WWDC20 Modern cell configuration
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
+        guard let c...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on April
+        13, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.04.12-TIL/">
+        <h2 class="post-title">
+            2021년 04월 12일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+  Table View에 대해 알아보았습니다.
+    
+      Configure Table View Cell with code
+    
+  
+  Navigation View를 코드로 작성하는 방법에 대해 알아보았습니다.
+
+
+
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on April
+        12, 2021
     </p>
 </div>
 <hr>
@@ -642,65 +648,65 @@ guard let input = userInput,
             
         
             
-            <a data-sort="0061"
+            <a data-sort="0056"
                 href="/archive/?tag=TIL" title="TIL"
-                rel="37">TIL</a>
+                rel="38">TIL</a>
             
             
-            
-            <a data-sort="0081"
-                href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
-                rel="17">운영체제</a>
             
             <a data-sort="0082"
-                href="/archive/?tag=OS" title="OS"
-                rel="16">OS</a>
+                href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
+                rel="12">운영체제</a>
             
-            <a data-sort="0092"
+            <a data-sort="0083"
+                href="/archive/?tag=OS" title="OS"
+                rel="11">OS</a>
+            
+            <a data-sort="0088"
                 href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
                 rel="6">Yagom-Academy</a>
             
-            <a data-sort="0093"
+            <a data-sort="0089"
                 href="/archive/?tag=%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4" title="데이터베이스"
                 rel="5">데이터베이스</a>
             
-            <a data-sort="0093"
+            <a data-sort="0089"
                 href="/archive/?tag=iOS" title="iOS"
                 rel="5">iOS</a>
             
-            <a data-sort="0094"
+            <a data-sort="0090"
                 href="/archive/?tag=Swift" title="Swift"
                 rel="4">Swift</a>
             
-            <a data-sort="0095"
+            <a data-sort="0091"
                 href="/archive/?tag=Alamofire" title="Alamofire"
                 rel="3">Alamofire</a>
             
-            <a data-sort="0096"
+            <a data-sort="0092"
                 href="/archive/?tag=%EB%8B%B9%EA%B7%BC%EB%A7%88%EC%BC%93+%EC%9D%B8%ED%84%B4" title="당근마켓 인턴"
                 rel="2">당근마켓 인턴</a>
             
-            <a data-sort="0096"
+            <a data-sort="0092"
                 href="/archive/?tag=%EC%B7%A8%EC%97%85%EC%A4%80%EB%B9%84" title="취업준비"
                 rel="2">취업준비</a>
             
-            <a data-sort="0096"
+            <a data-sort="0092"
                 href="/archive/?tag=Notification" title="Notification"
                 rel="2">Notification</a>
             
-            <a data-sort="0096"
+            <a data-sort="0092"
                 href="/archive/?tag=Scroll+View" title="Scroll View"
                 rel="2">Scroll View</a>
             
-            <a data-sort="0096"
+            <a data-sort="0092"
                 href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
                 rel="2">Yagom Academy</a>
             
-            <a data-sort="0096"
+            <a data-sort="0092"
                 href="/archive/?tag=app+life+cycle" title="app life cycle"
                 rel="2">app life cycle</a>
             
-            <a data-sort="0096"
+            <a data-sort="0092"
                 href="/archive/?tag=enum" title="enum"
                 rel="2">enum</a>
     </div>

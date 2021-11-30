@@ -1,6 +1,30 @@
 [
   
     {
+      "title"    : "살까 말까 앱 개인정보 처리방침",
+      "subtitle" : "",
+      "tags"     : "살까말까, 개인앱",
+      "url"      : "/%EC%82%B4%EA%B9%8C%20%EB%A7%90%EA%B9%8C/private-policy/",
+      "date"     : "2021-11-30 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Storyboard에서 TableView Cell 터치시 DetailView로 이동하는 방법",
+      "subtitle" : "",
+      "tags"     : "TableViewCell, Touch cell to move detailView",
+      "url"      : "/ios/TouchUpCellToMoveDetailViewForStoryboard/",
+      "date"     : "2021-11-03 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "간단한 Cell Touch 이벤트의 전달하기 (Delegate 대신 클로저 전달)",
+      "subtitle" : "",
+      "tags"     : "cell touch event, addTarget",
+      "url"      : "/ios/AddTargetRatherThanDelegate/",
+      "date"     : "2021-11-03 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "[#5] 관계 데이터 모델",
       "subtitle" : "",
       "tags"     : "데이터베이스",
@@ -41,18 +65,10 @@
     } ,
   
     {
-      "title"    : "야곰 스타터 캠프 후기 (2기)",
-      "subtitle" : "",
-      "tags"     : "Yagom, StarterCamp, 부트캠프 후기, 부트캠프",
-      "url"      : "/%EC%9D%BC%EC%83%81/YagomCampReview/",
-      "date"     : "2021-08-22 00:00:00 +0900"
-    } ,
-  
-    {
       "title"    : "[Core] HTTPMethod.swift, Notification.swift 분석",
       "subtitle" : "",
       "tags"     : "Alamofire, HTTPMethod, Notification",
-      "url"      : "/alamofire/%EB%B6%84%EC%84%9D/HTTPMethodAndNotification/",
+      "url"      : "/alamofire%20%EB%B6%84%EC%84%9D/HTTPMethodAndNotification/",
       "date"     : "2021-07-29 00:00:00 +0900"
     } ,
   
@@ -60,7 +76,7 @@
       "title"    : "[Core] HTTPHeaders.swift 분석",
       "subtitle" : "",
       "tags"     : "Alamofire, HTTPHeaders",
-      "url"      : "/alamofire/%EB%B6%84%EC%84%9D/HTTPHeaders/",
+      "url"      : "/alamofire%20%EB%B6%84%EC%84%9D/HTTPHeaders/",
       "date"     : "2021-07-29 00:00:00 +0900"
     } ,
   
@@ -68,7 +84,7 @@
       "title"    : "[Core] AFError.swift 분석",
       "subtitle" : "",
       "tags"     : "Alamofire, AFError",
-      "url"      : "/alamofire/%EB%B6%84%EC%84%9D/AFError/",
+      "url"      : "/alamofire%20%EB%B6%84%EC%84%9D/AFError/",
       "date"     : "2021-07-29 00:00:00 +0900"
     } ,
   
@@ -233,14 +249,6 @@
     } ,
   
     {
-      "title"    : "[#16] File System-2",
-      "subtitle" : "",
-      "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/16-File-System-2/",
-      "date"     : "2021-06-06 00:00:00 +0900"
-    } ,
-  
-    {
       "title"    : "2021년 06월 04일 공부일지",
       "subtitle" : "",
       "tags"     : "TIL",
@@ -257,22 +265,6 @@
     } ,
   
     {
-      "title"    : "[#15] File System-1",
-      "subtitle" : "",
-      "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/15-File-System-1/",
-      "date"     : "2021-05-30 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "[#14] 가상 메모리",
-      "subtitle" : "",
-      "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/14-Virtual-Memory-2/",
-      "date"     : "2021-05-23 00:00:00 +0900"
-    } ,
-  
-    {
       "title"    : "2021년 05월 17일, 18일 공부일지",
       "subtitle" : "",
       "tags"     : "TIL",
@@ -281,27 +273,11 @@
     } ,
   
     {
-      "title"    : "[#13] 메모리 관리-2",
-      "subtitle" : "",
-      "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/13-Memory-Management-2/",
-      "date"     : "2021-05-16 00:00:00 +0900"
-    } ,
-  
-    {
       "title"    : "2021년 05월 13일 공부일지",
       "subtitle" : "",
       "tags"     : "",
       "url"      : "/2021.05.13-TIL/",
       "date"     : "2021-05-13 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "HTTP 기본 개념 정리 with swift",
-      "subtitle" : "",
-      "tags"     : "HTTP, multipart/form-data",
-      "url"      : "/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTPBasicWithSwift/",
-      "date"     : "2021-05-12 00:00:00 +0900"
     } ,
   
     {
@@ -318,14 +294,6 @@
       "tags"     : "TIL",
       "url"      : "/til/2021.05.10-TIL/",
       "date"     : "2021-05-10 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "[#12] 메모리 관리-1",
-      "subtitle" : "",
-      "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/12-Memory-Management/",
-      "date"     : "2021-05-09 00:00:00 +0900"
     } ,
   
     {
@@ -388,7 +356,7 @@
       "title"    : "[#10] 프로세스 동기화-3",
       "subtitle" : "",
       "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/10-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EB%8F%99%EA%B8%B0%ED%99%94-3/",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/10-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5%E1%84%92%E1%85%AA-3/",
       "date"     : "2021-04-25 00:00:00 +0900"
     } ,
   
@@ -404,7 +372,7 @@
       "title"    : "[#9] 프로세스 동기화-2",
       "subtitle" : "",
       "tags"     : "OS, 운영체제",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/9-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EB%8F%99%EA%B8%B0%ED%99%94-2/",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/9-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5%E1%84%92%E1%85%AA-2/",
       "date"     : "2021-04-18 00:00:00 +0900"
     } ,
   
@@ -436,7 +404,7 @@
       "title"    : "[#8] 프로세스 동기화-1",
       "subtitle" : "",
       "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/8-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EB%8F%99%EA%B8%B0%ED%99%94-1/",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/8-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5%E1%84%92%E1%85%AA-1/",
       "date"     : "2021-04-11 00:00:00 +0900"
     } ,
   
@@ -444,7 +412,7 @@
       "title"    : "[#7] CPU 스케쥴링-2",
       "subtitle" : "",
       "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/7-CPU-%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%A7%81-2/",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/7-CPU-%E1%84%89%E1%85%B3%E1%84%8F%E1%85%A6%E1%84%8C%E1%85%B2%E1%86%AF%E1%84%85%E1%85%B5%E1%86%BC-2/",
       "date"     : "2021-04-11 00:00:00 +0900"
     } ,
   
@@ -484,7 +452,7 @@
       "title"    : "[#6] CPU 스케쥴링-1",
       "subtitle" : "",
       "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/6-CPU-%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%A7%81-1/",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/6-CPU-%E1%84%89%E1%85%B3%E1%84%8F%E1%85%A6%E1%84%8C%E1%85%B2%E1%86%AF%E1%84%85%E1%85%B5%E1%86%BC-1/",
       "date"     : "2021-04-05 00:00:00 +0900"
     } ,
   
@@ -492,7 +460,7 @@
       "title"    : "[#5] 프로세스 관리 - 2",
       "subtitle" : "",
       "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/5-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EA%B4%80%EB%A6%AC-2/",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/5-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5-2/",
       "date"     : "2021-04-05 00:00:00 +0900"
     } ,
   
@@ -540,7 +508,7 @@
       "title"    : "[#4] 프로세스 관리 - 1",
       "subtitle" : "",
       "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/4-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EA%B4%80%EB%A6%AC/",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/4-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5/",
       "date"     : "2021-03-28 00:00:00 +0900"
     } ,
   
@@ -564,7 +532,7 @@
       "title"    : "새로운 지식을 나의 것으로 만드는 방법(Zedd)",
       "subtitle" : "",
       "tags"     : "Zedd",
-      "url"      : "/%EC%9D%BC%EC%83%81/%EC%83%88%EB%A1%9C%EC%9A%B4-%EC%A7%80%EC%8B%9D%EC%9D%84-%EB%82%98%EC%9D%98-%EA%B2%83%EC%9C%BC%EB%A1%9C-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B0%A9%EB%B2%95/",
+      "url"      : "/%EC%9D%BC%EC%83%81/%E1%84%89%E1%85%A2%E1%84%85%E1%85%A9%E1%84%8B%E1%85%AE%E1%86%AB-%E1%84%8C%E1%85%B5%E1%84%89%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%B3%E1%86%AF-%E1%84%82%E1%85%A1%E1%84%8B%E1%85%B4-%E1%84%80%E1%85%A5%E1%86%BA%E1%84%8B%E1%85%B3%E1%84%85%E1%85%A9-%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%84%82%E1%85%B3%E1%86%AB-%E1%84%87%E1%85%A1%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8/",
       "date"     : "2021-03-23 00:00:00 +0900"
     } ,
   
@@ -588,7 +556,7 @@
       "title"    : "[#3] 프로그램의 구조와 실행",
       "subtitle" : "",
       "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/3-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EC%9D%98-%EA%B5%AC%EC%A1%B0%EC%99%80-%EC%8B%A4%ED%96%89/",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/3-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B7%E1%84%8B%E1%85%B4-%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9%E1%84%8B%E1%85%AA-%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC/",
       "date"     : "2021-03-21 00:00:00 +0900"
     } ,
   
@@ -596,7 +564,7 @@
       "title"    : "[#2] 컴퓨터 시스템의 동작 원리",
       "subtitle" : "",
       "tags"     : "운영체제, OS",
-      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/2-%EC%BB%B4%ED%93%A8%ED%84%B0-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98-%EB%8F%99%EC%9E%91-%EC%9B%90%EB%A6%AC/",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/2-%E1%84%8F%E1%85%A5%E1%86%B7%E1%84%91%E1%85%B2%E1%84%90%E1%85%A5-%E1%84%89%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%B7%E1%84%8B%E1%85%B4-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%8C%E1%85%A1%E1%86%A8-%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%85%E1%85%B5/",
       "date"     : "2021-03-21 00:00:00 +0900"
     } ,
   
@@ -622,14 +590,6 @@
       "tags"     : "Yagom Academy",
       "url"      : "/project%20review/%EC%A5%AC%EC%8A%A4%EB%A9%94%EC%9D%B4%EC%BB%A4-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A6%AC%EB%B7%B0/",
       "date"     : "2021-03-19 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "[#1] 네트워크의 개념과 프로토콜",
-      "subtitle" : "",
-      "tags"     : "network",
-      "url"      : "/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C/",
-      "date"     : "2021-03-18 00:00:00 +0900"
     } ,
   
     {
@@ -742,6 +702,14 @@
       "tags"     : "TIL, Yagom-Academy, H.I.G.",
       "url"      : "/til/2021.03.04-TIL/",
       "date"     : "2021-03-04 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "깃헙 블로그 관련 이것저것",
+      "subtitle" : "",
+      "tags"     : "TIL, jekyll, 블로그, 페이스북 댓글, disqus",
+      "url"      : "/%EC%9D%BC%EC%83%81/%E1%84%87%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%A7%E1%86%AB-%E1%84%8C%E1%85%A1%E1%86%B8%E1%84%83%E1%85%A1%E1%84%92%E1%85%A1%E1%86%AB-%E1%84%82%E1%85%A2%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%83%E1%85%B3%E1%86%AF/",
+      "date"     : "2021-03-03 00:00:00 +0900"
     } ,
   
     {

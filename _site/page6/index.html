@@ -265,126 +265,7 @@
 </head>
 
 <div class="post-preview">
-    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/9-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EB%8F%99%EA%B8%B0%ED%99%94-2/">
-        <h2 class="post-title">
-            [#9] 프로세스 동기화-2
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            Critical Section 관리 알고리즘의 발전
-
-Critical Section을 사용하기 위해 만족해야 하는 몇가지 조건들
-
-
-  Mutual Exclusion(상호 배제)
-    
-      프로세스 P_i가 critical section 부분을 수행중이면 다른 모든 프로세스들은 그들의 critical section에 들어가면 안된다.
-    ...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        18, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2021.04.15-TIL/">
-        <h2 class="post-title">
-            2021년 04월 15일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  os_log에 대해 간략히 알아봤습니다.
-  만국 박람회 프로젝트의 refactoring이 계속되었습니다.
-
-
-
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        15, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.04.13-TIL/">
-        <h2 class="post-title">
-            2021년 04월 13일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  시청한 영상: WWDC20 Modern cell configuration
-
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
-        guard let c...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        13, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.04.12-TIL/">
-        <h2 class="post-title">
-            2021년 04월 12일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  Table View에 대해 알아보았습니다.
-    
-      Configure Table View Cell with code
-    
-  
-  Navigation View를 코드로 작성하는 방법에 대해 알아보았습니다.
-
-
-
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        12, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/8-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EB%8F%99%EA%B8%B0%ED%99%94-1/">
+    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/8-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5%E1%84%92%E1%85%AA-1/">
         <h2 class="post-title">
             [#8] 프로세스 동기화-1
         </h2>
@@ -416,7 +297,7 @@ Race Condition이 생기는 경우
 <hr>
 
 <div class="post-preview">
-    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/7-CPU-%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%A7%81-2/">
+    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/7-CPU-%E1%84%89%E1%85%B3%E1%84%8F%E1%85%A6%E1%84%8C%E1%85%B2%E1%86%AF%E1%84%85%E1%85%B5%E1%86%BC-2/">
         <h2 class="post-title">
             [#7] CPU 스케쥴링-2
         </h2>
@@ -546,6 +427,130 @@ JSON 파일이 어떻게 구성되어있는지 파악한 뒤  Decodable프로토
 </div>
 <hr>
 
+<div class="post-preview">
+    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/6-CPU-%E1%84%89%E1%85%B3%E1%84%8F%E1%85%A6%E1%84%8C%E1%85%B2%E1%86%AF%E1%84%85%E1%85%B5%E1%86%BC-1/">
+        <h2 class="post-title">
+            [#6] CPU 스케쥴링-1
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            CPU 스케쥴링
+
+Add, Load, Store 명령
+
+CPU 명령에는 덧셈을 진행하는 Add, 메모리 접근을 수행하는 Load, Store 명령이 있다. Load, Store 명령어는 Add 명령에 비해서는 느리지만 비교적 짧은 시간이 드는 명령이며, Add 명령과 마찬가지로 사용자 프로그램이 직접 실행할 수 있는 일반명령에 해당한다.
+
+CPU 버스...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on April
+        5, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/5-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5-2/">
+        <h2 class="post-title">
+            [#5] 프로세스 관리 - 2
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            목차
+
+  목차
+  프로세스의 생성    
+      부모 프로세스와 자식 프로세스
+      자원의 획득과 프로세스의 수행모델
+      주소 공간
+      프로세스의 생성 절차
+      프로세스의 종료 절차
+      프로세스의 강제 종료가 이루어지는 경우
+      자식 프로세스를 생성하는 과정
+    
+  
+  프로세스 간의 협력    
+ ...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on April
+        5, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.04.05-TIL/">
+        <h2 class="post-title">
+            2021년 04월 05일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+
+
+운영체제 5번째, 6번째 정리본 업로드 및 스터디 참여
+
+어느덧 벌써 4번째 스터디가 진행되었습니다. 이번 스터디에서는 5장 프로세스 관리의 후반부와 6장인 CPU 스케쥴링의 전반부를 공부했습니다. 자세한 정리는 아래의 링크들을 참고해주시면 감사하겠습니다.
+
+5번째 정리글
+
+6번째 정리글
+
+스터디 repo 링크
+
+
+
+Table ...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on April
+        5, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.04.02-TIL/">
+        <h2 class="post-title">
+            2021년 04월 02, 03일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+클로저에 대해 공부했습니다.
+
+계산기 로직을 짜다 함수 자체를 프로퍼티로 저장하면 어떨까 하는 생각이 들어서 공부했습니다.
+
+클로저 형태로 프로퍼티를 선언한 다음에 함수를 저장할 수 있다는 사실을 알게 되었습니다.
+
+계산기 프로젝트 Step3를 완성했습니다.
+
+계산기 프로젝트 Review에서 자세히 다뤄보도록 하겠습니다.
+
+계산기 ...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on April
+        2, 2021
+    </p>
+</div>
+<hr>
+
 
 <!-- Pager -->
 
@@ -636,65 +641,65 @@ JSON 파일이 어떻게 구성되어있는지 파악한 뒤  Decodable프로토
             
         
             
-            <a data-sort="0061"
+            <a data-sort="0056"
                 href="/archive/?tag=TIL" title="TIL"
-                rel="37">TIL</a>
+                rel="38">TIL</a>
             
             
-            
-            <a data-sort="0081"
-                href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
-                rel="17">운영체제</a>
             
             <a data-sort="0082"
-                href="/archive/?tag=OS" title="OS"
-                rel="16">OS</a>
+                href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
+                rel="12">운영체제</a>
             
-            <a data-sort="0092"
+            <a data-sort="0083"
+                href="/archive/?tag=OS" title="OS"
+                rel="11">OS</a>
+            
+            <a data-sort="0088"
                 href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
                 rel="6">Yagom-Academy</a>
             
-            <a data-sort="0093"
+            <a data-sort="0089"
                 href="/archive/?tag=%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4" title="데이터베이스"
                 rel="5">데이터베이스</a>
             
-            <a data-sort="0093"
+            <a data-sort="0089"
                 href="/archive/?tag=iOS" title="iOS"
                 rel="5">iOS</a>
             
-            <a data-sort="0094"
+            <a data-sort="0090"
                 href="/archive/?tag=Swift" title="Swift"
                 rel="4">Swift</a>
             
-            <a data-sort="0095"
+            <a data-sort="0091"
                 href="/archive/?tag=Alamofire" title="Alamofire"
                 rel="3">Alamofire</a>
             
-            <a data-sort="0096"
+            <a data-sort="0092"
                 href="/archive/?tag=%EB%8B%B9%EA%B7%BC%EB%A7%88%EC%BC%93+%EC%9D%B8%ED%84%B4" title="당근마켓 인턴"
                 rel="2">당근마켓 인턴</a>
             
-            <a data-sort="0096"
+            <a data-sort="0092"
                 href="/archive/?tag=%EC%B7%A8%EC%97%85%EC%A4%80%EB%B9%84" title="취업준비"
                 rel="2">취업준비</a>
             
-            <a data-sort="0096"
+            <a data-sort="0092"
                 href="/archive/?tag=Notification" title="Notification"
                 rel="2">Notification</a>
             
-            <a data-sort="0096"
+            <a data-sort="0092"
                 href="/archive/?tag=Scroll+View" title="Scroll View"
                 rel="2">Scroll View</a>
             
-            <a data-sort="0096"
+            <a data-sort="0092"
                 href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
                 rel="2">Yagom Academy</a>
             
-            <a data-sort="0096"
+            <a data-sort="0092"
                 href="/archive/?tag=app+life+cycle" title="app life cycle"
                 rel="2">app life cycle</a>
             
-            <a data-sort="0096"
+            <a data-sort="0092"
                 href="/archive/?tag=enum" title="enum"
                 rel="2">enum</a>
     </div>
