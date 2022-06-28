@@ -1,10 +1,18 @@
 [
   
     {
+      "title"    : "Swift를 통한 DFS, BFS의 구현",
+      "subtitle" : "",
+      "tags"     : "알고리즘, DFS, BFS",
+      "url"      : "/swift/BFS_DFS/",
+      "date"     : "2022-06-28 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "살까 말까 앱 개인정보 처리방침",
       "subtitle" : "",
       "tags"     : "살까말까, 개인앱",
-      "url"      : "/%EC%82%B4%EA%B9%8C%20%EB%A7%90%EA%B9%8C/private-policy/",
+      "url"      : "/buyornot/private-policy/",
       "date"     : "2021-11-30 00:00:00 +0900"
     } ,
   
@@ -281,6 +289,14 @@
     } ,
   
     {
+      "title"    : "HTTP 기본 개념 정리 with swift",
+      "subtitle" : "",
+      "tags"     : "HTTP, multipart/form-data",
+      "url"      : "/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTPBasicWithSwift/",
+      "date"     : "2021-05-12 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "2021년 05월 10, 11일 공부일지",
       "subtitle" : "",
       "tags"     : "TIL",
@@ -294,6 +310,14 @@
       "tags"     : "TIL",
       "url"      : "/til/2021.05.10-TIL/",
       "date"     : "2021-05-10 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "[#12] 메모리 관리-1",
+      "subtitle" : "",
+      "tags"     : "운영체제, OS",
+      "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/12-Memory-Management/",
+      "date"     : "2021-05-09 00:00:00 +0900"
     } ,
   
     {
@@ -590,6 +614,14 @@
       "tags"     : "Yagom Academy",
       "url"      : "/project%20review/%EC%A5%AC%EC%8A%A4%EB%A9%94%EC%9D%B4%EC%BB%A4-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A6%AC%EB%B7%B0/",
       "date"     : "2021-03-19 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "[#1] 네트워크의 개념과 프로토콜",
+      "subtitle" : "",
+      "tags"     : "network",
+      "url"      : "/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/1-%E1%84%82%E1%85%A6%E1%84%90%E1%85%B3%E1%84%8B%E1%85%AF%E1%84%8F%E1%85%B3%E1%84%8B%E1%85%B4-%E1%84%80%E1%85%A2%E1%84%82%E1%85%A7%E1%86%B7%E1%84%80%E1%85%AA-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF/",
+      "date"     : "2021-03-18 00:00:00 +0900"
     } ,
   
     {
