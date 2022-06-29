@@ -5,9 +5,79 @@
     <description>Write code with my soul.</description>
     <link>https://neph3779.github.io/</link>
     <atom:link href="https://neph3779.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 28 Jun 2022 18:38:01 +0900</pubDate>
-    <lastBuildDate>Tue, 28 Jun 2022 18:38:01 +0900</lastBuildDate>
+    <pubDate>Wed, 29 Jun 2022 21:15:06 +0900</pubDate>
+    <lastBuildDate>Wed, 29 Jun 2022 21:15:06 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>Swift split과 components 차이</title>
+        <description>&lt;p&gt;오늘은 문자열을 분할할때 사용하는 split과 components의 차이에 대해 알아보았습니다.&lt;/p&gt;
+
+&lt;h4 id=&quot;요약&quot;&gt;요약&lt;/h4&gt;
+
+&lt;p&gt;여러개의 원소들을 가지고 분할하고 싶을때는  components&lt;/p&gt;
+
+&lt;p&gt;하나의 원소만을 기준으로 분할하고 싶을때는 split&lt;/p&gt;
+
+&lt;h2 id=&quot;split&quot;&gt;split&lt;/h2&gt;
+
+&lt;p&gt;split의 계층은 다음과 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220629205907.png&quot; alt=&quot;image-20220629205907781&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;components와 다르게 Swift 자체에 포함되어있기에 Foundation을 import 해주지 않아도 사용할 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;String의 인스턴스 메서드입니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220629210129.png&quot; alt=&quot;image-20220629210129356&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;split은 3개의 parameter를 받는 메서드입니다.&lt;/p&gt;
+
+&lt;p&gt;seperator 파라미터에는 어떤 원소를 기준으로 분할할 것인지, 그 원소를 적어줍니다.&lt;/p&gt;
+
+&lt;p&gt;maxSplits를 통해 분할로 나오는 원소의 개수를 제한할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;omittingEmptySubsequences를 통해 만약 빈 항목이 있다면 그것을 결과 배열에 넣어줄지 말지의 여부를 결정할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;가령 예를 들자면 “hello swift “라는 마지막에 “ “이 존재하는 문장을 “ “를 통해 분할한다고 하면&lt;/p&gt;
+
+&lt;p&gt;“hello”, “swift”, ““라는 세개의 원소로 분할할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;이때 마지막 원소 ““를 결과 배열에 포함시킬지의 여부를 결정합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;components&quot;&gt;components&lt;/h2&gt;
+
+&lt;p&gt;components의 계층은 다음과 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220629211009.png&quot; alt=&quot;image-20220629211009163&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;components는 Foundation 프레임워크에 포함된 NSString의 인스턴스 메서드입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220629211055.png&quot; alt=&quot;image-20220629211055796&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;split과 다르게 separator라는 하나의 파라미터만을 받습니다.&lt;/p&gt;
+
+&lt;p&gt;이때 여러개의 원소를 배열에 담아 넣어줄 수 있는데&lt;/p&gt;
+
+&lt;p&gt;가령 “10-30/29*39+1” 과 같은 식에서 연산기호를 제외한 채 숫자만을 담은 배열을 원한다면&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;str.components(seperateBy: [&quot;+&quot;, &quot;-&quot;, &quot;*&quot;, &quot;/&quot;])&lt;/code&gt; 와 같이 작성해주면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;[10, -, 30, /, 29 …]와 같이 숫자와 기호를 동시에 담은 배열을 원한다면 따로 작업을 해주어야 합니다.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 29 Jun 2022 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/swift/componentsVSsplit/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/swift/componentsVSsplit/</guid>
+        
+        <category>split</category>
+        
+        <category>components</category>
+        
+        
+        <category>Swift</category>
+        
+      </item>
     
       <item>
         <title>Swift를 통한 DFS, BFS의 구현</title>
@@ -2050,84 +2120,6 @@ Neph 은(는) 정보주체의 개인정보 열람청구가 신속하게 처리�
         
         
         <category>데이터베이스</category>
-        
-      </item>
-    
-      <item>
-        <title>[Core] HTTPMethod.swift, Notification.swift 분석</title>
-        <description>&lt;h2 id=&quot;httpmethod&quot;&gt;HTTPMethod&lt;/h2&gt;
-
-&lt;p&gt;HTTPMethod는 구조체로 이루어져있다.&lt;/p&gt;
-
-&lt;p&gt;RawRepresentable, Equatable, Hashable을 채택하고 있으며 rawValue가 String 타입이기 때문에 HTTPMethod를 String 요구자리에 가져다 써도 문제가 없다.&lt;/p&gt;
-
-&lt;p&gt;Hashable의 경우 Set&amp;lt;HTTPMethod&amp;gt;를 사용하는 부분이 있으므로 채택해주어야 하며, Equatable은 사용자 편의를 위해 채택한 것으로 보인다.&lt;/p&gt;
-
-&lt;h3 id=&quot;enum이-아닌-struct인-이유&quot;&gt;enum이 아닌 struct인 이유&lt;/h3&gt;
-
-&lt;p&gt;RawRepresentable 프로토콜의 요구사항인 rawValue를 처리하기엔 enum에 비해 struct가 용이하기에 struct를 택한 것 같다.&lt;/p&gt;
-
-&lt;h3 id=&quot;지원-methods&quot;&gt;지원 Methods&lt;/h3&gt;
-
-&lt;p&gt;Alamofire에서 지원하는 HTTPMethod는 아래와 같다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;CONNECT&lt;/li&gt;
-  &lt;li&gt;DELETE&lt;/li&gt;
-  &lt;li&gt;GET&lt;/li&gt;
-  &lt;li&gt;HEAD&lt;/li&gt;
-  &lt;li&gt;OPTIONS&lt;/li&gt;
-  &lt;li&gt;PATCH&lt;/li&gt;
-  &lt;li&gt;POST&lt;/li&gt;
-  &lt;li&gt;PUT&lt;/li&gt;
-  &lt;li&gt;TRACE&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;notifications&quot;&gt;Notifications&lt;/h2&gt;
-
-&lt;p&gt;Alamofire는 다양한 notification을 EventMonitor 객체를 통해 지원한다.&lt;/p&gt;
-
-&lt;h3 id=&quot;지원-notifications&quot;&gt;지원 Notifications&lt;/h3&gt;
-
-&lt;p&gt;Almofire에서 지원하는 Notification은 아래와 같다.&lt;/p&gt;
-
-&lt;h4 id=&quot;request를-담고-있는-notification들&quot;&gt;Request를 담고 있는 Notification들&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;didResumeNotification&lt;/li&gt;
-  &lt;li&gt;didSuspendNotification&lt;/li&gt;
-  &lt;li&gt;didCancelNotification&lt;/li&gt;
-  &lt;li&gt;didFinishNotification&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;urlsessiontask를-담고-있는-notification들&quot;&gt;URLSessionTask를 담고 있는 Notification들&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;didResumeTaskNotification&lt;/li&gt;
-  &lt;li&gt;didSuspendTaskNotification&lt;/li&gt;
-  &lt;li&gt;didCancelTaskNotification&lt;/li&gt;
-  &lt;li&gt;didCompleteTaskNotification&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Notification, EventMonitor 파트는 자세한 구현 내용을 알기보다는 어떤 상황에 어떤 Notification이 오는지만 알고 활용해도 충분할 것 같다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/Alamofire/Alamofire/blob/master/Source/HTTPMethod.swift&quot;&gt;https://github.com/Alamofire/Alamofire/blob/master/Source/HTTPMethod.swift&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/Alamofire/Alamofire/blob/master/Source/Notifications.swift&quot;&gt;https://github.com/Alamofire/Alamofire/blob/master/Source/Notifications.swift&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 29 Jul 2021 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/alamofire%20%EB%B6%84%EC%84%9D/HTTPMethodAndNotification/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/alamofire%20%EB%B6%84%EC%84%9D/HTTPMethodAndNotification/</guid>
-        
-        <category>Alamofire</category>
-        
-        <category>HTTPMethod</category>
-        
-        <category>Notification</category>
-        
-        
-        <category>Alamofire 분석</category>
         
       </item>
     

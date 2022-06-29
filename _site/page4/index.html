@@ -265,6 +265,31 @@
 </head>
 
 <div class="post-preview">
+    <a href="/ios/WhatIsARC/">
+        <h2 class="post-title">
+            ARC는 무엇일까?
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            ARC의 뜻
+
+Automatic Retain Count의 약자인 ARC는 자동으로 참조카운트를 계산해주는 swift의 기능을 뜻한다.
+
+이름을 통해 유추할 수 있듯 기존에는 자동으로 참조 카운트를 계산하여 메모리로부터 해제해주지 않았기에 프로그래머가 직접 사용을 끝마친 포인터를 메모리에서 해제시켜줘야 했었다.
+
+하지만 ARC를 통해 이제는 참조를 획득...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on June
+        27, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
     <a href="/HuggingVsResistance/">
         <h2 class="post-title">
             [Auto Layout] Hugging vs Resistance
@@ -523,31 +548,6 @@ HTTP는 크게 Reque...
 </div>
 <hr>
 
-<div class="post-preview">
-    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/12-Memory-Management/">
-        <h2 class="post-title">
-            [#12] 메모리 관리-1
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            Logical Address vs Physical Address
-
-
-
-Logical address는 프로세스마다 독립적으로 가지는 주소공간이다. 어떤 프로세스가 메모리상에서 어느 지점에 위치하는지와 무관하게 논리적으로 각 프로세스가 0번지부터 가지고 있는 주소값을 Logical address(virtual address)라고 부른다.
-
-반면 Physi...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on May
-        9, 2021
-    </p>
-</div>
-<hr>
-
 
 <!-- Pager -->
 
@@ -638,65 +638,65 @@ Logical address는 프로세스마다 독립적으로 가지는 주소공간이�
             
         
             
-            <a data-sort="0060"
+            <a data-sort="0061"
                 href="/archive/?tag=TIL" title="TIL"
                 rel="38">TIL</a>
             
             
             
-            <a data-sort="0085"
+            <a data-sort="0086"
                 href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
                 rel="13">운영체제</a>
             
-            <a data-sort="0086"
+            <a data-sort="0087"
                 href="/archive/?tag=OS" title="OS"
                 rel="12">OS</a>
             
-            <a data-sort="0092"
+            <a data-sort="0093"
                 href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
                 rel="6">Yagom-Academy</a>
             
-            <a data-sort="0093"
+            <a data-sort="0094"
                 href="/archive/?tag=%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4" title="데이터베이스"
                 rel="5">데이터베이스</a>
             
-            <a data-sort="0093"
+            <a data-sort="0094"
                 href="/archive/?tag=iOS" title="iOS"
                 rel="5">iOS</a>
             
-            <a data-sort="0094"
+            <a data-sort="0095"
                 href="/archive/?tag=Swift" title="Swift"
                 rel="4">Swift</a>
             
-            <a data-sort="0095"
+            <a data-sort="0096"
                 href="/archive/?tag=Alamofire" title="Alamofire"
                 rel="3">Alamofire</a>
             
-            <a data-sort="0096"
+            <a data-sort="0097"
                 href="/archive/?tag=%EB%8B%B9%EA%B7%BC%EB%A7%88%EC%BC%93+%EC%9D%B8%ED%84%B4" title="당근마켓 인턴"
                 rel="2">당근마켓 인턴</a>
             
-            <a data-sort="0096"
+            <a data-sort="0097"
                 href="/archive/?tag=%EC%B7%A8%EC%97%85%EC%A4%80%EB%B9%84" title="취업준비"
                 rel="2">취업준비</a>
             
-            <a data-sort="0096"
+            <a data-sort="0097"
                 href="/archive/?tag=Notification" title="Notification"
                 rel="2">Notification</a>
             
-            <a data-sort="0096"
+            <a data-sort="0097"
                 href="/archive/?tag=Scroll+View" title="Scroll View"
                 rel="2">Scroll View</a>
             
-            <a data-sort="0096"
+            <a data-sort="0097"
                 href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
                 rel="2">Yagom Academy</a>
             
-            <a data-sort="0096"
+            <a data-sort="0097"
                 href="/archive/?tag=app+life+cycle" title="app life cycle"
                 rel="2">app life cycle</a>
             
-            <a data-sort="0096"
+            <a data-sort="0097"
                 href="/archive/?tag=enum" title="enum"
                 rel="2">enum</a>
     </div>
@@ -750,47 +750,6 @@ Logical address는 프로세스마다 독립적으로 가지는 주소공간이�
 
 
     <!-- Channel Plugin Scripts -->
-<script>
-  (function() {
-    var w = window;
-    if (w.ChannelIO) {
-      return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
-    }
-    var ch = function() {
-      ch.c(arguments);
-    };
-    ch.q = [];
-    ch.c = function(args) {
-      ch.q.push(args);
-    };
-    w.ChannelIO = ch;
-    function l() {
-      if (w.ChannelIOInitialized) {
-        return;
-      }
-      w.ChannelIOInitialized = true;
-      var s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
-      s.charset = 'UTF-8';
-      var x = document.getElementsByTagName('script')[0];
-      x.parentNode.insertBefore(s, x);
-    }
-    if (document.readyState === 'complete') {
-      l();
-    } else if (window.attachEvent) {
-      window.attachEvent('onload', l);
-    } else {
-      window.addEventListener('DOMContentLoaded', l, false);
-      window.addEventListener('load', l, false);
-    }
-  })();
-  ChannelIO('boot', {
-    "pluginKey": "6998650a-1c89-4fc4-abd0-9fd355279055"
-  });
-</script>
-<!-- End Channel Plugin -->
 
     <!-- Footer -->
 <footer>

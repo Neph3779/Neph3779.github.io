@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Swift split과 components 차이",
+      "subtitle" : "",
+      "tags"     : "split, components",
+      "url"      : "/swift/componentsVSsplit/",
+      "date"     : "2022-06-29 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "Swift를 통한 DFS, BFS의 구현",
       "subtitle" : "",
       "tags"     : "알고리즘, DFS, BFS",
