@@ -20,7 +20,7 @@ stack을 2개 활용하는 two-stack queue에 대해 알아봅시다.
 
 
 
-Swift의 배열(리스트)는 연결리스트로 구현되어습니다.
+Swift의 배열(리스트)는 연결리스트로 구현되어 있습니다.
 
 Stack의 경우에는 append()와 removeLast()만을 활용하기 때문에 O(1)이 보장되지만 
 
