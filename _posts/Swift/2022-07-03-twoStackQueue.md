@@ -47,7 +47,7 @@ struct Queue<T> {
         enqueue.append(x)
     }
 
-    mutating func pop(x: T) -> T? {
+    mutating func pop() -> T? {
         if dequeue.isEmpty {
             while !enqueue.isEmpty {
                 dequeue.append(enqueue.removeLast())
