@@ -172,3 +172,11 @@ formatted 메서드는 위와 같이 생겼습니다.
 F가 FormatStyle 프로토콜을 채택하고 FormatInput이라는 associatedType이라면
 
 formatted에 직접 만든 custom format을 적용할 수 있습니다.
+
+
+
+## 왜 Date 관련 변수에 1970이란 숫자가 자주 등장하나요?
+
+Unix의 standard time이 1970/1/1 입니다.
+
+Unix -> C -> Swift로 넘어오면서 이것이 이어져온 듯 하네요
