@@ -5,8 +5,8 @@
     <description>Write code with my soul.</description>
     <link>https://neph3779.github.io/</link>
     <atom:link href="https://neph3779.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 06 Jul 2022 12:34:43 +0900</pubDate>
-    <lastBuildDate>Wed, 06 Jul 2022 12:34:43 +0900</lastBuildDate>
+    <pubDate>Wed, 06 Jul 2022 19:36:45 +0900</pubDate>
+    <lastBuildDate>Wed, 06 Jul 2022 19:36:45 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -181,6 +181,12 @@
 &lt;p&gt;F가 FormatStyle 프로토콜을 채택하고 FormatInput이라는 associatedType이라면&lt;/p&gt;
 
 &lt;p&gt;formatted에 직접 만든 custom format을 적용할 수 있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;왜-date-관련-변수에-1970이란-숫자가-자주-등장하나요&quot;&gt;왜 Date 관련 변수에 1970이란 숫자가 자주 등장하나요?&lt;/h2&gt;
+
+&lt;p&gt;Unix의 standard time이 1970/1/1 입니다.&lt;/p&gt;
+
+&lt;p&gt;Unix -&amp;gt; C -&amp;gt; Swift로 넘어오면서 이것이 이어져온 듯 하네요&lt;/p&gt;
 </description>
         <pubDate>Wed, 06 Jul 2022 00:00:00 +0900</pubDate>
         <link>https://neph3779.github.io/swift/UseDateWithSwift/</link>
@@ -189,6 +195,158 @@
         <category>날짜 다루기</category>
         
         <category>Date</category>
+        
+        
+        <category>Swift</category>
+        
+      </item>
+    
+      <item>
+        <title>Swift로 날짜 다루기 [Calendar 편]</title>
+        <description>&lt;p&gt;이번에는 Date와 밀접한 Calendar 객체에 대해 살펴보겠습니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;calendar&quot;&gt;Calendar&lt;/h1&gt;
+
+&lt;p&gt;Calendar는 calendar 유닛과 특정 시점간의 관계를 정의합니다.&lt;/p&gt;
+
+&lt;p&gt;date의 계산과 비교를 위한 여러 기능을 제공합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;init&quot;&gt;Init&lt;/h2&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;calendar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;identifier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;japanese&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Calendar는 identifier를 통해 어느 시간대의 Calendar를 사용하고자 하는지를 파악합니다.&lt;/p&gt;
+
+&lt;p&gt;우리나라의 경우 동경시를 사용하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;identifier는 Calendar.Idenifier를 통해 enum type으로 관리되고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;userAutoUpdateCalendar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;autoupdatingCurrent&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;currentCalendar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;current&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;객체를 생성자를 통해 만들지 않아도 type variable을 통해 사용자의 달력을 가져올수도 있습니다.&lt;/p&gt;
+
+&lt;p&gt;preferred 달력을 계속해서 추적하는 autoupdatingCurrent라는 타입 변수와 현 시점의 달력을 가져오는 current 변수가 존재합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;calendar-information&quot;&gt;Calendar Information&lt;/h2&gt;
+
+&lt;p&gt;Calendar 객체에는 여러 변수와 메서드들이 있고 이들에 접근할 수 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;identifier&lt;/p&gt;
+
+    &lt;p&gt;캘린더를 구분하는 identifier입니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;locale&lt;/p&gt;
+
+    &lt;p&gt;지역명을 나타내는 locale 변수입니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;timeZone&lt;/p&gt;
+
+    &lt;p&gt;시간대를 나타내는 timeZone 변수가 담겨있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;startOfDay(for: Date) -&amp;gt; Date&lt;/p&gt;
+
+    &lt;p&gt;주어진 Date의 가장 처음 시점(0시 0분 0초)를 반환합니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;date-값의-비교&quot;&gt;Date 값의 비교&lt;/h2&gt;
+
+&lt;p&gt;Calendar 객체는 Date 객체에 비해 보다 편리한 날짜 비교 연산을 제공합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;toGranularity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이 메서드를 통해 Calendar.Component 단위까지 시간이 같은지를 확인할 수 있습니다.&lt;/p&gt;
+
+&lt;h4 id=&quot;사용예시&quot;&gt;사용예시&lt;/h4&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;currnet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+                        &lt;span class=&quot;nv&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                        &lt;span class=&quot;nv&quot;&gt;toGranularity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;minute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;inSameDayAs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isDateInToday&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isDateInTomorrow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isDateInYesterday&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isDateInWeekend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위의 메서드들을 통해 날짜가 이번주에 속하는지, 어제에 속하는지, 같은 날에 속하는지 등을&lt;/p&gt;
+
+&lt;p&gt;손쉽게 알아낼 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;calendar-값의-비교&quot;&gt;Calendar 값의 비교&lt;/h2&gt;
+
+&lt;p&gt;Date가 부등호를 통해 비교할 수 있던것과는 조금 다르게&lt;/p&gt;
+
+&lt;p&gt;Calendar는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;==&lt;/code&gt; 연산과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!=&lt;/code&gt; 연산만을 지원합니다&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;symbols&quot;&gt;Symbols&lt;/h2&gt;
+
+&lt;p&gt;Calendar는 여러가지 Symbol들을 제공합니다.&lt;/p&gt;
+
+&lt;p&gt;이 Symbol들은 Calendar 객체의 locale 값에 따라 서로 다른 값을 가지고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;예를들어 weekdaySymbols는 다음과 같은 값들을 담은 배열입니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;[“일요일”, “월요일”, “화요일”, “수요일”, “목요일”, “금요일”, “토요일”]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Symbol은 다음과 같이 분류됩니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Weekday&lt;/li&gt;
+  &lt;li&gt;Month&lt;/li&gt;
+  &lt;li&gt;Quarter&lt;/li&gt;
+  &lt;li&gt;Era&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;각각의 분류 밑에는 표현을 간소화한 정도에 따른 하위분류가 존재합니다. (long, shortened 등등)&lt;/p&gt;
+
+&lt;p&gt;이렇듯 요일, 달, 분기 등을 담은 배열이나 enum을 만들지 않고도 Calendar에서 제공하는 symbol들을 통해 해결할 수 있습니다.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 06 Jul 2022 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/swift/UseCalendarWithSwift/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/swift/UseCalendarWithSwift/</guid>
+        
+        <category>날짜 다루기</category>
+        
+        <category>Date</category>
+        
+        <category>Calendar</category>
         
         
         <category>Swift</category>
@@ -1386,378 +1544,6 @@ Neph 은(는) 정보주체의 개인정보 열람청구가 신속하게 처리�
         <pubDate>Mon, 11 Oct 2021 00:00:00 +0900</pubDate>
         <link>https://neph3779.github.io/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/5-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%80%E1%85%A8-%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5-%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF/</link>
         <guid isPermaLink="true">https://neph3779.github.io/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/5-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%80%E1%85%A8-%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5-%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF/</guid>
-        
-        <category>데이터베이스</category>
-        
-        
-        <category>데이터베이스</category>
-        
-      </item>
-    
-      <item>
-        <title>[#4] 데이터 모델링</title>
-        <description>&lt;h2 id=&quot;데이터-모델링과-데이터-모델의-개념&quot;&gt;데이터 모델링과 데이터 모델의 개념&lt;/h2&gt;
-
-&lt;h3 id=&quot;데이터-모델링&quot;&gt;데이터 모델링&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;현실 세계에 존재하는 데이터를 컴퓨터 세계의 데이터베이스로 옮기는 변환과정 (가장 중요한 작업)&lt;/li&gt;
-  &lt;li&gt;데이터베이스 설계의 핵심과정&lt;/li&gt;
-  &lt;li&gt;추상화 수행
-    &lt;ul&gt;
-      &lt;li&gt;어떤 관점을 통해 추출한 것&lt;/li&gt;
-      &lt;li&gt;어떤 특정 상황에 필요한 부분만 빼내는 것&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;2단계 데이터 모델링&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;개념적 데이터 모델링
-    &lt;ul&gt;
-      &lt;li&gt;현실 세계의 중요 데이터를 추출하여 개념 세계로 옮기는 작업&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;논리적 데이터 모델링
-    &lt;ul&gt;
-      &lt;li&gt;개념 세계의 데이터를 데이터베이스에 저장하는 구조로 표현하는 작업&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;데이터-모델-data-model&quot;&gt;데이터 모델 (data model)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;데이터 모델링의 결과물을 표현하는 도구&lt;/li&gt;
-  &lt;li&gt;개념적 데이터 모델
-    &lt;ul&gt;
-      &lt;li&gt;사람의 머리로 이해할 수 있도록 현실 세계를 개념적 모델링하여 데이터베이스의 개념적 구조로 표현하는 도구&lt;/li&gt;
-      &lt;li&gt;개체-관계 모델&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;논리적 데이터 모델
-    &lt;ul&gt;
-      &lt;li&gt;개념적 구조를 논리적 모델링하여 데이터베이스의 논리적 구조로 표현하는 도구&lt;/li&gt;
-      &lt;li&gt;관계 데이터 모델&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;데이터 모델의 구성요소&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;연산 (operation)
-    &lt;ul&gt;
-      &lt;li&gt;개체 인스턴스 처리 작업 명세&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;데이터 구조 (data structure)
-    &lt;ul&gt;
-      &lt;li&gt;개체 타입과 이들 간의 관계 명세&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;제약조건 (constraint)
-    &lt;ul&gt;
-      &lt;li&gt;데이터의 논리적 제약 명세&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;개체---관계-모델&quot;&gt;개체 - 관계 모델&lt;/h2&gt;
-
-&lt;h3 id=&quot;개체---관계-모델-1&quot;&gt;개체 - 관계 모델&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;개체와 개체 간의 관계를 이용해 현실 세계를 개념적 구조로 표현&lt;/li&gt;
-  &lt;li&gt;핵심요소: 개체, 속성, 관계&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;개체 - 관계 다이어그램 (E-R diagram)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;개체 - 관계 모델을 이용해 현실 세계를 개념적으로 모델링한 결과물을 그림으로 표현한 것&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;개체 (entity)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;저장할 가치가 있는 중요 데이터를 가지고 있고 다른 것과 구별되는 사람, 사물, 개념, 사건 등
-    &lt;ul&gt;
-      &lt;li&gt;i.e., 서점에 필요한 개체: 고객, 책&lt;/li&gt;
-      &lt;li&gt;i.e., 학교에 필요한 개체: 학과, 과목, 학생&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;E-R 다이어그램에서 사각형으로 표현하고 사각형 안에 이름을 표기&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211008093939.png&quot; alt=&quot;image-20211008093939217&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;속성 (attribute)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;개체나 관계&lt;/strong&gt;가 가지고 있는 고유의 특성&lt;/li&gt;
-  &lt;li&gt;E-R 다이어그램에서 타원으로 표현하고 타원 안에 이름을 표기&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211008094924.png&quot; alt=&quot;image-20211008094924510&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;개체 타입&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;개체를 고유의 이름과 속성들로 정의한 것&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;개체 인스턴스&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;개체를 구성하고 있는 속성이 실제 값을 가짐으로써 실체화된 개체&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;개체 집합&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;특정 개체 타입에 대한 개체 인스턴스들을 모아놓은 것&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211008095151.png&quot; alt=&quot;image-20211008095151056&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;속성의 분류&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211008095354.png&quot; alt=&quot;image-20211008095354541&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;단일 값 속성과 다중 값 속성&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;단일 값 속성
-    &lt;ul&gt;
-      &lt;li&gt;값을 하나만 가질 수 있는 속성&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;다중 값 속성
-    &lt;ul&gt;
-      &lt;li&gt;값을 여러 개 가질 수 있는 속성&lt;/li&gt;
-      &lt;li&gt;E-R 다이어그램에서 이중타원으로 표현&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211008095808.png&quot; alt=&quot;image-20211008095808493&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;단순 속성과 복합 속성&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;단순 속성
-    &lt;ul&gt;
-      &lt;li&gt;의미를 더는 분해할 수 없는 속성&lt;/li&gt;
-      &lt;li&gt;i.e., 고객 개체의 아이디&lt;/li&gt;
-      &lt;li&gt;i.e., 책 개체의 이름 및 가격&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;복합 속성
-    &lt;ul&gt;
-      &lt;li&gt;의미를 분해할 수 있는 속성&lt;/li&gt;
-      &lt;li&gt;i.e., 고객 개체의 주소 속성
-        &lt;ul&gt;
-          &lt;li&gt;도, 시, 동, 우편번호 등으로 의미를 세분화할 수 있음&lt;/li&gt;
-          &lt;li&gt;특정 범위 제한 검색이 의미 있음 (어떤 시에 사는 사람 검색 등)&lt;/li&gt;
-          &lt;li&gt;상황에 따라서는 단순속성이 될수도 있음&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211008100103.png&quot; alt=&quot;image-20211008100103624&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;유도 속성&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;기존의 다른 속성의 값에서 유도되어 결정되는 속성&lt;/li&gt;
-  &lt;li&gt;값이 별도로 저장되지 않음
-    &lt;ul&gt;
-      &lt;li&gt;i.e., 책 개체의 가격과 할인율 속성으로 계산되는 판매가격 속성&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;E-R 다이어그램에서 점선 타원으로 표현&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211008100413.png&quot; alt=&quot;image-20211008100413593&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;널 속성&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;널 값이 허용되는 속성&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;널(null) 값&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;속성 값이 그 개체에 “해당되지 않는” (N/A; not applicable) 경우
-    &lt;ul&gt;
-      &lt;li&gt;i.e., 학생 개체의 병역 기간 속성 (여학생의 경우 N/A)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;속성 값을 “알 수 없는” (unknown) 경우
-    &lt;ul&gt;
-      &lt;li&gt;그 값이 존재하지만 “누락” (missing)인 경우
-        &lt;ul&gt;
-          &lt;li&gt;i.e., 이름 속성&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;그 값이 존재하고 있는지 조차 알 수 없어 “모르는” (not known) 경우
-        &lt;ul&gt;
-          &lt;li&gt;i.e., 재직중인 회사&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;키 속성&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;각 개체 인스턴스를 식별하는데 사용되는 속성&lt;/li&gt;
-  &lt;li&gt;둘 이상의 속성들로 구성되기도 함&lt;/li&gt;
-  &lt;li&gt;E-R 다이어그램에서 밑줄로 표현&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211008100943.png&quot; alt=&quot;image-20211008100943357&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;관계&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;개체와 개체가 맺고 있는 의미 있는 연관성&lt;/li&gt;
-  &lt;li&gt;개체 집합들 사이의 대응 관계, 즉 매핑을 의미&lt;/li&gt;
-  &lt;li&gt;E-R 다이어그램에서 마름모로 표현&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211008101846.png&quot; alt=&quot;image-20211008101846886&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;관계의 유형 : 매핑 카디널리티 기준&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;일대일 (1:1) 관계&lt;/li&gt;
-  &lt;li&gt;일대다 (1:n) 관계&lt;/li&gt;
-  &lt;li&gt;다대다 (n:m) 관계&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;매핑-카디널리티&quot;&gt;매핑 카디널리티&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;관계를 맺는 두 개체 집합에서, 각 개체 인스턴스가 연관성을 맺고 있는 상대 개체 집합의 인스턴스 개수&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;일대일 (1:1) 관계&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;개체 A의 각 개체 인스턴스가 개체 B의 개체 인스턴스 &lt;strong&gt;하나&lt;/strong&gt;와 관계를 맺을 수 있고, 개체 B의 각 개체 인스턴스도 개체 A의 개체 인스턴스 &lt;strong&gt;하나&lt;/strong&gt;와 관계를 맺을 수 있음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;일대다 (1:n) 관계&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;개체 A의 각 개체 인스턴스가 개체 B의 개체 인스턴스 &lt;strong&gt;여러 개&lt;/strong&gt;와 관계를 맺을 수 있지만, 개체 B의 각 개체 인스턴스는 개체 A의 개체 인스턴스 &lt;strong&gt;하나&lt;/strong&gt;와 관계를 맺을 수 있음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;다대다 (n:m) 관계&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;개체 A의 각 개체 인스턴스가 개체 B의 개체 인스턴스 &lt;strong&gt;여러 개&lt;/strong&gt;와 관계를 맺을 수 있고, 개체 B의 각 개체 인스턴스도 개체 A의 개체 인스턴스 &lt;strong&gt;여러개&lt;/strong&gt;와 관계를 맺을 수 있음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;관계의-참여-특성&quot;&gt;관계의 참여 특성&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;필수적 참여 (전체 참여)
-    &lt;ul&gt;
-      &lt;li&gt;모든 개체 인스턴스가 관계에 반드시 참여해야 되는 것을 의미&lt;/li&gt;
-      &lt;li&gt;i.e., 고객 - 책 (모든 고객은 반드시 책을 구매해야 하도록 구성한 경우 고객은 책과 “구매” 관계를 가져야 함)&lt;/li&gt;
-      &lt;li&gt;i.e., 교수 - 단과대학 (교수는 반드시 특정 단과대학과 “소속” 관계를 가져야 함)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;선택적 참여 (부분 참여)
-    &lt;ul&gt;
-      &lt;li&gt;개체 인스턴스 중 일부만 관계에 참여해도 되는 것을 의미&lt;/li&gt;
-      &lt;li&gt;i.e., 학생 - 과목 (휴학 등의 사유로 “수강”의 관계가 없을 수 있음)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211008131514.png&quot; alt=&quot;image-20211008131514926&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;고객은 반드시 “구매” 관계를 맺어야 하지만 책은 그렇지 않아도 됨. 따라서 고객과 구매 사이에만 이중선을 그은 모습&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;관계의-종속성&quot;&gt;관계의 종속성&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;약한 개체
-    &lt;ul&gt;
-      &lt;li&gt;다른 개체의 존재 여부에 의존적인 개체&lt;/li&gt;
-      &lt;li&gt;자기 자신의 속성으로만 키를 명세할 수 없는 개체 타입 (유니크한 키 없음)&lt;/li&gt;
-      &lt;li&gt;부분키(partial key) 를 통해 약한 개체집합 내에서 서로 구별할 수 있음&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;강한 개체
-    &lt;ul&gt;
-      &lt;li&gt;다른 개체의 존재 여부를 결정하는 개체&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;특징
-    &lt;ul&gt;
-      &lt;li&gt;강한 개체와 약한 개체는 일반적으로 일대다의 관계가 성립됨&lt;/li&gt;
-      &lt;li&gt;약한 개체는 강한 개체와의 관계에 필수적으로 참여함&lt;/li&gt;
-      &lt;li&gt;약한 개체는 강한 개체의 키를 포함하여 키를 구성함&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;E-R 다이어그램에서 약한 개체는 이중 사각형으로 표현하고, 약한 개체가 강한 개체와 맺는 관계는 이중 마름모로 표현&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;관계 인스턴스들이 유지해야 할 제약조건&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;개체 집합간 매핑 카디널리티&lt;/li&gt;
-  &lt;li&gt;전체 참여&lt;/li&gt;
-  &lt;li&gt;관계의 종속성&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;삽입/삭제/변경 연산 시 제약 조건을 반드시 검토해야함&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;논리적-데이터-모델&quot;&gt;논리적 데이터 모델&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;논리적 데이터 모델의 개념과 특성&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;E-R 다이어그램으로 표현된 개념적 구조를 데이터베이스에 저장할 때 표현하는 논리적 구조
-    &lt;ul&gt;
-      &lt;li&gt;데이터베이스의 논리적 구조 = 데이터베이스 스키마(schema)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;사용자가 생각하는 데이터베이스의 모습 또는 구조&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;관계 데이터 모델&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;일반적으로 많이 사용되는 데이터 모델&lt;/li&gt;
-  &lt;li&gt;데이터베이스의 논리적 구조가 2차원 테이블 형태&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Sun, 10 Oct 2021 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/4-%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5-%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%E1%84%85%E1%85%B5%E1%86%BC/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/4-%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5-%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%E1%84%85%E1%85%B5%E1%86%BC/</guid>
         
         <category>데이터베이스</category>
         
