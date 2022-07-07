@@ -5,196 +5,128 @@
     <description>Write code with my soul.</description>
     <link>https://neph3779.github.io/</link>
     <atom:link href="https://neph3779.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 06 Jul 2022 19:36:45 +0900</pubDate>
-    <lastBuildDate>Wed, 06 Jul 2022 19:36:45 +0900</lastBuildDate>
+    <pubDate>Thu, 07 Jul 2022 11:10:17 +0900</pubDate>
+    <lastBuildDate>Thu, 07 Jul 2022 11:10:17 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
-        <title>Swift로 날짜 다루기 [Date 편]</title>
-        <description>&lt;p&gt;오늘은 Swift로 날짜를 다루는 방법들을 정리해보았습니다.&lt;/p&gt;
+        <title>Swift로 날짜 다루기 [DateComponent 편]</title>
+        <description>&lt;p&gt;Swift로 날짜 다루기의 마지막편인 DateComponent편입니다.&lt;/p&gt;
 
-&lt;p&gt;Date, Calendar, DateComponent를 정리할 예정이며&lt;/p&gt;
+&lt;p&gt;DateComponent는 date의 요소들을 확장할 수 있도록 캡슐화 된 객체입니다.&lt;/p&gt;
 
-&lt;p&gt;본 글은 Date 객체를 소개하는 글입니다.&lt;/p&gt;
+&lt;p&gt;특정 시간, 어떤 시간 크기 (ex. 5시간 16분) 등을 나타낼 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;DateComponent는 DateComponent가 가지고 있는 모든 field를 채우기를 요구하지는 않습니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;init&quot;&gt;Init&lt;/h2&gt;
 
-&lt;h3 id=&quot;기본-init&quot;&gt;기본 Init&lt;/h3&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;basicInit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Date 인스턴스를 기본 initializer로 생성하면 현재 시간으로 세팅됩니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;timeintervalsincenow&quot;&gt;timeIntervalSinceNow&lt;/h3&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;timeInterValSinceNowInit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;timeIntervalSinceNow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3600&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;현재로부터의 시간간격을 인자로 주어 그만큼 떨어진 시간을 나타내는 인스턴스가 생성됩니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;type-method-variable&quot;&gt;Type Method, Variable&lt;/h2&gt;
-
-&lt;h3 id=&quot;현재-시각-반환&quot;&gt;현재 시각 반환&lt;/h3&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;단순한 현재 시각을 반환하는 방법입니다.&lt;/p&gt;
-
-&lt;p&gt;Date()와 같은 결과물입니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;지정되지-않은-미래과거의-값-반환&quot;&gt;지정되지 않은 미래/과거의 값 반환&lt;/h3&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;iDontKnowWhenButAnywayItsFutureThanNow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantFuture&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;iDontKnowWhenButAnywayItsPastThanNow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantPast&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;단순히 현재보다 과거/미래만을 표현하고 싶을때 사용하면 유용한 타입 변수들입니다.&lt;/p&gt;
-
-&lt;p&gt;지정되지 않은(알 수 없는) 시점의 값이지만 현재보다 과거/미래라는 사실을 보장합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;date의-논리연산&quot;&gt;Date의 논리연산&lt;/h2&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;itsTrue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantPast&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;itsFalse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantFuture&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Date를 가지고 논리연산이 가능합니다.&lt;/p&gt;
-
-&lt;p&gt;Date값이 더 크다는 것은 더 미래라는 의미입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;distance-interval&quot;&gt;Distance, Interval&lt;/h2&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;timeIntervalCanBeNegative&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantPast&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;someIntervalFromNow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;timeIntervalSince&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantPast&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;someIntervalSinceNow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantFuture&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timeIntervalSinceNow&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;특정시간으로부터 떨어진 시간 간격을 알려줍니다.&lt;/p&gt;
-
-&lt;p&gt;값은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TimeInterval&lt;/code&gt; type으로 나옵니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;date-값-연산&quot;&gt;Date 값 연산&lt;/h2&gt;
-
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
 5
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;currentDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Date는 class가 아닌 struct이기에 var로 선언해야 수정가능&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;currentDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;addTimeInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;currentDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;tomorrow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;advanced&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;60*60*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rangeOfDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tomorrow&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;calendar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;timeZone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;TimeZone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;era&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
+     &lt;span class=&quot;nv&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;month&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;day&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
+     &lt;span class=&quot;nv&quot;&gt;minute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nanosecond&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;weekday&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
+     &lt;span class=&quot;nv&quot;&gt;weekdayOrdinal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;quarter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;weekOfMonth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
+     &lt;span class=&quot;nv&quot;&gt;weekOfYear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;yearForWeekOfYear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;연산기호를 통한 연산, 연산 전용 메서드 두 방법 모두로 연산이 가능합니다.&lt;/p&gt;
+&lt;p&gt;Date Component의 Init은 여러가지 요소들을 optional type으로 받습니다.&lt;/p&gt;
 
-&lt;p&gt;date의 범위를 변수에 담을 수도 있습니다.&lt;/p&gt;
+&lt;p&gt;인자로 전달하지 않은 값은 nil로 세팅됩니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;위의 인자로 전달하는 프로퍼티 값 중 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;calendar&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;timeZone&lt;/code&gt;값은 직접 접근할수도 있습니다.&lt;/p&gt;
 
-&lt;h2 id=&quot;date-formatting&quot;&gt;Date Formatting&lt;/h2&gt;
+&lt;h2 id=&quot;validate&quot;&gt;Validate&lt;/h2&gt;
 
-&lt;h3 id=&quot;default-format&quot;&gt;Default Format&lt;/h3&gt;
+&lt;p&gt;DateComponent를 통해 날짜가 유효한지(이게 날짜가 맞는지) 등도 확인할 수 있습니다.&lt;/p&gt;
 
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;formatted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;isValidDate&lt;/code&gt;라는 연산 프로퍼티를 통해서 Boolean 값을 받을수도 있고&lt;/p&gt;
 
-&lt;p&gt;별다른 설정을 하지 않고 formatted() 메서드를 호출하면&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;isValidDate(in: Calendar)&lt;/code&gt;라는 메서드를 통해 전달받을수도 있습니다&lt;/p&gt;
 
-&lt;p&gt;date style은 numeric, time style은 shortened로 설정되어 출력됩니다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;date&lt;/code&gt;라는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Date?&lt;/code&gt; type의 프로퍼티도 존재하여 optional값을 unwrap하여 유효성을 확인할수도 있습니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;format-style-지정&quot;&gt;Format Style 지정&lt;/h3&gt;
+&lt;p&gt;참고로 Calendar 객체에서도 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;date(from: DateComponents) -&amp;gt; Date?&lt;/code&gt; 라는 메서드를 지원합니다.&lt;/p&gt;
 
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;formatted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;long&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;standard&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;날짜-세부요소&quot;&gt;날짜 세부요소&lt;/h2&gt;
 
-&lt;p&gt;위와 같이 직접 date style과 time style을 지정할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;DateComponent는 그 이름에 걸맞게 여러가지 날짜 세부요소를 제공합니다&lt;/p&gt;
 
-&lt;h4 id=&quot;date-style의-종류&quot;&gt;date style의 종류&lt;/h4&gt;
+&lt;p&gt;제공하는 목록은 다음과 같습니다&lt;/p&gt;
+
+&lt;h3 id=&quot;months-and-years&quot;&gt;Months and Years&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;abbreviated&lt;/li&gt;
-  &lt;li&gt;complete&lt;/li&gt;
-  &lt;li&gt;long&lt;/li&gt;
-  &lt;li&gt;numeric&lt;/li&gt;
-  &lt;li&gt;omitted&lt;/li&gt;
+  &lt;li&gt;era&lt;/li&gt;
+  &lt;li&gt;year&lt;/li&gt;
+  &lt;li&gt;yearForWeekOfYear&lt;/li&gt;
+  &lt;li&gt;quarter&lt;/li&gt;
+  &lt;li&gt;month&lt;/li&gt;
+  &lt;li&gt;isLeapMonth&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;time-style의-종류&quot;&gt;time style의 종류&lt;/h4&gt;
+&lt;h3 id=&quot;accessing-weeks-and-days&quot;&gt;Accessing Weeks and Days&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;complete&lt;/li&gt;
-  &lt;li&gt;omitted&lt;/li&gt;
-  &lt;li&gt;shortened&lt;/li&gt;
-  &lt;li&gt;standard&lt;/li&gt;
+  &lt;li&gt;weekOfMonth&lt;/li&gt;
+  &lt;li&gt;weekOfYear&lt;/li&gt;
+  &lt;li&gt;weekday&lt;/li&gt;
+  &lt;li&gt;weekdayOrdinal&lt;/li&gt;
+  &lt;li&gt;day&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;relative-format-style&quot;&gt;Relative Format Style&lt;/h3&gt;
+&lt;h3 id=&quot;accessing-hours-and-seconds&quot;&gt;Accessing Hours and Seconds&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;hour&lt;/li&gt;
+  &lt;li&gt;minute&lt;/li&gt;
+  &lt;li&gt;second&lt;/li&gt;
+  &lt;li&gt;nanosecond&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;위의 모든 값들은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Int?&lt;/code&gt; type입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;calendar-component&quot;&gt;Calendar Component&lt;/h2&gt;
+
+&lt;p&gt;DateComponent 내의 값은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Calendar.Component&lt;/code&gt; 의 값과 같은 정보를 담은 값이 많습니다.&lt;/p&gt;
+
+&lt;p&gt;enum type인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Calendar.Component&lt;/code&gt;를 인자로 받아 DateComponent 내의 알맞은 값을 세팅하는 메서드도 지원합니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
-3
-4
-5
-6
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;yesterday&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;advanced&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;60*60*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;formatStyle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;RelativeFormatStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// FormatStyle이란 프로토콜 채택중&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;formatStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;presentation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;named&lt;/span&gt;
-&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yesterday&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;formatted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formatStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 어제&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;formatStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;presentation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numeric&lt;/span&gt;
-&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yesterday&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;formatted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formatStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 1일 전&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;1주 전, 1일 전, 어제 등의 관계성 formatting style도 지정할 수 있습니다&lt;/p&gt;
+&lt;h2 id=&quot;datecomponent-값의-비교&quot;&gt;DateComponent 값의 비교&lt;/h2&gt;
 
-&lt;h3 id=&quot;format-style-custom&quot;&gt;Format Style Custom&lt;/h3&gt;
+&lt;p&gt;Calendar와 마찬가지로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;==&lt;/code&gt; 연산과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!=&lt;/code&gt; 연산을 지원합니다.&lt;/p&gt;
 
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;formatted&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;FormatOutput&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;FormatStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;FormatInput&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;최종-정리&quot;&gt;최종 정리&lt;/h2&gt;
 
-&lt;p&gt;formatted 메서드는 위와 같이 생겼습니다.&lt;/p&gt;
+&lt;p&gt;이번 공부로 Swift로 날짜를 다루는 여러가지 방법이 존재함을 알게되었습니다.&lt;/p&gt;
 
-&lt;p&gt;F가 FormatStyle 프로토콜을 채택하고 FormatInput이라는 associatedType이라면&lt;/p&gt;
+&lt;p&gt;DateComponent는 말 그대로 Date와 관련된 여러 값들을 가지고 있는 객체,&lt;/p&gt;
 
-&lt;p&gt;formatted에 직접 만든 custom format을 적용할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;Date는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TimeInterval&lt;/code&gt; 이란 단위로 수치화된 요소들을 담고 있으며,&lt;/p&gt;
 
-&lt;h2 id=&quot;왜-date-관련-변수에-1970이란-숫자가-자주-등장하나요&quot;&gt;왜 Date 관련 변수에 1970이란 숫자가 자주 등장하나요?&lt;/h2&gt;
+&lt;p&gt;formatting시에 사용하기 좋은 여러 메서드, enum을 가지고 있는 객체,&lt;/p&gt;
 
-&lt;p&gt;Unix의 standard time이 1970/1/1 입니다.&lt;/p&gt;
+&lt;p&gt;마지막으로 Calendar는 날짜의 비교 및 여러 Symbols들을 적절히 활용하기에 좋은 객체라는 사실까지 알게되었습니다.&lt;/p&gt;
 
-&lt;p&gt;Unix -&amp;gt; C -&amp;gt; Swift로 넘어오면서 이것이 이어져온 듯 하네요&lt;/p&gt;
 </description>
-        <pubDate>Wed, 06 Jul 2022 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/swift/UseDateWithSwift/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/swift/UseDateWithSwift/</guid>
+        <pubDate>Thu, 07 Jul 2022 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/swift/UseDateComponentWithSwift/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/swift/UseDateComponentWithSwift/</guid>
         
         <category>날짜 다루기</category>
         
         <category>Date</category>
+        
+        <category>DateComponent</category>
         
         
         <category>Swift</category>
@@ -419,6 +351,198 @@
         
         
         <category>살까말까</category>
+        
+      </item>
+    
+      <item>
+        <title>Swift로 날짜 다루기 [Date 편]</title>
+        <description>&lt;p&gt;오늘은 Swift로 날짜를 다루는 방법들을 정리해보았습니다.&lt;/p&gt;
+
+&lt;p&gt;Date, Calendar, DateComponent를 정리할 예정이며&lt;/p&gt;
+
+&lt;p&gt;본 글은 Date 객체를 소개하는 글입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;init&quot;&gt;Init&lt;/h2&gt;
+
+&lt;h3 id=&quot;기본-init&quot;&gt;기본 Init&lt;/h3&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;basicInit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Date 인스턴스를 기본 initializer로 생성하면 현재 시간으로 세팅됩니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;timeintervalsincenow&quot;&gt;timeIntervalSinceNow&lt;/h3&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;timeInterValSinceNowInit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;timeIntervalSinceNow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3600&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;현재로부터의 시간간격을 인자로 주어 그만큼 떨어진 시간을 나타내는 인스턴스가 생성됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;type-method-variable&quot;&gt;Type Method, Variable&lt;/h2&gt;
+
+&lt;h3 id=&quot;현재-시각-반환&quot;&gt;현재 시각 반환&lt;/h3&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;단순한 현재 시각을 반환하는 방법입니다.&lt;/p&gt;
+
+&lt;p&gt;Date()와 같은 결과물입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;지정되지-않은-미래과거의-값-반환&quot;&gt;지정되지 않은 미래/과거의 값 반환&lt;/h3&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;iDontKnowWhenButAnywayItsFutureThanNow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantFuture&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;iDontKnowWhenButAnywayItsPastThanNow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantPast&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;단순히 현재보다 과거/미래만을 표현하고 싶을때 사용하면 유용한 타입 변수들입니다.&lt;/p&gt;
+
+&lt;p&gt;지정되지 않은(알 수 없는) 시점의 값이지만 현재보다 과거/미래라는 사실을 보장합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;date의-논리연산&quot;&gt;Date의 논리연산&lt;/h2&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;itsTrue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantPast&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;itsFalse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantFuture&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Date를 가지고 논리연산이 가능합니다.&lt;/p&gt;
+
+&lt;p&gt;Date값이 더 크다는 것은 더 미래라는 의미입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;distance-interval&quot;&gt;Distance, Interval&lt;/h2&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;timeIntervalCanBeNegative&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantPast&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;someIntervalFromNow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;timeIntervalSince&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantPast&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;someIntervalSinceNow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantFuture&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timeIntervalSinceNow&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;특정시간으로부터 떨어진 시간 간격을 알려줍니다.&lt;/p&gt;
+
+&lt;p&gt;값은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TimeInterval&lt;/code&gt; type으로 나옵니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;date-값-연산&quot;&gt;Date 값 연산&lt;/h2&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;currentDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Date는 class가 아닌 struct이기에 var로 선언해야 수정가능&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;currentDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;addTimeInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;currentDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;tomorrow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;advanced&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;60*60*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rangeOfDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tomorrow&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;연산기호를 통한 연산, 연산 전용 메서드 두 방법 모두로 연산이 가능합니다.&lt;/p&gt;
+
+&lt;p&gt;date의 범위를 변수에 담을 수도 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;date-formatting&quot;&gt;Date Formatting&lt;/h2&gt;
+
+&lt;h3 id=&quot;default-format&quot;&gt;Default Format&lt;/h3&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;formatted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;별다른 설정을 하지 않고 formatted() 메서드를 호출하면&lt;/p&gt;
+
+&lt;p&gt;date style은 numeric, time style은 shortened로 설정되어 출력됩니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;format-style-지정&quot;&gt;Format Style 지정&lt;/h3&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;formatted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;long&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;standard&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위와 같이 직접 date style과 time style을 지정할 수 있습니다.&lt;/p&gt;
+
+&lt;h4 id=&quot;date-style의-종류&quot;&gt;date style의 종류&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;abbreviated&lt;/li&gt;
+  &lt;li&gt;complete&lt;/li&gt;
+  &lt;li&gt;long&lt;/li&gt;
+  &lt;li&gt;numeric&lt;/li&gt;
+  &lt;li&gt;omitted&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;time-style의-종류&quot;&gt;time style의 종류&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;complete&lt;/li&gt;
+  &lt;li&gt;omitted&lt;/li&gt;
+  &lt;li&gt;shortened&lt;/li&gt;
+  &lt;li&gt;standard&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;relative-format-style&quot;&gt;Relative Format Style&lt;/h3&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;yesterday&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;advanced&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;60*60*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;formatStyle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;RelativeFormatStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// FormatStyle이란 프로토콜 채택중&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;formatStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;presentation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;named&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yesterday&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;formatted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formatStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 어제&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;formatStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;presentation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numeric&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yesterday&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;formatted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formatStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 1일 전&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;1주 전, 1일 전, 어제 등의 관계성 formatting style도 지정할 수 있습니다&lt;/p&gt;
+
+&lt;h3 id=&quot;format-style-custom&quot;&gt;Format Style Custom&lt;/h3&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;formatted&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;FormatOutput&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;FormatStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;FormatInput&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;formatted 메서드는 위와 같이 생겼습니다.&lt;/p&gt;
+
+&lt;p&gt;F가 FormatStyle 프로토콜을 채택하고 FormatInput이라는 associatedType이라면&lt;/p&gt;
+
+&lt;p&gt;formatted에 직접 만든 custom format을 적용할 수 있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;왜-date-관련-변수에-1970이란-숫자가-자주-등장하나요&quot;&gt;왜 Date 관련 변수에 1970이란 숫자가 자주 등장하나요?&lt;/h2&gt;
+
+&lt;p&gt;Unix의 standard time이 1970/1/1 입니다.&lt;/p&gt;
+
+&lt;p&gt;Unix -&amp;gt; C -&amp;gt; Swift로 넘어오면서 이것이 이어져온 듯 하네요&lt;/p&gt;
+</description>
+        <pubDate>Tue, 05 Jul 2022 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/swift/UseDateWithSwift/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/swift/UseDateWithSwift/</guid>
+        
+        <category>날짜 다루기</category>
+        
+        <category>Date</category>
+        
+        
+        <category>Swift</category>
         
       </item>
     
@@ -1227,328 +1351,6 @@ Neph 은(는) 정보주체의 개인정보 열람청구가 신속하게 처리�
         
         
         <category>iOS</category>
-        
-      </item>
-    
-      <item>
-        <title>[#5] 관계 데이터 모델</title>
-        <description>&lt;h2 id=&quot;관계-데이터-모델의-개념&quot;&gt;관계 데이터 모델의 개념&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;관계 데이터 모델의 기본 개념&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;개념적 구조를 논리적 구조로 표현하는 논리적 데이터 모델&lt;/li&gt;
-  &lt;li&gt;하나의 개체에 대한 데이터를 하나의 릴레이션에 저장&lt;/li&gt;
-  &lt;li&gt;Relataion은 “관계를 맺다”라는 의미가 아닌 Table의 이름을 Relation이라 말하는 것&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211011224352.png&quot; alt=&quot;image-20211011224352851&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;[고객 릴레이션]&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;관계 데이터 모델의 기본 용어&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;릴레이션(relation)
-    &lt;ul&gt;
-      &lt;li&gt;하나의 개체에 관한 데이터를 2차원 테이블의 구조로 저장한 것&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;속성(attribute)
-    &lt;ul&gt;
-      &lt;li&gt;릴레이션의 열&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;파일의 field&lt;/strong&gt;에 대응하는 개념&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;튜플(tuple)
-    &lt;ul&gt;
-      &lt;li&gt;릴레이션의 행&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;파일의 record&lt;/strong&gt;에 대응하는 개념&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;관계 데이터 모델의 기본 용어&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;도메인(domain)
-    &lt;ul&gt;
-      &lt;li&gt;하나의 속성이 가질 수 있는 모든 값의 집합&lt;/li&gt;
-      &lt;li&gt;일반적으로 속성의 데이터 타입으로 정의&lt;/li&gt;
-      &lt;li&gt;잘못된 연산 시도를 예방해줌&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;널(null)
-    &lt;ul&gt;
-      &lt;li&gt;속성 값을 아직 모르거나 해당되는 값이 없음을 표현&lt;/li&gt;
-      &lt;li&gt;일반적으로 표시하기 위해 공백을 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;차수(degree)
-    &lt;ul&gt;
-      &lt;li&gt;속성의 개수(열의 수)&lt;/li&gt;
-      &lt;li&gt;일반적으로 자주 변하지 않음 (정적인 특징)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;카디널리티(cardinality)
-    &lt;ul&gt;
-      &lt;li&gt;튜플의 개수(행의 수)&lt;/li&gt;
-      &lt;li&gt;일반적으로 자주 변함 (동적인 특징)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고객 릴레이션&lt;/code&gt;의 차수 : 6&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고객 릴레이션&lt;/code&gt;의 카디널리티: 4&lt;/p&gt;
-
-&lt;h3 id=&quot;릴레이션의-구성&quot;&gt;릴레이션의 구성&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211011225919.png&quot; alt=&quot;image-20211011225919947&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;릴레이션 스키마 (relation schema)
-    &lt;ul&gt;
-      &lt;li&gt;릴레이션의 논리적 구조&lt;/li&gt;
-      &lt;li&gt;릴레이션의 이름과 릴레이션에 포함된 모든 속성 이름으로 정의
-        &lt;ul&gt;
-          &lt;li&gt;i.e., 고객(고객아이디, 고객이름, 나이, 등급, 직업, 적립금)&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;릴레이션 인스턴스 (relation instance)
-    &lt;ul&gt;
-      &lt;li&gt;어느 한 시점에 릴레이션에 존재하는 튜플들의 집합&lt;/li&gt;
-      &lt;li&gt;실체화된 값&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;데이터베이스의 구성&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211011230044.png&quot; alt=&quot;image-20211011230044519&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;데이터베이스 스키마 (database schema)
-    &lt;ul&gt;
-      &lt;li&gt;데이터베이스의 전체 구조&lt;/li&gt;
-      &lt;li&gt;데이터베이스를 구성하는 &lt;strong&gt;릴레이션 스키마의 모음&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;데이터베이스 인스턴스 (database instance)
-    &lt;ul&gt;
-      &lt;li&gt;데이터베이스를 구성하는 &lt;strong&gt;릴레이션 인스턴스의 모음&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;릴레이션의 특성&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;튜플의 유일성
-    &lt;ul&gt;
-      &lt;li&gt;하나의 릴레이션에는 동일한 튜플이 존재할 수 없다.&lt;/li&gt;
-      &lt;li&gt;튜플들을 유일하게 구별하기 위해 선정되는 속성을 키(key)라고 부른다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;튜플의 무순서성
-    &lt;ul&gt;
-      &lt;li&gt;하나의 릴레이션에서 튜플 사이의 순서는 무의미하다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;속성의 무순서성
-    &lt;ul&gt;
-      &lt;li&gt;하나의 릴레이션에서 속성 사이의 순서는 무의미하다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;속성의 원자성
-    &lt;ul&gt;
-      &lt;li&gt;속성 값으로 원자 값(의미의 분해가 되지 않는 하나의 값)만 사용할 수 있다.&lt;/li&gt;
-      &lt;li&gt;다중 값을 가질 수 없다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;키key&quot;&gt;키(key)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;릴레이션에서 튜플들을 유일하게 구별하는 속성 또는 속성들의 집합&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;키의 특성&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;유일성 (uniqueness)
-    &lt;ul&gt;
-      &lt;li&gt;하나의 릴레이션에서 모든 튜플은 서로 다른 키 값을 가져야 함&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;최소성 (minimality)
-    &lt;ul&gt;
-      &lt;li&gt;꼭 필요한 최소한의 속성들로만 키를 구성함&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;키의 종류&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;슈퍼키 (super key)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;유일성을 만족하는 속성 또는 속성들의 집합&lt;/li&gt;
-      &lt;li&gt;유일성; 하나의 릴레이션에서 키로 지정된 속성 값은 튜플마다 달라야 한다는 의미&lt;/li&gt;
-      &lt;li&gt;i.e., 고객 릴레이션의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고객아이디&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(고객아이디, 고객이름)&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(고객이름, 주소)&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;속성들의 집합또한 슈퍼키에 포함되는 개념이므로 불필요한 속성까지 확인하게 되어 비효율적인 경우가 존재
-        &lt;ul&gt;
-          &lt;li&gt;이를 해결하기 위해 후보키의 개념이 필요&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;후보키 (candidate key)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;유일성과 최소성을 만족하는 속성 또는 속성들의 집합&lt;/li&gt;
-      &lt;li&gt;최소성; 꼭 필요한 속성들로만 키를 구성한다는 의미&lt;/li&gt;
-      &lt;li&gt;i.e., 고객 릴레이션의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고객아이디&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(고객이름, 주소)&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;기본키 (primary key)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;후보키 중에서 기본적으로 사용하기 위해 선택한 키&lt;/li&gt;
-      &lt;li&gt;속성 이름에 밑줄을 그어 표현&lt;/li&gt;
-      &lt;li&gt;i.e., 고객 릴레이션의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고객아이디&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;대체키 (alternate key)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;기본키로 선택되지 못한 후보키&lt;/li&gt;
-      &lt;li&gt;i.e., 고객 릴레이션의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(고객이름, 주소)&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211011231708.png&quot; alt=&quot;image-20211011231708335&quot; style=&quot;zoom:33%;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;외래키 (foreign key)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;다른 릴레이션의 기본키(대체키)를 참조하는 속성 또는 속성들의 집합&lt;/li&gt;
-      &lt;li&gt;릴레이션들 간의 관계를 표현 (관계 구현의 핵심으로 동작)&lt;/li&gt;
-      &lt;li&gt;하나의 릴레이션에 외래키가 여러 개 존재할 수 있다.&lt;/li&gt;
-      &lt;li&gt;외래키를 기본키로 사용할 수 있다.&lt;/li&gt;
-      &lt;li&gt;외래키 속성과 그것이 참조하는 기본키 속성의 이름은 달라도 되지만, 도메인은 같아야 한다.&lt;/li&gt;
-      &lt;li&gt;같은 릴레이션의 기본키를 참조하는 외래키도 정의할 수 있다.&lt;/li&gt;
-      &lt;li&gt;널 값을 가질 수 있다.&lt;/li&gt;
-      &lt;li&gt;외래키를 가진 릴레이션: 참조하는 릴레이션, 반대는 참조되는 릴레이션&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211011232248.png&quot; alt=&quot;image-20211011232248686&quot; style=&quot;zoom: 50%;&quot; /&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211011232327.png&quot; alt=&quot;image-20211011232327493&quot; style=&quot;zoom: 33%;&quot; /&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211011232510.png&quot; alt=&quot;image-20211011232510254&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;기본키를 선택할 때 고려하면 도움이 되는 기준들&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;널 값을 가질 수 있는 속성이 포함된 후보키는 기본키로 부적합하다.
-    &lt;ul&gt;
-      &lt;li&gt;기본키가 널 값인 튜플은 다른 튜플들과 구별되지 않으므로 부적합&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;값이 자주 변경될 수 있는 속성이 포함된 후보키는 기본키로 부적합하다.
-    &lt;ul&gt;
-      &lt;li&gt;기본키의 값이 바뀔때마다 그 값이 기본키로 적합한지 검사해야하므로 부적합&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;단순한 후보키를 기본키로 선택한다.
-    &lt;ul&gt;
-      &lt;li&gt;자릿수가 적은 정수, 단순 문자열 속성, 키를 구성하는 속성의 개수가 적은 후보키&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;관계-데이터-모델의-제약&quot;&gt;관계 데이터 모델의 제약&lt;/h2&gt;
-
-&lt;h3 id=&quot;무결성-제약조건&quot;&gt;무결성 제약조건&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;데이터의 무결성을 보장하고 일관된 상태로 유지하기 위한 규칙&lt;/li&gt;
-  &lt;li&gt;무결성: 데이터를 결함이 없는 상태, 즉 정확하고 유효하게 유지하는 것&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;개체 무결성 제약조건&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;기본키를 구성하는 모든 속성은 널 값을 가질 수 없는 규칙&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;참조 무결성 제약조건&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;외래키는 참조할 수 없는 값을 가질 수 없는 규칙&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20211011234448.png&quot; alt=&quot;image-20211011234448721&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;참조 무결성 제약조건 위배 예시&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;주의할 점&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;외래키 속성이 널 값을 가진다고 해서 참조 무결성 제약조건을 위배한 것은 아님
-    &lt;ul&gt;
-      &lt;li&gt;i.e., 추천인이라는 외래키 속성이 존재할 때 추천인을 입력하지 않았으면 null이지만 이게 참조 무결성 제약조건 위배는 아니다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Mon, 11 Oct 2021 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/5-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%80%E1%85%A8-%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5-%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/5-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%80%E1%85%A8-%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5-%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF/</guid>
-        
-        <category>데이터베이스</category>
-        
-        
-        <category>데이터베이스</category>
         
       </item>
     

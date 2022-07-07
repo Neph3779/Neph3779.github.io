@@ -1,11 +1,11 @@
 [
   
     {
-      "title"    : "Swift로 날짜 다루기 [Date 편]",
+      "title"    : "Swift로 날짜 다루기 [DateComponent 편]",
       "subtitle" : "",
-      "tags"     : "날짜 다루기, Date",
-      "url"      : "/swift/UseDateWithSwift/",
-      "date"     : "2022-07-06 00:00:00 +0900"
+      "tags"     : "날짜 다루기, Date, DateComponent",
+      "url"      : "/swift/UseDateComponentWithSwift/",
+      "date"     : "2022-07-07 00:00:00 +0900"
     } ,
   
     {
@@ -21,6 +21,14 @@
       "subtitle" : "",
       "tags"     : "살까말까, 개인앱",
       "url"      : "/%EC%82%B4%EA%B9%8C%EB%A7%90%EA%B9%8C/buyOrNotProblem/",
+      "date"     : "2022-07-05 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Swift로 날짜 다루기 [Date 편]",
+      "subtitle" : "",
+      "tags"     : "날짜 다루기, Date",
+      "url"      : "/swift/UseDateWithSwift/",
       "date"     : "2022-07-05 00:00:00 +0900"
     } ,
   

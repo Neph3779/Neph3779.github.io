@@ -2,9 +2,9 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
-      <loc>https://neph3779.github.io/swift/UseDateWithSwift/</loc>
+      <loc>https://neph3779.github.io/swift/UseDateComponentWithSwift/</loc>
       
-        <lastmod>2022-07-06T00:00:00+09:00</lastmod>
+        <lastmod>2022-07-07T00:00:00+09:00</lastmod>
       
 
       
@@ -35,6 +35,22 @@
   
     <url>
       <loc>https://neph3779.github.io/%EC%82%B4%EA%B9%8C%EB%A7%90%EA%B9%8C/buyOrNotProblem/</loc>
+      
+        <lastmod>2022-07-05T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>daily</changefreq>
+      
+
+      
+        <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>https://neph3779.github.io/swift/UseDateWithSwift/</loc>
       
         <lastmod>2022-07-05T00:00:00+09:00</lastmod>
       
