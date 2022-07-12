@@ -267,6 +267,87 @@
 </head>
 
 <div class="post-preview">
+    <a href="/swift/howToCountDaysInBFS/">
+        <h2 class="post-title">
+            BFS 몇번에 걸쳐 이동했는지 count하는법
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            BFS 코드
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+func answer() {
+    var dayCount = 0
+    while true {
+        for _ in 0..&lt;queue.count {
+            guard let next = qu...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on July
+        13, 2022
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/swift/RealmTroubleShooting/">
+        <h2 class="post-title">
+            Realm 트러블슈팅 (Realm accessed from incorrect thread)
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            트러블 발생 지점
+
+
+
+65번째 줄에서 Realm에 접근하였고
+
+이 줄의 실행까지는 문제가 없는데
+
+66번째 줄부터 시작하는 main thread의 UI 업데이트 작업에서 오류가 발생했다.
+
+이유는 Realm accessed from incorrect thread인데 의문인 것은
+
+이 블록에서는 Realm에 접근하지 않는다는것.. (products라는...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on July
+        11, 2022
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
     <a href="/ios/URLWithPercentage/">
         <h2 class="post-title">
             [iOS] query에 띄어쓰기가 있을때 처리하는 방법
@@ -524,52 +605,6 @@ DispatchQueue를 오랜만에 다시 써보기도 했고 serialQueue와 concurre
 </div>
 <hr>
 
-<div class="post-preview">
-    <a href="/buyornot/private-policy/">
-        <h2 class="post-title">
-            살까 말까 앱 개인정보 처리방침
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            (‘https://neph3779.github.io/’이하 ‘살까 말까’)은(는) 「개인정보 보호법」 제30조에 따라 정보주체의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보 처리방침을 수립·공개합니다.
-
-이 개인정보처리방침은 2021년 1월 1일부터 적용됩니다.
-
-제1조(개인정보의 처리 ...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on November
-        30, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/ios/TouchUpCellToMoveDetailViewForStoryboard/">
-        <h2 class="post-title">
-            Storyboard에서 TableView Cell 터치시 DetailView로 이동하는 방법
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            Storyboard + TableView + Segue 활용하기
-
-스토리보드로 작업 시 Segue를 버튼으로 연결하여 다른 ViewController를 띄우는 것과 다르게 TableView Cell 터치시 DetailView로 이동하는 작업은 단순 Segue 연결만으로 해결할 수 없었다.
-
-didSelectRowAt에서 간단히 push를 통해 Deta...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on November
-        3, 2021
-    </p>
-</div>
-<hr>
-
 
 <!-- Pager -->
 
@@ -658,85 +693,89 @@ didSelectRowAt에서 간단히 push를 통해 Deta...
             
         
             
-            <a data-sort="0067"
+            <a data-sort="0069"
                 href="/archive/?tag=TIL" title="TIL"
                 rel="38">TIL</a>
             
             
             
-            <a data-sort="0092"
+            <a data-sort="0094"
                 href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
                 rel="13">운영체제</a>
             
-            <a data-sort="0093"
+            <a data-sort="0095"
                 href="/archive/?tag=OS" title="OS"
                 rel="12">OS</a>
             
-            <a data-sort="0099"
+            <a data-sort="0101"
                 href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
                 rel="6">Yagom-Academy</a>
             
-            <a data-sort="0100"
+            <a data-sort="0102"
                 href="/archive/?tag=%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4" title="데이터베이스"
                 rel="5">데이터베이스</a>
             
-            <a data-sort="0100"
+            <a data-sort="0102"
                 href="/archive/?tag=iOS" title="iOS"
                 rel="5">iOS</a>
             
-            <a data-sort="0101"
+            <a data-sort="0103"
                 href="/archive/?tag=Swift" title="Swift"
                 rel="4">Swift</a>
             
-            <a data-sort="0102"
+            <a data-sort="0104"
                 href="/archive/?tag=%EB%82%A0%EC%A7%9C+%EB%8B%A4%EB%A3%A8%EA%B8%B0" title="날짜 다루기"
                 rel="3">날짜 다루기</a>
             
-            <a data-sort="0102"
+            <a data-sort="0104"
                 href="/archive/?tag=Alamofire" title="Alamofire"
                 rel="3">Alamofire</a>
             
-            <a data-sort="0102"
+            <a data-sort="0104"
                 href="/archive/?tag=Date" title="Date"
                 rel="3">Date</a>
             
-            <a data-sort="0103"
+            <a data-sort="0105"
                 href="/archive/?tag=%EA%B0%9C%EC%9D%B8%EC%95%B1" title="개인앱"
                 rel="2">개인앱</a>
             
-            <a data-sort="0103"
+            <a data-sort="0105"
                 href="/archive/?tag=%EB%8B%B9%EA%B7%BC%EB%A7%88%EC%BC%93+%EC%9D%B8%ED%84%B4" title="당근마켓 인턴"
                 rel="2">당근마켓 인턴</a>
             
-            <a data-sort="0103"
+            <a data-sort="0105"
                 href="/archive/?tag=%EC%82%B4%EA%B9%8C%EB%A7%90%EA%B9%8C" title="살까말까"
                 rel="2">살까말까</a>
             
-            <a data-sort="0103"
+            <a data-sort="0105"
                 href="/archive/?tag=%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98" title="알고리즘"
                 rel="2">알고리즘</a>
             
-            <a data-sort="0103"
+            <a data-sort="0105"
                 href="/archive/?tag=%EC%B7%A8%EC%97%85%EC%A4%80%EB%B9%84" title="취업준비"
                 rel="2">취업준비</a>
             
-            <a data-sort="0103"
+            <a data-sort="0105"
+                href="/archive/?tag=BFS" title="BFS"
+                rel="2">BFS</a>
+            
+            <a data-sort="0105"
                 href="/archive/?tag=Notification" title="Notification"
                 rel="2">Notification</a>
             
-            <a data-sort="0103"
+            <a data-sort="0105"
                 href="/archive/?tag=Scroll+View" title="Scroll View"
                 rel="2">Scroll View</a>
             
-            <a data-sort="0103"
+            <a data-sort="0105"
                 href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
                 rel="2">Yagom Academy</a>
             
-            <a data-sort="0103"
+            <a data-sort="0105"
                 href="/archive/?tag=app+life+cycle" title="app life cycle"
                 rel="2">app life cycle</a>
             
-            <a data-sort="0103"
+            <a data-sort="0105"
                 href="/archive/?tag=enum" title="enum"
                 rel="2">enum</a>
     </div>
