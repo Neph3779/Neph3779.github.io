@@ -90,3 +90,9 @@ struct Rect {
 
 
 
+
+
+### Class Inheritance and Initialization
+
+부모 클래스로부터 상속받은 저장 프로퍼티를 포함한 모든 저장 프로퍼티는 initialization 과정에서 값이 할당되어야 합니다.
+

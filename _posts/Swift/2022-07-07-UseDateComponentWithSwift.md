@@ -40,6 +40,14 @@ Date Component의 Init은 여러가지 요소들을 optional type으로 받습�
 
 
 
+인스턴스 생성시 주의할 점은 calendar 값을 전달하지 않으면
+
+DateComponent의 인스턴스가 가지고 있는 date라는 프로퍼티에 nil값이 들어있게 됩니다.
+
+반드시 calendar 파라미터를 전달하도록 합시다.
+
+
+
 ## Validate
 
 DateComponent를 통해 날짜가 유효한지(이게 날짜가 맞는지) 등도 확인할 수 있습니다.
