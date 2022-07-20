@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Swift initializer 총정리",
+      "subtitle" : "",
+      "tags"     : "init, required init, convinience init, override init",
+      "url"      : "/swift/SwiftInits/",
+      "date"     : "2022-07-18 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "BFS 몇번에 걸쳐 이동했는지 count하는법",
       "subtitle" : "",
       "tags"     : "BFS",
