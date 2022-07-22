@@ -38,8 +38,8 @@ Queue에서 원소를 pop할때 사용하는 removeFirst()의 시간복잡도는
  */
 
 struct Queue<T> {
-    var enqueue: [T]
-    var dequeue: [T]
+    var enqueue = [T]()
+    var dequeue = [T]()
     var isEmpty: Bool {
         return enqueue.isEmpty && dequeue.isEmpty
     }
