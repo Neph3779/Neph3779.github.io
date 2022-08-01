@@ -43,6 +43,10 @@ struct Queue<T> {
     var isEmpty: Bool {
         return enqueue.isEmpty && dequeue.isEmpty
     }
+    var count: Int {
+        return enqueue.count + dequeue.count
+    }
+  
     mutating func push(x: T) {
         enqueue.append(x)
     }
