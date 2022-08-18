@@ -5,9 +5,829 @@
     <description>Write code with my soul.</description>
     <link>https://neph3779.github.io/</link>
     <atom:link href="https://neph3779.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 20 Jul 2022 17:30:28 +0900</pubDate>
-    <lastBuildDate>Wed, 20 Jul 2022 17:30:28 +0900</lastBuildDate>
+    <pubDate>Fri, 19 Aug 2022 08:35:55 +0900</pubDate>
+    <lastBuildDate>Fri, 19 Aug 2022 08:35:55 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[번역, 작성중] Preparing Your UI to Run in the Foreground</title>
+        <description>&lt;h2 id=&quot;개요&quot;&gt;개요&lt;/h2&gt;
+
+&lt;p&gt;앱의 UI가 화면에 띄워지는 것을 준비하기 위해 foreground 전환을 사용합니다. foreground로의 상태변환은 일반적으로 유저의 액션에 대한 응답입니다. 예를 들어 유저가 앱의 아이콘을 터치하면 시스템은 앱을 실행하고 foreground 상태로 만듭니다. 앱의 UI 업데이트, 리소스 요청, 유저의 요청을 핸들링하는 서비스의 시작을 위해 foreground로의 상태변환을 사용할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;모든 상태 전환시에는 UIKit이 알맞은 delegate 객체에 notification을 보내게 됩니다. (appDelegate, sceneDelegate)&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 18 Aug 2022 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/ios/prepareForeground/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/ios/prepareForeground/</guid>
+        
+        <category>foreground</category>
+        
+        <category>app life cycle</category>
+        
+        
+        <category>iOS</category>
+        
+      </item>
+    
+      <item>
+        <title>[번역] Managing Your App's Life Cycle</title>
+        <description>&lt;p&gt;이번 글에서는 &lt;a href=&quot;https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle&quot;&gt;Managing Your App’s Life Cycle&lt;/a&gt; 를 번역해보았습니다.&lt;/p&gt;
+
+&lt;p&gt;사실상 글의 정독이 목적이고 중요도가 떨어진다 생각되는 부분은 번역하지 않았으니 정확한 내용은 공식문서를 참조해주세요&lt;/p&gt;
+
+&lt;h2 id=&quot;개요&quot;&gt;개요&lt;/h2&gt;
+
+&lt;p&gt;앱의 현재 상태는 현재 무엇을 할 수 있고 없는지를 결정하는 요소입니다. foreground 상태의 앱은 유저가 사용중인 앱이므로 시스템 리소스의 우선권을 갖습니다. 반대로 background에 있는 앱은 적은 일을 해야 하기에 리소스를 거의 할당받지 못합니다. 앱의 상태변화가 일어나면 그에 맞는 대응을 해줘야 합니다.&lt;/p&gt;
+
+&lt;p&gt;앱의 상태 변화가 일어나면 UIKit은 appDelegate이나 sceneDelegate의 메서드들을 호출함으로써 상태 변화 사실을 알려옵니다.&lt;/p&gt;
+
+&lt;p&gt;이때 iOS13 이전/이후로 UISceneDelegate이 호출될지 UIApplicationDelegate가 호출될지가 나뉩니다. (더 정확히는SceneDelegate 지원 여부에 따라 달라집니다.)&lt;/p&gt;
+
+&lt;h2 id=&quot;respond-to-scene-based-life-cycle-events&quot;&gt;Respond to Scene-Based Life-Cycle Events&lt;/h2&gt;
+
+&lt;p&gt;앱이 scene을 지원한다면 UIKit은 각각의 scene마다 개별적으로 life cycle event를 전달합니다. 유저는 하나의 앱을 여러개 띄울 수 있으며 각각을 보이거나 숨길 수 있습니다. 각각의 scene이 독립적인 life cycle을 갖기 때문에 각각의 scene은 서로 다른 상태에 있을 수 있습니다. 어떤 scene은 foreground에 있는 동안 다른 scene들은 background나 suspend상태에 있는 것처럼 말이죠.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt; &lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220817150220.png&quot; alt=&quot;An illustration showing the state transitions for a scene-based app. Scenes start in the unattached state and move to the foreground-active or background state. The foreground-inactive state acts as a transition state.&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위의 사진은 scene의 상태변화도입니다. 유저나 시스템이 앱의 새로운 scene을 요청하면 UIKit은 unattached 상태의 scene을 만들어줍니다. 유저가 요청한 경우에는 빠르게 foreground 상태에 진입시켜 화면에 띄워줍니다. 시스템 요청의 경우에는 일반적으로 background 상태로 진입시켜 작업을 진행할 수 있도록 합니다. (location 이벤트 등으로 앱을 백그라운드에서 작동되도록 띄우는 경우 등이 예시) 유저가 앱을 dismiss하면 UIKit은 해당 scene을 background 상태로 변경하고 이는 곧 suspended 상태로 바뀌게 됩니다. UIKit은 background나 suspended 상태에 있는 scene을 언제든 disconnect 하여 unattached 상태로 가도록 할 수 있습니다. (리소스 회수의 목적)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt; scene 변경은 다음과 같은 작업을 할 때 사용합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;UIKit이 scene을 앱과 연결시킬때 개발자의 초기 UI를 구성하고 scene에 필요한 데이터를 로드할 때&lt;/li&gt;
+  &lt;li&gt;foreground-active 상태로 상태변화가 일어날때 UI를 구서하고 유저와의 상호작용을 준비할 때&lt;/li&gt;
+  &lt;li&gt;background 상태로 갈 때 중요한 작업을 끝마치고 확보할 수 있는 메모리를 최대한 확보하고 app의 snapshot에 대비할 때&lt;/li&gt;
+  &lt;li&gt;scene disconnection 시에 shared resoure를 정리할 때&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;respond-to-app-based-life-cycle-events&quot;&gt;Respond to App-Based Life-Cycle Events&lt;/h2&gt;
+
+&lt;p&gt;iOS 12 이전 혹은 scene을 지원하지 않는 경우에는 UIKit이 모든 life-cycle 이벤트를 UIApplicationDelegate을 통해 전달했습니다. app delegate은 앱의 모든 window를  관리합니다. 결과적으로 앱의 상태 변화는 UI에 영향을 끼칩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt; &lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220817222803.png&quot; alt=&quot;An illustration showing the state transitions for an app without scenes. The app launches into the active or background state. An app transitions through the inactive state. &quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위의 그림은 app delegate 객체를 포함한 상태 변화도를 나타낸 것입니다. 앱 실행 이후에 시스템은 UI를 화면에 띄울지의 여부를 바탕으로 앱을 inactive나 background 상태로 보냅니다. foreground 상태에서 실행중인 경우에는 자동으로 앱을 active 상태로 보냅니다. 이후 앱이 terminate 될 때까지 상태변화를 반복합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt; 앱의 상태변화는 다음과 같은 경우에 사용합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;앱의 실행시에 데이터 구조와 UI를 초기화할 때&lt;/li&gt;
+  &lt;li&gt;실행중에 UI 구성을 마무리하고 유저와의 상호작용을 준비할 때&lt;/li&gt;
+  &lt;li&gt;종료시에 데이터를 저장하고 앱의 behavior를 quiet 시킬때 (앱 마무리 한다는 뜻 같습니다.)&lt;/li&gt;
+  &lt;li&gt;background 상태로 진입할때 중요한 작업을 끝마치고 메모리를 최대한 확보하고 앱의 snapshot을 준비합니다.&lt;/li&gt;
+  &lt;li&gt;앱의 종료시에 모든 작업을 중단하고 공유 리소스를 release합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;respond-to-other-significant-events&quot;&gt;Respond to Other Significant Events&lt;/h2&gt;
+
+&lt;p&gt;life-cycle 이벤트를 handling하는 것에 추가로 앱은 아래의 목록에 대해서도 준비해야 합니다. 대부분 UIApplicationDelegate 객체를 사용해 관리하며 몇몇 경우에는 notification을 통해 관리해야 할수도 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Memory warnings
+    &lt;ul&gt;
+      &lt;li&gt;앱이 메모리 사용이 너무 과다할때 받는 이벤트(경고)입니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Protected data becomes available/unavailable
+    &lt;ul&gt;
+      &lt;li&gt;유저가 디바이스를 lock, unlock할때 발생하는 이벤트입니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Handoff tasks
+    &lt;ul&gt;
+      &lt;li&gt;NSUserActivity 객체가 생성되어야 할 때 받는 이벤트입니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Time changes
+    &lt;ul&gt;
+      &lt;li&gt;시간 변경등의 이유로 발생하는 이벤트입니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Open URLs
+    &lt;ul&gt;
+      &lt;li&gt;앱이 resource를 오픈할때 발생하는 이벤트입니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 17 Aug 2022 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/ios/AppLifeCycle/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/ios/AppLifeCycle/</guid>
+        
+        <category>life cycle</category>
+        
+        <category>foreground</category>
+        
+        <category>background</category>
+        
+        <category>inactive</category>
+        
+        <category>unattached</category>
+        
+        
+        <category>iOS</category>
+        
+      </item>
+    
+      <item>
+        <title>AppDelegate란?</title>
+        <description>&lt;p&gt;이번 글에서는 appDelegate에 어떤 메서드들이 존재하고 어떤 것들을 담당하는지에 대해 다뤄보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;다음 글에서 appDelegate과 sceneDelegate이 분리된 이유에 대해 다뤄보도록 하겠습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;uiapplicationdelegate&quot;&gt;UIApplicationDelegate&lt;/h2&gt;
+
+&lt;p&gt;appDelegate는 앱을 구동할때 공유되는 행위를 관리하는 객체입니다.&lt;/p&gt;
+
+&lt;p&gt;appDelegate가 하는 일은 다음과 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;앱의 자료구조의 초기화&lt;/li&gt;
+  &lt;li&gt;앱의 Scene 구성&lt;/li&gt;
+  &lt;li&gt;앱 외부로부터 오는 notification (배터리 부족, 다운로드 완료 등) 들에 대한 responding&lt;/li&gt;
+  &lt;li&gt;push notification을 통한 접속시 알맞은 서비스로 이동할 수 있도록 해줌&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;SceneDelegate의 경우 iOS13 이후 한 앱을 화면을 나누어 띄우는게 가능해지면서 Scene이란 개념이 추가되었고 이에 따라 기존에 UIAppDelegate에서 관리하던 몇몇 기능이 SceneDelegate으로 넘어간 것이므로 이번 글에서는 패스하도록 하겠습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;initializing-the-app&quot;&gt;Initializing the App&lt;/h2&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;willFinishLaunchingWithOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;LaunchOptionsKey&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;didFinishLaunchingWithOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;LaunchOptionsKey&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;LaunchOptionsKey&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;didFinishLaunchingNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSNotification&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Name&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;willFinishLaunch 와 didFinishLaunch는 앱이 구동하기 직전, 직후에 호출되는 메서드입니다.&lt;/p&gt;
+
+&lt;p&gt;이때 어떤 방법으로 앱이 켜졌는지를 LaunchOptionsKey 인자로 받아오므로 확인이 가능합니다.&lt;/p&gt;
+
+&lt;p&gt;LaunchOptionsKey에는 블루투스를 통한 이벤트, url을 통한 접속 등 다양한 값들이 존재합니다.&lt;/p&gt;
+
+&lt;p&gt;또한 notification으로도 앱이 켜졌음을 확인받을 수 있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;configuring-and-discarding-scenes&quot;&gt;Configuring and Discarding Scenes&lt;/h2&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;configurationForConnecting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UISceneSession&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIScene&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;ConnectionOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UISceneConfiguration&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;didDiscardSceneSessions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UISceneSession&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;iOS 13 이후 Scene이 추가되면서 Scene의 생성, 삭제와 관련한 일을 appDelegate에서 맡게 되었습니다.&lt;/p&gt;
+
+&lt;p&gt;자세한 내용은 SceneDelegate을 다룰 때 추가하도록 하겠습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;responding-to-app-life-cycle-events&quot;&gt;Responding to App Life-Cycle Events&lt;/h2&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;applicationDidBecomeActive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;applicationWillResignActive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;applicationDidEnterBackground&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;applicationWillEnterForeground&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;applicationWillTerminate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;didBecomeActiveNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSNotification&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Name&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;didEnterBackgroundNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSNotification&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Name&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;willEnterForegroundNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSNotification&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Name&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;willResignActiveNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSNotification&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Name&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;willTerminateNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSNotification&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Name&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;앱의 state가 변환될때 호출되는 메서드, notification들이다. 상당히 직관적인 이름들이라 특별한 설명은 필요하지 않을 것 같습니다.&lt;/p&gt;
+
+&lt;p&gt;SceneDelegate으로 기능이 넘어간 메서드로는&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;willEnterForeground&lt;/li&gt;
+  &lt;li&gt;didEnterBackGround&lt;/li&gt;
+  &lt;li&gt;willResignActive&lt;/li&gt;
+  &lt;li&gt;didBecomeActive&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;가 있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;responding-to-environment-changes&quot;&gt;Responding to Environment Changes&lt;/h2&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;applicationProtectedDataDidBecomeAvailable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;applicationProtectedDataWillBecomeUnavailable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;applicationDidReceiveMemoryWarning&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;applicationSignificantTimeChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;protectedDataDidBecomeAvailableNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSNotification&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Name&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;protectedDataWillBecomeUnavailableNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSNotification&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Name&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;didReceiveMemoryWarningNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSNotification&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Name&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;significantTimeChangeNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSNotification&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Name&lt;/span&gt;
+
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이 파트에서는 앱의 여러 환경 변화에 따라 호출되는 메서드들이 존재합니다.&lt;/p&gt;
+
+&lt;p&gt;protected data (아마 앱 내의 데이터베이스 등이 아닌가 싶습니다.)에 접근할 수 있게 되었을때,&lt;/p&gt;
+
+&lt;p&gt;앱 메모리 관련 warning이 발생했을 때에 notification이나 메서드를 통해 조작해줄 수 있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;downloading-data-in-background&quot;&gt;Downloading Data in Background&lt;/h2&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;handleEventsForBackgroundURLSession&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIBackgroundFetchResult&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;백그라운드를 통해 데이터를 받아오는 작업도 appDelegate에서 진행합니다.&lt;/p&gt;
+
+&lt;p&gt;이때 handleEvent… 파라미터는 identifier로 사용되면 URLSessionConfiguration의 init시에 사용할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;백그라운드 작업과 관련된 내용은 &lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622941-application&quot;&gt;위 메서드의 공식문서&lt;/a&gt;에 상세히 설명되어 있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;handling-remote-notification-registration&quot;&gt;Handling Remote Notification Registration&lt;/h2&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;didRegisterForRemoteNotificationsWithDeviceToken&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;didFailToRegisterForRemoteNotificationsWithError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;didReceiveRemoteNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;AnyHashable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;fetchCompletionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIBackgroundFetchResult&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;서버에서 보내는 푸시(remote notification)에 대한 응답도 appDelegate에서 처리합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;providing-a-window-for-storyboarding&quot;&gt;Providing a Window for Storyboarding&lt;/h2&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIWindow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;sceneDelegate을 사용하지 않는다면 앱의 윈도우 인스턴스도 appDelegate에서 만들어주어야 합니다.&lt;/p&gt;
+
+&lt;p&gt;일반적으로는 didFinishwithLaunchOption 메서드에서 window의 초기화, window.rootViewController의 지정을 해줍니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;providing-the-main-entry-point&quot;&gt;Providing the Main Entry Point&lt;/h2&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;절대 건드릴 일은 없겠지만 main 메서드도 appDelegate에 존재합니다.&lt;/p&gt;
+
+&lt;p&gt;정말 앱이 시작되면 가장 먼저 호출되는 함수입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;마무리&quot;&gt;마무리&lt;/h2&gt;
+
+&lt;p&gt;appDelegate는 글에 정리한 것 이외에도 헬스킷, user activity 등 여러 다양한 기능을 담당하고 있었습니다.&lt;/p&gt;
+
+&lt;p&gt;이번 공부로 app life cycle의 변화에 따른 대처, 백그라운드 작업, push notification, remote notification 등 여러 처리를 appDelegate에서 한다는 것을 알 수 있었습니다.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 16 Aug 2022 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/ios/WhatIsAppDelegate/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/ios/WhatIsAppDelegate/</guid>
+        
+        <category>AppDelegate</category>
+        
+        <category>SceneDelegate</category>
+        
+        
+        <category>iOS</category>
+        
+      </item>
+    
+      <item>
+        <title>차기 개인앱 구상 및 해야할 일 정리</title>
+        <description>&lt;h2 id=&quot;살까말까지난-개인앱를-통해-얻은-교훈&quot;&gt;살까말까(지난 개인앱)를 통해 얻은 교훈&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;제공할 컨텐츠를 손쉽게 api로 제공받을 수 있는지를 확인하자
+    &lt;ul&gt;
+      &lt;li&gt;지난번 개인앱에서는 “상품의 랭킹정보”를 바탕으로 “해당 상품의 리뷰”를 제공하는것이 목적이었다.
+이 과정에서 리뷰를 찾아주는 것은 검색 api를 통해 비교적 간단히 해결할 수 있었는데 (유튜브 api 할당량 관련 이슈 제외)
+상품의 랭킹정보를 얻어오는 과정이 생각보다 매우 복잡함을 알게 되었다. 그 어디서도 api로 제공해주지 않았으며
+기업들이 자신들의 제품 판매량을 공개하는것도 아니었기에 랭킹정보 사이트 크롤링이라는 무식한 방법으로 앱의 컨텐츠를 받아오게 되었다.&lt;/li&gt;
+      &lt;li&gt;다음 앱에서는 절대로 이런 일로 인한 시간낭비를 하지 않는 것이 목표&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;디자인을 어느정도는 정해놓고 시작하자
+    &lt;ul&gt;
+      &lt;li&gt;핀터레스트를 열심히 뒤지면서 이쁜 디자인의 앱을 만드는것도 물론 즐겁고 의미있는 일이겠지만
+지난 앱에서는 이게 주객전도되어 너무 오랜 시간을 디자인을 뜯어고치는데 할애했다.
+최대한 이런 일을 줄여보자&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;공수 산정표를 작성하고 이에 맞게 움직이자
+    &lt;ul&gt;
+      &lt;li&gt;지금 내가 제일 못하고 있는게 시간과 관련된 것들이 아닐까 싶다.
+일과 휴식시간의 경계가 없고 코드를 짤때도 내가 만족할때까지 고치면서 짠다.
+지금까지는 막연하게 난 어차피 코드 빨리 짜니까 시간은 어떻게든 되겠지 하는 마음을 가지고 있었는데
+이번 앱을 통해 공수 산정표를 작성해서 내가 어떤 부분을 못하고 어떤 부분을 잘하는지를 파악하는 것이 목표이다.
+뷰가 생각보다 복잡해서 시간이 더 걸렸는지, 미숙한 라이브러리 사용으로 인해 시간이 더 걸렸는지 등을 파악함으로써
+나중에 회사에 가서도 같은 시행착오를 겪지 않는 것을 목표로..&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;해야할-일-정리&quot;&gt;해야할 일 정리&lt;/h2&gt;
+
+&lt;p&gt;해야하는 일들을 무작위로 나열해보자면 이정도가 될 것 같다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;졸업 프로젝트 &amp;amp; 개인앱 제작&lt;/li&gt;
+  &lt;li&gt;코테 준비
+    &lt;ul&gt;
+      &lt;li&gt;백준을 많이 풀었으니 이만하면 충분하지 않을까 싶은 상태&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ios 면접 대비 공부
+    &lt;ul&gt;
+      &lt;li&gt;이전에 제르시님 깃허브에 있는 내용들을 공부했었는데, 이번엔 좀 더 자세하게 공부하는걸 목표로 글을 정리&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;공부하다 모르거나 헷갈리는 각종 지식 정리&lt;/li&gt;
+  &lt;li&gt;전공 주요과목 복습
+    &lt;ul&gt;
+      &lt;li&gt;운영체제, 컴퓨터 네트워크, 알고리즘&amp;amp;자료구조 정도를 복습할 수 있을 것 같다.&lt;/li&gt;
+      &lt;li&gt;운영체제는 글로 정리를 장기간 프로젝트로 잡고 일주일에 한편을 목표로 작성해보는게 좋을 것 같다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;이력서 &amp;amp; 포트폴리오 작성
+    &lt;ul&gt;
+      &lt;li&gt;제일 어떻게 해야될지 잘 모르겠는 영역.. 일단 구색을 갖춰서 작성한 다음 다른 사람에게 피드백을 들어보자.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;차기-개인앱-아이디어-및-기타-등등&quot;&gt;차기 개인앱 아이디어 및 기타 등등&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;들어가야 할 요소&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;네트워크 통신&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;MVVM과 RxSwift&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Wed, 03 Aug 2022 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/%EC%9D%BC%EC%83%81/nextAppAndFutureStuff/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/%EC%9D%BC%EC%83%81/nextAppAndFutureStuff/</guid>
+        
+        
+        <category>일상</category>
+        
+      </item>
+    
+      <item>
+        <title>Swift weak, strong, unowned 정리</title>
+        <description>&lt;p&gt;제가 Swift에서 weak이란 단어를 처음 본 것은 스토리보드에서 UI를 코드로 끌어왔을때였습니다.&lt;/p&gt;
+
+&lt;p&gt;자동으로 weak var 선언이 되는 것을 보며 그 이유가 궁금했었는데 이번글에서는 weak을 사용하는 이유, ARC 등에 대해 다루고자 합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;arc란&quot;&gt;ARC란&lt;/h2&gt;
+
+&lt;p&gt;인스턴스의 수명주기가 끝나는 시점(Reference Count가 0이 되는 시점)에 Swift는 해당 인스턴스를 nil로 바꿔주는 코드를 실행하며(deallocate 작업) 이것을 Automatic Reference Counting이라 칭합니다.&lt;/p&gt;
+
+&lt;p&gt;ARC를 공부하기 앞서 반드시 알아두어야 하는 것은 인스턴스의 “수명”입니다.&lt;/p&gt;
+
+&lt;p&gt;코딩을 처음 공부할때&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;전역변수, 지역변수를 이야기하며 지역변수는 해당 블록 내에서만 살아있고, 전역변수는 프로그램이 동작하는 동안 살아있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;와 같은 문장을 보신적이 있으실겁니다. Swift도 마찬가지로 인스턴스는 특정 블록 내에서 살아있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;하지만 특정 블록이 끝났다고해서 무조건 해당 인스턴스(A)를 deallocate해버리면 문제가 발생합니다.&lt;/p&gt;
+
+&lt;p&gt;다른 곳에서 A를 사용하고 있었다면 A가 갑자기 nil로 변경되었을때 이에 대처할 수 없기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Swift는 이런 경우를 방지하고자 “Reference Count”라는 장치를 두었습니다.&lt;/p&gt;
+
+&lt;p&gt;만약 A를 B가 사용하고 있다면 Reference Count를 사용하는 사람(인스턴스)의 숫자만큼 증가시켜주는 것입니다.&lt;/p&gt;
+
+&lt;p&gt;A가 존재하던 블록이 끝나서 Reference Count가 하나 줄어들더라도 B가 사용함으로 인해 증가된 Reference Count 덕분에&lt;/p&gt;
+
+&lt;p&gt;A의 Reference Count는 0이 되지 않고 따라서 nil로 바뀌지도 않습니다 (Reference Count가 0이되면 ARC에 의해 nil로 바뀝니다.)&lt;/p&gt;
+
+&lt;p&gt;과거 objective-c 시절에는 프로그래머가 직접 deallocate 작업을 해주어야하는 수고가 있었지만 Swift는 ARC 덕에 그런 수고를 덜었습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;여기서 하나 궁금해지는건 그럼 A는 언제 Reference Count가 0이 되어 메모리에서 없어질까? 인데&lt;/p&gt;
+
+&lt;p&gt;이는 B의 수명이 다하는 시점에 Reference Count가 0이 될 것이며 이때 A도 메모리에서 사라지게 될 것입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;사실 이 단락에서 적은 것이 ARC와 weak을 사용하는 이유의 전부입니다.&lt;/p&gt;
+
+&lt;p&gt;weak을 잘못 사용했을때 자꾸 인스턴스에 nil이 들어있다든가,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220728173103.png&quot; alt=&quot;image-20220728173103913&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;다음과 같은 오류를 마주하게 된다면 인스턴스의 수명에 대해 다시 생각해볼 필요가 있습니다.&lt;/p&gt;
+
+&lt;p&gt;아래서 다시 한번 설명하도록 하겠습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;reference-count&quot;&gt;Reference Count&lt;/h2&gt;
+
+&lt;p&gt;Reference, 즉 참조를 할 때 참조 당하는 쪽의 RC가 늘어납니다.&lt;/p&gt;
+
+&lt;p&gt;이때 강한참조(Strong)의 경우에만 RC가 늘어나게 됩니다.&lt;/p&gt;
+
+&lt;p&gt;만약 a라는 변수에 A라는 클래스의 인스턴스를 담는 아래와 같은 코드가 있다고 하면&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;a의 RC는 1 증가한 상태입니다.&lt;/p&gt;
+
+&lt;p&gt;여기서 아래처럼 a1이라는 변수가 a의 주소값을 가져간다면&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;a1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;a의 RC는 2가 된 상태인거죠.&lt;/p&gt;
+
+&lt;p&gt;이처럼 아무런 키워드를 적지 않고 참조를 하게 되면 Strong 참조를 사용한 것입니다.&lt;/p&gt;
+
+&lt;p&gt;a는 자신의 수명이 다하더라도 RC가 0이 아니니 계속 메모리에 살아있게 되는 것이죠&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;단순히 a1이 생존해있는동안 a가 조금 더 살아있는 경우에는 큰 문제가 되지 않습니다.&lt;/p&gt;
+
+&lt;p&gt;하지만 아래와 같은 경우라면 조금 이야기가 달라집니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;apartment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Apartment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;deinit&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; is being deinitialized&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Apartment&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;unit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;unit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unit&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;tenant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;deinit&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Apartment &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unit&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; is being deinitialized&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;john&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;unit4A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Apartment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;john&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;John Appleseed&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;unit4A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Apartment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;unit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;4A&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Person 객체는 Apartment의 인스턴스를 프로퍼티로 가지고&lt;/p&gt;
+
+&lt;p&gt;Apartment 객체는 Person의 인스턴스를 프로퍼티로 가집니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://docs.swift.org/swift-book/_images/referenceCycle02_2x.png&quot; alt=&quot;../_images/referenceCycle02_2x.png&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이때 Person의 객체와 Apartment 객체가 각각 apartment, tennant라는 프로퍼티에 서로의 인스턴스를 저장해서 사용하다&lt;/p&gt;
+
+&lt;p&gt;수명이 다해서 메모리에서 사라져야 하는 시점이 왔어도 메모리에서 사라질 수 없습니다.&lt;/p&gt;
+
+&lt;p&gt;왜냐하면 Person의 인스턴스(john)는 Apartment 인스턴스(unit4A)가 가지고 있는 tennant라는 프로퍼티로 인해 RC가 1 올라가있는 상태이고&lt;/p&gt;
+
+&lt;p&gt;Apartment의 인스턴스(unit4A)는 Person의 인스턴스(john)이 가지고 있는 apartment라는 프로퍼티로 인해 RC가 1 올라가있는 상태이기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;따라서 ARC는 이들을 자동으로 nil로 전환해주지 않습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;여기서 그럼 john과 unit4A를 직접 nil로 할당해주면 안되느냐와 같은 질문을 할 수 있겠지만&lt;/p&gt;
+
+&lt;p&gt;현재 strong reference cycle이 생긴 상태이기 때문에 이 방법으로도 메모리에서 내릴수는 없습니다.&lt;/p&gt;
+
+&lt;p&gt;john.apartment와 unit4A.tennant에 각각 nil을 할당해준다면 메모리에서 내릴 수 있겠지만요.&lt;/p&gt;
+
+&lt;h2 id=&quot;weak&quot;&gt;Weak&lt;/h2&gt;
+
+&lt;p&gt;우리는 이러한 상황을 방지하기 위해 weak이란 키워드를 사용합니다&lt;/p&gt;
+
+&lt;p&gt;weak은  RC를 증가시키지 않습니다. 따라서 현재 해당 인스턴스가 메모리에 올라와있는지 아닌지 알 수 없으니&lt;/p&gt;
+
+&lt;p&gt;optional값을 풀어봤을때 nil값이 들어있다면 현재 메모리에서 내려갔거나 아직 해당 weak 변수에 아무것도 들어오지 않은 경우,&lt;/p&gt;
+
+&lt;p&gt;값이 있다면 현재 메모리에 올라와있는 경우로 판단할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;사실 이게 strong, weak의 전부입니다.&lt;/p&gt;
+
+&lt;p&gt;하지만 제대로된 이해없이 “결국 결론은 weak을 쓰면 메모리 누수를 막을 수 있다는거군” 라고 생각한다면&lt;/p&gt;
+
+&lt;p&gt;필연적으로 아래의 오류를 만나게 될 것입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220728173103.png&quot; alt=&quot;image-20220728173103913&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;weak&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위의 예시에서 b라는 weak var에 B의 인스턴스를 넣어주었습니다.&lt;/p&gt;
+
+&lt;p&gt;겉으로 보면 이게 왜 문제지 싶겠지만 weak var는 RC가 증가하지 않는다는 점을 눈여겨봐야 합니다.&lt;/p&gt;
+
+&lt;p&gt;이해를 돕기 위해 아래의 사진을 첨부합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220728175542.png&quot; alt=&quot;../_images/weakReference02_2x.png&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위의 그림을 보면 john은 weak 변수, unit4A는 strong 참조를 사용하고 있는것을 알 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;Person의 인스턴스는 RC가 증가하지 않았고 Apartment의 인스턴스는 RC가 증가했겠네요&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;다시 A, B 클래스의 예시로 돌아와서 이야기하자면&lt;/p&gt;
+
+&lt;p&gt;weak var b는 RC를 증가시켜주지 않는 weak reference이므로&lt;/p&gt;
+
+&lt;p&gt;B()라는 B의 인스턴스를 할당해주더라도 RC가 0이므로 ARC에 의해 자동으로 nil로 바뀌는 것입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;그렇다면 weak var에는 어떤 인스턴스를 넣어야하는 걸까요?&lt;/p&gt;
+
+&lt;p&gt;정답은 “이미 RC가 증가되어있는 인스턴스”입니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;weak&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위의 예시처럼 코드를 작성하면 아까 만났던 warning은 피할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;temp라는 상수에 B()라는 인스턴스를 집어넣어서 temp의 RC가 이미 1이기 때문에&lt;/p&gt;
+
+&lt;p&gt;b에다 집어넣어도 문제가 없는 것이죠&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;물론! 여기서 temp는 init이 끝나는 시점에 수명이 다해서 RC가 내려갈 것이며&lt;/p&gt;
+
+&lt;p&gt;b는 다시 nil값이 저장될 것임을 알 수 있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;unowned&quot;&gt;Unowned&lt;/h2&gt;
+
+&lt;p&gt;Unowned를 자주 사용할 일은 없겠지만 개념에 대해 정리해보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;Unowned는 RC를 증가시키지 않지만, 값이 반드시 존재하는 것을 보장합니다. (즉, optional이 아닙니다.)&lt;/p&gt;
+
+&lt;p&gt;Unowned는 어떤 인스턴스의 수명이 자신보다 길거나 같은 경우에 사용합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Customer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;card&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CreditCard&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;deinit&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; is being deinitialized&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CreditCard&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UInt64&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;unowned&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Customer&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UInt64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;deinit&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Card #&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; is being deinitialized&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;john&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Customer&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;john&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;John Appleseed&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;john&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;card&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CreditCard&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1234_5678_9012_3456&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;john&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;CreditCard는 Customer가 살아있는 동안에만 존재가치가 있습니다.&lt;/p&gt;
+
+&lt;p&gt;따라서 이를 unowned로 선언하여 strong reference cycle을 방지합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://docs.swift.org/swift-book/_images/unownedReference01_2x.png&quot; alt=&quot;../_images/unownedReference01_2x.png&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위의 그림과 같은 상태에서  john이 nil이 되었을때&lt;/p&gt;
+
+&lt;p&gt;weak의 예시에서와 같이 strong reference이 생기지 않고 메모리에서 내려갑니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이번 글에서는 조금 헷갈렸던 strong, weak, unowned에 대해 정리해봤습니다.&lt;/p&gt;
+
+&lt;p&gt;스토리보드에서 끌어온 UI가 weak var로 선언되던 것은 스토리보드가 만든 인스턴스를 뷰컨트롤러의 변수가 가리킴으로써 뷰컨트롤러가 사라져도&lt;/p&gt;
+
+&lt;p&gt;해당 인스턴스가 죽지 않는 메모리 누수가 발생할 수 있기 때문에 자동으로 weak var로 선언되던 것이었습니다.&lt;/p&gt;
+
+&lt;p&gt;이와 더불어 escaping closure도 수명주기와 연관지어 내부 구조를 생각해보면 escaping 명시의 여부가 왜 필요한지에 대해서도 알 수 있었습니다.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 28 Jul 2022 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/swift/SwiftARCWeakStrongUnowned/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/swift/SwiftARCWeakStrongUnowned/</guid>
+        
+        <category>ARC</category>
+        
+        <category>weak</category>
+        
+        <category>strong</category>
+        
+        <category>unowned</category>
+        
+        
+        <category>Swift</category>
+        
+      </item>
+    
+      <item>
+        <title>Swift 딕셔너리 값이 존재하는지 확인하는 법</title>
+        <description>&lt;h2 id=&quot;dictionary에-특정-key값이-존재하는지-확인하는-법&quot;&gt;Dictionary에 특정 Key값이 존재하는지 확인하는 법&lt;/h2&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myDictionary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;key&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;메서드가 하나쯤 있을법 한데, 특별히 메서드를 지원하지는 않는다.&lt;/p&gt;
+
+&lt;p&gt;그냥 키값을 넣었을때 nil이 나오면 값이 없다고 판단할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;가끔씩 이상하게 생각이 안나서 글 하나 업로드..&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 26 Jul 2022 00:00:00 +0900</pubDate>
+        <link>https://neph3779.github.io/swift/SwiftDictionaryKeyCheck/</link>
+        <guid isPermaLink="true">https://neph3779.github.io/swift/SwiftDictionaryKeyCheck/</guid>
+        
+        <category>Dictionary</category>
+        
+        
+        <category>Swift</category>
+        
+      </item>
     
       <item>
         <title>Swift initializer 총정리</title>
@@ -538,721 +1358,6 @@
         
         
         <category>iOS</category>
-        
-      </item>
-    
-      <item>
-        <title>Swift로 날짜 다루기 [DateComponent 편]</title>
-        <description>&lt;p&gt;Swift로 날짜 다루기의 마지막편인 DateComponent편입니다.&lt;/p&gt;
-
-&lt;p&gt;DateComponent는 date의 요소들을 확장할 수 있도록 캡슐화 된 객체입니다.&lt;/p&gt;
-
-&lt;p&gt;특정 시간, 어떤 시간 크기 (ex. 5시간 16분) 등을 나타낼 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;DateComponent는 DateComponent가 가지고 있는 모든 field를 채우기를 요구하지는 않습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;init&quot;&gt;Init&lt;/h2&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;calendar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;timeZone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;TimeZone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;era&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
-     &lt;span class=&quot;nv&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;month&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;day&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
-     &lt;span class=&quot;nv&quot;&gt;minute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nanosecond&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;weekday&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
-     &lt;span class=&quot;nv&quot;&gt;weekdayOrdinal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;quarter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;weekOfMonth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
-     &lt;span class=&quot;nv&quot;&gt;weekOfYear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;yearForWeekOfYear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Date Component의 Init은 여러가지 요소들을 optional type으로 받습니다.&lt;/p&gt;
-
-&lt;p&gt;인자로 전달하지 않은 값은 nil로 세팅됩니다.&lt;/p&gt;
-
-&lt;p&gt;위의 인자로 전달하는 프로퍼티 값 중 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;calendar&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;timeZone&lt;/code&gt;값은 직접 접근할수도 있습니다.&lt;/p&gt;
-
-&lt;p&gt;인스턴스 생성시 주의할 점은 calendar 값을 전달하지 않으면&lt;/p&gt;
-
-&lt;p&gt;DateComponent의 인스턴스가 가지고 있는 date라는 프로퍼티에 nil값이 들어있게 됩니다.&lt;/p&gt;
-
-&lt;p&gt;반드시 calendar 파라미터를 전달하도록 합시다.&lt;/p&gt;
-
-&lt;h2 id=&quot;validate&quot;&gt;Validate&lt;/h2&gt;
-
-&lt;p&gt;DateComponent를 통해 날짜가 유효한지(이게 날짜가 맞는지) 등도 확인할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;isValidDate&lt;/code&gt;라는 연산 프로퍼티를 통해서 Boolean 값을 받을수도 있고&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;isValidDate(in: Calendar)&lt;/code&gt;라는 메서드를 통해 전달받을수도 있습니다&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;date&lt;/code&gt;라는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Date?&lt;/code&gt; type의 프로퍼티도 존재하여 optional값을 unwrap하여 유효성을 확인할수도 있습니다.&lt;/p&gt;
-
-&lt;p&gt;참고로 Calendar 객체에서도 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;date(from: DateComponents) -&amp;gt; Date?&lt;/code&gt; 라는 메서드를 지원합니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;날짜-세부요소&quot;&gt;날짜 세부요소&lt;/h2&gt;
-
-&lt;p&gt;DateComponent는 그 이름에 걸맞게 여러가지 날짜 세부요소를 제공합니다&lt;/p&gt;
-
-&lt;p&gt;제공하는 목록은 다음과 같습니다&lt;/p&gt;
-
-&lt;h3 id=&quot;months-and-years&quot;&gt;Months and Years&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;era&lt;/li&gt;
-  &lt;li&gt;year&lt;/li&gt;
-  &lt;li&gt;yearForWeekOfYear&lt;/li&gt;
-  &lt;li&gt;quarter&lt;/li&gt;
-  &lt;li&gt;month&lt;/li&gt;
-  &lt;li&gt;isLeapMonth&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;accessing-weeks-and-days&quot;&gt;Accessing Weeks and Days&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;weekOfMonth&lt;/li&gt;
-  &lt;li&gt;weekOfYear&lt;/li&gt;
-  &lt;li&gt;weekday&lt;/li&gt;
-  &lt;li&gt;weekdayOrdinal&lt;/li&gt;
-  &lt;li&gt;day&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;accessing-hours-and-seconds&quot;&gt;Accessing Hours and Seconds&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;hour&lt;/li&gt;
-  &lt;li&gt;minute&lt;/li&gt;
-  &lt;li&gt;second&lt;/li&gt;
-  &lt;li&gt;nanosecond&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;위의 모든 값들은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Int?&lt;/code&gt; type입니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;calendar-component&quot;&gt;Calendar Component&lt;/h2&gt;
-
-&lt;p&gt;DateComponent 내의 값은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Calendar.Component&lt;/code&gt; 의 값과 같은 정보를 담은 값이 많습니다.&lt;/p&gt;
-
-&lt;p&gt;enum type인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Calendar.Component&lt;/code&gt;를 인자로 받아 DateComponent 내의 알맞은 값을 세팅하는 메서드도 지원합니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;datecomponent-값의-비교&quot;&gt;DateComponent 값의 비교&lt;/h2&gt;
-
-&lt;p&gt;Calendar와 마찬가지로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;==&lt;/code&gt; 연산과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!=&lt;/code&gt; 연산을 지원합니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;최종-정리&quot;&gt;최종 정리&lt;/h2&gt;
-
-&lt;p&gt;이번 공부로 Swift로 날짜를 다루는 여러가지 방법이 존재함을 알게되었습니다.&lt;/p&gt;
-
-&lt;p&gt;DateComponent는 말 그대로 Date와 관련된 여러 값들을 가지고 있는 객체,&lt;/p&gt;
-
-&lt;p&gt;Date는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TimeInterval&lt;/code&gt; 이란 단위로 수치화된 요소들을 담고 있으며,&lt;/p&gt;
-
-&lt;p&gt;formatting시에 사용하기 좋은 여러 메서드, enum을 가지고 있는 객체,&lt;/p&gt;
-
-&lt;p&gt;마지막으로 Calendar는 날짜의 비교 및 여러 Symbols들을 적절히 활용하기에 좋은 객체라는 사실까지 알게되었습니다.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 07 Jul 2022 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/swift/UseDateComponentWithSwift/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/swift/UseDateComponentWithSwift/</guid>
-        
-        <category>날짜 다루기</category>
-        
-        <category>Date</category>
-        
-        <category>DateComponent</category>
-        
-        
-        <category>Swift</category>
-        
-      </item>
-    
-      <item>
-        <title>Swift로 날짜 다루기 [Calendar 편]</title>
-        <description>&lt;p&gt;이번에는 Date와 밀접한 Calendar 객체에 대해 살펴보겠습니다.&lt;/p&gt;
-
-&lt;h1 id=&quot;calendar&quot;&gt;Calendar&lt;/h1&gt;
-
-&lt;p&gt;Calendar는 calendar 유닛과 특정 시점간의 관계를 정의합니다.&lt;/p&gt;
-
-&lt;p&gt;date의 계산과 비교를 위한 여러 기능을 제공합니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;init&quot;&gt;Init&lt;/h2&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;calendar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;identifier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;japanese&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Calendar는 identifier를 통해 어느 시간대의 Calendar를 사용하고자 하는지를 파악합니다.&lt;/p&gt;
-
-&lt;p&gt;우리나라의 경우 동경시를 사용하고 있습니다.&lt;/p&gt;
-
-&lt;p&gt;identifier는 Calendar.Idenifier를 통해 enum type으로 관리되고 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;userAutoUpdateCalendar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;autoupdatingCurrent&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;currentCalendar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;current&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;객체를 생성자를 통해 만들지 않아도 type variable을 통해 사용자의 달력을 가져올수도 있습니다.&lt;/p&gt;
-
-&lt;p&gt;preferred 달력을 계속해서 추적하는 autoupdatingCurrent라는 타입 변수와 현 시점의 달력을 가져오는 current 변수가 존재합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;calendar-information&quot;&gt;Calendar Information&lt;/h2&gt;
-
-&lt;p&gt;Calendar 객체에는 여러 변수와 메서드들이 있고 이들에 접근할 수 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;identifier&lt;/p&gt;
-
-    &lt;p&gt;캘린더를 구분하는 identifier입니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;locale&lt;/p&gt;
-
-    &lt;p&gt;지역명을 나타내는 locale 변수입니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;timeZone&lt;/p&gt;
-
-    &lt;p&gt;시간대를 나타내는 timeZone 변수가 담겨있습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;startOfDay(for: Date) -&amp;gt; Date&lt;/p&gt;
-
-    &lt;p&gt;주어진 Date의 가장 처음 시점(0시 0분 0초)를 반환합니다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;date-값의-비교&quot;&gt;Date 값의 비교&lt;/h2&gt;
-
-&lt;p&gt;Calendar 객체는 Date 객체에 비해 보다 편리한 날짜 비교 연산을 제공합니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;toGranularity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;이 메서드를 통해 Calendar.Component 단위까지 시간이 같은지를 확인할 수 있습니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;사용예시&quot;&gt;사용예시&lt;/h4&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;currnet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
-                        &lt;span class=&quot;nv&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                        &lt;span class=&quot;nv&quot;&gt;toGranularity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;minute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;inSameDayAs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isDateInToday&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isDateInTomorrow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isDateInYesterday&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isDateInWeekend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위의 메서드들을 통해 날짜가 이번주에 속하는지, 어제에 속하는지, 같은 날에 속하는지 등을&lt;/p&gt;
-
-&lt;p&gt;손쉽게 알아낼 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;calendar-값의-비교&quot;&gt;Calendar 값의 비교&lt;/h2&gt;
-
-&lt;p&gt;Date가 부등호를 통해 비교할 수 있던것과는 조금 다르게&lt;/p&gt;
-
-&lt;p&gt;Calendar는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;==&lt;/code&gt; 연산과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!=&lt;/code&gt; 연산만을 지원합니다&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;symbols&quot;&gt;Symbols&lt;/h2&gt;
-
-&lt;p&gt;Calendar는 여러가지 Symbol들을 제공합니다.&lt;/p&gt;
-
-&lt;p&gt;이 Symbol들은 Calendar 객체의 locale 값에 따라 서로 다른 값을 가지고 있습니다.&lt;/p&gt;
-
-&lt;p&gt;예를들어 weekdaySymbols는 다음과 같은 값들을 담은 배열입니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;[“일요일”, “월요일”, “화요일”, “수요일”, “목요일”, “금요일”, “토요일”]&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Symbol은 다음과 같이 분류됩니다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Weekday&lt;/li&gt;
-  &lt;li&gt;Month&lt;/li&gt;
-  &lt;li&gt;Quarter&lt;/li&gt;
-  &lt;li&gt;Era&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;각각의 분류 밑에는 표현을 간소화한 정도에 따른 하위분류가 존재합니다. (long, shortened 등등)&lt;/p&gt;
-
-&lt;p&gt;이렇듯 요일, 달, 분기 등을 담은 배열이나 enum을 만들지 않고도 Calendar에서 제공하는 symbol들을 통해 해결할 수 있습니다.&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 06 Jul 2022 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/swift/UseCalendarWithSwift/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/swift/UseCalendarWithSwift/</guid>
-        
-        <category>날짜 다루기</category>
-        
-        <category>Date</category>
-        
-        <category>Calendar</category>
-        
-        
-        <category>Swift</category>
-        
-      </item>
-    
-      <item>
-        <title>살까말까(개인앱) 문제점분석 및 개선방안 탐구</title>
-        <description>&lt;h2 id=&quot;컨텐츠가-핵심이-되는-앱의-한계&quot;&gt;컨텐츠가 핵심이 되는 앱의 한계&lt;/h2&gt;
-
-&lt;p&gt;살까말까는 전자기기의 “랭킹정보”를 제공하고 해당 제품의 리뷰들을 한 화면에 모아서 보여주는 것이 핵심 기능인 앱이다.&lt;/p&gt;
-
-&lt;p&gt;하지만 랭킹정보는 어디서도 제공해주지 않으며 현재는 다나와 사이트 크롤링을 통해서  랭킹정보를 얻고 있다 (매우 비효율적)&lt;/p&gt;
-
-&lt;p&gt;이러한 상황에서 살까말까 앱을 최대한 살리는 방안을 생각해보기로 했다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;개선방안&quot;&gt;개선방안&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;1-랭킹정보를-제공하는-것이-아닌-단순히-여러-전자기기의-정보-제공하기&quot;&gt;1. 랭킹정보를 제공하는 것이 아닌 단순히 여러 전자기기의 정보 제공하기&lt;/h4&gt;
-
-&lt;p&gt;여러 전자기기의 리스트는 어디서 얻을 것인가가 또 다시 반복되는 문제점이다.&lt;/p&gt;
-
-&lt;p&gt;개인앱의 제작 목적에는 일부분은 개인앱을 다른 사람들이 많이 이용해주었으면 하는 바람이 있지만&lt;/p&gt;
-
-&lt;p&gt;가장 주요한 목표는 나의 역량 증명이다. 코드를 모두 읽을리는 없기에 “이러한 앱을 제작하였다!”를 보여주어야 하는건데&lt;/p&gt;
-
-&lt;p&gt;데이터를 활용하는 능력은 iOS개발자에게 어울리지 않는다. (내가 아무리 노력해서 얻어도 얄팍한 지식이므로)&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;2-현재-상태에서-유지하되-유저가-원하는-기능들-추가하기&quot;&gt;2. 현재 상태에서 유지하되, 유저가 원하는 기능들 추가하기&lt;/h4&gt;
-
-&lt;p&gt;현실적으로 제일 합당한 타협이 아닌가 싶다.&lt;/p&gt;
-
-&lt;p&gt;다나와 크롤링을 통해 랭킹정보 받아오는 것은 유지한채로&lt;/p&gt;
-
-&lt;p&gt;앱의 “유저 편의 기능”을 추가하는 것&lt;/p&gt;
-
-&lt;p&gt;생각해볼법한 기능에는&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;검색어 입력시 자동완성 기능
-미리 유명 전자제품 리스트를 DB에 담아두어 해당 데이터들만 자동완성에 뜨도록 하든가
-네이버 검색 API등을 활용 (아마 전자의 방법밖에 사용하지 못할 확률이 높다)&lt;/li&gt;
-  &lt;li&gt;상품 즐겨찾기 기능
-개인 관리 화면의 추가 정도는 충분히 가능할 것 같다.&lt;/li&gt;
-  &lt;li&gt;중복 상품 제거 
-현재는 iPhone 13 128GB, 256GB 이러한 용량, 램 차이등만 다른 항목들이 중복되어 나오고 있는데 이러한 부분을 조금 해결해보면 좋을 것 같다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;결론&quot;&gt;결론&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;데이터를 다루려하는 것은 절대 무리&lt;/li&gt;
-  &lt;li&gt;유저 편의 기능을 추가하여 최소한의 앱 유지보수를 진행하자&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Tue, 05 Jul 2022 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/%EC%82%B4%EA%B9%8C%EB%A7%90%EA%B9%8C/buyOrNotProblem/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/%EC%82%B4%EA%B9%8C%EB%A7%90%EA%B9%8C/buyOrNotProblem/</guid>
-        
-        <category>살까말까</category>
-        
-        <category>개인앱</category>
-        
-        
-        <category>살까말까</category>
-        
-      </item>
-    
-      <item>
-        <title>Swift로 날짜 다루기 [Date 편]</title>
-        <description>&lt;p&gt;오늘은 Swift로 날짜를 다루는 방법들을 정리해보았습니다.&lt;/p&gt;
-
-&lt;p&gt;Date, Calendar, DateComponent를 정리할 예정이며&lt;/p&gt;
-
-&lt;p&gt;본 글은 Date 객체를 소개하는 글입니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;init&quot;&gt;Init&lt;/h2&gt;
-
-&lt;h3 id=&quot;기본-init&quot;&gt;기본 Init&lt;/h3&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;basicInit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Date 인스턴스를 기본 initializer로 생성하면 현재 시간으로 세팅됩니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;timeintervalsincenow&quot;&gt;timeIntervalSinceNow&lt;/h3&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;timeInterValSinceNowInit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;timeIntervalSinceNow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3600&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;현재로부터의 시간간격을 인자로 주어 그만큼 떨어진 시간을 나타내는 인스턴스가 생성됩니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;type-method-variable&quot;&gt;Type Method, Variable&lt;/h2&gt;
-
-&lt;h3 id=&quot;현재-시각-반환&quot;&gt;현재 시각 반환&lt;/h3&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;단순한 현재 시각을 반환하는 방법입니다.&lt;/p&gt;
-
-&lt;p&gt;Date()와 같은 결과물입니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;지정되지-않은-미래과거의-값-반환&quot;&gt;지정되지 않은 미래/과거의 값 반환&lt;/h3&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;iDontKnowWhenButAnywayItsFutureThanNow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantFuture&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;iDontKnowWhenButAnywayItsPastThanNow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantPast&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;단순히 현재보다 과거/미래만을 표현하고 싶을때 사용하면 유용한 타입 변수들입니다.&lt;/p&gt;
-
-&lt;p&gt;지정되지 않은(알 수 없는) 시점의 값이지만 현재보다 과거/미래라는 사실을 보장합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;date의-논리연산&quot;&gt;Date의 논리연산&lt;/h2&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;itsTrue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantPast&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;itsFalse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantFuture&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Date를 가지고 논리연산이 가능합니다.&lt;/p&gt;
-
-&lt;p&gt;Date값이 더 크다는 것은 더 미래라는 의미입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;distance-interval&quot;&gt;Distance, Interval&lt;/h2&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;timeIntervalCanBeNegative&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantPast&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;someIntervalFromNow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;timeIntervalSince&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantPast&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;someIntervalSinceNow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distantFuture&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timeIntervalSinceNow&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;특정시간으로부터 떨어진 시간 간격을 알려줍니다.&lt;/p&gt;
-
-&lt;p&gt;값은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TimeInterval&lt;/code&gt; type으로 나옵니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;date-값-연산&quot;&gt;Date 값 연산&lt;/h2&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;currentDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Date는 class가 아닌 struct이기에 var로 선언해야 수정가능&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;currentDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;addTimeInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;currentDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;tomorrow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;advanced&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;60*60*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rangeOfDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tomorrow&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;연산기호를 통한 연산, 연산 전용 메서드 두 방법 모두로 연산이 가능합니다.&lt;/p&gt;
-
-&lt;p&gt;date의 범위를 변수에 담을 수도 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;date-formatting&quot;&gt;Date Formatting&lt;/h2&gt;
-
-&lt;h3 id=&quot;default-format&quot;&gt;Default Format&lt;/h3&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;formatted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;별다른 설정을 하지 않고 formatted() 메서드를 호출하면&lt;/p&gt;
-
-&lt;p&gt;date style은 numeric, time style은 shortened로 설정되어 출력됩니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;format-style-지정&quot;&gt;Format Style 지정&lt;/h3&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;formatted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;long&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;standard&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위와 같이 직접 date style과 time style을 지정할 수 있습니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;date-style의-종류&quot;&gt;date style의 종류&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;abbreviated&lt;/li&gt;
-  &lt;li&gt;complete&lt;/li&gt;
-  &lt;li&gt;long&lt;/li&gt;
-  &lt;li&gt;numeric&lt;/li&gt;
-  &lt;li&gt;omitted&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;time-style의-종류&quot;&gt;time style의 종류&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;complete&lt;/li&gt;
-  &lt;li&gt;omitted&lt;/li&gt;
-  &lt;li&gt;shortened&lt;/li&gt;
-  &lt;li&gt;standard&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;relative-format-style&quot;&gt;Relative Format Style&lt;/h3&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;yesterday&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;advanced&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;60*60*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;formatStyle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;RelativeFormatStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// FormatStyle이란 프로토콜 채택중&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;formatStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;presentation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;named&lt;/span&gt;
-&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yesterday&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;formatted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formatStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 어제&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;formatStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;presentation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numeric&lt;/span&gt;
-&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yesterday&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;formatted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formatStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 1일 전&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;1주 전, 1일 전, 어제 등의 관계성 formatting style도 지정할 수 있습니다&lt;/p&gt;
-
-&lt;h3 id=&quot;format-style-custom&quot;&gt;Format Style Custom&lt;/h3&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;formatted&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;FormatOutput&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;FormatStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;FormatInput&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;formatted 메서드는 위와 같이 생겼습니다.&lt;/p&gt;
-
-&lt;p&gt;F가 FormatStyle 프로토콜을 채택하고 FormatInput이라는 associatedType이라면&lt;/p&gt;
-
-&lt;p&gt;formatted에 직접 만든 custom format을 적용할 수 있습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;왜-date-관련-변수에-1970이란-숫자가-자주-등장하나요&quot;&gt;왜 Date 관련 변수에 1970이란 숫자가 자주 등장하나요?&lt;/h2&gt;
-
-&lt;p&gt;Unix의 standard time이 1970/1/1 입니다.&lt;/p&gt;
-
-&lt;p&gt;Unix -&amp;gt; C -&amp;gt; Swift로 넘어오면서 이것이 이어져온 듯 하네요&lt;/p&gt;
-</description>
-        <pubDate>Tue, 05 Jul 2022 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/swift/UseDateWithSwift/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/swift/UseDateWithSwift/</guid>
-        
-        <category>날짜 다루기</category>
-        
-        <category>Date</category>
-        
-        
-        <category>Swift</category>
-        
-      </item>
-    
-      <item>
-        <title>Swift two-stack queue 구현</title>
-        <description>&lt;p&gt;오늘은 Swift에서 Queue를 구현하는 방법 중&lt;/p&gt;
-
-&lt;p&gt;stack을 2개 활용하는 two-stack queue에 대해 알아봅시다.&lt;/p&gt;
-
-&lt;p&gt;Swift의 배열(리스트)는 연결리스트로 구현되어 있습니다.&lt;/p&gt;
-
-&lt;p&gt;Stack의 경우에는 append()와 removeLast()만을 활용하기 때문에 O(1)이 보장되지만&lt;/p&gt;
-
-&lt;p&gt;Queue에서 원소를 pop할때 사용하는 removeFirst()의 시간복잡도는 O(N)입니다.&lt;/p&gt;
-
-&lt;p&gt;우리가 Queue에서 기대하는 pop의 시간복잡도는 O(1)이므로 해결방안이 필요합니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;two-stack-queue&quot;&gt;Two-stack Queue&lt;/h2&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cm&quot;&gt;/*
- two-stack queue
- */&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;enqueue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dequeue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;isEmpty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enqueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isEmpty&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dequeue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isEmpty&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;mutating&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;enqueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;mutating&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dequeue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isEmpty&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;enqueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isEmpty&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;dequeue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;enqueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;removeLast&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// dequeue = enqueue.reversed(); enqueue.removeAll()과 같은 작업&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dequeue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;removeLast&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;two-stack queue는 다음과 같이 구성됩니다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;원소를 push할때 이를 담을 enqueue&lt;/li&gt;
-  &lt;li&gt;pop할때 원소를 꺼내올 dequeue&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;원소를 push할때는 단순히 enqueue의 마지막에 원소를 붙여줍니다. (일반적인 append)&lt;/p&gt;
-
-&lt;p&gt;pop할때가 핵심인데 제일 첫 pop연산 시도시에는 dequeue가 비어있으며&lt;/p&gt;
-
-&lt;p&gt;enqueue의 첫번째 원소를 pop연산의 결과물로 내보내야 합니다.&lt;/p&gt;
-
-&lt;p&gt;이를 위해 dequeue에 enqueue의 원소를 역순으로 채워줍니다.&lt;/p&gt;
-
-&lt;p&gt;이때 enqueue에 담겨있는 원소의 양(M)만큼의 연산이 일어나게 됩니다. (O(M))&lt;/p&gt;
-
-&lt;p&gt;하지만 이후에 다시 pop을 시도하게 된다면 dequeue의 마지막 원소를 pop해서 내보내면 되므로 O(1)의 시간복잡도로 문제를 해결할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;dequeue가 비어있을때 이를 채우는 연산의 시간복잡도는 여전히 O(M)이지만 이전에 연결리스트의 removeFirst()만을 활용하여&lt;/p&gt;
-
-&lt;p&gt;pop때마다 매번 O(M)의 시간이 들던 것과 비교하면 훨씬 시간이 단축된 것을 볼 수 있습니다.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 03 Jul 2022 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/swift/twoStackQueue/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/swift/twoStackQueue/</guid>
-        
-        <category>알고리즘</category>
-        
-        <category>queue</category>
-        
-        <category>two-stack queue</category>
-        
-        
-        <category>Swift</category>
-        
-      </item>
-    
-      <item>
-        <title>Swift split과 components 차이</title>
-        <description>&lt;p&gt;오늘은 문자열을 분할할때 사용하는 split과 components의 차이에 대해 알아보았습니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;요약&quot;&gt;요약&lt;/h4&gt;
-
-&lt;p&gt;여러개의 원소들을 가지고 분할하고 싶을때는  components&lt;/p&gt;
-
-&lt;p&gt;하나의 원소만을 기준으로 분할하고 싶을때는 split&lt;/p&gt;
-
-&lt;h2 id=&quot;split&quot;&gt;split&lt;/h2&gt;
-
-&lt;p&gt;split의 계층은 다음과 같습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220629205907.png&quot; alt=&quot;image-20220629205907781&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;components와 다르게 Swift 자체에 포함되어있기에 Foundation을 import 해주지 않아도 사용할 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;String의 인스턴스 메서드입니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220629210129.png&quot; alt=&quot;image-20220629210129356&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;split은 3개의 parameter를 받는 메서드입니다.&lt;/p&gt;
-
-&lt;p&gt;seperator 파라미터에는 어떤 원소를 기준으로 분할할 것인지, 그 원소를 적어줍니다.&lt;/p&gt;
-
-&lt;p&gt;maxSplits를 통해 분할로 나오는 원소의 개수를 제한할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;omittingEmptySubsequences를 통해 만약 빈 항목이 있다면 그것을 결과 배열에 넣어줄지 말지의 여부를 결정할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;가령 예를 들자면 “hello swift “라는 마지막에 “ “이 존재하는 문장을 “ “를 통해 분할한다고 하면&lt;/p&gt;
-
-&lt;p&gt;“hello”, “swift”, ““라는 세개의 원소로 분할할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;이때 마지막 원소 ““를 결과 배열에 포함시킬지의 여부를 결정합니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;components&quot;&gt;components&lt;/h2&gt;
-
-&lt;p&gt;components의 계층은 다음과 같습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220629211009.png&quot; alt=&quot;image-20220629211009163&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;components는 Foundation 프레임워크에 포함된 NSString의 인스턴스 메서드입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220629211055.png&quot; alt=&quot;image-20220629211055796&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;split과 다르게 separator라는 하나의 파라미터만을 받습니다.&lt;/p&gt;
-
-&lt;p&gt;이때 여러개의 원소를 배열에 담아 넣어줄 수 있는데&lt;/p&gt;
-
-&lt;p&gt;가령 “10-30/29*39+1” 과 같은 식에서 연산기호를 제외한 채 숫자만을 담은 배열을 원한다면&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;str.components(seperateBy: [&quot;+&quot;, &quot;-&quot;, &quot;*&quot;, &quot;/&quot;])&lt;/code&gt; 와 같이 작성해주면 됩니다.&lt;/p&gt;
-
-&lt;p&gt;[10, -, 30, /, 29 …]와 같이 숫자와 기호를 동시에 담은 배열을 원한다면 따로 작업을 해주어야 합니다.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 29 Jun 2022 00:00:00 +0900</pubDate>
-        <link>https://neph3779.github.io/swift/componentsVSsplit/</link>
-        <guid isPermaLink="true">https://neph3779.github.io/swift/componentsVSsplit/</guid>
-        
-        <category>split</category>
-        
-        <category>components</category>
-        
-        
-        <category>Swift</category>
         
       </item>
     

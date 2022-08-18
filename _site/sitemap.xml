@@ -2,6 +2,102 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
+      <loc>https://neph3779.github.io/ios/prepareForeground/</loc>
+      
+        <lastmod>2022-08-18T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>daily</changefreq>
+      
+
+      
+        <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>https://neph3779.github.io/ios/AppLifeCycle/</loc>
+      
+        <lastmod>2022-08-17T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>daily</changefreq>
+      
+
+      
+        <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>https://neph3779.github.io/ios/WhatIsAppDelegate/</loc>
+      
+        <lastmod>2022-08-16T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>daily</changefreq>
+      
+
+      
+        <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>https://neph3779.github.io/%EC%9D%BC%EC%83%81/nextAppAndFutureStuff/</loc>
+      
+        <lastmod>2022-08-03T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>daily</changefreq>
+      
+
+      
+        <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>https://neph3779.github.io/swift/SwiftARCWeakStrongUnowned/</loc>
+      
+        <lastmod>2022-07-28T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>daily</changefreq>
+      
+
+      
+        <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>https://neph3779.github.io/swift/SwiftDictionaryKeyCheck/</loc>
+      
+        <lastmod>2022-07-26T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>daily</changefreq>
+      
+
+      
+        <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
       <loc>https://neph3779.github.io/swift/SwiftInits/</loc>
       
         <lastmod>2022-07-18T00:00:00+09:00</lastmod>
@@ -293,6 +389,22 @@
       <loc>https://neph3779.github.io/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/1-%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%87%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3-%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB-%E1%84%80%E1%85%A2%E1%84%82%E1%85%A7%E1%86%B7/</loc>
       
         <lastmod>2021-10-07T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>daily</changefreq>
+      
+
+      
+        <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>https://neph3779.github.io/%EC%9D%BC%EC%83%81/YagomCampReview/</loc>
+      
+        <lastmod>2021-08-22T00:00:00+09:00</lastmod>
       
 
       
@@ -1173,22 +1285,6 @@
       <loc>https://neph3779.github.io/til/2021.03.31-TIL/</loc>
       
         <lastmod>2021-03-31T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-        <priority>1.0</priority>
-      
-
-    </url>
-  
-    <url>
-      <loc>https://neph3779.github.io/swift/Swift-Unit-Test,-TDD/</loc>
-      
-        <lastmod>2021-03-30T00:00:00+09:00</lastmod>
       
 
       

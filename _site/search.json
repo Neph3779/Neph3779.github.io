@@ -1,6 +1,54 @@
 [
   
     {
+      "title"    : "[번역, 작성중] Preparing Your UI to Run in the Foreground",
+      "subtitle" : "",
+      "tags"     : "foreground, app life cycle",
+      "url"      : "/ios/prepareForeground/",
+      "date"     : "2022-08-18 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "[번역] Managing Your App&#39;s Life Cycle",
+      "subtitle" : "",
+      "tags"     : "life cycle, foreground, background, inactive, unattached",
+      "url"      : "/ios/AppLifeCycle/",
+      "date"     : "2022-08-17 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "AppDelegate란?",
+      "subtitle" : "",
+      "tags"     : "AppDelegate, SceneDelegate",
+      "url"      : "/ios/WhatIsAppDelegate/",
+      "date"     : "2022-08-16 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "차기 개인앱 구상 및 해야할 일 정리",
+      "subtitle" : "",
+      "tags"     : "",
+      "url"      : "/%EC%9D%BC%EC%83%81/nextAppAndFutureStuff/",
+      "date"     : "2022-08-03 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Swift weak, strong, unowned 정리",
+      "subtitle" : "",
+      "tags"     : "ARC, weak, strong, unowned",
+      "url"      : "/swift/SwiftARCWeakStrongUnowned/",
+      "date"     : "2022-07-28 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Swift 딕셔너리 값이 존재하는지 확인하는 법",
+      "subtitle" : "",
+      "tags"     : "Dictionary",
+      "url"      : "/swift/SwiftDictionaryKeyCheck/",
+      "date"     : "2022-07-26 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "Swift initializer 총정리",
       "subtitle" : "",
       "tags"     : "init, required init, convinience init, override init",
@@ -150,6 +198,14 @@
       "tags"     : "데이터베이스",
       "url"      : "/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/1-%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%87%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3-%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB-%E1%84%80%E1%85%A2%E1%84%82%E1%85%A7%E1%86%B7/",
       "date"     : "2021-10-07 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "야곰 스타터 캠프 후기 (2기)",
+      "subtitle" : "",
+      "tags"     : "Yagom, StarterCamp, 부트캠프 후기, 부트캠프",
+      "url"      : "/%EC%9D%BC%EC%83%81/YagomCampReview/",
+      "date"     : "2021-08-22 00:00:00 +0900"
     } ,
   
     {
@@ -590,14 +646,6 @@
       "tags"     : "TIL",
       "url"      : "/til/2021.03.31-TIL/",
       "date"     : "2021-03-31 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "[작성중] Swift Unit Test &amp; TDD",
-      "subtitle" : "",
-      "tags"     : "TDD, Unit Test",
-      "url"      : "/swift/Swift-Unit-Test,-TDD/",
-      "date"     : "2021-03-30 00:00:00 +0900"
     } ,
   
     {
