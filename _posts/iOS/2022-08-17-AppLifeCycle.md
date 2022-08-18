@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[번역] Managing Your App's Life Cycle"
-categories: []
+categories: [iOS]
 tags: 
   - life cycle
   - foreground
@@ -12,6 +12,12 @@ sitemap:
   changefreq: daily
   priority: 1.0
 ---
+
+이번 글에서는 [Managing Your App's Life Cycle | Apple Developer Documentation](https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle) 를 번역해보았습니다.
+
+사실상 글의 정독이 목적이고 중요도가 떨어진다 생각되는 부분은 번역하지 않았으니 정확한 내용은 공식문서를 참조해주세요
+
+
 
 앱이 foreground나 background에 있을때 이를 알리고 시스템 관련 이벤트들을 컨트롤 합니다.
 
