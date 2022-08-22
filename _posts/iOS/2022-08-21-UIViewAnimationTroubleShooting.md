@@ -33,3 +33,5 @@ animate 메서드를 통해 이미지를 기존의 위치(A)로부터 새로운 
 - remove constraint랑 deactivate 차이점 알아보기
 - 스토리보드에서 정상적으로 실행 안되던 이유 알아보기 (가능한 선 까지만)
 - frame bound transform 차이점과 사용처 알아보기
+- animation 오토레이아웃으로 실행하는법 알아보기
+- 코드로 constraint 쉽게 지우거나 deactivate 시키는 방법 알아보기
