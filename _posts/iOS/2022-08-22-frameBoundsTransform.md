@@ -18,7 +18,7 @@ sitemap:
 - 좌표의 원점은 좌상단 꼭지점
 - superview의 bounds의 (0, 0)부터 떨어진 위치가 origin
 - view가 rotate되었다면 rotate된 뷰를 감싸는 minimum한 직사각형이 해당 view의 frame이 됨
-  <img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220822194215.jpeg" alt="post-thumbnail" style="zoom:50%;" />
+  <img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220822194215.jpeg" alt="post-thumbnail"  />
   즉, View B의 frame은 원점이 (140, 65)이고 width height가 (320, 320)이다.
 - center의 경우 frame의 중앙지점이다.
 
