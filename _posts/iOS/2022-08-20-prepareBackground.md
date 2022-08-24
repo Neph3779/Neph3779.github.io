@@ -77,3 +77,15 @@ sitemap:
 - 하지만 time-sensitive한 일을 할 경우 UIKit은 추가적인 실행시간을 허용해주기도 함
 - background 기능을 제공하는 앱의 경우 Xcode상에서 background mode capability를 활성화 시켜줘야 함
 - 백그라운드 작업에 관한 것은 [Background Tasks](https://developer.apple.com/documentation/backgroundtasks) 문서를 참조
+
+
+
+## 마무리
+
+백그라운드 작업이 어떤거고 어떻게 진행되는지에 대해 알 수 있었습니다.
+
+제 개인앱 "살까말까"에 구현한 백그라운드 fetching 코드도 왜 동작하지 않는지 알게되었습니다.
+
+번역글은 말투나 자질구레한 표현들에 대한 매끄러운 번역을 생각하느라 시간이 많이 걸렸는데
+
+요약은 그런 걱정도 없고 평소에 공부하던 스타일이라 편한 것 같아 앞으로는 요약글을 작성하는걸로..
