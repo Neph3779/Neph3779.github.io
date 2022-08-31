@@ -19,7 +19,6 @@ sitemap:
 - 애니메이션이 진행될 시간값인 duration
 - completion block은 애니메이션이 끝난 뒤에 실행될 요소
 - 이동, 크기 조절, 회전, fading 등 거의 모든 애니메이션 작업을 진행할 수 있음
-- 애니메이션 옵션으로는 `curveEaseInOut`과 `transitionNone` 을 사용함
 - usingSpringWithDamping은 말그대로 view가 스프링처럼 탄력을 가지고 움직이게 해주는 옵션
   - 이 값을 크게 해줄수록 스프링 효과가 적음 (0~1)
 
@@ -46,7 +45,7 @@ sitemap:
 
 animate, transition 옵션들과 실제 동작을 보고싶다면
 
-[Swift UIView lovely animation and transition | by Myrick Chow | ITNEXT](https://itnext.io/swift-uiview-lovely-animation-and-transition-d34bd623391f)
+[Swift UIView lovely animation and transition](https://itnext.io/swift-uiview-lovely-animation-and-transition-d34bd623391f)
 
 이곳으로..
 
