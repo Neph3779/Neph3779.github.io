@@ -10,6 +10,12 @@ sitemap:
   priority: 1.0
 ---
 
+이번 공부의 목표는 Rx 사용시에 컴파일 에러가 떴을때
+
+단순히 예제코드를 구글링으로 찾아서 해결하는게 아닌 왜 컴파일이 안되는지에 대해 이해하는 것이 목적인 공부입니다.
+
+
+
 ## 리액티브 프로그래밍의 발단
 
 다른 스레드에서 진행된 작업의 내용을 return 값으로 받고싶어! (다른 스레드에 보낸 작업은 언제 끝나는지 모름, 이미 메인 스레드는 비동기적으로 다른 작업을 실행중)
@@ -68,86 +74,50 @@ someFuncWhoUseAnswer(completion: { answer in
 
 
 
-이번에는 비동기적으로 어떤 클로저를 받아와서 이를 비동기적으로 실행하는 코드를 살펴보겠습니다.
+### 실행할 클로저를 나중에 전달하기
+
+위의 예제에서는 "해야할 일" 자체는 정해져있던 상황에서 
+
+그 일을 비동기적으로 처리해서 결과값을 나에게 가져다 줘! 였다면
+
+이번에는 "해야할 일" 조차도 정해져있지 않은 상황에서
+
+"해야할 일"은 나중에 알려줄테니 그 "해야할 일"이 들어오면 이 인자를 넣어서 처리해줘~
+
+인 상황입니다.
 
 ```swift
 class MyObservable<T> {
     private var task: ((@escaping (T) -> Void) -> Void)?
 
-    init(task: @escaping (_ closureForDetermineT: @escaping (T) -> Void) -> Void) {
+    init(task: @escaping (_ execute: @escaping (T) -> Void) -> Void) {
         self.task = task
     }
 
-    func subscribe(_ closureToExecute: @escaping (T) -> Void) {
+    func subscribe(execute: @escaping (T) -> Void) {
         guard let task = task else { return }
         DispatchQueue.global(qos: .background).async {
-            task(closureToExecute)
+            task(execute)
         }
     }
 }
 
-MyObservable(task: { parameterClosureForTask in // closureForDetermineT는 task의 T를 확정짓기 위해 사용됨
-    parameterClosureForTask("parameter type for closure to execute; String")
-    // 위의 문장 자체가 closureForDetermineT라는 클로저
-    // parameterClosureForTask라는 클로저에 String을 인자로 받음으로써
-    // Generic type인 T를 확정지어주는 역할을 함
+MyObservable(task: { execute in
+	execute("exel file")
 })
-.subscribe({str in print(str)})
-```
-
-
-
-코드가 조금 복잡합니다. 차근차근 뜯어봅십다.
-
-우선 핵심이 되는 subscribe 메서드를 보면 closureToExecute라는 클로저를 받아와서 이를 비동기적으로 실행합니다.
-
-> 그럼 그냥 받아온 closureToExecute를 바로 실행하면 안되나요?
-
-아쉽게도 그건 불가능합니다. 
-
-closureToExecute의 인자는 제네릭 타입인 T인데 closureToExecute를 DispatchQueue 블록에서 실행하려면 이 T에 구체적인 타입이 있는 인자값을 넣어줘야 합니다. 
-
-이러한 상황을 해결하기 위해 task라는 "T라는 인자를 받는 클로저"를 인자로 받는 클로저가 존재합니다.
-
-task의 경우에는 "T라는 인자를 받는 클로저"를 인자로 넣어주면 되므로 closureToExecute를 넣어주면 실행이 가능합니다.
-
-~~꽤나 tricky 하네요~~
-
-
-
-아래의 코드는 위의 코드를 더 추상화해본 버전입니다. 
-
-init 시점에 "T type의 값을 인자로 받는 클로저"를 인자로 전달하던 것에서
-
-T type의 값만 전달할 수 있도록 바꾸어 보았습니다.
-
-```swift
-class MyObservable<T> {
-    private var task: ((@escaping (T) -> Void) -> Void)?
-
-    init(initialValue: T) {
-        self.task = { closure in
-            closure(initialValue)
-        }
-    }
-
-    init(task: @escaping (_ closureForDetermineT: @escaping (T) -> Void) -> Void) {
-        self.task = task
-    }
-
-    func subscribe(_ closureToExecute: @escaping (T) -> Void) {
-        guard let task = task else { return }
-        DispatchQueue.global(qos: .background).async {
-            task(closureToExecute)
-        }
-    }
-}
-
-let myObservable = MyObservable<String>(initialValue: "hello")
-myObservable.subscribe({ str in
-    print(str)
+.subscribe (execute: {str in 
+	print(str) 
 })
 ```
+
+**각 기능을 사원, 업무, 엑셀파일로 비유**
+
+- task: 이 객체의 직책 (사원)
+- execute: 이 객체의 업무 (엑셀 파일 정리)
+- T: 실제로 받게되는 엑셀 파일
+- MyObservable의 생성: 일단 엑셀파일을 먼저 주고 좀이따 subscribe를 통해 알려줄 "업무"를 이 엑셀 파일에 적용하면 된다는 사실을 알려줌
+  - "일단 엑셀파일을 먼저 준다"는 행위는 뒤에 설명할 operator들에서 더 자연스럽게 읽힘
+- subscribe: execute할 업무를 알려주면 이걸 다른 스레드에 가서 실행하고 오라고 지시 (위의 예제에서는 string을 받아서 print하는 것이 그 일)
 
 
 
@@ -166,13 +136,17 @@ myObservable.subscribe({ str in
 ```swift
 extension MyObservable {
     static func just(_ value: T) -> MyObservable<T> {
-        return MyObservable<T>(initialValue: T)
+        return MyObservable<T> { execute in
+            execute(value)
+        } // task
     }
 }
 
 MyObservable.just(24)
 		.subscribe { number in print(number) }
 ```
+
+execute라는 클로저를 받아서 거기에 value를 넣어서 실행해줘!
 
 
 
@@ -183,51 +157,21 @@ MyObservable.just(24)
 ```swift
 extension MyObservable {
     static func from(_ value: [T]) -> MyObservable<T> {
-        return MyObservable<T> { receiver in
+        return MyObservable<T> { execute in
             value.forEach { t in
-                receiver(t)
+                execute(t)
             }
-        }
+        } // task
     }
 }
 
-// 사용 예시
 MyObservable.from([42, 41, 40])
 		.subscribe { i in
 		    print(i)
 } 
-
-// 반환하는 MyObservable<T>의 task에 해당하는 블록
-{ receiver in
-		value.forEach { t in
-		receiver(t)
-	}
-}
-
-// MyObservable<T>의 task의 인자값(task에 넣어줄 파라미터 클로저)
-value.forEach { t in
-	receiver(t)
-}
-
-// subscribe시에 task의 인자((T)->Void)로 들어갈 블록 = receiver
-// 사용 예시에서 receiver에 해당하는 블록
-{ i in
-	print(i)
-}
 ```
 
-위의 코드에서 사용예시 이전에 결정된 것들
-
-- MyObservable\<T\>의 task 
-
-위의 코드에서 사용예시를 작성함으로써 결정되는 것들
-
-- MyObservable\<T\>의 task의 인자값 (task에 넣어줄 파라미터 클로저)
-  - receiver에 해당
-
-- T의 구체적 type
-
-Operator from은 receiver라는 클로저를 받아 value(배열)의 원소들을 하나씩 receiver 클로저의 인자로 전달해주면서 실행시켜주는 타입 메서드입니다.
+execute라는 클로저를 받아서 거기에 [T]의 원소들을 하나씩 넣어가며 실행해줘!
 
 
 
@@ -238,46 +182,30 @@ Operator from은 receiver라는 클로저를 받아 value(배열)의 원소들�
 ```swift
 extension MyObservable {
     func map<U>(_ mapper: @escaping (T) -> U) -> MyObservable<U> {
-        return MyObservable<U> { receiver in
+        return MyObservable<U> { execute in
             self.subscribe { t in
-                receiver(mapper(t))
+                execute(mapper(t))
             }
-        }
+        } // task
     }
 }
 
 // 사용예시
-MyObservable.from([42, 41, 40]) // MyObservable<T>의 task가 결정됨
-		.map { i in "\(i)" } // MyObservable<U>를 반환
-		.subscribe { i in // 반환된 MyObservable<U>를 사용하는 예시
-		    print(i)
-		}
-
-// 반환할 MyObservable<U>의 task에 해당하는 블록
-{ receiver in
-	self.subscribe { t in // 이때 self는 Observable<T> (이 타입메서드를 호출한 인스턴스)
-		receiver(mapper(t))
-	}
-}
-
-// Observable<T>의 subscribe 메서드의 인자로 들어갈 블록
-// 즉 Observable<T>의 task의 인자값으로 들어갈 블록
-{ t in
-	receiver(mapper(t))
-}
-
-// mapper에 해당하는 블록
-{ i in 
- "\(i)" 
-}
+MyObservable.from([42, 41, 40]) // 1
+		.map { i in "\(i)" } // 2
+		.subscribe { i in // 3
+		    print(i) // 4
+		} // 5
 ```
 
-위의 코드에서 사용예시 이전에 결정된 것들
+이번에는 직원이 두명입니다.
 
-- MyObservable\<U\>의 task
-- MyObservable\<T\>의 task의 인자값
+이해하기 쉽도록 MyObservable\<T\>는 T, MyObservable\<U\>는 U라 생각해봅시다.
 
-위의 코드에서 사용예시를 작성함으로써 결정된 것들
+T는 mapper라는 클로저를 받습니다.
 
-- MyObservable\<T\>의 task
-- MyObservable\<U>의 task의 인자값
+mapper라는 클로저는 t라는 인자를 받는 함수입니다.
+
+mapper의 결과값을 U의 execute에 넣어주고
+
+그것이 바로 T의 업무가 됩니다. (T의 execute)
