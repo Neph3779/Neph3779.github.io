@@ -20,8 +20,8 @@
     <meta property="og:description"
         content="「Neph의 iOS 공부일지」">
     
-    <meta property="og:image" content="https://neph3779.github.io/assets/logo.ico/apple-icon.png">
-    <meta property="og:url" content="https://neph3779.github.io/page7/">
+    <meta property="og:image" content="http://localhost:4000/assets/logo.ico/apple-icon.png">
+    <meta property="og:url" content="http://localhost:4000/page7/">
     <meta property="og:site_name" content="Neph's iOS blog">
 
     <title>Neph's iOS blog</title>
@@ -33,7 +33,7 @@
     <link rel="shortcut icon" href="/assets/favicon.ico">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://neph3779.github.io/page7/">
+    <link rel="canonical" href="http://localhost:4000/page7/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href=" /css/bootstrap.min.css">
@@ -107,6 +107,8 @@
                         <li>
                             <a href="/category/">Category</a>
                         </li>
+                        
+                        
                         
                         
                         
@@ -269,211 +271,140 @@
 </head>
 
 <div class="post-preview">
-    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/11-Deadlock/">
+    <a href="/HuggingVsResistance/">
         <h2 class="post-title">
-            [#11] Deadlock(데드락)
+            [Auto Layout] Hugging vs Resistance
         </h2>
         
         <div class="post-content-preview">
             
-            교착상태(deadlock)
+            Hugging vs Resistance
 
-
-
-어느 누구도 양보를 하지 않으면 더이상 진행되지 않는 상태를 deadlock(교착상태)라고 한다.
-
-Resource는 하드웨어 자원과 소프트웨어 자원을 모두 칭하는 개념으로 자신의 자원을 내놓지 않고 상대방의 자원을 서로 차지하려는 시도에 의해 deadlock 상태가 발생할 수 있다.
-
-프로세스가 자원을 사용하는 절차는...
+hugging은 말 그대로 안고있으려는 힘이다. 조금 덧붙이자면 더이상 늘어나지 않으려는 힘을 hugging이라고 한다. stackView의 distrbution 속성이 fill일 경우 내부의 요소들은 stackView 안에서 멋대로 늘어난다. 이 때 hugging priority가 높다면 늘어나지 않고 int...
             
         </div>
     </a>
     <p class="post-meta">
-        Posted by Neph's Blog on May
-        2, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.04.29-TIL/">
-        <h2 class="post-title">
-            2021년 04월 29일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  
-    Allen의 동시성 프로그래밍 특강을 들었습니다. 동기/비동기에 관해서 많은 것을 알 수 있었습니다.
-  
-  
-    위의 특강을 토대로 Step1의 수정이 이루어졌습니다. protocol에 집착하던 것을 버린 것과 Operation을 Subclassing하여 OperationQueue에 단순한 BlockOperat...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        29, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.04.27-TIL/">
-        <h2 class="post-title">
-            2021년 04월 27일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  
-    은행 창구 프로젝트
-
-    
-      
-        as를 통한 type casting과 initializer를 통한 타입 변환이 서로 다르단 것을 다시 한 번 인지했습니다.
-
-        1
-2
-3
-4
-guard let input = userInput,
-	let inputNumber = Int(input) e...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        27, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.04.26-TIL/">
-        <h2 class="post-title">
-            2021년 04월 26일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  
-    새로운 프로젝트 (은행 창구 매니저 프로젝트) 시작
-
-    
-      
-        팀 그라운드 룰 작성 및 진행방향에 대해 이야기했습니다.
-
-        
-          Jay가 알려준 github의 issue기능을 활용하여 커밋들을 관리하기로 했습니다.
-        
-      
-      
-     ...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        26, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/10-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5%E1%84%92%E1%85%AA-3/">
-        <h2 class="post-title">
-            [#10] 프로세스 동기화-3
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            Bounded - Buffer Problem(Producer - Consumer Problem)
-
-
-
-생산자가 데이터를 공유 버퍼에 넣을때, 소비자가 공유버퍼에서 데이터를 꺼내갈 때 버퍼가 비어있거나 꽉 찬 경우에 문제가 발생할 수 있다. 이 문제는 공유데이터에 Lock을 걸었다가 풀었다가 하는 방식으로 해결할 수 있다.
-
-이 방식을 이용하기 위해 m...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
-        25, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.04.22-TIL/">
-        <h2 class="post-title">
-            2021년 04월 22일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  UIViewController 관련 문서들 정독
-    
-      UIViewController
-      View Controller Programming Guide for iOS
-      Positioning Content Relative to the Safe Area
-    
-  
-  Delegate 관련 문서들 정독...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
+        Posted by Neph's Blog on June
         22, 2021
     </p>
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/9-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5%E1%84%92%E1%85%AA-2/">
+    <a href="/ios/DelegateVsNotification/">
         <h2 class="post-title">
-            [#9] 프로세스 동기화-2
+            Delegates와 Notification 방식의 차이
         </h2>
         
         <div class="post-content-preview">
             
-            Critical Section 관리 알고리즘의 발전
+            Delegate vs Notification
 
-Critical Section을 사용하기 위해 만족해야 하는 몇가지 조건들
+앱에서 발생한 이벤트가 현재 화면이 아닌 다른 화면까지 영향을 주어야할 때 Delegate과 Notification 중 선택해서 사용하는 것이 대부분이다. (외부 라이브러리의 도움은 받지 않는다고 가정)
 
-
-  Mutual Exclusion(상호 배제)
-    
-      프로세스 P_i가 critical section 부분을 수행중이면 다른 모든 프로세스들은 그들의 critical section에 들어가면 안된다.
-    ...
+Delegate와 Notification 방식은 결과는 같지만 그 과정이 조금 다르다. 오늘은 이 두...
             
         </div>
     </a>
     <p class="post-meta">
-        Posted by Neph's Blog on April
+        Posted by Neph's Blog on June
+        22, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.06.03-TIL/">
+        <h2 class="post-title">
+            2021년 06월 04일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            의존성 관리도구란 무엇일까?
+
+
+  애플리케이션 기능을 개발하기 위해 외부 라이브러리를 사용할 때 프로젝트와 해당 라이브러리의 상관관계를 용이하게 관리해주는 도구
+
+
+의존성 관리도구의 종류에는 뭐가 있을까?
+
+
+  코코아팟 (CocoaPods)
+  카르타고 (Carthage)
+  Swift Package Manager
+
+
+의존성 관리도구를 안쓰면 뭐가...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on June
+        3, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.06.01-TIL/">
+        <h2 class="post-title">
+            2021년 06월 01일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            table view cell에 내용 이쁘게 넣는 방법 (inset 설정하기)
+
+view에다 바로 addSubview, setConstraint 하지 말고
+
+cell.contentview에 addSubview하고 constraint 세우기
+
+이렇게 해야 accessory view랑 겹치지도 않고 inset 설정도 쉽다!
+
+:heavy_plus_sign:...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on June
+        1, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.05.1718-TIL/">
+        <h2 class="post-title">
+            2021년 05월 17일, 18일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            공부한 내용
+
+Collection View에 대해 공부
+
+
+  CollectionView의 Cell vs TableView의 Cell
+    
+      테이블뷰 셀의 구조는 콘텐츠 영역과 액세서리뷰 영역으로 나뉘었지만, 컬렉션뷰 셀은 배경뷰와 실제 콘텐츠를 나타내는 콘텐츠뷰로 나뉘어 있음
+      테이블뷰 셀은 목록형태로만 레이아웃 되지만, 컬렉션...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on May
         18, 2021
     </p>
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/2021.04.15-TIL/">
+    <a href="/2021.05.13-TIL/">
         <h2 class="post-title">
-            2021년 04월 15일 공부일지
+            2021년 05월 13일 공부일지
         </h2>
         
         <div class="post-content-preview">
@@ -481,61 +412,96 @@ Critical Section을 사용하기 위해 만족해야 하는 몇가지 조건들
             오늘 공부한 내용
 
 
-  os_log에 대해 간략히 알아봤습니다.
-  만국 박람회 프로젝트의 refactoring이 계속되었습니다.
+  
+    TalbeView Cell의 재활용에 대해 공부
 
-
-
+    
+      prepare for reuse
+      data prefetch
+      나중에 받아온 data 어떻게 원하는 위치에 꽂아줄까? (feat: closure capture)
+    
+  
+  
+    modern cell configuration...
             
         </div>
     </a>
     <p class="post-meta">
-        Posted by Neph's Blog on April
-        15, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/til/2021.04.13-TIL/">
-        <h2 class="post-title">
-            2021년 04월 13일 공부일지
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            오늘 공부한 내용
-
-
-  시청한 영상: WWDC20 Modern cell configuration
-
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
-        guard let c...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on April
+        Posted by Neph's Blog on May
         13, 2021
     </p>
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/til/2021.04.12-TIL/">
+    <a href="/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTPBasicWithSwift/">
         <h2 class="post-title">
-            2021년 04월 12일 공부일지
+            HTTP 기본 개념 정리 with swift
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            HTTP란?
+
+CSS, HTML, 이미지 등이 Server와 Client가 서로 주고받는 Content라면
+
+Content를 주고받기 위해 서로가 알아들을 수 있는 공통의 약속(Protocol)이 필요하다.
+
+이 약속이 바로 HTTP(Hyper Text Tranfer Protocol)이다.
+
+Request와 Response
+
+HTTP는 크게 Reque...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on May
+        12, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.05.11-TIL/">
+        <h2 class="post-title">
+            2021년 05월 10, 11일 공부일지
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            오늘 공부한 내용
+
+프로젝트: Open Market
+
+
+  
+    HTTP Response, Request에 대해 알아봄
+
+    
+      작성한 글 HTTP 기본 개념 정리 with swift
+    
+  
+  
+    JSONSerialization을 이용하는 방안 알아봄
+
+    
+      
+        JSONSerialization을...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on May
+        11, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/til/2021.05.10-TIL/">
+        <h2 class="post-title">
+            2021년 05월 10일 공부일지
         </h2>
         
         <div class="post-content-preview">
@@ -543,21 +509,47 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt
             오늘 공부한 내용
 
 
-  Table View에 대해 알아보았습니다.
+  
+    HTTP Method, HTTP Request Code, HTTP Request, Response Header, Body 구조 공부
+
     
-      Configure Table View Cell with code
+      HTTP강의 by 생활코딩
+      Multipart/form-data 구성 by swift 유튜브 강의
     
   
-  Navigation View를 코드로 작성하는 방법에 대해 알아보았습니다.
-
-
-
+  
+    git flow, git bra...
             
         </div>
     </a>
     <p class="post-meta">
-        Posted by Neph's Blog on April
-        12, 2021
+        Posted by Neph's Blog on May
+        10, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/12-Memory-Management/">
+        <h2 class="post-title">
+            [#12] 메모리 관리-1
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            Logical Address vs Physical Address
+
+
+
+Logical address는 프로세스마다 독립적으로 가지는 주소공간이다. 어떤 프로세스가 메모리상에서 어느 지점에 위치하는지와 무관하게 논리적으로 각 프로세스가 0번지부터 가지고 있는 주소값을 Logical address(virtual address)라고 부른다.
+
+반면 Physi...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on May
+        9, 2021
     </p>
 </div>
 <hr>
@@ -633,6 +625,8 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt
         
         
         
+        
+        
     </ul>
 </header>
     		</div>
@@ -656,109 +650,125 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt
             
         
             
-            <a data-sort="0076"
+            <a data-sort="0089"
                 href="/archive/?tag=TIL" title="TIL"
                 rel="38">TIL</a>
             
             
             
-            <a data-sort="0101"
+            <a data-sort="0114"
                 href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
                 rel="13">운영체제</a>
             
-            <a data-sort="0102"
+            <a data-sort="0115"
                 href="/archive/?tag=OS" title="OS"
                 rel="12">OS</a>
             
-            <a data-sort="0108"
+            <a data-sort="0121"
                 href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
                 rel="6">Yagom-Academy</a>
             
-            <a data-sort="0109"
+            <a data-sort="0122"
                 href="/archive/?tag=%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4" title="데이터베이스"
                 rel="5">데이터베이스</a>
             
-            <a data-sort="0109"
+            <a data-sort="0122"
                 href="/archive/?tag=iOS" title="iOS"
                 rel="5">iOS</a>
             
-            <a data-sort="0110"
+            <a data-sort="0123"
                 href="/archive/?tag=Swift" title="Swift"
                 rel="4">Swift</a>
             
-            <a data-sort="0111"
+            <a data-sort="0124"
                 href="/archive/?tag=%EB%82%A0%EC%A7%9C+%EB%8B%A4%EB%A3%A8%EA%B8%B0" title="날짜 다루기"
                 rel="3">날짜 다루기</a>
             
-            <a data-sort="0111"
+            <a data-sort="0124"
                 href="/archive/?tag=Alamofire" title="Alamofire"
                 rel="3">Alamofire</a>
             
-            <a data-sort="0111"
+            <a data-sort="0124"
                 href="/archive/?tag=Date" title="Date"
                 rel="3">Date</a>
             
-            <a data-sort="0111"
+            <a data-sort="0124"
                 href="/archive/?tag=app+life+cycle" title="app life cycle"
                 rel="3">app life cycle</a>
             
-            <a data-sort="0112"
+            <a data-sort="0125"
                 href="/archive/?tag=%EA%B0%9C%EC%9D%B8%EC%95%B1" title="개인앱"
                 rel="2">개인앱</a>
             
-            <a data-sort="0112"
+            <a data-sort="0125"
                 href="/archive/?tag=%EB%8B%B9%EA%B7%BC%EB%A7%88%EC%BC%93+%EC%9D%B8%ED%84%B4" title="당근마켓 인턴"
                 rel="2">당근마켓 인턴</a>
             
-            <a data-sort="0112"
+            <a data-sort="0125"
                 href="/archive/?tag=%EC%82%B4%EA%B9%8C%EB%A7%90%EA%B9%8C" title="살까말까"
                 rel="2">살까말까</a>
             
-            <a data-sort="0112"
+            <a data-sort="0125"
                 href="/archive/?tag=%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98" title="알고리즘"
                 rel="2">알고리즘</a>
             
-            <a data-sort="0112"
+            <a data-sort="0125"
                 href="/archive/?tag=%EC%B7%A8%EC%97%85%EC%A4%80%EB%B9%84" title="취업준비"
                 rel="2">취업준비</a>
             
-            <a data-sort="0112"
+            <a data-sort="0125"
                 href="/archive/?tag=ARC" title="ARC"
                 rel="2">ARC</a>
             
-            <a data-sort="0112"
+            <a data-sort="0125"
                 href="/archive/?tag=AppDelegate" title="AppDelegate"
                 rel="2">AppDelegate</a>
             
-            <a data-sort="0112"
+            <a data-sort="0125"
                 href="/archive/?tag=BFS" title="BFS"
                 rel="2">BFS</a>
             
-            <a data-sort="0112"
+            <a data-sort="0125"
                 href="/archive/?tag=Notification" title="Notification"
                 rel="2">Notification</a>
             
-            <a data-sort="0112"
+            <a data-sort="0125"
+                href="/archive/?tag=RxSwift" title="RxSwift"
+                rel="2">RxSwift</a>
+            
+            <a data-sort="0125"
                 href="/archive/?tag=Scroll+View" title="Scroll View"
                 rel="2">Scroll View</a>
             
-            <a data-sort="0112"
+            <a data-sort="0125"
                 href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
                 rel="2">Yagom Academy</a>
             
-            <a data-sort="0112"
+            <a data-sort="0125"
+                href="/archive/?tag=animation" title="animation"
+                rel="2">animation</a>
+            
+            <a data-sort="0125"
+                href="/archive/?tag=background" title="background"
+                rel="2">background</a>
+            
+            <a data-sort="0125"
+                href="/archive/?tag=collectionView" title="collectionView"
+                rel="2">collectionView</a>
+            
+            <a data-sort="0125"
                 href="/archive/?tag=enum" title="enum"
                 rel="2">enum</a>
             
-            <a data-sort="0112"
+            <a data-sort="0125"
                 href="/archive/?tag=foreground" title="foreground"
                 rel="2">foreground</a>
             
-            <a data-sort="0112"
+            <a data-sort="0125"
                 href="/archive/?tag=strong" title="strong"
                 rel="2">strong</a>
             
-            <a data-sort="0112"
+            <a data-sort="0125"
                 href="/archive/?tag=weak" title="weak"
                 rel="2">weak</a>
     </div>

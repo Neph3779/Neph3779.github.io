@@ -1,7 +1,111 @@
 [
   
     {
-      "title"    : "[번역, 작성중] Preparing Your UI to Run in the Foreground",
+      "title"    : "NS 접두사는 왜 붙이는걸까?",
+      "subtitle" : "",
+      "tags"     : "NS, NextStep",
+      "url"      : "/ios/whyUseNSPrefix/",
+      "date"     : "2022-09-09 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "UICollectionViewCompositionalLayout 정리 - 1",
+      "subtitle" : "",
+      "tags"     : "compositional layout, collectionView",
+      "url"      : "/ios/CompositionalLayout-1/",
+      "date"     : "2022-09-09 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "외부 라이브러리에 보낸 PR이 머지되었습니다.",
+      "subtitle" : "",
+      "tags"     : "",
+      "url"      : "/%EC%9D%BC%EC%83%81/2kLibraryContributer/",
+      "date"     : "2022-09-07 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "prepareForReuse는 왜 쓰는걸까?",
+      "subtitle" : "",
+      "tags"     : "cell, tableView, collectionView, prepareForReuse",
+      "url"      : "/ios/whyUsePrepareForReuse/",
+      "date"     : "2022-09-07 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "특정 corner에만 radius 주기",
+      "subtitle" : "",
+      "tags"     : "corner radius, corner radius only top",
+      "url"      : "/ios/cornerRadiusOnly/",
+      "date"     : "2022-09-07 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "RxSwift items 메서드의 이해",
+      "subtitle" : "",
+      "tags"     : "items",
+      "url"      : "/rxswift/rxItemsMethod/",
+      "date"     : "2022-09-07 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "UITabbar Bar Tint Color 변경 트러블슈팅",
+      "subtitle" : "",
+      "tags"     : "tabBar, barTintColor",
+      "url"      : "/ios/tabBarTintColorTroubleShooting/",
+      "date"     : "2022-09-05 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Dispose bag를 사용하는 이유는 뭘까?",
+      "subtitle" : "",
+      "tags"     : "dispose bag, RxSwift",
+      "url"      : "/rxswift/WhyUseDisposeBag/",
+      "date"     : "2022-09-05 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "[작성중] RxSwift 동작 방식 이해하기",
+      "subtitle" : "",
+      "tags"     : "RxSwift, Observable",
+      "url"      : "/rxswift/HowToMakeRxSwift/",
+      "date"     : "2022-09-01 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "UIView animation, animateKeyframes 정리",
+      "subtitle" : "",
+      "tags"     : "animation, keyframe",
+      "url"      : "/ios/UIViewAnimate/",
+      "date"     : "2022-08-25 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "frame, bounds, transform 정리 요약",
+      "subtitle" : "",
+      "tags"     : "frame, bounds, transform",
+      "url"      : "/ios/frameBoundsTransform/",
+      "date"     : "2022-08-22 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "UIView animation 트러블슈팅",
+      "subtitle" : "",
+      "tags"     : "animation, UIView",
+      "url"      : "/ios/UIViewAnimationTroubleShooting/",
+      "date"     : "2022-08-21 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "[요약] Preparing Your UI to Run in the Background",
+      "subtitle" : "",
+      "tags"     : "background",
+      "url"      : "/ios/prepareBackground/",
+      "date"     : "2022-08-20 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "[번역] Preparing Your UI to Run in the Foreground",
       "subtitle" : "",
       "tags"     : "foreground, app life cycle",
       "url"      : "/ios/prepareForeground/",
@@ -12,7 +116,7 @@
       "title"    : "[번역] Managing Your App&#39;s Life Cycle",
       "subtitle" : "",
       "tags"     : "life cycle, foreground, background, inactive, unattached",
-      "url"      : "/ios/AppLifeCycle/",
+      "url"      : "/ios/ManagingAppLifeCycle/",
       "date"     : "2022-08-17 00:00:00 +0900"
     } ,
   
