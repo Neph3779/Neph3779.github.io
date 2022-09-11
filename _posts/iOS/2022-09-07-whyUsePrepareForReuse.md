@@ -32,4 +32,14 @@ cellForRowAt에서는 반드시 모든 content를 cell 재활용을 위해 초�
 
 내용 변경은 cellForRowAt에서
 
-색상, 알파값 등 content 이외의 것들은 퍼포먼스 저하를 막기 위해 prepareForReuse에서
+~~색상, 알파값 등 content 이외의 것들은 퍼포먼스 저하를 막기 위해 prepareForReuse에서~~
+
+
+
+색상의 설정 작업을 prepareForReuse에서 진행하라는 의미가 아니었습니다.
+
+셀마다 정해진 규칙에 따라 알파값 변경, isSelected, isHidden 등의 toggle을 진행할 때
+
+퍼포먼스 저하를 막기 위해 prepareForReuse에서 모든 cell을 기본 값으로 초기화해라
+
+라는 뜻이었습니다. (공식문서에서도 색상과 관련된 얘기는 없는거보면 색상 A에서 B로 가는 경우에는 굳이 prepareForReuse에서 .none으로 초기화해줄 필요가 없는 것 같습니다.)
