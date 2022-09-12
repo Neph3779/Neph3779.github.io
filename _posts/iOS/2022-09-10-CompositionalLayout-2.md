@@ -37,6 +37,9 @@ extension PhotosDataSource: UICollectionViewDataSource {
 
 ### Compositional Layout의 header 구현
 
+- 기본적으로 SupplementaryView를 Datasource 메서드에 반환하는 것은 이전과 동일
+- 크기 조정, 사용의 경우 아래의 예제처럼 진행
+
 ```swift
 let headerItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                             heightDimension: .estimated(100))
