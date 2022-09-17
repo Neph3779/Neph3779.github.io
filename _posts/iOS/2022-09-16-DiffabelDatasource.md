@@ -65,5 +65,3 @@ layout은 tableView내부에 2개의 CollectionView를 넣던 방식에서 compo
 
 - [[Refactor\] Compositional layout 적용 by Neph3779 · Pull Request #2 · Neph3779/BuyOrNot (github.com)](https://github.com/Neph3779/BuyOrNot/pull/2)
 - [[Refactor\] DiffableDatasource 적용 by Neph3779 · Pull Request #3 · Neph3779/BuyOrNot (github.com)](https://github.com/Neph3779/BuyOrNot/pull/3)
-
-****

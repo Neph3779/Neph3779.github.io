@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Compositional Layout SectionProvider"
+title: "Compositional Layout SectionProvider, Configuration"
 categories: [iOS]
 tags: 
   - collectionView
@@ -84,6 +84,8 @@ let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int,
 
 ## LayoutConfiguration
 
+![image-20220917183026986](https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220917183027.png)
+
 layout configuration은 configuration을 따로 빼서 작업할 수 있다는데 의의가 있음
 
 ```swift
@@ -104,3 +106,6 @@ config.boundarySupplementaryItems = [header, footer]
 ```
 
 사용 예제가 사용법의 전부라.. 설명은 생략
+
+configuration에서 설정할 수 있는 값도 너무 적어서 configuration을 통해 큰 이점을 가져가긴 어렵다고 생각됨
+
