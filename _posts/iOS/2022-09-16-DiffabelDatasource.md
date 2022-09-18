@@ -43,7 +43,7 @@ sitemap:
 
     위와같이 diffableDatasource는 indexPath를 안다면 itemIdentifier를 사용할 수 있음
 
-  - 여기서 itemIdentifier는 그냥 cell 그 자체를 의미한다고 보면 됨
+  - 여기서 itemIdentifier는 cell에 들어가는 item으로 지정한 content (diffableDatasource 정의시에 사용한 것)
 
 
 
@@ -65,3 +65,4 @@ layout은 tableView내부에 2개의 CollectionView를 넣던 방식에서 compo
 
 - [[Refactor\] Compositional layout 적용 by Neph3779 · Pull Request #2 · Neph3779/BuyOrNot (github.com)](https://github.com/Neph3779/BuyOrNot/pull/2)
 - [[Refactor\] DiffableDatasource 적용 by Neph3779 · Pull Request #3 · Neph3779/BuyOrNot (github.com)](https://github.com/Neph3779/BuyOrNot/pull/3)
+
