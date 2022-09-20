@@ -83,21 +83,15 @@ switch 문을 사용할 때는 .category(let category)와 같이 연관값이 �
 
 이미 let을 통해 상수임을 선언한 상태이기 때문에 중복으로 let을 쓰거나 var 키워드를 적어줄 수 없습니다. 
 
-또, else case let 같은 경우에는 사용할 수가 없습니다.
+또, else case let 같은 경우에는 사용할 수가 없습니다. 
 
-<br/> 
+> 이걸 언제 써요? 
 
-> 이걸 언제 써요?
-
-<br/> 
-
-Switch 문을 사용하고 싶지 않을 때에 사용하면 됩니다.
+Switch문을 사용하고 싶지 않을 때에 사용하면 됩니다.
 
 Switch문을 사용하면 코드가 한 depth 더 깊어집니다.
 
-만약 if let 구문으로 optional binding을 추가로 진행해야 한다면 코드를 한 depth 더 깊게 들어가지 않게 할 수 있습니다.
-
-<br/> 
+만약 if let 구문으로 optional binding을 추가로 진행해야 한다면 코드를 한 depth 더 깊게 들어가지 않게 할 수 있습니다. 
 
 ### 사용 예제 코드
 
@@ -123,3 +117,6 @@ if case let .product(product) = itemWrapper,
 }
 ```
 
+원래라면 switch문을 통해 case를 기준으로 분기한 뒤, 다시 if let을 내부에서 사용해 categoryCell을 얻었겠지만
+
+이를 한번에 처리함으로써 가독성을 올릴 수 있었습니다.

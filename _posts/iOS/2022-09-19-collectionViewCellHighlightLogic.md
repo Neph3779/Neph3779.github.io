@@ -37,18 +37,16 @@ if let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell {
 	UIView.animate(withDuration: 0.1, delay: 0, animations: {
 		cell.selectMask.isHidden = false
 	}, completion: { _ in
-	cell.selectMask.isHidden = true
-	self.navigationController?.pushViewController(RankViewController(category: category),
-  animated: true)
+	  cell.selectMask.isHidden = true
+	  self.navigationController?.pushViewController(RankViewController(category: category),
+                                                  animated: true)
 	})
 }
 ```
 
 처음에는 UIView의 animate 메서드나 animateKeyframes 메서드를 활용해
 
-cell 클릭 -> 깜빡이는 애니메이션 실행과 동시에 다음화면 진입
-
-과 같은 프로세스를 노렸으나, 
+`cell 클릭` -> `깜빡이는 애니메이션 실행과 동시에 다음화면 진입` 과 같은 프로세스를 노렸으나, 
 
 completion 블록에서 화면전환 코드를 넣어도 해결이 되지 않았기 때문에 선택한 방법은 아래의 방법입니다.
 
@@ -87,7 +85,7 @@ if let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell {
 	}, completion: { _ in
 	cell.layer.opacity = 1
 	self.navigationController?.pushViewController(RankViewController(category: category),
-  animated: true)
+                                                animated: true)
 	})
 }
 ```

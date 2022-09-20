@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Diffable Datasource"
+title: "Diffable Datasource 요약"
 categories: [iOS]
 tags: 
   - diffableDatasource
@@ -37,8 +37,8 @@ sitemap:
   - ```swift
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-                        if let identifier = diffableDataSource.itemIdentifier(for: indexPath)
-                        }
+        if let identifier = diffableDataSource.itemIdentifier(for: indexPath)
+    }
     ```
 
     위와같이 diffableDatasource는 indexPath를 안다면 itemIdentifier를 사용할 수 있음
