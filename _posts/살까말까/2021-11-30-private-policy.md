@@ -2,7 +2,7 @@
 layout: post
 title: "살까 말까 앱 개인정보 처리방침"
 image:
-categories: [BuyOrNot]
+categories: [살까말까]
 tags: 
   - 살까말까
   - 개인앱

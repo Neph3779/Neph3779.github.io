@@ -55,9 +55,11 @@ item이 ItemWrapper의 category라는 case인지에 대해서 물어봐야 하�
 
 if item == ... 와 같이 진행될거라 생각하기 쉽지만, 이 문법의 경우에는 그 반대로 적어야 합니다.
 
-이유는 associated value 때문인데 if let 구문의 특성상 변수, 상수의 선언은 left hand side에 적혀져야 하나봅니다.
+associated value를 if let 구문을 통해 선언하다보니 좌변에 이를 적어주어야 하기 때문입니다.
 
-그러다보니 if case let .category(category)를 적는 동안에 Xcode는 어떠한 자동완성도 지원해줄 수 없습니다.
+if case let .category(category)를 적는 동안에 item의 type을 inference 할 수 없으므로  
+
+Switch문을 사용할때와는 다르게 자동완성 기능을 사용할 수 없습니다.
 
 <br/> 
 
@@ -76,6 +78,7 @@ if case let .category(let category) = itemWrapper {
 
 // 안됨
 else case let .product(let product) = itemWrapper {
+  
 }
 ```
 
