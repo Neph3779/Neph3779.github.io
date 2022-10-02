@@ -59,7 +59,11 @@ associated value를 if let 구문을 통해 선언하다보니 좌변에 이를 
 
 if case let .category(category)를 적는 동안에 item의 type을 inference 할 수 없으므로  
 
-Switch문을 사용할때와는 다르게 자동완성 기능을 사용할 수 없습니다.
+~~Switch문을 사용할때와는 다르게 자동완성 기능을 사용할 수 없습니다.~~
+
+Xcode 14 업데이트 이후 자동완성 기능이 개선되어 자동완성으로 if case let 구문을 작성할 수 있는 것이 확인됐습니다!
+
+<img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20221002173406.png" alt="image-20221002173400446" style="zoom:50%;" />
 
 <br/> 
 
