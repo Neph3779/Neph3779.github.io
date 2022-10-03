@@ -1,6 +1,86 @@
 [
   
     {
+      "title"    : "Unit Test에 사용되는 용어들과 사용법",
+      "subtitle" : "",
+      "tags"     : "TDD, Unit test",
+      "url"      : "/ios/UnitTestVocabs/",
+      "date"     : "2022-09-27 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "[작성중] Alamofire Request 정리",
+      "subtitle" : "",
+      "tags"     : "alamofire, URLRequest",
+      "url"      : "/alamofire%20%EB%B6%84%EC%84%9D/Request/",
+      "date"     : "2022-09-26 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "navigationBar 숨기기에 animation 적용하기",
+      "subtitle" : "",
+      "tags"     : "navigationBar, animation",
+      "url"      : "/ios/hideNavigationBarWithMethod/",
+      "date"     : "2022-09-22 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "collectionView cell 눌렀을 때 cell 색상 변하게 하기",
+      "subtitle" : "",
+      "tags"     : "collectionView, cell highlight",
+      "url"      : "/ios/collectionViewCellHighlightLogic/",
+      "date"     : "2022-09-19 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "cell highlight와 select 차이",
+      "subtitle" : "",
+      "tags"     : "highlight, select",
+      "url"      : "/ios/cellHighlightvsSelect/",
+      "date"     : "2022-09-19 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "if case let 구문은 뭐고 언제 쓰는걸까?",
+      "subtitle" : "",
+      "tags"     : "if case let",
+      "url"      : "/swift/ifCaseLet/",
+      "date"     : "2022-09-18 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Diffable Datasource 요약",
+      "subtitle" : "",
+      "tags"     : "diffableDatasource",
+      "url"      : "/ios/DiffabelDatasource/",
+      "date"     : "2022-09-16 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Compositional Layout SectionProvider, Configuration",
+      "subtitle" : "",
+      "tags"     : "collectionView, sectionProvider",
+      "url"      : "/ios/CompositionalLayoutSectionProviderConfiguration/",
+      "date"     : "2022-09-14 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Map, CompactMap, FlatMap",
+      "subtitle" : "",
+      "tags"     : "map, compactMap, flatMap",
+      "url"      : "/swift/mapFlatMapCompactMap/",
+      "date"     : "2022-09-13 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "UICollectionViewCompositionalLayout 정리 - 2",
+      "subtitle" : "",
+      "tags"     : "Compositional Layout, collectionView",
+      "url"      : "/ios/CompositionalLayout-2/",
+      "date"     : "2022-09-10 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "NS 접두사는 왜 붙이는걸까?",
       "subtitle" : "",
       "tags"     : "NS, NextStep",
@@ -244,7 +324,7 @@
       "title"    : "살까 말까 앱 개인정보 처리방침",
       "subtitle" : "",
       "tags"     : "살까말까, 개인앱",
-      "url"      : "/buyornot/private-policy/",
+      "url"      : "/%EC%82%B4%EA%B9%8C%EB%A7%90%EA%B9%8C/private-policy/",
       "date"     : "2021-11-30 00:00:00 +0900"
     } ,
   
@@ -409,22 +489,6 @@
     } ,
   
     {
-      "title"    : "[#2] 당근마켓 화면 분석-1",
-      "subtitle" : "",
-      "tags"     : "취업준비, 당근마켓 인턴",
-      "url"      : "/%EC%B7%A8%EC%97%85%EC%A4%80%EB%B9%84/PrepareToJoinDanggn-2/",
-      "date"     : "2021-07-08 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "[#1] 당근마켓 iOS인턴 준비",
-      "subtitle" : "",
-      "tags"     : "취업준비, 당근마켓 인턴",
-      "url"      : "/%EC%B7%A8%EC%97%85%EC%A4%80%EB%B9%84/PrepareToJoinDanggn-1/",
-      "date"     : "2021-07-08 00:00:00 +0900"
-    } ,
-  
-    {
       "title"    : "UIWindow의 역할",
       "subtitle" : "",
       "tags"     : "",
@@ -561,6 +625,14 @@
     } ,
   
     {
+      "title"    : "계산기 프로젝트 리뷰",
+      "subtitle" : "",
+      "tags"     : "Yagom Academy, Projects",
+      "url"      : "/project%20review/%E1%84%87%E1%85%A2%E1%86%BC%E1%84%8F%E1%85%B3%E1%84%86%E1%85%A2%E1%84%82%E1%85%B5%E1%84%8C%E1%85%A5-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3-%E1%84%85%E1%85%B5%E1%84%87%E1%85%B2/",
+      "date"     : "2021-05-07 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "2021년 05월 04일 공부일지",
       "subtitle" : "",
       "tags"     : "TIL",
@@ -638,6 +710,14 @@
       "tags"     : "OS, 운영체제",
       "url"      : "/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/9-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5%E1%84%92%E1%85%AA-2/",
       "date"     : "2021-04-18 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "계산기 프로젝트 리뷰",
+      "subtitle" : "",
+      "tags"     : "Yagom Academy, Projects",
+      "url"      : "/project%20review/%E1%84%86%E1%85%A1%E1%86%AB%E1%84%80%E1%85%AE%E1%86%A8%E1%84%87%E1%85%A1%E1%86%A8%E1%84%85%E1%85%A1%E1%86%B7%E1%84%92%E1%85%AC-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3-%E1%84%85%E1%85%B5%E1%84%87%E1%85%B2/",
+      "date"     : "2021-04-16 00:00:00 +0900"
     } ,
   
     {
@@ -745,6 +825,14 @@
     } ,
   
     {
+      "title"    : "계산기 프로젝트 리뷰",
+      "subtitle" : "",
+      "tags"     : "Yagom Academy, Projects",
+      "url"      : "/project%20review/%E1%84%80%E1%85%A8%E1%84%89%E1%85%A1%E1%86%AB%E1%84%80%E1%85%B5-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3-%E1%84%85%E1%85%B5%E1%84%87%E1%85%B2/",
+      "date"     : "2021-04-02 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "2021년 03월 30일, 31일 공부일지",
       "subtitle" : "",
       "tags"     : "TIL",
@@ -844,7 +932,7 @@
       "title"    : "쥬스메이커 프로젝트 리뷰",
       "subtitle" : "",
       "tags"     : "Yagom Academy",
-      "url"      : "/project%20review/%EC%A5%AC%EC%8A%A4%EB%A9%94%EC%9D%B4%EC%BB%A4-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A6%AC%EB%B7%B0/",
+      "url"      : "/project%20review/%E1%84%8C%E1%85%B2%E1%84%89%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8F%E1%85%A5-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3-%E1%84%85%E1%85%B5%E1%84%87%E1%85%B2/",
       "date"     : "2021-03-19 00:00:00 +0900"
     } ,
   
@@ -929,14 +1017,6 @@
     } ,
   
     {
-      "title"    : "가위바위보 게임 프로젝트 리뷰",
-      "subtitle" : "",
-      "tags"     : "Yagom Academy, Projects",
-      "url"      : "/project%20review/%EA%B0%80%EC%9C%84%EB%B0%94%EC%9C%84%EB%B3%B4-%EA%B2%8C%EC%9E%84-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A6%AC%EB%B7%B0/",
-      "date"     : "2021-03-09 00:00:00 +0900"
-    } ,
-  
-    {
       "title"    : "2021년 03월 08일 공부일지",
       "subtitle" : "",
       "tags"     : "TIL, Access Control, properties",
@@ -961,19 +1041,19 @@
     } ,
   
     {
+      "title"    : "묵찌빠 게임 프로젝트 리뷰",
+      "subtitle" : "",
+      "tags"     : "Yagom Academy",
+      "url"      : "/project%20review/%E1%84%86%E1%85%AE%E1%86%A8%E1%84%8D%E1%85%B5%E1%84%88%E1%85%A1-%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3-%E1%84%85%E1%85%B5%E1%84%87%E1%85%B2/",
+      "date"     : "2021-03-05 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "2021년 03월 04일 공부일지",
       "subtitle" : "",
       "tags"     : "TIL, Yagom-Academy, H.I.G.",
       "url"      : "/til/2021.03.04-TIL/",
       "date"     : "2021-03-04 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "깃헙 블로그 관련 이것저것",
-      "subtitle" : "",
-      "tags"     : "TIL, jekyll, 블로그, 페이스북 댓글, disqus",
-      "url"      : "/%EC%9D%BC%EC%83%81/%E1%84%87%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%A7%E1%86%AB-%E1%84%8C%E1%85%A1%E1%86%B8%E1%84%83%E1%85%A1%E1%84%92%E1%85%A1%E1%86%AB-%E1%84%82%E1%85%A2%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%83%E1%85%B3%E1%86%AF/",
-      "date"     : "2021-03-03 00:00:00 +0900"
     } ,
   
     {
@@ -989,6 +1069,14 @@
       "subtitle" : "",
       "tags"     : "TIL, iOS, Swift, Yagom-Academy",
       "url"      : "/til/2021.02.26-TIL/",
+      "date"     : "2021-02-26 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "숫자야구 게임 프로젝트 리뷰",
+      "subtitle" : "",
+      "tags"     : "Yagom Academy, Projects",
+      "url"      : "/project%20review/%E1%84%89%E1%85%AE%E1%86%BA%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%A3%E1%84%80%E1%85%AE-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3-%E1%84%85%E1%85%B5%E1%84%87%E1%85%B2/",
       "date"     : "2021-02-26 00:00:00 +0900"
     } ,
   
