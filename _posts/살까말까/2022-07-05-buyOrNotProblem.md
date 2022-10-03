@@ -2,7 +2,7 @@
 layout: post
 title: "살까말까(개인앱) 문제점분석 및 개선방안 탐구"
 image:
-categories: 살까말까
+categories: [살까말까]
 tags: 
   - 살까말까
   - 개인앱
