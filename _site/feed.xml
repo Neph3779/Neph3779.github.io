@@ -5,9 +5,349 @@
     <description>Write code with my soul.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 03 Oct 2022 19:38:49 +0900</pubDate>
-    <lastBuildDate>Mon, 03 Oct 2022 19:38:49 +0900</lastBuildDate>
+    <pubDate>Tue, 04 Oct 2022 20:25:22 +0900</pubDate>
+    <lastBuildDate>Tue, 04 Oct 2022 20:25:22 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>일문예 1주차 정리</title>
+        <description>&lt;h1 id=&quot;일본의-지리와-환경&quot;&gt;일본의 지리와 환경&lt;/h1&gt;
+
+&lt;h3 id=&quot;1-일본의-지리개관&quot;&gt;1. 일본의 지리개관&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;유라시아 대륙 동쪽 끝의 해상에 위치한 섬나라&lt;/li&gt;
+  &lt;li&gt;홋카이도, 혼슈, 시코쿠, 규슈를 중심으로 6900여 개의 크고 작은 섬들로 구성&lt;/li&gt;
+  &lt;li&gt;러시아, 한반도, 중국 등과 인접&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;1-행정구역&quot;&gt;1) 행정구역&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;총 면적: 38만 제곱 키로미터&lt;/li&gt;
+  &lt;li&gt;1도(도쿄), 1도(홋카이도), 2부(교토, 오사카), 43현의 47개 행정구역&lt;/li&gt;
+  &lt;li&gt;편의상 8개 지방 (홋카이도, 도호쿠, 간토, 주부, 긴키, 주고쿠, 시코쿠, 규슈-오키나와)으로 구분&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;2-산지&quot;&gt;2) 산지&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;환태평양산지대의 일부로서 국토의 약 73%가 산지&lt;/li&gt;
+  &lt;li&gt;일본알프스: 혼슈 중앙부를 차지하는 히다산맥, 기소산맥, 아카이시산맥의 총칭&lt;/li&gt;
+  &lt;li&gt;후지산: 일본에서 가장 높은 산&lt;/li&gt;
+  &lt;li&gt;비와호: 시가현 중앙부에 있는 일본 최대의 호수&lt;/li&gt;
+  &lt;li&gt;시나노가와: 일본에서 가장 긴 강&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;3-토지-이용&quot;&gt;3) 토지 이용&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;산지와 구릊이 67.2%, 농지 12%, 주택지 3.1%&lt;/li&gt;
+  &lt;li&gt;산지가 많고 평야가 적음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;4-기후&quot;&gt;4) 기후&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;주로 습도가 높은 온대&lt;/li&gt;
+  &lt;li&gt;홋카이도는 냉대, 남쪽의 여러 섬들은 아열대성 기후
+    &lt;ul&gt;
+      &lt;li&gt;초여름: 쓰유(장마), 집중호우&lt;/li&gt;
+      &lt;li&gt;여름, 가을: 태풍(태평양 지역에서는 지진에 따른 해일)&lt;/li&gt;
+      &lt;li&gt;겨울: 동해 지역 폭설&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;5-자원&quot;&gt;5) 자원&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;원유, 석탄, 천연가스 등 지하자원이 적어 대부분을 수입에 의존&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;6-인구&quot;&gt;6) 인구&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;인구: 1억 2605만명&lt;/li&gt;
+  &lt;li&gt;고령화 사회 -&amp;gt; 초고령화사회 (인구 4명당 1명은 고령자)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-도쿄와-지방&quot;&gt;2. 도쿄와 지방&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;행정구역: 도도부현으로 나뉨
+    &lt;ul&gt;
+      &lt;li&gt;1도(도읍 도): 도쿄&lt;/li&gt;
+      &lt;li&gt;1도: 홋카이도&lt;/li&gt;
+      &lt;li&gt;2부: 교토 오사카&lt;/li&gt;
+      &lt;li&gt;43현&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;1-도쿄도&quot;&gt;1) 도쿄도&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;일본의 수도&lt;/li&gt;
+  &lt;li&gt;정치, 경제 문화의 중심지&lt;/li&gt;
+  &lt;li&gt;인구: 약 1396만명 (일본 총인구의 10%, 수도권 전체로 치면 1/4 수준)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;2-홋카이도-북해도&quot;&gt;2) 홋카이도 (북해도)&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;일본 최북단에 위치한 두 번째로 큰 섬&lt;/li&gt;
+  &lt;li&gt;도도부현 중에서 가장 넓음 (일본 전 면적의 약 20%)&lt;/li&gt;
+  &lt;li&gt;러시아와 영토문제를 안고 있음 (동북쪽의 북방 네 섬)&lt;/li&gt;
+  &lt;li&gt;세이칸 터널: 아오모리와 홋카이도를 바다 밑으로 연결하는 해저터널 (혼슈 - 홋카이도)&lt;/li&gt;
+  &lt;li&gt;겨울 스포츠 활성화&lt;/li&gt;
+  &lt;li&gt;삿포로가 중심지&lt;/li&gt;
+  &lt;li&gt;삿포로 유키마쓰리(눈축제): 매년 2월에 열리는 홋카이도의 대표적인 눈축제&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;3-도호쿠-지방-동북&quot;&gt;3) 도호쿠 지방 (동북)&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;혼슈 동북부에 위치하는 지방
+    &lt;ul&gt;
+      &lt;li&gt;아오모리현, 이와테현, 미야기현, 아키타현, 야마가타현, 후쿠시마현&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;오우산맥을 중심으로 태평양 쪽과 동해 쪽으로 구분
+    &lt;ul&gt;
+      &lt;li&gt;태평양 쪽: 냉해나 쓰나미 피해&lt;/li&gt;
+      &lt;li&gt;동해 쪽: 눈이 많이 내림 (인구가 적은 시골 지역)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;시라카미산지: 세계자연유산으로 등록된 원시림&lt;/li&gt;
+  &lt;li&gt;농업 생산 활발 지역 (공업활동은 적음)&lt;/li&gt;
+  &lt;li&gt;온천, 지역 축제 등 관광자원이 풍부&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;4-간토-지방-관동&quot;&gt;4) 간토 지방 (관동)&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;혼슈 중앙 동쪽에 위치하는 지방
+    &lt;ul&gt;
+      &lt;li&gt;도쿄도(수도), 이바라키현, 도치기현, 군마현, 사이타마현, 지바현, 가나가와현&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;일본의 정치, 경제, 문화의 중심지&lt;/li&gt;
+  &lt;li&gt;수도권: 사이타마현, 지바현, 가나가와현&lt;/li&gt;
+  &lt;li&gt;닛코의 신사와 사찰: 세계문화유산 등록 (에도막부 만든 도쿠가와 이에야스 기리는 큰 신사 있음)&lt;/li&gt;
+  &lt;li&gt;가나가와 중심지 = 요코하마 대항장으로 유명&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;5-주부-지방-중부&quot;&gt;5) 주부 지방 (중부)&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;혼슈 중앙부에 위치하는 지방
+    &lt;ul&gt;
+      &lt;li&gt;니가타현, 도야마현, 이시카와현, 후쿠이현, 야마나시현, 나가노현, 기후현, 시즈오카현, 아이치현&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;산악지대가 많음&lt;/li&gt;
+  &lt;li&gt;니가타는 쌀, 쌀로만든 술이 유명&lt;/li&gt;
+  &lt;li&gt;남쪽엔 시즈오카, 후지산이 유명&lt;/li&gt;
+  &lt;li&gt;이즈반도에는 온천이 많음&lt;/li&gt;
+  &lt;li&gt;시즈오카 서쪽 아이츠현은 나고야가 중심지 (3대 중심지)
+    &lt;ul&gt;
+      &lt;li&gt;토요타도 시즈오카에 있음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;중부에는 나가노현 존재, 산악지대 많아 인구 적음&lt;/li&gt;
+  &lt;li&gt;폿사마그나: 주부 지방 남북에 걸친 구조선
+    &lt;ul&gt;
+      &lt;li&gt;폿사마그나 서쪽: 긴키 지방&lt;/li&gt;
+      &lt;li&gt;폿사마그나 동쪽: 간토 지방&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;합장 건축양식인 갓쇼즈쿠리 집락: 세계문화유산 등록
+    &lt;ul&gt;
+      &lt;li&gt;눈이 밑으로 내려가라고 뾰족한 지붕모양&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;나가노의 가미코치
+    &lt;ul&gt;
+      &lt;li&gt;고원지대, 절경들 많음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;6-긴키-지방&quot;&gt;6) 긴키 지방&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;혼슈 중앙 서쪽에 위치하는 지방
+    &lt;ul&gt;
+      &lt;li&gt;교토부, 오사카부, 미에현, 시가현, 효고현, 나라현, 와카야마현&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;교토는 1000년 수도라 불리며 8세기~에도막부 멸망 까지 실질적 수도역할 수행&lt;/li&gt;
+  &lt;li&gt;고대 이래 일본의 정치, 경제 문화의 중심이 되었던 지방&lt;/li&gt;
+  &lt;li&gt;신사나 사찰 등이 많은 문화재
+    &lt;ul&gt;
+      &lt;li&gt;나라현: 호류지 주변 불교 건축물&lt;/li&gt;
+      &lt;li&gt;효고현: 세계문화유산으로 등록된 히메지성&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;오사카성: 도요토미 히데요시가 세운 오사카의 상징&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;7-주고쿠-지방&quot;&gt;7) 주고쿠 지방&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;혼슈 서쪽 끝에 위치하는 지방
+    &lt;ul&gt;
+      &lt;li&gt;돗토리현, 시마네현, 오카야마현, 히로시마현, 야마구치현&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;주고쿠산지를 따라 산인 지방과 산요 지방으로 구분
+    &lt;ul&gt;
+      &lt;li&gt;산인 지방: 평야가 적고 겨울에 눈이 많이 내림&lt;/li&gt;
+      &lt;li&gt;산요 지방: 평야지대가 많고 많은 비가 내림&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;세계문화유산
+    &lt;ul&gt;
+      &lt;li&gt;히로시마현: 원폭돔, 이쓰쿠시마신사&lt;/li&gt;
+      &lt;li&gt;시마네현: 이와미 은산유적 (금, 은 할때 은)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;인구수 적은 시골 지방에 해당&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;8-시코쿠-지방&quot;&gt;8) 시코쿠 지방&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;혼슈 서남쪽에 위치하는 시코쿠 본섬을 중심으로 하는 지방
+    &lt;ul&gt;
+      &lt;li&gt;도쿠시마현, 가가와현, 에히메현, 고치현&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;기후 특징
+    &lt;ul&gt;
+      &lt;li&gt;북쪽 지역: 적은 강우량으로 물 부족을 겪음&lt;/li&gt;
+      &lt;li&gt;남쪽 지역: 기온이 높고 태풍이 자주 상륙함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;세토대교 등의 다리로 혼슈와 연결&lt;/li&gt;
+  &lt;li&gt;농업과 어업활동이 활발&lt;/li&gt;
+  &lt;li&gt;메이지유신때 활약한 사카모토 료오마의 출생지인 고치현이 존재&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;9-규슈---오키나와-지방&quot;&gt;9) 규슈 - 오키나와 지방&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;일본 최서남단에 위치하는 지방
+    &lt;ul&gt;
+      &lt;li&gt;후쿠오카현, 사가현, 나가사키현, 구마모토현, 오이타현, 미야자키현, 오키나와현&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;중국, 한반도, 동남아시아와 가깝고 고대부터 외래문화의 영향을 많이 받음
+    &lt;ul&gt;
+      &lt;li&gt;쓰시마: 조선과의 외교 담당&lt;/li&gt;
+      &lt;li&gt;나가사키: 네덜란드와 중국의 무역선 다수 입항&lt;/li&gt;
+      &lt;li&gt;오키나와: 류큐왕국이라는 독립국으로 중국과 교역활동&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;온천과 화산이 많음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-자연과-일본인&quot;&gt;3. 자연과 일본인&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;온난한 기후와 풍부한 강수량
+    &lt;ul&gt;
+      &lt;li&gt;풍부한 삼림자원&lt;/li&gt;
+      &lt;li&gt;농작물 재배에 좋은 조건&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;지진, 태풍 피해&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;1-일본-기후의-특색&quot;&gt;1) 일본 기후의 특색&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;뚜렷한 사계절&lt;/li&gt;
+  &lt;li&gt;남북으로 길게 뻗은 지형적 특성 때문에 기온 차가 큼
+    &lt;ul&gt;
+      &lt;li&gt;홋카이도: 겨울 평균기온 0도 이하&lt;/li&gt;
+      &lt;li&gt;오키나와 겨울 평균기온 영상 15도 이상&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;혼슈의 중앙부 산맥을 경계로 태평양 쪽과 동해 쪽의 큰 기후 차이&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;2-자연재해&quot;&gt;2) 자연재해&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;지진
+    &lt;ul&gt;
+      &lt;li&gt;환태평양지진대에 속해 있어 지반이 극히 불안정함
+        &lt;ul&gt;
+          &lt;li&gt;간토대지진: 1923년 간토 지방에서 일어난 대지진&lt;/li&gt;
+          &lt;li&gt;고베대지진: 1995년 간사이 지방 효고현의 고베시 지역에서 일어난 대지진&lt;/li&gt;
+          &lt;li&gt;동일본대지진: 2011년 3월 11일에 일어난 일본 최대의 재해&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;화산 분화
+    &lt;ul&gt;
+      &lt;li&gt;전 세계의 1/10에 해당하는 86개의 활화산 존재&lt;/li&gt;
+      &lt;li&gt;일본 전역에 걸쳐 화산 분화 진행중&lt;/li&gt;
+      &lt;li&gt;전국적 화산 분포, 활동 영향으로 양질의 온천이 발달&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;태풍
+    &lt;ul&gt;
+      &lt;li&gt;연평균 27개의 태풍 중 11개가 일본 접근, 3개 이상 상륙&lt;/li&gt;
+      &lt;li&gt;태풍긴자: 오키나와, 가고시마, 고치 등 매년 태풍이 통과하거나 상륙하는 지방&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;폭설
+    &lt;ul&gt;
+      &lt;li&gt;주요 폭설지대: 혼슈의 동해 인접 지역
+        &lt;ul&gt;
+          &lt;li&gt;평지: 1~2m&lt;/li&gt;
+          &lt;li&gt;산간: 2~3m&lt;/li&gt;
+          &lt;li&gt;곳에 따라 5m 이상 내리기도 하며, 긴 곳은 5개월 이상 적설이 지속되기도 함&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;3-자연과-일본인-1&quot;&gt;3) 자연과 일본인&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;자연환경의 영향
+    &lt;ul&gt;
+      &lt;li&gt;건축문화: 목조 건축물 발달
+        &lt;ul&gt;
+          &lt;li&gt;일본 사원의 목조탑&lt;/li&gt;
+          &lt;li&gt;2~3층의 목조주택(시라카와고의 갓쇼즈쿠리)&lt;/li&gt;
+          &lt;li&gt;식기나 가구 등의 생활용품 또한 나무로 만들어진 것이 많음&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;반복되는 지진과 태풍으로 체념의 자세를 지니게 됨
+    &lt;ul&gt;
+      &lt;li&gt;거대한 자연 앞에 인간의 한계를 절감&lt;/li&gt;
+      &lt;li&gt;무상, 체념 인내, 수용, 변화: 자연환경과 일본인의 정신세계와의 관계를 보여주는 중요한 개념&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 04 Oct 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/%ED%95%99%EA%B5%90%EA%B3%B5%EB%B6%80/%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A81%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1/</link>
+        <guid isPermaLink="true">http://localhost:4000/%ED%95%99%EA%B5%90%EA%B3%B5%EB%B6%80/%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A81%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1/</guid>
+        
+        
+        <category>학교공부</category>
+        
+      </item>
     
       <item>
         <title>Unit Test에 사용되는 용어들과 사용법</title>
@@ -1318,193 +1658,6 @@
         
         
         <category>Swift</category>
-        
-      </item>
-    
-      <item>
-        <title>UICollectionViewCompositionalLayout 정리 - 2</title>
-        <description>&lt;p&gt;본 글은 &lt;a href=&quot;https://lickability.com/blog/getting-started-with-uicollectionviewcompositionallayout/&quot;&gt;Getting Started with UICollectionViewCompositionalLayout&lt;/a&gt;을 토대로 이해한 내용을 요약한 글입니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;supplementary-items&quot;&gt;Supplementary Items&lt;/h2&gt;
-
-&lt;h3 id=&quot;기존의-header-구현&quot;&gt;기존의 header 구현&lt;/h3&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PhotosDataSource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UICollectionViewDataSource&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;collectionView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;collectionView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UICollectionView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;viewForSupplementaryElementOfKind&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;kind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;IndexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UICollectionReusableView&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;headerView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collectionView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dequeueReusableSupplementaryView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ofKind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;withReuseIdentifier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;HeaderSupplementaryView&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as?&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;HeaderSupplementaryView&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;HeaderSupplementaryView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        
-        &lt;span class=&quot;n&quot;&gt;headerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;viewModel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;HeaderSupplementaryView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;ViewModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Section &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;section&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headerView&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;위와 같이 DataSrouce의 viewForSupplementaryElementOfKind 메서드를 통해 작업했음&lt;/li&gt;
-  &lt;li&gt;header의 크기와 같은 경우 headerReferenceSize 프로퍼티를 조절하거나 delegate 메서드를 통해 크기 지정했음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;compositional-layout의-header-구현&quot;&gt;Compositional Layout의 header 구현&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;기본적으로 SupplementaryView를 Datasource 메서드에 반환하는 것은 이전과 동일&lt;/li&gt;
-  &lt;li&gt;크기 조정, 사용의 경우 아래의 예제처럼 진행&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;headerItemSize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;widthDimension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fractionalWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-                                            &lt;span class=&quot;nv&quot;&gt;heightDimension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;estimated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;headerItem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutBoundarySupplementaryItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;layoutSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headerItemSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                                             &lt;span class=&quot;nv&quot;&gt;elementKind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;header&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                                             &lt;span class=&quot;nv&quot;&gt;alignment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;section&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;boundarySupplementaryItems&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headerItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;header의 size를 정할때도 NSCollectionLayoutSize를 사용&lt;/li&gt;
-  &lt;li&gt;NSCollectionLayoutBoundarySupplementaryItem은 NSCollectionLayoutSuuplementaryItem의 서브클래스로, header, footer를 작업할 수 있음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;nested-groups&quot;&gt;Nested Groups&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220910221236.png&quot; alt=&quot;Diagram of a compositional layout with multiple items and nested groups&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;NSCollectionLayoutGroup 클래스는 NSCollectionLayoutItem의 서브클래스&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;즉 Section내에 들어가는 item으로 group 자체가 들어갈수도 있다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;largeItemSize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;widthDimension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fractionalWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-                                                   &lt;span class=&quot;nv&quot;&gt;heightDimension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fractionalHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;largeItem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;layoutSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;largeItemSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;largeItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contentInsets&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSDirectionalEdgeInsets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;leading&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                                  &lt;span class=&quot;nv&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;trailing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;smallItemSize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;widthDimension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fractionalWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-                                           &lt;span class=&quot;nv&quot;&gt;heightDimension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fractionalHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;smallItem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;layoutSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;smallItemSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;smallItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contentInsets&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSDirectionalEdgeInsets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;leading&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                                  &lt;span class=&quot;nv&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;trailing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Nested Group&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nestedGroupSize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;widthDimension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fractionalWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-                                             &lt;span class=&quot;nv&quot;&gt;heightDimension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fractionalHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nestedGroup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutGroup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;vertical&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;layoutSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nestedGroupSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                                   &lt;span class=&quot;nv&quot;&gt;subitems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;smallItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Outer Group&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;outerGroupSize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;widthDimension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fractionalWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-                                            &lt;span class=&quot;nv&quot;&gt;heightDimension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fractionalWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;outerGroup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutGroup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;horizontal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;layoutSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outerGroupSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                                    &lt;span class=&quot;nv&quot;&gt;subitems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;largeItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                                               &lt;span class=&quot;n&quot;&gt;nestedGroup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                                               &lt;span class=&quot;n&quot;&gt;nestedGroup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Section&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;section&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutSection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outerGroup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;section&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contentInsets&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSDirectionalEdgeInsets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;leading&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                                &lt;span class=&quot;nv&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;trailing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;subitems에 largeItem, nestedGroup, nestedGroup 를 넣어준 모습&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;만약 largeItem, nestedGroup 이렇게 두개만 넣어줬다면?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220910224745.png&quot; alt=&quot;iPhone simulator screenshot showing compositional layout next to empty space&quot; style=&quot;zoom: 25%;&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;이런식으로 남은 공간은 여백으로 채워짐&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;좌우-스크롤&quot;&gt;좌우 스크롤&lt;/h2&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;section&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;orthogonalScrollingBehavior&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;continuous&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;좌우 스크롤 가능 여부를 위와 같이 한줄로 처리할 수 있음&lt;/p&gt;
-
-&lt;p&gt;옵션으로는&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;none&lt;/li&gt;
-  &lt;li&gt;continuous&lt;/li&gt;
-  &lt;li&gt;continuousGroupLeadingBoundary&lt;/li&gt;
-  &lt;li&gt;paging&lt;/li&gt;
-  &lt;li&gt;groupPaging&lt;/li&gt;
-  &lt;li&gt;groupPagingCentered&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;가 있음&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 10 Sep 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/ios/CompositionalLayout-2/</link>
-        <guid isPermaLink="true">http://localhost:4000/ios/CompositionalLayout-2/</guid>
-        
-        <category>Compositional Layout</category>
-        
-        <category>collectionView</category>
-        
-        
-        <category>iOS</category>
         
       </item>
     
