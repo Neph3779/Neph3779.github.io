@@ -145,6 +145,8 @@
                         
                         
                         
+                        
+                        
                         <li class="search-icon">
                             <a href="javascript:void(0)">
                                 <i class="fa fa-search"></i>
@@ -273,6 +275,167 @@
 </head>
 
 <div class="post-preview">
+    <a href="/WhatIsUIApplicationMain/">
+        <h2 class="post-title">
+            UIApplicationMain은 뭐하는 함수일까?
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            UIApplication
+
+UIApplication의 singleton instance는 앱의 시작시에 생성된다. 이 instance를 제작하는 함수가 바로 UIApplicationMain 함수이다. 이 외에도 App Delegate의 제작과 event cycle의 설정을 담당하는 역할을 가진다.
+
+UIApplicationMain
+
+1
+2
+3
+4
+fu...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on July
+        25, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/ios/WhatIsAppThinning/">
+        <h2 class="post-title">
+            App thining
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            App Thinning이란?
+
+앱을 특정 디바이스에 설치할 때 굳이 들어가지 않아도 되는 파일들을 생략하고 그 디바이스에 맞게 설치하는 최적화 기술을 App Thinning이라고 한다. 앞의 문장에서 알 수 있듯 하나의 앱은 아래와 같이 여러가지 파일들이 섞여있다.
+
+
+
+App Slicing
+
+꼭 필요한 것만을 다운 받는 과정을 App Slicing이...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on July
+        25, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/ios/AppDelegateMethods/">
+        <h2 class="post-title">
+            UIApplicationDelegate 메서드
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            AppDelegate이란?
+
+UIApplicationDelegate의 subclass로 기본 생성되는 AppDelegate는 앱 전반적으로 공유하게 될 자원, 동작을 관리하는 역할을 수행한다. UIApplication의 Delegate이라는 이름에 맞게 앱의 기능들 중 일부를 대신하여 처리해준다.
+
+App Delegate 객체가 담당하는 일들
+
+
+  ...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on July
+        18, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/ios/WhatIsEscapingClosure/">
+        <h2 class="post-title">
+            escaping 클로저
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            Escaping Closure를 사용하는 방법
+
+1
+func getImages(completionHandler: @escaping (Result&lt;UIImage, Error&gt;) -&gt; Void)
+
+
+클로저의 타입 앞에 @escaping 키워드를 붙여주면 해당 클로저는 escaping closure로 사용할 수 있다.
+
+Escaping vs...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on July
+        15, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/ios/WhatIsAppBundle/">
+        <h2 class="post-title">
+            App Bundle의 구조와 역할
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            Bundle vs Package
+
+번들
+
+알려진 것들로 이루어진 디렉토리, 실행 가능한 코드와 그 코드가 사용하는 자원들을 포함하고 있다.
+
+코드와 자원을 모으는 구조를 제공하여 개발자 경험을 향상시키는 것을 가장 우선시 하는데, 이 구조는 코드나 자원의 예측 가능한 로딩뿐만 아니라 지역화 같은 시스템 차원의 기능도 허용한다.
+
+번들은 크게 앱 번들,...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on July
+        11, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/ios/WhatDoesViewControllerDo/">
+        <h2 class="post-title">
+            UIViewController
+        </h2>
+        
+        <div class="post-content-preview">
+            
+            UIViewController의 역할
+
+View Controller는 앱 내부 구조의 기반으로 모든 앱은 최소 하나 이상의 뷰컨트롤러를 가진다. 뷰컨트롤러는 UI, 인터페이스, 데이터간의 상호작용을 맡으며 UI간의 전환에도 도움을 준다.
+
+View의 계층 관리
+
+각각의 View Controller는 View의 계층을 관리한다. 이 계층의 가장 근원이 ...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Neph's Blog on July
+        11, 2021
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
     <a href="/ios/AppLifeCycle/">
         <h2 class="post-title">
             App Life Cycle
@@ -377,170 +540,6 @@ cell register는 각각의 tableView 마다 register를 해주면 되기에 문�
 </div>
 <hr>
 
-<div class="post-preview">
-    <a href="/ios/StoryboardProsAndCons/">
-        <h2 class="post-title">
-            스토리보드의 장단점
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            스토리보드의 장점
-
-
-  빠른 초기화
-  시각화
-  낮은 진입장벽
-
-
-개발 환경에서 화면이 직접 눈에 보인다는게 최대 장점이다. 아무리 가독성 좋은 코드로 UI를 만든다한들 직접 실행해보지 않고도 화면을 정확하게 떠올리는 것은 쉽지않다. 하지만 스토리보드를 통해서는 이것이 가능하다.
-
-또한 View를 만드는 시간이 적게 걸린다고 한다. (사실 이건 잘...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on July
-        4, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/ios/CocoaFramework/">
-        <h2 class="post-title">
-            Cocoa Framework
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            프레임워크는 vs 라이브러리
-
-
-  “소프트웨어의 구체적인 부분에 해당하는 설계와 구현을 재사용이 가능하게끔 일련의 협업화된 형태로 클래스들을 제공하는 것”
-
-  by Ralph Johnson
-
-
-프레임워크는는 어떤 틀이 결정되어있고 그 틀에 따라 개발을 진행하게 되지만 라이브러리는 원하는 부분을 선택해서 사용한다는 느낌이 강하다.
-
-라이브러리는 필요...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on July
-        4, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/ios/AboutWeakAndStrong/">
-        <h2 class="post-title">
-            Strong, Weak에 대해 알아보자
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            Reference Count
-
-Strong과 Weak에 대해 알아보려면 우선 Reference Count에 대한 지식이 있어야한다.
-
-Swift에서는 Reference Counting을 통해 인스턴스가 살아있음을 보장한다. Reference Count가 올라가 있다는 것은 이것을 사용하고 있는 다른 인스턴스가 있다는 것이고, 이런 경우에 메모리에서 해...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on July
-        4, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/ios/WhatIsInActive/">
-        <h2 class="post-title">
-            inActive 상태란 무엇일까?
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            inActive 상태란?
-
-앱의 생명주기는 크게 아래와 같이 나뉜다.
-
-
-  not running (unattached)
-  foreground
-    
-      inActive
-      active
-    
-  
-  background
-  Suspended
-
-
-not running은 말 그대로 앱이 실행중이지 않은 상태이며
-
-앱 실행시 foreg...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on June
-        27, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/ios/WhatIsARC/">
-        <h2 class="post-title">
-            ARC는 무엇일까?
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            ARC의 뜻
-
-Automatic Retain Count의 약자인 ARC는 자동으로 참조카운트를 계산해주는 swift의 기능을 뜻한다.
-
-이름을 통해 유추할 수 있듯 기존에는 자동으로 참조 카운트를 계산하여 메모리로부터 해제해주지 않았기에 프로그래머가 직접 사용을 끝마친 포인터를 메모리에서 해제시켜줘야 했었다.
-
-하지만 ARC를 통해 이제는 참조를 획득...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on June
-        27, 2021
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/HuggingVsResistance/">
-        <h2 class="post-title">
-            [Auto Layout] Hugging vs Resistance
-        </h2>
-        
-        <div class="post-content-preview">
-            
-            Hugging vs Resistance
-
-hugging은 말 그대로 안고있으려는 힘이다. 조금 덧붙이자면 더이상 늘어나지 않으려는 힘을 hugging이라고 한다. stackView의 distrbution 속성이 fill일 경우 내부의 요소들은 stackView 안에서 멋대로 늘어난다. 이 때 hugging priority가 높다면 늘어나지 않고 int...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Neph's Blog on June
-        22, 2021
-    </p>
-</div>
-<hr>
-
 
 <!-- Pager -->
 
@@ -560,6 +559,8 @@ hugging은 말 그대로 안고있으려는 힘이다. 조금 덧붙이자면 �
 
 <header class="site-category">
     <ul>
+        
+        
         
         
         
@@ -639,121 +640,121 @@ hugging은 말 그대로 안고있으려는 힘이다. 조금 덧붙이자면 �
             
         
             
-            <a data-sort="0102"
+            <a data-sort="0108"
                 href="/archive/?tag=TIL" title="TIL"
                 rel="37">TIL</a>
             
             
             
-            <a data-sort="0126"
+            <a data-sort="0132"
                 href="/archive/?tag=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" title="운영체제"
                 rel="13">운영체제</a>
             
-            <a data-sort="0127"
+            <a data-sort="0133"
                 href="/archive/?tag=OS" title="OS"
                 rel="12">OS</a>
             
-            <a data-sort="0133"
+            <a data-sort="0139"
                 href="/archive/?tag=Yagom+Academy" title="Yagom Academy"
                 rel="6">Yagom Academy</a>
             
-            <a data-sort="0133"
+            <a data-sort="0139"
                 href="/archive/?tag=Yagom-Academy" title="Yagom-Academy"
                 rel="6">Yagom-Academy</a>
             
-            <a data-sort="0134"
+            <a data-sort="0140"
                 href="/archive/?tag=%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4" title="데이터베이스"
                 rel="5">데이터베이스</a>
             
-            <a data-sort="0134"
+            <a data-sort="0140"
                 href="/archive/?tag=collectionView" title="collectionView"
                 rel="5">collectionView</a>
             
-            <a data-sort="0134"
+            <a data-sort="0140"
                 href="/archive/?tag=iOS" title="iOS"
                 rel="5">iOS</a>
             
-            <a data-sort="0135"
+            <a data-sort="0141"
                 href="/archive/?tag=Projects" title="Projects"
                 rel="4">Projects</a>
             
-            <a data-sort="0135"
+            <a data-sort="0141"
                 href="/archive/?tag=Swift" title="Swift"
                 rel="4">Swift</a>
             
-            <a data-sort="0136"
+            <a data-sort="0142"
                 href="/archive/?tag=%EB%82%A0%EC%A7%9C+%EB%8B%A4%EB%A3%A8%EA%B8%B0" title="날짜 다루기"
                 rel="3">날짜 다루기</a>
             
-            <a data-sort="0136"
+            <a data-sort="0142"
                 href="/archive/?tag=Alamofire" title="Alamofire"
                 rel="3">Alamofire</a>
             
-            <a data-sort="0136"
+            <a data-sort="0142"
                 href="/archive/?tag=Date" title="Date"
                 rel="3">Date</a>
             
-            <a data-sort="0136"
+            <a data-sort="0142"
                 href="/archive/?tag=animation" title="animation"
                 rel="3">animation</a>
             
-            <a data-sort="0136"
+            <a data-sort="0142"
                 href="/archive/?tag=app+life+cycle" title="app life cycle"
                 rel="3">app life cycle</a>
             
-            <a data-sort="0137"
+            <a data-sort="0143"
                 href="/archive/?tag=%EA%B0%9C%EC%9D%B8%EC%95%B1" title="개인앱"
                 rel="2">개인앱</a>
             
-            <a data-sort="0137"
+            <a data-sort="0143"
                 href="/archive/?tag=%EC%82%B4%EA%B9%8C%EB%A7%90%EA%B9%8C" title="살까말까"
                 rel="2">살까말까</a>
             
-            <a data-sort="0137"
+            <a data-sort="0143"
                 href="/archive/?tag=%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98" title="알고리즘"
                 rel="2">알고리즘</a>
             
-            <a data-sort="0137"
+            <a data-sort="0143"
                 href="/archive/?tag=ARC" title="ARC"
                 rel="2">ARC</a>
             
-            <a data-sort="0137"
+            <a data-sort="0143"
                 href="/archive/?tag=AppDelegate" title="AppDelegate"
                 rel="2">AppDelegate</a>
             
-            <a data-sort="0137"
+            <a data-sort="0143"
                 href="/archive/?tag=BFS" title="BFS"
                 rel="2">BFS</a>
             
-            <a data-sort="0137"
+            <a data-sort="0143"
                 href="/archive/?tag=Notification" title="Notification"
                 rel="2">Notification</a>
             
-            <a data-sort="0137"
+            <a data-sort="0143"
                 href="/archive/?tag=RxSwift" title="RxSwift"
                 rel="2">RxSwift</a>
             
-            <a data-sort="0137"
+            <a data-sort="0143"
                 href="/archive/?tag=Scroll+View" title="Scroll View"
                 rel="2">Scroll View</a>
             
-            <a data-sort="0137"
+            <a data-sort="0143"
                 href="/archive/?tag=background" title="background"
                 rel="2">background</a>
             
-            <a data-sort="0137"
+            <a data-sort="0143"
                 href="/archive/?tag=enum" title="enum"
                 rel="2">enum</a>
             
-            <a data-sort="0137"
+            <a data-sort="0143"
                 href="/archive/?tag=foreground" title="foreground"
                 rel="2">foreground</a>
             
-            <a data-sort="0137"
+            <a data-sort="0143"
                 href="/archive/?tag=strong" title="strong"
                 rel="2">strong</a>
             
-            <a data-sort="0137"
+            <a data-sort="0143"
                 href="/archive/?tag=weak" title="weak"
                 rel="2">weak</a>
     </div>

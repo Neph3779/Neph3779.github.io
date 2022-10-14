@@ -5,9 +5,1916 @@
     <description>Write code with my soul.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 04 Oct 2022 20:25:22 +0900</pubDate>
-    <lastBuildDate>Tue, 04 Oct 2022 20:25:22 +0900</lastBuildDate>
+    <pubDate>Fri, 14 Oct 2022 12:57:54 +0900</pubDate>
+    <lastBuildDate>Fri, 14 Oct 2022 12:57:54 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>일문예 7주차 - 일본의 연중행사와 마쓰리</title>
+        <description>&lt;h1 id=&quot;일본의-연중행사와-마쓰리&quot;&gt;일본의 연중행사와 마쓰리&lt;/h1&gt;
+
+&lt;h2 id=&quot;1-일본의-연중행사&quot;&gt;1. 일본의 연중행사&lt;/h2&gt;
+
+&lt;h3 id=&quot;오쇼카쓰정월&quot;&gt;오쇼카쓰(정월)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;일본 연중 행사 중 가장 중요하고 경사스러운 큰 명절&lt;/li&gt;
+  &lt;li&gt;양력 1월 1일 ~ 3일&lt;/li&gt;
+  &lt;li&gt;새해의 신 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;도시가미&lt;/code&gt;를 맞이한다.&lt;/li&gt;
+  &lt;li&gt;신사나 절에 가서 참배하며 한 해의 소원을 빌고 다양한 장식품으로 집을 장식하고 새해 음식을 먹으며 가족이 다함께 모여 축하함&lt;/li&gt;
+  &lt;li&gt;궁중에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;시호하이&lt;/code&gt; 의식 (천황이 직접하는 행사)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;오쇼카쓰의 장식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;가도마쓰 (대나무 장식을 내검)&lt;/li&gt;
+  &lt;li&gt;시메나와 (큰 새끼줄을 신사의 대전 앞에 내검)&lt;/li&gt;
+  &lt;li&gt;와카자리 (둥글게 새끼줄을 꼬고 장식한 것)&lt;/li&gt;
+  &lt;li&gt;시메카자리 (묶음으로 새끼줄을 묶어서 장식한 것)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;오쇼카쓰의 음식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오세치요리&lt;/code&gt;: 도시가미에게 올린 호화로운 음식을 다 같이 먹고 건강을 기원&lt;/li&gt;
+  &lt;li&gt;구성: 밤조림, 다시마, 멸치조림, 도미 등&lt;/li&gt;
+  &lt;li&gt;가가미모치: 둥근 떡을 겹쳐 놓은 것 (여러 단으로 떡을 겹쳐놓음, 가정에서는 보통 2단)&lt;/li&gt;
+  &lt;li&gt;오조니: 떡국&lt;/li&gt;
+  &lt;li&gt;오토소: 약주&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;오쇼카쓰의 행사&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;하쓰모데&lt;/code&gt;: 새해 첫 날 신사나 절을 참배하며 새해의 무사와 평안을 기원&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오미쿠지&lt;/code&gt;: 제비뽑기로 운세를 보는 것 (쿠지: 추첨을 한다)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오마모리&lt;/code&gt;: 행운을 불러오고 액운을 막는 일종의 부적&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;세뱃돈 (오토시다마)&lt;/p&gt;
+
+&lt;h3 id=&quot;세쓰분&quot;&gt;세쓰분&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;2월 3일 또는 4일&lt;/li&gt;
+  &lt;li&gt;본래 입춘, 입하, 입추, 입동 전 날&lt;/li&gt;
+  &lt;li&gt;귀신 쫓는 전통행사&lt;/li&gt;
+  &lt;li&gt;마메마키: 무병무탈을 기원하며 집 안팎에 콩을 뿌리고 가족 모두 자기 나이만큼 콩을 세서 먹는 풍습
+    &lt;ul&gt;
+      &lt;li&gt;‘귀신은 밖으로, 복은 집안으로’의 의미&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;에호마키: 운이 좋아진다는 굵은 김밥, 말을 하지 않고 먹어야 함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;히나마쓰리&quot;&gt;히나마쓰리&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;3월 3일, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;여자아이 축하의 날&lt;/code&gt;, 모모노셋쿠&lt;/li&gt;
+  &lt;li&gt;히나단에 히나인형을 장식 -&amp;gt; 행복한 결혼을 기원, 액막이 역할&lt;/li&gt;
+  &lt;li&gt;나가시비나: 인형을 흘려보낸다 (강이나 바다로 떠내려보내는 행사)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;히나마쓰리 음식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;세키한: 팥을 넣은 찰밥&lt;/li&gt;
+  &lt;li&gt;지라시즈시: 초밥 위에 색색의 재료를 뿌린 스시&lt;/li&gt;
+  &lt;li&gt;히시모치: 삼색을 겹쳐 놓은 떡&lt;/li&gt;
+  &lt;li&gt;히나아라레: 파스텔 색깔의 작은 과자&lt;/li&gt;
+  &lt;li&gt;시로자케: 일본식 탁주&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;단오의-셋쿠&quot;&gt;단오의 셋쿠&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;5월 5일, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;남자아이&lt;/code&gt;의 건강과 성장을 기원하는 날&lt;/li&gt;
+  &lt;li&gt;국경일인 어린이날로 지정&lt;/li&gt;
+  &lt;li&gt;실내를 무구, 무사 인형으로 장식&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고이노보리&lt;/code&gt;: 여러 색의 잉어 모형을 날린다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;창포물 목욕&lt;/code&gt;으로 액막이&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;단오의 음식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;치마키: 억새잎으로 싼 찹쌀떡, 중국에서 유래&lt;/li&gt;
+  &lt;li&gt;가시와모치: 떡갈나무로 감싼 떡, 자손의 번영을 기원&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;다나타바칠석&quot;&gt;다나타바(칠석)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;7월 7일에 행하는 별 축제&lt;/li&gt;
+  &lt;li&gt;중국의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;견우와 직녀&apos;&lt;/code&gt; 전설에서 유래&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;어린이&lt;/code&gt;들이 평소 희망하는 내용을 적은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오색종이(단자쿠)&lt;/code&gt;를 조릿대에 매달고 기원&lt;/li&gt;
+  &lt;li&gt;학교, 가정, 백화점, 상가 등에 단자쿠 장식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;오추겐&quot;&gt;오추겐&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;7월 15일&lt;/code&gt; 의미&lt;/li&gt;
+  &lt;li&gt;조상 공양, 친척/지인에게 공물을 보내는 관습&lt;/li&gt;
+  &lt;li&gt;현재는 거래처나 신세진 분들에게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;선물을 보냄&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;오세보&quot;&gt;오세보&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;연말&lt;/code&gt;을 의미&lt;/li&gt;
+  &lt;li&gt;1년 동안 감사한 마음을 대신해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;선물을 보낸다.&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;오쇼가쓰랑 붙어있으니 이때 받은 선물 나눠먹기도 함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;도요노우시노히&quot;&gt;도요노우시노히&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;장어 먹는 날&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;도요는 입추 전의 18일 간을 의미&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;소의 날&lt;/code&gt;과 겹침 (소의 일본발음: 우시)&lt;/li&gt;
+  &lt;li&gt;에도시대 ‘우’자가 들어간 소의 날에 ‘우’자가 들어간 우나기를 먹기 시작했다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;오본&quot;&gt;오본&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;8월 15일 경(음력 7월 13일 ~ 15일)&lt;/li&gt;
+  &lt;li&gt;조상의 영혼을 기리는 명절&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;불교&lt;/code&gt;행사 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;우라본&lt;/code&gt;이 일본 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;신도&lt;/code&gt;의 정령 신앙과 결합&lt;/li&gt;
+  &lt;li&gt;13일 무카에비를 피워놓고 조상의 영혼을 맞이한다.&lt;/li&gt;
+  &lt;li&gt;선조의 영혼을 위로하는 행사&lt;/li&gt;
+  &lt;li&gt;조상의 영혼을 모신 뒤 14일 승려 집으로 불러 독경&lt;/li&gt;
+  &lt;li&gt;15 ~ 16일경 오쿠리비로 영혼을 보낸다.&lt;/li&gt;
+  &lt;li&gt;이 시기에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;성묘(오하카마이리)&lt;/code&gt;를 한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;하나비&quot;&gt;하나비&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;불꽃놀이&lt;/code&gt;로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;에도시대&lt;/code&gt; 이후 전국적으로 진행되어온 여름축제&lt;/li&gt;
+  &lt;li&gt;7~8월 사이에 집중적으로 열림&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;유카타&lt;/code&gt;를 입는 사람이 많음&lt;/li&gt;
+  &lt;li&gt;20만 명에서 많게는 130만 명 집결해 혼잡&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;하나미&quot;&gt;하나미&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;봄에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;벚꽃을 구경&lt;/code&gt;하며 야외에서 음식을 먹는다.&lt;/li&gt;
+  &lt;li&gt;나라의 요시노야마, 도쿄의 우에노 공원&lt;/li&gt;
+  &lt;li&gt;밤벚꽃놀이: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;요자쿠라&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;쓰키미&quot;&gt;쓰키미&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;헤이안시대 궁중에서 시작&lt;/li&gt;
+  &lt;li&gt;음력 8월 15일, 9월 13일&lt;/li&gt;
+  &lt;li&gt;달을 감상하는 행사&lt;/li&gt;
+  &lt;li&gt;고치시의 가쓰라하마, 도쿄의 구단자카&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;단풍놀이&quot;&gt;단풍놀이&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;만엽집: 단풍놀이 소재 시가&lt;/li&gt;
+  &lt;li&gt;나라시대: 단풍모임&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;겐지모노가타리&lt;/code&gt; -&amp;gt; 단풍 감상하는 장면을 담은 그림&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;복중-문안-인사&quot;&gt;복중 문안 인사&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;7월 20일 ~ 8월 8일(여름 중) 지인이나 손윗분에게 보내는 인사장&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;연하장&quot;&gt;연하장&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;연말의 의례적인 인사장&lt;/li&gt;
+  &lt;li&gt;일본 우체국에서 엽서 연하장 발행&lt;/li&gt;
+  &lt;li&gt;12월 중 새해에 해당하는 동물 그림 엽서로 연하장 발송&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;오미소카&quot;&gt;오미소카&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;한 해의 마지막 날인 12월 31일 섣달 그믐달&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;도시코시소바&lt;/code&gt;: 가는 해를 보내고 새해를 맞이하며 먹는 국수&lt;/li&gt;
+  &lt;li&gt;제야의 종: 모든 절에서 108번 타종&lt;/li&gt;
+  &lt;li&gt;NHK 홍백가합전
+    &lt;ul&gt;
+      &lt;li&gt;그 해를 대표하는 가수들이 12/31 밤에 남성팀 여성팀으로 나뉘어 경쟁&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-일본의-마쓰리&quot;&gt;2. 일본의 마쓰리&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;신의 강림에 의해 신을 받들고 신에게 봉사하는 것에서 유래&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;사카키&lt;/code&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;비쭈기 나무&lt;/code&gt;, 신성한 나무로 가지를 바친다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고헤이&lt;/code&gt;: 막대기 끝에 흰 종이나 천을 끼운다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;다시&lt;/code&gt;: 신을 제사장소로 영접하기 위한 교통수단(가마)&lt;/li&gt;
+  &lt;li&gt;동일본과 서일본의 지역 차 존재, 대체로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;우지가미&lt;/code&gt;(고장의 신)를 떠받든다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;간누시&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;우지코&lt;/code&gt;의 소집단으로 구성되는 제례 조직이 지휘 (위원회)&lt;/li&gt;
+  &lt;li&gt;현대의 마쓰리는 경사스러운 종교적 행사나 축제를 의미&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;마쓰리의 형식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;하치마키&lt;/code&gt;라는 흰 수건에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;합피&apos;&lt;/code&gt;라는 윗옷, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;다비&apos;&lt;/code&gt;라는 버선을 신는다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;미코시&apos;&lt;/code&gt;라는 신령이 내려 앉는 가마를 신자들이 메고 행진한다.&lt;/li&gt;
+  &lt;li&gt;왓쇼이 왓쇼이, 세이야 세이야 구호 외치며 일정구역을 순회&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;마쓰리의 기능&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;상업적 기능&lt;/code&gt;: 지역 경제의 발전&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;사회적 기능&lt;/code&gt;: 공동체 의식 고조, 지역 구성원 간의 화합, 공동체의 정체성 확인&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;도쿄의 간다마쓰리&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;매년 5월 중순경에 실시&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;도쿠가와 이에야스&lt;/code&gt;가 전쟁에 나갈 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;간다묘진(신사)&lt;/code&gt;에서 기도를 올리게 한 것에서 유래&lt;/li&gt;
+  &lt;li&gt;여러 개의 가마가 일제히 출발&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;교토의 기온마쓰리&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;교토 기온에서 7월에 열리는 야사카신사의 마쓰리&lt;/li&gt;
+  &lt;li&gt;일본 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3대 마쓰리&lt;/code&gt;, 일본의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;무형 민속문화재&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;9~10세기 역병으로 죽은 이들의 영혼을 달래기 위해 시작됨&lt;/li&gt;
+  &lt;li&gt;20미터 이상의 호화로운 장식&lt;/li&gt;
+  &lt;li&gt;교토 시민의 긍지와 재력을 보여줌&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;오사카의 덴진마쓰리&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;6월 하순의 길일부터 7월 25일까지&lt;/li&gt;
+  &lt;li&gt;일본의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3대 마쓰리&lt;/code&gt;, 선상 마쓰리&lt;/li&gt;
+  &lt;li&gt;오사카텐만구 신사를 중심으로 열림&lt;/li&gt;
+  &lt;li&gt;스가와라노 미치자네의 진혼제가 기원, 1000년 이상의 역사&lt;/li&gt;
+  &lt;li&gt;후나토교: 약 100척의 배가 강을 거슬러 올라간다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;아오모리의 네부타마쓰리&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;매년 8월 2일 ~ 7일 개최&lt;/li&gt;
+  &lt;li&gt;‘네부타’라는 화려한 색채의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;무사 그림이 그려진 등&lt;/code&gt;을 끌고 춤을 추면서 행진한다.&lt;/li&gt;
+  &lt;li&gt;도호쿠 지방, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3대 마쓰리&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;주요 무형 민속문화재&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;도쿄의 산자마쓰리&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;5월 셋째 주 금요일부터 일요일, 3일 간 열림&lt;/li&gt;
+  &lt;li&gt;아사쿠사시나에서 실시&lt;/li&gt;
+  &lt;li&gt;덴가쿠마이: 모내기 행사를 예능화한 것&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;센다이의 다나바타마쓰리&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;중국의 칠석 전설에서 유래&lt;/li&gt;
+  &lt;li&gt;센다이의 다나바타마쓰리가 전국적으로 유명하다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;하카타돈타쿠 (후쿠오카의 상인들의 거리)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;골든위크 기간중인 5월 3~4일에 열림&lt;/li&gt;
+  &lt;li&gt;1179년 하카타에서 열렸던 마쓰바야시가 기원&lt;/li&gt;
+  &lt;li&gt;주민, 상인, 무사들이 각 저택을 돌며 예능을 연기하고 축복하던 행사를 재현&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;아와오도리&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;8월 12일 ~ 15일&lt;/li&gt;
+  &lt;li&gt;시코쿠 도쿠시마현을 중심으로 한 민속 무용축제&lt;/li&gt;
+  &lt;li&gt;일본 3대 본오도리(오봉기간에 추는 집단적인 춤) 중 하나&lt;/li&gt;
+  &lt;li&gt;손발을 엇바꿔가며 추는 역동적인 춤과 화려한 의상&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Thu, 13 Oct 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/%ED%95%99%EA%B5%90%EA%B3%B5%EB%B6%80/%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A87%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1/</link>
+        <guid isPermaLink="true">http://localhost:4000/%ED%95%99%EA%B5%90%EA%B3%B5%EB%B6%80/%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A87%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1/</guid>
+        
+        
+        <category>학교공부</category>
+        
+      </item>
+    
+      <item>
+        <title>일문예 6주차 정리</title>
+        <description>&lt;h1 id=&quot;1-식생활의-변화&quot;&gt;1. 식생활의 변화&lt;/h1&gt;
+
+&lt;h3 id=&quot;1-현대-일본의-식생활&quot;&gt;1) 현대 일본의 식생활&lt;/h3&gt;
+
+&lt;p&gt;한일 음식 문화의 비교&lt;/p&gt;
+
+&lt;p&gt;유사성&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;벼농사 중심의 농경문화, 쌀이 주식&lt;/li&gt;
+  &lt;li&gt;조미료: 된장, 간장&lt;/li&gt;
+  &lt;li&gt;식재료: 야채, 육류, 생선류&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;차이점&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;한국: 조미료 직접 제조(간장, 된장 고추장 등 직접 만듦), 복합적인 양념맛, 다양한 국물, 쌈음식&lt;/li&gt;
+  &lt;li&gt;일본: 공장 생산 조미료, 가쓰오부시와 다시마 국물, 개별재료 선호&lt;/li&gt;
+  &lt;li&gt;식기: 일본은 나무와 도자기 식기를 주로 사용하며 금속제 식기를 기피&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;현대 식생활의 변화&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;소득수준의 증가로 엥겔계수 감소 (수입에서 식비가 차지하는 비율, 잘 살게 되었다는 의미)&lt;/li&gt;
+  &lt;li&gt;칼로리 수주 1975년 정점&lt;/li&gt;
+  &lt;li&gt;어린이 비만 문제 대두&lt;/li&gt;
+  &lt;li&gt;식도락 붐, 음식 관련 정보 풍부해짐&lt;/li&gt;
+  &lt;li&gt;무공해, 유기농 등 자연식품 선호 경향 증가&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-생활양식의-변화&quot;&gt;2) 생활양식의 변화&lt;/h3&gt;
+
+&lt;p&gt;생활양식과 식문화 (1950년대 후반부터)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;2DK 아파트: 신형 부엌을 채택한 현대식 아파트&lt;/li&gt;
+  &lt;li&gt;3대 신기: 냉장고, 세탁기, TV&lt;/li&gt;
+  &lt;li&gt;전기밥솥의 등장 -&amp;gt; 부엌의 근대화&lt;/li&gt;
+  &lt;li&gt;아침식사의 간편화: 빵 등장, 토스터 보급, 분식 장려 정책이 일조&lt;/li&gt;
+  &lt;li&gt;1970년대 외식산업의 발달&lt;/li&gt;
+  &lt;li&gt;배달 음식 사업 발달 - ‘도마와 칼이 없는 집 등장’이 화제가 되기도 함&lt;/li&gt;
+  &lt;li&gt;프랜차이즈 시스템 확립, 시스템 키친, 도시락에서 외식으로&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-슈퍼마켓의-등장&quot;&gt;3) 슈퍼마켓의 등장&lt;/h3&gt;
+
+&lt;p&gt;1950년대 슈퍼마켓의 등장&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;미국의 드럭스토어 모델로 오사카에 ‘다이에’(대형마켓) 개점&lt;/li&gt;
+  &lt;li&gt;1960년대 동종업계 간 경쟁 치열&lt;/li&gt;
+  &lt;li&gt;일반상품, 박리다매 방식으로 확대&lt;/li&gt;
+  &lt;li&gt;포장혁명&lt;/li&gt;
+  &lt;li&gt;1970년대 1회용 비닐봉지 일반화&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4-인스턴트-식품의-등장&quot;&gt;4) 인스턴트 식품의 등장&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1958, 닛신식품 치킨 라면 발매 -&amp;gt; 인스턴트 붐&lt;/li&gt;
+  &lt;li&gt;1960, 모리나가제과 인스턴트 커피 발매&lt;/li&gt;
+  &lt;li&gt;1971, 컵라면 등장&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;냉동식품의 보급&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;냉장고, 전자렌지의 보급으로 인해 가능해짐&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;레토르트 식품&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데우기만 하면 되는 음식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;2-식사문화&quot;&gt;2. 식사문화&lt;/h1&gt;
+
+&lt;h3 id=&quot;1-식사-습관&quot;&gt;1) 식사 습관&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;전통: 조식, 석식 총 2회&lt;/li&gt;
+  &lt;li&gt;메이지시대 이후: 3회&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;이타다키마스&apos; 공동체&lt;/code&gt; (잘먹겠습니다를 다같이 말하면서 공동체 의식 강화 역할)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;식사 용구&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;상류계급: 다리가 달린 밥상 사용&lt;/li&gt;
+  &lt;li&gt;일반가정: 개개인에게 정해진 네모 밥상 사용&lt;/li&gt;
+  &lt;li&gt;메이지시대 이후 도시가정에서 식탁을 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;주걱권&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;주부의 식사 분배&lt;/li&gt;
+  &lt;li&gt;가정 내 주부의 실질적 책임, 권한&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;상석, 하석의 구분 (가장, 식솔들의 구분)&lt;/p&gt;
+
+&lt;p&gt;핵가족화와 전후 뉴패밀리의 등장&lt;/p&gt;
+
+&lt;h3 id=&quot;2-외식&quot;&gt;2) 외식&lt;/h3&gt;
+
+&lt;p&gt;외식 문화&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;에도시대&lt;/code&gt;부터 발달, 도쿄 오사카 대도시 중심 발달&lt;/li&gt;
+  &lt;li&gt;포장마차, 소점포의 메밀국수 가게, 간이식당류&lt;/li&gt;
+  &lt;li&gt;다방&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;전문요리점&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;에도시대에 등장한 요리: 소바, 튀김, 오뎅 등&lt;/li&gt;
+  &lt;li&gt;점차 고급화 접대, 향연용 음식점으로 발전&lt;/li&gt;
+  &lt;li&gt;메이지시대 특정 요리 전문점: 쇠고기전골, 서양, 중화, 활어 등&lt;/li&gt;
+  &lt;li&gt;1920년대 대중음식점 급격히 발달, 카페의 등장 -&amp;gt; 주류도 판매&lt;/li&gt;
+  &lt;li&gt;카레, 하이라이스, 돈가스, 마쿠노우치 등&lt;/li&gt;
+  &lt;li&gt;전후 스나쿠(스낵) 등장, 패스트푸드점 등장&lt;/li&gt;
+  &lt;li&gt;마이홈주의(가족주의) 확대: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;패밀리 레스토랑&lt;/code&gt; 증가, 드라이브인(자동차 보급)&lt;/li&gt;
+  &lt;li&gt;1990년대 이후 대규모 체인점 증가: 젠쇼, 스카이락 등 저가격 식당 등장&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-연회&quot;&gt;3) 연회&lt;/h3&gt;
+
+&lt;p&gt;일본의 연회&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;지역공동체 제사에서 혈연, 지연이 모여 음식을 먹는 풍습에서 유래&lt;/li&gt;
+  &lt;li&gt;관혼상제, 연중행사 -&amp;gt; 생선, 떡, 술 등&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;하레와 게&lt;/code&gt;(평소보다 좋은 음식을 먹는 것): 평소의 고생과 억압에서 해방, 욕구 충족&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오세치요리&lt;/code&gt;: 정월의 하레 식사&lt;/li&gt;
+  &lt;li&gt;현대 풍부한 식생활로 개인별로 식사하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고식 현상&lt;/code&gt; (혼밥)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;3-식기&quot;&gt;3. 식기&lt;/h1&gt;
+
+&lt;p&gt;식기의 종류&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;에도시대&lt;/code&gt;를 거치며 식기 발전, 현재와 같은 형태의 식기 사용&lt;/li&gt;
+  &lt;li&gt;요리에 맞는 다양한 형태와 크기의 접시&lt;/li&gt;
+  &lt;li&gt;계절감을 나타내기 위한 디자인, 모양 존재&lt;/li&gt;
+  &lt;li&gt;여름철에는 유리나 대나무 용기 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;젓가락 문화&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;젓가락 사용: 나무, 옻칠&lt;/li&gt;
+  &lt;li&gt;젓가락: 단단한 나무, 개인용 젓가락 사용&lt;/li&gt;
+  &lt;li&gt;사이바시: 조리용 긴 젓가락&lt;/li&gt;
+  &lt;li&gt;하시오키: 젓가락 받침&lt;/li&gt;
+  &lt;li&gt;한국과 다르게 젓가락을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가로로 놓음&lt;/code&gt; (횡으로)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;전통요리와 식기&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;일즙삼채&lt;/code&gt;가 기본: 하나의 국물, 세개의 반찬&lt;/li&gt;
+  &lt;li&gt;정식에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;요리마다 정해진 용기&lt;/code&gt; 사용&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가이세키 요리&lt;/code&gt;: 일본의 코스 요리 -&amp;gt; 국, 생선회, 구이, 찜, 밥 절임등으로 구성&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;혼젠요리&lt;/code&gt;: 무로마치시대 무가에 의해 확립된 전통 요리로 에도시대에 발전, 메이지시대 이후 쇠퇴&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;자카이세키 요리&lt;/code&gt;: 다도에서 유래, 다석을 위한 요리&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;4-식사예절&quot;&gt;4. 식사예절&lt;/h1&gt;
+
+&lt;p&gt;인사예절&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;잘먹겠습니다: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;이타다키마스&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;잘 먹었습니다: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고치소사바데시타&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;식기와 젓가락을 따로 사용&lt;/li&gt;
+  &lt;li&gt;대부분 젓가락을 사용하고 면류를 먹을 때는 렌게를 사용&lt;/li&gt;
+  &lt;li&gt;밥그릇, 국그릇을 들고 먹고 고개를 숙여 먹지 않음 (이누구이; 개처럼 먹다)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;젓가락 사용시 금기 행위&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;젓가락으로 이것저것 옮겨 집는 행위&lt;/li&gt;
+  &lt;li&gt;젓가락으로 음식을 주고 받는 행위&lt;/li&gt;
+  &lt;li&gt;음식을 뒤적거리는 것&lt;/li&gt;
+  &lt;li&gt;젓가락으로 그릇을 움직이는 행위&lt;/li&gt;
+  &lt;li&gt;젓가락을 빨거나 깊이 넣는 행동&lt;/li&gt;
+  &lt;li&gt;음식을 젓가락으로 꽂아서 먹는 것&lt;/li&gt;
+  &lt;li&gt;음식 중앙에 젓가락을 꽂아 세우는 행위&lt;/li&gt;
+  &lt;li&gt;국물을 흘리면서 먹는 것&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;5-현대인의-식생활&quot;&gt;5. 현대인의 식생활&lt;/h1&gt;
+
+&lt;p&gt;가정식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;밥과 미소시루가 기본&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;반찬: 생선구이, 가라아게, 장아찌, 김, 니쿠자가, 우메보시 등&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;스시&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;부패를 막기 위해 생선을 소금에 절임&lt;/li&gt;
+  &lt;li&gt;에도시대에 식초로 맛을 낸 밥 위에 생선을 올려 먹음&lt;/li&gt;
+  &lt;li&gt;종류: 니기리즈시, 하코즈시, 마키즈시 등&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;이타마에스시&lt;/code&gt;(카운터), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;카이텐스시&lt;/code&gt;(회전초밥), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;데마에스시&lt;/code&gt;(배달)&lt;/li&gt;
+  &lt;li&gt;재료(네타)의 종류 많음&lt;/li&gt;
+  &lt;li&gt;손으로 먹는 것이 원칙&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;낫토&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;콩을 발효시켜 만든 음식&lt;/li&gt;
+  &lt;li&gt;간토지방에서 아침에 즐겨먹는다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;돈부리&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;큰 그릇에 밥을 넣고 그 위에 다양한 재료를 올려 먹는다.&lt;/li&gt;
+  &lt;li&gt;소고기, 튀김, 장어, 돈가스, 생선회 등&lt;/li&gt;
+  &lt;li&gt;규동, 오야코동, 텐동, 카이센동 등&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;에키벤&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;각 지역의 역에 파는 도시락&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;여행을 즐기는 중요한 요소&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;라면&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;중국에서 기원한 면 요리, 추카소바(중화소바)&lt;/li&gt;
+  &lt;li&gt;종류: 시오(소금)라면, 소유(간장)라면, 미소(된장)라면, 돈코츠(돼지뼈)라면&lt;/li&gt;
+  &lt;li&gt;일본의 3대 라면: 삿포로, 기타카타, 하카타 라면&lt;/li&gt;
+  &lt;li&gt;인스턴트라면: 1958년 닛신의 치키라면, 컵라면&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;우동&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;어원: 중국에서 들어온 따뜻한 면&lt;/li&gt;
+  &lt;li&gt;종류: 도쿄의 나베야키(뚝배기)우동, 오사카의 기츠네(유부)우동, 다누키(튀김부스러기)우동, 니코미우동, 야키우동 등&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;짬뽕&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;유래: 나가사키 중국요리점에서 유학생들을 위해 고안한 음식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;음료문화 (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;음식을 먹을때 맞는 음료를 곁들여 먹음&lt;/code&gt;)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;차&lt;/code&gt;: 녹차, 전차, 말차, 홍차, 보리차&lt;/li&gt;
+  &lt;li&gt;커피: 원두커피, 인스턴트커피, 캔커피 등&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;라무네&lt;/code&gt;: 청량 탄산수에 시럽,향료를 가미한 음료; ‘마쓰리 음료’&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;음주문화&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;다양한 술: 니혼슈, 맥주, 소주, 와인, 보드카 등&lt;/li&gt;
+  &lt;li&gt;종류: 호쿠리쿠의 니혼슈, 규슈의 소주, 홋카이도의 위스키 등&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;지자케&lt;/code&gt;: 각 지역의 고유 전통주&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;지비루&lt;/code&gt;: 각 지역 특산 맥주&lt;/li&gt;
+  &lt;li&gt;일과 후, 목욕 뒤 ‘맥주 한 잔’ 문화&lt;/li&gt;
+  &lt;li&gt;회식 문화: 이자카야, 바, 클라부&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 10 Oct 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/%ED%95%99%EA%B5%90%EA%B3%B5%EB%B6%80/%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A86%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1/</link>
+        <guid isPermaLink="true">http://localhost:4000/%ED%95%99%EA%B5%90%EA%B3%B5%EB%B6%80/%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A86%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1/</guid>
+        
+        
+        <category>학교공부</category>
+        
+      </item>
+    
+      <item>
+        <title>일문예 5주차 정리 - 일본의 의복문화</title>
+        <description>&lt;h1 id=&quot;일본의-의복-문화&quot;&gt;일본의 의복 문화&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;기모노&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;일본의 전통복장, 와후쿠라고도 한다.&lt;/li&gt;
+  &lt;li&gt;헤이안시대 귀족들의 정장의 속옷 점차 변화&lt;/li&gt;
+  &lt;li&gt;우치카케: 신부 예복&lt;/li&gt;
+  &lt;li&gt;남성의 기모노: 하오리, 하카마&lt;/li&gt;
+  &lt;li&gt;편한 실내 복장: 유카타&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;1-시대에-따른-일본-의복의-변천&quot;&gt;&lt;strong&gt;1) 시대에 따른 일본 의복의 변천&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;고대의 의복&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;야요이 시대: 양잠과 직물 짜기 시작&lt;/li&gt;
+  &lt;li&gt;쇼토쿠태자, 수 왕조를 모방해 의복 규칙(복제) 제정&lt;/li&gt;
+  &lt;li&gt;다이호 율령, 요로 율령: 당 왕조 제복(예복, 조복, 제복) 모방&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;중세, 에도 시대의 의복&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;가마쿠라 막부: 딱딱한 의복 -&amp;gt; 호화스런 비단
+    &lt;ul&gt;
+      &lt;li&gt;무사 일상복: 가리기누, 스이칸&lt;/li&gt;
+      &lt;li&gt;여성정장: 우치키에 하카마 -&amp;gt; 고소데에 우치카케&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;에도시대
+    &lt;ul&gt;
+      &lt;li&gt;오다, 도요토미 시대: 대담하고 장식적인 것 장려&lt;/li&gt;
+      &lt;li&gt;무사정장: 가미시모, 나가바카마&lt;/li&gt;
+      &lt;li&gt;고소데(기본의복), 유젠염색이나 시보리 염색 발달 (옷을 물들임)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;근대의 의복&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;메이지 유신 이후&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;‘문명개화’로 의복 서양화&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;공무원 양복 착용이 정부의 방침&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;군인, 경찰 학생 서양식 제복 착용&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;천황의 양장&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;현대의 의복&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;제 1차 세계대전 이후: 여성의 의복 서양화&lt;/li&gt;
+  &lt;li&gt;제 2차 세계대전 이후: 양복의 표준화, 행사 시에만  기모노 착용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-기모노의-종류&quot;&gt;&lt;strong&gt;2) 기모노의 종류&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;기모노의 착용&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;고소데: 속옷(나라시대) -&amp;gt; 일상복(16세기)&lt;/li&gt;
+  &lt;li&gt;현대: 정월, 시치고산, 졸업식, 결혼식 등&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;기모노의 종류&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;히토에, 아와세&lt;/li&gt;
+  &lt;li&gt;일상복: 유카타&lt;/li&gt;
+  &lt;li&gt;외출복, 예복: 로, 샤, 조후 천 이용&lt;/li&gt;
+  &lt;li&gt;겨울옷: 단젠 - 방한용 솜옷&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;여성 기모노의 종류&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;신부 예복: 흰색/빨간색 바탕에 화려한 자수나 금을 입힌 비단 기모노&lt;/li&gt;
+  &lt;li&gt;경사: 결혼식같은 경사 때에는 수수한 색깔과 무늬의 기모노&lt;/li&gt;
+  &lt;li&gt;애사: 장례식같은 애사 때에는 검은색 기모노&lt;/li&gt;
+  &lt;li&gt;후리소데: 긴 소매에 화려한 무늬, 성인의 날 등 미혼 여성이 착용&lt;/li&gt;
+  &lt;li&gt;토메소데: 짧은 소매, 공식적인 자리에 기혼 여성이 착용&lt;/li&gt;
+  &lt;li&gt;이로무지: 무늬가 없고 경조사 모두 착용&lt;/li&gt;
+  &lt;li&gt;호몬기: 나이에 상관없이 방문할 때, 연회 때 입는 기모노&lt;/li&gt;
+  &lt;li&gt;쓰케사게: 호몬기 보다 격식을 갖춘 연회용 복장&lt;/li&gt;
+  &lt;li&gt;고몬: 자잘한 무늬가 있는 기모노, 평상복과 예복으로 모두 사용&lt;/li&gt;
+  &lt;li&gt;유카타: 원래 목욕 가운이었으나 여름 외출복으로 마쓰리, 하나비 행사 때 착용&lt;/li&gt;
+  &lt;li&gt;하카마: 원래는 남성용이었으나 허리 아래 기모노를 가리는 하의&lt;/li&gt;
+  &lt;li&gt;하오리: 남성용 외투 상의, 현대에는 여성도 착용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-오비&quot;&gt;&lt;strong&gt;3) 오비&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;기모노의 허리 부분에 착용하는 장식 천&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;헤이안 시대
+    &lt;ul&gt;
+      &lt;li&gt;남성용 오비에 장식용 돌을 부착&lt;/li&gt;
+      &lt;li&gt;여성은 오비를 사용하지 않음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;15세기 말, 고소데 일반화되면서 오비 사용&lt;/li&gt;
+  &lt;li&gt;에도시대: 하카마 없이 고소데 착용하며 오비 중요성 커짐&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;남성용 오비&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;변화가 거의 없다, 가쿠오비 폭 9cm&lt;/li&gt;
+  &lt;li&gt;헤코오비 폭 50cm 이상의 천을 접어 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;여성용 오비&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;30cm, 2m(폭, 길이) -&amp;gt; 현재 길이 3-4m&lt;/li&gt;
+  &lt;li&gt;쓰즈레오리 - 정장, 슈스&lt;/li&gt;
+  &lt;li&gt;하부타에 - 일상용&lt;/li&gt;
+  &lt;li&gt;오비지메: 오비가 풀어지는 것을 막는 얇은 끈&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;4-게타와-다비&quot;&gt;&lt;strong&gt;4) 게타와 다비&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;게타&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기모노와 함께 착용하는 일본 전통 신발&lt;/li&gt;
+  &lt;li&gt;목재로 제작&lt;/li&gt;
+  &lt;li&gt;V자형 고정 끈&lt;/li&gt;
+  &lt;li&gt;하: 발바닥에 돌출된 두 개의 부분&lt;/li&gt;
+  &lt;li&gt;남성용: 오동나무 재질이 최고, 검은 고정 끈 사용&lt;/li&gt;
+  &lt;li&gt;여성용: 단순한 나무 or 칠, 실크나 벨벳 고정 끈 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;다비&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;일본식 버선&lt;/li&gt;
+  &lt;li&gt;실크나 면을 주로 사용한다.&lt;/li&gt;
+  &lt;li&gt;남성: 주로 검은색/감청색&lt;/li&gt;
+  &lt;li&gt;여성: 흰색(정장), 유색(일상복)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;일본의-주거-문화&quot;&gt;일본의 주거 문화&lt;/h1&gt;
+
+&lt;h3 id=&quot;1-일본의-주택문화&quot;&gt;&lt;strong&gt;1) 일본의 주택문화&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;일본 주택의 특징&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;고온다습한 기후로  개방적 여름형 주택이 기본&lt;/li&gt;
+  &lt;li&gt;창문이 많고 지붕이 높음, 통풍에 주안, 겨울철엔 부적합&lt;/li&gt;
+  &lt;li&gt;지진을 대비해 낮은 주택, 목조 건물이 많음 (화재, 방음에 취약)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;눈이 많은 추운 지방&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;현관 입구에 눈 터는 공간이 존재&lt;/li&gt;
+  &lt;li&gt;이중 출입문을 사용&lt;/li&gt;
+  &lt;li&gt;급한 지붕 경사도 (갓쇼즈쿠리)&lt;/li&gt;
+  &lt;li&gt;결빙을 피해 아마도 달지 않음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;고온다습한 남부 지방&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;아마도(비바람을 피하기 위한 건물) 설치&lt;/li&gt;
+  &lt;li&gt;큰 창문&lt;/li&gt;
+  &lt;li&gt;작은 주택 규모&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;전통가옥의 구조와 특징&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;다타미: 바닥재 (두꺼운 돗자리같은 재질, 규격이 정해져있음)&lt;/li&gt;
+  &lt;li&gt;쇼지문: 습도조절, 인테리어 기능&lt;/li&gt;
+  &lt;li&gt;후스마: 간이 방분리 문; 흡습성, 환기성, 단열성 등&lt;/li&gt;
+  &lt;li&gt;도코노마: 장식을 위한 공간&lt;/li&gt;
+  &lt;li&gt;고타쓰(코타츠): 전통적인 난방기구&lt;/li&gt;
+  &lt;li&gt;이로리: 난방과 취사를 위한 화로&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;전통가옥의 특징&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;저층구조&lt;/li&gt;
+  &lt;li&gt;목조 주택 -&amp;gt; 통풍, 환기, 습도 유지에 유리&lt;/li&gt;
+  &lt;li&gt;개방성: 방과 방을 통해 이동&lt;/li&gt;
+  &lt;li&gt;문이 많음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;현대 일본의 주택문화&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;아파트, 맨션과 단독주택으로 구분&lt;/li&gt;
+  &lt;li&gt;개인 단독주택: 목조, 2층/단층, 콘크리트 철골조 주택이 증가하는 경향&lt;/li&gt;
+  &lt;li&gt;전후 주택 양식: 개인 생활 중시로 개실화(개인별로 방)
+    &lt;ul&gt;
+      &lt;li&gt;가구, 침대 등 서양식 구조 수용&lt;/li&gt;
+      &lt;li&gt;식생활 공동 공간 다이닝 키친/거실 도입&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;현대 일본 주택의 구조&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;아파트: 주로 목조 2층 건물&lt;/li&gt;
+  &lt;li&gt;맨션: 철골조 고층 건물&lt;/li&gt;
+  &lt;li&gt;단독주택: 목조 1~2층&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;현대 일본 주택의 특징&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;화실과 양실이 같이 있는 화양 절충형 증가&lt;/li&gt;
+  &lt;li&gt;벽장 설치, 욕실과 화장실의 분리&lt;/li&gt;
+  &lt;li&gt;다이닝 키친이 일반적 (3LDK; 3 Large + Dining Kitchen)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;주거 형태&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;젊은이: 아파트, 맨션 등 임대주택&lt;/li&gt;
+  &lt;li&gt;가족: 단독주택, 아파트, 맨션&lt;/li&gt;
+  &lt;li&gt;도시의 주택 부족, 좁은 주택 면적에 대한 불만&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;주택 구입&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1980년대 버블에 의한 지가상승으로 집값 상승, 외곽으로 나가게 됨&lt;/li&gt;
+  &lt;li&gt;1990년대 말 이후 도쿄 인구 증가
+    &lt;ul&gt;
+      &lt;li&gt;도심회귀현상: 지가 하락, 고층아파트 증가, 도심 생활의 편리성&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;교외
+    &lt;ul&gt;
+      &lt;li&gt;이상적 주택: 교외에 목조로 지은 2층 서양식 주택&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;외곽 거주와 통근
+    &lt;ul&gt;
+      &lt;li&gt;통근, 통학 시간의 증가, 도쿄 평균 통근 시간 72분&lt;/li&gt;
+      &lt;li&gt;마이홈 집착: 신칸센 이용자 증가&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;주택 매매/임대 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;대부분 부동산 중개소를 통해 소개&lt;/li&gt;
+  &lt;li&gt;임대시 소개료 외에 보증금, 사례금이 필요&lt;/li&gt;
+  &lt;li&gt;전세 제도 없음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;주거에 관한 예절&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;현관: 신발의 정렬 (안하면 예의 없는 것)&lt;/li&gt;
+  &lt;li&gt;좌석 배치: 도코노마가 상석&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;목욕 문화&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;화장실과 욕실의 분리, 원룸에는 유닛베스&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;매일 목욕, 가족이 같은 욕조 물 사용해서 몸을 데우는 용도&lt;/li&gt;
+  &lt;li&gt;대중탕(센토)
+    &lt;ul&gt;
+      &lt;li&gt;반다이: 남탕과 여탕의 감독&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;건강랜드&lt;/li&gt;
+  &lt;li&gt;노천온천: 남녀 혼탕 문화&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 08 Oct 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/%ED%95%99%EA%B5%90%EA%B3%B5%EB%B6%80/%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A85%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1/</link>
+        <guid isPermaLink="true">http://localhost:4000/%ED%95%99%EA%B5%90%EA%B3%B5%EB%B6%80/%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A85%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1/</guid>
+        
+        
+        <category>학교공부</category>
+        
+      </item>
+    
+      <item>
+        <title>일문예 4주차 정리 - 일본인과 종교</title>
+        <description>&lt;h2 id=&quot;1-일본인은-과연-무종교인가&quot;&gt;1. 일본인은 과연 무종교인가?&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-신도&quot;&gt;&lt;strong&gt;1) 신도&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;애니미즘&lt;/code&gt;적 자연종교&lt;/li&gt;
+  &lt;li&gt;일본인들의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;자연관&lt;/code&gt;이 반영됨&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;다신교&lt;/code&gt; (사물, 인물 등)&lt;/li&gt;
+  &lt;li&gt;불교, 유교의 영향을 받음&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;조상 숭배 사상&lt;/code&gt;의 핵심&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-불교&quot;&gt;&lt;strong&gt;2) 불교&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;신불신앙: 신도와 불교가 서로 영향&lt;/li&gt;
+  &lt;li&gt;6세기 백제로부터 전래&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-기독교&quot;&gt;&lt;strong&gt;3) 기독교&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;h3 id=&quot;4-신흥종교&quot;&gt;&lt;strong&gt;4) 신흥종교&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;h3 id=&quot;일본인의-관대한-종교의식&quot;&gt;일본인의 관대한 종교의식&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;신단과 불단을 동시에 갖춤&lt;/p&gt;
+
+    &lt;p&gt;ex) 출생, 결혼의식은 신도식, 장례식은 불교식
+신사에서 하쓰모데, 오본에는 절에서 참배&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;국교가 없음&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-일본의-주요-종교&quot;&gt;2. 일본의 주요 종교&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-신도-1&quot;&gt;&lt;strong&gt;1) 신도&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;일본 고유 자연종교&lt;/li&gt;
+  &lt;li&gt;정령신앙 (애니미즘의 일종)&lt;/li&gt;
+  &lt;li&gt;대표적인 신사로는 이세신궁, 이즈모다이샤, 메이지신궁 등이 있음
+    &lt;ul&gt;
+      &lt;li&gt;일본 신화와 연관되어 있음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;일본서기, 고사기, 후토기 등에 실려있다. (일본서기에서 처음 등장)
+    &lt;ul&gt;
+      &lt;li&gt;이자나기 이자나미&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;제천의 고속 (하늘에 제사를 지내는 옛 풍습)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;신도의 역사&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;야마토 정권&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;왕족과 유력 귀족의 신도적 의식을 통해 권위 및 정통성 확보&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;나라시대, 헤이안 시대&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;황실 종교&lt;/li&gt;
+  &lt;li&gt;신화, 의식, 신관, 신사 통일적 완비&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;8-9세기&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;신도와 불교의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;상호간 영향&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;신불습합&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;에도시대&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;유교의 전래 -&amp;gt; 주자학 영향&lt;/li&gt;
+  &lt;li&gt;체계적 교의 정립&lt;/li&gt;
+  &lt;li&gt;국학 발달 (일본의 학문)&lt;/li&gt;
+  &lt;li&gt;고대 일본의 문화, 신앙 재인식 (신도의 교의 재확립)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;메이지 시대&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;국학 발달에 따른 불교 배척&lt;/code&gt; (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;폐불훼석&lt;/code&gt;; 불상을 버리고 석가모니를 훼하다)&lt;/li&gt;
+  &lt;li&gt;신불 분리&lt;/li&gt;
+  &lt;li&gt;신사신도 -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;국가신도&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;전국적 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;신도의 조직화, 국교화&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;서구권에서 기독교의 신앙심의 자유 요구하며 반발&lt;/li&gt;
+  &lt;li&gt;어떤 종교를 믿더라도 국교를 부정해서는 안된다는 장치를 만듦&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;제 2차 세계대전 이후&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;국가신도 폐지, 신사신도 존속&lt;/li&gt;
+  &lt;li&gt;국가가 아닌 조직, 단체에서 관리하게 됨&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;신도의 의식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;신사: 신도의식을 행하고 소원을 비는 목조의 사전과 부속 건조물을 둘러싼 장소&lt;/li&gt;
+  &lt;li&gt;신도의식, 신사참배&lt;/li&gt;
+  &lt;li&gt;도시부: 동일한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;우지가미(지역신)&lt;/code&gt;를 가진 사람에게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;공동체 의식&lt;/code&gt; 부여&lt;/li&gt;
+  &lt;li&gt;농촌부: 공통의 유대감 강조 -&amp;gt; 동족의식 확대&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;신사 구성&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;본전: 신의 영이 살고 있다는 신체&lt;/li&gt;
+  &lt;li&gt;배전: 예배 드리는 곳.&lt;/li&gt;
+  &lt;li&gt;도리이: 입구에 세운 기둥 문&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-불교-1&quot;&gt;&lt;strong&gt;2) 불교&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;6세기 중엽 중국과 한반도를 거쳐 전래&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;호족의 지지&lt;/code&gt; -&amp;gt; 고대 왕권의 불교장려&lt;/li&gt;
+  &lt;li&gt;마을마다 절들이 위치해있음 (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;장례식, 제사, 묘지 관리&lt;/code&gt; 등을 함)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;불교의 역사&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;나라시대&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;6종파 성립: 삼론, 법상, 성실, 구사, 율, 화엄&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;쇼토쿠 태자의 불교장려책&lt;/code&gt; -&amp;gt; 불교의 황금기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;헤이안시대&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;새로운 불법 개조: 천태종의 사이초&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;귀족불교&lt;/code&gt;: 귀족들의 귀의와 보호&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;불교의 폐단&lt;/code&gt;: 승려와 귀족 간 결탁, 승병&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;카마쿠라시대&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;민중불교&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;밀법사상을 배경으로 한 정토종 교세 확장 - 겐쿠, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;아미타불&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;선종: 엄격한 수양의 교법&lt;/li&gt;
+  &lt;li&gt;무사계급과 결부&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;무로마치시대&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;불교 쇠퇴&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;도요토미 히데요시: 사원 통제, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;무장 해제&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;에도시대&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;막부의 민중 지배수단으로서 기능&lt;/li&gt;
+  &lt;li&gt;가톨릭 금지&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;단가등록부&lt;/code&gt;: 호적의 역할 (주민 통제)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-기독교-1&quot;&gt;&lt;strong&gt;3) 기독교&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;에도시대&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;프란시스 자비에르가 전파&lt;/li&gt;
+  &lt;li&gt;17세기 초 전성기&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;에도막부의 억압과 금지&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;19세기 개국 이후 기독교 포교 활발&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;기독교의 억압&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;에도 막부의 기독교 탄압 정책&lt;/li&gt;
+  &lt;li&gt;도쿠가와 이에야스의 크리스트교 금제&lt;/li&gt;
+  &lt;li&gt;시마바라의 난: 기독교 탄압에 대항 -&amp;gt; 막부군이 진압 후 혹독히 탄압&lt;/li&gt;
+  &lt;li&gt;종문인별장: 모든 일본인 불교 사원 소속화&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;후미에 제도&lt;/code&gt; 시행 (종이에 예수 그리고 밟게 하기)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;기독교의 재기&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1859년 개국 이후 서양국가 개신교 포교 시작&lt;/li&gt;
+  &lt;li&gt;성공회, 루터교 등 다양한 교단의 유입&lt;/li&gt;
+  &lt;li&gt;태평양전쟁 이후 교단의 통합&lt;/li&gt;
+  &lt;li&gt;제 2차 세계대전 이후 많은 교단이 일본 크리스트교단에서 탈퇴&lt;/li&gt;
+  &lt;li&gt;현재 130여 개의 개신교 교단 존재&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4-신흥종교-1&quot;&gt;&lt;strong&gt;4) 신흥종교&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;에도시대 말 ~ 메이지 유신 이후 성립&lt;/li&gt;
+  &lt;li&gt;예시: 구로즈미교, 덴리교, 소카각카이 등&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;신흥종교의 특징&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;현세구원적 성격&lt;/li&gt;
+  &lt;li&gt;정부의 공인 (단, 오모토교 제외; 국가체제에 대해 반대했기 때문)&lt;/li&gt;
+  &lt;li&gt;높은 신자로서의 의식&lt;/li&gt;
+  &lt;li&gt;적극적인 활동&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Fri, 07 Oct 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/%ED%95%99%EA%B5%90%EA%B3%B5%EB%B6%80/%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A84%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1/</link>
+        <guid isPermaLink="true">http://localhost:4000/%ED%95%99%EA%B5%90%EA%B3%B5%EB%B6%80/%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A84%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1/</guid>
+        
+        
+        <category>학교공부</category>
+        
+      </item>
+    
+      <item>
+        <title>일문예 3주차 정리 - 일본의 전통예능과 예술</title>
+        <description>&lt;h1 id=&quot;일본의-전통예능과-예술&quot;&gt;일본의 전통예능과 예술&lt;/h1&gt;
+
+&lt;h2 id=&quot;1-전통-연극과-예능&quot;&gt;1. 전통 연극과 예능&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-노&quot;&gt;1) 노&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;특징&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;일본의 전통 가면무도극, 세계무형유산&lt;/li&gt;
+  &lt;li&gt;현존하는 최고의 직업 연극&lt;/li&gt;
+  &lt;li&gt;14세기에 생겨난 음악을 동반한 무용극으로 주로 가면을 쓰고 연기함&lt;/li&gt;
+  &lt;li&gt;노의 무대 배경: 한 그루의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;소나무&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가면&lt;/code&gt;: 온나멘, 오토코멘, 기멘, 오키나멘, 조노멘&lt;/li&gt;
+  &lt;li&gt;본질적으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;불교의 존재관을 반영&lt;/code&gt;하는 의식적 기원이 담겨져 있음&lt;/li&gt;
+  &lt;li&gt;비유적 묘사, 암시, 상징적인 표현에 역점을 둔 무대 방법
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;현실 무상의 본질&lt;/code&gt;을 나타내려고 함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;내용&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;망령, 요괴, 요정, 신을 통해 ‘유겐’의 세계를 표현&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;멤버 구성&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;시테: 노와 춤을 담당하는 주 연기자&lt;/li&gt;
+  &lt;li&gt;와키: 보조 연기자&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;하야시카타&lt;/code&gt;: 피리, 작은 북, 큰 북으로 구성된 악기 연주자&lt;/li&gt;
+  &lt;li&gt;지우타이: 보통 8명으로 구성된 일종의 합창단&lt;/li&gt;
+  &lt;li&gt;교겐카타: 막간에 행해지는 희극의 연기자&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;역사&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;나라시대 중국에서 유래&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;종교적 기원&lt;/code&gt;의 의미를 담음&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;14세기 중반: 교토와 나라에 거점을 둔 직업극단 결성&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;상업적인 간진노 흥행&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;덴가쿠-농악, 사루가쿠-익살스러운 흉내를 내는 민중예능&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;무로마치시대&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;쇼군 아사카가 요시미쓰를 후원&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;간아미: 배우이자 각본가, 간제류를 통해 노가쿠 완성&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;제아미: 간아미의 아들, 무겐노 확립, 현대의 고정된 무대양식 정착&lt;/p&gt;
+
+        &lt;p&gt;억제, 표현의 간소화
+암시라는 선의 예술 이념에 기초&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;에도시대&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;에도시대에는 도쿠가와 막부의 공식적인 행사가 됨&lt;/li&gt;
+      &lt;li&gt;도쿠가와 막부 붕괴 후 지원 중단, 일부 귀족계급의 지원을 받음&lt;/li&gt;
+      &lt;li&gt;제2차 세계대전 후 일반 대중이 유일한 후원자&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;교겐&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;노 상연 중 막간 연극&lt;/li&gt;
+      &lt;li&gt;인간의 약한 성격을 농담처럼 이야기함&lt;/li&gt;
+      &lt;li&gt;부부 싸움, 허풍장이 등을 야유함&lt;/li&gt;
+      &lt;li&gt;진지한 연극 사이의 긴박감을 완화시키는 촉매 역할&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-가부키&quot;&gt;2) 가부키&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;에도시대의 서민예능, 무용극
+    &lt;ul&gt;
+      &lt;li&gt;17세기 여러 종류의 가요곡과 무용을 모아 새롭게 구성&lt;/li&gt;
+      &lt;li&gt;연기, 무용, 음악의 융합. 화려한 무대연출&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;역사&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1603년: 이즈모타이샤의 무녀인 ‘오쿠니’가 여성으로 구성된 집단을 데리고 춤과 노골적인 촌극을 한 것이 가부키의 시작&lt;/li&gt;
+  &lt;li&gt;1629년: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;풍기문란으로 여성 가부키 금지&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;미소년(와카슈)의 여장 흥행&lt;/code&gt; 금지(1652) - 야로 가부키로 정착&lt;/li&gt;
+  &lt;li&gt;겐로쿠시대 (1688~1704): 최초 황금기, 가장 인기 있는 무대 예술로 번성&lt;/li&gt;
+  &lt;li&gt;쓰루야 난보쿠, 가와타케 모쿠아미의 세련된 명작으로 예술적 정점에 도달&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;가부키의 종류&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;시대물: 역사적인 사건, 설화&lt;/li&gt;
+  &lt;li&gt;세와모노: 살인, 방화, 동반자살 등 서민의 일상생활을 소재로&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;음악과 무대장치&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;주요 악기: 큰북, 피리, 소고, 퉁소&lt;/li&gt;
+  &lt;li&gt;하나미치: 무대 좌우에 설치된 등장하고 퇴장하는 통로&lt;/li&gt;
+  &lt;li&gt;무대장치: 삼색의 막, 엘레베이터, 회전무대, 통로 등&lt;/li&gt;
+  &lt;li&gt;특수연출: 흰색분으로 얼굴 칠, 화려한 화장&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;메이지 유신 이후&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;이치카와 단주로, 오노에 기쿠고로: 고전 가부키 보호 강력 주장&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;제2차 세계대전 이후&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;가부키 인기 지속&lt;/li&gt;
+  &lt;li&gt;도쿄 가부키자: 인기 있는 막과 장에 한해 무용극과 함께 상연&lt;/li&gt;
+  &lt;li&gt;국립극장: 전체 상연. 평균 5시간 정도 상연&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-분라쿠&quot;&gt;3) 분라쿠&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;특징&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;에도시대 서민 예술&lt;/li&gt;
+  &lt;li&gt;직업적인 인형극, 닌교조루리&lt;/li&gt;
+  &lt;li&gt;분라쿠의 요소
+    &lt;ul&gt;
+      &lt;li&gt;머리 길이와 키의 비율이 2:3 정도인 인형&lt;/li&gt;
+      &lt;li&gt;머리 속에는 표정연기를 위한 장치&lt;/li&gt;
+      &lt;li&gt;조종자에 의한 인형의 움직임&lt;/li&gt;
+      &lt;li&gt;다유(노래하는 사람)의 이야기&lt;/li&gt;
+      &lt;li&gt;세줄 샤미센의 음악적이고 리드미컬한 연주&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;분라쿠 공연자&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;인형 조정자: 보통 검은 기모노를 입음&lt;/li&gt;
+  &lt;li&gt;보좌역: 검은 두건 착용&lt;/li&gt;
+  &lt;li&gt;주조종자: 대개 관객에게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;얼굴을 보인 채 인형을 조종&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;다유: 혼자서 모든 인형 대사 소화&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;메이지 시대 이후&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;서양 연극의 발전으로 분라쿠에 대한 관심 줄어듦&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;제2차 세계대전 이후&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;분라쿠 쇠퇴&lt;/li&gt;
+  &lt;li&gt;존속: 정부의 지원, 국립극장과 국립분라구극장의 설립으로 위기 모면&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4-라쿠고&quot;&gt;4) 라쿠고&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;에도시대부터 흥행한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1인 만담&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;해학적 독백 형식을 지닌 대화 형식의 서민 예술&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;라쿠고카(만담가)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;에피소드적인 이야기와 목소리, 얼굴 표정 등을 교묘하게 변화시켜 여러 인물을 표현&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;무대 장치를 일체 사용하지 않음&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;반주 음악: 북, 샤미센, 대금(라쿠고카의 등장과 퇴장을 알림)&lt;/li&gt;
+  &lt;li&gt;유일한 소도구: 수건, 부채&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;방석에 정좌한 채 이야기 전개&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;‘오치’(우스갯소리, 예상하지 못한 결정적인 대사)로 이야기를 매듭&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;화자와 관객 사이의 상호 관계가 매우 중요함&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;**상연 목록 많지 않음**&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;라쿠고 애호가는 기본적인 줄거리를 몇 번이나 반복해서 들음&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;라쿠고카가 덧붙이는 세밀한 묘사 방법을 높이 평가&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;마쿠라&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;도입 화제, 라쿠고 등에서 서두에 하는 짤막한 이야기 -&amp;gt; 독자성 요구됨&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;이야기의 줄거리보다도 등장인물의 성격묘사에 중점을 둠&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;요세: 에도시대부터 화예인 라쿠고나 만자이의 공연장소&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;5-만자이&quot;&gt;5) 만자이&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;2명의 희극인이 말을 주고 받으며 진행하는 해학적인 회화 무대 예술&lt;/li&gt;
+  &lt;li&gt;한국의 만담에 가까움&lt;/li&gt;
+  &lt;li&gt;나라시대에 시작되어 에도시대에 전국으로 확대됨&lt;/li&gt;
+  &lt;li&gt;쓰코미: 상대방에게 재치넘치는 말로 응수하는 쪽&lt;/li&gt;
+  &lt;li&gt;보케: 촌스럽고 진지한 분위기로 말하는 쪽&lt;/li&gt;
+  &lt;li&gt;빠른템포로 당시의 시사문제를 가볍게 다루거나 엉뚱한 연상으로 화제가 재빨리 전환됨&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-일본의-예술과-공예&quot;&gt;2. 일본의 예술과 공예&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-꽃꽂이&quot;&gt;1) 꽃꽂이&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;전통적인 꽃꽂이
+    &lt;ul&gt;
+      &lt;li&gt;16세기경부터 시작됨&lt;/li&gt;
+      &lt;li&gt;자연 상태의 소재와 모습을 중시&lt;/li&gt;
+      &lt;li&gt;가지를 하늘, 땅, 사람의 세 요소로 보고 이것들이 조화를 이루는 대자연을 표현하고자 함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;제2차 세계대전 이후
+    &lt;ul&gt;
+      &lt;li&gt;전위적인 꽃꽂이 등장: 철조각, 석고, 유리 등을 소재로 활용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;기본 기술
+    &lt;ul&gt;
+      &lt;li&gt;소재를 틀에 정착시키는 방식&lt;/li&gt;
+      &lt;li&gt;필요 없는 곁가지를 잘라버리는 방식&lt;/li&gt;
+      &lt;li&gt;소재를 구부려 꽂는 방식&lt;/li&gt;
+      &lt;li&gt;휜 가지를 피는 방식&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-다도&quot;&gt;2) 다도&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;작법에 따라 주객이 공감을 나누며 차를 마시는 전통예술&lt;/li&gt;
+  &lt;li&gt;16세기 후반 센노리큐(아즈치모모야마시대의 다인)에 의해 완성됨&lt;/li&gt;
+  &lt;li&gt;예법
+    &lt;ul&gt;
+      &lt;li&gt;무사의 예법이나 노의 영향을 받음&lt;/li&gt;
+      &lt;li&gt;다도의 마음: 외형보다도 마음을 중시하고 스스로를 버리고 손님을 대접하는 것&lt;/li&gt;
+      &lt;li&gt;다실: 다도의 예법을 행하는 전용 공간&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-서도&quot;&gt;3) 서도&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;한국의 서예에 해당됨&lt;/li&gt;
+  &lt;li&gt;한자나 가나문자를 붓으로 씀 -&amp;gt; 정신적인 깊이와 아름다움을 표현하는 조형 예술&lt;/li&gt;
+  &lt;li&gt;작품 감상
+    &lt;ul&gt;
+      &lt;li&gt;운필묵색과 구성, 배치 등의 표현미와 풍격과 의미의 내용미를 봄&lt;/li&gt;
+      &lt;li&gt;감상자에게 감동을 주는 것이 우선시됨&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;가키조메
+    &lt;ul&gt;
+      &lt;li&gt;정월 초에 축하 문구나 좋은 내용의 전통 시가를 붓으로 쓰는 것&lt;/li&gt;
+      &lt;li&gt;현재에도 많이 행해지고 있음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;붓글씨에 대한 교육
+    &lt;ul&gt;
+      &lt;li&gt;초등 교육과 정과 학원 등에서 서도가 활발히 이루어짐&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4-일본의-전통-회화와-우키요에&quot;&gt;4) 일본의 전통 회화와 우키요에&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;일본화&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;불화로서 시작: 불교적 신념을 담은 그림&lt;/li&gt;
+  &lt;li&gt;야마토에: 일본의 풍경이나 풍속을 묘사, 일본화 기초 확립(10세기 경)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;수묵화&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;선종과 함께 중국에서 들어옴&lt;/li&gt;
+  &lt;li&gt;15세기 일본화로 독자적인 발달
+    &lt;ul&gt;
+      &lt;li&gt;묵의 농담 활용&lt;/li&gt;
+      &lt;li&gt;간소, 소박, 암시적 표현&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;우키요에&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;에도시대의 회화, 민중적 풍속화-육필화로도 그려졌으나 판화로서 널리 보급
+    &lt;ul&gt;
+      &lt;li&gt;우키요: 떠다니는 세상, 근심어린 세상이라는 의미&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;그림의 내용
+    &lt;ul&gt;
+      &lt;li&gt;전통 연극의 이모저모&lt;/li&gt;
+      &lt;li&gt;배우들의 다양한 모습: 야쿠샤에&lt;/li&gt;
+      &lt;li&gt;미인화&lt;/li&gt;
+      &lt;li&gt;무사화, 스모 선수들의 모습&lt;/li&gt;
+      &lt;li&gt;역사적인 그림이나 풍경, 새나 꽃 그림: 풍경화, 화조화&lt;/li&gt;
+      &lt;li&gt;춘화&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;기타가와 우타마로, 가쓰시카 호쿠사이, 안도 히로시게 등 많은 작품 남김
+    &lt;ul&gt;
+      &lt;li&gt;고흐, 고갱 등 인상파에게 영향 미침 ex)기모노를 입은 여인, 수련&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;5-칠기&quot;&gt;5) 칠기&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;칠: 옻나무의 수피 안에서 배어나오는 점액&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;고대시대부터 칠을 이용 -&amp;gt; 7세기 이후 미술 공예품으로 이용&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;기술&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;마키에: 금속가루를 뿌림&lt;/li&gt;
+  &lt;li&gt;우루시에: 안료를 섞어 조합한 칠로 모양을 그림&lt;/li&gt;
+  &lt;li&gt;퇴주, 퇴흑: 붉은칠이나 검정칠을 두텁게 바르고 모양을 새김&lt;/li&gt;
+  &lt;li&gt;쟁금: 칠면에 모양을 새기고 금을 새겨 넣음&lt;/li&gt;
+  &lt;li&gt;가마쿠라보리: 나무에 조각한 뒤 붉은 색이나 녹색 칠을 바름&lt;/li&gt;
+  &lt;li&gt;나전, 효몬: 조개껍질이나 금속판 이용한 칠기 cf)자개장&lt;/li&gt;
+  &lt;li&gt;와지마누리: 이시카와 현의 칠기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;6-도자기&quot;&gt;6) 도자기&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;나라삼채: 당삼채를 모방&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;헤이안시대 이후 독자적인 방법의 도자기 발전&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;임진왜란 이후 끌려온 조선의 도공들에 의해 도자기 발전&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;이삼평, 심당길, 김존개&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;중국풍에서 벗어나 일본 독자적인 도자기 생산&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;에도시대의 주요 수출품으로 유럽에서 인기&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;주요 가마터&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;이마리야키(비젠자기)&lt;/li&gt;
+  &lt;li&gt;아리타야키&lt;/li&gt;
+  &lt;li&gt;사쓰마야키&lt;/li&gt;
+  &lt;li&gt;구타니야키&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 06 Oct 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/%ED%95%99%EA%B5%90%EA%B3%B5%EB%B6%80/%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A83%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1/</link>
+        <guid isPermaLink="true">http://localhost:4000/%ED%95%99%EA%B5%90%EA%B3%B5%EB%B6%80/%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A83%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1/</guid>
+        
+        
+        <category>학교공부</category>
+        
+      </item>
+    
+      <item>
+        <title>일문예 2주차 정리 - 일본의 역사</title>
+        <description>&lt;h1 id=&quot;1-선사시대&quot;&gt;1. 선사시대&lt;/h1&gt;
+
+&lt;h3 id=&quot;1-구석기시대-기원전-약-1만-년-전&quot;&gt;1) 구석기시대 (~기원전 약 1만 년 전)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;일본 열도 최초 주민: 대륙에서 건너온 수렵채집민, 구석기 사용&lt;/li&gt;
+  &lt;li&gt;홍적세 말까지 정교한 돌칼을 사용했지만 토기도 없었고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;농경생활도 하지 못함&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-조몬시대-기원전-1만-년경--기원전-300년-경&quot;&gt;2) 조몬시대 (기원전 1만 년경 ~ 기원전 300년 경)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;조몬문화: 새끼줄 모양의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;무늬가 있는 토기&lt;/code&gt;를 사용&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;조몬인: 수렵채집민(최근 연구: 기원전 1천 년경에 농경생활이 시작되었음을 시사)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;야요이시대 (기원전 300년경 ~ 300년경)
+    &lt;ul&gt;
+      &lt;li&gt;야요이문화: 보다 간결한 토기, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;청동기나 철기&lt;/code&gt;제품의 기술, 계획적인 수경농업&lt;/li&gt;
+      &lt;li&gt;일본 사회의 뿌리를 이루는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;농경 중심 생활양식&lt;/code&gt;의 토대가 됨&lt;/li&gt;
+      &lt;li&gt;농경생활을 중심으로 하는 집단생활 -&amp;gt; 계층간의 분화 초래, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;신분제 사회의 기초&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;일본은 청동기, 철기 문화가 순서대로 X, 외부 전래로 인한 이식&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-고분시대-300년경--710년&quot;&gt;3) 고분시대 (300년경 ~ 710년)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;긴키 지방을 중심으로 거대한 정방후원분이 분포 (열쇠구멍 모양)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;거대한 규모로 매장&lt;/code&gt;자는 강대한 힘을 가진 권력자로 보임&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;2-고대시대&quot;&gt;2. 고대시대&lt;/h1&gt;
+
+&lt;h3 id=&quot;1-아스카시대593710&quot;&gt;1) 아스카시대(593~710)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;야요이 시대 말기
+    &lt;ul&gt;
+      &lt;li&gt;야마토 지방을 중심으로 씨족의 수장을 매장하기 위해 분묘 제작 -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고분&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;아스카시대 (일본의 자료를 통해 역사를 살필 수 있는 최초의 시기)
+    &lt;ul&gt;
+      &lt;li&gt;여황제 스이코천황, 쇼토쿠태자가 섭정&lt;/li&gt;
+      &lt;li&gt;야마토 아스카 지방: 야마토계의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;호족&lt;/code&gt;과 이를 지탱해 온 유력한 씨족의 근거지&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;율령제&lt;/code&gt; 중심의 중앙집권적 천황 지배에 의한 통합 (지배 정당성을 높이기 위해 외래로부터 받아들임)
+        &lt;ul&gt;
+          &lt;li&gt;‘소가’(한반도), ‘모노노베’(토착) 씨들이 외부로부터 이런 문물 가져옴, 세력다툼 함&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;불교 도입&lt;/code&gt; (6세기 중반)&lt;/li&gt;
+      &lt;li&gt;17조 헌법을 제정해 중앙집권 국가체제를 확립하는 정치적 이념 마련&lt;/li&gt;
+      &lt;li&gt;역사 편찬 착수&lt;/li&gt;
+      &lt;li&gt;법체제인 율령제도 마련&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-나라시대-710794&quot;&gt;2) 나라시대 (710~794)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;710년에 당나라의 수도 장안을 모델로 한 거대한 수도가 나라에 만들어짐
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;헤이조쿄&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;문화 기술면에서 중국과 고대 조선의 영향을 받음&lt;/li&gt;
+  &lt;li&gt;일본 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;최초의 역사서&lt;/code&gt; “고지키”(712년), “니혼쇼키”(720년) 편찬&lt;/li&gt;
+  &lt;li&gt;조정의 중앙통제, 공유지 반급제 한계 봉착 등 국가가 혼란스러워짐&lt;/li&gt;
+  &lt;li&gt;간무천황: 수도를 나가오카로 옮기고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;율령제를 부활&lt;/code&gt;시킴. 현재의 교토에 수도 헤이안쿄 건설&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-헤이안시대7941185&quot;&gt;3) 헤이안시대(794~1185)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기존 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고대 국가 해체&lt;/code&gt;되는 시기
+    &lt;ul&gt;
+      &lt;li&gt;천황 약화, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;비율령적 세력&lt;/code&gt;들 힘을 가짐&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;대륙 문화를 받아들여 우아한 궁정문화가 꽃핀 시대&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;후지와라&lt;/code&gt;씨
+    &lt;ul&gt;
+      &lt;li&gt;귀족 출신&lt;/li&gt;
+      &lt;li&gt;섭정, 관백 등을 통해 귀족의 역할&lt;/li&gt;
+      &lt;li&gt;조정을 지배했으나 효과적인 중앙집권적 군사조직이 결여되어 있었음
+        &lt;ul&gt;
+          &lt;li&gt;외부에서 무장세력을 데리고 옴&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;다이라&lt;/code&gt;씨
+    &lt;ul&gt;
+      &lt;li&gt;무사집단 세력 확장&lt;/li&gt;
+      &lt;li&gt;12세기 중반에 수도에서 권력을 잡음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;3-중세시대&quot;&gt;3. 중세시대&lt;/h1&gt;
+
+&lt;h3 id=&quot;1-가마쿠라시대-11831333&quot;&gt;1) 가마쿠라시대 (1183~1333)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;미나모토노 요리토모
+    &lt;ul&gt;
+      &lt;li&gt;교토의 천황 정부로부터 동국의 지배권 인정 (1183년)&lt;/li&gt;
+      &lt;li&gt;다이라씨 정권 타도(1185년)&lt;/li&gt;
+      &lt;li&gt;정이대장군[쇼군] 지위 부여받음(1192년) -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가마쿠라 막부&lt;/code&gt; 군사정권 수립&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;막부의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;쇼군이 무사들에게 영지를 분배&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;쇼군, 영주(영지를 받은 무사), 농민간의 봉건적인 지배체제&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;미나모토씨 쇼군 권력은 3대에 이르러 끊김 -&amp;gt; 호조씨 실권 장악
+    &lt;ul&gt;
+      &lt;li&gt;농업 및 상공업 생산 활동 활발&lt;/li&gt;
+      &lt;li&gt;이모작 시행, 벼의 품종 개량, 다양한 철제 농기구 보급&lt;/li&gt;
+      &lt;li&gt;전국적으로 상업 활동을 포함한 문물 교류 활발하게 이루어짐&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;몽골의 침입&lt;/code&gt; (1274년, 1281년)
+    &lt;ul&gt;
+      &lt;li&gt;서일본 무사들까지 동원해 대처함 (몽골의 침입 막아냄)
+        &lt;ul&gt;
+          &lt;li&gt;가미카제(신풍): 당시에 딱 맞게 태풍이 불어서 몽골 침입 막아짐&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;재정적 압박으로 전쟁에 동원된 무사들 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;정당한 보상을 해주지 못함&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;무사들 불만 커짐 (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;막부 붕괴&lt;/code&gt; 원인)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;1333년 가마쿠라 막부를 지배중이던 호조씨 일족을 타도, 가마쿠라 막부 붕괴&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-무로마치시대-13331573&quot;&gt;2) 무로마치시대 (1333~1573)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;가마쿠라 막부 타도 -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;남북조시대&lt;/code&gt; (천황이 두명)
+    &lt;ul&gt;
+      &lt;li&gt;천황과 아시카시가 협력해서 생성&lt;/li&gt;
+      &lt;li&gt;‘아시카가 다카우지’가 무로마치에 막부를 설치 (천황을 쫓아냄, 북/남에 각각 천황을 만듦)
+        &lt;ul&gt;
+          &lt;li&gt;천황은 이후 북조로 단일화&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;남북조 대립, 약 60년간 전국적 전란 지속&lt;/li&gt;
+      &lt;li&gt;아시카가 요시미쓰에 의해 종식&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;무로마치시대
+    &lt;ul&gt;
+      &lt;li&gt;귀족 정권 종식, 막부 쇼의 전일본 지배&lt;/li&gt;
+      &lt;li&gt;천황은 통치하지 않는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;상징적 존재&lt;/code&gt;로 남게 됨&lt;/li&gt;
+      &lt;li&gt;가마쿠라 막부의 통치기구 계승: 봉건적 주종 관계에 의한 지배체제&lt;/li&gt;
+      &lt;li&gt;슈고: 장원 관리 및 지방관리를 통제함, 지위 세습
+        &lt;ul&gt;
+          &lt;li&gt;영지 지배권이 강화되면서 ‘슈고다이묘’라고 불리게 됨&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-전국시대&quot;&gt;3) 전국시대&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;15세기 말
+    &lt;ul&gt;
+      &lt;li&gt;전국적으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;슈고 몰락&lt;/code&gt; -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;다이묘들이 각지에서 다투는 전국시대 도래&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;광산 개발과 물자 생산 활동 비약적으로 증가&lt;/li&gt;
+      &lt;li&gt;교통의 요지에 도시 형성&lt;/li&gt;
+      &lt;li&gt;상공업 발달&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;16세기 중반
+    &lt;ul&gt;
+      &lt;li&gt;포르투갈 상인을 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;화약총 제조법이 전해짐&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;전국의 다이묘들 총포를 경쟁적으로 구입&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;4-근세시대&quot;&gt;4. 근세시대&lt;/h1&gt;
+
+&lt;h3 id=&quot;1-천하통일-16c-후반&quot;&gt;1) 천하통일 (16c 후반)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;오다 노부나가
+    &lt;ul&gt;
+      &lt;li&gt;무로마치 막부 쇼군을 추방, 일본 대부분의 지역을 평정함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;도요토미 히데요시
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전국 통일&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;신분제 강화&lt;/code&gt;, 사회질서 확립&lt;/li&gt;
+      &lt;li&gt;근세 일본 사회의 촌락의 기초를 세움&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;크리스트교 포교 금지&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;주인선무역을 실시해 동남아시아 무역 독점 (허가된 배만 무역 가능)&lt;/li&gt;
+      &lt;li&gt;조선 침입 (1592년, 1597년)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;도쿠가와 이에야스
+    &lt;ul&gt;
+      &lt;li&gt;세키가하라 전투 승리(1600년)&lt;/li&gt;
+      &lt;li&gt;에도 막부 수립(1603년), 일본 열도의 지배권 차지&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-에도시대-16001868&quot;&gt;2) 에도시대 (1600~1868)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;강력한 중앙집권적 봉건체제 유지 (이를 이유로 근세로 구분하기도 함)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;막번체제&lt;/code&gt;: 중앙통일정권인 에도 막부와 그 지배하에 있으면서 독립된 영국을 갖는 번을 통치기관으로 하는 정치체제&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;참근교대&lt;/code&gt;: 다이묘들을 인질로 삼아 1년씩 교대로 에도에 살게하는 제도&lt;/li&gt;
+      &lt;li&gt;크리스트교 금지&lt;/li&gt;
+      &lt;li&gt;외국, 특히 서구 제국과의 접촉 규제&lt;/li&gt;
+      &lt;li&gt;무사귀족 사원에 대한 통제 강화&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;조카마치(무사단과 상공업자들이 집중해서 생긴 마을)
+    &lt;ul&gt;
+      &lt;li&gt;상인 활기 -&amp;gt; 상업 발달&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;조닌문화 전개
+    &lt;ul&gt;
+      &lt;li&gt;조닌: 에도시대에 도시에 사는 상공업자, 도시문화의 중심존재&lt;/li&gt;
+      &lt;li&gt;조닌문화: 조닌을 중심으로 생산되고 향유되어지는 문화&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;5-근대&quot;&gt;5. 근대&lt;/h1&gt;
+
+&lt;h3 id=&quot;1-메이지시대-18681912&quot;&gt;1) 메이지시대 (1868~1912)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;근대화정책&lt;/code&gt;과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;중앙집권화정책&lt;/code&gt; 실시&lt;/li&gt;
+  &lt;li&gt;부국강병 및 식산흥업정책 추진&lt;/li&gt;
+  &lt;li&gt;폐번치현: 영주적 토지소유제도 폐지&lt;/li&gt;
+  &lt;li&gt;지조개정: 토지 및 조세제도의 개혁을 통해 국가재정을 충실히 다짐&lt;/li&gt;
+  &lt;li&gt;초등학교 의무교육 실시&lt;/li&gt;
+  &lt;li&gt;구미 사절단과 유학생을 대대적으로 파견&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;서구의 과학문명 도입&lt;/code&gt;, 자유주의 사상 유입&lt;/li&gt;
+  &lt;li&gt;헌법(대일본제국헌법) 제정, 공포 (1889년 2월 11일)
+    &lt;ul&gt;
+      &lt;li&gt;독일식 헌법을 바탕으로 이토 히로부미가 기초&lt;/li&gt;
+      &lt;li&gt;천황을 절대군주이자 유일 주권자로 규정한 흠정헌법&lt;/li&gt;
+      &lt;li&gt;일본 국회는 양원제(귀족원과 중의원)로 운영, 입헌군주제적 요소도 강했음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;청일전쟁(1894~95)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;청일전쟁의 승리&lt;/code&gt;로 대만을 식민지화, 보상금으로 군비를 확충하고 산업설비를 도입&lt;/li&gt;
+      &lt;li&gt;세계 자본주의 국가의 일원이 되고 자본주의가 확립되는 계기가 됨&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;러일전쟁(1904~05)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;러일전쟁에 승리&lt;/code&gt;함으로써 동아시아지역에서 제국주의강국으로 인정받게 됨&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;근대공업 발달
+    &lt;ul&gt;
+      &lt;li&gt;제사업, 군수산업, 해운조선업, 광업 등&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-다이쇼시대-19121926&quot;&gt;2) 다이쇼시대 (1912~1926)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;경제규모의 확대
+    &lt;ul&gt;
+      &lt;li&gt;제국주의적 팽창, 식민지 경영&lt;/li&gt;
+      &lt;li&gt;국채, 외채 누적 -&amp;gt; 만성적 경제 불황&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;재벌기업 등장: 미쓰비시, 미쓰이, 스미토모 등&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1차 세계대전&lt;/code&gt;의 영향
+    &lt;ul&gt;
+      &lt;li&gt;대외 수출 3배 증가, 공업 생산액 5배 증가, 경공업과 중공업 발전 -&amp;gt; 침체된 경제 회생&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;정치의 민주화&lt;/code&gt;, 사회운동의 전개
+    &lt;ul&gt;
+      &lt;li&gt;보통 선거법 실시: 25세 이상 남성의 선거권 획득&lt;/li&gt;
+      &lt;li&gt;정당정치 발달: ‘다이쇼 데모크라시’&lt;/li&gt;
+      &lt;li&gt;사회, 노동, 농민운동이 활발히 전개&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-군국주의시대1930년대-초1945&quot;&gt;3) 군국주의시대(1930년대 초~1945)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1920년대 후반 일본 경제와 사회의 혼란 격화&lt;/li&gt;
+  &lt;li&gt;만주사변(1931년), 만주국 건국(1932년)
+    &lt;ul&gt;
+      &lt;li&gt;국제연맹에서 탈퇴&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;국가개조운동(쇼와유신운동)
+    &lt;ul&gt;
+      &lt;li&gt;우익, 청년 장교들의 쿠데타(5.15사건, 2.26사건) -&amp;gt; 군국주의 체제로 전환&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;중일전쟁(1937년) -&amp;gt; 계획경제 및 통제경제체제로 전환&lt;/li&gt;
+  &lt;li&gt;제2차 세계대전
+    &lt;ul&gt;
+      &lt;li&gt;미국, 영국 등과 태평양전쟁(1941년)&lt;/li&gt;
+      &lt;li&gt;히로시마, 나가사키에 원자폭탄 투하&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;포츠담 선언&lt;/code&gt;: 연합국에 항복함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;6-현대&quot;&gt;6. 현대&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;패전(1945년)
+    &lt;ul&gt;
+      &lt;li&gt;원폭 투하, 연합군에 의한 점령, 비무장화, 재벌해체, 천황의 인간선언&lt;/li&gt;
+      &lt;li&gt;헌법개정, 도쿄재판, 샌프란시스코 강화조약&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;미일안전보장조약
+    &lt;ul&gt;
+      &lt;li&gt;미국과 일본간의 군사동맹을 규정한 조약&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;고도경제성장(1950~1970년대)
+    &lt;ul&gt;
+      &lt;li&gt;자유주의진영 국가 편입, 미국의 경제 지원&lt;/li&gt;
+      &lt;li&gt;한국전쟁 발발 -&amp;gt; 전쟁특수로 일본 경제 급격히 정상화&lt;/li&gt;
+      &lt;li&gt;1950년대 후반부터 고도 성장 유지&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 05 Oct 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/%ED%95%99%EA%B5%90%EA%B3%B5%EB%B6%80/%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A82%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1/</link>
+        <guid isPermaLink="true">http://localhost:4000/%ED%95%99%EA%B5%90%EA%B3%B5%EB%B6%80/%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A82%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1/</guid>
+        
+        
+        <category>학교공부</category>
+        
+      </item>
     
       <item>
         <title>일문예 1주차 정리</title>
@@ -1004,660 +2911,6 @@
         
         
         <category>iOS</category>
-        
-      </item>
-    
-      <item>
-        <title>collectionView cell 눌렀을 때 cell 색상 변하게 하기</title>
-        <description>&lt;h2 id=&quot;cell을-눌렀을때-유저가-눌렀다는-인식을-받도록-하기&quot;&gt;Cell을 눌렀을때 유저가 눌렀다는 인식을 받도록 하기&lt;/h2&gt;
-
-&lt;p&gt;table view의 경우 cell을 누르면 cell이 회색으로 변하며 “눌렀다”라는 인상을 주기 쉽습니다.&lt;/p&gt;
-
-&lt;p&gt;하지만 collectionView cell은 마땅한 방법들이 안보여서 이것저것 시도해보고 제일 적당한 방법을 찾았기에 소개하려 합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220919170515.gif&quot; alt=&quot;cellTapTestgif&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;방법-1-채택됨&quot;&gt;방법 1 (채택됨)&lt;/h3&gt;
-
-&lt;p&gt;cell을 모두 덮는 maskView를 하나 만들어 maskView의 backgroundColor로는 darkGray를,&lt;/p&gt;
-
-&lt;p&gt;opacity는 0.3을 주어서 반투명한 회색 층을 하나 만드는 방법입니다.&lt;/p&gt;
-
-&lt;p&gt;이 maskView의 isHidden 속성을 껐다 켰다 해주면서 cell을 눌렀다는 느낌을 받도록 할 수 있었습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;실패한 코드&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;cell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collectionView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;cellForItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as?&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CategoryCell&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;UIView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;withDuration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;animations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;selectMask&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isHidden&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;completion&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
-	  &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;selectMask&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isHidden&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-	  &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;navigationController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;pushViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;RankViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-                                                  &lt;span class=&quot;nv&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;처음에는 UIView의 animate 메서드나 animateKeyframes 메서드를 활용해&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cell 클릭&lt;/code&gt; -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;깜빡이는 애니메이션 실행과 동시에 다음화면 진입&lt;/code&gt; 과 같은 프로세스를 노렸으나,&lt;/p&gt;
-
-&lt;p&gt;completion 블록에서 화면전환 코드를 넣어도 해결이 되지 않았기 때문에 선택한 방법은 아래의 방법입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;성공한 코드&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;cell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collectionView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;cellForItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as?&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CategoryCell&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;homeViewModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;highlightedIndexPathForCategoryCell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indexPath&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;selectMask&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isHidden&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;cell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collectionView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;cellForItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as?&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;RecommendProductCell&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;homeViewModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;highlightedIndexPathForRecommendProductCell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indexPath&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;selectMask&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isHidden&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;누른 cell의 maksView의 isHidden을 animation 과정에서 조절하는 것이 아닌, 누른 시점에 maskView의 isHidden을 false로 바꿔준 뒤,  indexPath를 viewModel로 하여금 들고있게 하였습니다.&lt;/p&gt;
-
-&lt;p&gt;그리고 다시 cell이 있던 view로 돌아올 때, viewModel이 들고 있던 indexPath를 활용해 maskView의 isHidden을 true로 바꿔주었습니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;방법-2-고려해볼만-함&quot;&gt;방법 2 (고려해볼만 함)&lt;/h3&gt;
-
-&lt;p&gt;animation 블록에서 maskView의 isHidden을 껐다 켰다 하는 것에는 실패했지만, cell의 opacity를 조절하는 것에는 성공했습니다.&lt;/p&gt;
-
-&lt;p&gt;다만 이땐 깜빡이는 animation이 끝난 뒤, completion블록에서 화면전환이 이루어지기에 불필요한 딜레이가 필연적으로 발생합니다.&lt;/p&gt;
-
-&lt;p&gt;제 기준에서는 용납될만한 선의 딜레이였던지라 고려해볼만 한 방법에 넣어봤습니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;cell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collectionView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;cellForItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as?&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CategoryCell&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;UIView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;withDuration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;animations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opacity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;completion&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opacity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;navigationController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;pushViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;RankViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-                                                &lt;span class=&quot;nv&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Mon, 19 Sep 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/ios/collectionViewCellHighlightLogic/</link>
-        <guid isPermaLink="true">http://localhost:4000/ios/collectionViewCellHighlightLogic/</guid>
-        
-        <category>collectionView</category>
-        
-        <category>cell highlight</category>
-        
-        
-        <category>iOS</category>
-        
-      </item>
-    
-      <item>
-        <title>cell highlight와 select 차이</title>
-        <description>&lt;h2 id=&quot;highlight-vs-select&quot;&gt;Highlight vs Select&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220919221525.png&quot; alt=&quot;A diagram depicting the steps that occur when tapping an unselected cell. The first image shows the user’s right index finger touching a dark, shaded rectangle representing a collection view cell on a phone screen. Below the image are current property values of the cell, listed as isHighlighted: true and isSelected: false. The second image depicts the user lifting their finger and moving their hand to the right of the rectangle, now shown shaded in a lighter color, on the phone screen. Below, the listed properties isHighlighted and isSelected are both false. The third image depicts the user’s hand in the lifted position above the rectangle on the phone screen, with the collection view presenting the rectangle in a third and different shade. Below, the property isHighlighted is false and isSelected is true.&quot; style=&quot;zoom:67%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Highlight의 경우 셀을 터치하고 있거나 스와이프하기만 해도 동작&lt;/p&gt;
-
-&lt;p&gt;반면 select는 터치하고 그 자리에서 손을 떼는 (일반적인 tap 동작) 동작에만 해당&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220919221749.gif&quot; alt=&quot;highlight&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220919221757.gif&quot; alt=&quot;select&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Highlight시에 cell에 변화를 준 경우&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Select시에 cell에 변화를 준 경우&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-</description>
-        <pubDate>Mon, 19 Sep 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/ios/cellHighlightvsSelect/</link>
-        <guid isPermaLink="true">http://localhost:4000/ios/cellHighlightvsSelect/</guid>
-        
-        <category>highlight</category>
-        
-        <category>select</category>
-        
-        
-        <category>iOS</category>
-        
-      </item>
-    
-      <item>
-        <title>if case let 구문은 뭐고 언제 쓰는걸까?</title>
-        <description>&lt;h2 id=&quot;swift에서-가장-독특한-문법&quot;&gt;Swift에서 가장 독특한 문법(?)&lt;/h2&gt;
-
-&lt;p&gt;if case let 구문은 어떤 associated value를 가진 enum값을 분기처리하는 구문입니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ItemWrapper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Hashable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;ProductCategory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// use category here&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// use product here&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;같은 로직의 코드를 위처럼 switch로도 처리가 가능한데&lt;/p&gt;
-
-&lt;p&gt;Xcode의 자동완성 기능 덕분에 한번 써보면 아 이렇게 associtaed value를 쓰면 되는구나~&lt;/p&gt;
-
-&lt;p&gt;하고 감이 옵니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;하지만 item이라는 ItemWrapper(enum) 타입의 변수가&lt;/p&gt;
-
-&lt;p&gt;어떤 case에 속하는지를 걸러내는 분기 코드를 switch가 아닌 if else 구문처럼 사용하고 싶다면&lt;/p&gt;
-
-&lt;p&gt;꽤나 독특한 방법으로 이용해야 합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;// use category here&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;item이 ItemWrapper의 category라는 case인지에 대해서 물어봐야 하므로&lt;/p&gt;
-
-&lt;p&gt;if item == … 와 같이 진행될거라 생각하기 쉽지만, 이 문법의 경우에는 그 반대로 적어야 합니다.&lt;/p&gt;
-
-&lt;p&gt;associated value를 if let 구문을 통해 선언하다보니 좌변에 이를 적어주어야 하기 때문입니다.&lt;/p&gt;
-
-&lt;p&gt;if case let .category(category)를 적는 동안에 item의 type을 inference 할 수 없으므로&lt;/p&gt;
-
-&lt;p&gt;&lt;del&gt;Switch문을 사용할때와는 다르게 자동완성 기능을 사용할 수 없습니다.&lt;/del&gt;&lt;/p&gt;
-
-&lt;p&gt;Xcode 14 업데이트 이후 자동완성 기능이 개선되어 자동완성으로 if case let 구문을 작성할 수 있는 것이 확인됐습니다!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20221002173406.png&quot; alt=&quot;image-20221002173400446&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;이 문법의 독특한 점은 여기서 끝이 아닌데&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;// 됨&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itemWrapper&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// 안됨&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itemWrapper&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// 안됨&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itemWrapper&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;switch 문을 사용할 때는 .category(let category)와 같이 연관값이 들어가는 자리에 변수, 상수를 선언하여 사용했지만&lt;/p&gt;
-
-&lt;p&gt;이미 let을 통해 상수임을 선언한 상태이기 때문에 중복으로 let을 쓰거나 var 키워드를 적어줄 수 없습니다.&lt;/p&gt;
-
-&lt;p&gt;또, else case let 같은 경우에는 사용할 수가 없습니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;if-case-let-구문을-사용하는-이유&quot;&gt;if case let 구문을 사용하는 이유&lt;/h3&gt;
-
-&lt;p&gt;Switch문을 사용하면 코드가 한 depth 더 깊어지게 되는데&lt;/p&gt;
-
-&lt;p&gt;만약 switch문 내에서 if let 구문을 통해 optional binding을 추가로 진행해야 한다면 코드를 한 depth를 늘리지 않고도 처리할 수 있다는 장점이 있습니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;사용-예제-코드&quot;&gt;사용 예제 코드&lt;/h3&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itemWrapper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-   &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;categoryCell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collectionView&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dequeueReusableCell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;withReuseIdentifier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CategoryCell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reuseIdentifier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                         &lt;span class=&quot;nv&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as?&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CategoryCell&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;categoryCell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setUpContents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;categoryCell&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itemWrapper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-   &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;recommnedCell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collectionView&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dequeueReusableCell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;withReuseIdentifier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;RecommendProductCell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reuseIdentifier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                         &lt;span class=&quot;nv&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as?&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;RecommendProductCell&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;homeViewModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isLoading&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;recommnedCell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;showLoadingIndicator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;recommnedCell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setUpContents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recommnedCell&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;원래라면 switch문을 통해 case를 기준으로 분기한 뒤, 다시 if let을 내부에서 사용해 categoryCell을 얻었겠지만&lt;/p&gt;
-
-&lt;p&gt;이를 한번에 처리함으로써 가독성을 올릴 수 있었습니다.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 18 Sep 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/swift/ifCaseLet/</link>
-        <guid isPermaLink="true">http://localhost:4000/swift/ifCaseLet/</guid>
-        
-        <category>if case let</category>
-        
-        
-        <category>Swift</category>
-        
-      </item>
-    
-      <item>
-        <title>Diffable Datasource 요약</title>
-        <description>&lt;h2 id=&quot;기존-datasource의-문제점&quot;&gt;기존 datasource의 문제점&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;index 기반의 배열접근 작업이기 때문에 잘못접근시 시스템 에러 발생&lt;/li&gt;
-  &lt;li&gt;datasource를 업데이트 하고 해당 위치의 cell을 “알맞게” 업데이트 해주어야하는 번거로움 존재
-    &lt;ul&gt;
-      &lt;li&gt;만약 변경된 datasource와 맞지 않는 view 업데이트 작업 진행시 어김없이 에러 발생&lt;/li&gt;
-      &lt;li&gt;cell 이동, 추가, 삭제 등 작업을 여러개 실행하려면 perfromBatchUpdate 등을 통해 작업해야하는 번거로움 있음&lt;/li&gt;
-      &lt;li&gt;Data의 “상태”와 UI의 “상태”가 반드시 일치하도록 해야하는데 중앙화가 안되어 있어서 따로따로 작업해야함&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;nsdiffabledatasource-장점&quot;&gt;NSDiffableDatasource 장점&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;snapshot을 찍어서 apply해놓으면 그 snapshot 덕분에 배열에 index로 접근할 필요가 없음
-    &lt;ul&gt;
-      &lt;li&gt;cellProvider에서 itemIdentifier (우리가 사용하는 cell)을 어떠한 배열에도 접근하지 않고 사용할 수 있는 이유가 이 때문&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;변경사항이 있을때 새로운 snapshot을 apply해주면 UI는 자동으로 반영됨
-    &lt;ul&gt;
-      &lt;li&gt;기존 datasource는 datasource에 대한 업데이트, UI에 대한 업데이트가 모두 따로였고 심지어 프로그래머가 UI를 “알맞게” 업데이트 해줘야 했지만 diffableDatasource는 그러한 위험부담, 귀찮음 없음&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Section의 enum화 관리가 강제됨
-    &lt;ul&gt;
-      &lt;li&gt;단점으로 보일수도 있지만 index를 통해 관리하던 것은 단지 귀찮아서였으므로 기존의 방법이 더 좋다고 평가하기 어려움&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;기존에-사용하던-index-기반-코드들은&quot;&gt;기존에 사용하던 index 기반 코드들은?&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;그대로 사용할 수 있음&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;collectionView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;collectionView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UICollectionView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;didSelectItemAt&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;IndexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;identifier&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;diffableDataSource&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;itemIdentifier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-
-        &lt;p&gt;위와같이 diffableDatasource는 indexPath를 안다면 itemIdentifier를 사용할 수 있음&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;여기서 itemIdentifier는 cell에 들어가는 item으로 지정한 content (diffableDatasource 정의시에 사용한 것)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;nsdiffabledatasource-한계점&quot;&gt;NSDiffableDatasource 한계점&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;datasource 관련 코드를 직접 분할해야 함
-    &lt;ul&gt;
-      &lt;li&gt;기존에는 datasourceDelegate의 extension을 통해 제공하던 틀이 존재하여 적절한 메서드를 통해 작업을 진행했지만, 이제는 작업을 어떻게 하든 프로그래머의 자유가 됨&lt;/li&gt;
-      &lt;li&gt;이는 가독성의 저하로 이어질 우려가 있음&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;enum을 통한 section 관리시에 rawValue를 사용하지 않고서는 마땅한 방법이 없음
-    &lt;ul&gt;
-      &lt;li&gt;index 값을 통한 관리에서 enum을 하나 만들어 section을 모아 관리하는 것까지는 좋았으나 결국 rawValue를 통해 section의 case에 접근하는것이 최선임. 추가적인 API를 통해 section의 관리도 지원해줬으면 하는 바람..&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;리팩토링-내역&quot;&gt;리팩토링 내역&lt;/h2&gt;
-
-&lt;p&gt;기존 살까말까의 homeView에서 사용되던 datasource는 diffableDatasource로,&lt;/p&gt;
-
-&lt;p&gt;layout은 tableView내부에 2개의 CollectionView를 넣던 방식에서 compositionalLayout으로 리팩토링을 진행하였음.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;[&lt;a href=&quot;https://github.com/Neph3779/BuyOrNot/pull/2&quot;&gt;Refactor] Compositional layout 적용 by Neph3779 · Pull Request #2 · Neph3779/BuyOrNot (github.com)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;[&lt;a href=&quot;https://github.com/Neph3779/BuyOrNot/pull/3&quot;&gt;Refactor] DiffableDatasource 적용 by Neph3779 · Pull Request #3 · Neph3779/BuyOrNot (github.com)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Fri, 16 Sep 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/ios/DiffabelDatasource/</link>
-        <guid isPermaLink="true">http://localhost:4000/ios/DiffabelDatasource/</guid>
-        
-        <category>diffableDatasource</category>
-        
-        
-        <category>iOS</category>
-        
-      </item>
-    
-      <item>
-        <title>Compositional Layout SectionProvider, Configuration</title>
-        <description>&lt;h2 id=&quot;상황-위치에-따라-다른-layout을-보여주기&quot;&gt;상황, 위치에 따라 다른 Layout을 보여주기&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;CollectionView를 구성하다보면 상황에 따라 cell이 보여지는 형태(layout)를 바꾸고 싶은 경우가 종종 있음
-    &lt;ul&gt;
-      &lt;li&gt;또는 하나의 CollectionView내의 서로 다른 section에 다양한 형태의 cell들이 보여지게 하고 싶음&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;이를 기존 collectionView 구현에서는 flow layout delegate 메서드에서 분기처리를 통해 cell의 크기 지정 등의 방법을 통해 해결했음&lt;/li&gt;
-  &lt;li&gt;Compositional layout에서는 layout과 관련된 delegate를 사용하기 보단 NSCollectionView stuffs를 사용함&lt;/li&gt;
-  &lt;li&gt;UICollectionViewLayout을 만드는 방법은 4가지가 있음
-    &lt;ul&gt;
-      &lt;li&gt;가장 기본적인 section을 인자로 주어 만드는 방법&lt;/li&gt;
-      &lt;li&gt;section과 configuration을 주어 만드는 방법&lt;/li&gt;
-      &lt;li&gt;sectionProvider를 인자로 주어 만드는 방법&lt;/li&gt;
-      &lt;li&gt;sectionProvider와 configuration을 인자로 주어 만드는 방법&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;상황마다 다른 Layout을 구성하기 위해서 3, 4번 방법을 사용함&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;sectionprovider&quot;&gt;SectionProvider&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220914183720.png&quot; alt=&quot;image-20220914183720049&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;SectionProvider는 클로저를 typealias로 묶어둔 형태&lt;/li&gt;
-  &lt;li&gt;Int 인자는 section의 index를 나타내는 변수&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;아래와 같이 분기처리를 통해 각 section별로 다양한 layout을 만들어줄 수 있음&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;createPerSectionLayout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UICollectionViewLayout&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;layout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UICollectionViewCompositionalLayout&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;sectionIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;nv&quot;&gt;layoutEnvironment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutEnvironment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutSection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
-        
-        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;columns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sectionIndex&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
-        
-        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;itemSize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;widthDimension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fractionalWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-                                             &lt;span class=&quot;nv&quot;&gt;heightDimension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fractionalHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;layoutSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itemSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        
-        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;groupSize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;widthDimension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fractionalWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-                                              &lt;span class=&quot;nv&quot;&gt;heightDimension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;44&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutGroup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;horizontal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;layoutSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;groupSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                                          &lt;span class=&quot;nv&quot;&gt;subitem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                                            &lt;span class=&quot;nv&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;columns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        
-        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;section&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutSection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;section&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;layout&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;layoutenvironment&quot;&gt;LayoutEnvironment&lt;/h2&gt;
-
-&lt;p&gt;위의 예제 코드에서 보이는 NSCollectionLayoutEnvironment는 traitCollection을 활용하여&lt;/p&gt;
-
-&lt;p&gt;앱의 현재 traitCollection을 가지고 분기처리를 해줄 수 있음&lt;/p&gt;
-
-&lt;p&gt;traitCollection의 종류로는 다크모드 여부, 화면의 size class 등이 있음&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;layout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UICollectionViewCompositionalLayout&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;sectionIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;layoutEnvironment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutEnvironment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutSection&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
-        
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;layoutEnvironment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;traitCollection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userInterfaceStyle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dark&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sectionForUserInterfaceStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sectionForUserInterfaceStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;light&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;layoutconfiguration&quot;&gt;LayoutConfiguration&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220917183027.png&quot; alt=&quot;image-20220917183026986&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;layout configuration은 configuration을 따로 빼서 작업할 수 있다는데 의의가 있음&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;headerFooterSize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;widthDimension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fractionalWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-                                             &lt;span class=&quot;nv&quot;&gt;heightDimension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;estimated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;44&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;header&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutBoundarySupplementaryItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;layoutSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headerFooterSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                                        &lt;span class=&quot;nv&quot;&gt;elementKind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;header&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                                          &lt;span class=&quot;nv&quot;&gt;alignment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;footer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCollectionLayoutBoundarySupplementaryItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;layoutSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headerFooterSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                                        &lt;span class=&quot;nv&quot;&gt;elementKind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;footer&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                                          &lt;span class=&quot;nv&quot;&gt;alignment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UICollectionViewCompositionalLayoutConfiguration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;interSectionSpacing&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scrollDirection&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;horizontal&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;boundarySupplementaryItems&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;footer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;사용 예제가 사용법의 전부라.. 설명은 생략&lt;/p&gt;
-
-&lt;p&gt;configuration에서 설정할 수 있는 값도 너무 적어서 configuration을 통해 큰 이점을 가져가긴 어렵다고 생각됨&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 14 Sep 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/ios/CompositionalLayoutSectionProviderConfiguration/</link>
-        <guid isPermaLink="true">http://localhost:4000/ios/CompositionalLayoutSectionProviderConfiguration/</guid>
-        
-        <category>collectionView</category>
-        
-        <category>sectionProvider</category>
-        
-        
-        <category>iOS</category>
-        
-      </item>
-    
-      <item>
-        <title>Map, CompactMap, FlatMap</title>
-        <description>&lt;h2 id=&quot;map-compactmap-flatmap&quot;&gt;Map, CompactMap, FlatMap&lt;/h2&gt;
-
-&lt;h3 id=&quot;map&quot;&gt;Map&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220913184241.png&quot; alt=&quot;image-20220913184204453&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;transform이라는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(Self.Element) throws -&amp;gt; T&lt;/code&gt; 타입의 클로저를 인자로 받아 Sequence의 원소들을 차례대로 transform의 인자로 주어 나오는 결과값을 다시 배열로 묶어 반환해주는 인스턴스 메서드&lt;/p&gt;
-
-&lt;p&gt;“복잡도”는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;O(n)&lt;/code&gt; 입니다. (공식문서상에 시간복잡도인지 공간복잡도인지 정확히 명시되어있지 않습니다. 이 경우에는 시간복잡도라고 보는게 맞겠습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;compactmap&quot;&gt;CompactMap&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220913184247.png&quot; alt=&quot;image-20220913184222619&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Map처럼 클로저를 인자로 받아 Sequence의 원소들을 차례대로 클로저에 대입하는 것은 Map과 같으나, 만약 클로저 실행의 결과값이 nil인 경우 Map은 nil을 배열의 원소로 삽입하지만 CompactMap은 nil값은 배열에 삽입하지 않는다는 차이가 있음&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;possibleNumbers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;three&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;///4///&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;5&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;mapped&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;possibleNumbers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// [1, 2, nil, nil, 5]&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;compactMapped&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;possibleNumbers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;compactMap&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// [1, 2, 5]&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;복잡도가 Map과 다른데, O(n+m)입니다. (n은 주어진 배열의 길이, m은 결과로 나오는 배열의 길이)&lt;/p&gt;
-
-&lt;p&gt;아마 공간복잡도 측면에서 차이가 발생한 것 같습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;flatmap&quot;&gt;FlatMap&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20220913184300.png&quot; alt=&quot;image-20220913184300169&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Map, CompactMap과 동일하게 클로저를 인자로 받아 기존 배열의 원소들을 차례대로 넣어가며 실행합니다.&lt;/p&gt;
-
-&lt;p&gt;위의 두 메서드와는 다르게 transform 클로저의 반환 타입이 Sequence를 만족하는  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SegmentOfResult&lt;/code&gt;입니다.&lt;/p&gt;
-
-&lt;p&gt;즉 클로저에서 “배열”의 일부를 반환하며 반환된 배열들을 모두 합쳐 새로운 하나의 1차원 배열로 만들어줍니다.&lt;/p&gt;
-
-&lt;p&gt;FlatMap도 복잡도는 O(n+m)입니다.&lt;/p&gt;
-
-&lt;p&gt;예전에는 flatMap으로도 nil을 걸러내는 작업을 했었지만 현재는 compactMap의 등장으로 기능이 분리되었습니다.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 13 Sep 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/swift/mapFlatMapCompactMap/</link>
-        <guid isPermaLink="true">http://localhost:4000/swift/mapFlatMapCompactMap/</guid>
-        
-        <category>map</category>
-        
-        <category>compactMap</category>
-        
-        <category>flatMap</category>
-        
-        
-        <category>Swift</category>
         
       </item>
     
