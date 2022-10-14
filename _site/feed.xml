@@ -5,8 +5,8 @@
     <description>Write code with my soul.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 14 Oct 2022 12:57:54 +0900</pubDate>
-    <lastBuildDate>Fri, 14 Oct 2022 12:57:54 +0900</lastBuildDate>
+    <pubDate>Fri, 14 Oct 2022 15:10:47 +0900</pubDate>
+    <lastBuildDate>Fri, 14 Oct 2022 15:10:47 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -1917,10 +1917,10 @@
       </item>
     
       <item>
-        <title>일문예 1주차 정리</title>
+        <title>일문예 1주차 정리 - 일본의 지리와 환경</title>
         <description>&lt;h1 id=&quot;일본의-지리와-환경&quot;&gt;일본의 지리와 환경&lt;/h1&gt;
 
-&lt;h3 id=&quot;1-일본의-지리개관&quot;&gt;1. 일본의 지리개관&lt;/h3&gt;
+&lt;h2 id=&quot;1-일본의-지리개관&quot;&gt;1. 일본의 지리개관&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;유라시아 대륙 동쪽 끝의 해상에 위치한 섬나라&lt;/li&gt;
@@ -1928,32 +1928,32 @@
   &lt;li&gt;러시아, 한반도, 중국 등과 인접&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;1-행정구역&quot;&gt;1) 행정구역&lt;/h5&gt;
+&lt;h3 id=&quot;1-행정구역&quot;&gt;1) 행정구역&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;총 면적: 38만 제곱 키로미터&lt;/li&gt;
-  &lt;li&gt;1도(도쿄), 1도(홋카이도), 2부(교토, 오사카), 43현의 47개 행정구역&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1도&lt;/code&gt;(도쿄), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1도&lt;/code&gt;(홋카이도), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2부&lt;/code&gt;(교토, 오사카), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;43현&lt;/code&gt;의 47개 행정구역&lt;/li&gt;
   &lt;li&gt;편의상 8개 지방 (홋카이도, 도호쿠, 간토, 주부, 긴키, 주고쿠, 시코쿠, 규슈-오키나와)으로 구분&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;2-산지&quot;&gt;2) 산지&lt;/h5&gt;
+&lt;h3 id=&quot;2-산지&quot;&gt;2) 산지&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;환태평양산지대의 일부로서 국토의 약 73%가 산지&lt;/li&gt;
-  &lt;li&gt;일본알프스: 혼슈 중앙부를 차지하는 히다산맥, 기소산맥, 아카이시산맥의 총칭&lt;/li&gt;
-  &lt;li&gt;후지산: 일본에서 가장 높은 산&lt;/li&gt;
-  &lt;li&gt;비와호: 시가현 중앙부에 있는 일본 최대의 호수&lt;/li&gt;
-  &lt;li&gt;시나노가와: 일본에서 가장 긴 강&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;일본알프스&lt;/code&gt;: 혼슈 중앙부를 차지하는 히다산맥, 기소산맥, 아카이시산맥의 총칭&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;후지산&lt;/code&gt;: 일본에서 가장 높은 산&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;비와호&lt;/code&gt;: 시가현 중앙부에 있는 일본 최대의 호수&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;시나노가와&lt;/code&gt;: 일본에서 가장 긴 강&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;3-토지-이용&quot;&gt;3) 토지 이용&lt;/h5&gt;
+&lt;h3 id=&quot;3-토지-이용&quot;&gt;3) 토지 이용&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;산지와 구릊이 67.2%, 농지 12%, 주택지 3.1%&lt;/li&gt;
+  &lt;li&gt;산지와 구릉지 67.2%, 농지 12%, 주택지 3.1%&lt;/li&gt;
   &lt;li&gt;산지가 많고 평야가 적음&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;4-기후&quot;&gt;4) 기후&lt;/h5&gt;
+&lt;h3 id=&quot;4-기후&quot;&gt;4) 기후&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;주로 습도가 높은 온대&lt;/li&gt;
@@ -1966,20 +1966,20 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;5-자원&quot;&gt;5) 자원&lt;/h5&gt;
+&lt;h3 id=&quot;5-자원&quot;&gt;5) 자원&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;원유, 석탄, 천연가스 등 지하자원이 적어 대부분을 수입에 의존&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;6-인구&quot;&gt;6) 인구&lt;/h5&gt;
+&lt;h3 id=&quot;6-인구&quot;&gt;6) 인구&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;인구: 1억 2605만명&lt;/li&gt;
   &lt;li&gt;고령화 사회 -&amp;gt; 초고령화사회 (인구 4명당 1명은 고령자)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;2-도쿄와-지방&quot;&gt;2. 도쿄와 지방&lt;/h3&gt;
+&lt;h2 id=&quot;2-도쿄와-지방&quot;&gt;2. 도쿄와 지방&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;행정구역: 도도부현으로 나뉨
@@ -1992,7 +1992,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;1-도쿄도&quot;&gt;1) 도쿄도&lt;/h5&gt;
+&lt;h3 id=&quot;1-도쿄도&quot;&gt;1) 도쿄도&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;일본의 수도&lt;/li&gt;
@@ -2000,19 +2000,19 @@
   &lt;li&gt;인구: 약 1396만명 (일본 총인구의 10%, 수도권 전체로 치면 1/4 수준)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;2-홋카이도-북해도&quot;&gt;2) 홋카이도 (북해도)&lt;/h5&gt;
+&lt;h3 id=&quot;2-홋카이도-북해도&quot;&gt;2) 홋카이도 (북해도)&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;일본 최북단에 위치한 두 번째로 큰 섬&lt;/li&gt;
+  &lt;li&gt;일본 최북단에 위치한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;두 번째로 큰 섬&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;도도부현 중에서 가장 넓음 (일본 전 면적의 약 20%)&lt;/li&gt;
-  &lt;li&gt;러시아와 영토문제를 안고 있음 (동북쪽의 북방 네 섬)&lt;/li&gt;
-  &lt;li&gt;세이칸 터널: 아오모리와 홋카이도를 바다 밑으로 연결하는 해저터널 (혼슈 - 홋카이도)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;러시아와 영토문제&lt;/code&gt;를 안고 있음 (동북쪽의 북방 네 섬)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;세이칸 터널&lt;/code&gt;: 아오모리와 홋카이도를 바다 밑으로 연결하는 해저터널 (혼슈 - 홋카이도)&lt;/li&gt;
   &lt;li&gt;겨울 스포츠 활성화&lt;/li&gt;
-  &lt;li&gt;삿포로가 중심지&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;삿포로&lt;/code&gt;가 중심지&lt;/li&gt;
   &lt;li&gt;삿포로 유키마쓰리(눈축제): 매년 2월에 열리는 홋카이도의 대표적인 눈축제&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;3-도호쿠-지방-동북&quot;&gt;3) 도호쿠 지방 (동북)&lt;/h5&gt;
+&lt;h3 id=&quot;3-도호쿠-지방-동북&quot;&gt;3) 도호쿠 지방 (동북)&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;혼슈 동북부에 위치하는 지방
@@ -2020,18 +2020,18 @@
       &lt;li&gt;아오모리현, 이와테현, 미야기현, 아키타현, 야마가타현, 후쿠시마현&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;오우산맥을 중심으로 태평양 쪽과 동해 쪽으로 구분
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오우산맥&lt;/code&gt;을 중심으로 태평양 쪽과 동해 쪽으로 구분
     &lt;ul&gt;
       &lt;li&gt;태평양 쪽: 냉해나 쓰나미 피해&lt;/li&gt;
       &lt;li&gt;동해 쪽: 눈이 많이 내림 (인구가 적은 시골 지역)&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;시라카미산지: 세계자연유산으로 등록된 원시림&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;시라카미산지&lt;/code&gt;: 세계자연유산으로 등록된 원시림&lt;/li&gt;
   &lt;li&gt;농업 생산 활발 지역 (공업활동은 적음)&lt;/li&gt;
   &lt;li&gt;온천, 지역 축제 등 관광자원이 풍부&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;4-간토-지방-관동&quot;&gt;4) 간토 지방 (관동)&lt;/h5&gt;
+&lt;h3 id=&quot;4-간토-지방-관동&quot;&gt;4) 간토 지방 (관동)&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;혼슈 중앙 동쪽에 위치하는 지방
@@ -2039,13 +2039,13 @@
       &lt;li&gt;도쿄도(수도), 이바라키현, 도치기현, 군마현, 사이타마현, 지바현, 가나가와현&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;일본의 정치, 경제, 문화의 중심지&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;일본의 정치, 경제, 문화의 중심지&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;수도권: 사이타마현, 지바현, 가나가와현&lt;/li&gt;
   &lt;li&gt;닛코의 신사와 사찰: 세계문화유산 등록 (에도막부 만든 도쿠가와 이에야스 기리는 큰 신사 있음)&lt;/li&gt;
   &lt;li&gt;가나가와 중심지 = 요코하마 대항장으로 유명&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;5-주부-지방-중부&quot;&gt;5) 주부 지방 (중부)&lt;/h5&gt;
+&lt;h3 id=&quot;5-주부-지방-중부&quot;&gt;5) 주부 지방 (중부)&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;혼슈 중앙부에 위치하는 지방
@@ -2055,21 +2055,21 @@
   &lt;/li&gt;
   &lt;li&gt;산악지대가 많음&lt;/li&gt;
   &lt;li&gt;니가타는 쌀, 쌀로만든 술이 유명&lt;/li&gt;
-  &lt;li&gt;남쪽엔 시즈오카, 후지산이 유명&lt;/li&gt;
+  &lt;li&gt;남쪽엔 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;시즈오카&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;후지산&lt;/code&gt;이 유명&lt;/li&gt;
   &lt;li&gt;이즈반도에는 온천이 많음&lt;/li&gt;
-  &lt;li&gt;시즈오카 서쪽 아이츠현은 나고야가 중심지 (3대 중심지)
+  &lt;li&gt;시즈오카 서쪽 아이츠현은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;나고야&lt;/code&gt;가 중심지 (3대 중심지)
     &lt;ul&gt;
       &lt;li&gt;토요타도 시즈오카에 있음&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;중부에는 나가노현 존재, 산악지대 많아 인구 적음&lt;/li&gt;
-  &lt;li&gt;폿사마그나: 주부 지방 남북에 걸친 구조선
+  &lt;li&gt;중부에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;나가노현&lt;/code&gt; 존재, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;산악지대&lt;/code&gt; 많아 인구 적음&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;폿사마그나&lt;/code&gt;: 주부 지방 남북에 걸친 구조선
     &lt;ul&gt;
       &lt;li&gt;폿사마그나 서쪽: 긴키 지방&lt;/li&gt;
       &lt;li&gt;폿사마그나 동쪽: 간토 지방&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;합장 건축양식인 갓쇼즈쿠리 집락: 세계문화유산 등록
+  &lt;li&gt;합장 건축양식인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;갓쇼즈쿠리 집락&lt;/code&gt;: 세계문화유산 등록
     &lt;ul&gt;
       &lt;li&gt;눈이 밑으로 내려가라고 뾰족한 지붕모양&lt;/li&gt;
     &lt;/ul&gt;
@@ -2081,7 +2081,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;6-긴키-지방&quot;&gt;6) 긴키 지방&lt;/h5&gt;
+&lt;h3 id=&quot;6-긴키-지방&quot;&gt;6) 긴키 지방&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;혼슈 중앙 서쪽에 위치하는 지방
@@ -2100,7 +2100,7 @@
   &lt;li&gt;오사카성: 도요토미 히데요시가 세운 오사카의 상징&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;7-주고쿠-지방&quot;&gt;7) 주고쿠 지방&lt;/h5&gt;
+&lt;h3 id=&quot;7-주고쿠-지방&quot;&gt;7) 주고쿠 지방&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;혼슈 서쪽 끝에 위치하는 지방
@@ -2108,10 +2108,10 @@
       &lt;li&gt;돗토리현, 시마네현, 오카야마현, 히로시마현, 야마구치현&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;주고쿠산지를 따라 산인 지방과 산요 지방으로 구분
+  &lt;li&gt;주고쿠산지를 따라 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;산인 지방&lt;/code&gt;과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;산요 지방&lt;/code&gt;으로 구분
     &lt;ul&gt;
-      &lt;li&gt;산인 지방: 평야가 적고 겨울에 눈이 많이 내림&lt;/li&gt;
-      &lt;li&gt;산요 지방: 평야지대가 많고 많은 비가 내림&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;산인 지방&lt;/code&gt;: 평야가 적고 겨울에 눈이 많이 내림&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;산요 지방&lt;/code&gt;: 평야지대가 많고 많은 비가 내림&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;세계문화유산
@@ -2123,7 +2123,7 @@
   &lt;li&gt;인구수 적은 시골 지방에 해당&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;8-시코쿠-지방&quot;&gt;8) 시코쿠 지방&lt;/h5&gt;
+&lt;h3 id=&quot;8-시코쿠-지방&quot;&gt;8) 시코쿠 지방&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;혼슈 서남쪽에 위치하는 시코쿠 본섬을 중심으로 하는 지방
@@ -2142,7 +2142,7 @@
   &lt;li&gt;메이지유신때 활약한 사카모토 료오마의 출생지인 고치현이 존재&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;9-규슈---오키나와-지방&quot;&gt;9) 규슈 - 오키나와 지방&lt;/h5&gt;
+&lt;h3 id=&quot;9-규슈---오키나와-지방&quot;&gt;9) 규슈 - 오키나와 지방&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;일본 최서남단에 위치하는 지방
@@ -2160,7 +2160,7 @@
   &lt;li&gt;온천과 화산이 많음&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;3-자연과-일본인&quot;&gt;3. 자연과 일본인&lt;/h3&gt;
+&lt;h2 id=&quot;3-자연과-일본인&quot;&gt;3. 자연과 일본인&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;온난한 기후와 풍부한 강수량
@@ -2172,7 +2172,7 @@
   &lt;li&gt;지진, 태풍 피해&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;1-일본-기후의-특색&quot;&gt;1) 일본 기후의 특색&lt;/h5&gt;
+&lt;h3 id=&quot;1-일본-기후의-특색&quot;&gt;1) 일본 기후의 특색&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;뚜렷한 사계절&lt;/li&gt;
@@ -2185,7 +2185,7 @@
   &lt;li&gt;혼슈의 중앙부 산맥을 경계로 태평양 쪽과 동해 쪽의 큰 기후 차이&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;2-자연재해&quot;&gt;2) 자연재해&lt;/h5&gt;
+&lt;h3 id=&quot;2-자연재해&quot;&gt;2) 자연재해&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;지진
@@ -2225,7 +2225,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;3-자연과-일본인-1&quot;&gt;3) 자연과 일본인&lt;/h5&gt;
+&lt;h3 id=&quot;3-자연과-일본인-1&quot;&gt;3) 자연과 일본인&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;자연환경의 영향
