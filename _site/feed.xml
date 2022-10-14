@@ -5,8 +5,8 @@
     <description>Write code with my soul.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 14 Oct 2022 15:10:47 +0900</pubDate>
-    <lastBuildDate>Fri, 14 Oct 2022 15:10:47 +0900</lastBuildDate>
+    <pubDate>Fri, 14 Oct 2022 16:59:44 +0900</pubDate>
+    <lastBuildDate>Fri, 14 Oct 2022 16:59:44 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -2041,7 +2041,7 @@
   &lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;일본의 정치, 경제, 문화의 중심지&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;수도권: 사이타마현, 지바현, 가나가와현&lt;/li&gt;
-  &lt;li&gt;닛코의 신사와 사찰: 세계문화유산 등록 (에도막부 만든 도쿠가와 이에야스 기리는 큰 신사 있음)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;닛코의 신사와 사찰&lt;/code&gt;: 세계문화유산 등록 (에도막부 만든 도쿠가와 이에야스 기리는 큰 신사 있음)&lt;/li&gt;
   &lt;li&gt;가나가와 중심지 = 요코하마 대항장으로 유명&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -2089,7 +2089,7 @@
       &lt;li&gt;교토부, 오사카부, 미에현, 시가현, 효고현, 나라현, 와카야마현&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;교토는 1000년 수도라 불리며 8세기~에도막부 멸망 까지 실질적 수도역할 수행&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;교토&lt;/code&gt;는 1000년 수도라 불리며 8세기~에도막부 멸망 까지 실질적 수도역할 수행&lt;/li&gt;
   &lt;li&gt;고대 이래 일본의 정치, 경제 문화의 중심이 되었던 지방&lt;/li&gt;
   &lt;li&gt;신사나 사찰 등이 많은 문화재
     &lt;ul&gt;
@@ -2137,7 +2137,7 @@
       &lt;li&gt;남쪽 지역: 기온이 높고 태풍이 자주 상륙함&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;세토대교 등의 다리로 혼슈와 연결&lt;/li&gt;
+  &lt;li&gt;세토대교 등의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;다리로 혼슈와 연결&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;농업과 어업활동이 활발&lt;/li&gt;
   &lt;li&gt;메이지유신때 활약한 사카모토 료오마의 출생지인 고치현이 존재&lt;/li&gt;
 &lt;/ul&gt;
@@ -2150,11 +2150,11 @@
       &lt;li&gt;후쿠오카현, 사가현, 나가사키현, 구마모토현, 오이타현, 미야자키현, 오키나와현&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;중국, 한반도, 동남아시아와 가깝고 고대부터 외래문화의 영향을 많이 받음
+  &lt;li&gt;중국, 한반도, 동남아시아와 가깝고 고대부터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;외래문화의 영향&lt;/code&gt;을 많이 받음
     &lt;ul&gt;
-      &lt;li&gt;쓰시마: 조선과의 외교 담당&lt;/li&gt;
-      &lt;li&gt;나가사키: 네덜란드와 중국의 무역선 다수 입항&lt;/li&gt;
-      &lt;li&gt;오키나와: 류큐왕국이라는 독립국으로 중국과 교역활동&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;쓰시마&lt;/code&gt;: 조선과의 외교 담당&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;나가사키&lt;/code&gt;: 네덜란드와 중국의 무역선 다수 입항&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오키나와&lt;/code&gt;: 류큐왕국이라는 독립국으로 중국과 교역활동&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;온천과 화산이 많음&lt;/li&gt;
@@ -2230,7 +2230,7 @@
 &lt;ul&gt;
   &lt;li&gt;자연환경의 영향
     &lt;ul&gt;
-      &lt;li&gt;건축문화: 목조 건축물 발달
+      &lt;li&gt;건축문화: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;목조 건축물&lt;/code&gt; 발달
         &lt;ul&gt;
           &lt;li&gt;일본 사원의 목조탑&lt;/li&gt;
           &lt;li&gt;2~3층의 목조주택(시라카와고의 갓쇼즈쿠리)&lt;/li&gt;
@@ -2242,7 +2242,7 @@
   &lt;li&gt;반복되는 지진과 태풍으로 체념의 자세를 지니게 됨
     &lt;ul&gt;
       &lt;li&gt;거대한 자연 앞에 인간의 한계를 절감&lt;/li&gt;
-      &lt;li&gt;무상, 체념 인내, 수용, 변화: 자연환경과 일본인의 정신세계와의 관계를 보여주는 중요한 개념&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;무상, 체념, 인내, 수용, 변화&lt;/code&gt;: 자연환경과 일본인의 정신세계와의 관계를 보여주는 중요한 개념&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
