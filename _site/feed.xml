@@ -5,8 +5,8 @@
     <description>Write code with my soul.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 14 Oct 2022 16:59:44 +0900</pubDate>
-    <lastBuildDate>Fri, 14 Oct 2022 16:59:44 +0900</lastBuildDate>
+    <pubDate>Fri, 14 Oct 2022 17:48:56 +0900</pubDate>
+    <lastBuildDate>Fri, 14 Oct 2022 17:48:56 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -1568,20 +1568,19 @@
 
 &lt;ul&gt;
   &lt;li&gt;조몬문화: 새끼줄 모양의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;무늬가 있는 토기&lt;/code&gt;를 사용&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;조몬인: 수렵채집민(최근 연구: 기원전 1천 년경에 농경생활이 시작되었음을 시사)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;야요이시대 (기원전 300년경 ~ 300년경)
-    &lt;ul&gt;
-      &lt;li&gt;야요이문화: 보다 간결한 토기, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;청동기나 철기&lt;/code&gt;제품의 기술, 계획적인 수경농업&lt;/li&gt;
-      &lt;li&gt;일본 사회의 뿌리를 이루는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;농경 중심 생활양식&lt;/code&gt;의 토대가 됨&lt;/li&gt;
-      &lt;li&gt;농경생활을 중심으로 하는 집단생활 -&amp;gt; 계층간의 분화 초래, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;신분제 사회의 기초&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;일본은 청동기, 철기 문화가 순서대로 X, 외부 전래로 인한 이식&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;조몬인: 수렵채집민(최근 연구: 기원전 1천 년경에 농경생활이 시작되었음을 시사)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;3-고분시대-300년경--710년&quot;&gt;3) 고분시대 (300년경 ~ 710년)&lt;/h3&gt;
+&lt;h3 id=&quot;3-야요이시대-기원전-300년경--300년경&quot;&gt;3) 야요이시대 (기원전 300년경 ~ 300년경)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;야요이문화: 보다 간결한 토기, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;청동기나 철기&lt;/code&gt;제품의 기술, 계획적인 수경농업&lt;/li&gt;
+  &lt;li&gt;일본 사회의 뿌리를 이루는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;농경 중심 생활양식&lt;/code&gt;의 토대가 됨&lt;/li&gt;
+  &lt;li&gt;농경생활을 중심으로 하는 집단생활 -&amp;gt; 계층간의 분화 초래, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;신분제 사회의 기초&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;일본은 청동기, 철기 문화가 순서대로 X, 외부 전래로 인한 이식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4-고분시대-300년경--710년&quot;&gt;4) 고분시대 (300년경 ~ 710년)&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;긴키 지방을 중심으로 거대한 정방후원분이 분포 (열쇠구멍 모양)&lt;/li&gt;
@@ -1600,7 +1599,7 @@
   &lt;/li&gt;
   &lt;li&gt;아스카시대 (일본의 자료를 통해 역사를 살필 수 있는 최초의 시기)
     &lt;ul&gt;
-      &lt;li&gt;여황제 스이코천황, 쇼토쿠태자가 섭정&lt;/li&gt;
+      &lt;li&gt;여황제 스이코천황, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;쇼토쿠태자&lt;/code&gt;가 섭정&lt;/li&gt;
       &lt;li&gt;야마토 아스카 지방: 야마토계의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;호족&lt;/code&gt;과 이를 지탱해 온 유력한 씨족의 근거지&lt;/li&gt;
       &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;율령제&lt;/code&gt; 중심의 중앙집권적 천황 지배에 의한 통합 (지배 정당성을 높이기 위해 외래로부터 받아들임)
         &lt;ul&gt;
@@ -1626,7 +1625,7 @@
   &lt;li&gt;문화 기술면에서 중국과 고대 조선의 영향을 받음&lt;/li&gt;
   &lt;li&gt;일본 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;최초의 역사서&lt;/code&gt; “고지키”(712년), “니혼쇼키”(720년) 편찬&lt;/li&gt;
   &lt;li&gt;조정의 중앙통제, 공유지 반급제 한계 봉착 등 국가가 혼란스러워짐&lt;/li&gt;
-  &lt;li&gt;간무천황: 수도를 나가오카로 옮기고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;율령제를 부활&lt;/code&gt;시킴. 현재의 교토에 수도 헤이안쿄 건설&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;간무천황&lt;/code&gt;: 수도를 나가오카로 옮기고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;율령제를 부활&lt;/code&gt;시킴. 현재의 교토에 수도 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;헤이안쿄&lt;/code&gt; 건설&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;3-헤이안시대7941185&quot;&gt;3) 헤이안시대(794~1185)&lt;/h3&gt;
@@ -1662,11 +1661,11 @@
 &lt;h3 id=&quot;1-가마쿠라시대-11831333&quot;&gt;1) 가마쿠라시대 (1183~1333)&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;미나모토노 요리토모
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;미나모토노 요리토모&lt;/code&gt;
     &lt;ul&gt;
       &lt;li&gt;교토의 천황 정부로부터 동국의 지배권 인정 (1183년)&lt;/li&gt;
       &lt;li&gt;다이라씨 정권 타도(1185년)&lt;/li&gt;
-      &lt;li&gt;정이대장군[쇼군] 지위 부여받음(1192년) -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가마쿠라 막부&lt;/code&gt; 군사정권 수립&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;정이대장군[쇼군]&lt;/code&gt; 지위 부여받음(1192년) -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가마쿠라 막부&lt;/code&gt; 군사정권 수립&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;막부의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;쇼군이 무사들에게 영지를 분배&lt;/code&gt;
@@ -1710,7 +1709,7 @@
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;남북조 대립, 약 60년간 전국적 전란 지속&lt;/li&gt;
-      &lt;li&gt;아시카가 요시미쓰에 의해 종식&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;아시카가 요시미쓰&lt;/code&gt;에 의해 종식&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;무로마치시대
@@ -1718,9 +1717,9 @@
       &lt;li&gt;귀족 정권 종식, 막부 쇼의 전일본 지배&lt;/li&gt;
       &lt;li&gt;천황은 통치하지 않는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;상징적 존재&lt;/code&gt;로 남게 됨&lt;/li&gt;
       &lt;li&gt;가마쿠라 막부의 통치기구 계승: 봉건적 주종 관계에 의한 지배체제&lt;/li&gt;
-      &lt;li&gt;슈고: 장원 관리 및 지방관리를 통제함, 지위 세습
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;슈고&lt;/code&gt;: 장원 관리 및 지방관리를 통제함, 지위 세습
         &lt;ul&gt;
-          &lt;li&gt;영지 지배권이 강화되면서 ‘슈고다이묘’라고 불리게 됨&lt;/li&gt;
+          &lt;li&gt;영지 지배권이 강화되면서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;슈고다이묘&apos;&lt;/code&gt;라고 불리게 됨&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
@@ -1751,12 +1750,12 @@
 &lt;h3 id=&quot;1-천하통일-16c-후반&quot;&gt;1) 천하통일 (16c 후반)&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;오다 노부나가
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오다 노부나가&lt;/code&gt;
     &lt;ul&gt;
       &lt;li&gt;무로마치 막부 쇼군을 추방, 일본 대부분의 지역을 평정함&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;도요토미 히데요시
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;도요토미 히데요시&lt;/code&gt;
     &lt;ul&gt;
       &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전국 통일&lt;/code&gt;&lt;/li&gt;
       &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;신분제 강화&lt;/code&gt;, 사회질서 확립&lt;/li&gt;
@@ -1766,10 +1765,10 @@
       &lt;li&gt;조선 침입 (1592년, 1597년)&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;도쿠가와 이에야스
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;도쿠가와 이에야스&lt;/code&gt;
     &lt;ul&gt;
       &lt;li&gt;세키가하라 전투 승리(1600년)&lt;/li&gt;
-      &lt;li&gt;에도 막부 수립(1603년), 일본 열도의 지배권 차지&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;에도 막부&lt;/code&gt; 수립(1603년), 일본 열도의 지배권 차지&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -1779,7 +1778,7 @@
 &lt;ul&gt;
   &lt;li&gt;강력한 중앙집권적 봉건체제 유지 (이를 이유로 근세로 구분하기도 함)
     &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;막번체제&lt;/code&gt;: 중앙통일정권인 에도 막부와 그 지배하에 있으면서 독립된 영국을 갖는 번을 통치기관으로 하는 정치체제&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;막번체제&lt;/code&gt;: 에도막부의 쇼군과 번의 다이묘를 중심으로 하는 통치 체제&lt;/li&gt;
       &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;참근교대&lt;/code&gt;: 다이묘들을 인질로 삼아 1년씩 교대로 에도에 살게하는 제도&lt;/li&gt;
       &lt;li&gt;크리스트교 금지&lt;/li&gt;
       &lt;li&gt;외국, 특히 서구 제국과의 접촉 규제&lt;/li&gt;
@@ -1791,9 +1790,9 @@
       &lt;li&gt;상인 활기 -&amp;gt; 상업 발달&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;조닌문화 전개
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;조닌문화&lt;/code&gt; 전개
     &lt;ul&gt;
-      &lt;li&gt;조닌: 에도시대에 도시에 사는 상공업자, 도시문화의 중심존재&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;조닌&lt;/code&gt;: 에도시대에 도시에 사는 상공업자, 도시문화의 중심존재&lt;/li&gt;
       &lt;li&gt;조닌문화: 조닌을 중심으로 생산되고 향유되어지는 문화&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -1806,12 +1805,12 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;근대화정책&lt;/code&gt;과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;중앙집권화정책&lt;/code&gt; 실시&lt;/li&gt;
   &lt;li&gt;부국강병 및 식산흥업정책 추진&lt;/li&gt;
-  &lt;li&gt;폐번치현: 영주적 토지소유제도 폐지&lt;/li&gt;
-  &lt;li&gt;지조개정: 토지 및 조세제도의 개혁을 통해 국가재정을 충실히 다짐&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;폐번치현&lt;/code&gt;: 영주적 토지소유제도 폐지&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;지조개정&lt;/code&gt;: 토지 및 조세제도의 개혁을 통해 국가재정을 충실히 다짐&lt;/li&gt;
   &lt;li&gt;초등학교 의무교육 실시&lt;/li&gt;
   &lt;li&gt;구미 사절단과 유학생을 대대적으로 파견&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;서구의 과학문명 도입&lt;/code&gt;, 자유주의 사상 유입&lt;/li&gt;
-  &lt;li&gt;헌법(대일본제국헌법) 제정, 공포 (1889년 2월 11일)
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;헌법(대일본제국헌법)&lt;/code&gt; 제정, 공포 (1889년 2월 11일)
     &lt;ul&gt;
       &lt;li&gt;독일식 헌법을 바탕으로 이토 히로부미가 기초&lt;/li&gt;
       &lt;li&gt;천황을 절대군주이자 유일 주권자로 규정한 흠정헌법&lt;/li&gt;
@@ -1853,8 +1852,8 @@
   &lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;정치의 민주화&lt;/code&gt;, 사회운동의 전개
     &lt;ul&gt;
-      &lt;li&gt;보통 선거법 실시: 25세 이상 남성의 선거권 획득&lt;/li&gt;
-      &lt;li&gt;정당정치 발달: ‘다이쇼 데모크라시’&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;보통 선거법 실시&lt;/code&gt;: 25세 이상 남성의 선거권 획득&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;정당정치&lt;/code&gt; 발달: ‘다이쇼 데모크라시’&lt;/li&gt;
       &lt;li&gt;사회, 노동, 농민운동이 활발히 전개&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -1871,7 +1870,7 @@
   &lt;/li&gt;
   &lt;li&gt;국가개조운동(쇼와유신운동)
     &lt;ul&gt;
-      &lt;li&gt;우익, 청년 장교들의 쿠데타(5.15사건, 2.26사건) -&amp;gt; 군국주의 체제로 전환&lt;/li&gt;
+      &lt;li&gt;우익, 청년 장교들의 쿠데타(5.15사건, 2.26사건) -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;군국주의&lt;/code&gt; 체제로 전환&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;중일전쟁(1937년) -&amp;gt; 계획경제 및 통제경제체제로 전환&lt;/li&gt;
@@ -1890,10 +1889,10 @@
   &lt;li&gt;패전(1945년)
     &lt;ul&gt;
       &lt;li&gt;원폭 투하, 연합군에 의한 점령, 비무장화, 재벌해체, 천황의 인간선언&lt;/li&gt;
-      &lt;li&gt;헌법개정, 도쿄재판, 샌프란시스코 강화조약&lt;/li&gt;
+      &lt;li&gt;헌법개정, 도쿄재판, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;샌프란시스코 강화조약&lt;/code&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;미일안전보장조약
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;미일안전보장조약&lt;/code&gt;
     &lt;ul&gt;
       &lt;li&gt;미국과 일본간의 군사동맹을 규정한 조약&lt;/li&gt;
     &lt;/ul&gt;
