@@ -15,7 +15,7 @@ Multipart/form-data는 파일을 포함한 데이터를 전송할때 사용하�
 
 Content-Type 헤더(키)에 값으로 `multipart/form-data; boundary={uuid}`를 지정하고
 
-```http
+```
 
 Content-Type: multipart/form-data;boundary="boundary"
 
