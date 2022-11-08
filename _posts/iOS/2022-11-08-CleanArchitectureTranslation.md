@@ -11,6 +11,8 @@ sitemap:
 
 본 글은 개인 학습목적으로 [해당글](https://tech.olx.com/clean-architecture-and-mvvm-on-ios-c9d167d9f5b3)을 번역한 글입니다. (의역 다수 존재, 삭제된 부분 존재)
 
+<br/> 
+
 우리가 소프트웨어 개발을 할때 디자인 패턴만큼이나 중요한 것이 아키텍쳐 패턴(architectural patterns)입니다. 소프트웨어 엔지니어링에는 다양한 아키텍쳐 패턴이 존재합니다. 모바일 소프트웨어 엔지니어링에서는 MVVM, 클린 아키텍쳐, Redux 패턴이 가장 널리 사용되고 있습니다.
 
 이 글에서는 [예시 프로젝트](https://github.com/kudoleh/iOS-Clean-Architecture-MVVM)를 통해 아키텍쳐 패턴 MVVM과 클린 아키텍쳐를 iOS 앱에 적용하는 것을 보여줄겁니다.
