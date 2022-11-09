@@ -13,37 +13,95 @@ sitemap:
 
 <br/> 
 
-우리가 소프트웨어 개발을 할때 디자인 패턴만큼이나 중요한 것이 아키텍쳐 패턴(architectural patterns)입니다. 소프트웨어 엔지니어링에는 다양한 아키텍쳐 패턴이 존재합니다. 모바일 소프트웨어 엔지니어링에서는 MVVM, 클린 아키텍쳐, Redux 패턴이 가장 널리 사용되고 있습니다.
+## 개요
 
-이 글에서는 [예시 프로젝트](https://github.com/kudoleh/iOS-Clean-Architecture-MVVM)를 통해 아키텍쳐 패턴 MVVM과 클린 아키텍쳐를 iOS 앱에 적용하는 것을 보여줄겁니다.
+개발을 할때 디자인 패턴만큼이나 중요한 것이 아키텍쳐 패턴(architectural patterns)입니다. 
+
+개발 분야에는 다양한 아키텍쳐 패턴들이 존재하며 모바일 소프트웨어 엔지니어링에서는 MVVM, 클린 아키텍쳐, Redux 패턴이 가장 널리 사용되고 있습니다.
+
+이 글에서는 [예시 프로젝트](https://github.com/kudoleh/iOS-Clean-Architecture-MVVM)를 통해 MVVM패턴과 클린 아키텍쳐 패턴을 iOS 앱에 적용한 예제 프로젝트를 소개할 것입니다.
+
+
+
+## CleanArchitecture의 구성요소
 
 ![img](https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20221107193339.png)
 
-클린 아키텍쳐 그래프에서 볼 수 있듯 앱에는 서로 다른 레이어들이 존재합니다. 가장 중요한 규칙은 내부 레이어는 외부 레이어에 의존성을 가지지 않아야 한다는 것입니다. 밖으로부터 안으로 그려져 있는 화살표는 의존성 규칙입니다. 의존성은 외부 레이어에서 내부 레이어로의 의존성만 존재합니다.
+위의 클린 아키텍쳐를 나타낸 그래프에서 볼 수 있듯 앱에는 서로 다른 레이어들이 존재합니다. 
 
-모든 레이어를 그룹화 하면 다음과 같습니다. Presentation, Domain, Data 레이어.
+이 아키텍쳐에서 가장 중요한건 내부 레이어가 외부 레이어에 의존성을 가지지 않아야 한다는 것입니다. 
+
+밖으로부터 안쪽으로 그려져 있는 화살표는 의존성의 방향을 나타낸 것입니다. 
+
+화살표의 방향에서 알 수 있듯 의존성은 외부 레이어에서 내부 레이어로의 의존성만 존재합니다.
+
+모든 레이어를 그룹화 하면 Presentation 레이어, Domain 레이어, Data 레이어로 나눌 수 있습니다.
+
+### 3가지 Layer
 
 ![img](https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20221107193333.png)
 
-도메인 레이어(비즈니스 로직)는 양파의 가장 안쪽 부분에 해당합니다. (다른 레이어로의 의존성이 없으며 완전히 고립되어 있음) 도메인 레이어는 Entities(비즈니스 모델들), Use Cases, 레포지토리 인터페이스를 가지고 있습니다. 이 레이어는 다른 프로젝트에서 재사용될 잠재력이 있습니다. 이러한 분리는 테스트를 진행할때 host app이 필요없도록 만듭니다. (의존성이 없기 때문에 (심지어 써드파티도 없음)) - 이것은 도메인 유즈 케이스의 테스트를 단 몇 초만에 마칠 수 있도록 만듭니다. 
+**Domain Layer**
 
-> Note: 도메인 레이어는 다른 레이어의 어떠한 것도 포함하고 있지 않아야 합니다. (Presentation 레이어의 UIKit, Data 레이어의 Codable)
+도메인 레이어(비즈니스 로직)는 양파의 가장 안쪽 부분에 해당합니다. (다른 레이어로의 의존성이 없으며 완전히 고립되어 있음) 
 
-좋은 아키텍쳐가 Use Cases에 집중되어있는 이유는 그 아키텍쳐가 프레임워크, 툴, 개발환경 등과 무관하게 Use cases의 구조를 온전히 설명할 수 있기 때문입니다.
+도메인 레이어는 Entities(비즈니스 모델들), Use Cases, Repository Interfaces를 가지고 있습니다. 
 
-Presentation 레이어는 UI(UIViewController)를 포함합니다. View는 하나 이상의 Use Case를 실행하는 ViewModel(Presenter)들과 함께 조직화되어있습니다. Presentation 레이어는 오직 도메인 레이어에만 의존성을 가집니다.
+도메인 레이어는 다른 프로젝트에서 재사용될 수 있으며, 도메인 레이어의 분리를 통해 유닛 테스트 시 host app이 필요하지 않도록 만들어줍니다. 
 
-Data 레이어는 레포지토리 구현과 하나 이상의 데이터소스를 가집니다. 레포지토리는 다른 데이터 소스로부터 데이터를 조직화할 책임을 지니고 있습니다. 데이터 소스는 리모트와 로컬이 존재합니다. 데이터 레이어는 오직 도메인 레이어에만 의존성을 가집니다. 데이터 레이어에서는 네트워크로부터 받아온 JSON 데이터를 도메인 모델에 mapping하는 역할도 추가할 수 있습니다. (e.g Decodable 채택)
+이는 써드파티 라이브러리를 포함한 그 어떠한 의존성이 없기 때문에 가능한 것이며, UseCase의 테스트를 아주 빠르게 할 수 있습니다.
+
+<br/> 
+
+> Note: 도메인 레이어는 다른 레이어의 그 어떠한 것도 포함하고 있지 않아야 합니다. 
+>
+> Presentation 레이어가 가지고 있는 UIKit이나 Data 레이어가 가지고 있는 Codable이 그 예시입니다.
+
+<br/> 
+
+좋은 아키텍쳐일수록 프레임워크, 툴, 개발환경 등과 무관하게 Use cases의 구조를 온전히 설명할 수 있어야 하기 때문에 
+
+좋은 아키텍쳐일수록 Use Cases에 집중되어있는 모습을 보입니다.
+
+<br/> 
+
+**Presentation Layer**
+
+Presentation 레이어에는 UI(UIViewController)가 포함되어 있습니다.
+
+View는 하나 이상의 Use Case들을 실행하는 ViewModel(Presenter)들과 함께 조직화되어있습니다.
+
+Presentation 레이어는 오직 도메인 레이어에만 의존성을 가집니다.
+
+<br/> 
+
+**Data Layer**
+
+Data 레이어는 레포지토리 구현부와 하나 이상의 데이터소스를 가집니다. (레포지토리 인터페이스는 도메인 레이어에 있음)
+
+레포지토리는 다른 데이터 소스로부터 데이터를 조직화할 책임을 지니고 있습니다.
+
+이때 데이터 소스는 리모트(원격 저장소의 데이터; 서버 DB)와 로컬(앱 내부 저장소의 데이터; 로컬 DB)이 존재합니다. 
+
+데이터 레이어는 오직 도메인 레이어에만 의존성을 가집니다. 
+
+데이터 레이어에는 네트워크로부터 받아온 JSON 데이터를 도메인 모델에 mapping하는 작업도 존재할 수 있습니다. (e.g. Decodable을 채택한 모델)
 
 ![img](https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20221107195817.png)
 
-위의 그래프에서 모든 요소들은 의존하는 방향과 데이터 플로우(요청/응답)이 나타나 있습니다. 여기서 레포지토리 인터페이스를 사용할때 의존성 역전 현상이 벌어짐을 알 수 있습니다. 각 레이어들의 설명은 글의 시작부에 언급된 예시 프로젝트에 존재합니다.
+위의 그림에는 각각의 요소들이 의존하는 방향과 데이터의 흐름(요청/응답)이 나타나 있습니다.
+
+데이터 레포지토리 인터페이스를 사용할때 의존성 역전이 일어나는 것을 확인할 수 있습니다.
+
+각 레이어들의 설명은 글의 시작부에 언급된 예시 프로젝트에 존재합니다.
+
+<br/> 
 
 **Data Flow**
 
 1. View(UI)가 ViewModel(Presenter)로부터 메서드를 호출
 2. ViewModel은 Use Case를 실행
-3. Use Case는 유저와 레포지토리로부터 데이터를 결합
+3. Use Case는 유저로부터 얻은 데이터와 레포지토리로부터 얻은 데이터를 결합 (combine)
 4. 각 레포지토리는 리모트 데이터(네트워크)와 Persistent DB, In-memory 데이터로부터 온 데이터를 반환
 5. 정보가 View(UI)로 다시 흘러가고 이를 화면에 띄움
 
@@ -63,13 +121,13 @@ Presentation 레이어 → Domain 레이어 ← Data Repository 레이어
 
 <br/>
 
-### 예제 프로젝트: "Movies App"
+## 예제 프로젝트: "Movies App"
 
 ![img](https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20221107221414.png)
 
 
 
-**도메인 레이어**
+### 도메인 레이어
 
 예제 프로젝트 내의 폴더를 보면 도메인 레이어를 찾을 수 있습니다. 도메인에는 Entities와 영화를 검색하고 성공적으로 작업을 마친 쿼리를 저장하는 SearchMoviesUseCase가 있습니다. 또, 의존성 역전 문제 해결을 위해 필요한 Data Repositories Interfaces가 존재합니다.
 
@@ -115,13 +173,13 @@ protocol MoviesQueriesRepository {
 
 <br/> 
 
-> Note: Use Case를 만드는 또 다른 방법은 *UseCase* 프로토콜을 start() 함수와 같이 쓰는 것이며 모든 use case들은 이 프로토콜에 따릅니다. 예제 프로젝트의 [FetchRecentMovieQueriesUseCase](https://github.com/kudoleh/iOS-Clean-Architecture-MVVM/blob/master/ExampleMVVM/Domain/UseCases/FetchRecentMovieQueriesUseCase.swift)가 이 접근방법을 사용하고 있습니다. Use case는 Interactor라고도 불립니다.
+> Note: Use Case를 만드는 또 다른 방법은 *UseCase* 프로토콜의 default implementation인 start() 메서드를 통해 생성하는 것입니다. 모든 use case들은 UseCase 프로토콜을 채택해야합니다. 예제 프로젝트에서는 [FetchRecentMovieQueriesUseCase](https://github.com/kudoleh/iOS-Clean-Architecture-MVVM/blob/master/ExampleMVVM/Domain/UseCases/FetchRecentMovieQueriesUseCase.swift)가 이 방식을 사용하고 있습니다. 추가로 Use case는 Interactor라고도 불립니다.
 
 > Note: *UseCase*는 다른 *UseCases*에 종속적일 수 있습니다.
 
 <br/> 
 
-**Presentation Layer**
+### Presentation Layer
 
 Presentation 레이어에는 MoviesListViewModel과 이의 item들을 observe하는 MoviesListView가 포함되어 있습니다. MoviesListViewModel은 UIKit을 import하지 않습니다. 왜냐하면 ViewModel을 UIKit과 같은 UI 프레임워크로부터 clean하도록 만들어서 재사용과 리팩토링이 쉬워지도록 하기 위해서입니다. 이렇게 하면 ViewModel이 변하지 않아도 되기에 미래에 View들을 UIKit으로부터 SwiftUI로 리팩토링하는 것이 훨씬 쉬워질 것입니다.
 
@@ -205,8 +263,7 @@ extension MoviesListItemViewModel {
 
 <br/> 
 
-> Note: MoviesListViewModelInput과 MoviesListViewModelOutput이라는 인터페이스를 사용하는 것은 ViewModel을 mocking하기 쉽게 만들어 MoviesListViewController를 testable하게 만듭니다. 게다가 MoviesListViewModelActions 클로저는 MoviesSearchFlowCoordinator에게 언제 다른 view를 present 시킬지를 알려줍니다. action 클로저가 호출되면 coordinator는 movie details screen을 present 시킵니다. group action을 위해 struct를 사용하는데 이는 나중에 action을 더 쉽게 추가하기 위해서입니다.
-
+> Note: MoviesListViewModelInput과 MoviesListViewModelOutput이라는 인터페이스를 사용함으로써 ViewModel을 mocking하기 쉽게 만들며 MoviesListViewController를 testable하게 만듭니다. 게다가 MoviesListViewModelActions 클로저는 MoviesSearchFlowCoordinator에게 언제 다른 view를 present 시킬지를 알려줍니다. action 클로저가 호출되면 coordinator는 movie details screen을 present 시킵니다. group action을 위해 struct를 사용하는데 이는 나중에 action을 더 쉽게 추가하기 위해서입니다.
 
 <br/> 
 
@@ -307,7 +364,7 @@ final class MoviesSearchFlowCoordinator {
 
 <br/> 
 
-**Data Layer**
+### Data Layer
 
 Data Layer는 DefaultMoviesRepository를 포함합니다. Data Layer는 Domain Layer에서 정의된 인터페이스를 따릅니다. (Dependency Inversion) 여기에 json 데이터와 CoreData Entity의 도메인 모델로의 mapping을 추가합니다. (json 데이터의 경우 Decodable 채택이 될 것 입니다.)
 
@@ -380,7 +437,7 @@ Storage와 API는 완전히 다른 구현으로 대체될 수 있습니다. (Cor
 
 <br/> 
 
-**Infrastructure Layer (Network)**
+### Infrastructure Layer (Network)
 
 네트워크 프레임워크를 래핑하는 레이어입니다. 이는 Alamofire나 다른 프레임워크로 대체될 수 있습니다. 이 레이어는 네트워크 파라미터(base URL 등)로 구성될 수 있으며 엔드포인트를 규정하거나 데이터 매핑 메서드를 포함할수도 있습니다. (Decodable을 채택한 객체를 이용하여)
 
@@ -411,7 +468,7 @@ dataTransferService.request(with: endpoint) { (response: Result<MoviesResponseDT
 
 <br/> 
 
-**MVVM**
+### MVVM
 
 Model-View-ViewModel 패턴(MVVM)은 UI와 도메인 사이의 깔끔한 분리를 가능하게 해줍니다.
 
@@ -521,7 +578,7 @@ final class MoviesListItemCell: UITableViewCell {
 
 <br/> 
 
-**MVVMs Communication**
+### MVVMs Communication
 
 MVVM(screen)의 ViewModel은 다른 MVVM(screen)의 ViewModel과 delegate 패턴을 통해 소통합니다.
 
@@ -560,7 +617,7 @@ extension MoviesListViewModel: MoviesQueryListViewModelDelegate {
 
 <br/> 
 
-**클로저**
+### 클로저
 
 또 다른 방법의 소통은 FlowCoordinator에 의해 주입되거나 할당된 클로저를 이용하는 것입니다. 이 예제 프로젝트에서는 MoviesListViewModel이 어떻게 action 클로저 showMovieQueriesSuggestions를 통해 MoviesQueriesSuggestionsView를 보여주는지가 나와있습니다. View로부터의 콜백을 위해 (_didSelect: MovieQuery)라는 파라미터도 존재합니다. 아래는 MoviesSearchFlowCoordinator 내에서 연결된 소통을 나타낸 코드입니다.
 
@@ -612,7 +669,7 @@ class MoviesSearchFlowCoordinator {
 
 <br/>
 
-**Layer Separation into frameworks (Modules)**
+### Layer Separation into frameworks (Modules)
 
 예제 앱의 각 레이어는 각각의 프레임워크로 쉽게 분리할 수 있습니다.
 
@@ -627,7 +684,7 @@ New Project -> Create Project -> Cocoa Touch Framework
 
 <br/> 
 
-**Dependency Injection Container**
+### Dependency Injection Container
 
 의존성 주입이란 하나의 객체가 다른 객체에 의존성을 가질때 이를 충족시켜주는 기술입니다. 앱의 DIContainer가 모든 injection의 중앙부 역할을 할 것입니다.
 
