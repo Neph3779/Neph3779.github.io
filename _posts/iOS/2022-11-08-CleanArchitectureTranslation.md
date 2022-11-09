@@ -129,7 +129,11 @@ Presentation 레이어 → Domain 레이어 ← Data Repository 레이어
 
 ### 도메인 레이어
 
-예제 프로젝트 내의 폴더를 보면 도메인 레이어를 찾을 수 있습니다. 도메인에는 Entities와 영화를 검색하고 성공적으로 작업을 마친 쿼리를 저장하는 SearchMoviesUseCase가 있습니다. 또, 의존성 역전 문제 해결을 위해 필요한 Data Repositories Interfaces가 존재합니다.
+예제 프로젝트 내의 폴더를 보면 도메인 레이어를 찾을 수 있습니다. 
+
+도메인에는 Entities와 영화를 검색하고 성공적으로 작업을 마친 쿼리를 저장하는 SearchMoviesUseCase와 
+
+의존성 역전 문제 해결을 위해 필요한 Data Repositories Interfaces가 존재합니다.
 
 ```swift
 protocol SearchMoviesUseCase {
@@ -173,7 +177,13 @@ protocol MoviesQueriesRepository {
 
 <br/> 
 
-> Note: Use Case를 만드는 또 다른 방법은 *UseCase* 프로토콜의 default implementation인 start() 메서드를 통해 생성하는 것입니다. 모든 use case들은 UseCase 프로토콜을 채택해야합니다. 예제 프로젝트에서는 [FetchRecentMovieQueriesUseCase](https://github.com/kudoleh/iOS-Clean-Architecture-MVVM/blob/master/ExampleMVVM/Domain/UseCases/FetchRecentMovieQueriesUseCase.swift)가 이 방식을 사용하고 있습니다. 추가로 Use case는 Interactor라고도 불립니다.
+> Note: Use Case를 만드는 또 다른 방법은 *UseCase*의 start() 메서드를 통해 생성하고
+>
+> 모든 use case들이 UseCase 프로토콜을 채택하도록 하는 것입니다. 
+>
+> 예제 프로젝트에서는 [FetchRecentMovieQueriesUseCase](https://github.com/kudoleh/iOS-Clean-Architecture-MVVM/blob/master/ExampleMVVM/Domain/UseCases/FetchRecentMovieQueriesUseCase.swift)가 이 방식을 사용하고 있습니다. 
+>
+> 추가로 Use case는 Interactor라고도 불립니다.
 
 > Note: *UseCase*는 다른 *UseCases*에 종속적일 수 있습니다.
 
