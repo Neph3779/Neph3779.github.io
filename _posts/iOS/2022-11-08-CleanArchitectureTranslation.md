@@ -27,15 +27,15 @@ sitemap:
 
 ![img](https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20221107193339.png)
 
-위의 클린 아키텍쳐를 나타낸 그래프에서 볼 수 있듯 앱에는 서로 다른 레이어들이 존재합니다. 
+위의 클린 아키텍쳐를 나타낸 그래프에서 볼 수 있듯 앱에는 서로 다른 Layer들이 존재합니다. 
 
-이 아키텍쳐에서 가장 중요한건 내부 레이어가 외부 레이어에 의존성을 가지지 않아야 한다는 것입니다. 
+이 아키텍쳐에서 가장 중요한건 내부 Layer가 외부 Layer에 의존성을 가지지 않아야 한다는 것입니다. 
 
 밖으로부터 안쪽으로 그려져 있는 화살표는 의존성의 방향을 나타낸 것입니다. 
 
-화살표의 방향에서 알 수 있듯 의존성은 외부 레이어에서 내부 레이어로의 의존성만 존재합니다.
+화살표의 방향에서 알 수 있듯 의존성은 외부 Layer에서 내부 Layer로의 의존성만 존재합니다.
 
-모든 레이어를 그룹화 하면 Presentation 레이어, Domain 레이어, Data 레이어로 나눌 수 있습니다.
+모든 Layer를 그룹화 하면 Presentation Layer, Domain Layer, Data Layer로 나눌 수 있습니다.
 
 ### 3가지 Layer
 
@@ -43,19 +43,19 @@ sitemap:
 
 **Domain Layer**
 
-도메인 레이어(비즈니스 로직)는 양파의 가장 안쪽 부분에 해당합니다. (다른 레이어로의 의존성이 없으며 완전히 고립되어 있음) 
+도메인 Layer(비즈니스 로직)는 양파의 가장 안쪽 부분에 해당합니다. (다른 Layer로의 의존성이 없으며 완전히 고립되어 있음) 
 
-도메인 레이어는 Entities(비즈니스 모델들), Use Cases, Repository Interfaces를 가지고 있습니다. 
+도메인 Layer는 Entities(비즈니스 모델들), Use Cases, Repository Interfaces를 가지고 있습니다. 
 
-도메인 레이어는 다른 프로젝트에서 재사용될 수 있으며, 도메인 레이어의 분리를 통해 유닛 테스트 시 host app이 필요하지 않도록 만들어줍니다. 
+도메인 Layer는 다른 프로젝트에서 재사용될 수 있으며, 도메인 Layer의 분리를 통해 유닛 테스트 시 host app이 필요하지 않도록 만들어줍니다. 
 
 이는 써드파티 라이브러리를 포함한 그 어떠한 의존성이 없기 때문에 가능한 것이며, UseCase의 테스트를 아주 빠르게 할 수 있습니다.
 
 <br/> 
 
-> Note: 도메인 레이어는 다른 레이어의 그 어떠한 것도 포함하고 있지 않아야 합니다. 
+> Note: 도메인 Layer는 다른 Layer의 그 어떠한 것도 포함하고 있지 않아야 합니다. 
 >
-> Presentation 레이어가 가지고 있는 UIKit이나 Data 레이어가 가지고 있는 Codable이 그 예시입니다.
+> Presentation Layer가 가지고 있는 UIKit이나 Data Layer가 가지고 있는 Codable이 그 예시입니다.
 
 <br/> 
 
@@ -67,25 +67,25 @@ sitemap:
 
 **Presentation Layer**
 
-Presentation 레이어에는 UI(UIViewController)가 포함되어 있습니다.
+Presentation Layer에는 UI(UIViewController)가 포함되어 있습니다.
 
 View는 하나 이상의 Use Case들을 실행하는 ViewModel(Presenter)들과 함께 조직화되어있습니다.
 
-Presentation 레이어는 오직 도메인 레이어에만 의존성을 가집니다.
+Presentation Layer는 오직 도메인 Layer에만 의존성을 가집니다.
 
 <br/> 
 
 **Data Layer**
 
-Data 레이어는 레포지토리 구현부와 하나 이상의 데이터소스를 가집니다. (레포지토리 인터페이스는 도메인 레이어에 있음)
+Data Layer는 레포지토리 구현부와 하나 이상의 데이터소스를 가집니다. (레포지토리 인터페이스는 도메인 Layer에 있음)
 
 레포지토리는 다른 데이터 소스로부터 데이터를 조직화할 책임을 지니고 있습니다.
 
 이때 데이터 소스는 리모트(원격 저장소의 데이터; 서버 DB)와 로컬(앱 내부 저장소의 데이터; 로컬 DB)이 존재합니다. 
 
-데이터 레이어는 오직 도메인 레이어에만 의존성을 가집니다. 
+데이터 Layer는 오직 도메인 Layer에만 의존성을 가집니다. 
 
-데이터 레이어에는 네트워크로부터 받아온 JSON 데이터를 도메인 모델에 mapping하는 작업도 존재할 수 있습니다. (e.g. Decodable을 채택한 모델)
+데이터 Layer에는 네트워크로부터 받아온 JSON 데이터를 도메인 모델에 mapping하는 작업도 존재할 수 있습니다. (e.g. Decodable을 채택한 모델)
 
 ![img](https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20221107195817.png)
 
@@ -93,7 +93,7 @@ Data 레이어는 레포지토리 구현부와 하나 이상의 데이터소스�
 
 데이터 레포지토리 인터페이스를 사용할때 의존성 역전이 일어나는 것을 확인할 수 있습니다.
 
-각 레이어들의 설명은 글의 시작부에 언급된 예시 프로젝트에 존재합니다.
+각 Layer들의 설명은 글의 시작부에 언급된 예시 프로젝트에 존재합니다.
 
 <br/> 
 
@@ -109,7 +109,7 @@ Data 레이어는 레포지토리 구현부와 하나 이상의 데이터소스�
 
 **Dependency Direction**
 
-Presentation 레이어 → Domain 레이어 ← Data Repository 레이어
+Presentation Layer → Domain Layer ← Data Repository Layer
 
 <br/> 
 
@@ -127,9 +127,9 @@ Presentation 레이어 → Domain 레이어 ← Data Repository 레이어
 
 
 
-### 도메인 레이어
+### 도메인 Layer
 
-예제 프로젝트 내의 폴더를 보면 도메인 레이어를 찾을 수 있습니다. 
+예제 프로젝트 내의 폴더를 보면 도메인 Layer를 찾을 수 있습니다. 
 
 도메인에는 Entities와 영화를 검색하고 성공적으로 작업을 마친 쿼리를 저장하는 SearchMoviesUseCase와 
 
@@ -191,7 +191,13 @@ protocol MoviesQueriesRepository {
 
 ### Presentation Layer
 
-Presentation 레이어에는 MoviesListViewModel과 이의 item들을 observe하는 MoviesListView가 포함되어 있습니다. MoviesListViewModel은 UIKit을 import하지 않습니다. 왜냐하면 ViewModel을 UIKit과 같은 UI 프레임워크로부터 clean하도록 만들어서 재사용과 리팩토링이 쉬워지도록 하기 위해서입니다. 이렇게 하면 ViewModel이 변하지 않아도 되기에 미래에 View들을 UIKit으로부터 SwiftUI로 리팩토링하는 것이 훨씬 쉬워질 것입니다.
+Presentation Layer에는 MoviesListViewModel과 이의 item들을 observe하는 MoviesListView가 포함되어 있습니다. 
+
+MoviesListViewModel은 UIKit을 import하지 않는데, 이는 ViewModel을  UIKit과 같은 UI 프레임워크로부터 격리하여 재사용과 리팩토링이 쉬워지도록 하기 위함입니다.
+
+View를 구성하는 코드가 변경되더라도(UIKit 코드의 SwiftUI로의 리팩토링 등) ViewModel은 바뀌지 않아도 되므로 리팩토링이 쉬워집니다.
+
+<br/> 
 
 ```swift
 // Note: We cannot have any UI frameworks(like UIKit or SwiftUI) imports here. 
@@ -273,7 +279,15 @@ extension MoviesListItemViewModel {
 
 <br/> 
 
-> Note: MoviesListViewModelInput과 MoviesListViewModelOutput이라는 인터페이스를 사용함으로써 ViewModel을 mocking하기 쉽게 만들며 MoviesListViewController를 testable하게 만듭니다. 게다가 MoviesListViewModelActions 클로저는 MoviesSearchFlowCoordinator에게 언제 다른 view를 present 시킬지를 알려줍니다. action 클로저가 호출되면 coordinator는 movie details screen을 present 시킵니다. group action을 위해 struct를 사용하는데 이는 나중에 action을 더 쉽게 추가하기 위해서입니다.
+> Note: MoviesListViewModelInput과 MoviesListViewModelOutput이라는 인터페이스를 사용함으로써 
+>
+> ViewModel을 mocking하기 쉽게 만들며 MoviesListViewController를 testable하게 만듭니다. 
+>
+> 게다가 MoviesListViewModelActions 클로저는 MoviesSearchFlowCoordinator에게 언제 다른 view를 present 시킬지를 알려줍니다. 
+>
+> action 클로저가 호출되면 coordinator는 movie details screen을 present 시킵니다. 
+>
+> group action을 위해 struct를 사용하는데 이는 나중에 action을 더 쉽게 추가하기 위해서입니다.
 
 <br/> 
 
@@ -443,13 +457,13 @@ extension MoviesResponseDTO {
 
 일반적으로 Data Repository는 API Data Service와 Persistent Data Storage를 주입받을 수 있습니다. Data Repository는 이 두개의 의존성을 가지고 있습니다. 첫번째 규칙은 persistent  storage에 캐시된 데이터가 있는지 확인하는 것입니다. (NSMangedObject는 DTO 객체를 통해 도메인에 매핑되어있으며, *cached data* 클로저에서 전달되어집니다.) 그 뒤에 API Data Service를 호출해 최신 데이터를 가져옵니다. 그리고나면 Persistent Storage가 이 최신 데이터로 업데이트됩니다. (DTO는 Persistent Object로 매핑되고 저장됩니다.) 그 후 DTO가 도메인에 매핑되고 updated data와 completion 클로저를 전달받습니다. 이러한 방법은 유저가 데이터를 순식간에 확인할 수 있도록 해줍니다. 설령 인터넷에 연결되어있지 않더라도 유저는 캐싱된 데이터를 볼 수 있습니다.
 
-Storage와 API는 완전히 다른 구현으로 대체될 수 있습니다. (CoreData에서 Realm으로 대체하는 경우 등) 이는 앱의 다른 레이어가 이 변화에 영향을 받지 않기 때문입니다. 이는 DB가 이 구조에서 세부적인 요소에 속하기 때문입니다.
+Storage와 API는 완전히 다른 구현으로 대체될 수 있습니다. (CoreData에서 Realm으로 대체하는 경우 등) 이는 앱의 다른 Layer가 이 변화에 영향을 받지 않기 때문입니다. 이는 DB가 이 구조에서 세부적인 요소에 속하기 때문입니다.
 
 <br/> 
 
 ### Infrastructure Layer (Network)
 
-네트워크 프레임워크를 래핑하는 레이어입니다. 이는 Alamofire나 다른 프레임워크로 대체될 수 있습니다. 이 레이어는 네트워크 파라미터(base URL 등)로 구성될 수 있으며 엔드포인트를 규정하거나 데이터 매핑 메서드를 포함할수도 있습니다. (Decodable을 채택한 객체를 이용하여)
+네트워크 프레임워크를 래핑하는 Layer입니다. 이는 Alamofire나 다른 프레임워크로 대체될 수 있습니다. 이 Layer는 네트워크 파라미터(base URL 등)로 구성될 수 있으며 엔드포인트를 규정하거나 데이터 매핑 메서드를 포함할수도 있습니다. (Decodable을 채택한 객체를 이용하여)
 
 ```swift
 struct APIEndpoints {
@@ -482,7 +496,7 @@ dataTransferService.request(with: endpoint) { (response: Result<MoviesResponseDT
 
 Model-View-ViewModel 패턴(MVVM)은 UI와 도메인 사이의 깔끔한 분리를 가능하게 해줍니다.
 
-클린 아키텍쳐와 함께 사용하면  Presentation과 UI레이어 사이의 문제도 해결할 수 있습니다.
+클린 아키텍쳐와 함께 사용하면  Presentation과 UILayer 사이의 문제도 해결할 수 있습니다.
 
 같은 ViewModel를 다른 view에 사용할 수 있습니다. 예를 들어 CarsAroundListView와 CarsAroundMapView에 CarsAroundViewModel를 공용으로 사용하는 것입니다. 또는 어떤 뷰는 UIKit으로, 다른 뷰는 SwiftUI로 작업하여 사용할수도 있습니다. 여기서 중요한 점은 ViewModel이 UIKit을 import하지 않는다는 것입니다. 이런 방법은 다른 플랫폼에서도 쉽게 재활용할 수 있도록 만들어줍니다.
 
@@ -681,7 +695,7 @@ class MoviesSearchFlowCoordinator {
 
 ### Layer Separation into frameworks (Modules)
 
-예제 앱의 각 레이어는 각각의 프레임워크로 쉽게 분리할 수 있습니다.
+예제 앱의 각 Layer는 각각의 프레임워크로 쉽게 분리할 수 있습니다.
 
 New Project -> Create Project -> Cocoa Touch Framework
 
@@ -771,9 +785,9 @@ final class MoviesSceneDIContainer {
 
 ## 결론
 
-모바일 개발에서 가장 많이 사용되는 아키텍쳐 패턴은 클린 아키텍쳐(레이어), MVVM, Redux입니다.
+모바일 개발에서 가장 많이 사용되는 아키텍쳐 패턴은 클린 아키텍쳐(Layer), MVVM, Redux입니다.
 
-MVVM과 클린 아키텍쳐는 별도로 사용될 수 있지만 MVVM은 Presentation Layer에서만의 분리를 도와주는 것에 반해, 클린 아키텍쳐는 코드를 모듈화된 레이어를 통해 쉽게 테스트, 재활용, 이해가 가능하도록 합니다.
+MVVM과 클린 아키텍쳐는 별도로 사용될 수 있지만 MVVM은 Presentation Layer에서만의 분리를 도와주는 것에 반해, 클린 아키텍쳐는 코드를 모듈화된 Layer를 통해 쉽게 테스트, 재활용, 이해가 가능하도록 합니다.
 
 Use Case를 만드는 것은 중요한 작업이며 이를 스킵해서는 안됩니다. 설령 Use Case가 Repository를 부르는 것 이외에 아무것도 하지 않는다 하더라도 말입니다. 이 방법을 통해 아키텍쳐는 새로 온 개발자가 보았을때 self-explanatory하게 보일 것입니다.
 
@@ -781,7 +795,7 @@ Use Case를 만드는 것은 중요한 작업이며 이를 스킵해서는 안�
 
 스스로 프로젝트의 요구에 맞게 아키텍쳐를 선택해야 합니다.
 
-클린 아키텍쳐는 TDD와도 궁합이 좋습니다. 이 아키텍쳐는 프로젝트를 testable하게 만들어주고 레이어들이 쉽게 대체될 수 있습니다. (UI나 Data의 변경이 쉬움)
+클린 아키텍쳐는 TDD와도 궁합이 좋습니다. 이 아키텍쳐는 프로젝트를 testable하게 만들어주고 Layer들이 쉽게 대체될 수 있습니다. (UI나 Data의 변경이 쉬움)
 
 Domain-Driven Design(DDD) 또한 클린 아키텍쳐와 궁합이 좋습니다.
 
