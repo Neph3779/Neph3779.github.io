@@ -70,6 +70,10 @@ cell에 contents를 적용하고나서 systemLayoutSizeFitting 메서드를 통�
 
 
 
+주의할 점은 setUpContents() 메서드 내부에서 layoutIfNeeded()나 layout() 메서드를 호출해줘야 한다.
+
+
+
 
 
 **참고한 글**
