@@ -9,9 +9,9 @@ sitemap:
   priority: 1.0
 ---
 
-본 글은 https://github.com/ReactiveX/RxSwift/blob/main/Documentation/GettingStarted.md#making-http-requests를 정리한 글입니다.
+본 글은 RxSwift의 공식문서 [Getting Started](https://github.com/ReactiveX/RxSwift/blob/main/Documentation/GettingStarted.md)를 정리한 글입니다.
 
-
+<br/> 
 
 ## Observable
 
@@ -99,9 +99,8 @@ myJust(0)
 - subscribe 메서드처럼 `하나의 인자`와 `observer`를 필요로하며 **disposable을 반환**함
 - 이런식으로 구현된 Sequence는 동기적으로 동작함
   - element generation이 이루어지고
-  - subscribe call이 disposable을 return하기 전에 종료됨
-  - 그렇기 때문에 어떤 disposable을 return하든 아무 상관이 없음
-  - element generating 프로세스가 방해받지 않음
+  - element generation은 subscribe call이 disposable을 return하기 전에 종료됨
+  - 그렇기 때문에 어떤 disposable을 return하든 아무 상관이 없음 (element generating 프로세스가 방해받지 않음)
 
 
 

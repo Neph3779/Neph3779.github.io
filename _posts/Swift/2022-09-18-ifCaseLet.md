@@ -57,7 +57,7 @@ if item == ... 와 같이 진행될거라 생각하기 쉽지만, 이 문법의 
 
 associated value를 if let 구문을 통해 선언하다보니 좌변에 이를 적어주어야 하기 때문입니다.
 
-if case let .category(category)를 적는 동안에 item의 type을 inference 할 수 없으므로  
+~~if case let .category(category)를 적는 동안에 item의 type을 inference 할 수 없으므로~~
 
 ~~Switch문을 사용할때와는 다르게 자동완성 기능을 사용할 수 없습니다.~~
 
@@ -81,7 +81,7 @@ if case let .category(let category) = itemWrapper {
 }
 
 // 안됨
-else case let .product(let product) = itemWrapper {
+else case let .product(product) = itemWrapper {
   
 }
 ```
