@@ -25,15 +25,15 @@ TIL을 쓰는 공간에 그 날 하루에 대한 회고만 남는듯 하여 회�
 
 한 주라는 기간에 비해서 과제의 난이도가 아주 낮지는 않았다.
 
-1주차:  https://github.com/Neph3779/ios-wanted-GyroData
+1주차:  [https://github.com/Neph3779/ios-wanted-GyroData](https://github.com/Neph3779/ios-wanted-GyroData)
 
-2주차: https://github.com/Neph3779/ios-wanted-BoxOffice
+2주차: [https://github.com/Neph3779/ios-wanted-BoxOffice](https://github.com/Neph3779/ios-wanted-BoxOffice)
 
-3주차: https://github.com/Neph3779/ios-wanted-PersonalScheduler
+3주차: [https://github.com/Neph3779/ios-wanted-PersonalScheduler](https://github.com/Neph3779/ios-wanted-PersonalScheduler)
 
-참여기업과의 채용연계가 진행된다고는 하는데,
+참여기업과의 채용연계가 진행된다고는 하던데.. 산업기능요원으로 취직해야하는 상황도 그렇고
 
-산업기능요원으로 취직해야하는 상황도 그렇고, 참여기업들이 모두 iOS직군을 뽑고 있는것도 아니기에 큰 의미는 없어보였다.
+참여기업들이 모두 iOS직군을 뽑고 있는것도 아니기에 큰 의미는 없어보였다.
 
 <br/> 
 
@@ -45,7 +45,7 @@ TIL을 쓰는 공간에 그 날 하루에 대한 회고만 남는듯 하여 회�
 
 <br/> 
 
-누가 채점을 하는것도 아니고 목표한 기업의 과제도 아닌데도
+누가 채점을 하는것도 아니고 목표한 기업의 과제가 아닌데도
 
 그냥 하다보니까 욕심이 생겨서 꽤 많이 열심히 코드를 짜봤다. (아무래도 1, 2주차는 팀원이 붙어있는 팀 과제라 대충하기엔 곤란한 상황이었던 것 같다.)
 
@@ -65,9 +65,9 @@ Diffable DataSource의 사용에도 어느정도 익숙해졌고 (개인적으�
 
 ## 딴소리
 
-그나저나 https://github.com/ReactiveX/RxSwift/pull/2471
+지난번에 올린 Rx 공식문서 오타수정 요청 PR [https://github.com/ReactiveX/RxSwift/pull/2471](https://github.com/ReactiveX/RxSwift/pull/2471)
 
-이건 대체 언제 머지해주련지.. 읽어주긴 하는건지.. 
+아직 확인이 안되고 있다.
 
 공식 가이드에 있는 오타(프린트 결과물 오류)라 수정이 좀 되었으면 하는데 많이 바쁘신가보다.
 
@@ -75,6 +75,6 @@ Diffable DataSource의 사용에도 어느정도 익숙해졌고 (개인적으�
 
 https://developer.apple.com/documentation/uikit/views_and_controls/collection_views/implementing_modern_collection_views
 
-이 애플 예재앱도 Item Badges 셀 누르니까 크래시가 터지던데
+이 애플 예재앱도 Item Badges 셀을 누르니까 크래시가 터지던데
 
 제보하는 곳을 찾아서 얘도 제보해야겠다.
