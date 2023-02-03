@@ -2,7 +2,7 @@
 layout: post
 title: "야곰 스타터 캠프 후기 (2기)"
 image:
-categories: 일상
+categories: [회고]
 tags: 
   - Yagom
   - StarterCamp

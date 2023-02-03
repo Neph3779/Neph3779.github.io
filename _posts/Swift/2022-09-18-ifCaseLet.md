@@ -65,9 +65,7 @@ Xcode 14 업데이트 이후 자동완성 기능이 개선되어 자동완성으
 
 <img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20221002173406.png" alt="image-20221002173400446" style="zoom:50%;" />
 
-<br/> 
-
-이 문법의 독특한 점은 여기서 끝이 아닌데
+<br/>
 
 ```swift
 // 됨
@@ -84,13 +82,16 @@ if case let .category(let category) = itemWrapper {
 else case let .product(product) = itemWrapper {
   
 }
+
+// 됨
+else if case let .product(product) = itemWrapper {
+  
+}
 ```
 
 switch 문을 사용할 때는 .category(let category)와 같이 연관값이 들어가는 자리에 변수, 상수를 선언하여 사용했지만
 
 이미 let을 통해 상수임을 선언한 상태이기 때문에 중복으로 let을 쓰거나 var 키워드를 적어줄 수 없습니다. 
-
-또, else case let 같은 경우에는 사용할 수가 없습니다. 
 
 
 
