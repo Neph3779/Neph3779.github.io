@@ -14,7 +14,7 @@ sitemap:
 
 ---
 
-이번 글에서는 [Swift.org 문서]([Initialization — The Swift Programming Language (Swift 5.7)](https://docs.swift.org/swift-book/LanguageGuide/Initialization.html))를 바탕으로 Swift에서 사용되는 다양한 initializer의 종류와 그 사용처에 대해 알아보겠습니다.
+이번 글에서는 [Swift.org 문서](https://docs.swift.org/swift-book/LanguageGuide/Initialization.html)를 바탕으로 Swift에서 사용되는 다양한 initializer의 종류와 그 사용처에 대해 알아보겠습니다.
 
 
 
