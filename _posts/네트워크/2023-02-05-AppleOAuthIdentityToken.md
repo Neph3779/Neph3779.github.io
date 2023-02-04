@@ -21,12 +21,14 @@ sitemap:
 
    | <img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20230205003038.png" alt="simulator_screenshot_9A7CB082-2DAB-4C46-8734-975544266354" style="zoom:25%;" /> | <img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20230205003202.png" alt="simulator_screenshot_5696CE43-2497-43B3-931B-00F0E7D41FD9" style="zoom:25%;" /> |
    | ------------------------------------------------------------ | ------------------------------------------------------------ |
+   | 1                                                            | 2                                                            |
 
 5. 암호 및 보안에 들어가서 "이중 인증"이 켜짐 상태인지 확인
    만약 이중 인증이 켜져있지 않은 경우 애플 아이디 이중 인증 설정을 해주어야 함
 
    | <img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20230205003404.png" alt="Simulator Screen Shot - iPhone 14 Plus - 2023-02-05 at 00.33.20" style="zoom:25%;" /> | <img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20230205003359.png" alt="Simulator Screen Shot - iPhone 14 Plus - 2023-02-05 at 00.33.37" style="zoom:25%;" /> |
    | ------------------------------------------------------------ | ------------------------------------------------------------ |
+   | 1                                                            | 2                                                            |
 
 6. cmd + q로 시뮬레이터 종료 후, 다시 xcode에서 cmd + r로 코드 실행
 
