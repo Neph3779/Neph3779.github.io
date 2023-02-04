@@ -10,7 +10,13 @@ sitemap:
   priority: 1.0
 ---
 
-1. 터미널에서 git clone -b feature/#120 --single-branch https://github.com/YAPP-Github/21st-ALL-Rounder-Team-1-iOS.git 명령어 통해 120번 브랜치만 클론
+1. 터미널에서 
+
+   ```
+   git clone -b feature/#120 --single-branch https://github.com/YAPP-Github/21st-ALL-Rounder-Team-1-iOS.git
+   ```
+
+   명령어 통해 120번 브랜치만 클론
 
 2. 파인더에서 RefillStation.xcodeproj를 더블클릭해서 프로젝트 오픈
 
