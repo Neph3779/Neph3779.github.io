@@ -160,7 +160,7 @@ two-phase 초기화는 저장 프로퍼티가 초기화되기 전에 접근되�
 
 ## Initializer 상속과 오버라이딩
 
-Swift는 상위클래스의 initializer를 default로 상속받지 않습니다. 이는 상위 클래스로부터 받은 간략한 init이 사용되는 것을 막습니다. (subclass가 복잡한 처리과정을 통해 init되어야 하는데 이를 위해 만든 init이 아닌 상위클래스로부터 상속받은 init을 사용해버리면 의도와 다른 무의미한 instance가 생성될 가능성이 있고, 이를 방지하는 차원)
+Swift는 상위클래스의 initializer를 default로 상속받지 않습니다. 이는 상위 클래스로부터 받은 simple한 init이 더욱 specialized된 서브 클래스가 사용하게 되는 것을 막습니다. (subclass가 복잡한 처리과정을 통해 init되어야 하는데 이를 위해 만든 init이 아닌 상위클래스로부터 상속받은 init을 사용해버리면 의도와 다른 무의미한 instance가 생성될 가능성이 있고, 이를 방지하는 차원)
 
 만약 서브클래스가 상위클래스와 같은 인터페이스의 init을 가지길 원한다면 Designated init의 경우 overriding을 통해 구현할 수 있습니다. 반면 상위 클래스의 Convenience init은 서브클래스가 직접 호출할 수 없으므로 overriding을 통해 구현하지 않습니다.
 
