@@ -639,17 +639,18 @@ pre {
   font-size: 16px;
 }
 body {
-  font-family: "Noto Sans KR";
-  line-height: 2;
+  font-family: Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif; /* 글 본문 폰트*/
+  line-height: 1.8;
   font-size: 18px;
-  color: #404040;
+  font-weight: 500; /* 글자 굵기 */
+  color: #494e52;
   overflow-x: hidden;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 p {
-  margin: 15px 0;
+  margin: 0px 0; /* 엔터 쳤을때 얼마나 띄울건지 */
 }
 @media screen and (max-width: 768px) {
   p {
@@ -657,7 +658,7 @@ p {
   }
 }
 h2 {
-  font-size: 38px;
+  font-size: 30px;
 }
 h1,
 h2,
@@ -665,21 +666,19 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial,
-    "PingFang SC", "Hiragino Sans GB", STHeiti, "Microsoft YaHei",
-    "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC",
-    "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC",
-    "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  font-family: Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
   line-height: 1.7;
   line-height: 1.1;
   font-weight: 700;
 }
-h1,
-h2 {
+h1 {
   text-align: center;
 }
+h3 {
+  font-size: 22px;
+}
 h4 {
-  font-size: 21px;
+  font-size: 18px;
 }
 a {
   color: #404040;
@@ -779,7 +778,7 @@ samp {
 .post-container h4,
 .post-container h5,
 .post-container h6 {
-  margin: 50px 0 20px;
+  margin: 30px 0 15px;
   line-height: 1.4;
 }
 .post-container h1 + p,
