@@ -2,7 +2,7 @@
 layout: post
 title: "차기 개인앱 구상 및 해야할 일 정리"
 image:
-categories: 일상
+categories: [기타]
 tags: 
   - 
 sitemap:

@@ -2,7 +2,7 @@
 layout: post
 title: "[Core] HTTPHeaders.swift 분석"
 image:
-categories: [Alamofire 분석]
+categories: [iOS]
 tags: 
   - Alamofire
   - HTTPHeaders

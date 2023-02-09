@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "외부 라이브러리에 보낸 PR이 머지되었습니다."
-categories: [일상]
+categories: [기타]
 tags: 
   - 
 sitemap:

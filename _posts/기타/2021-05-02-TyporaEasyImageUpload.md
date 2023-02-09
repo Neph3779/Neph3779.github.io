@@ -2,7 +2,7 @@
 layout: post
 title: "Typora 이미지 쉽게 업로드 하기 for mac"
 image:
-categories: 일상
+categories: [기타]
 tags: 
   - Typora
   - Picgo
