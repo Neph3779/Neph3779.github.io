@@ -1,5 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans+KR|Ubuntu+Mono);
 
+@font-face {
+  font-family: "Maplestory";
+  src: url("../fonts/Maplestory OTF Bold.otf");
+  src: url("../fonts/Maplestory OTF Light.otf")
+}
+
 @media (min-width: 1500px) {
   .post-container,
   .sidebar-container {
@@ -638,8 +644,8 @@ pre {
 .search-icon-close {
   font-size: 16px;
 }
-body {
-  font-family: Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif; /* 글 본문 폰트*/
+body { /* 본문 */
+  font-family: "Maplestory", Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif; /* 글 본문 폰트*/
   line-height: 1.8;
   font-size: 18px;
   font-weight: 500; /* 글자 굵기 */
@@ -666,7 +672,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  font-family: "Maplestory", Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
   line-height: 1.7;
   line-height: 1.1;
   font-weight: 700;
@@ -694,9 +700,8 @@ a img:focus {
 article {
   overflow: hidden;
 }
-blockquote {
+blockquote { /* 마크다운의 > */
   color: gray;
-  font-style: italic;
   font-size: 0.95em;
   margin: 20px 0 20px;
 }
@@ -838,18 +843,19 @@ samp {
 }
 .post-container ul,
 .post-container ol {
-  margin-bottom: 40px;
+  margin-bottom: 30px; /* 목록들 아래의 간격 */
+  padding-left: 25px; /* 목록간의 왼쪽 간격 */
 }
 @media screen and (max-width: 768px) {
   .post-container ul,
   .post-container ol {
-    padding-left: 30px;
+    padding-left: 20px;
   }
 }
 @media screen and (max-width: 500px) {
   .post-container ul,
   .post-container ol {
-    padding-left: 20px;
+    padding-left: 15px;
   }
 }
 .post-container ol ol,
