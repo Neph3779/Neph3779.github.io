@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[1장] Introduction - 1"
+title: "[컴퓨터 네트워크] #1 Introduction - 1"
 image:
 categories: [네트워크]
 tags: 
