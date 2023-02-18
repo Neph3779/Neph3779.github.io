@@ -47,7 +47,7 @@ OSI 7 Layer는 말 그대로 참조의 역할(레퍼런스)로만 사용되고 �
 
 ## 5계층 레이어 구조
 
-<img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20230215210734.png" alt="image-20230215210734381" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20230217210806.png" alt="image-20230217210806846" style="zoom:50%;" />
 
 ### L5 - application
 
@@ -112,3 +112,21 @@ Internet은 network들의 network입니다.
 `피지컬 레이어`라 불리는 L1 계층은 **네트워크 내부의 데이터 전송**을 담당합니다.
 
 L1 계층은 L2 계층에 실제 물리적인 경로를 (유선 / 무선) 제공하여 네트워크 내부에서의 이동이 이루어지도록 해줍니다.
+
+
+
+### Encapsulate / Decapsulate
+
+<img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20230217230755.png" alt="image-20230217230755307" style="zoom: 33%;" />
+
+송신자로부터 각 계층을 내려오며 헤더필드를 추가하는 작업을 Encapsulate
+
+수신자로부터 각 계층을 올라가며 헤더필드를 검사하며 떼어내는 작업을 Decapsulate라고 합니다.
+
+<br/>
+
+어플리케이션에서 보낸 메세지는 encapsulate 되어 physical 링크를 타고 switch에 도달합니다.
+
+도착한 데이터는 스위치와 라우터의 지정된 계층까지 decapsulate되었다가 다시 encapsulate되며
+
+최종적으로 도착하는 목적지에서 app layer까지 decapsulate되어 message를 전달받습니다.
