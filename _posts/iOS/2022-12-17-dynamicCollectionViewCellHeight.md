@@ -70,7 +70,7 @@ cell에 contents를 적용하고나서 systemLayoutSizeFitting 메서드를 통�
 
 
 
-주의할 점은 setUpContents() 메서드 내부에서 layoutIfNeeded()나 layout() 메서드를 호출해줘야 한다.
+주의할 점은 setUpContents() 메서드 내부에서 layoutIfNeeded()나 setNeedsDisplay를 통해 view를 업데이트 해주어야 한다는 점이다.
 
 
 
