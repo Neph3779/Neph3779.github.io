@@ -113,11 +113,9 @@ seq#이 3이라면 패킷에 0, 1, 2, 3을 차례대로 순회하며 보내게 �
 
 ## Go-Back-N, Selective repeat
 
-### Go-Back-N
-
 <img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20230317175022.png" alt="image-20230317175022808" style="zoom:50%;" />
 
-Go-Back-N 프로토콜과 Selective repeat 프로토콜은 보낸 데이터, 혹은 아직 보내지 않은 데이터를 보관할지 말지에 대해 결정할때 사용하는 프로토콜입니다.
+Go-Back-N 기법과 Selective repeat 기법은 보낸 데이터, 혹은 아직 보내지 않은 데이터를 보관할지 말지에 대해 결정할때 사용하는 아이디어입니다.
 
 receiver로부터 ACK가 오지 않은 경우에는 데이터를 무조건적으로 다시 보내게 되는데 receiver가 보낸 ACK가 유실된 것이라 receiver 쪽에서는 데이터를 다시 받을 필요가 없는 상황이더라도 sender는 이를 알 수 없으므로 데이터를 재전송합니다.
 
@@ -136,3 +134,5 @@ Go-Back-N 프로토콜에서는 n번째 데이터를 받지 못한 상황에서 
 sender는 ack를 받지 못한 n에 대해 다시 데이터를 보내게되며, receiver는 이 빠진 데이터(n)가 채워지면 window를 slide할 수 있게 됩니다.
 
 selective repeat방식에서는 엉뚱한 seq#가 채워지는 것을 방지하기 위해 sequence#의 최댓값은 window size의 2배보다 커야합니다. (다음 cycle의 seq#를 보내게 될 수 있으며, 이때 이전 cycle의 seq#가 채워질 수 있기 때문)
+
+TCP는 Go-Back-N 기법과 Selective repeat 기법의 일부를 채택하여 사용하고 있습니다.
