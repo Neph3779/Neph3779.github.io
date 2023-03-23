@@ -110,8 +110,6 @@ Link state 방식에서는 N번의 순회를 통해 모든 정보를 갱신할 �
 
 이 영역의 단위를 AS (Autonomous System)라고 부르며 전세계는 수많은 AS들의 조합들로 이루어져 있습니다.
 
-
-
 AS내부의 라우팅 방식은 AS가 마음대로 설정할 수 있으며, AS끼리의 라우팅을 위해 존재하는 프로토콜을 통해 자신의 AS 범위 밖의 router와 연결됩니다.
 
 
@@ -120,7 +118,7 @@ AS내부의 라우팅 방식은 AS가 마음대로 설정할 수 있으며, AS�
 
 intra-AS routing이란 AS 내부에서 동작하는 라우팅 방식입니다.
 
-위에서 설명한 설명한 Link State, Distance Vector 방식을 주로 사용하며, AS 내부의 라우터들은 모두 동일한 라우팅 알고리즘을 수행합니다.
+위에서 설명한 설명한 Link State 방식을 주로 사용하며, AS 내부의 라우터들은 모두 동일한 라우팅 알고리즘을 수행합니다.
 
 
 
@@ -138,7 +136,7 @@ AS의 가장 최외곽에 붙어있는 router를 통해 다른 AS에게 내 AS�
 
 ### OSPF
 
-OSPF는 가장 널리 사용되는 link state 방식을 사용하는 inter-AS routing protocol입니다.
+OSPF는 가장 널리 사용되는 link state 방식을 사용하는 intra-AS routing protocol입니다.
 
 flooding시에는 TCP/UDP를 사용하지 않고 Ip프로토콜을 사용하며 edge의 cost 산정 시에는 bandwidth나 delay를 각각 또는 혼합하여 사용합니다.
 
