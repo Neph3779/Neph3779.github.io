@@ -21,7 +21,7 @@ path는 출발지부터 목적지로 이동하며 거쳐가는 라우터를 순�
 
 router들의 연결은 양방향 weighted graph로 나타낼 수 있습니다. 이때 가중치는 network operator라는 router domain의 네트워크 관리자가 bandwidth, congestion등의 요소를 통해 결정하게 됩니다.
 
-이때 방향에 따라 같은 연결통로더다로 가중치가 다르게 책정될 수 있습니다.
+이때 방향에 따라 같은 연결통로더라도 가중치가 다르게 책정될 수 있습니다.
 
 ### Routing algorithm
 
