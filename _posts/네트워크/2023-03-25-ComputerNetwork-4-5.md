@@ -144,3 +144,5 @@ SDN controller는 application의 요구사항을 토대로 switch에 테이블�
 네트워크 정리글을 쓰며 사용한 모든 자료는 [https://gaia.cs.umass.edu/kurose_ross/ppt.php](https://gaia.cs.umass.edu/kurose_ross/ppt.php)에 존재하며, 출처를 명시하면 누구나 이를 업로드할 수 있도록 출판사측에서 배려해주고 있습니다.
 
 잘못된 정보나 질문이 있으시다면 댓글 혹은 neph3779@gmail.com으로 메일주시면 감사하겠습니다.
+
+> 본 글에 사용된 자료는 [https://gaia.cs.umass.edu/kurose_ross/ppt.php](https://gaia.cs.umass.edu/kurose_ross/ppt.php)에서 무료로 제공하고 있습니다.

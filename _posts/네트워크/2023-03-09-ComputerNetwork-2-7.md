@@ -154,3 +154,7 @@ DASH 프로토콜에서 서버와 클라이언트는 각각 아래와 같은 동
 
 - 주기적으로 서버와 클라이언트 사이의 대역폭을 측정 (response time을 가지고 판단합니다)
 - `manifest file`을 참조해 `chunk`를 하나씩 요청 (대역폭을 참고해서 최선의 화질로 가장 가까운 곳에서 가져옴)
+
+
+
+> 본 글에 사용된 자료는 [https://gaia.cs.umass.edu/kurose_ross/ppt.php](https://gaia.cs.umass.edu/kurose_ross/ppt.php)에서 무료로 제공하고 있습니다.

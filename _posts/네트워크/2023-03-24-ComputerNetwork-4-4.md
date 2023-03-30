@@ -153,3 +153,5 @@ OSPF를 backbone과 area로 한번더 영역을 구분하기도 합니다.
 link state가 모든 노드에 대한 정보를 알아야 하는 것이 부담이니, 이 부담을 덜고자 flooding하는 영역을 제한하자는 아이디어에서 등장한 기법입니다.
 
 backbone은 일종의 gateway가 되어 각각의 area들을 연결해주며, backbone 밖으로 나가는 패킷에 대해서는 backbone의 gateway router가 이를 담당합니다.
+
+> 본 글에 사용된 자료는 [https://gaia.cs.umass.edu/kurose_ross/ppt.php](https://gaia.cs.umass.edu/kurose_ross/ppt.php)에서 무료로 제공하고 있습니다.

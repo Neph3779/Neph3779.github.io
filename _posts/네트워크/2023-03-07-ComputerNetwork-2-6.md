@@ -160,3 +160,5 @@ hostname을 ip주소로 바꿔주는 name resolution에는 아래와 같이 두 
 <br/>
 
 이 방식은 다른 DNS 서버에 부담을 지우는 방식이므로 잘 사용되지 않습니다. 
+
+> 본 글에 사용된 자료는 [https://gaia.cs.umass.edu/kurose_ross/ppt.php](https://gaia.cs.umass.edu/kurose_ross/ppt.php)에서 무료로 제공하고 있습니다.

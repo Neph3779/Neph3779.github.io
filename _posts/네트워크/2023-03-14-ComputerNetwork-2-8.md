@@ -119,3 +119,4 @@ TCP는 연결 설정이 필요합니다. (TCP connection)
 
 클라이언트는 포트번호를 가지고 구분할 수 있습니다.
 
+> 본 글에 사용된 자료는 [https://gaia.cs.umass.edu/kurose_ross/ppt.php](https://gaia.cs.umass.edu/kurose_ross/ppt.php)에서 무료로 제공하고 있습니다.

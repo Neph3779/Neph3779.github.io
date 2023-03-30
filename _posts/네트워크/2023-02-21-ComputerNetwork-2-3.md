@@ -140,3 +140,4 @@ TCP 커넥션 연결이 승인되면 서버는 이 연결을 클라이언트가 
 
 이때 최종적으로 데이터를 받기 위해 필요한 시간은 `2RTT + transmission delay`가 됩니다.
 
+> 본 글에 사용된 자료는 [https://gaia.cs.umass.edu/kurose_ross/ppt.php](https://gaia.cs.umass.edu/kurose_ross/ppt.php)에서 무료로 제공하고 있습니다.

@@ -131,3 +131,4 @@ QUIC은 보안까지도 서비스를 제공하므로 이것을 별도의 handsha
 
 변수설정과 이전에 설명한 2-way handshake시의 문제점 등으로 인해 등이 3-way handshake가 필요한 것은 동일합니다.
 
+> 본 글에 사용된 자료는 [https://gaia.cs.umass.edu/kurose_ross/ppt.php](https://gaia.cs.umass.edu/kurose_ross/ppt.php)에서 무료로 제공하고 있습니다.

@@ -136,3 +136,5 @@ sender는 ack를 받지 못한 n에 대해 다시 데이터를 보내게되며, 
 selective repeat방식에서는 엉뚱한 seq#가 채워지는 것을 방지하기 위해 sequence#의 최댓값은 window size의 2배보다 커야합니다. (다음 cycle의 seq#를 보내게 될 수 있으며, 이때 이전 cycle의 seq#가 채워질 수 있기 때문)
 
 TCP는 Go-Back-N 기법과 Selective repeat 기법의 일부를 채택하여 사용하고 있습니다.
+
+> 본 글에 사용된 자료는 [https://gaia.cs.umass.edu/kurose_ross/ppt.php](https://gaia.cs.umass.edu/kurose_ross/ppt.php)에서 무료로 제공하고 있습니다.

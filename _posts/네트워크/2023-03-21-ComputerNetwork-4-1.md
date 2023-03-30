@@ -218,3 +218,5 @@ IP 주소는 dotted decimal 형태를 띕니다.
 이는 32bit의 주소를 8bit씩 쪼개서 쪼갠 각각을 10진수로 표현한 뒤, 이를 .으로 이어붙인 형태입니다.
 
 Ip주소는 pc의 네트워크 interface에 부여되며 interface란 router나 host를 처음으로 연결하는 물리적인 link를 뜻합니다.
+
+> 본 글에 사용된 자료는 [https://gaia.cs.umass.edu/kurose_ross/ppt.php](https://gaia.cs.umass.edu/kurose_ross/ppt.php)에서 무료로 제공하고 있습니다.

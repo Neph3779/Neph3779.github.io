@@ -255,4 +255,3 @@ Content-Disposition: form-data; name="title"
 - mozilla의 Content-Type Document: [Content-Type](https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/Content-Type)
 - mozilla의 HTTP Methods Document: [HTTP 요청 메서드](https://developer.mozilla.org/ko/docs/Web/HTTP/Methods)
 - `\r`은 왜써야할까? : [CR(\r), LF(\n)이란 무엇인가?](https://m.blog.naver.com/taeil34/221325864981)
-

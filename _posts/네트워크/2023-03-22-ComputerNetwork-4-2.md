@@ -213,3 +213,4 @@ Tunneling이란 IPv6의 패킷을 payload로 취급하여 IPv4 패킷으로 감�
 
 > 참고로 IPv6를 지원하는 라우터는 현재 30% 정도로 집계되고 있습니다.
 
+> 본 글에 사용된 자료는 [https://gaia.cs.umass.edu/kurose_ross/ppt.php](https://gaia.cs.umass.edu/kurose_ross/ppt.php)에서 무료로 제공하고 있습니다.

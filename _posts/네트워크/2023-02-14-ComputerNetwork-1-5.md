@@ -166,3 +166,5 @@ VPN(Virtual Private Network)을 통해 접근된 제한만을 허용하는 방�
 **Firewall**
 
 방화벽은 들어오는 패킷을 필터링(통제)하는 기술입니다.
+
+> 본 글에 사용된 자료는 [https://gaia.cs.umass.edu/kurose_ross/ppt.php](https://gaia.cs.umass.edu/kurose_ross/ppt.php)에서 무료로 제공하고 있습니다.

@@ -130,3 +130,5 @@ Circuit 스위칭을 구현하는 방식은 크게 `Frequency Division Multiplex
 파일의 전송같이 반드시 모든 패킷이 전송됨을 보장해야하는 서비스도 분명 존재할 것입니다. 이러한 신뢰성이 보장되어야 하는 서비스를 제공하기 위해 존재하는 것이 바로 TCP라는 프로토콜입니다.
 
 이후에 다시 등장할 개념이기에 간단히 설명하자면 패킷이 loss되었는지를 확인해서 만약 loss가 발생하였다면 해당 패킷을 다시 전송하는 것이 TCP 프로토콜의 핵심입니다.
+
+> 본 글에 사용된 자료는 [https://gaia.cs.umass.edu/kurose_ross/ppt.php](https://gaia.cs.umass.edu/kurose_ross/ppt.php)에서 무료로 제공하고 있습니다.

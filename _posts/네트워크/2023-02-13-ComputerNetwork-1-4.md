@@ -120,3 +120,5 @@ Propagation은 라우터로부터 빠져나온 하나의 bit가 다음 라우터
 <br/> 
 
 위의 네가지 요소들이 합쳐져 최종적인 패킷 딜레이 시간이 나오게 됩니다.
+
+> 본 글에 사용된 자료는 [https://gaia.cs.umass.edu/kurose_ross/ppt.php](https://gaia.cs.umass.edu/kurose_ross/ppt.php)에서 무료로 제공하고 있습니다.

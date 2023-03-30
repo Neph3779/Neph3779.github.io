@@ -112,3 +112,4 @@ source와 dest 사이에 존재해야 한다는 특징을 지니며, NAT나 Fire
 
 요즘에는 Open API를 사용하는 추세로 변해 호환성 문제는 상당 부분 해결되었습니다.
 
+> 본 글에 사용된 자료는 [https://gaia.cs.umass.edu/kurose_ross/ppt.php](https://gaia.cs.umass.edu/kurose_ross/ppt.php)에서 무료로 제공하고 있습니다.

@@ -175,3 +175,4 @@ sitemap:
 
 `네트워크들이 이루고 있는 네트워크`를 네트워크 코어라 부를 수 있습니다.
 
+> 본 글에 사용된 자료는 [https://gaia.cs.umass.edu/kurose_ross/ppt.php](https://gaia.cs.umass.edu/kurose_ross/ppt.php)에서 무료로 제공하고 있습니다.

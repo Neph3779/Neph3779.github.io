@@ -130,3 +130,5 @@ L1 계층은 L2 계층에 실제 물리적인 경로를 (유선 / 무선) 제공
 도착한 데이터는 스위치와 라우터의 지정된 계층까지 decapsulate되었다가 다시 encapsulate되며
 
 최종적으로 도착하는 목적지에서 app layer까지 decapsulate되어 message를 전달받습니다.
+
+> 본 글에 사용된 자료는 [https://gaia.cs.umass.edu/kurose_ross/ppt.php](https://gaia.cs.umass.edu/kurose_ross/ppt.php)에서 무료로 제공하고 있습니다.

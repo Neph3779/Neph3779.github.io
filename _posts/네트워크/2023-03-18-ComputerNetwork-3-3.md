@@ -129,3 +129,5 @@ sender와 receiver는 서로가 데이터를 주고 받으므로 각자가 send,
 ### TCP 연결 종료
 
 TCP의 연결 종료는 FIN비트를 세팅해서 전송함으로써 연결종료를 알릴 수 있습니다. 이 FIN에 대한 ACK를 수신하면 비로소 TCP 연결이 종료됩니다. 
+
+> 본 글에 사용된 자료는 [https://gaia.cs.umass.edu/kurose_ross/ppt.php](https://gaia.cs.umass.edu/kurose_ross/ppt.php)에서 무료로 제공하고 있습니다.
