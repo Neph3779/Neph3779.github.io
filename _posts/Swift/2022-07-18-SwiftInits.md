@@ -98,7 +98,7 @@ struct Rect {
 2. convenience init은 반드시 같은 클래스의 init을 호출해야 한다.
 3. convenience init은 최종적으로 반드시 designated init을 호출해야 한다.
 
-<img src="https://docs.swift.org/swift-book/_images/initializerDelegation02_2x.png" alt="initializerDelegation02_2x" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20230620204134.png" alt="image-20230620204118609" style="zoom:50%;" />
 
 
 
@@ -138,7 +138,7 @@ two-phase 초기화는 저장 프로퍼티가 초기화되기 전에 접근되�
 
 #### Phase 1
 
-<img src="https://docs.swift.org/swift-book/_images/twoPhaseInitialization01_2x.png" alt="../_images/twoPhaseInitialization01_2x.png" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20230620204152.png" alt="image-20230620204152034" style="zoom:50%;" />
 
 - designated/convenience init이 클래스에서 호출됩니다.
 - 클래스의 새 인스턴스를 위한 메모리 공간이 할당됩니다. (아직 메모리 공간이 초기화된 것은 아닙니다.)
@@ -151,7 +151,7 @@ two-phase 초기화는 저장 프로퍼티가 초기화되기 전에 접근되�
 
 #### Phase 2
 
-<img src="https://docs.swift.org/swift-book/_images/twoPhaseInitialization02_2x.png" alt="../_images/twoPhaseInitialization02_2x.png" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20230620204226.png" alt="image-20230620204226259" style="zoom:50%;" />
 
 - 체인을 다시 타고 내려오면서 각 designated initializer는 인스턴스를 customize할 수 있는 기회를 부여받습니다. 이제 인스턴스는 self에 접근할 수 있으며 인스턴스 메서드를 호출할수도 있습니다.
 - 최종적으로 convenience init이 customize의 기회를 부여받습니다. 이때 convenience init도 self를 사용할 수 있습니다. (당연하게도 convenience init을 통해 init하지 않았다면 이 과정은 생략됩니다.)
@@ -226,9 +226,9 @@ designated init을 오버라이딩함과 동시에 이를 convenience init으로
 
 Convenience init의 자동상속이 이루어진 경우를 보면 모든 designated init이 오버라이딩되어 구현된 것을 확인할 수 있습니다. 반면 오른쪽의 경우에는 init(some: Int)가 오버라이딩 되지 않았으므로 convenience init이 자동 상속되지 않은 것을 확인할 수 있습니다.
 
-상속받은 convenience init은 슈퍼클래스의 convenience init과 똑같이 동작합니다. 하지만 delegate을 RecipeIngredien의 designated init에 한다는 것이 중요합니다. 이를 그림으로 나타내면 아래와 같게 됩니다.
+상속받은 convenience init은 슈퍼클래스의 convenience init과 똑같이 동작합니다. 하지만 delegate을 RecipeIngredient의 designated init에 한다는 것이 중요합니다. 이를 그림으로 나타내면 아래와 같게 됩니다.
 
-<img src="https://docs.swift.org/swift-book/_images/initializersExample02_2x.png" alt="../_images/initializersExample02_2x.png" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Neph3779/Blog-Image/forUpload/img/20230620204325.png" alt="image-20230620204325331" style="zoom:50%;" />
 
 
 
