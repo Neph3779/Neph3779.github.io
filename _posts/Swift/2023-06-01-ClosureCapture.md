@@ -87,6 +87,8 @@ viewModel.reloadData = { [weak a, b, c unowned d] in
 
 위의 코드처럼 사용이 가능합니다.
 
+이때 b와 c에 대해서는 참조형식을 정해주지 않았기 때문에 weak 참조되지 않고 strong 참조되는걸 주의해야합니다.
+
 
 
 ### Closure inside Closure Capture
